@@ -2,12 +2,22 @@ import os
 from langchain_neo4j import Neo4jGraph
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 
+def getLlm(ai: str = None):
+    if ai == "gemini":
+        return ChatGoogleGenerativeAI(
+            model="gemini-2.5-flash",
+            temperature=0,
+            google_api_key=os.getenv("GOOGLE_API_KEY")
+        )
+    
+    return ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
 
 class PDFGraphRAG:
-    def __init__(self, neo4j_uri: str, neo4j_user: str, neo4j_password: str, google_api_key: str = None):
+    def __init__(self, neo4j_uri: str, neo4j_user: str, neo4j_password: str):
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
@@ -15,15 +25,7 @@ class PDFGraphRAG:
             refresh_schema=False
         )
 
-        if google_api_key:
-            os.environ["GOOGLE_API_KEY"] = google_api_key
-
-        self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
-            temperature=0,
-            google_api_key=google_api_key or os.getenv("GOOGLE_API_KEY"),
-            client_type="rest"
-        )
+        self.llm = getLlm()
 
         self.graph_transformer = LLMGraphTransformer(llm=self.llm)
 
@@ -47,10 +49,42 @@ class PDFGraphRAG:
         print(f"Generated {len(graph_docs)} graph documents")
 
         # Add graph documents to Neo4j
+        # dependency: APOC plugin in neo4j database
         self.graph.add_graph_documents(graph_docs)
 
         print(f"Added {sum(len(doc.nodes) for doc in graph_docs)} nodes")
         print(f"Added {sum(len(doc.relationships) for doc in graph_docs)} relationships")
+        
+        
+        
+    def _add_graph_docs_without_apoc(self, graph_docs):
+        """Add graph documents without using APOC procedures"""
+        for doc in graph_docs:
+            # Add nodes
+            for node in doc.nodes:
+                # Create node with MERGE to avoid duplicates
+                query = f"""
+                MERGE (n:{node.type} {{id: $id}})
+                SET n += $properties
+                """
+                self.graph.query(query, {
+                    "id": node.id,
+                    "properties": node.properties or {}
+                })
+            
+            # Add relationships
+            for rel in doc.relationships:
+                query = f"""
+                MATCH (source {{id: $source_id}})
+                MATCH (target {{id: $target_id}})
+                MERGE (source)-[r:{rel.type}]->(target)
+                SET r += $properties
+                """
+                self.graph.query(query, {
+                    "source_id": rel.source.id,
+                    "target_id": rel.target.id,
+                    "properties": rel.properties or {}
+                })
 
 
 def main():
@@ -60,7 +94,6 @@ def main():
         neo4j_uri=os.getenv("NEO4J_URI"),
         neo4j_user=os.getenv("NEO4J_USER"),
         neo4j_password=os.getenv("NEO4J_PASSWORD"),
-        google_api_key=os.getenv("GOOGLE_API_KEY")
     )
 
     # Process PDF - optionally limit pages for testing with max_pages parameter

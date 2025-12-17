@@ -120,79 +120,7 @@ MATCH path = shortestPath(
 RETURN path
 ```
 
-## 📖 Entity Types
 
-The system extracts these entity types:
-
-### Character
-People, characters, individuals mentioned in the book
-- **Properties**: name, description, affiliation
-- **Example**: "Harry Potter", "Sherlock Holmes"
-
-### Location  
-Places, geographical locations, settings
-- **Properties**: name, description
-- **Example**: "London", "Hogwarts", "Baker Street"
-
-### Organization
-Groups, companies, institutions, families
-- **Properties**: name, description
-- **Example**: "FBI", "Stark Industries", "Gryffindor"
-
-### Event
-Significant occurrences, incidents, happenings
-- **Properties**: name, description
-- **Example**: "The Battle of Hogwarts", "The Great Depression"
-
-### Concept
-Themes, ideas, abstract concepts
-- **Properties**: name, description
-- **Example**: "Justice", "Love", "Democracy"
-
-## 🔗 Relationship Types
-
-The system automatically detects relationships:
-
-- **KNOWS** - Personal acquaintance
-- **WORKS_FOR** - Employment/service relationship
-- **LOCATED_IN** - Geographical location
-- **PARTICIPATES_IN** - Event participation
-- **AFFILIATED_WITH** - Organizational membership
-- **RELATED_TO** - General connection
-- **LOVES / HATES** - Emotional relationships
-- **LEADS / FOLLOWS** - Leadership hierarchy
-
-And many more, automatically discovered from context!
-
-## 💡 Example Use Cases
-
-### Literary Analysis
-```python
-# Analyze character relationships in a novel
-python pdf_graphrag_gemini.py
-# Enter: path/to/novel.pdf
-```
-
-### Research Papers
-```python
-# Extract concepts and relationships from academic papers
-python pdf_graphrag_gemini.py
-# Enter: path/to/research_paper.pdf
-```
-
-### Historical Documents
-```python
-# Map people, places, and events from historical texts
-python pdf_graphrag_gemini.py
-# Enter: path/to/historical_document.pdf
-```
-
-### Business Documents
-```python
-# Extract organizations, people, and relationships from reports
-python pdf_graphrag_gemini.py
-# Enter: path/to/business_report.pdf
-```
 
 ## 📊 Example Queries
 
@@ -262,54 +190,12 @@ RETURN c1.name, o.name, c2.name
 (Concept)-[:RELATED_TO]->(Concept)
 ```
 
-## ⚙️ Configuration Options
 
-### Adjust Chunk Size
-
-In `pdf_graphrag.py`:
-```python
-self.text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=3000,  # Increase for more context
-    chunk_overlap=300,  # Overlap between chunks
-)
-```
-
-### Change Gemini Model
-
-```python
-self.llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",  # or "gemini-1.5-pro" for better quality
-    temperature=0,
-)
-```
 
 ### Custom Entity Types
 
 Modify the extraction prompt in `extract_entities_from_chunk()` to add new entity types.
 
-## 🔧 Troubleshooting
-
-### PDF Loading Issues
-
-```bash
-# If PyPDF has issues, try:
-pip install pypdf2
-# or
-pip install pdfplumber
-```
-
-### Google API Rate Limits
-
-- Gemini 1.5 Flash: 15 RPM (free tier)
-- Add delays between chunks if needed
-- Consider upgrading to paid tier for higher limits
-
-### Memory Issues
-
-For large PDFs:
-- Process in smaller chunks
-- Increase system RAM
-- Use `max_chunks` parameter to limit processing
 
 ### Neo4j Connection
 

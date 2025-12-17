@@ -6,18 +6,8 @@ from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 
-def getLlm(ai: str = None):
-    if ai == "gemini":
-        return ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
-            temperature=0,
-            google_api_key=os.getenv("GOOGLE_API_KEY")
-        )
-    
-    return ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
-
 class PDFGraphRAG:
-    def __init__(self, neo4j_uri: str, neo4j_user: str, neo4j_password: str):
+    def __init__(self, neo4j_uri: str, neo4j_user: str, neo4j_password: str, ai: str = None):
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
@@ -25,9 +15,19 @@ class PDFGraphRAG:
             refresh_schema=False
         )
 
-        self.llm = getLlm()
-
+        self.llm = self.getLlm(ai=ai)
         self.graph_transformer = LLMGraphTransformer(llm=self.llm)
+        
+    
+    def getLlm(ai: str = None):
+        if ai == "gemini":
+            return ChatGoogleGenerativeAI(
+                model="gemini-2.5-flash",
+                temperature=0,
+                google_api_key=os.getenv("GOOGLE_API_KEY")
+            )
+    
+        return ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
 
 
     def load_pdf(self, pdf_path: str):
@@ -35,30 +35,30 @@ class PDFGraphRAG:
         return loader.load()
 
     def process_pdf(self, pdf_path: str, max_pages: int = None):
+        
         # Load PDF documents
         documents = self.load_pdf(pdf_path)
-
         if max_pages:
             documents = documents[:max_pages]
-
         print(f"Loaded {len(documents)} pages from PDF")
+
 
         # Transform documents into graph documents using LLMGraphTransformer
         graph_docs = self.graph_transformer.convert_to_graph_documents(documents)
-
         print(f"Generated {len(graph_docs)} graph documents")
+
 
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
         self.graph.add_graph_documents(graph_docs)
-
         print(f"Added {sum(len(doc.nodes) for doc in graph_docs)} nodes")
         print(f"Added {sum(len(doc.relationships) for doc in graph_docs)} relationships")
         
         
         
-    def _add_graph_docs_without_apoc(self, graph_docs):
+    def add_graph_docs_without_apoc(self, graph_docs):
         """Add graph documents without using APOC procedures"""
+        
         for doc in graph_docs:
             # Add nodes
             for node in doc.nodes:
@@ -87,20 +87,17 @@ class PDFGraphRAG:
                 })
 
 
-def main():
-    load_dotenv()
 
-    graphrag = PDFGraphRAG(
-        neo4j_uri=os.getenv("NEO4J_URI"),
-        neo4j_user=os.getenv("NEO4J_USER"),
-        neo4j_password=os.getenv("NEO4J_PASSWORD"),
-    )
+# ------- MAIN ---------
 
-    # Process PDF - optionally limit pages for testing with max_pages parameter
-    graphrag.process_pdf("code/romeo-juliet/pdf/romeo-and-juliet.pdf")
+load_dotenv()
 
-    print("\nKnowledge graph successfully created in Neo4j!")
+graphrag = PDFGraphRAG(
+    neo4j_uri=os.getenv("NEO4J_URI"),
+    neo4j_user=os.getenv("NEO4J_USER"),
+    neo4j_password=os.getenv("NEO4J_PASSWORD")
+)
 
-
-if __name__ == "__main__":
-    main()
+# processing
+graphrag.process_pdf("code/romeo-juliet/pdf/romeo-and-juliet.pdf")
+print("\nKnowledge graph successfully created in Neo4j!")

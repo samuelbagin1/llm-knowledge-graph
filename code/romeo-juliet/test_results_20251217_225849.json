@@ -1,0 +1,427 @@
+{
+  "test_run_date": "2025-12-17T22:58:49.529053",
+  "total_tests": 5,
+  "successful_tests": 5,
+  "failed_tests": 0,
+  "average_score": 0,
+  "min_score": 0,
+  "max_score": 0,
+  "scores": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "individual_tests": [
+    {
+      "test_number": 1,
+      "question": {
+        "question": "Who are the friends of Mercutio and what are their relationships to him?",
+        "question_type": "relationship",
+        "expected_nodes": [
+          "Character",
+          "Friendship"
+        ],
+        "expected_relationships": [
+          "FRIENDS_WITH"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (mercutio:Character {name: 'Mercutio'}) \nOPTIONAL MATCH (mercutio)-[r]-(friend:Character)\nWHERE type(r) IN ['FRIEND', 'FRIEND_OF', 'COMPANION', 'ALLY', 'ASSOCIATE', 'FRIENDSHIP', 'COMPANIONSHIP']\nRETURN DISTINCT\n  mercutio.name AS MercutioName,\n  friend.name AS FriendName,\n  type(r) AS RelationshipType\nORDER BY FriendName",
+        "results": [],
+        "structured_answer": "Based on the query results, no friends were found for Mercutio. Therefore, the relationships between Mercutio and his friends cannot be determined from the provided data."
+      },
+      "web_answer": {
+        "web_answer": "Mercutio's primary friends in Shakespeare's *Romeo and Juliet* are **Romeo Montague** and **Benvolio Montague**. Their relationships are characterized by deep companionship, shared wit, and mutual loyalty, though each relationship has its unique dynamics.\n\n1.  **Romeo Montague:** Romeo is Mercutio's closest friend. Their relationship is marked by constant banter, sharp wit, and affectionate teasing. Mercutio often playfully mocks Romeo's lovesickness, particularly concerning Rosaline and later Juliet, trying to snap him out of his melancholy with cynical humor and fantastical tales, such as the elaborate 'Queen Mab' speech (Act 1, Scene 4). Despite the teasing, Mercutio clearly cares deeply for Romeo, showing concern for his well-being and honor. This loyalty culminates tragically when Mercutio confronts Tybalt on Romeo's behalf (Act 3, Scene 1). Tybalt, seeking to duel Romeo, initially finds Romeo unwilling to fight due to his secret marriage to Juliet. Mercutio, misinterpreting Romeo's refusal as 'dishonourable submission,' steps in to defend his friend's honor and is fatally wounded when Romeo intervenes to stop the fight. Mercutio's dying curse, \"A plague o' both your houses!\" (Act 3, Scene 1), underscores the devastating impact of the feud on his life and his friendship with Romeo.\n\n2.  **Benvolio Montague:** Benvolio, Romeo's cousin, is another constant companion to Mercutio. Benvolio often plays the role of the more cautious and rational friend, attempting to de-escalate conflicts and maintain peace. He frequently acts as a foil to Mercutio's more fiery and impetuous nature. We see their camaraderie and differing temperaments throughout the play, especially in their conversations and shared observations about Romeo (e.g., Act 2, Scene 4, where they discuss Romeo's sudden recovery from lovesickness). Benvolio attempts to prevent the duel between Mercutio and Tybalt (Act 3, Scene 1) and later provides an honest account of Mercutio's death to Prince Escalus, highlighting his role as a trusted witness and loyal friend.\n\nIt is important to note that Mercutio is not a Montague by birth but is rather 'kinsman to the Prince' (Act 3, Scene 1). His deep friendship with Romeo, however, inextricably links him to the Montague faction and ultimately leads to his fatal involvement in their feud with the Capulets.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare's Romeo and Juliet: Act 1, Scene 4",
+          "Shakespeare's Romeo and Juliet: Act 2, Scene 1",
+          "Shakespeare's Romeo and Juliet: Act 2, Scene 4",
+          "Shakespeare's Romeo and Juliet: Act 3, Scene 1"
+        ],
+        "key_details": [
+          "Romeo Montague (best friend)",
+          "Benvolio Montague (companion, cousin to Romeo)",
+          "Mercutio is 'kinsman to the Prince'",
+          "Queen Mab speech (Act 1, Scene 4)",
+          "Mercutio's death while defending Romeo's honor (Act 3, Scene 1)",
+          "Mercutio's curse: 'A plague o' both your houses!'"
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database answer is entirely incorrect and provides no useful information. It fundamentally fails to identify any of Mercutio's friends, stating that 'no friends were found.' This contradicts the authoritative text, which clearly establishes Romeo Montague and Benvolio Montague as his primary friends with detailed descriptions of their relationships. Consequently, all the key details about these friendships, their dynamics, and significant related events (like the Queen Mab speech, Mercutio's death, and his curse) are missing.",
+        "discrepancies": [
+          "The graph database states 'no friends were found for Mercutio,' which is factually incorrect. Mercutio has two well-established friends: Romeo Montague and Benvolio Montague.",
+          "The graph database states that 'the relationships between Mercutio and his friends cannot be determined,' which is a direct consequence of its initial incorrect premise and is also false as these relationships are well-documented in the play."
+        ],
+        "missing_data": [
+          "Romeo Montague (as Mercutio's best friend, with detailed relationship characteristics)",
+          "Benvolio Montague (as Mercutio's companion, with detailed relationship characteristics)",
+          "The nature of Mercutio's close friendship with Romeo (banter, wit, loyalty, teasing, concern for honor)",
+          "The Queen Mab speech (Act 1, Scene 4) as an illustration of Mercutio's wit and relationship with Romeo",
+          "Mercutio's death while defending Romeo's honor (Act 3, Scene 1)",
+          "Mercutio's dying curse: 'A plague o' both your houses!'",
+          "Benvolio's role as a rational friend, mediator, and witness",
+          "The fact that Mercutio is 'kinsman to the Prince'."
+        ],
+        "correct_elements": [
+          "None. The answer returned is a categorical denial of information that exists, making it entirely incorrect."
+        ],
+        "recommendations": [
+          "Add nodes for 'Romeo Montague' and 'Benvolio Montague'.",
+          "Establish relationships from 'Mercutio' to 'Romeo Montague' with a predicate like `IS_BEST_FRIEND_WITH` or `HAS_CLOSE_FRIEND`, and add attributes describing the relationship (e.g., 'characterized by banter, wit, loyalty, affectionate teasing').",
+          "Establish relationships from 'Mercutio' to 'Benvolio Montague' with a predicate like `IS_FRIEND_WITH` or `HAS_COMPANION`, and add attributes describing the relationship (e.g., 'characterized by camaraderie, differing temperaments, Benvolio often rational foil').",
+          "Add an attribute or related fact to Mercutio indicating his lineage: `is_kinsman_to_the_prince`: `True`.",
+          "Link significant events to Mercutio and his friends: add a fact about the 'Queen Mab speech' (Act 1, Scene 4) mentioning Mercutio, Romeo, and the context.",
+          "Add an event node for 'Mercutio's Death' (Act 3, Scene 1) with details including the participants (Mercutio, Tybalt, Romeo, Benvolio), the cause (defending Romeo's honor), and his famous last words/curse ('A plague o' both your houses!')."
+        ]
+      },
+      "timestamp": "2025-12-17T22:54:10.966635"
+    },
+    {
+      "test_number": 2,
+      "question": {
+        "question": "Who are the members of the Montague family and what are their relationships to Romeo?",
+        "question_type": "relationship",
+        "expected_nodes": [
+          "Character",
+          "Family"
+        ],
+        "expected_relationships": [
+          "MEMBER_OF",
+          "RELATED_TO"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (romeo:Character {name: 'Romeo'})\nMATCH (montagueFamily:Family {name: 'Montague'})\nMATCH (familyMember:Character)-[:BELONGS_TO]->(montagueFamily)\nWHERE familyMember <> romeo\nOPTIONAL MATCH (familyMember)-[rel]-(romeo)\nRETURN\n    familyMember.name AS FamilyMemberName,\n    COLLECT(DISTINCT TYPE(rel)) AS RelationshipsToRomeo,\n    romeo.name AS RelatedToCharacter\nORDER BY FamilyMemberName",
+        "results": [],
+        "structured_answer": "Based on the query results, no members of the Montague family or their relationships to Romeo could be identified. The database search yielded no information, so specific names and familial connections cannot be provided from the available data."
+      },
+      "web_answer": {
+        "web_answer": "The Montague family in William Shakespeare's *Romeo and Juliet* consists of several key members who are directly related to or closely associated with Romeo. Their relationships and roles are integral to the play's tragic narrative:\n\n*   **Lord Montague (Old Montague):** Romeo's father and the patriarch of the Montague house. He is a primary figure in the long-standing, bitter feud with the Capulets. Initially, he expresses deep concern over Romeo's melancholy (Act 1, Scene 1) and later mourns his son's death, reconciling with Lord Capulet at the play's tragic conclusion (Act 5, Scene 3).\n*   **Lady Montague:** Romeo's mother. She shares her husband's concern for their son's emotional state (Act 1, Scene 1). Lady Montague tragically dies of grief due to Romeo's banishment from Verona, a fact reported by Lord Montague in Act 5, Scene 3: \"Alas, my liege, my wife is dead tonight; Grief of my son's exile hath stopp'd her breath.\"\n*   **Romeo Montague:** The central male protagonist of the play. He is a young, passionate nobleman whose love for Juliet transcends the family feud but ultimately leads to his demise.\n*   **Benvolio:** Romeo's cousin and a trusted, loyal friend. His name, derived from Latin for 'goodwill,' reflects his often peace-making attempts, such as trying to prevent fights (Act 1, Scene 1; Act 3, Scene 1). He acts as a confidant to Romeo, particularly concerning Romeo's initial infatuation with Rosaline, and later recounts the events of Mercutio's and Tybalt's deaths to Prince Escalus (Act 3, Scene 1).\n*   **Mercutio:** While not a blood Montague, Mercutio is Romeo's very close friend and often aligns with the Montagues against the Capulets. He is also a kinsman to Prince Escalus. Known for his sharp wit, elaborate speeches (e.g., the Queen Mab speech in Act 1, Scene 4), and boisterous personality, his death at the hands of Tybalt (Act 3, Scene 1) is a critical turning point that fuels Romeo's desire for revenge and leads to his banishment.\n*   **Balthasar:** Romeo's loyal servant. Balthasar plays a pivotal, albeit unintentional, role in the tragedy by informing Romeo of Juliet's apparent death (Act 5, Scene 1). This misinformation prompts Romeo's desperate return to Verona and his subsequent suicide. Balthasar accompanies Romeo to the Capulet tomb and is later apprehended by the watch.\n*   **Abram:** A servant of the Montague household. He appears in the opening scene, involved in the street brawl instigated by the Capulet servants, Sampson and Gregory (Act 1, Scene 1).\n*   **Other Servants:** The Montague household also includes unnamed servants who are part of the family's retinue and are briefly seen, particularly during the initial street brawl, highlighting the extent of the family's conflict.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare's Romeo and Juliet: Act 1, Scene 1",
+          "Shakespeare's Romeo and Juliet: Act 1, Scene 4",
+          "Shakespeare's Romeo and Juliet: Act 3, Scene 1",
+          "Shakespeare's Romeo and Juliet: Act 5, Scene 1",
+          "Shakespeare's Romeo and Juliet: Act 5, Scene 3"
+        ],
+        "key_details": [
+          "Lord Montague is Romeo's father and patriarch.",
+          "Lady Montague is Romeo's mother; dies of grief from Romeo's banishment.",
+          "Benvolio is Romeo's cousin and peace-making friend.",
+          "Mercutio is Romeo's close friend (not a Montague by blood, kinsman to the Prince); his death is a catalyst.",
+          "Balthasar is Romeo's loyal servant; informs Romeo of Juliet's 'death'.",
+          "Abram is a Montague servant; involved in the opening brawl."
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database answer is completely inaccurate and incomplete. It states that no members of the Montague family or their relationships to Romeo could be identified, which directly contradicts the authoritative answer and the play's text. The 'No results returned' from the raw graph data confirms that the knowledge graph holds no information relevant to this fundamental query about the protagonist's family. This represents a total failure to provide any useful or correct data.",
+        "discrepancies": [
+          "The graph database claims 'no members of the Montague family or their relationships to Romeo could be identified,' while the authoritative answer identifies at least seven distinct individuals plus other servants, and their specific relationships to Romeo.",
+          "The graph database implies a lack of data, whereas the authoritative answer provides extensive, foundational information from Shakespeare's play."
+        ],
+        "missing_data": [
+          "Lord Montague (Romeo's father, patriarch)",
+          "Lady Montague (Romeo's mother, dies of grief)",
+          "Romeo Montague (the central protagonist, whose family is being queried)",
+          "Benvolio (Romeo's cousin and friend)",
+          "Mercutio (Romeo's close friend, not a Montague by blood, kinsman to Prince Escalus)",
+          "Balthasar (Romeo's loyal servant)",
+          "Abram (Montague servant)",
+          "Other unnamed Montague servants"
+        ],
+        "correct_elements": [],
+        "recommendations": [
+          "Add 'Lord Montague' as a node with a 'father_of' relationship to 'Romeo Montague'.",
+          "Add 'Lady Montague' as a node with a 'mother_of' relationship to 'Romeo Montague'.",
+          "Add 'Benvolio' as a node with a 'cousin_of' and 'friend_of' relationship to 'Romeo Montague'.",
+          "Add 'Mercutio' as a node with a 'close_friend_of' relationship to 'Romeo Montague' and a 'kinsman_of' relationship to 'Prince Escalus'.",
+          "Add 'Balthasar' as a node with a 'loyal_servant_of' relationship to 'Romeo Montague'.",
+          "Add 'Abram' as a node with a 'servant_of' relationship to 'Montague Household' (and indirectly Romeo).",
+          "Ensure character attributes like 'role', 'key actions', and 'death cause' are included for each character (e.g., Lady Montague's death from grief, Mercutio's death as a catalyst).",
+          "Include metadata about the source (e.g., 'Shakespeare: Romeo and Juliet') for all facts."
+        ]
+      },
+      "timestamp": "2025-12-17T22:55:03.452085"
+    },
+    {
+      "test_number": 3,
+      "question": {
+        "question": "Which characters are involved in the events leading to Tybalt's death?",
+        "question_type": "event",
+        "expected_nodes": [
+          "Character",
+          "Event"
+        ],
+        "expected_relationships": [
+          "KILLS",
+          "INVOLVED_IN"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (tybalt:Character {name: \"Tybalt\"})\n\n// Find characters directly involved in Tybalt's death (the killer) \nOPTIONAL MATCH (killerOfTybalt:Character)-[:KILLS]->(tybalt)\nWHERE NOT killerOfTybalt.name = tybalt.name\n\n// Find characters involved in direct conflicts (fights, challenges, provocations) with Tybalt\nOPTIONAL MATCH (charWithTybalt:Character)-[r_tybalt_conflict:FIGHTS|CHALLENGE_FROM|CHALLENGE_TO|PROVOKE|ATTEMPTS_TO_HELP]->(tybalt)\nWHERE NOT charWithTybalt.name = tybalt.name\n\n// Find characters Tybalt initiated conflicts with\nOPTIONAL MATCH (tybalt)-[r_tybalt_initiates:FIGHTS|CHALLENGE_FROM|CHALLENGE_TO|PROVOKE]->(charTybaltTargets:Character)\nWHERE NOT charTybaltTargets.name = tybalt.name\n\n// Identify Mercutio, whose death by Tybalt is a primary event leading to Tybalt's death\nOPTIONAL MATCH (mercutio:Character {name: \"Mercutio\"})\nOPTIONAL MATCH (tybalt)-[:KILLS]->(mercutio)\n\n// Find characters involved in conflicts (fights, challenges, attempts to help) related to Mercutio during this sequence\nOPTIONAL MATCH (charWithMercutio:Character)-[r_mercutio_conflict:FIGHTS|CHALLENGE_FROM|CHALLENGE_TO|PROVOKE|ATTEMPTS_TO_HELP]->(mercutio)\nWHERE NOT charWithMercutio.name = mercutio.name AND NOT charWithMercutio.name = tybalt.name\n\n// Collect all identified characters, ensuring uniqueness\nWITH tybalt, killerOfTybalt, mercutio, \n     COLLECT(DISTINCT charWithTybalt) AS directly_conflicting_with_tybalt,\n     COLLECT(DISTINCT charTybaltTargets) AS tybalt_targets,\n     COLLECT(DISTINCT charWithMercutio) AS directly_conflicting_with_mercutio\n\nUNWIND (\n    [tybalt] +\n    CASE WHEN killerOfTybalt IS NOT NULL THEN [killerOfTybalt] ELSE [] END +\n    CASE WHEN mercutio IS NOT NULL THEN [mercutio] ELSE [] END +\n    directly_conflicting_with_tybalt +\n    tybalt_targets +\n    directly_conflicting_with_mercutio\n) AS involved_char\n\nRETURN DISTINCT involved_char.name AS CharacterInvolved\nORDER BY CharacterInvolved",
+        "results": [],
+        "structured_answer": "Based on the provided graph database query results, no characters could be identified as being involved in the events leading to Tybalt's death. The query returned no information regarding these specific events or the characters associated with them, indicating the data is either incomplete or unavailable for this query."
+      },
+      "web_answer": {
+        "web_answer": "The events leading directly to Tybalt's death in Shakespeare's *Romeo and Juliet* involve a critical confrontation between several key characters, primarily **Tybalt**, **Mercutio**, **Romeo**, and **Benvolio**.\n\n1.  **Tybalt (Juliet's hot-headed cousin, a Capulet):** Tybalt is the instigator of the deadly confrontation in Act 3, Scene 1. Still enraged by Romeo's uninvited presence at the Capulet feast (Act 1, Scene 5), Tybalt actively seeks out Romeo to challenge him to a duel. His aggressive nature and deep-seated hatred for the Montagues fuel his desire for this fight.\n\n2.  **Romeo (A Montague, secretly married to Juliet):** Having just married Juliet, Romeo is now kin to Tybalt, a fact Tybalt is unaware of. When challenged, Romeo attempts to de-escalate the situation, refusing to fight Tybalt and speaking of a newfound love for him, which Tybalt misinterprets as cowardice. Romeo's attempts at peace are central to the initial conflict's dynamic.\n\n3.  **Mercutio (Kinsman to Prince Escalus and Romeo's close friend):** Mercutio misinterprets Romeo's peaceful stance as a \"dishonourable, vile submission\" (Act 3, Scene 1). Feeling Romeo's honour has been impugned and unwilling to see his friend stand down, Mercutio steps forward to fight Tybalt himself. Their duel begins.\n\n4.  **Romeo's Intervention and Mercutio's Death:** During the duel between Mercutio and Tybalt, Romeo attempts to intervene, stepping between the two to break up the fight. Tragically, it is at this moment, \"under Romeo's arm,\" that Tybalt delivers a fatal stab to Mercutio. Mercutio dies shortly after, famously cursing both the Montague and Capulet houses: \"A plague o' both your houses!\" (Act 3, Scene 1). Mercutio's death is the immediate catalyst for Romeo's change of heart from peace to vengeance.\n\n5.  **Romeo's Revenge and Tybalt's Death:** Enraged and grief-stricken by Mercutio's death, Romeo casts aside his earlier peaceful intentions. He challenges Tybalt to a duel of vengeance. In the ensuing fight, Romeo ultimately slays Tybalt.\n\n6.  **Benvolio (Romeo's cousin and friend, a Montague):** Benvolio is present throughout the entire confrontation. He attempts to keep the peace from the outset, urging the combatants to withdraw from the public eye (\"We talk here in the public haunt of men: / Either withdraw unto some private place, / Or reason coldly of your grievances, / Or else depart; here all eyes gaze on us,\" Act 3, Scene 1). He witnesses Mercutio's death, urges Romeo to flee after Tybalt is killed, and later recounts the entire, accurate sequence of events to Prince Escalus, acting as a crucial witness and narrator.\n\nThe context of the long-standing Montague-Capulet feud, Romeo's secret marriage, and Mercutio's loyalty and hot-headed sense of honour are all critical nuances driving these fatal events in Act 3, Scene 1.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare's *Romeo and Juliet*, Act 1 Scene 5",
+          "Shakespeare's *Romeo and Juliet*, Act 3 Scene 1"
+        ],
+        "key_details": [
+          "Tybalt initiates confrontation with Romeo (Act 3, Scene 1).",
+          "Romeo, newly married to Juliet, attempts to de-escalate.",
+          "Mercutio challenges Tybalt after Romeo's refusal.",
+          "Romeo intervenes in Mercutio and Tybalt's duel.",
+          "Tybalt fatally stabs Mercutio under Romeo's arm.",
+          "Mercutio curses both houses upon dying.",
+          "Romeo, in revenge, fights and kills Tybalt.",
+          "Benvolio witnesses all events and reports to Prince Escalus."
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database answer is completely inaccurate and provides no useful data in response to the question. It explicitly states that 'no characters could be identified' and that 'no information regarding these specific events or the characters associated with them' was returned. This directly contradicts the authoritative answer, which clearly identifies four central characters and details their involvement in the events leading to Tybalt's death. The database query yielded an empty result set, indicating a fundamental lack of the necessary data to answer the question.",
+        "discrepancies": [
+          "The graph database answer states 'no characters could be identified', which is factually incorrect as the authoritative answer identifies Tybalt, Mercutio, Romeo, and Benvolio.",
+          "The graph database answer claims 'no information regarding these specific events' was returned, whereas the authoritative answer details the entire sequence of events leading to Tybalt's death."
+        ],
+        "missing_data": [
+          "Character: Tybalt",
+          "Character: Mercutio",
+          "Character: Romeo",
+          "Character: Benvolio",
+          "Event: Tybalt initiates confrontation with Romeo (Act 3, Scene 1).",
+          "Event: Romeo attempts to de-escalate the situation.",
+          "Event: Mercutio challenges Tybalt.",
+          "Event: Romeo intervenes in Mercutio and Tybalt's duel.",
+          "Event: Tybalt fatally stabs Mercutio.",
+          "Event: Mercutio curses both houses upon dying.",
+          "Event: Romeo fights and kills Tybalt in revenge.",
+          "Event: Benvolio witnesses all events.",
+          "Relationship: Tybalt's role as instigator.",
+          "Relationship: Romeo's role in attempting peace and then seeking revenge.",
+          "Relationship: Mercutio's role in challenging Tybalt and his death.",
+          "Relationship: Benvolio's role as witness and reporter.",
+          "Context: The Capulet-Montague feud.",
+          "Context: Romeo's secret marriage to Juliet."
+        ],
+        "correct_elements": [],
+        "recommendations": [
+          "Populate the graph database with nodes for all key characters (Tybalt, Mercutio, Romeo, Benvolio, Prince Escalus, Juliet).",
+          "Create nodes for significant events (e.g., 'Confrontation in Act 3 Scene 1', 'Mercutio's Death', 'Tybalt's Death').",
+          "Establish relationships between characters and events (e.g., 'Tybalt INITIATES Confrontation', 'Romeo IS_INVOLVED_IN Confrontation', 'Mercutio IS_KILLED_IN Confrontation', 'Tybalt KILLS Mercutio', 'Romeo KILLS Tybalt', 'Benvolio WITNESSES Confrontation', 'Benvolio REPORTS_TO Prince Escalus').",
+          "Add properties to event nodes to include details like the act/scene number and key outcomes.",
+          "Ensure relationships are typed and reflect the nature of the involvement (e.g., 'Instigator', 'Participant', 'Victim', 'Perpetrator', 'Witness').",
+          "Include contextual information as properties or separate nodes/relationships (e.g., 'Tybalt's motivation: hatred for Montagues')."
+        ]
+      },
+      "timestamp": "2025-12-17T22:56:07.430238"
+    },
+    {
+      "test_number": 4,
+      "question": {
+        "question": "What locations are significant to the events leading to the tragic ending of Romeo and Juliet?",
+        "question_type": "location",
+        "expected_nodes": [
+          "Location",
+          "Event"
+        ],
+        "expected_relationships": [
+          "TAKES_PLACE_IN",
+          "LEADS_TO"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (play:Play {title: \"Romeo and Juliet\"})\n\n// Find locations directly related to Romeo's actions/state leading to the tragedy\nOPTIONAL MATCH (play)-[:FEATURES]->(romeo:Character {name: \"Romeo\"})\nOPTIONAL MATCH (romeo)-[r_rel:DIES|SUICIDES|BURIED_IN|AWAKENS_IN|BANISHED_TO|MARRIAGE_LOCATION]->(l_r:Location)\nWITH COLLECT(DISTINCT l_r) AS romeo_locs\n\n// Find locations directly related to Juliet's actions/state leading to the tragedy\nMATCH (play:Play {title: \"Romeo and Juliet\"})-[:FEATURES]->(juliet:Character {name: \"Juliet\"})\nOPTIONAL MATCH (juliet)-[j_rel:DIES|SUICIDES|BURIED_IN|AWAKENS_IN|MARRIAGE_LOCATION]->(l_j:Location)\nWITH romeo_locs, COLLECT(DISTINCT l_j) AS juliet_locs\n\n// Find location where Juliet receives the potion (typically Friar Lawrence's cell)\nOPTIONAL MATCH (juliet)-[:RECEIVES_POTION_FROM]->(friar:Character {name: \"Friar Lawrence\"})\nOPTIONAL MATCH (friar)-[:LOCATED_AT]->(l_potion_cell:Location)\nWITH romeo_locs, juliet_locs, COLLECT(DISTINCT l_potion_cell) AS potion_locs\n\n// Find locations of significant death events (e.g., Tybalt, Mercutio, Paris) that contribute to the tragedy\nOPTIONAL MATCH (death_event:Action)-[:LOCATED_AT]->(l_event:Location)\nWHERE EXISTS((death_event)-[:CAUSES_DEATH]->(:Character {name: \"Tybalt\"}))\n   OR EXISTS((death_event)-[:CAUSES_DEATH]->(:Character {name: \"Mercutio\"}))\n   OR EXISTS((death_event)-[:CAUSES_DEATH]->(:Character {name: \"Paris\"}))\nWITH romeo_locs, juliet_locs, potion_locs, COLLECT(DISTINCT l_event) AS event_locs\n\n// Include the overarching cities (Verona, Mantua) as primary settings for the tragedy\nOPTIONAL MATCH (city:Location)\nWHERE city.name IN [\"Verona\", \"Mantua\"]\nWITH romeo_locs, juliet_locs, potion_locs, event_locs, COLLECT(DISTINCT city) AS city_locs\n\n// Combine all collected lists, unwind, filter out nulls, and return distinct names\nWITH romeo_locs + juliet_locs + potion_locs + event_locs + city_locs AS all_locations\nUNWIND all_locations AS loc_node\nWHERE loc_node IS NOT NULL\nRETURN DISTINCT loc_node.name AS SignificantLocation\nORDER BY SignificantLocation",
+        "results": [],
+        "structured_answer": "Based on the provided query results, no specific locations significant to the events leading to the tragic ending of Romeo and Juliet could be identified. The query yielded no results, indicating that this information is missing or incomplete from the current dataset."
+      },
+      "web_answer": {
+        "web_answer": "The tragic events of Shakespeare's Romeo and Juliet are deeply intertwined with several significant locations within and around Verona, each contributing crucially to the unfolding disaster.\n\n**1. The Streets of Verona (e.g., Act 1, Scene 1; Act 3, Scene 1):** From the very opening scene, the public streets establish Verona as a city perpetually embroiled in the feud between the Montagues and Capulets. These public spaces are sites of frequent brawls, showcasing the deep-seated hatred that underpins the entire play. Most critically, it is in a public street (Act 3, Scene 1) that Mercutio, Romeo's close friend and Prince Escalus's kinsman, is fatally wounded by Tybalt, Juliet's hot-headed cousin, during a heated confrontation. Romeo's subsequent revenge-killing of Tybalt in the same locale directly leads to his banishment by Prince Escalus, a pivotal event that separates the lovers and drives many of the subsequent desperate actions.\n\n**2. Capulet's House (specifically the Great Hall, Juliet's Balcony, and Juliet's Chamber):** This location is central to the genesis and development of Romeo and Juliet's love and the pressures placed upon them.\n    *   **The Great Hall (Act 1, Scene 5):** During the Capulet feast, Romeo, a Montague, daringly attends and first lays eyes on Juliet. It is here they meet, experience instant mutual attraction, share their first kiss, and heartbreakingly discover each other's opposing family identities. This clandestine meeting ignites their forbidden love.\n    *   **Juliet's Balcony (Act 2, Scene 2):** In the iconic \"balcony scene,\" Romeo secretly returns to the Capulet orchard. He overhears Juliet expressing her love for him, and they confess their devotion to each other. Here, they exchange vows and plan their secret marriage, solidifying their commitment against the backdrop of their families' hatred.\n    *   **Juliet's Chamber (Act 3, Scene 5; Act 4, Scene 3):** Following their secret wedding and Romeo's banishment, this room becomes the scene of their final, agonizing night together before Romeo's departure for Mantua. It is also where Lady Capulet and Lord Capulet force Juliet's engagement to Paris, leading her to desperate measures to avoid bigamy and reunite with Romeo. Later, Juliet takes the Friar's sleeping potion alone in this chamber.\n\n**3. Friar Laurence's Cell (e.g., Act 2, Scene 3; Act 3, Scene 3; Act 4, Scene 1):** The Friar's humble cell serves as a sanctuary and a place of ill-fated counsel.\n    *   **The Secret Wedding (Act 2, Scene 6):** Friar Laurence, hoping to end the family feud, agrees to marry Romeo and Juliet here in secret. This act, while intended for good, ultimately deepens the secrecy and complexity of their situation.\n    *   **Romeo's Despair and Banishment (Act 3, Scene 3):** After killing Tybalt, Romeo seeks refuge and comfort here, where Friar Laurence informs him of Prince Escalus's decree of banishment, driving Romeo to suicidal despair before he is convinced to flee to Mantua.\n    *   **Planning the Deception (Act 4, Scene 1):** When Juliet is desperate to avoid marrying Paris, she returns to the Friar's cell. It is here that the Friar concocts the perilous plan involving the sleeping potion, designed to make Juliet appear dead, allowing her to escape to Romeo. This elaborate and risky scheme directly backfires, leading to the final misunderstanding.\n\n**4. Mantua (Act 5, Scene 1):** Though Romeo is banished to Mantua, its significance lies in what transpires there. It is in Mantua that Romeo receives the devastatingly false news from Balthasar, his servant, that Juliet is dead. This misinformation, combined with his profound despair, prompts him to purchase a potent poison from an Apothecary and resolve to return to Verona to die beside Juliet, sealing their fate.\n\n**5. Capulet's Tomb/Churchyard (Act 5, Scene 3):** This is the ultimate tragic setting where all the threads of fate converge.\n    *   Here, Paris, mourning Juliet and laying flowers, confronts Romeo. In the ensuing duel, Paris is killed by Romeo.\n    *   Romeo then enters the tomb, finds Juliet seemingly lifeless, and, believing her truly dead, consumes the poison, dying beside her.\n    *   Shortly thereafter, Juliet awakens to find Romeo dead. Distraught, and seeing the empty poison vial, she uses Romeo's dagger to take her own life, fulfilling the play's tragic promise. The discovery of their bodies here ultimately leads to the public revelation of their secret marriage and the long-awaited reconciliation of the Montague and Capulet families, albeit at a terrible cost.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare's Romeo and Juliet: Act 1, Scene 1",
+          "Shakespeare's Romeo and Juliet: Act 1, Scene 5 (Capulet Feast)",
+          "Shakespeare's Romeo and Juliet: Act 2, Scene 2 (Balcony Scene)",
+          "Shakespeare's Romeo and Juliet: Act 2, Scene 3 (Friar Laurence's Cell, Romeo's confession)",
+          "Shakespeare's Romeo and Juliet: Act 2, Scene 6 (Secret Wedding)",
+          "Shakespeare's Romeo and Juliet: Act 3, Scene 1 (Street Brawl, Mercutio/Tybalt Deaths)",
+          "Shakespeare's Romeo and Juliet: Act 3, Scene 3 (Friar Laurence's Cell, Romeo's Banishment)",
+          "Shakespeare's Romeo and Juliet: Act 3, Scene 5 (Juliet's Chamber, Forced Marriage to Paris)",
+          "Shakespeare's Romeo and Juliet: Act 4, Scene 1 (Friar Laurence's Cell, Potion Plan)",
+          "Shakespeare's Romeo and Juliet: Act 4, Scene 3 (Juliet's Chamber, Potion Taken)",
+          "Shakespeare's Romeo and Juliet: Act 5, Scene 1 (Mantua, False News of Juliet's Death)",
+          "Shakespeare's Romeo and Juliet: Act 5, Scene 3 (Capulet's Tomb, Deaths of Paris, Romeo, and Juliet)"
+        ],
+        "key_details": [
+          "Verona: General setting of the Montague-Capulet feud.",
+          "Verona Streets: Location of initial brawls and critical duel where Mercutio and Tybalt are killed.",
+          "Capulet's House (Great Hall): Where Romeo and Juliet first meet and fall in love at the feast.",
+          "Capulet's House (Juliet's Balcony): Site of Romeo and Juliet's vows of love and marriage plans.",
+          "Capulet's House (Juliet's Chamber): Location of Romeo and Juliet's last night; where Juliet is forced to accept Paris, and later takes the sleeping potion.",
+          "Friar Laurence's Cell: Location of Romeo and Juliet's secret marriage; where Friar devises the sleeping potion plan.",
+          "Mantua: City of Romeo's banishment, where he receives false news of Juliet's death and buys poison.",
+          "Capulet's Tomb/Churchyard: Final tragic setting where Paris, Romeo, and Juliet die."
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database answer explicitly states that 'no specific locations significant to the events leading to the tragic ending of Romeo and Juliet could be identified' and that the 'query yielded no results, indicating that this information is missing or incomplete'. This is a complete failure to provide any relevant information to the question. The authoritative answer clearly outlines multiple critical locations, demonstrating that the graph's response is entirely inaccurate due to a lack of data.",
+        "discrepancies": [
+          "The graph states that no locations could be identified, which directly contradicts the authoritative answer's extensive list of significant locations.",
+          "The graph implies an absence of data, while the authoritative answer demonstrates that such data is rich and readily available from the source text."
+        ],
+        "missing_data": [
+          "Verona (general setting, public streets)",
+          "Capulet's House (Great Hall, Juliet's Balcony, Juliet's Chamber)",
+          "Friar Laurence's Cell",
+          "Mantua",
+          "Capulet's Tomb/Churchyard",
+          "Relationships between these locations and specific events (e.g., brawls, meetings, marriages, deaths)",
+          "Relationships between characters and locations/events."
+        ],
+        "correct_elements": [
+          "The graph's self-assessment that the information is 'missing or incomplete' is accurate, though it doesn't provide any useful data for the question itself."
+        ],
+        "recommendations": [
+          "Populate the knowledge graph with nodes representing all significant locations mentioned in Shakespeare's Romeo and Juliet (e.g., 'Verona', 'Capulet's House', 'Friar Laurence's Cell', 'Mantua', 'Capulet's Tomb').",
+          "Create specific sub-nodes or attributes for different parts of major locations (e.g., 'Capulet's Great Hall', 'Juliet's Balcony', 'Juliet's Chamber').",
+          "Establish relationships between these location nodes and key event nodes (e.g., 'location_of_event' relationship type).",
+          "Connect events to characters involved (e.g., 'Mercutio_dies_at_Verona_Streets').",
+          "Include properties for locations describing their significance to the plot, especially concerning the tragic ending.",
+          "Ensure that the data includes the causality and progression of events tied to these locations (e.g., Mercutio's death leading to Romeo's banishment, the potion plan in Friar's cell leading to misunderstanding, Mantua for false news)."
+        ]
+      },
+      "timestamp": "2025-12-17T22:58:09.592685"
+    },
+    {
+      "test_number": 5,
+      "question": {
+        "question": "Who is Juliet's cousin and what is his relationship to Romeo?",
+        "question_type": "multi_hop",
+        "expected_nodes": [
+          "Character",
+          "Family"
+        ],
+        "expected_relationships": [
+          "COUSIN_OF",
+          "ENEMY_OF"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (juliet:Character {name: 'Juliet'})\nMATCH (juliet)-[:COUSIN]->(cousin:Character)\nMATCH (romeo:Character {name: 'Romeo'})\nOPTIONAL MATCH (cousin)-[rel]-(romeo)\nRETURN\n    juliet.name AS Juliet,\n    cousin.name AS JulietsCousin,\n    collect(DISTINCT type(rel)) AS RelationshipToRomeo,\n    romeo.name AS Romeo",
+        "results": [],
+        "structured_answer": "Based on the query results, no information was found identifying Juliet's cousin or his relationship to Romeo. Therefore, I cannot determine who Juliet's cousin is or describe his connection to Romeo."
+      },
+      "web_answer": {
+        "web_answer": "Juliet's cousin is **Tybalt Capulet**. He is a fiery and aggressive character, often referred to as the \"Prince of Cats\" by Mercutio due to his skillful and confrontational swordsmanship. Tybalt is a staunch Capulet and embodies the long-standing animosity between the two feuding families in Verona.",
+        "confidence": "high",
+        "sources": [
+          "Romeo and Juliet: Act 1, Scene 1",
+          "Romeo and Juliet: Act 1, Scene 5",
+          "Romeo and Juliet: Act 2, Scene 4",
+          "Romeo and Juliet: Act 2, Scene 6",
+          "Romeo and Juliet: Act 3, Scene 1"
+        ],
+        "key_details": [
+          "Tybalt Capulet is Juliet's cousin.",
+          "He is a hot-headed and skilled swordsman.",
+          "Tybalt is a fierce antagonist to Romeo due to the Capulet-Montague feud.",
+          "After Romeo secretly marries Juliet, Tybalt technically becomes Romeo's kinsman by marriage, a fact Tybalt is unaware of.",
+          "Tybalt challenges Romeo to a duel (Act 3, Scene 1).",
+          "Tybalt kills Romeo's friend Mercutio (Act 3, Scene 1).",
+          "Romeo, in revenge for Mercutio's death, kills Tybalt (Act 3, Scene 1).",
+          "Tybalt's death leads to Romeo's banishment from Verona."
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database completely failed to answer the question. It explicitly stated that no information was found regarding Juliet's cousin or his relationship to Romeo. This indicates a fundamental and critical gap in the knowledge graph, as Tybalt Capulet is a major character with a pivotal role and a well-defined relationship to both Juliet and Romeo in Shakespeare's play. No useful data was returned.",
+        "discrepancies": [
+          "The graph's assertion that 'no information was found identifying Juliet's cousin or his relationship to Romeo' is a direct contradiction of the factual and widely known information from Shakespeare's text."
+        ],
+        "missing_data": [
+          "Juliet's cousin is Tybalt Capulet.",
+          "Tybalt's character traits (fiery, aggressive, skilled swordsman, 'Prince of Cats').",
+          "Tybalt's strong allegiance to the Capulet family and his embodiment of the Capulet-Montague feud.",
+          "Tybalt's role as a fierce antagonist to Romeo.",
+          "The fact that Tybalt technically becomes Romeo's kinsman by marriage after Romeo marries Juliet.",
+          "Tybalt challenging Romeo to a duel.",
+          "Tybalt killing Mercutio.",
+          "Romeo killing Tybalt in revenge.",
+          "Tybalt's death leading to Romeo's banishment from Verona."
+        ],
+        "correct_elements": [
+          "None of the factual information about the play or the characters requested by the question was returned. The statement 'no information was found' is an accurate reflection of the graph's internal state (empty for this query) but not a correct answer to the question about the subject matter."
+        ],
+        "recommendations": [
+          "Add 'Tybalt Capulet' as an entity to the graph.",
+          "Establish the relationship: `(Juliet)-[HAS_COUSIN]->(Tybalt)`.",
+          "Add properties to Tybalt describing his character: `fiery`, `aggressive`, `skilled_swordsman`, `nickname: Prince of Cats`, `family: Capulet`.",
+          "Establish the primary relationship between Tybalt and Romeo: `(Tybalt)-[ANTAGONIST_OF]->(Romeo)`.",
+          "Add the nuanced familial relationship by marriage: `(Tybalt)-[KINSMAN_BY_MARRIAGE_TO]->(Romeo)` with an attribute `aware: false`.",
+          "Add key events involving Tybalt, Romeo, and Mercutio: `(Tybalt)-[CHALLENGED]->(Romeo, in_duel)`, `(Tybalt)-[KILLED]->(Mercutio)`, `(Romeo)-[KILLED]->(Tybalt)`.",
+          "Connect Tybalt's death to the resulting consequence: `(Tybalt's_Death)-[LEADS_TO]->(Romeo's_Banishment)`."
+        ]
+      },
+      "timestamp": "2025-12-17T22:58:49.527734"
+    }
+  ],
+  "summary": {
+    "overall_grade": "F (Failing)",
+    "strengths": [
+      "None of the factual information about the play or the characters requested by the question was returned. The statement 'no information was found' is an accurate reflection of the graph's internal state (empty for this query) but not a correct answer to the question about the subject matter.",
+      "The graph's self-assessment that the information is 'missing or incomplete' is accurate, though it doesn't provide any useful data for the question itself.",
+      "None. The answer returned is a categorical denial of information that exists, making it entirely incorrect."
+    ],
+    "weaknesses": [
+      "Event: Tybalt initiates confrontation with Romeo (Act 3, Scene 1).",
+      "Benvolio Montague (as Mercutio's companion, with detailed relationship characteristics)",
+      "Event: Tybalt fatally stabs Mercutio.",
+      "Verona (general setting, public streets)",
+      "The nature of Mercutio's close friendship with Romeo (banter, wit, loyalty, teasing, concern for honor)",
+      "Event: Romeo attempts to de-escalate the situation.",
+      "Event: Mercutio curses both houses upon dying.",
+      "Context: Romeo's secret marriage to Juliet.",
+      "Tybalt killing Mercutio.",
+      "Relationship: Mercutio's role in challenging Tybalt and his death."
+    ],
+    "discrepancies_found": [
+      "The graph database answer claims 'no information regarding these specific events' was returned, whereas the authoritative answer details the entire sequence of events leading to Tybalt's death.",
+      "The graph states that no locations could be identified, which directly contradicts the authoritative answer's extensive list of significant locations.",
+      "The graph database states that 'the relationships between Mercutio and his friends cannot be determined,' which is a direct consequence of its initial incorrect premise and is also false as these relationships are well-documented in the play.",
+      "The graph implies an absence of data, while the authoritative answer demonstrates that such data is rich and readily available from the source text.",
+      "The graph database answer states 'no characters could be identified', which is factually incorrect as the authoritative answer identifies Tybalt, Mercutio, Romeo, and Benvolio.",
+      "The graph's assertion that 'no information was found identifying Juliet's cousin or his relationship to Romeo' is a direct contradiction of the factual and widely known information from Shakespeare's text.",
+      "The graph database implies a lack of data, whereas the authoritative answer provides extensive, foundational information from Shakespeare's play.",
+      "The graph database states 'no friends were found for Mercutio,' which is factually incorrect. Mercutio has two well-established friends: Romeo Montague and Benvolio Montague.",
+      "The graph database claims 'no members of the Montague family or their relationships to Romeo could be identified,' while the authoritative answer identifies at least seven distinct individuals plus other servants, and their specific relationships to Romeo."
+    ],
+    "recommendations": [
+      "Connect Tybalt's death to the resulting consequence: `(Tybalt's_Death)-[LEADS_TO]->(Romeo's_Banishment)`.",
+      "Add 'Benvolio' as a node with a 'cousin_of' and 'friend_of' relationship to 'Romeo Montague'.",
+      "Establish relationships from 'Mercutio' to 'Romeo Montague' with a predicate like `IS_BEST_FRIEND_WITH` or `HAS_CLOSE_FRIEND`, and add attributes describing the relationship (e.g., 'characterized by banter, wit, loyalty, affectionate teasing').",
+      "Add 'Balthasar' as a node with a 'loyal_servant_of' relationship to 'Romeo Montague'.",
+      "Ensure that the data includes the causality and progression of events tied to these locations (e.g., Mercutio's death leading to Romeo's banishment, the potion plan in Friar's cell leading to misunderstanding, Mantua for false news).",
+      "Include contextual information as properties or separate nodes/relationships (e.g., 'Tybalt's motivation: hatred for Montagues').",
+      "Populate the graph database with nodes for all key characters (Tybalt, Mercutio, Romeo, Benvolio, Prince Escalus, Juliet).",
+      "Add 'Mercutio' as a node with a 'close_friend_of' relationship to 'Romeo Montague' and a 'kinsman_of' relationship to 'Prince Escalus'.",
+      "Add nodes for 'Romeo Montague' and 'Benvolio Montague'.",
+      "Add the nuanced familial relationship by marriage: `(Tybalt)-[KINSMAN_BY_MARRIAGE_TO]->(Romeo)` with an attribute `aware: false`.",
+      "Link significant events to Mercutio and his friends: add a fact about the 'Queen Mab speech' (Act 1, Scene 4) mentioning Mercutio, Romeo, and the context.",
+      "Add 'Lady Montague' as a node with a 'mother_of' relationship to 'Romeo Montague'.",
+      "Add properties to Tybalt describing his character: `fiery`, `aggressive`, `skilled_swordsman`, `nickname: Prince of Cats`, `family: Capulet`.",
+      "Include metadata about the source (e.g., 'Shakespeare: Romeo and Juliet') for all facts.",
+      "Add an event node for 'Mercutio's Death' (Act 3, Scene 1) with details including the participants (Mercutio, Tybalt, Romeo, Benvolio), the cause (defending Romeo's honor), and his famous last words/curse ('A plague o' both your houses!')."
+    ]
+  }
+}

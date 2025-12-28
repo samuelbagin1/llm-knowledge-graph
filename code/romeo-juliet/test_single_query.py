@@ -8,6 +8,7 @@ import os
 import json
 from neo4j import GraphDatabase
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -18,15 +19,11 @@ driver = GraphDatabase.driver(
     auth=(os.getenv("NEO4J_USER"), os.getenv("NEO4J_PASSWORD"))
 )
 
-openai_client = ChatGoogleGenerativeAI(
-    model="gpt-4o",
+openai_client = ChatOpenAI(
+    model="gpt-5-mini",
     temperature=0,
-    openai_client=os.getenv("OPENAI_API_KEY")
+    api_key=os.getenv("OPENAI_API_KEY")
 )
-
-print("="*70)
-print("SINGLE QUERY TEST")
-print("="*70)
 
 # Check database status
 with driver.session() as session:
@@ -38,17 +35,14 @@ with driver.session() as session:
     print(f"  Relationships: {rel_count}")
 
     if node_count == 0:
-        print("\n⚠️  WARNING: Database is EMPTY!")
-        print("Please run the graph population script first:")
-        print("  python3 code/romeo-juliet/geeks4geeks.py")
+        print("\nWARNING: Database is EMPTY!")
         driver.close()
         exit(1)
+        
+        
+        
 
     # Get schema
-    print("\n" + "-"*70)
-    print("Graph Schema:")
-    print("-"*70)
-
     node_labels = session.run("CALL db.labels()").data()
     print("\nNode Types:")
     for label in node_labels:
@@ -60,6 +54,10 @@ with driver.session() as session:
     for rel in rel_types:
         count = session.run(f"MATCH ()-[r:`{rel['relationshipType']}`]->() RETURN count(r) as count").data()[0]['count']
         print(f"  - {rel['relationshipType']}: {count} relationships")
+        
+        
+        
+        
 
     # Sample nodes
     print("\nSample Nodes:")
@@ -70,6 +68,10 @@ with driver.session() as session:
     """).data()
     for node in sample_nodes:
         print(f"  - {node['label']}: {node['props']}")
+        
+        
+        
+        
 
     # Sample relationships
     print("\nSample Relationships:")
@@ -86,17 +88,19 @@ with driver.session() as session:
         from_id = rel['from_props'].get('id', rel['from_props'].get('name', 'unknown'))
         to_id = rel['to_props'].get('id', rel['to_props'].get('name', 'unknown'))
         print(f"  ({rel['from_label']}: {from_id}) --[{rel['rel_type']}]--> ({rel['to_label']}: {to_id})")
+        
+        
 
 # Test query
 test_question = "Who are the friends of Mercutio in the play?"
 
-print("\n" + "="*70)
-print("TESTING QUERY GENERATION")
-print("="*70)
 print(f"\nQuestion: {test_question}")
 
 # Generate query
 prompt = f"""You are a Neo4j Cypher expert. Based on the schema information provided, generate a Cypher query to answer this question.
+
+Node Labels: {node_labels}
+Relationship Types: {rel_types}
 
 Question: {test_question}
 
@@ -104,21 +108,21 @@ Generate a simple, broad query that will find relevant information. Use the prop
 
 Return ONLY a valid Cypher query, no explanation or JSON formatting."""
 
-response = gemini_client.invoke(prompt)
+response = openai_client.invoke(prompt)
 cypher_query = response.content.strip()
+
+print("\nCypher Query Generated: ", cypher_query)
 
 # Clean up response
 if cypher_query.startswith("```"):
     lines = cypher_query.split("\n")
     cypher_query = "\n".join([l for l in lines if not l.startswith("```")])
+    
+    
 
-print(f"\nGenerated Query:")
-print(cypher_query)
 
 # Execute query
-print("\n" + "-"*70)
-print("Query Results:")
-print("-"*70)
+print("\n\nQuery Results:\n")
 
 with driver.session() as session:
     try:
@@ -131,7 +135,7 @@ with driver.session() as session:
             for i, record in enumerate(records[:5], 1):
                 print(f"{i}. {record}")
         else:
-            print("❌ NO RESULTS FOUND")
+            print("NO RESULTS FOUND")
             print("\nTrying simple fallback query:")
             fallback = "MATCH (n)-[r]-(m) RETURN n, r, m LIMIT 10"
             print(f"  {fallback}")
@@ -142,13 +146,9 @@ with driver.session() as session:
 
             if len(fallback_records) > 0:
                 for i, record in enumerate(fallback_records[:3], 1):
-                    print(f"{i}. {record}")
+                    print(f"{i}. {record}\n")
 
     except Exception as e:
-        print(f"❌ Query failed: {e}")
+        print(f"Query failed: {e}")
 
 driver.close()
-
-print("\n" + "="*70)
-print("TEST COMPLETE")
-print("="*70)

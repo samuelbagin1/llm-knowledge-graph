@@ -1,0 +1,393 @@
+{
+  "test_run_date": "2025-12-28T16:50:30.184616",
+  "total_tests": 5,
+  "successful_tests": 5,
+  "failed_tests": 0,
+  "average_score": 22.5,
+  "min_score": 5,
+  "max_score": 40,
+  "scores": [
+    0,
+    0,
+    0,
+    5,
+    40
+  ],
+  "individual_tests": [
+    {
+      "test_number": 1,
+      "question": {
+        "question": "Who are the friends of Mercutio in the play?",
+        "question_type": "relationship",
+        "expected_nodes": [
+          "Character"
+        ],
+        "expected_relationships": [
+          "FRIENDS_WITH"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (mercutio:Character)-[r:FRIEND|FRIEND_OF]-(friend:Character)\nWHERE mercutio.id CONTAINS 'Mercutio'\nRETURN mercutio, r, friend\nLIMIT 25",
+        "results": [],
+        "structured_answer": "Based on the query results, no friends of Mercutio in the play were found. The database returned no information regarding Mercutio's friendships."
+      },
+      "web_answer": {
+        "web_answer": "Mercutio's closest friends in William Shakespeare's *Romeo and Juliet* are undoubtedly **Romeo Montague** and **Benvolio Montague**. While Mercutio is a kinsman to Prince Escalus and not a Montague by name, he is deeply embedded within their social circle through his intimate friendship with Romeo.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare's Romeo and Juliet, Act 1 Scene 4",
+          "Shakespeare's Romeo and Juliet, Act 2 Scene 1",
+          "Shakespeare's Romeo and Juliet, Act 2 Scene 4",
+          "Shakespeare's Romeo and Juliet, Act 3 Scene 1"
+        ],
+        "key_details": [
+          "Romeo Montague is Mercutio's intimate friend.",
+          "Benvolio Montague is a consistent companion to Mercutio and Romeo.",
+          "Mercutio delivers the Queen Mab speech to Romeo in Act 1, Scene 4, demonstrating their close bond.",
+          "Mercutio sacrifices his life in Act 3, Scene 1, by fighting Tybalt in Romeo's defense.",
+          "Benvolio acts as a peacemaker and observer, often seen with Mercutio and Romeo.",
+          "Mercutio, though not a Montague by blood, is part of their social circle due to his friendship with Romeo.",
+          "Mercutio is a kinsman to Prince Escalus."
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database answer is completely inaccurate and provides no useful information. It explicitly states that 'no friends of Mercutio in the play were found' and that 'the database returned no information regarding Mercutio's friendships'. This directly contradicts the authoritative answer, which clearly identifies Romeo Montague and Benvolio Montague as Mercutio's closest friends. The graph database failed to return any correct data, making its response fundamentally wrong and unhelpful.",
+        "discrepancies": [
+          "The graph database states 'no friends of Mercutio... were found', which is factually incorrect.",
+          "The graph database returned 'no information regarding Mercutio's friendships', while the authoritative answer clearly identifies two key friends and contextual details."
+        ],
+        "missing_data": [
+          "Romeo Montague is Mercutio's intimate friend.",
+          "Benvolio Montague is a consistent companion to Mercutio and Romeo.",
+          "Mercutio delivers the Queen Mab speech to Romeo in Act 1, Scene 4, demonstrating their close bond.",
+          "Mercutio sacrifices his life in Act 3, Scene 1, by fighting Tybalt in Romeo's defense.",
+          "Benvolio acts as a peacemaker and observer, often seen with Mercutio and Romeo.",
+          "Mercutio, though not a Montague by blood, is part of their social circle due to his friendship with Romeo.",
+          "Mercutio is a kinsman to Prince Escalus."
+        ],
+        "correct_elements": [],
+        "recommendations": [
+          "Add nodes for 'Mercutio', 'Romeo Montague', and 'Benvolio Montague'.",
+          "Establish a `FRIEND_OF` relationship between 'Mercutio' and 'Romeo Montague'.",
+          "Establish a `FRIEND_OF` relationship between 'Mercutio' and 'Benvolio Montague'.",
+          "Add attributes or relationships detailing specific interactions demonstrating their friendship, e.g., 'Mercutio DELIVERS_SPEECH_TO Romeo (Queen Mab)', 'Mercutio DEFENDS Romeo AGAINST Tybalt'.",
+          "Add information about Mercutio's social circle and his kinship to Prince Escalus, linking his character details.",
+          "Ensure the graph can identify individuals who are 'friends' based on the contextual relationships and interactions in the play."
+        ]
+      },
+      "timestamp": "2025-12-28T16:47:07.828969"
+    },
+    {
+      "test_number": 2,
+      "question": {
+        "question": "Who is Juliet's cousin and what is his relationship to Tybalt?",
+        "question_type": "multi_hop",
+        "expected_nodes": [
+          "Character",
+          "Family"
+        ],
+        "expected_relationships": [
+          "COUSIN_OF",
+          "RIVAL"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (juliet:Character)\nWHERE juliet.id CONTAINS 'Juliet'\nMATCH (juliet)-[:COUSIN]-(cousin:Character)\nMATCH (cousin)-[rel_to_tybalt]-(tybalt:Character)\nWHERE tybalt.id CONTAINS 'Tybalt'\nRETURN juliet, cousin, rel_to_tybalt, tybalt\nLIMIT 25",
+        "results": [],
+        "structured_answer": "Based on the query results, no information was found to identify Juliet's cousin or their relationship to Tybalt. Therefore, I cannot answer the question using the provided data."
+      },
+      "web_answer": {
+        "web_answer": "Juliet's cousin in Shakespeare's *Romeo and Juliet* is **Tybalt**. He is the son of Lady Capulet's brother, making him Juliet's first cousin. Given that Tybalt *is* Juliet's cousin, the second part of the question, \"what is *his* relationship to Tybalt?\", refers to Tybalt's own identity and role within the play. Tybalt is presented as a hot-headed, aggressive, and fiercely loyal member of the Capulet family, embodying the virulent hatred for the Montagues that fuels the play's central conflict. He is a skilled swordsman, often called the 'Prince of Cats' by Mercutio, and is quick to draw his weapon at any perceived insult to his family's honour. His intense animosity towards Romeo, specifically, culminates in the pivotal duel where he kills Mercutio and is subsequently slain by Romeo, precipitating much of the play's tragic events.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare, William. *Romeo and Juliet*. Act 1, Scene 1 (Tybalt's introduction and animosity towards Montagues)",
+          "Shakespeare, William. *Romeo and Juliet*. Act 1, Scene 5, Line 78 (Lord Capulet refers to Tybalt as \"my nephew\", confirming his relationship to Juliet)",
+          "Shakespeare, William. *Romeo and Juliet*. Act 2, Scene 4, Line 19 (Mercutio's reference to Tybalt as \"Prince of Cats\")",
+          "Shakespeare, William. *Romeo and Juliet*. Act 3, Scene 1 (The fatal duel between Tybalt, Mercutio, and Romeo)"
+        ],
+        "key_details": [
+          "Juliet's cousin is Tybalt.",
+          "Tybalt is a Capulet.",
+          "Lord Capulet refers to Tybalt as his \"nephew\", establishing the familial link.",
+          "Tybalt is characterized by his fiery temper and intense hatred for the Montagues.",
+          "He is a skilled swordsman (often called the 'Prince of Cats').",
+          "Tybalt kills Mercutio.",
+          "Romeo kills Tybalt in revenge for Mercutio's death.",
+          "Tybalt's actions are a primary catalyst for the play's tragic turn."
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database completely failed to provide any information relevant to the question. It explicitly states that 'no information was found to identify Juliet's cousin or their relationship to Tybalt,' which is a direct contradiction of the authoritative answer that identifies Tybalt as Juliet's cousin. Therefore, the graph offers no useful data to answer the question, indicating a fundamental gap in its knowledge about key character relationships and attributes in Romeo and Juliet.",
+        "discrepancies": [
+          "The graph database states 'no information was found to identify Juliet's cousin,' which is incorrect. Juliet's cousin is Tybalt.",
+          "The graph database states 'no information was found... [regarding] their relationship to Tybalt,' which is also incorrect, as Tybalt *is* Juliet's cousin, and his relationship to himself (his characteristics and role) is well-defined in the play."
+        ],
+        "missing_data": [
+          "Juliet's cousin is Tybalt.",
+          "Tybalt is a Capulet.",
+          "Lord Capulet refers to Tybalt as his \"nephew\", establishing the familial link.",
+          "Tybalt is characterized by his fiery temper and intense hatred for the Montagues.",
+          "He is a skilled swordsman (often called the 'Prince of Cats').",
+          "Tybalt kills Mercutio.",
+          "Romeo kills Tybalt in revenge for Mercutio's death.",
+          "Tybalt's actions are a primary catalyst for the play's tragic turn."
+        ],
+        "correct_elements": [
+          "None. The statement 'Therefore, I cannot answer the question using the provided data' is an accurate reflection of the graph's *internal state* (lack of data), but it is not a correct answer to the question itself."
+        ],
+        "recommendations": [
+          "Add nodes for key characters such as Juliet, Tybalt, Mercutio, Romeo, and Lord Capulet.",
+          "Establish familial relationships, specifically `IS_COUSIN_OF` between Tybalt and Juliet, and `IS_NEPHEW_OF` between Tybalt and Lord Capulet.",
+          "Add properties to character nodes, e.g., for Tybalt: `temperament` (fiery, aggressive), `loyalty` (Capulet family), `skill` (swordsman), `nickname` ('Prince of Cats').",
+          "Include event nodes or relationships to capture plot points, such as `KILLED_BY` (Mercutio, Tybalt) and `KILLED_BY` (Tybalt, Romeo).",
+          "Add relationships indicating thematic roles or impacts, such as `IS_CATALYST_FOR` (Tybalt's actions, tragic events)."
+        ]
+      },
+      "timestamp": "2025-12-28T16:48:15.133276"
+    },
+    {
+      "test_number": 3,
+      "question": {
+        "question": "Which character is responsible for the death of Mercutio and what is their relationship to Romeo?",
+        "question_type": "event",
+        "expected_nodes": [
+          "Character"
+        ],
+        "expected_relationships": [
+          "KILLS",
+          "FRIEND_OF"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (killer:Character)-[killed_rel:KILLS]->(mercutio:Character)\nWHERE mercutio.id CONTAINS 'Mercutio'\nMATCH (killer)-[relationship_to_romeo]-(romeo:Character)\nWHERE romeo.id CONTAINS 'Romeo'\nRETURN killer, relationship_to_romeo, romeo\nLIMIT 25",
+        "results": [],
+        "structured_answer": "Based on the query results, the character responsible for Mercutio's death and their relationship to Romeo could not be determined as no relevant information was found."
+      },
+      "web_answer": {
+        "web_answer": "The character directly responsible for the death of Mercutio is **Tybalt Capulet**. Tybalt is a kinsman to Lady Capulet and Juliet, making him Juliet's cousin. Through Romeo's secret marriage to Juliet, Tybalt becomes Romeo's kinsman by marriage, a fact unknown to Tybalt (and indeed, to Mercutio) at the time of the fatal encounter.\n\nThe events unfold in **Act 3, Scene 1** of Shakespeare's *Romeo and Juliet*. Tybalt, still incensed by Romeo's attendance at the Capulet feast (Act 1, Scene 5), confronts Romeo seeking a duel. Romeo, having just secretly married Juliet, attempts to pacify Tybalt, addressing him as \"good Capulet\" and stating, \"I have to love thee better than thou canst devise till thou shalt know the reason of my love.\" Romeo's conciliatory tone and refusal to fight are interpreted by Mercutio as a \"dishonourable, vile submission.\"\n\nDisgusted, Mercutio challenges Tybalt himself, exclaiming, \"O calm, dishonourable, vile submission! Alla stoccata carries it away. [Draws his sword] Tybalt, you ratcatcher, will you walk?\" A duel ensues. During the fight, Romeo, attempting to restore peace and prevent bloodshed, intervenes by stepping between Mercutio and Tybalt, saying, \"Gentle Mercutio, put thy rapier up.\" It is at this critical moment, as Romeo obstructs Mercutio's vision and movement, that Tybalt seizes the opportunity to thrust his sword under Romeo's arm, fatally wounding Mercutio. Mercutio later dies, cursing \"A plague o' both your houses!\" (Act 3, Scene 1, Lines 96-97), thus sealing the tragic fate of the young lovers.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare's Romeo and Juliet, Act 1, Scene 5",
+          "Shakespeare's Romeo and Juliet, Act 3, Scene 1"
+        ],
+        "key_details": [
+          "Mercutio is killed by Tybalt.",
+          "Tybalt is Juliet's cousin.",
+          "Tybalt becomes Romeo's kinsman by marriage to Juliet.",
+          "The killing occurs in Act 3, Scene 1.",
+          "Romeo inadvertently contributes to Mercutio's death by stepping between Mercutio and Tybalt during their duel.",
+          "Mercutio curses both the Montague and Capulet houses as he dies."
+        ]
+      },
+      "comparison": {
+        "score": 0,
+        "accuracy_assessment": "The graph database answer is completely inaccurate and incomplete. It explicitly states that no relevant information was found, which is a direct contradiction of the authoritative answer that provides all the requested details. The graph failed to identify the killer, the relationship, or any contextual information related to Mercutio's death.",
+        "discrepancies": [
+          "The graph database answer states 'could not be determined as no relevant information was found', which is factually incorrect as the authoritative text contains all the required information.",
+          "The graph failed to identify Tybalt as the killer.",
+          "The graph failed to identify Tybalt's relationship to Romeo."
+        ],
+        "missing_data": [
+          "Mercutio is killed by Tybalt.",
+          "Tybalt is Juliet's cousin.",
+          "Tybalt becomes Romeo's kinsman by marriage to Juliet.",
+          "The killing occurs in Act 3, Scene 1.",
+          "Romeo inadvertently contributes to Mercutio's death by stepping between Mercutio and Tybalt during their duel.",
+          "Mercutio curses both the Montague and Capulet houses as he dies.",
+          "Details about the context of the duel (Tybalt's challenge, Romeo's refusal, Mercutio's intervention)."
+        ],
+        "correct_elements": [
+          "None. The graph returned no useful information."
+        ],
+        "recommendations": [
+          "Add 'Character' entities for all main characters (Mercutio, Tybalt, Romeo, Juliet, Lady Capulet).",
+          "Add 'Event' entities for key scenes, especially 'Act 3, Scene 1 - Duel'.",
+          "Establish 'KILLED_BY' relationship between Mercutio and Tybalt.",
+          "Establish 'COUSIN_OF' relationship between Tybalt and Juliet.",
+          "Establish 'MARRIED_TO' relationship between Romeo and Juliet.",
+          "Establish 'KINSMAN_BY_MARRIAGE_TO' relationship between Tybalt and Romeo, and specify that this relationship is 'unknown to Tybalt'.",
+          "Add 'PART_OF_SCENE' relationship for the killing event to 'Act 3, Scene 1'.",
+          "Add details about Romeo's intervention in the duel as an 'ACTION' or 'CONTRIBUTION' to the 'Event' of Mercutio's death.",
+          "Add 'QUOTES' relationship or 'LAST_WORDS' attribute for Mercutio's curse.",
+          "Ensure the graph can infer or directly state complex relationships like 'kinsman by marriage' based on simpler 'MARRIED_TO' and 'COUSIN_OF' relationships."
+        ]
+      },
+      "timestamp": "2025-12-28T16:48:36.812780"
+    },
+    {
+      "test_number": 4,
+      "question": {
+        "question": "What locations are significant to the relationship between Romeo and Juliet throughout the play?",
+        "question_type": "location",
+        "expected_nodes": [
+          "Location",
+          "Character"
+        ],
+        "expected_relationships": [
+          "VISITS",
+          "MEETS",
+          "LOVES"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (romeo:Character) WHERE romeo.id CONTAINS 'Romeo'\nMATCH (juliet:Character) WHERE juliet.id CONTAINS 'Juliet'\nMATCH (romeo)-[r_r_loc]-(location:Location)\nMATCH (juliet)-[r_j_loc]-(location)\nRETURN romeo, r_r_loc, juliet, r_j_loc, location\nLIMIT 25",
+        "results": [],
+        "structured_answer": "Based on the graph database query results, no specific locations were found to be significant to the relationship between Romeo and Juliet throughout the play. The query yielded no results, indicating that this information is currently missing or not present in the database."
+      },
+      "web_answer": {
+        "web_answer": "Throughout Shakespeare's 'Romeo and Juliet,' several locations are profoundly significant to the evolving relationship between the titular characters, marking key milestones from their initial meeting to their tragic demise.\n\n1.  **Capulet's House (Specifically, the Great Hall):** This is the foundational location where Romeo and Juliet's relationship ignites. Romeo, a Montague, crashes the Capulet feast (Act I, Scene V), where he first sees Juliet. Their eyes meet, and they share an immediate, intense attraction, exchanging a sonnet's worth of dialogue and their first kiss. This forbidden encounter sets the stage for their entire passionate, ill-fated romance, highlighting the conflict between their families from the outset.\n\n2.  **Capulet's Orchard / Juliet's Balcony:** This iconic setting (Act II, Scene II) is where Romeo and Juliet truly declare their love and commit to each other. Romeo, having sneaked into the Capulet orchard, overhears Juliet's famous soliloquy expressing her love for him despite his Montague name. They then engage in a secret conversation across the balcony, exchanging vows of love and agreeing to marry. This private space becomes a sanctuary for their burgeoning love, away from the watchful eyes and hostilities of Verona.\n\n3.  **Friar Laurence's Cell:** This location serves as the secret altar for their union (Act II, Scene VI). After professing their love, Romeo and Juliet, accompanied by the Nurse as a witness, are secretly married by Friar Laurence in his cell (Act II, Scene VI). This act solidifies their commitment and forms the legal, albeit clandestine, bond between them. Later, the Friar's cell also becomes the place where Juliet seeks counsel and receives the sleeping potion (Act IV, Scene I) in a desperate attempt to reunite with Romeo.\n\n4.  **Juliet's Bedroom:** This intimate space is where Romeo and Juliet consummate their marriage (Act III, Scene V) and share their only night together as husband and wife. Following Romeo's banishment for killing Tybalt, the Nurse facilitates his secret visit. This location witnesses their tender, yet agonizing, farewell at dawn, a poignant moment of love mixed with the sorrow of impending separation, foreshadowing their ultimate fate.\n\n5.  **Capulet Family Tomb:** The final, most tragic location for their relationship is the Capulet family tomb (Act V, Scene III). Believing Juliet to be truly dead, Romeo arrives and takes his own life beside her. Shortly after, Juliet awakens, discovers Romeo's lifeless body, and, unable to live without him, stabs herself with his dagger. This tomb becomes their final, eternal resting place, where their individual deaths unite them in a permanent, albeit tragic, embrace, ultimately ending the family feud and fulfilling the prophecy of their 'star-crossed' love.",
+        "confidence": "high",
+        "sources": [
+          "Act I, Scene V",
+          "Act II, Scene II",
+          "Act II, Scene VI",
+          "Act III, Scene V",
+          "Act IV, Scene I",
+          "Act V, Scene III"
+        ],
+        "key_details": [
+          "Capulet's House: First meeting, first kiss, forbidden love",
+          "Capulet's Orchard/Juliet's Balcony: Declaration of love, vow to marry, iconic 'balcony scene'",
+          "Friar Laurence's Cell: Secret marriage of Romeo and Juliet, Friar's role in their plans, Juliet receives sleeping potion",
+          "Juliet's Bedroom: Wedding night, consummation of marriage, emotional farewell after Romeo's banishment",
+          "Capulet Family Tomb: Tragic deaths of Romeo and Juliet, final reunion in death, end of family feud"
+        ]
+      },
+      "comparison": {
+        "score": 5,
+        "accuracy_assessment": "The graph database answer is almost entirely inaccurate and incomplete. It failed to identify any of the numerous, critically significant locations relevant to Romeo and Juliet's relationship, directly contradicting the authoritative answer and the play's fundamental plot points. The statement 'no specific locations were found to be significant' is factually incorrect regarding the play's content, even if it accurately reflects the current state of the database. It provides no useful data for the user's query.",
+        "discrepancies": [
+          "The graph database states 'no specific locations were found to be significant', which is a direct contradiction to the authoritative answer that identifies five major locations.",
+          "The graph database implies that such information is missing or not present, whereas the play provides abundant details."
+        ],
+        "missing_data": [
+          "Capulet's House (Great Hall): Location of first meeting, first kiss, and ignition of forbidden love.",
+          "Capulet's Orchard / Juliet's Balcony: Location of the declaration of love, vows to marry, and the iconic 'balcony scene'.",
+          "Friar Laurence's Cell: Location of the secret marriage, Friar's planning, and where Juliet receives the sleeping potion.",
+          "Juliet's Bedroom: Location of their wedding night, consummation, and poignant farewell after Romeo's banishment.",
+          "Capulet Family Tomb: Location of their tragic deaths, final reunion in death, and the ultimate end of the family feud.",
+          "Relationships between characters and these locations, and the specific events that occurred at each."
+        ],
+        "correct_elements": [
+          "The graph database correctly identified that *itself* did not contain the requested information (i.e., 'The query yielded no results, indicating that this information is currently missing or not present in the database'). However, this is a reflection of its own limitations, not an accurate answer to the actual question about the play."
+        ],
+        "recommendations": [
+          "Add nodes for significant locations mentioned in 'Romeo and Juliet' (e.g., 'Capulet's House', 'Friar Laurence's Cell', 'Capulet Family Tomb').",
+          "Establish relationships between characters and locations, indicating actions or events (e.g., '(Romeo, Juliet)-[MEET_AT]->(Capulet's House)', '(Romeo, Juliet)-[MARRIED_AT]->(Friar Laurence's Cell)', '(Romeo, Juliet)-[DIED_AT]->(Capulet Family Tomb)').",
+          "Add attributes to these relationships or location nodes describing their significance to the relationship (e.g., 'event: First Kiss', 'event: Secret Marriage', 'event: Tragic Deaths').",
+          "Create a schema for representing scenes and acts, linking them to locations and characters to provide context for events.",
+          "Populate the database with explicit information about plot points and character interactions at various locations."
+        ]
+      },
+      "timestamp": "2025-12-28T16:49:17.467328"
+    },
+    {
+      "test_number": 5,
+      "question": {
+        "question": "Who is the cousin of Tybalt and what is his relationship to Juliet?",
+        "question_type": "multi_hop",
+        "expected_nodes": [
+          "Character",
+          "Family"
+        ],
+        "expected_relationships": [
+          "COUSIN_OF",
+          "MEMBER_OF"
+        ]
+      },
+      "graph_answer": {
+        "cypher_query": "MATCH (tybalt:Character)-[:COUSIN]-(cousin:Character)\nWHERE tybalt.id CONTAINS 'Tybalt'\nMATCH (cousin)-[rel_to_juliet]-(juliet:Character)\nWHERE juliet.id CONTAINS 'Juliet'\nRETURN cousin, rel_to_juliet, juliet\nLIMIT 25",
+        "results": [],
+        "structured_answer": "Based on the provided query results, no information was found regarding who is the cousin of Tybalt. Therefore, the identity of Tybalt's cousin and their relationship to Juliet cannot be determined from these results."
+      },
+      "web_answer": {
+        "web_answer": "In William Shakespeare's *Romeo and Juliet*, the play does not explicitly name a specific male character who is presented as 'the cousin of Tybalt' and who also has a separate relationship to Juliet. However, Tybalt himself is a key member of the Capulet family and is Juliet's first cousin.\n\nLady Capulet, Juliet's mother, refers to Tybalt as 'my nephew' in Act 1, Scene 5, line 70, when she attempts to prevent him from confronting Romeo at the Capulet feast. She reiterates this familial connection in Act 3, Scene 1, line 108, while grieving Tybalt's death. In Elizabethan English, the term 'nephew' was often used to describe a close kinsman, including a first cousin, not exclusively a brother's or sister's son as it is commonly understood today. Therefore, Tybalt's direct relationship to Juliet is that of her first cousin.",
+        "confidence": "high",
+        "sources": [
+          "Shakespeare's Romeo and Juliet, Act 1, Scene 5",
+          "Shakespeare's Romeo and Juliet, Act 3, Scene 1"
+        ],
+        "key_details": [
+          "No distinct male character is named as Tybalt's cousin in the play.",
+          "Tybalt is Juliet's first cousin.",
+          "Lady Capulet refers to Tybalt as 'my nephew'.",
+          "The term 'nephew' in Elizabethan English encompassed close kinsmen like cousins."
+        ]
+      },
+      "comparison": {
+        "score": 40,
+        "accuracy_assessment": "The graph database answer accurately reflects the lack of data within its own system ('No results returned'). It correctly infers that no distinct male character named as Tybalt's cousin could be found, which aligns with one aspect of the authoritative answer. However, the answer is profoundly incomplete as it entirely misses the most crucial piece of information from the authoritative text: that Tybalt himself is Juliet's first cousin. This omission of a core familial relationship between two main characters renders the answer significantly incomplete and largely unhelpful in fully addressing the question's intent.",
+        "discrepancies": [
+          "The graph answer states that the relationship of Tybalt's cousin to Juliet cannot be determined, which is true for a *non-existent named distinct male cousin*. However, it completely fails to provide the direct and essential relationship that Tybalt himself holds with Juliet (first cousin), thereby missing the spirit of the question.",
+          "The graph's lack of information does not distinguish between 'no data found' and 'no such character exists in the text' for the cousin aspect, although the authoritative answer clarifies the latter for a distinct male character."
+        ],
+        "missing_data": [
+          "The fact that Tybalt is Juliet's first cousin.",
+          "The textual evidence from Lady Capulet referring to Tybalt as 'my nephew' (Act 1, Scene 5, line 70; Act 3, Scene 1, line 108).",
+          "The explanation of the term 'nephew' in Elizabethan English encompassing close kinsmen like cousins."
+        ],
+        "correct_elements": [
+          "The graph database answer correctly indicates that its query results returned no information for a specific named character who is Tybalt's cousin, which is implicitly true in the play for a distinct male character other than Tybalt himself."
+        ],
+        "recommendations": [
+          "Add a direct relationship between Tybalt and Juliet: `(Tybalt)-[IS_COUSIN_OF]->(Juliet)`.",
+          "Include additional relationships or attributes that capture Lady Capulet's references, e.g., `(Lady Capulet)-[REFERS_TO]->(Tybalt)` with an attribute `as: 'nephew'`, and contextual information like `scene: 'Act 1, Scene 5'`, `scene: 'Act 3, Scene 1'`.",
+          "Add explanatory notes or properties to relationships to clarify historical linguistic nuances, such as the meaning of 'nephew' in Elizabethan English, potentially linked to a `TERM` entity or as a property of the `IS_COUSIN_OF` relationship."
+        ]
+      },
+      "timestamp": "2025-12-28T16:50:30.182809"
+    }
+  ],
+  "summary": {
+    "overall_grade": "F (Failing)",
+    "strengths": [
+      "None. The statement 'Therefore, I cannot answer the question using the provided data' is an accurate reflection of the graph's *internal state* (lack of data), but it is not a correct answer to the question itself.",
+      "None. The graph returned no useful information.",
+      "The graph database answer correctly indicates that its query results returned no information for a specific named character who is Tybalt's cousin, which is implicitly true in the play for a distinct male character other than Tybalt himself.",
+      "The graph database correctly identified that *itself* did not contain the requested information (i.e., 'The query yielded no results, indicating that this information is currently missing or not present in the database'). However, this is a reflection of its own limitations, not an accurate answer to the actual question about the play."
+    ],
+    "weaknesses": [
+      "Romeo Montague is Mercutio's intimate friend.",
+      "Tybalt is characterized by his fiery temper and intense hatred for the Montagues.",
+      "Benvolio acts as a peacemaker and observer, often seen with Mercutio and Romeo.",
+      "He is a skilled swordsman (often called the 'Prince of Cats').",
+      "The fact that Tybalt is Juliet's first cousin.",
+      "Tybalt is Juliet's cousin.",
+      "Mercutio delivers the Queen Mab speech to Romeo in Act 1, Scene 4, demonstrating their close bond.",
+      "Tybalt becomes Romeo's kinsman by marriage to Juliet.",
+      "The explanation of the term 'nephew' in Elizabethan English encompassing close kinsmen like cousins.",
+      "Benvolio Montague is a consistent companion to Mercutio and Romeo."
+    ],
+    "discrepancies_found": [
+      "The graph answer states that the relationship of Tybalt's cousin to Juliet cannot be determined, which is true for a *non-existent named distinct male cousin*. However, it completely fails to provide the direct and essential relationship that Tybalt himself holds with Juliet (first cousin), thereby missing the spirit of the question.",
+      "The graph failed to identify Tybalt as the killer.",
+      "The graph database states 'no specific locations were found to be significant', which is a direct contradiction to the authoritative answer that identifies five major locations.",
+      "The graph database states 'no information was found to identify Juliet's cousin,' which is incorrect. Juliet's cousin is Tybalt.",
+      "The graph database states 'no friends of Mercutio... were found', which is factually incorrect.",
+      "The graph failed to identify Tybalt's relationship to Romeo.",
+      "The graph database states 'no information was found... [regarding] their relationship to Tybalt,' which is also incorrect, as Tybalt *is* Juliet's cousin, and his relationship to himself (his characteristics and role) is well-defined in the play.",
+      "The graph database answer states 'could not be determined as no relevant information was found', which is factually incorrect as the authoritative text contains all the required information.",
+      "The graph's lack of information does not distinguish between 'no data found' and 'no such character exists in the text' for the cousin aspect, although the authoritative answer clarifies the latter for a distinct male character.",
+      "The graph database returned 'no information regarding Mercutio's friendships', while the authoritative answer clearly identifies two key friends and contextual details."
+    ],
+    "recommendations": [
+      "Establish 'KINSMAN_BY_MARRIAGE_TO' relationship between Tybalt and Romeo, and specify that this relationship is 'unknown to Tybalt'.",
+      "Add details about Romeo's intervention in the duel as an 'ACTION' or 'CONTRIBUTION' to the 'Event' of Mercutio's death.",
+      "Add attributes to these relationships or location nodes describing their significance to the relationship (e.g., 'event: First Kiss', 'event: Secret Marriage', 'event: Tragic Deaths').",
+      "Populate the database with explicit information about plot points and character interactions at various locations.",
+      "Ensure the graph can identify individuals who are 'friends' based on the contextual relationships and interactions in the play.",
+      "Establish relationships between characters and locations, indicating actions or events (e.g., '(Romeo, Juliet)-[MEET_AT]->(Capulet's House)', '(Romeo, Juliet)-[MARRIED_AT]->(Friar Laurence's Cell)', '(Romeo, Juliet)-[DIED_AT]->(Capulet Family Tomb)').",
+      "Add 'QUOTES' relationship or 'LAST_WORDS' attribute for Mercutio's curse.",
+      "Add attributes or relationships detailing specific interactions demonstrating their friendship, e.g., 'Mercutio DELIVERS_SPEECH_TO Romeo (Queen Mab)', 'Mercutio DEFENDS Romeo AGAINST Tybalt'.",
+      "Ensure the graph can infer or directly state complex relationships like 'kinsman by marriage' based on simpler 'MARRIED_TO' and 'COUSIN_OF' relationships.",
+      "Establish 'MARRIED_TO' relationship between Romeo and Juliet.",
+      "Include event nodes or relationships to capture plot points, such as `KILLED_BY` (Mercutio, Tybalt) and `KILLED_BY` (Tybalt, Romeo).",
+      "Add 'Character' entities for all main characters (Mercutio, Tybalt, Romeo, Juliet, Lady Capulet).",
+      "Establish 'COUSIN_OF' relationship between Tybalt and Juliet.",
+      "Add explanatory notes or properties to relationships to clarify historical linguistic nuances, such as the meaning of 'nephew' in Elizabethan English, potentially linked to a `TERM` entity or as a property of the `IS_COUSIN_OF` relationship.",
+      "Add a direct relationship between Tybalt and Juliet: `(Tybalt)-[IS_COUSIN_OF]->(Juliet)`."
+    ]
+  }
+}

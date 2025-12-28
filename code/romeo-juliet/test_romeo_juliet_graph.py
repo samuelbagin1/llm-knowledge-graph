@@ -169,39 +169,82 @@ Return ONLY the JSON object, no other text."""
         """
         print(f"\n  🔍 Querying graph database...")
 
-        # First, get schema information
+        # First, check if database has any data
+        with self.driver.session() as session:
+            node_count = session.run("MATCH (n) RETURN count(n) as count").data()[0]['count']
+            rel_count = session.run("MATCH ()-[r]->() RETURN count(r) as count").data()[0]['count']
+
+            if node_count == 0:
+                print(f"  ⚠️  WARNING: Database is EMPTY (0 nodes, 0 relationships)")
+                print(f"  ⚠️  Please populate the database before running tests")
+            else:
+                print(f"  ℹ️  Database contains {node_count} nodes and {rel_count} relationships")
+
+        # Get schema information
         schema_info = self._get_graph_schema()
 
-        prompt = f"""You are a Neo4j Cypher expert. Generate a SIMPLE Cypher query to answer this question about Romeo and Juliet using the knowledge graph.
+        prompt = f"""You are a Neo4j Cypher expert. Generate a Cypher query to answer this question about Romeo and Juliet.
 
 Question: {question}
 
-Available graph schema:
+Available graph schema (CRITICAL - study the sample data to see actual property names):
 {schema_info}
 
-IMPORTANT RULES:
-1. Nodes use the 'id' property (NOT 'name') for text matching
-2. Use CONTAINS for text matching: WHERE n.id CONTAINS 'Romeo' (case-sensitive)
-3. Keep queries SIMPLE - avoid complex OPTIONAL MATCH chains
-4. Return actual node and relationship data: RETURN n, r, m (not just properties)
-5. Use pattern: MATCH (n)-[r]->(m) WHERE n.id CONTAINS 'keyword'
-6. Limit results to 25: LIMIT 25
+CRITICAL RULES FOR QUERY GENERATION:
+1. **EXAMINE THE SAMPLE NODES ABOVE** to see what properties actually exist (e.g., 'id', 'name', or both)
+2. **USE THE ACTUAL PROPERTY NAMES** shown in the sample data - do NOT assume property names
+3. For text matching, try MULTIPLE approaches to maximize matches:
+   - Use CONTAINS for partial matching: WHERE n.id CONTAINS 'Romeo'
+   - Try case-insensitive: WHERE toLower(n.id) CONTAINS toLower('romeo')
+   - Try multiple properties: WHERE n.id CONTAINS 'Romeo' OR n.name CONTAINS 'Romeo'
+4. Keep queries SIMPLE and BROAD to ensure results:
+   - Start with simple patterns: MATCH (n)-[r]-(m)
+   - Add filters incrementally
+   - Use undirected relationships: -[r]- instead of -[r]-> when unsure of direction
+5. Return full nodes and relationships: RETURN n, r, m
+6. Always add: LIMIT 25
 
-BAD Example (too complex):
-MATCH (romeo:Character {{name: 'Romeo'}})
-MATCH (romeo)-[:FRIEND_OF]->(friend)
-RETURN friend.name
+QUERY STRATEGY - Use this decision tree:
+- For character questions: Look for Character nodes and their relationships
+- For relationship questions: Match patterns between two entities
+- For location questions: Look for Location nodes and connections
+- For event questions: Look for events and participating characters
+- When unsure: Use broad patterns and filter results
 
-GOOD Example (simple, uses 'id', uses CONTAINS):
-MATCH (n)-[r]-(m)
-WHERE n.id CONTAINS 'Romeo' OR m.id CONTAINS 'Romeo'
-RETURN n, r, m
+EXAMPLE QUERIES (adapt based on actual schema):
+
+Example 1 - Finding related entities:
+MATCH (romeo)-[r]-(other)
+WHERE romeo.id CONTAINS 'Romeo' OR toLower(romeo.id) CONTAINS 'romeo'
+RETURN romeo, r, other
 LIMIT 25
 
-Return your response as a JSON object with this structure:
+Example 2 - Multi-hop relationships:
+MATCH (person1)-[r1]-(intermediate)-[r2]-(person2)
+WHERE person1.id CONTAINS 'Romeo'
+  AND person2.id CONTAINS 'Juliet'
+RETURN person1, r1, intermediate, r2, person2
+LIMIT 25
+
+Example 3 - Broad search when entity name unclear:
+MATCH (a)-[r]-(b)
+WHERE toLower(a.id) CONTAINS 'mercutio'
+   OR toLower(b.id) CONTAINS 'mercutio'
+RETURN a, r, b
+LIMIT 25
+
+Example 4 - Finding specific relationship types:
+MATCH (source)-[r:FRIEND|FRIEND_OF|KNOWS]-(target)
+WHERE source.id CONTAINS 'Mercutio'
+RETURN source, r, target
+LIMIT 25
+
+IMPORTANT: If the sample data shows the database is empty or has very few nodes, generate a query anyway but mention this in the explanation.
+
+Return your response as a JSON object:
 {{
-  "cypher_query": "Your Cypher query here",
-  "explanation": "Brief explanation of what the query does"
+  "cypher_query": "Your Cypher query here - must be valid Cypher",
+  "explanation": "Brief explanation including any assumptions about property names based on the schema"
 }}
 
 Return ONLY the JSON object, no other text."""
@@ -240,6 +283,28 @@ Return ONLY the JSON object, no other text."""
 
             print(f"  ✓ Query returned {len(records)} results")
 
+            # If no results, try a fallback broader query
+            if len(records) == 0 and node_count > 0:
+                print(f"  ⚠️  No results found. Trying broader fallback query...")
+
+                # Extract key terms from question for fallback
+                fallback_query = """
+                MATCH (n)-[r]-(m)
+                RETURN n, r, m
+                LIMIT 50
+                """
+
+                try:
+                    result = session.run(fallback_query)
+                    fallback_records = [dict(record) for record in result]
+
+                    if len(fallback_records) > 0:
+                        print(f"  ℹ️  Fallback query returned {len(fallback_records)} results")
+                        print(f"  ℹ️  Will use LLM to filter relevant results")
+                        records = fallback_records
+                except:
+                    pass
+
         except Exception as e:
             print(f"  ✗ Query execution failed: {str(e)[:150]}")
             records = []
@@ -275,7 +340,7 @@ Return ONLY the answer text, no preamble or JSON formatting."""
         }
 
     def _get_graph_schema(self) -> str:
-        """Get Neo4j graph schema information"""
+        """Get Neo4j graph schema information with sample data"""
         try:
             with self.driver.session() as session:
                 # Get node labels
@@ -284,7 +349,26 @@ Return ONLY the answer text, no preamble or JSON formatting."""
                 # Get relationship types
                 rel_types = session.run("CALL db.relationshipTypes()").data()
 
-                # Get sample properties
+                # Get sample nodes with properties to understand schema
+                sample_nodes = session.run("""
+                    MATCH (n)
+                    WITH labels(n)[0] as label, n
+                    RETURN label, properties(n) as props
+                    LIMIT 10
+                """).data()
+
+                # Get sample relationships
+                sample_rels = session.run("""
+                    MATCH (a)-[r]->(b)
+                    RETURN labels(a)[0] as from_label,
+                           type(r) as rel_type,
+                           labels(b)[0] as to_label,
+                           properties(a) as from_props,
+                           properties(b) as to_props
+                    LIMIT 10
+                """).data()
+
+                # Build comprehensive schema
                 schema = "Node Types:\n"
                 for label in node_labels:
                     schema += f"  - {label['label']}\n"
@@ -292,6 +376,17 @@ Return ONLY the answer text, no preamble or JSON formatting."""
                 schema += "\nRelationship Types:\n"
                 for rel in rel_types:
                     schema += f"  - {rel['relationshipType']}\n"
+
+                # Add sample data to understand property names
+                schema += "\nSample Nodes (showing property structure):\n"
+                for node in sample_nodes[:5]:
+                    schema += f"  - {node['label']}: {node['props']}\n"
+
+                schema += "\nSample Relationships:\n"
+                for rel in sample_rels[:5]:
+                    from_id = rel['from_props'].get('id', rel['from_props'].get('name', 'unknown'))
+                    to_id = rel['to_props'].get('id', rel['to_props'].get('name', 'unknown'))
+                    schema += f"  - ({rel['from_label']}: {from_id}) --[{rel['rel_type']}]--> ({rel['to_label']}: {to_id})\n"
 
                 return schema
 

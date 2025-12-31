@@ -15,6 +15,7 @@ from neo4j import GraphDatabase
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
+from langchain.tools import tool
 
 # Load environment variables
 load_dotenv()
@@ -301,6 +302,19 @@ Return ONLY the JSON object, no other text."""
 
 
 
+    @tool
+    def search_database(self, cypher_query: str) -> List[Dict[str, Any]]:
+        """Execute Cypher query against Neo4j and return results"""
+
+        try:
+            with self.driver.session() as session:
+                result = session.run(cypher_query)
+                records = [dict(record) for record in result]
+
+            return records
+
+        except Exception as e:
+            return "An Exception occurred: " + str(e)
 
     # query database function
     def query_graph_database(self, question: str) -> Dict[str, Any]:

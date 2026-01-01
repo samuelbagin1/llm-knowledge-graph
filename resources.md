@@ -19,6 +19,8 @@ Construction of the Literature Graph in Semantic Scholar https://arxiv.org/pdf/1
 
 Knowledge Graphs using LangChain https://www.geeksforgeeks.org/artificial-intelligence/knowledge-graphs-using-langchain/
 
+Multi-model RAG: https://surrealdb.com/blog/multi-model-rag-with-langchain?utm_campaign=15830126-LangChain_2025&utm_source=ppc&utm_medium=Blog&utm_term=PPC&gad_source=1&gad_campaignid=23201995439&gbraid=0AAAAA-lwFdJVOJEyhysMG7Hg4ovFNdy4n&gclid=Cj0KCQiA6sjKBhCSARIsAJvYcpM4TxDfx_Uw6QsdN__b8SzHLKt_oQC4zvlwqu-VJ-86DFvYYCxi6hEaAoFREALw_wcB
+
 
 ## example
 UK working for legal documents https://github.com/ICLRandD/Blackstone

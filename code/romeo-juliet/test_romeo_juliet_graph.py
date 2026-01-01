@@ -259,17 +259,52 @@ Previously asked questions (DO NOT REPEAT):
 {previous_q_text if previous_q_text else "None yet"}
 
 Generate a question for iteration {iteration}/5. Try to vary the question type.
+"""
 
-Return your response as a JSON object with this exact structure:
-{{
-  "question": "The test question as a clear, specific question",
-  "question_type": "One of: relationship, character_attribute, event, location, multi_hop",
-  "expected_nodes": ["List of node types expected in answer, e.g., Character, Family, Location"],
-  "expected_relationships": ["List of relationship types expected, e.g., LOVES, MEMBER_OF, KILLS"]
-}}
+        nodes = self.get_graph_schema()
 
-Return ONLY the JSON object, no other text."""
-
+        schema = {
+            "name": "QuestionSpec",
+            "schema": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "title": "QuestionSpec",
+                "type": "object",
+                "properties": {
+                    "question": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "The test question as a clear, specific question"
+                    },
+                    "question_type": {
+                        "type": "string",
+                        "enum": ["relationship", "character_attribute", "event", "location", "multi_hop"]
+                    },
+                    "expected_nodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": ["Character", "Family", "Location", "Event", "Object", "Organization"]
+                        },
+                        "minItems": 1,
+                        "uniqueItems": True,
+                        "description": "List of node types expected in answer"
+                    },
+                    "expected_relationships": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": ["LOVES", "MEMBER_OF", "KILLS", "FRIENDS_WITH", "ENEMY_OF", "LIVES_IN", "ATTENDS", "OWNS"]
+                        },
+                        "minItems": 1,
+                        "uniqueItems": True,
+                        "description": "List of relationship types expected"
+                    }
+                },
+                "required": ["question", "question_type", "expected_nodes", "expected_relationships"],
+                "additionalProperties": False
+            },
+            "strict": True
+        }
 
 
         def call_api():

@@ -21,13 +21,13 @@ with driver.session() as session:
     labels = session.run("CALL db.labels()").data()
     print("\n=== Node Labels ===")
     for label in labels:
-        count = session.run(f"MATCH (n:{label['label']}) RETURN count(n) as count").data()[0]['count']
+        count = session.run(f"MATCH (n:`{label['label']}`) RETURN count(n) as count").data()[0]['count']
         print(f"  - {label['label']}: {count} nodes")
 
     print("\n=== Relationship Types ===")
     rels = session.run("CALL db.relationshipTypes()").data()
     for rel in rels:
-        count = session.run(f"MATCH ()-[r:{rel['relationshipType']}]->() RETURN count(r) as count").data()[0]['count']
+        count = session.run(f"MATCH ()-[r:`{rel['relationshipType']}`]->() RETURN count(r) as count").data()[0]['count']
         print(f"  - {rel['relationshipType']}: {count} relationships")
 
     print("\n=== Sample Nodes (first 15) ===")

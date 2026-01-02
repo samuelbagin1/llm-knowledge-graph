@@ -48,6 +48,10 @@ with driver.session() as session:
     """).data()
     for i, rel in enumerate(rels, 1):
         print(f"{i}. ({rel['from_label']}: {rel['from_id']}) --[{rel['rel_type']}]--> ({rel['to_label']}: {rel['to_id']})")
+        
+    
+    print("-------------------- RAW --------------------")
+    print(session.run("CALL db.labels()").data())
 
 driver.close()
 

@@ -16,10 +16,15 @@ from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from langchain.tools import tool
+from langchain.agents import create_agent
 
 # Load environment variables
 load_dotenv()
 
+
+class ProviderStrategy(Generic[SchemaT]):
+    schema: type[SchemaT]
+    strict: bool | None = None
 
 class RomeoJulietGraphTester:
     """Test harness for validating Romeo & Juliet knowledge graph accuracy"""
@@ -100,8 +105,17 @@ class RomeoJulietGraphTester:
                 time.sleep(wait_time)
 
 
-    def get_graph_schema(self) -> str:
-        """Get Neo4j graph schema information with sample data"""
+    def get_graph_schema(self):
+        """Get Neo4j graph schema information with sample data
+        
+        Args:
+            None
+            
+        Returns:
+            Tuple
+            schema, node_labels, rel_types
+        
+        """
         try:
             with self.driver.session() as session:
                 # Get node labels and relationship types
@@ -149,7 +163,7 @@ class RomeoJulietGraphTester:
                     to_id = rel['to_props'].get('id', rel['to_props'].get('name', 'unknown'))
                     schema += f"  - ({rel['from_label']}: {from_id}) --[{rel['rel_type']}]--> ({rel['to_label']}: {to_id})\n"
 
-                return schema
+                return schema, node_labels, rel_types
 
         except Exception as e:
             print(f"Error retrieve schema: {e}")
@@ -229,7 +243,7 @@ class RomeoJulietGraphTester:
 
 # ---------- Core Test Functions ----------
 
-    # generate a question via llm function
+    # 1- generate a question via llm function
     def generate_test_question(self, iteration: int) -> Dict[str, Any]:
         """
         Function 1: Generate varied test questions about Romeo and Juliet
@@ -243,6 +257,8 @@ class RomeoJulietGraphTester:
         print(f"\nGenerating test question {iteration}...")
 
         previous_q_text = "\n".join([f"- {q}" for q in self.previous_questions])
+        
+        graph_schema, node_labels, rel_types = self.get_graph_schema()
 
         prompt = f"""You are a Shakespeare expert creating test questions to validate a knowledge graph about Romeo and Juliet.
 
@@ -255,63 +271,56 @@ Categories to rotate through:
 4. Locations and settings in the story
 5. Multi-hop relationships (e.g., "Who is Romeo's love partner?")
 
+Graph Schema (use schema to determine expected_nodes and expected_relationships):
+{graph_schema}
+
 Previously asked questions (DO NOT REPEAT):
 {previous_q_text if previous_q_text else "None yet"}
 
 Generate a question for iteration {iteration}/5. Try to vary the question type.
 """
 
-        nodes = self.get_graph_schema()
-
         schema = {
-            "name": "QuestionSpec",
-            "schema": {
-                "$schema": "https://json-schema.org/draft/2020-12/schema",
-                "title": "QuestionSpec",
-                "type": "object",
-                "properties": {
-                    "question": {
+            "type": "object",
+            "description": "question data",
+            "properties": {
+                "question": {
+                    "type": "string",
+                    "description": "The test question as a clear, specific question"
+                },
+                "question_type": {
+                    "type": "string",
+                    "enum": ["relationship", "character_attribute", "event", "location", "multi_hop"]
+                },
+                "expected_nodes": {
+                    "type": "array",
+                    "items": {
                         "type": "string",
-                        "minLength": 1,
-                        "description": "The test question as a clear, specific question"
+                        "enum": [node['label'] for node in node_labels]
                     },
-                    "question_type": {
+                    "minItems": 1,
+                    "uniqueItems": True,
+                    "description": "List of node types expected in answer"
+                },
+                "expected_relationships": {
+                    "type": "array",
+                    "items": {
                         "type": "string",
-                        "enum": ["relationship", "character_attribute", "event", "location", "multi_hop"]
+                        "enum": [rel['relationshipType'] for rel in rel_types]
                     },
-                    "expected_nodes": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": ["Character", "Family", "Location", "Event", "Object", "Organization"]
-                        },
-                        "minItems": 1,
-                        "uniqueItems": True,
-                        "description": "List of node types expected in answer"
-                    },
-                    "expected_relationships": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": ["LOVES", "MEMBER_OF", "KILLS", "FRIENDS_WITH", "ENEMY_OF", "LIVES_IN", "ATTENDS", "OWNS"]
-                        },
-                        "minItems": 1,
-                        "uniqueItems": True,
-                        "description": "List of relationship types expected"
-                    }
+                    "minItems": 1,
+                    "uniqueItems": True,
+                    "description": "List of relationship types expected"
                 },
                 "required": ["question", "question_type", "expected_nodes", "expected_relationships"],
-                "additionalProperties": False
-            },
-            "strict": True
+            }
         }
 
 
-        def call_api():
-            response = self.openai_creative_client.invoke(prompt)
-            return response.content
-
-        response = self.execute_with_retry(call_api)
+        agent = create_agent(model="gpt-5-mini", tools=[], response_format=ProviderStrategy(schema))
+        response = agent.invoke({"messages": [{"role": "user", "content": prompt}]})
+        
+        response = response["structured_response"]
 
         # Parse JSON response
         try:
@@ -337,21 +346,7 @@ Generate a question for iteration {iteration}/5. Try to vary the question type.
 
 
 
-    @tool
-    def search_database(self, cypher_query: str) -> List[Dict[str, Any]]:
-        """Execute Cypher query against Neo4j and return results"""
-
-        try:
-            with self.driver.session() as session:
-                result = session.run(cypher_query)
-                records = [dict(record) for record in result]
-
-            return records
-
-        except Exception as e:
-            return "An Exception occurred: " + str(e)
-
-    # query database function
+    # 2- query database function
     def query_graph_database(self, question: str) -> Dict[str, Any]:
         """
         Function 2: Convert question to Cypher query and retrieve data from Neo4j
@@ -373,7 +368,7 @@ Generate a question for iteration {iteration}/5. Try to vary the question type.
                 print(f" Database is EMPTY")
 
         # Get schema information
-        schema_info = self.get_graph_schema()
+        schema_info, node_types, rel_types = self.get_graph_schema()
 
         prompt = f"""You are a Neo4j Cypher expert. Generate a Cypher query to answer this question about Romeo and Juliet.
 
@@ -405,20 +400,44 @@ QUERY STRATEGY - Use this decision tree:
 
 EXAMPLE QUERIES (adapt based on actual schema):
 
+"""
 
-Return your response as a JSON object:
-{{
-  "cypher_query": "Your Cypher query here - must be valid Cypher",
-  "explanation": "Brief explanation including any assumptions about property names based on the schema"
-}}
+        schema = {
+            "type": "object",
+            "description": "created cypher query",
+            "properties": {
+                "cypher_query": {
+                    "type": "string",
+                    "description": "Created a valid Cypher query"
+                },
+                "explanation": {
+                    "type": "string",
+                    "description": "Brief explanation including any assumptions about property names based on the schema"
+                },
+                "required": ["cypher_query", "explanation"],
+            }
+        }
+        
+        
+        @tool
+        def search_database(self, cypher_query: str) -> List[Dict[str, Any]]:
+            """Execute Cypher query against Neo4j and return results"""
 
-Return ONLY the JSON object, no other text."""
+            try:
+                with self.driver.session() as session:
+                    result = session.run(cypher_query)
+                    records = [dict(record) for record in result]
 
-        def call_api():
-            response = self.openai_creative_client.invoke(prompt)
-            return response.content
+                return records
 
-        response = self.execute_with_retry(call_api)
+            except Exception as e:
+                return "An Exception occurred: " + str(e)
+
+        # TODO: finalize agent
+        agent = create_agent(model=self.openai_client, tools=[search_database], response_format=ProviderStrategy(schema), system_prompt="")
+        response = agent.invoke({"messages": [{"role": "user", "content": prompt}]})
+        
+        response = response["structured_response"]
 
         # Parse query
         try:
@@ -508,7 +527,7 @@ Return ONLY the answer text, no preamble or JSON formatting."""
         
         
         
-    # search function
+    # 3 - search function
     def search_web_for_answer(self, question: str) -> Dict[str, Any]:
         """
         Function 3: Find authoritative answer using web search

@@ -166,7 +166,7 @@ class RomeoJulietGraphTester:
 
         except Exception as e:
             print(f"Error retrieve schema: {e}")
-            return "Schema information unavailable"
+            return "Schema information unavailable", [], []
         
         
     def generate_final_report(self):
@@ -549,7 +549,7 @@ Return ONLY the answer text, no preamble or JSON formatting."""
 
         print(f"Answer: {structured_answer}")
 
-        return {"graph_data": json.load(query_data), "structured_answer": structured_answer.strip()}
+        return {"graph_data": query_data, "structured_answer": structured_answer.strip()}
     
         
         
@@ -609,25 +609,12 @@ Provide a comprehensive, accurate answer based on Shakespeare's Romeo and Juliet
         agent = create_agent(model=self.gemini_client, tools=[], response_format=ProviderStrategy(schema=response_schema))
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-        response = response["structured_response"]
+        web_data = response["structured_response"]
 
+        print(f"Web answer confidence: {web_data['confidence']}")
+        print(f"Answer: {web_data['web_answer']}...")
 
-        try:
-            web_data = json.loads(response)
-
-            print(f"Web answer confidence: {web_data['confidence']}")
-            print(f"Answer: {web_data['web_answer']}...")
-
-            return web_data
-
-        except json.JSONDecodeError as e:
-            print(f"Failed to parse web search response: {e}")
-            return {
-                "web_answer": response,
-                "confidence": "low",
-                "sources": [],
-                "key_details": []
-            }
+        return web_data
             
             
             
@@ -664,7 +651,7 @@ AUTHORITATIVE ANSWER (from Shakespeare's text):
 {web_answer['web_answer']}
 
 RAW GRAPH DATA:
-{json.dumps(graph_answer['data'][:5], indent=2) if graph_answer['results'] else "No results returned"}
+{json.dumps(graph_answer.get('graph_data', {}) if isinstance(graph_answer.get('graph_data'), dict) else graph_answer.get('graph_data', [])[:5], indent=2) if graph_answer.get('graph_data') else "No results returned"}
 
 Evaluate the graph database answer and assign a score using this rubric:
 - 100: Perfect match, all information correct and complete
@@ -716,30 +703,12 @@ Evaluate the graph database answer and assign a score using this rubric:
         agent = create_agent(model=self.gemini_client, tools=[], response_format=ProviderStrategy(schema=response_schema))
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-        response = response["structured_response"]
+        comparison = response["structured_response"]
 
+        print(f"  ✓ Score: {comparison['score']}/100")
+        print(f"    Assessment: {comparison['accuracy_assessment'][:150]}...")
 
-
-        # Parse response
-        try:
-            comparison = json.loads(response)
-
-            print(f"  ✓ Score: {comparison['score']}/100")
-            print(f"    Assessment: {comparison['accuracy_assessment'][:150]}...")
-
-            return comparison
-
-        except json.JSONDecodeError as e:
-            print(f"  ✗ Failed to parse comparison response: {e}")
-            print(f"  Raw response: {response[:300]}")
-            return {
-                "score": 0,
-                "accuracy_assessment": "Failed to parse scoring response",
-                "discrepancies": [],
-                "missing_data": [],
-                "correct_elements": [],
-                "recommendations": []
-            }
+        return comparison
 
 
 

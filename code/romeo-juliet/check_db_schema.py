@@ -51,7 +51,15 @@ with driver.session() as session:
         
     
     print("-------------------- RAW --------------------")
-    print(session.run("CALL db.labels()").data())
+    data = session.run("""MATCH (a)-[r:OFFERS]->(b)
+        RETURN labels(a)[0] as from_label,
+               a.id as from_id,
+               type(r) as rel_type,
+               labels(b)[0] as to_label,
+               b.id as to_id""").data()
+    for d in data:
+        print("\n", d)
+    
 
 driver.close()
 

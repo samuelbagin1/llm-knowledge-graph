@@ -10,7 +10,9 @@ import os
 import json
 import time
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Generic, TypeVar
+
+SchemaT = TypeVar('SchemaT')
 from neo4j import GraphDatabase
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -252,7 +254,7 @@ class RomeoJulietGraphTester:
             iteration: Current test iteration number
 
         Returns:
-            Dictionary containing question, type, and expected node/relationship types
+            Dictionary containing question, question_type, expected_nodes, expected_relationships
         """
         print(f"\nGenerating test question {iteration}...")
 
@@ -368,129 +370,182 @@ Generate a question for iteration {iteration}/5. Try to vary the question type.
                 print(f" Database is EMPTY")
 
         # Get schema information
-        schema_info, node_types, rel_types = self.get_graph_schema()
+        schema_info, node_labels, rel_types = self.get_graph_schema()
 
-        prompt = f"""You are a Neo4j Cypher expert. Generate a Cypher query to answer this question about Romeo and Juliet.
+        # Build node labels and relationship types lists for the prompt
+        node_labels_list = [node['label'] for node in node_labels]
+        rel_types_list = [rel['relationshipType'] for rel in rel_types]
 
-Question: {question}
+        # System prompt - defines the agent's role and capabilities
+        system_prompt = """You are a Neo4j Cypher expert agent specialized in querying knowledge graphs.
 
-Available graph schema (CRITICAL - study the sample data to see actual property names):
+Your task is to answer questions by querying a Neo4j graph database about Romeo and Juliet.
+
+## Your Capabilities
+You have access to the `search_database` tool which executes Cypher queries against Neo4j.
+
+## Query Strategy
+1. **Analyze the question** to identify what nodes and relationships are relevant
+2. **Start with exploration queries** to understand what data exists:
+   - For nodes: `MATCH (n:Label) RETURN n.id, labels(n)`
+   - For relationships: `MATCH (a)-[r:TYPE]->(b) RETURN a.id, type(r), b.id`
+3. **Refine iteratively** - use results from initial queries to build more specific queries
+4. **Find the best matches** - keep querying until you find the most relevant data
+
+## Cypher Query Rules
+- Use backticks for labels/types with special characters: `MATCH (n:`Special-Label`) ...`
+- For text matching use case-insensitive: `WHERE toLower(n.id) CONTAINS toLower('romeo')`
+- Use undirected relationships `-[r]-` when direction is unknown
+- Always add `LIMIT 25` to prevent large result sets
+- Return useful properties: `RETURN n.id, labels(n), type(r), properties(n)`
+
+## Important
+- You MUST use the search_database tool to query the database
+- Make multiple queries if needed to find the best answer
+- When you have found sufficient data, provide your final answer with the best Cypher query"""
+
+        # User prompt - provides the specific question and schema
+        user_prompt = f"""Answer this question about Romeo and Juliet by querying the graph database:
+
+**Question:** {question}
+
+## Available Graph Schema
+
+### Node Labels (use these exact labels in queries):
+{json.dumps(node_labels_list, indent=2)}
+
+### Relationship Types (use these exact types in queries):
+{json.dumps(rel_types_list, indent=2)}
+
+### Sample Data (shows actual property structure):
 {schema_info}
 
-CRITICAL RULES FOR QUERY GENERATION:
-1. **EXAMINE THE SAMPLE NODES ABOVE** to see what properties actually exist
-2. **USE THE ACTUAL PROPERTY NAMES** shown in the sample data - do NOT assume property names
-3. For text matching, try MULTIPLE approaches to maximize matches:
-   - Use CONTAINS for partial matching: WHERE n.id CONTAINS 'Romeo'
-   - Try case-insensitive: WHERE toLower(n.id) CONTAINS toLower('romeo')
-   - Try multiple properties: WHERE n.id CONTAINS 'Romeo' OR n.name CONTAINS 'Romeo'
-4. Keep queries SIMPLE and BROAD to ensure results:
-   - Start with simple patterns: MATCH (n)-[r]-(m)
-   - Add filters incrementally
-   - Use undirected relationships: -[r]- instead of -[r]-> when unsure of direction
-5. Return full nodes and relationships: RETURN n, r, m
-6. Always add: LIMIT 25
+## Your Task
+1. Analyze the question to determine which node labels and relationship types are relevant
+2. Use the `search_database` tool to query the database with Cypher queries
+3. Start broad, then refine based on results
+4. Continue querying until you find the best matching nodes, properties, and relationships
+5. Return your final answer with the most effective Cypher query and the data you found
 
-QUERY STRATEGY - Use this decision tree:
-- For character questions: Look for Character nodes and their relationships
-- For relationship questions: Match patterns between two entities
-- For location questions: Look for Location nodes and connections
-- For event questions: Look for events and participating characters
-- When unsure: Use broad patterns and filter results
+Begin by identifying the relevant node labels and relationship types, then query the database."""
 
-EXAMPLE QUERIES (adapt based on actual schema):
-
-"""
-
-        schema = {
+        # Response schema
+        response_schema = {
             "type": "object",
-            "description": "created cypher query",
+            "description": "Final query results from graph database exploration",
             "properties": {
                 "cypher_query": {
                     "type": "string",
-                    "description": "Created a valid Cypher query"
+                    "description": "The final/best Cypher query that answers the question"
                 },
                 "explanation": {
                     "type": "string",
-                    "description": "Brief explanation including any assumptions about property names based on the schema"
+                    "description": "Explanation of the query strategy and what was found"
                 },
-                "required": ["cypher_query", "explanation"],
-            }
+                "data": {
+                    "type": "string",
+                    "description": "The relevant data returned from the database (JSON string)"
+                },
+                "nodes_found": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "List of node IDs that are relevant to the answer"
+                },
+                "relationships_found": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "List of relationships found (format: 'nodeA -[REL_TYPE]-> nodeB')"
+                }
+            },
+            "required": ["cypher_query", "explanation", "data"]
         }
-        
-        
-        @tool
-        def search_database(self, cypher_query: str) -> List[Dict[str, Any]]:
-            """Execute Cypher query against Neo4j and return results"""
 
+        # Define the database query tool - capture driver for closure
+        driver = self.driver
+
+        @tool
+        def search_database(cypher_query: str) -> str:
+            """Execute a Cypher query against the Neo4j graph database.
+
+            Args:
+                cypher_query: A valid Cypher query string to execute
+
+            Returns:
+                JSON string of query results, or error message if query fails
+            """
             try:
-                with self.driver.session() as session:
+                with driver.session() as session:
                     result = session.run(cypher_query)
                     records = [dict(record) for record in result]
 
-                return records
+                # Convert Neo4j objects to serializable format
+                def serialize(obj):
+                    if hasattr(obj, '__dict__'):
+                        return dict(obj)
+                    elif hasattr(obj, 'items'):
+                        return dict(obj)
+                    return str(obj)
+
+                serialized = []
+                for record in records:
+                    serialized_record = {}
+                    for key, value in record.items():
+                        try:
+                            serialized_record[key] = serialize(value)
+                        except:
+                            serialized_record[key] = str(value)
+                    serialized.append(serialized_record)
+
+                return json.dumps(serialized, indent=2, default=str)
 
             except Exception as e:
-                return "An Exception occurred: " + str(e)
+                return f"Query error: {str(e)}"
 
-        # TODO: finalize agent
-        agent = create_agent(model=self.openai_client, tools=[search_database], response_format=ProviderStrategy(schema), system_prompt="")
-        response = agent.invoke({"messages": [{"role": "user", "content": prompt}]})
-        
+        # Create and run the agent
+        agent = create_agent(
+            model=self.openai_client,
+            tools=[search_database],
+            response_format=ProviderStrategy(schema=response_schema, strict=True),
+            system_prompt=system_prompt
+        )
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+
         response = response["structured_response"]
 
-        # Parse query
+        # Parse query response
         try:
-            response = response.strip()
-            if response.startswith("```json"):
-                response = response.split("```json")[1].split("```")[0].strip()
-            elif response.startswith("```"):
-                response = response.split("```")[1].split("```")[0].strip()
+            if isinstance(response, str):
+                response = response.strip()
+                if response.startswith("```json"):
+                    response = response.split("```json")[1].split("```")[0].strip()
+                elif response.startswith("```"):
+                    response = response.split("```")[1].split("```")[0].strip()
+                query_data = json.loads(response)
+            else:
+                query_data = response
 
-            query_data = json.loads(response)
             cypher_query = query_data['cypher_query']
+            records = json.loads(query_data.get('data', '[]')) if isinstance(query_data.get('data'), str) else query_data.get('data', [])
 
             print(f"Generated Cypher query: {cypher_query}")
+            print(f"Found {len(records) if isinstance(records, list) else 'N/A'} results")
 
         except (json.JSONDecodeError, KeyError) as e:
             print(f"Failed to parse query response: {e}")
-            # Fallback: try to extract cypher directly
-            cypher_query = response
-            
-            
-
-        # Execute query against Neo4j
-        try:
-            with self.driver.session() as session:
-                result = session.run(cypher_query)
-                records = [dict(record) for record in result]
-
-            print(f"Returned {len(records)} results")
-
-
-            # If no results, try a fallback broader query
-            if len(records) == 0 and node_count > 0:
-
-                # Extract key terms from question for fallback
-                fallback_query = """
-                MATCH (n)-[r]-(m)
-                RETURN n, r, m
-                LIMIT 50
-                """
-
-                try:
-                    result = session.run(fallback_query)
-                    fallback_records = [dict(record) for record in result]
-
-                    if len(fallback_records) > 0:
-                        print(f"Fallback: {len(fallback_records)} results")
-                        records = fallback_records
-                except:
-                    pass
-
-        except Exception as e:
-            print(f"Query execution failed: {str(e)}")
+            cypher_query = "MATCH (n) RETURN n LIMIT 10"
             records = []
+
+        # Fallback if no results
+        if not records and node_count > 0:
+            try:
+                with self.driver.session() as session:
+                    fallback_query = "MATCH (n)-[r]-(m) RETURN n, r, m LIMIT 50"
+                    result = session.run(fallback_query)
+                    records = [dict(record) for record in result]
+                    if records:
+                        print(f"Fallback query returned {len(records)} results")
+            except Exception as e:
+                print(f"Fallback query failed: {e}")
 
 
 
@@ -701,7 +756,7 @@ Be thorough and specific. Return ONLY the JSON object."""
                 question_data = self.generate_test_question(i)
 
                 # Step 2: Query graph database
-                graph_answer = self.query_graph_database(question_data['question'])
+                graph_answer = self.query_graph_database(question_data["question"])
 
                 # Step 3: Search web for ground truth
                 web_answer = self.search_web_for_answer(question_data['question'])

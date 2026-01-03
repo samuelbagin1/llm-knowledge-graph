@@ -85,6 +85,14 @@ class PDFGraphRAG:
                     "target_id": rel.target.id,
                     "properties": rel.properties or {}
                 })
+    
+    
+    # TODO: while processing the pdf to graph database, create a node that will represent the chunk,
+    #       and every created node from the chunk`s text, connect nodes to chunk node via HAS relationship
+    
+    # TODO: implement method for cypher querying of graph database
+    # TODO: implemet method for vector query of graph database, then return chunks nodes
+    # TODO: implement method for vector search inside vector database
 
 
 

@@ -19,14 +19,11 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from langchain.tools import tool
 from langchain.agents import create_agent
+from langchain.agents.structured_output import ProviderStrategy
 
 # Load environment variables
 load_dotenv()
 
-
-class ProviderStrategy(Generic[SchemaT]):
-    schema: type[SchemaT]
-    strict: bool | None = None
 
 class RomeoJulietGraphTester:
     """Test harness for validating Romeo & Juliet knowledge graph accuracy"""
@@ -283,8 +280,9 @@ Generate a question for iteration {iteration}/5. Try to vary the question type.
 """
 
         schema = {
+            "title": "TestQuestion",
             "type": "object",
-            "description": "question data",
+            "description": "A test question about Romeo and Juliet",
             "properties": {
                 "question": {
                     "type": "string",
@@ -313,38 +311,24 @@ Generate a question for iteration {iteration}/5. Try to vary the question type.
                     "minItems": 1,
                     "uniqueItems": True,
                     "description": "List of relationship types expected"
-                },
-                "required": ["question", "question_type", "expected_nodes", "expected_relationships"],
-            }
+                }
+            },
+            "required": ["question", "question_type", "expected_nodes", "expected_relationships"]
         }
 
 
-        agent = create_agent(model="gpt-5-mini", tools=[], response_format=ProviderStrategy(schema))
+        agent = create_agent(model="gpt-5-mini", tools=[], response_format=ProviderStrategy(schema=schema))
         response = agent.invoke({"messages": [{"role": "user", "content": prompt}]})
-        
-        response = response["structured_response"]
 
-        # Parse JSON response
-        try:
-            # Clean response to extract JSON if needed
-            response = response.strip()
-            if response.startswith("```json"):
-                response = response.split("```json")[1].split("```")[0].strip()
-            elif response.startswith("```"):
-                response = response.split("```")[1].split("```")[0].strip()
+        # structured_response is already a dict when using ProviderStrategy
+        question_data = response["structured_response"]
 
-            question_data = json.loads(response)
-            self.previous_questions.append(question_data['question'])
+        self.previous_questions.append(question_data['question'])
 
-            print(f" Question: {question_data['question']}")
-            print(f" Type: {question_data['question_type']}")
+        print(f" Question: {question_data['question']}")
+        print(f" Type: {question_data['question_type']}")
 
-            return question_data
-
-        except json.JSONDecodeError as e:
-            print(f" Failed to parse JSON response: {e}")
-            print(f" Raw response: {response[:200]}")
-            raise
+        return question_data
 
 
 
@@ -357,7 +341,7 @@ Generate a question for iteration {iteration}/5. Try to vary the question type.
             question: Test question to answer using the graph
 
         Returns:
-            Dictionary containing cypher query, raw results, and structured answer
+            query_data, structured_answer.strip()
         """
         print(f"\n Querying graph database...")
 
@@ -431,6 +415,7 @@ Begin by identifying the relevant node labels and relationship types, then query
 
         # Response schema
         response_schema = {
+            "title": "GraphQueryResult",
             "type": "object",
             "description": "Final query results from graph database exploration",
             "properties": {
@@ -501,31 +486,25 @@ Begin by identifying the relevant node labels and relationship types, then query
             except Exception as e:
                 return f"Query error: {str(e)}"
 
+
+
         # Create and run the agent
         agent = create_agent(
             model=self.openai_client,
             tools=[search_database],
-            response_format=ProviderStrategy(schema=response_schema, strict=True),
+            response_format=ProviderStrategy(schema=response_schema),
             system_prompt=system_prompt
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
-        response = response["structured_response"]
+        # structured_response is already a dict when using ProviderStrategy
+        query_data = response["structured_response"]
 
-        # Parse query response
         try:
-            if isinstance(response, str):
-                response = response.strip()
-                if response.startswith("```json"):
-                    response = response.split("```json")[1].split("```")[0].strip()
-                elif response.startswith("```"):
-                    response = response.split("```")[1].split("```")[0].strip()
-                query_data = json.loads(response)
-            else:
-                query_data = response
-
             cypher_query = query_data['cypher_query']
-            records = json.loads(query_data.get('data', '[]')) if isinstance(query_data.get('data'), str) else query_data.get('data', [])
+            # data field might be a JSON string or already parsed
+            data_field = query_data.get('data', '[]')
+            records = json.loads(data_field) if isinstance(data_field, str) else (data_field or [])
 
             print(f"Generated Cypher query: {cypher_query}")
             print(f"Found {len(records) if isinstance(records, list) else 'N/A'} results")
@@ -565,19 +544,13 @@ Provide a natural language answer that:
 
 Return ONLY the answer text, no preamble or JSON formatting."""
 
-        def format_api_call():
-            response = self.openai_client.invoke(format_prompt)
-            return response.content
 
-        structured_answer = self.execute_with_retry(format_api_call)
+        structured_answer = self.openai_client.invoke(format_prompt).content
 
         print(f"Answer: {structured_answer}")
 
-        return {
-            "cypher_query": cypher_query,
-            "results": records,
-            "structured_answer": structured_answer.strip()
-        }
+        return {"graph_data": json.load(query_data), "structured_answer": structured_answer.strip()}
+    
         
         
         
@@ -595,7 +568,7 @@ Return ONLY the answer text, no preamble or JSON formatting."""
         """
         print("Web searching")
 
-        prompt = f"""You are a Shakespeare scholar researching Romeo and Juliet. Answer this question using your knowledge and provide authoritative information.
+        user_prompt = f"""You are a Shakespeare scholar researching Romeo and Juliet. Answer this question using your knowledge and provide authoritative information.
 
 Question: {question}
 
@@ -605,30 +578,41 @@ Provide a comprehensive, accurate answer based on Shakespeare's Romeo and Juliet
 3. Act/Scene references if relevant
 4. Any important context or nuances
 
-Return your response as a JSON object:
-{{
-  "web_answer": "Detailed answer with specific information from the play",
-  "confidence": "high/medium/low - your confidence in this answer",
-  "sources": ["List of authoritative sources or references (e.g., Act/Scene numbers)"],
-  "key_details": ["List of important specific details that should be in a knowledge graph"]
-}}
+"""
 
-Return ONLY the JSON object, no other text."""
+        response_schema = {
+            "title": "WebSearch",
+            "type": "object",
+            "description": "Web search for answers on provided question",
+            "properties": {
+                "web_answer": {
+                    "type": "string",
+                    "description": "Detailed answer with specific information from the play"
+                },
+                "confidence": {
+                    "type": "string",
+                    "enum": ["high", "medium", "low"],
+                    "description": "your confidence in this answer"
+                },
+                "sources": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of authoritative sources or references (e.g., Act/Scene numbers, web links, books)"
+                }
+            },
+            "required": ["web_answer", "confidence", "sources"]
+        }
 
-        def call_api():
-            response = self.gemini_client.invoke(prompt)
-            return response.content
 
-        response = self.execute_with_retry(call_api)
+        agent = create_agent(model=self.gemini_client, tools=[], response_format=ProviderStrategy(schema=response_schema))
 
-        # Parse response
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        response = response["structured_response"]
+
+
         try:
-            response = response.strip()
-            if response.startswith("```json"):
-                response = response.split("```json")[1].split("```")[0].strip()
-            elif response.startswith("```"):
-                response = response.split("```")[1].split("```")[0].strip()
-
             web_data = json.loads(response)
 
             print(f"Web answer confidence: {web_data['confidence']}")
@@ -644,6 +628,9 @@ Return ONLY the JSON object, no other text."""
                 "sources": [],
                 "key_details": []
             }
+            
+            
+            
 
     def compare_and_score(
         self,
@@ -664,7 +651,7 @@ Return ONLY the JSON object, no other text."""
         """
         print(f"\n  📊 Comparing answers and scoring...")
 
-        prompt = f"""You are evaluating the accuracy and completeness of a knowledge graph about Romeo and Juliet.
+        user_prompt = f"""You are evaluating the accuracy and completeness of a knowledge graph about Romeo and Juliet.
 
 Compare these two answers to the same question:
 
@@ -676,11 +663,8 @@ GRAPH DATABASE ANSWER:
 AUTHORITATIVE ANSWER (from Shakespeare's text):
 {web_answer['web_answer']}
 
-KEY DETAILS THAT SHOULD BE PRESENT:
-{json.dumps(web_answer.get('key_details', []), indent=2)}
-
 RAW GRAPH DATA:
-{json.dumps(graph_answer['results'][:5], indent=2) if graph_answer['results'] else "No results returned"}
+{json.dumps(graph_answer['data'][:5], indent=2) if graph_answer['results'] else "No results returned"}
 
 Evaluate the graph database answer and assign a score using this rubric:
 - 100: Perfect match, all information correct and complete
@@ -689,32 +673,55 @@ Evaluate the graph database answer and assign a score using this rubric:
 - 40-59: Significantly inaccurate or incomplete
 - 0-39: Mostly incorrect or no useful data returned
 
-Return your response as a JSON object:
-{{
-  "score": <numerical score 0-100>,
-  "accuracy_assessment": "Detailed explanation of why you gave this score",
-  "discrepancies": ["List specific differences or errors in the graph answer"],
-  "missing_data": ["List important information missing from the graph"],
-  "correct_elements": ["List what the graph got right"],
-  "recommendations": ["Specific suggestions to improve the graph (e.g., 'Add relationship LOVES between Romeo and Juliet')"]
-}}
+"""
 
-Be thorough and specific. Return ONLY the JSON object."""
+        response_schema = {
+            "title": "CompareAndScore",
+            "type": "object",
+            "description": "Compare and score data of web search and graph data",
+            "properties": {
+                "score": {
+                    "type": "int",
+                    "description": "numerical score 0-100"
+                },
+                "accuracy_assessment": {
+                    "type": "string",
+                    "description": "Detailed explanation of why you gave this score"
+                },
+                "discrepancies": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "List specific differences or errors in the graph answer"
+                },
+                "missing_data": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "List important information missing from the graph"
+                },
+                "correct_elements": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "List what the graph got right"
+                },
+                "recommendations": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Specific suggestions to improve the graph (e.g., 'Add relationship LOVES between Romeo and Juliet')"
+                }
+            },
+            "required": ["score", "accuracy_assessment", "discrepancies", "missing_data", "correct_elements", "recommendations"]
+        }
 
-        def call_api():
-            response = self.gemini_client.invoke(prompt)
-            return response.content
 
-        response = self._execute_with_retry(call_api)
+        agent = create_agent(model=self.gemini_client, tools=[], response_format=ProviderStrategy(schema=response_schema))
+
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        response = response["structured_response"]
+
+
 
         # Parse response
         try:
-            response = response.strip()
-            if response.startswith("```json"):
-                response = response.split("```json")[1].split("```")[0].strip()
-            elif response.startswith("```"):
-                response = response.split("```")[1].split("```")[0].strip()
-
             comparison = json.loads(response)
 
             print(f"  ✓ Score: {comparison['score']}/100")

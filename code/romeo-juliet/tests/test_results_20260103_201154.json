@@ -1,0 +1,50 @@
+{
+  "test_run_date": "2026-01-03T20:11:54.322938",
+  "total_tests": 5,
+  "successful_tests": 0,
+  "failed_tests": 5,
+  "average_score": 0,
+  "min_score": 0,
+  "max_score": 0,
+  "scores": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "individual_tests": [
+    {
+      "test_number": 1,
+      "error": "Unsupported schema type: <class '__main__.ProviderStrategy'>. Supported types: Pydantic models, dataclasses, TypedDicts, and JSON schema dicts.",
+      "timestamp": "2026-01-03T20:11:54.182226"
+    },
+    {
+      "test_number": 2,
+      "error": "Unsupported schema type: <class '__main__.ProviderStrategy'>. Supported types: Pydantic models, dataclasses, TypedDicts, and JSON schema dicts.",
+      "timestamp": "2026-01-03T20:11:54.256388"
+    },
+    {
+      "test_number": 3,
+      "error": "Unsupported schema type: <class '__main__.ProviderStrategy'>. Supported types: Pydantic models, dataclasses, TypedDicts, and JSON schema dicts.",
+      "timestamp": "2026-01-03T20:11:54.282792"
+    },
+    {
+      "test_number": 4,
+      "error": "Unsupported schema type: <class '__main__.ProviderStrategy'>. Supported types: Pydantic models, dataclasses, TypedDicts, and JSON schema dicts.",
+      "timestamp": "2026-01-03T20:11:54.302996"
+    },
+    {
+      "test_number": 5,
+      "error": "Unsupported schema type: <class '__main__.ProviderStrategy'>. Supported types: Pydantic models, dataclasses, TypedDicts, and JSON schema dicts.",
+      "timestamp": "2026-01-03T20:11:54.322840"
+    }
+  ],
+  "summary": {
+    "overall_grade": "F (Failing)",
+    "strengths": [],
+    "weaknesses": [],
+    "discrepancies_found": [],
+    "recommendations": []
+  }
+}

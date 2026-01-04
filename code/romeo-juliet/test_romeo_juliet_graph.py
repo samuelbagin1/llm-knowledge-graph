@@ -23,6 +23,57 @@ from langchain.agents.structured_output import ProviderStrategy, ToolStrategy
 load_dotenv()
 
 
+def serialize_for_json(obj):
+    """Convert Neo4j and other non-serializable objects to JSON-serializable format."""
+    # Handle Neo4j Node objects
+    if hasattr(obj, 'labels') and hasattr(obj, 'items'):
+        return {
+            '_type': 'Node',
+            'labels': list(obj.labels),
+            'properties': dict(obj.items())
+        }
+    # Handle Neo4j Relationship objects
+    if hasattr(obj, 'type') and hasattr(obj, 'start_node'):
+        return {
+            '_type': 'Relationship',
+            'type': obj.type,
+            'properties': dict(obj.items()) if hasattr(obj, 'items') else {}
+        }
+    # Handle Neo4j Path objects
+    if hasattr(obj, 'nodes') and hasattr(obj, 'relationships'):
+        return {
+            '_type': 'Path',
+            'nodes': [serialize_for_json(n) for n in obj.nodes],
+            'relationships': [serialize_for_json(r) for r in obj.relationships]
+        }
+    # Handle datetime objects
+    if isinstance(obj, datetime):
+        return obj.isoformat()
+    # Handle dict-like objects
+    if hasattr(obj, 'items') and not isinstance(obj, dict):
+        return {k: serialize_for_json(v) for k, v in obj.items()}
+    # Handle dicts recursively
+    if isinstance(obj, dict):
+        return {k: serialize_for_json(v) for k, v in obj.items()}
+    # Handle lists recursively
+    if isinstance(obj, list):
+        return [serialize_for_json(item) for item in obj]
+    # Handle primitives
+    if isinstance(obj, (str, int, float, bool, type(None))):
+        return obj
+    # Fallback to string representation
+    return str(obj)
+
+
+class Neo4jJSONEncoder(json.JSONEncoder):
+    """Custom JSON encoder that handles Neo4j objects."""
+    def default(self, obj):
+        try:
+            return serialize_for_json(obj)
+        except Exception:
+            return str(obj)
+
+
 class RomeoJulietGraphTester:
     """Test harness for validating Romeo & Juliet knowledge graph accuracy"""
 
@@ -189,6 +240,22 @@ class RomeoJulietGraphTester:
                 all_discrepancies.extend(comp.get('discrepancies', []))
                 all_correct_elements.extend(comp.get('correct_elements', []))
 
+        # Pre-serialize test results to handle Neo4j objects
+        try:
+            serialized_test_results = serialize_for_json(self.test_results)
+        except Exception as e:
+            print(f"Warning: Error serializing test results: {e}")
+            serialized_test_results = []
+            for result in self.test_results:
+                try:
+                    serialized_test_results.append(serialize_for_json(result))
+                except Exception as inner_e:
+                    serialized_test_results.append({
+                        "test_number": result.get("test_number", "unknown"),
+                        "error": f"Serialization error: {str(inner_e)}",
+                        "timestamp": datetime.now().isoformat()
+                    })
+
         # Create JSON report
         json_report = {
             "test_run_date": datetime.now().isoformat(),
@@ -199,7 +266,7 @@ class RomeoJulietGraphTester:
             "min_score": min(valid_scores) if valid_scores else 0,
             "max_score": max(valid_scores) if valid_scores else 0,
             "scores": self.scores,
-            "individual_tests": self.test_results,
+            "individual_tests": serialized_test_results,
             "summary": {
                 "overall_grade": self._get_grade(avg_score),
                 "strengths": list(set(all_correct_elements))[:10],
@@ -213,10 +280,16 @@ class RomeoJulietGraphTester:
         json_filename = f"test_results_{timestamp}.json"
         json_path = f"code/romeo-juliet/tests/{json_filename}"
 
-        with open(json_path, 'w') as f:
-            json.dump(json_report, f, indent=2)
-
-        print(f"JSON report saved: {json_filename}")
+        try:
+            with open(json_path, 'w') as f:
+                json.dump(json_report, f, indent=2, cls=Neo4jJSONEncoder)
+            print(f"JSON report saved: {json_filename}")
+        except Exception as e:
+            print(f"Error saving JSON report: {e}")
+            # Try with default=str as last resort
+            with open(json_path, 'w') as f:
+                json.dump(json_report, f, indent=2, default=str)
+            print(f"JSON report saved with fallback encoding: {json_filename}")
 
         return json_path
     
@@ -456,27 +529,54 @@ Begin by identifying the relevant node labels and relationship types, then query
             Returns:
                 JSON string of query results, or error message if query fails
             """
+            def serialize_neo4j_object(obj):
+                """Convert Neo4j objects to JSON-serializable format."""
+                # Handle Neo4j Node objects
+                if hasattr(obj, 'labels') and hasattr(obj, 'items'):
+                    return {
+                        '_type': 'Node',
+                        'labels': list(obj.labels),
+                        'properties': dict(obj.items())
+                    }
+                # Handle Neo4j Relationship objects
+                if hasattr(obj, 'type') and hasattr(obj, 'start_node'):
+                    return {
+                        '_type': 'Relationship',
+                        'type': obj.type,
+                        'properties': dict(obj.items()) if hasattr(obj, 'items') else {}
+                    }
+                # Handle Neo4j Path objects
+                if hasattr(obj, 'nodes') and hasattr(obj, 'relationships'):
+                    return {
+                        '_type': 'Path',
+                        'nodes': [serialize_neo4j_object(n) for n in obj.nodes],
+                        'relationships': [serialize_neo4j_object(r) for r in obj.relationships]
+                    }
+                # Handle dict-like objects
+                if hasattr(obj, 'items'):
+                    return {k: serialize_neo4j_object(v) for k, v in obj.items()}
+                # Handle lists
+                if isinstance(obj, list):
+                    return [serialize_neo4j_object(item) for item in obj]
+                # Handle primitives
+                if isinstance(obj, (str, int, float, bool, type(None))):
+                    return obj
+                # Fallback to string representation
+                return str(obj)
+
             try:
                 with driver.session() as session:
                     result = session.run(cypher_query)
                     records = [dict(record) for record in result]
-
-                # Convert Neo4j objects to serializable format
-                def serialize(obj):
-                    if hasattr(obj, '__dict__'):
-                        return dict(obj)
-                    elif hasattr(obj, 'items'):
-                        return dict(obj)
-                    return str(obj)
 
                 serialized = []
                 for record in records:
                     serialized_record = {}
                     for key, value in record.items():
                         try:
-                            serialized_record[key] = serialize(value)
-                        except:
-                            serialized_record[key] = str(value)
+                            serialized_record[key] = serialize_neo4j_object(value)
+                        except Exception as e:
+                            serialized_record[key] = f"<serialization error: {str(e)}>"
                     serialized.append(serialized_record)
 
                 return json.dumps(serialized, indent=2, default=str)
@@ -516,13 +616,14 @@ Begin by identifying the relevant node labels and relationship types, then query
         if not records and node_count > 0:
             try:
                 with self.driver.session() as session:
-                    fallback_query = "MATCH (n)-[r]-(m) RETURN n, r, m LIMIT 50"
+                    fallback_query = "MATCH (n)-[r]-(m) RETURN n.id as node1, type(r) as rel_type, m.id as node2 LIMIT 50"
                     result = session.run(fallback_query)
                     records = [dict(record) for record in result]
                     if records:
                         print(f"Fallback query returned {len(records)} results")
             except Exception as e:
                 print(f"Fallback query failed: {e}")
+                records = []
 
 
 
@@ -743,13 +844,13 @@ Evaluate the graph database answer and assign a score using this rubric:
                 )
 
 
-                # Store results
+                # Store results (serialize to avoid Neo4j object issues)
                 test_result = {
                     'test_number': i,
-                    'question': question_data,
-                    'graph_answer': graph_answer,
-                    'web_answer': web_answer,
-                    'comparison': comparison,
+                    'question': serialize_for_json(question_data),
+                    'graph_answer': serialize_for_json(graph_answer),
+                    'web_answer': serialize_for_json(web_answer),
+                    'comparison': serialize_for_json(comparison),
                     'timestamp': datetime.now().isoformat()
                 }
 

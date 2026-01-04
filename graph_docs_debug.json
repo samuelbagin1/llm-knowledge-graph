@@ -30,6 +30,11 @@
         "id": "Purchase",
         "type": "Action",
         "properties": {}
+      },
+      {
+        "id": "Website",
+        "type": "Url",
+        "properties": {}
       }
     ],
     "relationships": [
@@ -44,7 +49,7 @@
           "type": "Text",
           "properties": {}
         },
-        "type": "OFFERS",
+        "type": "PROVIDES",
         "properties": {}
       },
       {
@@ -58,7 +63,7 @@
           "type": "Text",
           "properties": {}
         },
-        "type": "OFFERS",
+        "type": "PROVIDES",
         "properties": {}
       },
       {
@@ -72,7 +77,7 @@
           "type": "Text",
           "properties": {}
         },
-        "type": "OFFERS",
+        "type": "PROVIDES",
         "properties": {}
       },
       {
@@ -86,7 +91,7 @@
           "type": "Text",
           "properties": {}
         },
-        "type": "OFFERS",
+        "type": "PROVIDES",
         "properties": {}
       },
       {
@@ -100,7 +105,21 @@
           "type": "Action",
           "properties": {}
         },
-        "type": "ENCOURAGES",
+        "type": "OFFERS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Folger Shakespeare Library",
+          "type": "Organization",
+          "properties": {}
+        },
+        "target": {
+          "id": "Website",
+          "type": "Url",
+          "properties": {}
+        },
+        "type": "HAS_WEBSITE",
         "properties": {}
       }
     ],
@@ -301,11 +320,6 @@
         "id": "Scene 3",
         "type": "Scene",
         "properties": {}
-      },
-      {
-        "id": "Contents",
-        "type": "Section",
-        "properties": {}
       }
     ],
     "relationships": [
@@ -334,7 +348,7 @@
           "type": "Section",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -348,7 +362,7 @@
           "type": "Section",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -362,7 +376,7 @@
           "type": "Section",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -376,7 +390,7 @@
           "type": "Section",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -390,7 +404,7 @@
           "type": "Act",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -404,7 +418,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -418,7 +432,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -432,7 +446,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -446,7 +460,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -460,7 +474,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -474,7 +488,7 @@
           "type": "Act",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -488,7 +502,7 @@
           "type": "Section",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -502,7 +516,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -516,7 +530,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -530,7 +544,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -544,7 +558,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -558,7 +572,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -572,7 +586,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -586,7 +600,7 @@
           "type": "Act",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -600,7 +614,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -614,7 +628,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -628,7 +642,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -642,7 +656,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -656,7 +670,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -670,7 +684,7 @@
           "type": "Act",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -684,7 +698,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -698,7 +712,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -712,7 +726,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -726,7 +740,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -740,7 +754,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -754,7 +768,7 @@
           "type": "Act",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -768,7 +782,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -782,7 +796,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -796,21 +810,7 @@
           "type": "Scene",
           "properties": {}
         },
-        "type": "INCLUDES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Folger Shakespeare Library",
-          "type": "Organization",
-          "properties": {}
-        },
-        "target": {
-          "id": "Contents",
-          "type": "Section",
-          "properties": {}
-        },
-        "type": "INCLUDES",
+        "type": "CONTAINS",
         "properties": {}
       }
     ],
@@ -959,11 +959,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Shakespeare",
-          "type": "Person",
+          "id": "New Folger Editions",
+          "type": "Concept",
           "properties": {}
         },
-        "type": "SOURCE_OF_WORKS",
+        "type": "PUBLISHES",
         "properties": {}
       },
       {
@@ -1005,7 +1005,7 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "PERFORMS_WORKS",
+        "type": "HAS",
         "properties": {}
       },
       {
@@ -1121,6 +1121,11 @@
         "properties": {}
       },
       {
+        "id": "Folger Library Shakespeare Editions",
+        "type": "Edition",
+        "properties": {}
+      },
+      {
         "id": "Barbara Mowat",
         "type": "Person",
         "properties": {}
@@ -1143,7 +1148,7 @@
           "type": "Text",
           "properties": {}
         },
-        "type": "REPLACED",
+        "type": "REPLACED_BY",
         "properties": {}
       },
       {
@@ -1255,7 +1260,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "GIVEN_SPEECH_TO",
+        "type": "RELATED_TO",
         "properties": {}
       },
       {
@@ -1274,6 +1279,20 @@
       },
       {
         "source": {
+          "id": "The Folger Shakespeare",
+          "type": "Text",
+          "properties": {}
+        },
+        "target": {
+          "id": "Folger Library Shakespeare Editions",
+          "type": "Edition",
+          "properties": {}
+        },
+        "type": "DEPENDS_ON",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Barbara Mowat",
           "type": "Person",
           "properties": {}
@@ -1283,7 +1302,7 @@
           "type": "Text",
           "properties": {}
         },
-        "type": "AUTHORED",
+        "type": "EDITED_BY",
         "properties": {}
       },
       {
@@ -1297,7 +1316,7 @@
           "type": "Text",
           "properties": {}
         },
-        "type": "AUTHORED",
+        "type": "EDITED_BY",
         "properties": {}
       }
     ],
@@ -1321,7 +1340,12 @@
     "nodes": [
       {
         "id": "Hamlet",
-        "type": "Person",
+        "type": "Character",
+        "properties": {}
+      },
+      {
+        "id": "Soldier",
+        "type": "Character",
         "properties": {}
       },
       {
@@ -1364,15 +1388,15 @@
       {
         "source": {
           "id": "Hamlet",
-          "type": "Person",
+          "type": "Character",
           "properties": {}
         },
         "target": {
-          "id": "Folger Shakespeare",
-          "type": "Organization",
+          "id": "Soldier",
+          "type": "Character",
           "properties": {}
         },
-        "type": "QUOTES",
+        "type": "FAREWELL",
         "properties": {}
       },
       {
@@ -1386,7 +1410,7 @@
           "type": "Group",
           "properties": {}
         },
-        "type": "SERVES",
+        "type": "PROVIDE",
         "properties": {}
       },
       {
@@ -1400,7 +1424,7 @@
           "type": "Group",
           "properties": {}
         },
-        "type": "SERVES",
+        "type": "PROVIDE",
         "properties": {}
       },
       {
@@ -1414,7 +1438,7 @@
           "type": "Group",
           "properties": {}
         },
-        "type": "SERVES",
+        "type": "PROVIDE",
         "properties": {}
       },
       {
@@ -1428,7 +1452,7 @@
           "type": "Group",
           "properties": {}
         },
-        "type": "SERVES",
+        "type": "PROVIDE",
         "properties": {}
       },
       {
@@ -1442,7 +1466,7 @@
           "type": "Group",
           "properties": {}
         },
-        "type": "SERVES",
+        "type": "PROVIDE",
         "properties": {}
       },
       {
@@ -1456,7 +1480,7 @@
           "type": "Group",
           "properties": {}
         },
-        "type": "SERVES",
+        "type": "PROVIDE",
         "properties": {}
       }
     ],
@@ -1635,11 +1659,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Mantua",
-          "type": "Place",
+          "id": "Tybalt",
+          "type": "Person",
           "properties": {}
         },
-        "type": "BANISHED_TO",
+        "type": "KILLS",
         "properties": {}
       },
       {
@@ -1667,21 +1691,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "RECEIVES_POTION_FROM",
+        "type": "RECEIVES_POTION",
         "properties": {}
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Friar",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Family Tomb",
-          "type": "Place",
+          "id": "Romeo",
+          "type": "Person",
           "properties": {}
         },
-        "type": "AWAKENS_IN",
+        "type": "SENDS_WORD",
         "properties": {}
       },
       {
@@ -1695,7 +1719,21 @@
           "type": "Place",
           "properties": {}
         },
-        "type": "DIES_IN",
+        "type": "VISITS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "DIES",
         "properties": {}
       },
       {
@@ -1709,7 +1747,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "COMMITS_SUICIDE_AFTER_SEEING",
+        "type": "DIES",
         "properties": {}
       }
     ],
@@ -1928,7 +1966,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MOTHER",
+        "type": "PARENT",
         "properties": {}
       },
       {
@@ -1947,30 +1985,30 @@
       },
       {
         "source": {
+          "id": "Romeo Montague",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Abram",
           "type": "Person",
           "properties": {}
         },
-        "target": {
-          "id": "Romeo Montague",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SERVINGMAN",
+        "type": "SERVANT",
         "properties": {}
       },
       {
         "source": {
-          "id": "Balthasar",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
           "id": "Romeo Montague",
           "type": "Person",
           "properties": {}
         },
-        "type": "SERVINGMAN",
+        "target": {
+          "id": "Balthasar",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SERVANT",
         "properties": {}
       },
       {
@@ -1998,17 +2036,17 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MOTHER",
+        "type": "PARENT",
         "properties": {}
       },
       {
         "source": {
-          "id": "Nurse",
+          "id": "Juliet",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Juliet",
+          "id": "Nurse",
           "type": "Person",
           "properties": {}
         },
@@ -2031,12 +2069,12 @@
       },
       {
         "source": {
-          "id": "Petruchio",
+          "id": "Tybalt",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Tybalt",
+          "id": "Petruchio",
           "type": "Person",
           "properties": {}
         },
@@ -2087,16 +2125,16 @@
       },
       {
         "source": {
-          "id": "Mercutio",
+          "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Romeo Montague",
+          "id": "Friar John",
           "type": "Person",
           "properties": {}
         },
-        "type": "FRIEND",
+        "type": "COMPANION",
         "properties": {}
       }
     ],
@@ -2184,7 +2222,7 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "PRODUCES",
+        "type": "CAUSES",
         "properties": {}
       },
       {
@@ -2198,7 +2236,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "RELATED_TO",
+        "type": "AFFECTS",
         "properties": {}
       }
     ],
@@ -2345,7 +2383,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "INTERACTS_WITH",
+        "type": "INTERACTION",
         "properties": {}
       },
       {
@@ -2359,7 +2397,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "INTERACTS_WITH",
+        "type": "INTERACTION",
         "properties": {}
       },
       {
@@ -2373,35 +2411,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "INTERACTS_WITH",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Sampson",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Gregory",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "INTERACTS_WITH",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Gregory",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Abram",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "INTERACTS_WITH",
+        "type": "INTERACTION",
         "properties": {}
       }
     ],
@@ -2486,7 +2496,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "FIGHT",
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sampson",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Abram",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -2500,7 +2524,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "FIGHT",
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -2514,7 +2552,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SUPPORT",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -2528,7 +2566,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SUPPORT",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -2542,7 +2580,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPOUSE",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -2556,7 +2594,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPOUSE",
+        "type": "SPEAKS_TO",
         "properties": {}
       }
     ],
@@ -2728,7 +2766,7 @@
       },
       {
         "source": {
-          "id": "Benvolio",
+          "id": "Montague",
           "type": "Person",
           "properties": {}
         },
@@ -2737,21 +2775,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Montague",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "ASKS_ABOUT",
+        "type": "ADVERSARY",
         "properties": {}
       },
       {
@@ -2776,20 +2800,6 @@
         },
         "target": {
           "id": "Lady Montague",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Lady Montague",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Montague",
           "type": "Person",
           "properties": {}
         },
@@ -2821,7 +2831,49 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "SEES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "PURSUED",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Lady Montague",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SON_OF",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Montague",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SON_OF",
         "properties": {}
       }
     ],
@@ -2862,6 +2914,11 @@
         "id": "Romeo",
         "type": "Person",
         "properties": {}
+      },
+      {
+        "id": "Aurora",
+        "type": "Concept",
+        "properties": {}
       }
     ],
     "relationships": [
@@ -2881,6 +2938,20 @@
       },
       {
         "source": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "FRIEND_OF",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Montague",
           "type": "Person",
           "properties": {}
@@ -2905,6 +2976,20 @@
           "properties": {}
         },
         "type": "PARENT_OF",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Aurora",
+          "type": "Concept",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "ASSOCIATED_WITH",
         "properties": {}
       }
     ],
@@ -3008,7 +3093,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "FRIEND",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "IN_LOVE_WITH",
         "properties": {}
       },
       {
@@ -3022,7 +3121,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "CONFIDANT",
         "properties": {}
       }
     ],
@@ -3053,31 +3152,6 @@
         "id": "Romeo",
         "type": "Person",
         "properties": {}
-      },
-      {
-        "id": "Beauty",
-        "type": "Concept",
-        "properties": {}
-      },
-      {
-        "id": "Love",
-        "type": "Concept",
-        "properties": {}
-      },
-      {
-        "id": "Chastity",
-        "type": "Concept",
-        "properties": {}
-      },
-      {
-        "id": "Despair",
-        "type": "Concept",
-        "properties": {}
-      },
-      {
-        "id": "Forgetting",
-        "type": "Concept",
-        "properties": {}
       }
     ],
     "relationships": [
@@ -3092,7 +3166,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "FRIEND",
         "properties": {}
       },
       {
@@ -3102,67 +3176,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Beauty",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "DISCUSSES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Love",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "DISCUSSES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Chastity",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "DISCUSSES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Despair",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "DISCUSSES",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Benvolio",
           "type": "Person",
           "properties": {}
         },
-        "target": {
-          "id": "Forgetting",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "ADVISES",
+        "type": "FRIEND",
         "properties": {}
       }
     ],
@@ -3424,7 +3442,7 @@
         "properties": {}
       },
       {
-        "id": "Rosaline",
+        "id": "Fair Niece Rosaline",
         "type": "Person",
         "properties": {}
       },
@@ -3439,7 +3457,7 @@
         "properties": {}
       },
       {
-        "id": "Tybalt",
+        "id": "Cousin Tybalt",
         "type": "Person",
         "properties": {}
       },
@@ -3449,7 +3467,7 @@
         "properties": {}
       },
       {
-        "id": "Helena",
+        "id": "Lively Helena",
         "type": "Person",
         "properties": {}
       },
@@ -3593,7 +3611,7 @@
           "properties": {}
         },
         "target": {
-          "id": "Rosaline",
+          "id": "Fair Niece Rosaline",
           "type": "Person",
           "properties": {}
         },
@@ -3635,7 +3653,7 @@
           "properties": {}
         },
         "target": {
-          "id": "Tybalt",
+          "id": "Cousin Tybalt",
           "type": "Person",
           "properties": {}
         },
@@ -3663,7 +3681,7 @@
           "properties": {}
         },
         "target": {
-          "id": "Helena",
+          "id": "Lively Helena",
           "type": "Person",
           "properties": {}
         },
@@ -3779,12 +3797,26 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "CARETAKER",
+        "type": "CALLS_FOR",
         "properties": {}
       },
       {
         "source": {
           "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Lady Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "DAUGHTER_OF",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
@@ -3951,20 +3983,6 @@
         },
         "type": "SPEAKS_TO",
         "properties": {}
-      },
-      {
-        "source": {
-          "id": "Lady Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "MOTHER_OF",
-        "properties": {}
       }
     ],
     "source": {
@@ -4128,7 +4146,7 @@
         "properties": {}
       },
       {
-        "id": "Boy",
+        "id": "Boy With A Drum",
         "type": "Person",
         "properties": {}
       }
@@ -4159,7 +4177,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ASSOCIATE",
+        "type": "PARENT",
         "properties": {}
       },
       {
@@ -4173,7 +4191,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "INFORM",
+        "type": "SERVE",
         "properties": {}
       },
       {
@@ -4187,7 +4205,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ASSOCIATE",
+        "type": "FRIEND",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "FRIEND",
         "properties": {}
       },
       {
@@ -4201,45 +4233,45 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ASSOCIATE",
+        "type": "FRIEND",
         "properties": {}
       },
       {
         "source": {
-          "id": "Benvolio",
+          "id": "Mercutio",
           "type": "Person",
           "properties": {}
         },
         "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "FRIEND",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Maskers",
           "type": "Group",
           "properties": {}
         },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
         "type": "ASSOCIATE",
         "properties": {}
       },
       {
         "source": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
           "id": "Torchbearers",
           "type": "Group",
           "properties": {}
         },
-        "type": "ASSOCIATE",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
         "target": {
-          "id": "Boy",
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
@@ -4418,20 +4450,6 @@
       },
       {
         "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Queen Mab",
-          "type": "Character",
-          "properties": {}
-        },
-        "type": "MENTIONS",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Mercutio",
           "type": "Person",
           "properties": {}
@@ -4442,6 +4460,20 @@
           "properties": {}
         },
         "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Queen Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "type": "MENTIONS",
         "properties": {}
       }
     ],
@@ -4534,18 +4566,48 @@
         "properties": {}
       },
       {
-        "id": "Cricket",
-        "type": "Animal",
-        "properties": {}
-      },
-      {
         "id": "Moonshine",
         "type": "Concept",
         "properties": {}
       },
       {
-        "id": "Sweetmeats",
-        "type": "Object",
+        "id": "Cricket",
+        "type": "Animal",
+        "properties": {}
+      },
+      {
+        "id": "Breath",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Blisters",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Suit",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Benefice",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Foreign_Throats",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Drums",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Horses",
+        "type": "Animal",
         "properties": {}
       }
     ],
@@ -4561,7 +4623,7 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "MIDWIFE_OF",
+        "type": "IS_MIDWIFE_OF",
         "properties": {}
       },
       {
@@ -4659,7 +4721,7 @@
           "type": "Animal",
           "properties": {}
         },
-        "type": "CREATED_BY",
+        "type": "ASSOCIATED_WITH",
         "properties": {}
       },
       {
@@ -4673,7 +4735,7 @@
           "type": "Animal",
           "properties": {}
         },
-        "type": "CREATED_BY",
+        "type": "ASSOCIATED_WITH",
         "properties": {}
       },
       {
@@ -4687,7 +4749,7 @@
           "type": "Animal",
           "properties": {}
         },
-        "type": "CREATED_BY",
+        "type": "ASSOCIATED_WITH",
         "properties": {}
       },
       {
@@ -4701,7 +4763,7 @@
           "type": "Animal",
           "properties": {}
         },
-        "type": "CREATED_BY",
+        "type": "ASSOCIATED_WITH",
         "properties": {}
       },
       {
@@ -4715,7 +4777,7 @@
           "type": "Object",
           "properties": {}
         },
-        "type": "RIDES_IN",
+        "type": "USES",
         "properties": {}
       },
       {
@@ -4729,21 +4791,7 @@
           "type": "Object",
           "properties": {}
         },
-        "type": "SIZE_OF",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Mab",
-          "type": "Character",
-          "properties": {}
-        },
-        "target": {
-          "id": "Cricket",
-          "type": "Animal",
-          "properties": {}
-        },
-        "type": "WHIP_OF",
+        "type": "ASSOCIATED_WITH",
         "properties": {}
       },
       {
@@ -4757,7 +4805,7 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "COLLARS_OF",
+        "type": "ASSOCIATED_WITH",
         "properties": {}
       },
       {
@@ -4767,11 +4815,109 @@
           "properties": {}
         },
         "target": {
-          "id": "Sweetmeats",
-          "type": "Object",
+          "id": "Cricket",
+          "type": "Animal",
           "properties": {}
         },
-        "type": "TAINTS_BREATH",
+        "type": "ASSOCIATED_WITH",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "target": {
+          "id": "Breath",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "ASSOCIATED_WITH",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "target": {
+          "id": "Blisters",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CAUSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "target": {
+          "id": "Suit",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CAUSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "target": {
+          "id": "Benefice",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CAUSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "target": {
+          "id": "Foreign_Throats",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CAUSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "target": {
+          "id": "Drums",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CAUSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mab",
+          "type": "Character",
+          "properties": {}
+        },
+        "target": {
+          "id": "Horses",
+          "type": "Animal",
+          "properties": {}
+        },
+        "type": "INTERACTS_WITH",
         "properties": {}
       }
     ],
@@ -4821,7 +4967,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "TALKING_TO",
         "properties": {}
       },
       {
@@ -4835,7 +4981,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "TALKING_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "TALKING_TO",
         "properties": {}
       },
       {
@@ -4849,7 +5009,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "TALKING_TO",
         "properties": {}
       }
     ],
@@ -4892,17 +5052,22 @@
         "properties": {}
       },
       {
-        "id": "Another Servingman",
-        "type": "Person",
-        "properties": {}
-      },
-      {
         "id": "Susan Grindstone",
         "type": "Person",
         "properties": {}
       },
       {
         "id": "Nell",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Anthony",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Potpan",
         "type": "Person",
         "properties": {}
       },
@@ -4923,12 +5088,17 @@
       },
       {
         "id": "Maskers",
-        "type": "Person",
+        "type": "Group",
         "properties": {}
       },
       {
-        "id": "Ladies",
-        "type": "Person",
+        "id": "Gentlewomen",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "Gentlemen",
+        "type": "Group",
         "properties": {}
       }
     ],
@@ -4968,11 +5138,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Another Servingman",
+          "id": "First Servingman",
           "type": "Person",
           "properties": {}
         },
-        "type": "CALLS_FOR",
+        "type": "COMMANDS",
         "properties": {}
       },
       {
@@ -4986,7 +5156,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "REQUESTS_ENTRY",
         "properties": {}
       },
       {
@@ -5000,7 +5170,77 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "REQUESTS_ENTRY",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Anthony",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "CALLS_FOR",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Potpan",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "CALLS_FOR",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Gentlemen",
+          "type": "Group",
+          "properties": {}
+        },
+        "type": "GREETS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Gentlewomen",
+          "type": "Group",
+          "properties": {}
+        },
+        "type": "GREETS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Maskers",
+          "type": "Group",
+          "properties": {}
+        },
+        "type": "GREETS",
         "properties": {}
       },
       {
@@ -5039,34 +5279,6 @@
         },
         "target": {
           "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "GREETS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Maskers",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "GREETS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Ladies",
           "type": "Person",
           "properties": {}
         },
@@ -5163,25 +5375,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Capulet",
+          "id": "Capulet'S Cousin",
           "type": "Person",
           "properties": {}
         },
-        "type": "OBSERVES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "EXPRESSES_LOVE",
+        "type": "TALKS_TO",
         "properties": {}
       }
     ],
@@ -5241,6 +5439,20 @@
           "properties": {}
         },
         "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "HOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Tybalt",
           "type": "Person",
           "properties": {}
@@ -5250,30 +5462,16 @@
       },
       {
         "source": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "GUEST",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
           "id": "Tybalt",
           "type": "Person",
           "properties": {}
         },
-        "type": "MASTER",
+        "target": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "KINS",
         "properties": {}
       }
     ],
@@ -5444,7 +5642,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MOTHER",
+        "type": "MOTHER_OF",
         "properties": {}
       },
       {
@@ -5468,11 +5666,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Benvolio",
+          "id": "Capulet",
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "ENEMY_OF",
         "properties": {}
       },
       {
@@ -5482,11 +5680,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Capulet",
+          "id": "Benvolio",
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "FRIEND_OF",
         "properties": {}
       }
     ],
@@ -5565,7 +5763,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "SON_OF",
         "properties": {}
       },
       {
@@ -5579,7 +5777,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "IDENTIFIES",
         "properties": {}
       },
       {
@@ -5593,7 +5791,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "IDENTIFIES",
         "properties": {}
       },
       {
@@ -5621,7 +5819,7 @@
           "type": "Family",
           "properties": {}
         },
-        "type": "BELONGS_TO",
+        "type": "SON_OF",
         "properties": {}
       },
       {
@@ -5868,7 +6066,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "NICKNAME_FOR",
         "properties": {}
       },
       {
@@ -6295,6 +6493,20 @@
         },
         "type": "ASSISTS",
         "properties": {}
+      },
+      {
+        "source": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Nurse",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "REQUESTS_HELP",
+        "properties": {}
       }
     ],
     "source": {
@@ -6503,13 +6715,13 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "MOTHER_OF",
         "properties": {}
       },
       {
         "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
+          "id": "Earth",
+          "type": "Concept",
           "properties": {}
         },
         "target": {
@@ -6517,41 +6729,13 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "PROVIDES",
         "properties": {}
       },
       {
         "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Herbs",
+          "id": "Plants",
           "type": "Concept",
-          "properties": {}
-        },
-        "type": "MENTIONS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Stones",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "MENTIONS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
           "properties": {}
         },
         "target": {
@@ -6559,13 +6743,13 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
         "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
+          "id": "Plants",
+          "type": "Concept",
           "properties": {}
         },
         "target": {
@@ -6573,7 +6757,7 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "MENTIONS",
+        "type": "CONTAINS",
         "properties": {}
       },
       {
@@ -6583,25 +6767,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Flower",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "MENTIONS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
+          "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
-        "target": {
-          "id": "Death",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "MENTIONS",
+        "type": "ADDRESS",
         "properties": {}
       }
     ],
@@ -6670,7 +6840,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LOVED",
+        "type": "MENTIONED",
         "properties": {}
       },
       {
@@ -6684,7 +6854,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LOVED",
+        "type": "MENTIONED",
         "properties": {}
       },
       {
@@ -6699,20 +6869,6 @@
           "properties": {}
         },
         "type": "ADVISED",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "REQUESTED_MARRIAGE",
         "properties": {}
       }
     ],
@@ -6743,16 +6899,6 @@
         "id": "Romeo",
         "type": "Person",
         "properties": {}
-      },
-      {
-        "id": "Rosaline",
-        "type": "Person",
-        "properties": {}
-      },
-      {
-        "id": "Saint Francis",
-        "type": "Person",
-        "properties": {}
       }
     ],
     "relationships": [
@@ -6767,7 +6913,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ADVISES",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -6777,53 +6923,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Rosaline",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "LOVES",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "CHIDES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "ASSISTS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Saint Francis",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "MENTIONED",
+        "type": "SPEAKS_TO",
         "properties": {}
       }
     ],
@@ -6866,12 +6970,12 @@
         "properties": {}
       },
       {
-        "id": "Rosaline",
+        "id": "Tybalt",
         "type": "Person",
         "properties": {}
       },
       {
-        "id": "Tybalt",
+        "id": "Rosaline",
         "type": "Person",
         "properties": {}
       },
@@ -6889,11 +6993,53 @@
           "properties": {}
         },
         "target": {
+          "id": "Friar Lawrence",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "EXITS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "ENTERS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SEARCHES_FOR",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Rosaline",
           "type": "Person",
           "properties": {}
         },
-        "type": "LOVES",
+        "type": "TORMENTS",
         "properties": {}
       },
       {
@@ -6907,63 +7053,49 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "KINSMAN_OF",
+        "type": "SENDS_LETTER",
         "properties": {}
       },
       {
         "source": {
-          "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "FRIEND_OF",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
           "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
-        "type": "FRIEND_OF",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
         "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "FRIEND_OF",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Tybalt",
           "type": "Person",
           "properties": {}
         },
+        "type": "CHALLENGE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "DESCRIBES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
         "target": {
           "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
-        "type": "CHALLENGES",
+        "type": "PITIES",
         "properties": {}
       }
     ],
@@ -7013,7 +7145,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "CONVERSATION",
         "properties": {}
       },
       {
@@ -7027,7 +7159,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "CONVERSATION",
         "properties": {}
       },
       {
@@ -7041,7 +7173,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "CONVERSATION",
         "properties": {}
       }
     ],
@@ -7119,7 +7251,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "CONVERSATION",
+        "type": "INTERJECTION",
         "properties": {}
       },
       {
@@ -7133,7 +7265,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "CONVERSATION",
+        "type": "INTERJECTION",
         "properties": {}
       }
     ],
@@ -7190,20 +7322,6 @@
         },
         "target": {
           "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Benvolio",
           "type": "Person",
           "properties": {}
         },
@@ -7351,7 +7469,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "EXITS_WITH",
+        "type": "EXIT",
         "properties": {}
       },
       {
@@ -7365,7 +7483,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "DESIRES_CONFIDENCE",
+        "type": "DESIRE_CONVERSATION",
         "properties": {}
       },
       {
@@ -7379,7 +7497,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "INVITES_TO_DINNER",
+        "type": "INVITE_TO_DINNER",
         "properties": {}
       },
       {
@@ -7393,7 +7511,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "COMMENT_ON_MERCHANT",
         "properties": {}
       },
       {
@@ -7407,7 +7525,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "FAREWELLS",
+        "type": "FAREWELL",
         "properties": {}
       },
       {
@@ -7421,7 +7539,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "DIRECT_TO",
         "properties": {}
       },
       {
@@ -7435,26 +7553,12 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "DESCRIBES",
+        "type": "COMMENT_ON_GENTLEMAN",
         "properties": {}
       },
       {
         "source": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
           "id": "Nurse",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Benvolio",
           "type": "Person",
           "properties": {}
         },
@@ -7463,7 +7567,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "DIRECT_TO",
         "properties": {}
       }
     ],
@@ -7605,7 +7709,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "COMMENDS",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -7624,7 +7728,7 @@
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Nurse",
           "type": "Person",
           "properties": {}
         },
@@ -7634,6 +7738,34 @@
           "properties": {}
         },
         "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "MENTIONS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paris",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "MENTIONS",
         "properties": {}
       }
     ],
@@ -7702,20 +7834,6 @@
       },
       {
         "source": {
-          "id": "Nurse",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Juliet",
           "type": "Person",
           "properties": {}
@@ -7725,21 +7843,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "THOUGHTS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Nurse",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Nurse",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "THOUGHTS",
+        "type": "SELF_REFLECTION",
         "properties": {}
       }
     ],
@@ -7973,7 +8077,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LOVES",
+        "type": "LOVE",
         "properties": {}
       },
       {
@@ -8037,16 +8141,16 @@
       },
       {
         "source": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
           "id": "Mercutio",
           "type": "Person",
           "properties": {}
         },
-        "type": "CONVERSATION",
+        "target": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "FRIEND",
         "properties": {}
       }
     ],
@@ -8092,6 +8196,20 @@
     "relationships": [
       {
         "source": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Benvolio",
           "type": "Person",
           "properties": {}
@@ -8101,7 +8219,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "FRIEND",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -8115,7 +8233,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "RIVAL",
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -8129,26 +8261,26 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "RIVAL",
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
         "source": {
           "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "FRIEND",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Tybalt",
           "type": "Person",
           "properties": {}
         },
@@ -8157,7 +8289,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "COMPANION",
+        "type": "SPEAKS_TO",
         "properties": {}
       }
     ],
@@ -8221,7 +8353,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "GREET",
+        "type": "INSULT",
         "properties": {}
       },
       {
@@ -8235,7 +8367,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "PROTEST",
+        "type": "DENIAL",
         "properties": {}
       },
       {
@@ -8249,7 +8381,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "INSULT",
+        "type": "PROVOCATION",
         "properties": {}
       }
     ],
@@ -8328,7 +8460,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ATTEMPTS_TO_HELP",
+        "type": "ATTEMPTS_TO_PROTECT",
         "properties": {}
       },
       {
@@ -8338,16 +8470,30 @@
           "properties": {}
         },
         "target": {
-          "id": "Tybalt",
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
-        "type": "FIGHTS",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
         "source": {
-          "id": "Petruccio",
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Benvolio",
           "type": "Person",
           "properties": {}
         },
@@ -8356,7 +8502,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "EXITS_WITH",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -8370,7 +8516,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "CALLS_FOR",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -8384,12 +8530,12 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "BLAMES",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
         "source": {
-          "id": "Romeo",
+          "id": "Mercutio",
           "type": "Person",
           "properties": {}
         },
@@ -8398,7 +8544,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "HOLDS",
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Petruccio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "EXITS_WITH",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       }
     ],
@@ -8482,20 +8656,6 @@
       },
       {
         "source": {
-          "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Tybalt",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "RIVAL",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Romeo",
           "type": "Person",
           "properties": {}
@@ -8505,7 +8665,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LOVER",
+        "type": "LOVES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "ENEMY",
         "properties": {}
       },
       {
@@ -8515,11 +8689,39 @@
           "properties": {}
         },
         "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "ENEMY",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Prince",
           "type": "Person",
           "properties": {}
         },
         "type": "ALLY",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "DECEASED",
         "properties": {}
       }
     ],
@@ -8646,20 +8848,6 @@
       },
       {
         "source": {
-          "id": "Benvolio",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Citizen",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "INFORMS",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Prince",
           "type": "Person",
           "properties": {}
@@ -8674,7 +8862,7 @@
       },
       {
         "source": {
-          "id": "Montague",
+          "id": "Benvolio",
           "type": "Person",
           "properties": {}
         },
@@ -8683,7 +8871,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ADDRESSES",
+        "type": "INFORMS",
         "properties": {}
       },
       {
@@ -8693,11 +8881,39 @@
           "properties": {}
         },
         "target": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "RELATIONSHIP",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lady Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "RELATIONSHIP",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Montague",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Prince",
           "type": "Person",
           "properties": {}
         },
-        "type": "ADDRESSES",
+        "type": "ADDRESS",
         "properties": {}
       },
       {
@@ -8749,12 +8965,12 @@
         "properties": {}
       },
       {
-        "id": "Tybalt",
+        "id": "Romeo",
         "type": "Person",
         "properties": {}
       },
       {
-        "id": "Romeo",
+        "id": "Tybalt",
         "type": "Person",
         "properties": {}
       },
@@ -8814,11 +9030,25 @@
           "properties": {}
         },
         "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPOKE_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Benvolio",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Prince",
           "type": "Person",
           "properties": {}
         },
-        "type": "BEG_FOR_JUSTICE",
+        "type": "BEG_FOR",
         "properties": {}
       },
       {
@@ -8832,35 +9062,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ACCUSE",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "FRIEND_OF",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Tybalt",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Mercutio",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "FIGHTED_WITH",
+        "type": "WANTS_JUSTICE",
         "properties": {}
       }
     ],
@@ -8935,7 +9137,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "BEAR_BODY",
+        "type": "EXILE",
         "properties": {}
       },
       {
@@ -8992,20 +9194,6 @@
           "properties": {}
         },
         "type": "SLEW",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Prince",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "EXILE",
         "properties": {}
       },
       {
@@ -9097,7 +9285,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "BRINGS_NEWS",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
@@ -9111,7 +9299,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "EXPRESSES_LOVE",
+        "type": "MENTIONS",
         "properties": {}
       }
     ],
@@ -9398,20 +9586,6 @@
           "properties": {}
         },
         "target": {
-          "id": "Nurse",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
           "id": "Romeo",
           "type": "Person",
           "properties": {}
@@ -9476,7 +9650,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "GIVES",
+        "type": "ASSIST",
         "properties": {}
       },
       {
@@ -9490,7 +9664,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ASKS_FOR_HELP",
+        "type": "SEEK",
         "properties": {}
       },
       {
@@ -9504,7 +9678,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "INFORMS_ABOUT",
+        "type": "COMFORT",
         "properties": {}
       },
       {
@@ -9518,7 +9692,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MOURNS",
+        "type": "MOURN",
         "properties": {}
       },
       {
@@ -9532,7 +9706,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LONGS_FOR",
+        "type": "LOVE",
         "properties": {}
       }
     ],
@@ -9719,6 +9893,16 @@
         "id": "Romeo",
         "type": "Person",
         "properties": {}
+      },
+      {
+        "id": "Juliet",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Tybalt",
+        "type": "Person",
+        "properties": {}
       }
     ],
     "relationships": [
@@ -9771,11 +9955,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Romeo",
+          "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
-        "type": "BANISHED",
+        "type": "SEEKS_ADVICE",
         "properties": {}
       }
     ],
@@ -9826,25 +10010,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Friar Lawrence",
+          "id": "Juliet",
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
+        "type": "SERVES",
         "properties": {}
       },
       {
@@ -9858,7 +10028,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "INFORMS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Friar Lawrence",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "COUNSELS",
         "properties": {}
       },
       {
@@ -10014,6 +10198,26 @@
         "id": "Romeo",
         "type": "Person",
         "properties": {}
+      },
+      {
+        "id": "Tybalt",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Mantua",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "Prince",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Lady",
+        "type": "Person",
+        "properties": {}
       }
     ],
     "relationships": [
@@ -10028,7 +10232,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "GIVES_RING",
+        "type": "GIVES",
         "properties": {}
       },
       {
@@ -10038,25 +10242,53 @@
           "properties": {}
         },
         "target": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "KILLS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Mantua",
+          "type": "Place",
+          "properties": {}
+        },
+        "type": "LIVES_IN",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prince",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SEEKS_PARDON",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Nurse",
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
         "target": {
-          "id": "Romeo",
+          "id": "Lady",
           "type": "Person",
           "properties": {}
         },
-        "type": "SELF_TALK",
+        "type": "COMMENDS",
         "properties": {}
       }
     ],
@@ -10135,6 +10367,20 @@
       },
       {
         "source": {
+          "id": "Lady Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paris",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "TALKED_TO",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Capulet",
           "type": "Person",
           "properties": {}
@@ -10144,21 +10390,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "TALKED_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Lady Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "TALKED_TO",
+        "type": "TALKED_ABOUT",
         "properties": {}
       },
       {
@@ -10172,12 +10404,12 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "TALKED_TO",
+        "type": "TALKED_ABOUT",
         "properties": {}
       },
       {
         "source": {
-          "id": "Paris",
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
@@ -10186,7 +10418,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "TALKED_TO",
+        "type": "TALKED_ABOUT",
         "properties": {}
       }
     ],
@@ -10251,7 +10483,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ACQUAINTS",
+        "type": "ACQUAINT",
         "properties": {}
       },
       {
@@ -10265,7 +10497,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "PREPARES_FOR_WEDDING",
+        "type": "PREPARE_FOR_WEDDING",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Lady Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAK_TO",
         "properties": {}
       },
       {
@@ -10279,7 +10525,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LOVES",
+        "type": "SPEAK_TO",
         "properties": {}
       },
       {
@@ -10293,21 +10539,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "KINS",
+        "type": "MENTION",
         "properties": {}
       },
       {
         "source": {
-          "id": "Lady Capulet",
+          "id": "Capulet",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Juliet",
+          "id": "Thursday",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "SET_WEDDING_DATE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
           "type": "Person",
           "properties": {}
         },
-        "type": "GOES_TO",
+        "target": {
+          "id": "Wednesday",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "SET_WEDDING_DATE",
         "properties": {}
       }
     ],
@@ -10421,6 +10681,34 @@
       },
       {
         "source": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "LOVES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "LOVES",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Nurse",
           "type": "Person",
           "properties": {}
@@ -10430,35 +10718,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
+        "type": "INFORMS",
         "properties": {}
       },
       {
@@ -10487,34 +10747,6 @@
           "properties": {}
         },
         "type": "KISSES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "EXITS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "EXITS",
         "properties": {}
       }
     ],
@@ -10558,7 +10790,7 @@
       },
       {
         "id": "Villain",
-        "type": "Concept",
+        "type": "Person",
         "properties": {}
       }
     ],
@@ -10627,7 +10859,7 @@
         },
         "target": {
           "id": "Villain",
-          "type": "Concept",
+          "type": "Person",
           "properties": {}
         },
         "type": "REFERENCES",
@@ -10674,7 +10906,7 @@
       },
       {
         "id": "Mantua",
-        "type": "Location",
+        "type": "Place",
         "properties": {}
       }
     ],
@@ -10704,21 +10936,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "WANTS_TO_KILL",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Lady Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Tybalt",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "RELATIVE_OF",
+        "type": "HAS_FEELINGS_FOR",
         "properties": {}
       },
       {
@@ -10732,21 +10950,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "RELATIVE_OF",
+        "type": "HAS_FEELINGS_FOR",
         "properties": {}
       },
       {
         "source": {
-          "id": "Romeo",
+          "id": "Lady Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "HAS_FEELINGS_FOR",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lady Capulet",
           "type": "Person",
           "properties": {}
         },
         "target": {
           "id": "Mantua",
-          "type": "Location",
+          "type": "Place",
           "properties": {}
         },
-        "type": "BANISHED_TO",
+        "type": "MENTIONS",
         "properties": {}
       }
     ],
@@ -10825,7 +11057,7 @@
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Lady Capulet",
           "type": "Person",
           "properties": {}
         },
@@ -10834,7 +11066,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "HATES",
+        "type": "ARRANGED_MARRIAGE",
         "properties": {}
       },
       {
@@ -10853,16 +11085,16 @@
       },
       {
         "source": {
-          "id": "County Paris",
+          "id": "Juliet",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Saint Peter\u2019S Church",
-          "type": "Place",
+          "id": "County Paris",
+          "type": "Person",
           "properties": {}
         },
-        "type": "MARRIAGE_LOCATION",
+        "type": "DISLIKES",
         "properties": {}
       }
     ],
@@ -11155,34 +11387,6 @@
         },
         "type": "MENTIONS",
         "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "HUSBAND",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Paris",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "RIVAL",
-        "properties": {}
       }
     ],
     "source": {
@@ -11214,12 +11418,7 @@
         "properties": {}
       },
       {
-        "id": "Lawrence",
-        "type": "Person",
-        "properties": {}
-      },
-      {
-        "id": "Friar",
+        "id": "Friar Lawrence",
         "type": "Person",
         "properties": {}
       }
@@ -11246,7 +11445,7 @@
           "properties": {}
         },
         "target": {
-          "id": "Lawrence",
+          "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
@@ -11255,16 +11454,16 @@
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Nurse",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Friar",
+          "id": "Juliet",
           "type": "Person",
           "properties": {}
         },
-        "type": "SEEKS_ADVICE",
+        "type": "COMFORTS",
         "properties": {}
       }
     ],
@@ -11607,13 +11806,83 @@
         "properties": {}
       },
       {
-        "id": "Nurse",
-        "type": "Person",
+        "id": "Death",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Shame",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Remedy",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Battlements",
+        "type": "Location",
+        "properties": {}
+      },
+      {
+        "id": "Serpents",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Roaring Bears",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Charnel House",
+        "type": "Location",
+        "properties": {}
+      },
+      {
+        "id": "Dead Men\u2019S Rattling Bones",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Grave",
+        "type": "Location",
+        "properties": {}
+      },
+      {
+        "id": "Shroud",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "Sweet Love",
+        "type": "Concept",
         "properties": {}
       },
       {
         "id": "Distilling Liquor",
         "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "Cold And Drowsy Humor",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Pulse",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Warmth",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Breath",
+        "type": "Concept",
         "properties": {}
       }
     ],
@@ -11667,11 +11936,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Distilling Liquor",
-          "type": "Object",
+          "id": "Remedy",
+          "type": "Concept",
           "properties": {}
         },
-        "type": "GIVES",
+        "type": "PROVIDES",
         "properties": {}
       },
       {
@@ -11681,11 +11950,109 @@
           "properties": {}
         },
         "target": {
-          "id": "Nurse",
+          "id": "Death",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CONFRONTS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Juliet",
           "type": "Person",
           "properties": {}
         },
-        "type": "INSTRUCTS_TO_STAY_AWAY",
+        "target": {
+          "id": "Shame",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CHIDES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Sweet Love",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "DESIRES_TO_BE_UNSTAINED",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Friar Lawrence",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Distilling Liquor",
+          "type": "Object",
+          "properties": {}
+        },
+        "type": "GIVES_INSTRUCTION",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Distilling Liquor",
+          "type": "Object",
+          "properties": {}
+        },
+        "target": {
+          "id": "Cold And Drowsy Humor",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CAUSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cold And Drowsy Humor",
+          "type": "Concept",
+          "properties": {}
+        },
+        "target": {
+          "id": "Pulse",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "AFFECTS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cold And Drowsy Humor",
+          "type": "Concept",
+          "properties": {}
+        },
+        "target": {
+          "id": "Warmth",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "AFFECTS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cold And Drowsy Humor",
+          "type": "Concept",
+          "properties": {}
+        },
+        "target": {
+          "id": "Breath",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "AFFECTS",
         "properties": {}
       }
     ],
@@ -11745,7 +12112,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "TALKED_TO",
         "properties": {}
       },
       {
@@ -11787,7 +12154,7 @@
           "type": "Place",
           "properties": {}
         },
-        "type": "TRAVELS_TO",
+        "type": "LIVES_IN",
         "properties": {}
       }
     ],
@@ -11895,11 +12262,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Father Capulet",
+          "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
-        "type": "BEGS_PARDON",
+        "type": "SEEKS_HELP",
         "properties": {}
       },
       {
@@ -11909,11 +12276,25 @@
           "properties": {}
         },
         "target": {
-          "id": "Friar Lawrence",
+          "id": "Capulet",
           "type": "Person",
           "properties": {}
         },
-        "type": "SEEK_ADVICE",
+        "type": "BEGS_PARDON",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nurse",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       }
     ],
@@ -12070,6 +12451,16 @@
         "id": "Nurse",
         "type": "Person",
         "properties": {}
+      },
+      {
+        "id": "Vial",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "Knife",
+        "type": "Object",
+        "properties": {}
       }
     ],
     "relationships": [
@@ -12122,11 +12513,25 @@
           "properties": {}
         },
         "target": {
+          "id": "Vial",
+          "type": "Object",
+          "properties": {}
+        },
+        "type": "USES",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Juliet",
           "type": "Person",
           "properties": {}
         },
-        "type": "SELF_REFLECTION",
+        "target": {
+          "id": "Knife",
+          "type": "Object",
+          "properties": {}
+        },
+        "type": "USES",
         "properties": {}
       }
     ],
@@ -12169,16 +12574,6 @@
         "properties": {}
       },
       {
-        "id": "Death",
-        "type": "Concept",
-        "properties": {}
-      },
-      {
-        "id": "Marriage",
-        "type": "Concept",
-        "properties": {}
-      },
-      {
         "id": "Tomb",
         "type": "Place",
         "properties": {}
@@ -12186,6 +12581,11 @@
       {
         "id": "Vault",
         "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "Ghost",
+        "type": "Concept",
         "properties": {}
       }
     ],
@@ -12220,44 +12620,16 @@
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Tybalt",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Ancestors",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "REFERS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
-        "target": {
-          "id": "Death",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "FEARS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Marriage",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "CONCERNS",
+        "type": "ENEMY",
         "properties": {}
       },
       {
@@ -12271,13 +12643,13 @@
           "type": "Place",
           "properties": {}
         },
-        "type": "ASSOCIATED_WITH",
+        "type": "ENTERS",
         "properties": {}
       },
       {
         "source": {
-          "id": "Juliet",
-          "type": "Person",
+          "id": "Tomb",
+          "type": "Place",
           "properties": {}
         },
         "target": {
@@ -12285,7 +12657,35 @@
           "type": "Place",
           "properties": {}
         },
-        "type": "ASSOCIATED_WITH",
+        "type": "LOCATED_IN",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vault",
+          "type": "Place",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ancestors",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ghost",
+          "type": "Concept",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SEEKING",
         "properties": {}
       }
     ],
@@ -12333,11 +12733,6 @@
         "properties": {}
       },
       {
-        "id": "Peter",
-        "type": "Person",
-        "properties": {}
-      },
-      {
         "id": "Servingmen",
         "type": "Person",
         "properties": {}
@@ -12369,7 +12764,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "EXIT",
+        "type": "COMMAND",
         "properties": {}
       },
       {
@@ -12383,7 +12778,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LOOK_TO",
+        "type": "COMMAND",
         "properties": {}
       },
       {
@@ -12397,35 +12792,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ENTER",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Servingman",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "REPORT",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "CALL",
+        "type": "COMMAND",
         "properties": {}
       }
     ],
@@ -12476,6 +12843,20 @@
     "relationships": [
       {
         "source": {
+          "id": "Second_Servingman",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SERVES",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Capulet",
           "type": "Person",
           "properties": {}
@@ -12499,26 +12880,12 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "WAKE_UP",
+        "type": "WAKES_UP",
         "properties": {}
       },
       {
         "source": {
           "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "County_Paris",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "BRIDEGROOM",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Nurse",
           "type": "Person",
           "properties": {}
         },
@@ -12750,7 +13117,7 @@
           "properties": {}
         },
         "target": {
-          "id": "Lady Capulet",
+          "id": "Paris",
           "type": "Person",
           "properties": {}
         },
@@ -12804,7 +13171,7 @@
           "type": "Play",
           "properties": {}
         },
-        "type": "CHARACTER_IN",
+        "type": "SPEAKS_IN",
         "properties": {}
       },
       {
@@ -12818,7 +13185,7 @@
           "type": "Play",
           "properties": {}
         },
-        "type": "CHARACTER_IN",
+        "type": "SPEAKS_IN",
         "properties": {}
       }
     ],
@@ -12906,7 +13273,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "SPEAKS",
         "properties": {}
       },
       {
@@ -12920,7 +13287,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "SPEAKS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "First Musician",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Sir Paris",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Peter",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "First Musician",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS",
         "properties": {}
       },
       {
@@ -12934,7 +13329,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "SPEAKS",
         "properties": {}
       },
       {
@@ -12948,7 +13343,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "SPEAKS",
         "properties": {}
       },
       {
@@ -12962,7 +13357,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "SPEAKS",
         "properties": {}
       },
       {
@@ -12976,189 +13371,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "First Musician",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Peter",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SPEAKS_TO",
+        "type": "SPEAKS",
         "properties": {}
       }
     ],
@@ -13364,6 +13577,11 @@
         "properties": {}
       },
       {
+        "id": "Friar",
+        "type": "Person",
+        "properties": {}
+      },
+      {
         "id": "Capels' Monument",
         "type": "Location",
         "properties": {}
@@ -13410,6 +13628,20 @@
           "properties": {}
         },
         "type": "BURIED_IN",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Balthasar",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Friar",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SENDS_LETTERS_TO",
         "properties": {}
       }
     ],
@@ -13575,6 +13807,20 @@
       },
       {
         "source": {
+          "id": "Apothecary",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SELLS_POISON",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "Romeo",
           "type": "Person",
           "properties": {}
@@ -13585,34 +13831,6 @@
           "properties": {}
         },
         "type": "REQUESTS_POISON",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Apothecary",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "EXPRESSES_CONCERN",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Apothecary",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "AGREES_TO_SELL_POISON",
         "properties": {}
       }
     ],
@@ -14072,7 +14290,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "CONFRONTS",
+        "type": "THREATENS",
         "properties": {}
       },
       {
@@ -14086,7 +14304,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "REQUESTS_FRIENDSHIP",
         "properties": {}
       },
       {
@@ -14114,7 +14332,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "THREATENS",
+        "type": "ADVISES_TO_LEAVE",
         "properties": {}
       }
     ],
@@ -14184,11 +14402,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Paris",
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
-        "type": "EXIT",
+        "type": "EXITS",
         "properties": {}
       },
       {
@@ -14202,7 +14420,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "DIE",
+        "type": "DIES",
         "properties": {}
       },
       {
@@ -14216,35 +14434,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "OPEN_TOMB",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Paris",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "DEFY",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Paris",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "PROVOKE",
+        "type": "LAYS_IN_TOMB",
         "properties": {}
       },
       {
@@ -14258,7 +14448,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "BURY",
+        "type": "LOVES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paris",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "DEFIES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paris",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "PROVOKES",
         "properties": {}
       },
       {
@@ -14272,7 +14490,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "LIE_WITH",
+        "type": "BURIED_WITH",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Mercutio",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "KINS_MAN",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paris",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "MARRIED_TO",
         "properties": {}
       }
     ],
@@ -14315,6 +14561,11 @@
         "properties": {}
       },
       {
+        "id": "Romeo",
+        "type": "Person",
+        "properties": {}
+      },
+      {
         "id": "Love",
         "type": "Concept",
         "properties": {}
@@ -14330,6 +14581,11 @@
         "properties": {}
       },
       {
+        "id": "Night",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
         "id": "Drugs",
         "type": "Concept",
         "properties": {}
@@ -14338,13 +14594,55 @@
     "relationships": [
       {
         "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "KISSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
         "target": {
           "id": "Death",
           "type": "Concept",
+          "properties": {}
+        },
+        "type": "DIES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tybalt",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "FORGIVES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Juliet",
+          "type": "Person",
           "properties": {}
         },
         "type": "LOVES",
@@ -14352,49 +14650,7 @@
       },
       {
         "source": {
-          "id": "Death",
-          "type": "Concept",
-          "properties": {}
-        },
-        "target": {
-          "id": "Beauty",
-          "type": "Concept",
-          "properties": {}
-        },
-        "type": "OPPOSES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Tybalt",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "COUSIN",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "ENTERS",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
@@ -14408,7 +14664,21 @@
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Night",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "STAYS_IN",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
@@ -14417,7 +14687,49 @@
           "type": "Concept",
           "properties": {}
         },
-        "type": "USES",
+        "type": "DRINKS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Love",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "TOASTS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Death",
+          "type": "Concept",
+          "properties": {}
+        },
+        "type": "DIES_WITH_KISS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Friar Lawrence",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "ENTERS_WITH",
         "properties": {}
       }
     ],
@@ -14450,12 +14762,12 @@
         "properties": {}
       },
       {
-        "id": "Romeo",
+        "id": "Saint Francis",
         "type": "Person",
         "properties": {}
       },
       {
-        "id": "Saint Francis",
+        "id": "Romeo",
         "type": "Person",
         "properties": {}
       },
@@ -14506,7 +14818,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "KNOWS",
+        "type": "MASTER",
         "properties": {}
       },
       {
@@ -14539,20 +14851,6 @@
       },
       {
         "source": {
-          "id": "Balthasar",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "MASTER",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
@@ -14562,12 +14860,12 @@
           "type": "Location",
           "properties": {}
         },
-        "type": "DREAMT_UNDER",
+        "type": "DREAMED_AT",
         "properties": {}
       },
       {
         "source": {
-          "id": "Romeo",
+          "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
@@ -14614,11 +14912,6 @@
         "properties": {}
       },
       {
-        "id": "Romeo",
-        "type": "Person",
-        "properties": {}
-      },
-      {
         "id": "Paris",
         "type": "Person",
         "properties": {}
@@ -14631,6 +14924,16 @@
       {
         "id": "Watch",
         "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Dagger",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "Poison",
+        "type": "Object",
         "properties": {}
       }
     ],
@@ -14646,7 +14949,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "KISSES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dagger",
+          "type": "Object",
+          "properties": {}
+        },
+        "type": "USES",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Poison",
+          "type": "Object",
+          "properties": {}
+        },
+        "type": "USES",
         "properties": {}
       },
       {
@@ -14660,21 +14991,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "SEEKS",
         "properties": {}
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Friar Lawrence",
           "type": "Person",
           "properties": {}
         },
         "target": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "ADVISES",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "First Watch",
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "target": {
+          "id": "Juliet",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "CALLS",
         "properties": {}
       },
       {
@@ -14688,7 +15033,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
@@ -14698,11 +15043,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Paris'S Page",
-          "type": "Person",
+          "id": "Dagger",
+          "type": "Object",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "IDENTIFIES",
         "properties": {}
       },
       {
@@ -14716,7 +15061,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPEAKS_TO",
+        "type": "AWARES",
         "properties": {}
       },
       {
@@ -14726,67 +15071,11 @@
           "properties": {}
         },
         "target": {
-          "id": "Romeo",
+          "id": "Paris'S Page",
           "type": "Person",
           "properties": {}
         },
-        "type": "DIES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Paris",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "DIES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "STABS_WITH",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "KISSES",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "DIES",
+        "type": "LEADS",
         "properties": {}
       }
     ],
@@ -14870,44 +15159,58 @@
       },
       {
         "source": {
-          "id": "Prince",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Balthasar",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "HOLDS",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "First Watch",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "HOLD",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Prince",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "First Watch",
           "type": "Person",
           "properties": {}
         },
         "type": "CALLS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Balthasar",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "First Watch",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "FOUND_IN_CHURCHYARD",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Friar Lawrence",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "First Watch",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SUSPECTED",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prince",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "First Watch",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "QUESTIONS",
         "properties": {}
       }
     ],
@@ -14987,21 +15290,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "SPOUSE",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Capulet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Prince",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "ADDRESS",
+        "type": "MARRIED_TO",
         "properties": {}
       },
       {
@@ -15015,7 +15304,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "COMMAND",
+        "type": "COMMANDS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prince",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lady Capulet",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prince",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -15029,7 +15346,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ADDRESS",
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -15043,7 +15360,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTION",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
@@ -15057,7 +15374,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTION",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
@@ -15071,7 +15388,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTION",
+        "type": "MENTIONS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Montague",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prince",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "SPEAKS_TO",
         "properties": {}
       },
       {
@@ -15085,7 +15416,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ADDRESS",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
@@ -15099,7 +15430,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTION",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
@@ -15113,7 +15444,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "MENTION",
+        "type": "MENTIONS",
         "properties": {}
       }
     ],
@@ -15183,21 +15514,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "RELATED_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Prince",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Friar Lawrence",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "RELATED_TO",
+        "type": "GRIEVES_FOR",
         "properties": {}
       },
       {
@@ -15239,7 +15556,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "HUSBAND_WIFE",
+        "type": "HUSBAND",
         "properties": {}
       },
       {
@@ -15249,35 +15566,35 @@
           "properties": {}
         },
         "target": {
-          "id": "Tybalt",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "RELATED_TO",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Romeo",
           "type": "Person",
           "properties": {}
         },
-        "target": {
-          "id": "Tybalt",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "RELATED_TO",
+        "type": "WIFE",
         "properties": {}
       },
       {
         "source": {
-          "id": "Juliet",
+          "id": "Tybalt",
           "type": "Person",
           "properties": {}
         },
         "target": {
+          "id": "Romeo",
+          "type": "Person",
+          "properties": {}
+        },
+        "type": "DEATH",
+        "properties": {}
+      },
+      {
+        "source": {
           "id": "County Paris",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
+          "id": "Juliet",
           "type": "Person",
           "properties": {}
         },
@@ -15324,33 +15641,18 @@
         "properties": {}
       },
       {
-        "id": "Friar John",
+        "id": "Paris",
         "type": "Person",
         "properties": {}
       },
       {
-        "id": "Paris",
+        "id": "Friar John",
         "type": "Person",
         "properties": {}
       },
       {
         "id": "Nurse",
         "type": "Person",
-        "properties": {}
-      },
-      {
-        "id": "Mantua",
-        "type": "Place",
-        "properties": {}
-      },
-      {
-        "id": "Tomb",
-        "type": "Place",
-        "properties": {}
-      },
-      {
-        "id": "Cell",
-        "type": "Place",
         "properties": {}
       }
     ],
@@ -15366,7 +15668,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "GAVE",
+        "type": "INFORMS_OF_DEATH",
         "properties": {}
       },
       {
@@ -15380,7 +15682,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "WROTE_TO",
+        "type": "BRINGS_NEWS",
         "properties": {}
       },
       {
@@ -15394,7 +15696,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "DIED_WITH",
+        "type": "DEAD",
         "properties": {}
       },
       {
@@ -15408,49 +15710,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "DIED_WITH",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Balthasar",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Nurse",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "PRIVY_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Balthasar",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Tomb",
-          "type": "Place",
-          "properties": {}
-        },
-        "type": "CAME_TO",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Balthasar",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Cell",
-          "type": "Place",
-          "properties": {}
-        },
-        "type": "MEANT_TO_KEEP",
+        "type": "DEAD",
         "properties": {}
       },
       {
@@ -15464,21 +15724,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "ENTREATED",
+        "type": "SACRIFICES_LIFE",
         "properties": {}
       },
       {
         "source": {
-          "id": "Balthasar",
+          "id": "Prince",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Romeo",
+          "id": "Balthasar",
           "type": "Person",
           "properties": {}
         },
-        "type": "SACRIFICED_LIFE_FOR",
+        "type": "QUESTIONS",
         "properties": {}
       },
       {
@@ -15492,35 +15752,21 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "RETURNED_LETTER",
+        "type": "INFORMS_OF_LETTER",
         "properties": {}
       },
       {
         "source": {
-          "id": "Romeo",
+          "id": "Balthasar",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Mantua",
-          "type": "Place",
-          "properties": {}
-        },
-        "type": "CAME_FROM",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Romeo",
+          "id": "Nurse",
           "type": "Person",
           "properties": {}
         },
-        "target": {
-          "id": "Tomb",
-          "type": "Place",
-          "properties": {}
-        },
-        "type": "CAME_TO",
+        "type": "PRIVY_TO_MARRIAGE",
         "properties": {}
       }
     ],
@@ -15579,17 +15825,17 @@
       },
       {
         "id": "Vault",
-        "type": "Place",
+        "type": "Location",
         "properties": {}
       },
       {
         "id": "Verona",
-        "type": "Place",
+        "type": "Location",
         "properties": {}
       },
       {
         "id": "Poison",
-        "type": "Substance",
+        "type": "Object",
         "properties": {}
       },
       {
@@ -15634,6 +15880,20 @@
           "properties": {}
         },
         "target": {
+          "id": "Vault",
+          "type": "Location",
+          "properties": {}
+        },
+        "type": "VISITS",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "County",
+          "type": "Person",
+          "properties": {}
+        },
+        "target": {
           "id": "Juliet",
           "type": "Person",
           "properties": {}
@@ -15643,20 +15903,6 @@
       },
       {
         "source": {
-          "id": "County",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Vault",
-          "type": "Place",
-          "properties": {}
-        },
-        "type": "VISITS",
-        "properties": {}
-      },
-      {
-        "source": {
           "id": "Prince",
           "type": "Person",
           "properties": {}
@@ -15666,7 +15912,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "FRIENDS_WITH",
+        "type": "ADDRESSES",
         "properties": {}
       },
       {
@@ -15680,7 +15926,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "FRIENDS_WITH",
+        "type": "ADDRESSES",
         "properties": {}
       },
       {
@@ -15694,7 +15940,7 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "PARENT_OF",
+        "type": "HAS_CHILD",
         "properties": {}
       },
       {
@@ -15708,35 +15954,35 @@
           "type": "Person",
           "properties": {}
         },
-        "type": "PARENT_OF",
+        "type": "HAS_CHILD",
         "properties": {}
       },
       {
         "source": {
-          "id": "Friar",
+          "id": "Prince",
           "type": "Person",
           "properties": {}
         },
         "target": {
           "id": "Poison",
-          "type": "Substance",
+          "type": "Object",
           "properties": {}
         },
-        "type": "PROVIDES",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
         "source": {
-          "id": "County",
+          "id": "Prince",
           "type": "Person",
           "properties": {}
         },
         "target": {
-          "id": "Vault",
-          "type": "Place",
+          "id": "Friar",
+          "type": "Person",
           "properties": {}
         },
-        "type": "INTENDS_TO_DIE_IN",
+        "type": "MENTIONS",
         "properties": {}
       },
       {
@@ -15747,10 +15993,10 @@
         },
         "target": {
           "id": "Verona",
-          "type": "Place",
+          "type": "Location",
           "properties": {}
         },
-        "type": "LOCATED_IN",
+        "type": "MENTIONS",
         "properties": {}
       }
     ],
@@ -15791,6 +16037,21 @@
         "id": "Juliet",
         "type": "Person",
         "properties": {}
+      },
+      {
+        "id": "Glooming Peace",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Sad Things",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "Story Of Woe",
+        "type": "Concept",
+        "properties": {}
       }
     ],
     "relationships": [
@@ -15824,44 +16085,30 @@
       },
       {
         "source": {
-          "id": "Capulet",
-          "type": "Person",
+          "id": "Glooming Peace",
+          "type": "Concept",
           "properties": {}
         },
         "target": {
-          "id": "Romeo",
-          "type": "Person",
+          "id": "Sad Things",
+          "type": "Concept",
           "properties": {}
         },
-        "type": "ENMITY",
+        "type": "BRINGS",
         "properties": {}
       },
       {
         "source": {
-          "id": "Capulet",
-          "type": "Person",
+          "id": "Glooming Peace",
+          "type": "Concept",
           "properties": {}
         },
         "target": {
-          "id": "Romeo",
-          "type": "Person",
+          "id": "Story Of Woe",
+          "type": "Concept",
           "properties": {}
         },
-        "type": "WOE",
-        "properties": {}
-      },
-      {
-        "source": {
-          "id": "Juliet",
-          "type": "Person",
-          "properties": {}
-        },
-        "target": {
-          "id": "Romeo",
-          "type": "Person",
-          "properties": {}
-        },
-        "type": "SACRIFICE",
+        "type": "NEVER_WAS",
         "properties": {}
       }
     ],

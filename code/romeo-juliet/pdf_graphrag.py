@@ -73,9 +73,9 @@ class PDFGraphRAG:
             api_key=openai_api_key
         )
         
-        self.openai_creative_client = ChatOpenAI(
-            model="gpt-5-mini",
-            temperature=0.7,
+        self.openai_graph_transform = ChatOpenAI(
+            model="gpt-4o-mini",
+            temperature=0,
             api_key=openai_api_key
         )
 
@@ -86,7 +86,7 @@ class PDFGraphRAG:
             google_api_key=google_api_key
         )
 
-        self.graph_transformer = LLMGraphTransformer(llm=self.openai_client)
+        self.graph_transformer = LLMGraphTransformer(llm=self.openai_graph_transform)
         
 
             
@@ -212,7 +212,7 @@ class PDFGraphRAG:
 
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
-        self.graph.add_graph_documents(graph_docs)
+        self.graph.add_graph_documents(graph_documents=graph_docs, include_source=True)
         print(f"Added {sum(len(doc.nodes) for doc in graph_docs)} nodes")
         print(f"Added {sum(len(doc.relationships) for doc in graph_docs)} relationships")
         

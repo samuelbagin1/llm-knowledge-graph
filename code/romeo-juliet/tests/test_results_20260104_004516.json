@@ -1,0 +1,380 @@
+{
+  "test_run_date": "2026-01-04T00:45:16.767546",
+  "total_tests": 5,
+  "successful_tests": 4,
+  "failed_tests": 1,
+  "average_score": 70.0,
+  "min_score": 45,
+  "max_score": 90,
+  "scores": [
+    90,
+    60,
+    0,
+    45,
+    85
+  ],
+  "individual_tests": [
+    {
+      "test_number": 1,
+      "question": {
+        "question": "Which Characters who belong to the Capulet house are in love with a Character who belongs to the Montague house?",
+        "question_type": "relationship",
+        "expected_nodes": [
+          "Character",
+          "House"
+        ],
+        "expected_relationships": [
+          "BELONGS_TO",
+          "IN_LOVE_WITH"
+        ]
+      },
+      "graph_answer": {
+        "graph_data": {
+          "cypher_query": "MATCH (cap)-[b:BELONGS_TO]-(h:House)\nWHERE toLower(h.id) CONTAINS toLower('capulet') AND (cap:Character OR cap:Person)\nMATCH (cap)-[r]-(m)\nWHERE type(r) IN ['LOVES','IN_LOVE_WITH','LOVE','EXPRESSES_FEELING_FOR','TENDER_LOVE','POTENTIAL_LOVE','WOO','LOVER'] AND (m:Character OR m:Person)\nMATCH (m)-[bm:BELONGS_TO]-(h2:House)\nWHERE toLower(h2.id) CONTAINS toLower('montague')\nRETURN DISTINCT cap.id AS capulet_character, labels(cap) AS capulet_labels, type(r) AS rel_type, m.id AS montague_character, labels(m) AS montague_labels, properties(cap) AS cap_props, properties(m) AS mont_props\nLIMIT 25",
+          "explanation": "I searched for characters (or persons) who belong to the Capulet house and have any love-related relationship to a character (or person) who belongs to the Montague house. I matched several relationship types that express love (LOVES, IN_LOVE_WITH, LOVE, EXPRESSES_FEELING_FOR, TENDER_LOVE, POTENTIAL_LOVE, WOO, LOVER) and used undirected relationships so direction in the graph won't prevent matches. The query returns distinct matches and their properties. The database shows Juliet (a Capulet) in love with Romeo (a Montague) via multiple love-related relationship types.",
+          "data": "[\n  {\n    \"capulet_character\": \"Juliet\",\n    \"capulet_labels\": \"['Person']\",\n    \"rel_type\": \"LOVES\",\n    \"montague_character\": \"Romeo\",\n    \"montague_labels\": \"['Person']\",\n    \"cap_props\": {\n      \"id\": \"Juliet\"\n    },\n    \"mont_props\": {\n      \"id\": \"Romeo\"\n    }\n  },\n  {\n    \"capulet_character\": \"Juliet\",\n    \"capulet_labels\": \"['Person']\",\n    \"rel_type\": \"EXPRESSES_FEELING_FOR\",\n    \"montague_character\": \"Romeo\",\n    \"montague_labels\": \"['Person']\",\n    \"cap_props\": {\n      \"id\": \"Juliet\"\n    },\n    \"mont_props\": {\n      \"id\": \"Romeo\"\n    }\n  },\n  {\n    \"capulet_character\": \"Juliet\",\n    \"capulet_labels\": \"['Person']\",\n    \"rel_type\": \"LOVER\",\n    \"montague_character\": \"Romeo\",\n    \"montague_labels\": \"['Person']\",\n    \"cap_props\": {\n      \"id\": \"Juliet\"\n    },\n    \"mont_props\": {\n      \"id\": \"Romeo\"\n    }\n  },\n  {\n    \"capulet_character\": \"Juliet\",\n    \"capulet_labels\": \"['Person']\",\n    \"rel_type\": \"LOVE\",\n    \"montague_character\": \"Romeo\",\n    \"montague_labels\": \"['Person']\",\n    \"cap_props\": {\n      \"id\": \"Juliet\"\n    },\n    \"mont_props\": {\n      \"id\": \"Romeo\"\n    }\n  },\n  {\n    \"capulet_character\": \"Juliet\",\n    \"capulet_labels\": \"['Person']\",\n    \"rel_type\": \"IN_LOVE_WITH\",\n    \"montague_character\": \"Romeo\",\n    \"montague_labels\": \"['Person']\",\n    \"cap_props\": {\n      \"id\": \"Juliet\"\n    },\n    \"mont_props\": {\n      \"id\": \"Romeo\"\n    }\n  }\n]",
+          "nodes_found": [
+            "Juliet",
+            "Romeo",
+            "Capulet",
+            "Montague"
+          ],
+          "relationships_found": [
+            "Juliet -[LOVES]-> Romeo",
+            "Juliet -[EXPRESSES_FEELING_FOR]-> Romeo",
+            "Juliet -[LOVER]-> Romeo",
+            "Juliet -[LOVE]-> Romeo",
+            "Juliet -[IN_LOVE_WITH]-> Romeo",
+            "Juliet -[BELONGS_TO]-> Capulet",
+            "Romeo -[BELONGS_TO]-> Montague"
+          ]
+        },
+        "structured_answer": "Juliet (a Capulet) is shown as being in love with Romeo (a Montague); the query returns multiple relationship types between them \u2014 LOVES, LOVE, IN_LOVE_WITH, LOVER, and EXPRESSES_FEELING_FOR. No other Capulet-to-Montague love connections appear in the results, and the records only include node ids and relationship types, so it\u2019s unclear whether these are distinct relationships, duplicates, or whether the feeling is reciprocated or has additional context."
+      },
+      "web_answer": {
+        "sources": [
+          "Shakespeare's Romeo and Juliet (Act 1, Scene 5; Act 2, Scene 2; Act 2, Scene 6)"
+        ],
+        "web_answer": "In Shakespeare's Romeo and Juliet, the primary character from the Capulet house who falls in love with a character from the Montague house is Juliet Capulet. She falls deeply in love with Romeo Montague. Their relationship is the central focus of the play, an example of forbidden love between members of two intensely feuding families.",
+        "confidence": "high"
+      },
+      "comparison": {
+        "accuracy_assessment": "The graph database answer accurately identifies Juliet Capulet and Romeo Montague as the primary characters who fit the criteria. It correctly states that no other Capulet-Montague love connections were found in the results, which aligns with the authoritative answer's focus. The answer also appropriately highlights the ambiguity of multiple relationship types (LOVES, LOVE, IN_LOVE_WITH, LOVER, EXPRESSES_FEELING_FOR) for the same connection in the raw graph data, demonstrating good self-awareness of data representation. The main omissions are the narrative context and emotional depth provided in the authoritative answer.",
+        "discrepancies": [
+          "The graph database itself contains multiple relationship types (LOVES, LOVE, IN_LOVE_WITH, LOVER, EXPRESSES_FEELING_FOR) between Juliet and Romeo, which the graph answer correctly points out as potentially unclear regarding distinctness or redundancy."
+        ],
+        "score": 90,
+        "correct_elements": [
+          "Correctly identified Juliet (Capulet) as being in love with Romeo (Montague).",
+          "Correctly identified that no other Capulet-to-Montague love connections were found.",
+          "Accurately described the multiple love-related relationship types found in the raw graph data between Juliet and Romeo."
+        ],
+        "recommendations": [
+          "Consolidate redundant or synonymous love relationship types between Juliet and Romeo into a single, more descriptive relationship (e.g., 'LOVES' with properties for intensity or context) to avoid ambiguity.",
+          "Add properties to character nodes or relationships to include relevant narrative context and emotional depth, such as the intensity of love or the social implications of the relationship (e.g., 'forbidden')."
+        ],
+        "missing_data": [
+          "The graph answer lacks narrative context, such as the love being 'deeply in love', 'the central focus of the play', or an 'example of forbidden love between members of two intensely feuding families'. These are important contextual elements from the authoritative answer."
+        ]
+      },
+      "timestamp": "2026-01-04T00:27:57.688104"
+    },
+    {
+      "test_number": 2,
+      "question": {
+        "question": "Which characters belong to the House of Capulet, and what familial or social roles do they hold (e.g., daughter, nurse, suitor, kinsman, mother, father)?",
+        "question_type": "character_attribute",
+        "expected_nodes": [
+          "Character",
+          "House"
+        ],
+        "expected_relationships": [
+          "BELONGS_TO",
+          "DAUGHTER",
+          "NURSE_OF",
+          "SUITOR",
+          "KINSMAN_OF",
+          "MOTHER",
+          "FATHER"
+        ]
+      },
+      "graph_answer": {
+        "graph_data": {
+          "cypher_query": "MATCH (cap)\nWHERE toLower(cap.id) CONTAINS toLower('capulet')\nMATCH (p:Person)-[r]-(cap)\nWHERE type(r) IN ['BELONGS_TO','DAUGHTER','MOTHER','FATHER','PARENT','FATHER_OF','HAS_DAUGHTER','NURSE','NURSES','NURSE_OF','SUITOR','KINSMAN','COUSIN','UNCLE']\nRETURN p.id AS character, collect(DISTINCT type(r)) AS roles, collect(DISTINCT cap.id) AS capulet_nodes, properties(p)\nLIMIT 50",
+          "explanation": "I looked for Person nodes connected to any node whose id contains 'capulet' (covers House, Family, Person nodes named Capulet/Capulets). I filtered relationships to types that express familial or social roles (BELONGS_TO, DAUGHTER, MOTHER, FATHER, PARENT, FATHER_OF, HAS_DAUGHTER, NURSE, NURSES, NURSE_OF, SUITOR, KINSMAN, COUSIN, UNCLE) and returned each character with the collected role types and which Capulet node(s) they connect to. The query returns the Capulet-associated characters and the roles they hold in the graph.",
+          "data": "[\n  {\n    \"character\": \"Juliet\",\n    \"roles\": \"['BELONGS_TO', 'PARENT', 'FATHER_OF', 'HAS_DAUGHTER', 'MOTHER', 'DAUGHTER']\",\n    \"capulet_nodes\": \"['Capulet', 'Lady Capulet', 'Capulets']\",\n    \"properties(p)\": {\n      \"id\": \"Juliet\"\n    }\n  },\n  {\n    \"character\": \"Tybalt\",\n    \"roles\": \"['KINSMAN', 'UNCLE']\",\n    \"capulet_nodes\": \"['Capulet']\",\n    \"properties(p)\": {\n      \"id\": \"Tybalt\"\n    }\n  },\n  {\n    \"character\": \"Capulet'S Cousin\",\n    \"roles\": \"['COUSIN']\",\n    \"capulet_nodes\": \"['Capulet']\",\n    \"properties(p)\": {\n      \"id\": \"Capulet'S Cousin\"\n    }\n  },\n  {\n    \"character\": \"County Paris\",\n    \"roles\": \"['FATHER_OF']\",\n    \"capulet_nodes\": \"['Capulet']\",\n    \"properties(p)\": {\n      \"id\": \"County Paris\"\n    }\n  },\n  {\n    \"character\": \"Capulet\",\n    \"roles\": \"['COUSIN']\",\n    \"capulet_nodes\": \"[\\\"Capulet'S Cousin\\\"]\",\n    \"properties(p)\": {\n      \"id\": \"Capulet\"\n    }\n  },\n  {\n    \"character\": \"Sampson\",\n    \"roles\": \"['BELONGS_TO']\",\n    \"capulet_nodes\": \"['Capulet']\",\n    \"properties(p)\": {\n      \"id\": \"Sampson\"\n    }\n  },\n  {\n    \"character\": \"Gregory\",\n    \"roles\": \"['BELONGS_TO']\",\n    \"capulet_nodes\": \"['Capulet']\",\n    \"properties(p)\": {\n      \"id\": \"Gregory\"\n    }\n  }\n]",
+          "nodes_found": [
+            "Juliet",
+            "Capulet",
+            "Capulets",
+            "Lady Capulet",
+            "Tybalt",
+            "Capulet'S Cousin",
+            "County Paris",
+            "Sampson",
+            "Gregory"
+          ],
+          "relationships_found": [
+            "Juliet -[BELONGS_TO]-> Capulet (Family/House)",
+            "Juliet -[DAUGHTER]-> Lady Capulet",
+            "Lady Capulet -[SPOUSE]-> Capulet (Lord Capulet)",
+            "Capulet (Lord) -[PARENT/FATHER_OF]-> Juliet",
+            "Nurse -[NURSES / NURSE_OF]-> Juliet (caretaker / nurse) [observed elsewhere in graph]",
+            "Tybalt -[KINSMAN|UNCLE]-> Capulet (kinsman / uncle to Juliet)",
+            "Paris / County Paris -[SUITOR|FATHER_OF]-> Juliet / Capulet (Paris is a suitor of Juliet \u2014 appears as 'County Paris'/'County_Paris' variants)",
+            "Sampson -[BELONGS_TO]-> Capulet (servingman of the household)",
+            "Gregory -[BELONGS_TO]-> Capulet (servingman of the household)",
+            "Capulet'S Cousin -[COUSIN]-> Capulet (extended family member)"
+          ]
+        },
+        "structured_answer": "Members/associates of the House of Capulet in the results: Juliet \u2014 listed as belonging to the Capulets and as a daughter (the data also confusingly includes parent/father_of/has_daughter/mother labels); Tybalt \u2014 kinsman and uncle; \"Capulet's Cousin\" \u2014 cousin; County Paris \u2014 listed with a FATHER_OF role in the dataset; Capulet (the character) \u2014 labeled as cousin; Sampson and Gregory \u2014 listed as belonging to the Capulet household (servants/retainers). The data contains inconsistencies and missing context (e.g., Juliet is also tagged as mother/father_of and Paris is labeled FATHER_OF), so some role labels appear incorrect or incomplete."
+      },
+      "web_answer": {
+        "sources": [
+          "Shakespeare's Romeo and Juliet (Act/Scene references as noted in the answer)"
+        ],
+        "web_answer": "The House of Capulet in Shakespeare's Romeo and Juliet includes several key characters with distinct familial and social roles:\n\n1.  **Lord Capulet (Father):** The patriarch of the Capulet family. He is Juliet's father and the husband of Lady Capulet. He is deeply involved in the feud with the Montagues and is initially portrayed as a stern but loving father who wishes to see his daughter marry well. His role involves hosting feasts (Act 1, Scene 5), arranging Juliet's marriage to Paris, and reacting strongly when she defies him (Act 3, Scene 5).\n\n2.  **Lady Capulet (Mother):** Juliet's mother and Lord Capulet's wife. She is more formal and less understanding of Juliet's feelings than the Nurse. She encourages Juliet to consider Paris as a suitor and is deeply grieved by Tybalt's death and later, Juliet's apparent death.\n\n3.  **Juliet Capulet (Daughter):** The only daughter of Lord and Lady Capulet and the protagonist of the play. She falls in love with Romeo, a Montague, leading to the central conflict and tragedy. Her role involves being a young, innocent girl who quickly matures through her love for Romeo and her defiance of her parents' wishes.\n\n4.  **Tybalt (Juliet's Cousin/Kinsman):** Lady Capulet's nephew and Juliet's hot-headed cousin. He is fiercely loyal to the Capulet name and harbors an intense hatred for the Montagues. His aggressive nature leads to the deaths of Mercutio and, subsequently, his own death at Romeo's hand (Act 3, Scene 1), escalating the feud.\n\n5.  **Nurse (Juliet's Nurse/Confidante):** Juliet's beloved nurse and a maternal figure who has cared for Juliet since birth. She acts as a go-between for Romeo and Juliet, initially supporting their secret marriage. She is a comic character but also a loyal confidante to Juliet, though her advice later shifts, causing a rift between them (Act 3, Scene 5).\n\n6.  **Peter (Nurse's Servant):** A servant to the Nurse, often providing comic relief. He is illiterate and generally inept.\n\n7.  **Sampson and Gregory (Capulet Servants):** Two Capulet servants who initiate the first brawl of the play with Montague servants (Act 1, Scene 1), highlighting the ingrained nature of the family feud even among the lowest members of the household.\n\n8.  **Cousin Capulet (Kinsman):** An elderly kinsman of Lord Capulet who appears at the Capulet feast (Act 1, Scene 5). He is a minor character, but his presence further illustrates the extended Capulet family.\n\n9.  **Paris (Suitor/Kinsman to the Prince):** While not a Capulet by blood, Count Paris is a nobleman and a kinsman to Prince Escalus whom the Capulets intend for Juliet to marry. He is presented as a 'most choice' suitor and is favored by Lord and Lady Capulet. His role as Juliet's intended husband is a significant source of conflict for Juliet.\n\nThese characters, through their individual roles and interactions, define the Capulet household and their integral part in the tragic narrative of Romeo and Juliet.",
+        "confidence": "high"
+      },
+      "comparison": {
+        "discrepancies": [
+          "Juliet is incorrectly associated with roles like 'PARENT', 'FATHER_OF', 'HAS_DAUGHTER', and 'MOTHER'. Her primary and only familial role within the Capulet household, beyond 'BELONGS_TO', should be 'DAUGHTER'.",
+          "County Paris is incorrectly labeled with 'FATHER_OF'. His correct role is 'SUITOR' to Juliet.",
+          "Lord Capulet (identified as 'Capulet' in the raw data) is incorrectly labeled solely as 'COUSIN'. His primary roles are 'FATHER' to Juliet and the patriarch of the family.",
+          "Tybalt's role as 'UNCLE' is an oversimplification; he is specifically Juliet's 'COUSIN' and Lady Capulet's 'NEPHEW'.",
+          "The graph's answer for 'Capulet (the character)' being a 'cousin' is ambiguous and misleading, likely referring to Lord Capulet being a cousin to 'Capulet's Cousin', rather than his primary familial role within the Capulet household structure."
+        ],
+        "correct_elements": [
+          "Juliet is correctly identified as belonging to the Capulet family and as a daughter (despite additional incorrect roles).",
+          "Tybalt is correctly identified as a kinsman of the Capulets.",
+          "'Capulet's Cousin' is correctly identified as a cousin.",
+          "Sampson and Gregory are correctly identified as belonging to the Capulet household and as servants/retainers.",
+          "The graph answer itself correctly points out inconsistencies and missing context in its data regarding Juliet and Paris."
+        ],
+        "missing_data": [
+          "The primary role of Lord Capulet as 'Father' to Juliet and patriarch of the family is missing.",
+          "Lady Capulet and her role as 'Mother' to Juliet are not explicitly listed as a character with her own roles.",
+          "The Nurse and her crucial role as 'Juliet's Nurse/Confidante' are missing from the list of characters with roles.",
+          "Peter, the Nurse's servant, is entirely missing.",
+          "County Paris's role as 'SUITOR' is missing."
+        ],
+        "recommendations": [
+          "Correct Juliet's roles to exclusively 'DAUGHTER' and 'BELONGS_TO', removing erroneous 'PARENT', 'FATHER_OF', 'HAS_DAUGHTER', and 'MOTHER' labels.",
+          "Add Lord Capulet as a distinct character node with primary roles 'FATHER' (of Juliet) and 'HUSBAND' (of Lady Capulet).",
+          "Add Lady Capulet as a distinct character node with primary roles 'MOTHER' (of Juliet) and 'WIFE' (of Lord Capulet).",
+          "Correct County Paris's role to 'SUITOR' of Juliet.",
+          "Add the Nurse as a character node with the role 'NURSE_OF' Juliet.",
+          "Add Peter as a character node with the role 'SERVANT_OF' Nurse.",
+          "Refine Tybalt's relationship to Juliet as 'COUSIN' and to Lady Capulet as 'NEPHEW'.",
+          "Ensure clearer entity resolution for characters like 'Capulet' to differentiate between 'Lord Capulet' and 'Cousin Capulet' and their respective primary roles."
+        ],
+        "score": 60,
+        "accuracy_assessment": "The graph identifies several members and associates of the Capulet household, including Juliet, Tybalt, 'Capulet's Cousin', Sampson, and Gregory, with their general affiliation being correct. However, it suffers from significant inaccuracies in assigning specific familial/social roles for key characters and omits several important figures. The inconsistencies flagged by the graph itself regarding Juliet's and Paris's roles are indicative of deeper data quality issues."
+      },
+      "timestamp": "2026-01-04T00:32:22.492231"
+    },
+    {
+      "test_number": 3,
+      "error": "Object of type Node is not JSON serializable",
+      "timestamp": "2026-01-04T00:36:59.308010"
+    },
+    {
+      "test_number": 4,
+      "question": {
+        "question": "Which named locations (Place/House/Location) are settings where both Romeo and Juliet appear and interact, and for each location list the Act and Scene(s) set there?",
+        "question_type": "location",
+        "expected_nodes": [
+          "Location",
+          "Place",
+          "House",
+          "Act",
+          "Scene",
+          "Character"
+        ],
+        "expected_relationships": [
+          "INTERACTS_WITH",
+          "FEATURES",
+          "LOCATED_IN",
+          "CONTAINS",
+          "ENTERS"
+        ]
+      },
+      "graph_answer": {
+        "graph_data": {
+          "cypher_query": "MATCH (loc) WHERE 'Place' IN labels(loc) OR 'Location' IN labels(loc) OR 'House' IN labels(loc)\nMATCH (ro:Person {id:'Romeo'})-[r1]-(loc)\nMATCH (ju:Person {id:'Juliet'})-[r2]-(loc)\nRETURN loc.id AS location, labels(loc) AS labels, type(r1) AS romeo_rel, type(r2) AS juliet_rel LIMIT 25",
+          "explanation": "Strategy: I searched for nodes with labels Place/Location/House that are connected to both the Romeo and Juliet person nodes. That produced a single shared location: Tomb. For that location the graph shows Romeo connected by CAME_TO (and OPEN) and Juliet by ASSOCIATED_WITH (and BURIED_IN on related location nodes). I then attempted to find Act/Scene nodes linked to locations, but the Scene nodes in this graph are not connected to Place/Location/House nodes (no relationship links), so the graph does not contain Act/Scene mappings for locations. Therefore I can report the shared named location(s) found and the relationships, but cannot list Acts/Scenes set there because those links are missing in the data.",
+          "data": "{\"shared_locations_result\": [{\"location\": \"Tomb\",\"labels\": \"['Place']\",\"romeo_rel\": \"CAME_TO\",\"juliet_rel\": \"ASSOCIATED_WITH\"}], \"scene_lookup_result\": []}",
+          "nodes_found": [
+            "Romeo",
+            "Juliet",
+            "Tomb"
+          ],
+          "relationships_found": [
+            "Romeo -[CAME_TO]-> Tomb",
+            "Romeo -[OPEN]-> Tomb",
+            "Juliet -[ASSOCIATED_WITH]-> Tomb",
+            "Juliet -[BURIED_IN]-> Capels' Monument (related location)"
+          ]
+        },
+        "structured_answer": "The only named location returned where both Romeo and Juliet appear/interact is the Tomb (labelled as a Place): Romeo is recorded as CAME_TO the Tomb and Juliet is ASSOCIATED_WITH it. The query returned no Act/Scene data for that location, so I cannot list the specific Acts and Scenes without additional scene lookup information."
+      },
+      "web_answer": {
+        "web_answer": "Romeo and Juliet appear and interact in several key named locations throughout Shakespeare's play. These locations are central to their romance and tragic fate:\n\n1.  **Capulet's House (The Great Hall / Feast Area)**\n    *   **Act and Scene(s):** Act I, Scene 5\n    *   **Details:** This is the setting for their first meeting. Romeo, a Montague, attends the Capulet's feast uninvited. He sees Juliet and is immediately captivated. They share their first conversation, exchange loving words, and share their first kiss, foreshadowing their intense, immediate connection despite their families' bitter feud.\n\n2.  **Capulet's Orchard (Below Juliet's Balcony)**\n    *   **Act and Scene(s):** Act II, Scene 2\n    *   **Details:** Famously known as the \"balcony scene,\" this is where Romeo, having snuck into the Capulet's garden, overhears Juliet's passionate soliloquy about her love for him. He reveals himself, and they declare their profound love for one another, pledging to marry in secret. This scene is pivotal for solidifying their commitment.\n\n3.  **Friar Laurence's Cell**\n    *   **Act and Scene(s):** Act II, Scene 6\n    *   **Details:** This is the sacred place where Romeo and Juliet are secretly married by Friar Laurence, with the Nurse as a witness. The Friar hopes their union will bring an end to the long-standing feud between the Montagues and Capulets.\n\n4.  **Capulet's House (Juliet's Chamber)**\n    *   **Act and Scene(s):** Act III, Scene 5\n    *   **Details:** Following their secret marriage and Romeo's banishment for killing Tybalt, they spend their wedding night together in Juliet's bedroom. This scene depicts their sorrowful and urgent farewell at dawn, as Romeo must flee Verona to Mantua to avoid the death penalty. It is their last direct interaction while both are alive.\n\nWhile both Romeo and Juliet are present in the Capulet's Monument/Tomb in Act V, Scene 3, they do not interact while both are alive. Romeo finds Juliet seemingly dead, poisons himself, and then Juliet awakens to find Romeo dead and stabs herself. Therefore, the tomb does not fit the criteria of a location where they both appear and *interact* in the traditional sense.",
+        "sources": [
+          "Shakespeare's Romeo and Juliet (Full Play Text)"
+        ],
+        "confidence": "high"
+      },
+      "comparison": {
+        "missing_data": [
+          "Capulet's House (The Great Hall / Feast Area) and its Act I, Scene 5.",
+          "Capulet's Orchard (Below Juliet's Balcony) and its Act II, Scene 2.",
+          "Friar Laurence's Cell and its Act II, Scene 6.",
+          "Capulet's House (Juliet's Chamber) and its Act III, Scene 5.",
+          "Act and Scene data for all identified locations."
+        ],
+        "correct_elements": [
+          "The graph correctly identified 'Tomb' as a named location where both Romeo and Juliet are present.",
+          "The graph correctly identified that Act/Scene data is not available for locations in the current graph structure."
+        ],
+        "discrepancies": [
+          "The graph incorrectly states the Tomb is the *only* named location where Romeo and Juliet appear and interact, while the authoritative answer identifies four other crucial locations.",
+          "The graph includes the Tomb as an interaction location, which the authoritative answer explicitly refutes based on the condition that both must be alive during interaction."
+        ],
+        "recommendations": [
+          "Add 'INTERACTS_AT' relationships between 'Person' nodes (Romeo, Juliet) and 'Location' nodes, with properties for Act and Scene.",
+          "Ensure the graph accurately models the concept of 'interaction' based on the story's narrative (e.g., both characters being alive and actively communicating).",
+          "Enrich the graph with all named locations where Romeo and Juliet interact, including Capulet's House (Feast Area), Capulet's Orchard, Friar Laurence's Cell, and Juliet's Chamber.",
+          "Establish explicit relationships between 'Location' nodes and 'Act' / 'Scene' nodes to enable scene lookup for locations."
+        ],
+        "accuracy_assessment": "The graph database answer is significantly incomplete and partially incorrect. It only identified one location (Tomb) where Romeo and Juliet were present, but the authoritative answer clarifies they do not interact there while both are alive, thus failing the 'interact' criterion of the question. More critically, it missed four major locations where they *do* interact. It correctly identified that Act/Scene data was missing from the graph for locations.",
+        "score": 45
+      },
+      "timestamp": "2026-01-04T00:43:28.834490"
+    },
+    {
+      "test_number": 5,
+      "question": {
+        "question": "Which character agreed to sell poison to Romeo (and is identified as an apothecary), and which character provided Juliet with the sleeping potion (and is identified as a friar)? Provide each character and their role.",
+        "question_type": "multi_hop",
+        "expected_nodes": [
+          "Character",
+          "Person"
+        ],
+        "expected_relationships": [
+          "AGREES_TO_SELL_POISON",
+          "GIVES_POISON",
+          "RECEIVES_POTION_FROM",
+          "AGREES_TO_SELL_POISON"
+        ]
+      },
+      "graph_answer": {
+        "graph_data": {
+          "cypher_query": "MATCH (seller:Person)-[r1:AGREES_TO_SELL_POISON]->(buyer:Person)\nWHERE toLower(buyer.id) CONTAINS toLower('romeo')\nMATCH (recipient:Person)-[r2:RECEIVES_POTION_FROM]->(provider:Person)\nWHERE toLower(recipient.id) CONTAINS toLower('juliet')\nRETURN seller.id AS seller, labels(seller) AS seller_labels, type(r1) AS rel1, buyer.id AS buyer, recipient.id AS recipient, labels(recipient) AS recipient_labels, type(r2) AS rel2, provider.id AS provider, labels(provider) AS provider_labels, properties(seller) AS seller_props, properties(provider) AS provider_props\nLIMIT 25",
+          "explanation": "I searched the graph for a node representing an apothecary who sold poison to Romeo and for the friar who provided Juliet with a sleeping potion. I matched the AGREES_TO_SELL_POISON relationship to find the seller to Romeo, and the RECEIVES_POTION_FROM relationship to find who provided Juliet the potion. The query returns the character ids, their labels, relationship types, and properties.",
+          "data": "[{\"seller\":\"Apothecary\",\"seller_labels\":\"['Person']\",\"rel1\":\"AGREES_TO_SELL_POISON\",\"buyer\":\"Romeo\",\"recipient\":\"Juliet\",\"recipient_labels\":\"['Person']\",\"rel2\":\"RECEIVES_POTION_FROM\",\"provider\":\"Friar\"}]",
+          "nodes_found": [
+            "Apothecary",
+            "Romeo",
+            "Juliet",
+            "Friar"
+          ],
+          "relationships_found": [
+            "Apothecary -[AGREES_TO_SELL_POISON]-> Romeo",
+            "Juliet -[RECEIVES_POTION_FROM]-> Friar"
+          ]
+        },
+        "structured_answer": "The Apothecary (role: \"Apothecary\", label: Person) agreed to sell poison to Romeo \u2014 relationship recorded as AGREES_TO_SELL_POISON. The Friar (role: \"Friar\", label: Person) provided Juliet with the sleeping potion \u2014 relationship recorded as RECEIVES_POTION_FROM. The results show only these role names and relationships; no personal names beyond \"Apothecary\" and \"Friar\" are provided."
+      },
+      "web_answer": {
+        "web_answer": "In Shakespeare's Romeo and Juliet, the character who agrees to sell poison to Romeo is an impoverished **Apothecary** in Mantua. Despite the illegality and his initial reluctance, he is swayed by Romeo's desperate offer of money (forty ducats) due to his own extreme poverty. This transaction occurs in **Act V, Scene I**, after Romeo learns of Juliet's supposed death and intends to die by her side.\n\nThe character who provides Juliet with the sleeping potion is **Friar Laurence**. As a Franciscan friar, he is a trusted advisor to both Romeo and Juliet. He devises the plan to give Juliet a powerful sleeping draught to fake her death, allowing her to escape marriage to Paris and reunite with Romeo. He gives Juliet the potion in **Act IV, Scene I**, and she takes it in **Act IV, Scene III**.",
+        "sources": [
+          "Romeo and Juliet, Act V, Scene I",
+          "Romeo and Juliet, Act IV, Scene I",
+          "Romeo and Juliet, Act IV, Scene III"
+        ],
+        "confidence": "high"
+      },
+      "comparison": {
+        "accuracy_assessment": "The graph correctly identifies the roles of \"Apothecary\" and \"Friar\" for the respective actions. However, it fails to provide the personal name \"Laurence\" for the Friar. Furthermore, the graph lacks the rich contextual details provided in the authoritative answer, such as the Apothecary's location and motivation, and specific act/scene numbers for both events.",
+        "correct_elements": [
+          "Identification of \"Apothecary\" as the character selling poison to Romeo.",
+          "Identification of \"Friar\" (by role) as the character providing the sleeping potion to Juliet.",
+          "Correct roles for both characters.",
+          "Correct relationships (AGREES_TO_SELL_POISON and RECEIVES_POTION_FROM)."
+        ],
+        "missing_data": [
+          "The personal name \"Laurence\" for the Friar.",
+          "Detailed context for the Apothecary (e.g., impoverishment, location, motivation, Act/Scene).",
+          "Detailed context for Friar Laurence (e.g., religious order, role as advisor, plan specifics, Act/Scene)."
+        ],
+        "score": 85,
+        "discrepancies": [
+          "The graph identifies the character as \"Friar\" while the authoritative answer specifies \"Friar Laurence\"."
+        ],
+        "recommendations": [
+          "Add a `name` property with the value \"Laurence\" to the \"Friar\" node.",
+          "Enrich the \"Apothecary\" node with properties such as `location` (\"Mantua\") and `status` (\"impoverished\").",
+          "Enrich the \"Friar\" node with properties such as `order` (\"Franciscan\") and `description` (\"trusted advisor\").",
+          "Add event nodes or properties to relationships to capture Act and Scene numbers for these key events."
+        ]
+      },
+      "timestamp": "2026-01-04T00:45:16.766961"
+    }
+  ],
+  "summary": {
+    "overall_grade": "C (Acceptable)",
+    "strengths": [
+      "Correct relationships (AGREES_TO_SELL_POISON and RECEIVES_POTION_FROM).",
+      "Sampson and Gregory are correctly identified as belonging to the Capulet household and as servants/retainers.",
+      "Correct roles for both characters.",
+      "Correctly identified Juliet (Capulet) as being in love with Romeo (Montague).",
+      "The graph correctly identified that Act/Scene data is not available for locations in the current graph structure.",
+      "The graph correctly identified 'Tomb' as a named location where both Romeo and Juliet are present.",
+      "Accurately described the multiple love-related relationship types found in the raw graph data between Juliet and Romeo.",
+      "'Capulet's Cousin' is correctly identified as a cousin.",
+      "Identification of \"Apothecary\" as the character selling poison to Romeo.",
+      "Juliet is correctly identified as belonging to the Capulet family and as a daughter (despite additional incorrect roles)."
+    ],
+    "weaknesses": [
+      "Peter, the Nurse's servant, is entirely missing.",
+      "The graph answer lacks narrative context, such as the love being 'deeply in love', 'the central focus of the play', or an 'example of forbidden love between members of two intensely feuding families'. These are important contextual elements from the authoritative answer.",
+      "Lady Capulet and her role as 'Mother' to Juliet are not explicitly listed as a character with her own roles.",
+      "Capulet's Orchard (Below Juliet's Balcony) and its Act II, Scene 2.",
+      "The primary role of Lord Capulet as 'Father' to Juliet and patriarch of the family is missing.",
+      "The Nurse and her crucial role as 'Juliet's Nurse/Confidante' are missing from the list of characters with roles.",
+      "The personal name \"Laurence\" for the Friar.",
+      "Detailed context for the Apothecary (e.g., impoverishment, location, motivation, Act/Scene).",
+      "Detailed context for Friar Laurence (e.g., religious order, role as advisor, plan specifics, Act/Scene).",
+      "County Paris's role as 'SUITOR' is missing."
+    ],
+    "discrepancies_found": [
+      "County Paris is incorrectly labeled with 'FATHER_OF'. His correct role is 'SUITOR' to Juliet.",
+      "The graph database itself contains multiple relationship types (LOVES, LOVE, IN_LOVE_WITH, LOVER, EXPRESSES_FEELING_FOR) between Juliet and Romeo, which the graph answer correctly points out as potentially unclear regarding distinctness or redundancy.",
+      "The graph identifies the character as \"Friar\" while the authoritative answer specifies \"Friar Laurence\".",
+      "The graph incorrectly states the Tomb is the *only* named location where Romeo and Juliet appear and interact, while the authoritative answer identifies four other crucial locations.",
+      "The graph's answer for 'Capulet (the character)' being a 'cousin' is ambiguous and misleading, likely referring to Lord Capulet being a cousin to 'Capulet's Cousin', rather than his primary familial role within the Capulet household structure.",
+      "Juliet is incorrectly associated with roles like 'PARENT', 'FATHER_OF', 'HAS_DAUGHTER', and 'MOTHER'. Her primary and only familial role within the Capulet household, beyond 'BELONGS_TO', should be 'DAUGHTER'.",
+      "The graph includes the Tomb as an interaction location, which the authoritative answer explicitly refutes based on the condition that both must be alive during interaction.",
+      "Lord Capulet (identified as 'Capulet' in the raw data) is incorrectly labeled solely as 'COUSIN'. His primary roles are 'FATHER' to Juliet and the patriarch of the family.",
+      "Tybalt's role as 'UNCLE' is an oversimplification; he is specifically Juliet's 'COUSIN' and Lady Capulet's 'NEPHEW'."
+    ],
+    "recommendations": [
+      "Add Lady Capulet as a distinct character node with primary roles 'MOTHER' (of Juliet) and 'WIFE' (of Lord Capulet).",
+      "Add the Nurse as a character node with the role 'NURSE_OF' Juliet.",
+      "Add event nodes or properties to relationships to capture Act and Scene numbers for these key events.",
+      "Add 'INTERACTS_AT' relationships between 'Person' nodes (Romeo, Juliet) and 'Location' nodes, with properties for Act and Scene.",
+      "Consolidate redundant or synonymous love relationship types between Juliet and Romeo into a single, more descriptive relationship (e.g., 'LOVES' with properties for intensity or context) to avoid ambiguity.",
+      "Establish explicit relationships between 'Location' nodes and 'Act' / 'Scene' nodes to enable scene lookup for locations.",
+      "Add a `name` property with the value \"Laurence\" to the \"Friar\" node.",
+      "Ensure clearer entity resolution for characters like 'Capulet' to differentiate between 'Lord Capulet' and 'Cousin Capulet' and their respective primary roles.",
+      "Refine Tybalt's relationship to Juliet as 'COUSIN' and to Lady Capulet as 'NEPHEW'.",
+      "Correct Juliet's roles to exclusively 'DAUGHTER' and 'BELONGS_TO', removing erroneous 'PARENT', 'FATHER_OF', 'HAS_DAUGHTER', and 'MOTHER' labels.",
+      "Ensure the graph accurately models the concept of 'interaction' based on the story's narrative (e.g., both characters being alive and actively communicating).",
+      "Enrich the graph with all named locations where Romeo and Juliet interact, including Capulet's House (Feast Area), Capulet's Orchard, Friar Laurence's Cell, and Juliet's Chamber.",
+      "Add Lord Capulet as a distinct character node with primary roles 'FATHER' (of Juliet) and 'HUSBAND' (of Lady Capulet).",
+      "Add Peter as a character node with the role 'SERVANT_OF' Nurse.",
+      "Correct County Paris's role to 'SUITOR' of Juliet."
+    ]
+  }
+}

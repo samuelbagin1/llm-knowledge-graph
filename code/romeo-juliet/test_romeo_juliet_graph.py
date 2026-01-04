@@ -11,15 +11,13 @@ import json
 import time
 from datetime import datetime
 from typing import Dict, List, Any, Optional, Generic, TypeVar
-
-SchemaT = TypeVar('SchemaT')
 from neo4j import GraphDatabase
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from langchain.tools import tool
 from langchain.agents import create_agent
-from langchain.agents.structured_output import ProviderStrategy
+from langchain.agents.structured_output import ProviderStrategy, ToolStrategy
 
 # Load environment variables
 load_dotenv()
@@ -606,7 +604,7 @@ Provide a comprehensive, accurate answer based on Shakespeare's Romeo and Juliet
         }
 
 
-        agent = create_agent(model=self.gemini_client, tools=[], response_format=ProviderStrategy(schema=response_schema))
+        agent = create_agent(model=self.gemini_client, tools=[], response_format=ToolStrategy(schema=response_schema))
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         web_data = response["structured_response"]
@@ -668,7 +666,7 @@ Evaluate the graph database answer and assign a score using this rubric:
             "description": "Compare and score data of web search and graph data",
             "properties": {
                 "score": {
-                    "type": "int",
+                    "type": "integer",
                     "description": "numerical score 0-100"
                 },
                 "accuracy_assessment": {
@@ -700,7 +698,7 @@ Evaluate the graph database answer and assign a score using this rubric:
         }
 
 
-        agent = create_agent(model=self.gemini_client, tools=[], response_format=ProviderStrategy(schema=response_schema))
+        agent = create_agent(model=self.gemini_client, tools=[], response_format=ToolStrategy(schema=response_schema))
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         comparison = response["structured_response"]

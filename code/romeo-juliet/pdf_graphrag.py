@@ -12,6 +12,48 @@ from langchain.tools import tool
 from langchain.agents import create_agent
 from langchain.agents.structured_output import ProviderStrategy, ToolStrategy
 
+
+def serialize_for_json(obj):
+    """Convert Neo4j and other non-serializable objects to JSON-serializable format."""
+    # Handle Neo4j Node objects
+    if hasattr(obj, 'labels') and hasattr(obj, 'items'):
+        return {
+            '_type': 'Node',
+            'labels': list(obj.labels),
+            'properties': dict(obj.items())
+        }
+    # Handle Neo4j Relationship objects
+    if hasattr(obj, 'type') and hasattr(obj, 'start_node'):
+        return {
+            '_type': 'Relationship',
+            'type': obj.type,
+            'properties': dict(obj.items()) if hasattr(obj, 'items') else {}
+        }
+    # Handle Neo4j Path objects
+    if hasattr(obj, 'nodes') and hasattr(obj, 'relationships'):
+        return {
+            '_type': 'Path',
+            'nodes': [serialize_for_json(n) for n in obj.nodes],
+            'relationships': [serialize_for_json(r) for r in obj.relationships]
+    }
+    # Handle datetime objects
+    if isinstance(obj, datetime.datetime):
+        return obj.isoformat()
+    # Handle dict-like objects
+    if hasattr(obj, 'items') and not isinstance(obj, dict):
+        return {k: serialize_for_json(v) for k, v in obj.items()}
+    # Handle dicts recursively
+    if isinstance(obj, dict):
+        return {k: serialize_for_json(v) for k, v in obj.items()}
+    # Handle lists recursively
+    if isinstance(obj, list):
+        return [serialize_for_json(item) for item in obj]
+    # Handle primitives
+    if isinstance(obj, (str, int, float, bool, type(None))):
+        return obj
+    # Fallback to string representation
+    return str(obj)
+
 class PDFGraphRAG:
     
     # CONSTRUCTOR
@@ -145,51 +187,9 @@ class PDFGraphRAG:
         except Exception as e:
             print(f"Error retrieve schema: {e}")
             return "Schema information unavailable", [], []
-
-
-
-    def serialize_for_json(obj):
-        """Convert Neo4j and other non-serializable objects to JSON-serializable format."""
-        # Handle Neo4j Node objects
-        if hasattr(obj, 'labels') and hasattr(obj, 'items'):
-            return {
-                '_type': 'Node',
-                'labels': list(obj.labels),
-                'properties': dict(obj.items())
-            }
-        # Handle Neo4j Relationship objects
-        if hasattr(obj, 'type') and hasattr(obj, 'start_node'):
-            return {
-                '_type': 'Relationship',
-                'type': obj.type,
-                'properties': dict(obj.items()) if hasattr(obj, 'items') else {}
-            }
-        # Handle Neo4j Path objects
-        if hasattr(obj, 'nodes') and hasattr(obj, 'relationships'):
-            return {
-                '_type': 'Path',
-                'nodes': [serialize_for_json(n) for n in obj.nodes],
-                'relationships': [serialize_for_json(r) for r in obj.relationships]
-        }
-        # Handle datetime objects
-        if isinstance(obj, datetime.datetime):
-            return obj.isoformat()
-        # Handle dict-like objects
-        if hasattr(obj, 'items') and not isinstance(obj, dict):
-            return {k: serialize_for_json(v) for k, v in obj.items()}
-        # Handle dicts recursively
-        if isinstance(obj, dict):
-            return {k: serialize_for_json(v) for k, v in obj.items()}
-        # Handle lists recursively
-        if isinstance(obj, list):
-            return [serialize_for_json(item) for item in obj]
-        # Handle primitives
-        if isinstance(obj, (str, int, float, bool, type(None))):
-            return obj
-        # Fallback to string representation
-        return str(obj)
     
     
+
 
     # ---------------- PDF to Graph and Vector Processing
     def load_pdf(self, pdf_path: str):

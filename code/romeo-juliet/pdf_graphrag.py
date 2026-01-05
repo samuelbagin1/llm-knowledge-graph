@@ -2,15 +2,53 @@ import datetime
 import json
 import os
 from typing import Dict, List, Any, Optional, Generic, TypeVar
-from langchain_neo4j import Neo4jGraph
+from langchain_neo4j import Neo4jGraph, Neo4jVector
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 from langchain.tools import tool
 from langchain.agents import create_agent
 from langchain.agents.structured_output import ProviderStrategy, ToolStrategy
+from openai import embeddings
+from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter, SpacyTextSplitter
+import spacy
+
+from langchain_core.documents import Document
+from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
+
+
+# extract nodes and relationships from spacy doc
+def spacy_to_graph_document(doc, source_document):
+    nodes = {}
+    relationships = []
+    
+    # Extract entities as nodes
+    for ent in doc.ents:
+        nodes[ent.text] = Node(id=ent.text, type=ent.label_)
+    
+    # Extract SVO triples from dependency parse
+    for token in doc:
+        if token.dep_ == "ROOT" and token.pos_ == "VERB":
+            subj = [w for w in token.children if w.dep_ in ("nsubj", "nsubjpass")]
+            obj = [w for w in token.children if w.dep_ in ("dobj", "pobj", "attr")]
+            
+            for s in subj:
+                for o in obj:
+                    if s.text in nodes and o.text in nodes:
+                        relationships.append(Relationship(
+                            source=nodes[s.text],
+                            target=nodes[o.text],
+                            type=token.lemma_.upper()
+                        ))
+    
+    return GraphDocument(
+        nodes=list(nodes.values()),
+        relationships=relationships,
+        source=source_document
+    )
 
 
 def serialize_for_json(obj):
@@ -54,16 +92,51 @@ def serialize_for_json(obj):
     # Fallback to string representation
     return str(obj)
 
+
+
+
+
 class PDFGraphRAG:
     
     # CONSTRUCTOR
-    def __init__(self, neo4j_uri: str, neo4j_user: str, neo4j_password: str, openai_api_key: str, google_api_key: str = None):
+    def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str, neo4j_uri: str, neo4j_user: str, neo4j_password: str, openai_api_key: str, google_api_key: str = None):
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
             password=neo4j_password,
             refresh_schema=False
         )
+        
+        try:
+            # .from_existing_index
+            self.vector_store_chunk = Neo4jVector.from_existing_index(
+                                        self.embeddings,
+                                        url=neo4j_uri,
+                                        username=neo4j_user,
+                                        password=neo4j_password,
+                                        index_name=vector_store_chunk_name,
+                                    )
+            
+            # .from_existing_graph
+            self.vector_store_nodes = Neo4jVector.from_existing_index(
+                                        self.embeddings,
+                                        url=neo4j_uri,
+                                        username=neo4j_user,
+                                        password=neo4j_password,
+                                        index_name=vector_store_nodes_name,
+                                    )
+            
+            # .from_existing_relationship_index
+            self.vector_store_relationships = Neo4jVector.from_existing_index(
+                                            self.embeddings,
+                                            url=neo4j_uri,
+                                            username=neo4j_user,
+                                            password=neo4j_password,
+                                            index_name=vector_store_relationships_name,
+                                    )
+        except Exception as e:
+            print(f"Error initializing vector stores: {e}")
+            raise e
         
         # Initialize LLM clients
         # ChatOpenAI for question generation
@@ -87,6 +160,7 @@ class PDFGraphRAG:
         )
 
         self.graph_transformer = LLMGraphTransformer(llm=self.openai_graph_transform)
+        self.embeddings = OpenAIEmbeddings(model='text-embedding-3-large', api_key=openai_api_key)
         
 
             
@@ -202,19 +276,71 @@ class PDFGraphRAG:
         documents = self.load_pdf(pdf_path)
         if max_pages:
             documents = documents[:max_pages]
-        print(f"Loaded {len(documents)} pages from PDF")
 
-
-        # Transform documents into graph documents using LLMGraphTransformer
-        graph_docs = self.graph_transformer.convert_to_graph_documents(documents)
-        print(f"Generated {len(graph_docs)} graph documents")
-
-
+        
+        splitter = SpacyTextSplitter()
+        chunked_documents = splitter.split_documents(documents)
+        nlp = spacy.load("en_core_web_sm")
+        
+        
+        all_graph_docs = []
+        all_nodes = []
+        all_relationships = []
+        for i, document in enumerate(chunked_documents):
+            chunk_id = f"chunk_{i}"
+            
+            chunk_embedding = self.embeddings.embed_query(document.page_content)
+            chunk_node = Node(
+                id=chunk_id,
+                type="Chunk",
+                properties={
+                    "text": document.page_content,
+                    "embedding": chunk_embedding,
+                    "page": document.metadata.get("page", 0)
+                }
+            )
+            
+            # spacy NER and NLP
+            doc = nlp(document.page_content)
+            entitties = [ent.text for ent in doc.ents]
+            
+            # Transform documents into graph documents using LLMGraphTransformer
+            graph_docs = self.graph_transformer.convert_to_graph_documents([document], allowed_nodes=entitties)
+            
+            graph_docs.append(chunk_node)
+            # forEach graph doc, add Chunk node and HAS relationship
+            for graph_doc in graph_docs:
+                for node in graph_doc.nodes:
+                    all_nodes.append(Document(page_content=node['id']))
+                    if node.id != chunk_id: # avoid self reference
+                        graph_doc.relationships.append(
+                            Relationship(
+                                source=chunk_node,
+                                target=node,
+                                type="HAS"
+                            )
+                        )
+                        
+                all_graph_docs.append(graph_doc)
+        # ------------------ END OF LOOP ------------------
+        
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
-        self.graph.add_graph_documents(graph_documents=graph_docs, include_source=True)
-        print(f"Added {sum(len(doc.nodes) for doc in graph_docs)} nodes")
-        print(f"Added {sum(len(doc.relationships) for doc in graph_docs)} relationships")
+        self.graph.add_graph_documents(
+            graph_documents=all_graph_docs,
+            include_source=True,
+            baseEntityLabel=True
+        )
+            
+        
+        rel_types = self.graph.query("CALL db.relationshipTypes()")
+        all_relationships.append([Document(page_content=rel['relationshipType']) for rel in rel_types])
+        
+        self.vector_store_nodes.add_documents(all_nodes)
+        self.vector_store_relationships.add_documents(all_relationships)
+            
+            
+        
         
         
         

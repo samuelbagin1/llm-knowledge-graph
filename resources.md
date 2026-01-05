@@ -1,11 +1,13 @@
 # RESOURCES
 
-## frameworks
+## frameworks and libraries
 https://github.com/neo4j/neo4j
 https://github.com/explosion/spaCy
 https://github.com/WestHealth/pyvis
 https://github.com/d3/d3
 https://github.com/huggingface/transformers
+
+Neo4j Vector: https://docs.langchain.com/oss/python/integrations/vectorstores/neo4jvector
 
 
 ## videos

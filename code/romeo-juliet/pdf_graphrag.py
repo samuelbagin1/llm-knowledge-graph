@@ -270,7 +270,7 @@ class PDFGraphRAG:
         loader = PyPDFLoader(pdf_path)
         return loader.load()
 
-    def process_pdf(self, pdf_path: str, max_pages: int = None):
+    def process_pdf(self, pdf_path: str, max_pages: int = None, allowed_entities: Optional[List[str]] = None):
         
         # Load PDF documents
         documents = self.load_pdf(pdf_path)
@@ -285,7 +285,6 @@ class PDFGraphRAG:
         
         all_graph_docs = []
         all_nodes = []
-        all_relationships = []
         for i, document in enumerate(chunked_documents):
             chunk_id = f"chunk_{i}"
             
@@ -302,26 +301,32 @@ class PDFGraphRAG:
             
             # spacy NER and NLP
             doc = nlp(document.page_content)
-            entitties = [ent.text for ent in doc.ents]
+            entities = [ent.text for ent in doc.ents]
             
             # Transform documents into graph documents using LLMGraphTransformer
-            graph_docs = self.graph_transformer.convert_to_graph_documents([document], allowed_nodes=entitties)
+            graph_docs = self.graph_transformer.convert_to_graph_documents([document], allowed_nodes=entities)
             
-            graph_docs.append(chunk_node)
+            chunk_relationships = []
             # forEach graph doc, add Chunk node and HAS relationship
             for graph_doc in graph_docs:
                 for node in graph_doc.nodes:
-                    all_nodes.append(Document(page_content=node['id']))
-                    if node.id != chunk_id: # avoid self reference
-                        graph_doc.relationships.append(
-                            Relationship(
-                                source=chunk_node,
-                                target=node,
-                                type="HAS"
-                            )
+                    all_nodes.append(Document(page_content=node.id))
+                    chunk_relationships.append(
+                        Relationship(
+                            source=chunk_node,
+                            target=node,
+                            type="HAS"
                         )
+                    )
                         
                 all_graph_docs.append(graph_doc)
+            
+            chunk_graph_doc = GraphDocument(
+                nodes=[chunk_node],
+                relationships=chunk_relationships,
+                source=document
+            )
+            all_graph_docs.append(chunk_graph_doc)
         # ------------------ END OF LOOP ------------------
         
         # Add graph documents to Neo4j
@@ -334,7 +339,7 @@ class PDFGraphRAG:
             
         
         rel_types = self.graph.query("CALL db.relationshipTypes()")
-        all_relationships.append([Document(page_content=rel['relationshipType']) for rel in rel_types])
+        all_relationships = [Document(page_content=rel['relationshipType']) for rel in rel_types]
         
         self.vector_store_nodes.add_documents(all_nodes)
         self.vector_store_relationships.add_documents(all_relationships)

@@ -2,11 +2,10 @@ import datetime
 import json
 import os
 from typing import Dict, List, Any, Optional, Generic, TypeVar
-from langchain_neo4j import Neo4jGraph, Neo4jVector
+from langchain_neo4j import Neo4jGraph, Neo4jVector, GraphCypherQAChain
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 from langchain.tools import tool
@@ -101,7 +100,7 @@ class PDFGraphRAG:
     # CONSTRUCTOR
     def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str, 
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str, 
-                 openai_api_key: str, google_api_key: str = None):
+                 openai_api_key: str, google_api_key: str = None, advanced_search: bool = False):
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
@@ -119,6 +118,7 @@ class PDFGraphRAG:
         self._vector_store_chunk_name = vector_store_chunk_name
         self._vector_store_nodes_name = vector_store_nodes_name
         self._vector_store_relationships_name = vector_store_relationships_name
+        self._advanced_search = advanced_search
 
         # Initialize vector stores - will be created when first documents are added
         self._init_vector_stores()
@@ -266,6 +266,24 @@ class PDFGraphRAG:
         except Exception as e:
             print(f"Error retrieve schema: {e}")
             return "Schema information unavailable", [], []
+        
+    # TODO
+    def get_help():
+        help_text = """
+        Help Instructions:
+        
+        - To process a PDF and create the knowledge graph, use:
+            graphrag.process_pdf("path/to/your.pdf")
+        
+        - To query the graph database, use:
+            graphrag.query_graph_database("Your question here")
+        
+        - To query the vector database for nodes or relationships, use:
+            graphrag.query_vector_database(database=graphrag.vector_store_nodes, question="Your question here")
+            graphrag.query_vector_database(database=graphrag.vector_store_relationships, question="Your question here")
+        
+        - To view the graph schema, use:
+            graphrag.get_graph_schema()"""
     
     
 
@@ -340,6 +358,8 @@ class PDFGraphRAG:
             include_source=True,
             baseEntityLabel=True
         )
+        
+        self.graph.refresh_schema()
             
         
         rel_types = self.graph.query("CALL db.relationshipTypes()")
@@ -575,9 +595,6 @@ Begin by identifying the relevant node labels and relationship types, then query
             data_field = query_data.get('data', '[]')
             records = json.loads(data_field) if isinstance(data_field, str) else (data_field or [])
 
-            print(f"Generated Cypher query: {cypher_query}")
-            print(f"Found {len(records) if isinstance(records, list) else 'N/A'} results")
-
         except (json.JSONDecodeError, KeyError) as e:
             print(f"Failed to parse query response: {e}")
             cypher_query = "MATCH (n) RETURN n LIMIT 10"
@@ -619,15 +636,134 @@ Return ONLY the answer text, no preamble or JSON formatting."""
         print(f"Answer: {structured_answer}")
 
         return {"graph_data": query_data, "structured_answer": structured_answer.strip()}
-
     
     
-    # TODO: while processing the pdf to graph database, create a node that will represent the chunk,
-    #       and every created node from the chunk`s text, connect nodes to chunk node via HAS relationship
     
-    # TODO: implement method for cypher querying of graph database
-    # TODO: implemet method for vector query of graph database, then return chunks nodes
-    # TODO: implement method for vector search inside vector database
+    def query_vector_database(self, database: Neo4jVector, question: str, k: int = 5):
+        """
+        Function: Query vector database to retrieve relevant chunks and nodes
+
+        Args:
+            question: Test question to answer using vector search
+            database: 'chunks' or 'nodes' to specify which vector store to query
+
+        Returns:
+            vector results
+        """
+
+        vector_results = database.similarity_search(
+            query=question,
+            k=k
+        )
+
+        return vector_results
+    
+    
+    
+    def query_chunks_by_similarity(self, question: str, k: int = 5):
+        """
+        Function: Embed question and retrieve similar chunks from graph database
+
+        Args:
+            question: Test question to answer using vector search
+            k: number of top similar chunks to retrieve
+
+        Returns:
+            vector results as text, page number and score
+        """
+
+        question_embedding = self.embeddings.embed_query(question)
+        
+        result = self.graph.query("""
+                                  MATCH (c:Chunk)
+                                  WITH c, gds.similarity.cosine(c.embedding, $embedding) AS score
+                                  ORDER BY score DESC
+                                  LIMIT $k
+                                  RETURN c.text AS text, c.page AS page, score
+                                  """, { "embedding": question_embedding, "k": k})
+
+        return result
+    
+    
+    
+    def validate_and_answer(self, question, node_result, relationship_result, chunk_result, graph_result, advanced_search: str = None) -> str:
+        # Format results into natural language answer
+        if advanced_search is not None:
+            advanced_search_text = f"Advanced Deeper Search:\n{json.dumps(advanced_search, indent=2)}\n"
+        else:
+            advanced_search_text = ""
+        
+        format_prompt = f"""Based on the following graph database query results, provide a clear, concise answer to the original question.
+
+Question: {question}
+
+Node Vector Results: {node_result}
+
+Relationship Vector Results: {relationship_result}
+
+Chunk Vector Results: {chunk_result}
+
+Query Results:
+{graph_result if graph_result else "No results found"}
+
+{advanced_search_text}
+
+Provide a natural language answer that:
+1. Directly answers the question
+2. Includes specific names, relationships, and details from the results
+3. Acknowledges if information is missing or incomplete
+4. Is clear and concise
+
+Return ONLY the answer text, no preamble or JSON formatting."""
 
 
+        structured_answer = self.openai_client.invoke(format_prompt).content
+        
+        return structured_answer.strip()
+    
+    
 
+    def invoke_question(self):
+        """
+        A function for question input and invoking the question LLM, Graph and Vector Databases
+        """
+        
+        question = input("Enter your question: ")
+        
+        if (question=='-h'):
+            print("Help Instructions: \n - To exit, type 'exit' \n - To view graph schema, type '-s' \n")
+        elif (question=='-s'):
+            print(self.get_graph_schema())
+        elif (question.lower()=='exit'):
+            print("Exiting...")
+            return
+        
+        
+        nodes_vector_results = self.query_vector_database(database=self.vector_store_nodes, question=question)
+        relationship_vector_results = self.query_vector_database(database=self.vector_store_relationships, question=question)
+        chunk_vector_results = self.query_chunks_by_similarity(question=question)
+        
+        graph_schema = self.get_graph_schema()
+        chain = GraphCypherQAChain.from_llm(
+            self.openai_client,
+            graph=self.graph,
+            graph_schema=self.graph.get_schema(),
+            allow_dangerous_queries=True
+        )
+        
+        graph_query_result = chain.invoke( {"query": question} )
+        if (self._advanced_search):
+            advanced_search_result = self.query_graph_database(question=question)['query_data']
+        
+        
+        
+        # validate search results and generate final answer
+        final_answer = self.validate_and_answer(
+            question=question,
+            node_result=nodes_vector_results,
+            relationship_result=relationship_vector_results,
+            chunk_result=chunk_vector_results,
+            graph_result=graph_query_result
+        )
+        
+        print(final_answer)

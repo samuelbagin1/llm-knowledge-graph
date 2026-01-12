@@ -300,6 +300,9 @@ class PDFGraphRAG:
         if max_pages:
             documents = documents[:max_pages]
 
+        # TODO: study and implement better chunking strategy
+        # TODO: study and implement better NER and relationship extraction
+        # TODO: research spaCy
         
         splitter = SpacyTextSplitter()
         chunked_documents = splitter.split_documents(documents)

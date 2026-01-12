@@ -99,44 +99,29 @@ def serialize_for_json(obj):
 class PDFGraphRAG:
     
     # CONSTRUCTOR
-    def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str, neo4j_uri: str, neo4j_user: str, neo4j_password: str, openai_api_key: str, google_api_key: str = None):
+    def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str, 
+                 neo4j_uri: str, neo4j_user: str, neo4j_password: str, 
+                 openai_api_key: str, google_api_key: str = None):
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
             password=neo4j_password,
             refresh_schema=False
         )
-        
-        try:
-            # .from_existing_index
-            self.vector_store_chunk = Neo4jVector.from_existing_index(
-                                        self.embeddings,
-                                        url=neo4j_uri,
-                                        username=neo4j_user,
-                                        password=neo4j_password,
-                                        index_name=vector_store_chunk_name,
-                                    )
-            
-            # .from_existing_graph
-            self.vector_store_nodes = Neo4jVector.from_existing_index(
-                                        self.embeddings,
-                                        url=neo4j_uri,
-                                        username=neo4j_user,
-                                        password=neo4j_password,
-                                        index_name=vector_store_nodes_name,
-                                    )
-            
-            # .from_existing_relationship_index
-            self.vector_store_relationships = Neo4jVector.from_existing_index(
-                                            self.embeddings,
-                                            url=neo4j_uri,
-                                            username=neo4j_user,
-                                            password=neo4j_password,
-                                            index_name=vector_store_relationships_name,
-                                    )
-        except Exception as e:
-            print(f"Error initializing vector stores: {e}")
-            raise e
+
+        # Initialize embeddings first - needed for vector stores
+        self.embeddings = OpenAIEmbeddings(model='text-embedding-3-large', api_key=openai_api_key)
+
+        # Store vector store configuration for lazy initialization
+        self._neo4j_uri = neo4j_uri
+        self._neo4j_user = neo4j_user
+        self._neo4j_password = neo4j_password
+        self._vector_store_chunk_name = vector_store_chunk_name
+        self._vector_store_nodes_name = vector_store_nodes_name
+        self._vector_store_relationships_name = vector_store_relationships_name
+
+        # Initialize vector stores - will be created when first documents are added
+        self._init_vector_stores()
         
         # Initialize LLM clients
         # ChatOpenAI for question generation
@@ -160,12 +145,32 @@ class PDFGraphRAG:
         )
 
         self.graph_transformer = LLMGraphTransformer(llm=self.openai_graph_transform)
-        self.embeddings = OpenAIEmbeddings(model='text-embedding-3-large', api_key=openai_api_key)
-        
 
-            
-            
-            
+    def _init_vector_stores(self):
+        """Initialize vector stores, creating empty ones if indices don't exist"""
+        try:
+            # Try to load existing indices
+            self.vector_store_nodes = Neo4jVector.from_existing_index(
+                self.embeddings,
+                url=self._neo4j_uri,
+                username=self._neo4j_user,
+                password=self._neo4j_password,
+                index_name=self._vector_store_nodes_name,
+            )
+            self.vector_store_relationships = Neo4jVector.from_existing_index(
+                self.embeddings,
+                url=self._neo4j_uri,
+                username=self._neo4j_user,
+                password=self._neo4j_password,
+                index_name=self._vector_store_relationships_name,
+            )
+            print("Loaded existing vector store indices")
+        except ValueError:
+            # Indices don't exist yet - set to None and they'll be created on first use
+            print("Vector store indices not found - will be created when documents are added")
+            self.vector_store_chunk = None
+            self.vector_store_nodes = None
+            self.vector_store_relationships = None
 
     # ----------------- METHODS -----------------
     def add_graph_docs_without_apoc(self, graph_docs):
@@ -281,8 +286,7 @@ class PDFGraphRAG:
         splitter = SpacyTextSplitter()
         chunked_documents = splitter.split_documents(documents)
         nlp = spacy.load("en_core_web_sm")
-        
-        
+
         all_graph_docs = []
         all_nodes = []
         for i, document in enumerate(chunked_documents):
@@ -304,7 +308,7 @@ class PDFGraphRAG:
             entities = [ent.text for ent in doc.ents]
             
             # Transform documents into graph documents using LLMGraphTransformer
-            graph_docs = self.graph_transformer.convert_to_graph_documents([document], allowed_nodes=entities)
+            graph_docs = self.graph_transformer.convert_to_graph_documents([document])
             
             chunk_relationships = []
             # forEach graph doc, add Chunk node and HAS relationship
@@ -340,9 +344,32 @@ class PDFGraphRAG:
         
         rel_types = self.graph.query("CALL db.relationshipTypes()")
         all_relationships = [Document(page_content=rel['relationshipType']) for rel in rel_types]
-        
-        self.vector_store_nodes.add_documents(all_nodes)
-        self.vector_store_relationships.add_documents(all_relationships)
+
+        # Initialize vector stores if they don't exist yet
+        if self.vector_store_nodes is None:
+            print("Creating vector store indices...")
+            self.vector_store_nodes = Neo4jVector.from_documents(
+                all_nodes,
+                embedding=self.embeddings,
+                url=self._neo4j_uri,
+                username=self._neo4j_user,
+                password=self._neo4j_password,
+                index_name=self._vector_store_nodes_name,
+            )
+        else:
+            self.vector_store_nodes.add_documents(all_nodes)
+
+        if self.vector_store_relationships is None:
+            self.vector_store_relationships = Neo4jVector.from_documents(
+                all_relationships,
+                embedding=self.embeddings,
+                url=self._neo4j_uri,
+                username=self._neo4j_user,
+                password=self._neo4j_password,
+                index_name=self._vector_store_relationships_name,
+            )
+        else:
+            self.vector_store_relationships.add_documents(all_relationships)
             
             
         
@@ -604,18 +631,3 @@ Return ONLY the answer text, no preamble or JSON formatting."""
 
 
 
-# ------- MAIN ---------
-
-load_dotenv()
-
-graphrag = PDFGraphRAG(
-    neo4j_uri=os.getenv("NEO4J_URI"),
-    neo4j_user=os.getenv("NEO4J_USER"),
-    neo4j_password=os.getenv("NEO4J_PASSWORD"),
-    openai_api_key=os.getenv("OPENAI_API_KEY"),
-    google_api_key=os.getenv("GOOGLE_API_KEY")
-)
-
-# processing
-graphrag.process_pdf("code/romeo-juliet/pdf/romeo-and-juliet.pdf")
-print("\nKnowledge graph successfully created in Neo4j!")

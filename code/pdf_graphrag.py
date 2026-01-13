@@ -6,6 +6,7 @@ from langchain_neo4j import Neo4jGraph, Neo4jVector, GraphCypherQAChain
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_anthropic import ChatAnthropic
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 from langchain.tools import tool
@@ -100,7 +101,8 @@ class PDFGraphRAG:
     # CONSTRUCTOR
     def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str, 
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str, 
-                 openai_api_key: str, google_api_key: str = None, advanced_search: bool = False):
+                 openai_api_key: str = None, google_api_key: str = None, 
+                 claude_api_key: str = None, advanced_search: bool = False):
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
@@ -136,6 +138,12 @@ class PDFGraphRAG:
             temperature=0,
             api_key=openai_api_key
         )
+        
+        self.claude_client = ChatAnthropic(
+            model="claude-sonnet-4-5-20250929",
+            temperature=0,
+            api_key=claude_api_key
+        )
 
         # Google Gemini for everything else
         self.gemini_client = ChatGoogleGenerativeAI(
@@ -144,7 +152,7 @@ class PDFGraphRAG:
             google_api_key=google_api_key
         )
 
-        self.graph_transformer = LLMGraphTransformer(llm=self.openai_graph_transform)
+        self.graph_transformer = LLMGraphTransformer(llm=self.claude_client)
 
     def _init_vector_stores(self):
         """Initialize vector stores, creating empty ones if indices don't exist"""
@@ -291,6 +299,7 @@ class PDFGraphRAG:
     # ---------------- PDF to Graph and Vector Processing
     def load_pdf(self, pdf_path: str):
         loader = PyPDFLoader(pdf_path)
+        print("PDF loaded successfully.")
         return loader.load()
 
     def process_pdf(self, pdf_path: str, max_pages: int = None, allowed_entities: Optional[List[str]] = None):
@@ -306,11 +315,12 @@ class PDFGraphRAG:
         
         splitter = SpacyTextSplitter()
         chunked_documents = splitter.split_documents(documents)
-        nlp = spacy.load("en_core_web_sm")
+        # nlp = spacy.load("en_core_web_sm")
 
         all_graph_docs = []
         all_nodes = []
         for i, document in enumerate(chunked_documents):
+            print(f"Processing chunk {i+1}/{len(chunked_documents)}")
             chunk_id = f"chunk_{i}"
             
             chunk_embedding = self.embeddings.embed_query(document.page_content)
@@ -324,9 +334,9 @@ class PDFGraphRAG:
                 }
             )
             
-            # spacy NER and NLP
-            doc = nlp(document.page_content)
-            entities = [ent.text for ent in doc.ents]
+            # spacy NLP and NER 
+            # doc = nlp(document.page_content)
+            # entities = [ent.text for ent in doc.ents]
             
             # Transform documents into graph documents using LLMGraphTransformer
             graph_docs = self.graph_transformer.convert_to_graph_documents([document])
@@ -352,6 +362,7 @@ class PDFGraphRAG:
                 source=document
             )
             all_graph_docs.append(chunk_graph_doc)
+        print("\nAll chunks processed into graph documents.")
         # ------------------ END OF LOOP ------------------
         
         # Add graph documents to Neo4j
@@ -393,6 +404,8 @@ class PDFGraphRAG:
             )
         else:
             self.vector_store_relationships.add_documents(all_relationships)
+        
+        print("Knowledge graph and vector stores successfully updated in Neo4j!")
             
             
         
@@ -754,6 +767,7 @@ Return ONLY the answer text, no preamble or JSON formatting."""
             allow_dangerous_queries=True
         )
         
+        advanced_search_result = None
         graph_query_result = chain.invoke( {"query": question} )
         if (self._advanced_search):
             advanced_search_result = self.query_graph_database(question=question)['query_data']
@@ -766,7 +780,8 @@ Return ONLY the answer text, no preamble or JSON formatting."""
             node_result=nodes_vector_results,
             relationship_result=relationship_vector_results,
             chunk_result=chunk_vector_results,
-            graph_result=graph_query_result
+            graph_result=graph_query_result,
+            advanced_search=advanced_search_result
         )
         
         print(final_answer)

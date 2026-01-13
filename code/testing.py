@@ -10,6 +10,7 @@ graphrag = PDFGraphRAG(
     neo4j_password='fseijkfbsj48@',
     openai_api_key=os.getenv("OPENAI_API_KEY"),
     google_api_key=os.getenv("GOOGLE_API_KEY"),
+    claude_api_key=os.getenv("ANTHROPIC_API_KEY"),
     vector_store_chunk_name='pdf_romeo_juliet',
     vector_store_nodes_name='pdf_romeo_juliet_nodes',
     vector_store_relationships_name='pdf_romeo_juliet_relationships'

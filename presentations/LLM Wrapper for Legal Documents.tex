@@ -1,0 +1,416 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% Code listing style
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{gray}\itshape,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!10}
+}
+
+\title{LLM Wrapper for Legal Documents:\\GraphRAG System Documentation}
+\author{Technical Documentation}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ============================================================================
+\section{System Overview}
+% ============================================================================
+
+This document describes a \textbf{Graph Retrieval-Augmented Generation (GraphRAG)} system designed to process PDF documents, extract knowledge graphs, and enable intelligent question-answering. The system combines:
+
+\begin{itemize}
+    \item \textbf{Neo4j} -- Graph database for storing entities and relationships
+    \item \textbf{Vector Stores} -- For semantic similarity search
+    \item \textbf{Multiple LLMs} -- OpenAI, Claude, and Gemini for different tasks
+    \item \textbf{LangChain} -- Orchestration framework for LLM pipelines
+\end{itemize}
+
+% ============================================================================
+\section{Core Module: PDFGraphRAG}
+% ============================================================================
+
+The \texttt{PDFGraphRAG} class (in \texttt{pdf\_graphrag.py}) is the main entry point for processing documents and querying the knowledge graph.
+
+% ----------------------------------------------------------------------------
+\subsection{Constructor and Initialization}
+% ----------------------------------------------------------------------------
+
+\begin{lstlisting}[caption={Constructor signature}]
+def __init__(self, vector_store_chunk_name, vector_store_nodes_name,
+             vector_store_relationships_name, neo4j_uri, neo4j_user,
+             neo4j_password, openai_api_key, google_api_key,
+             claude_api_key, advanced_search=False)
+\end{lstlisting}
+
+The constructor initializes:
+\begin{enumerate}
+    \item \textbf{Neo4j Graph Connection} -- Connects to the graph database
+    \item \textbf{OpenAI Embeddings} -- Uses \texttt{text-embedding-3-large} model
+    \item \textbf{Vector Stores} -- Three separate stores for chunks, nodes, and relationships
+    \item \textbf{LLM Clients}:
+    \begin{itemize}
+        \item \texttt{openai\_client} -- GPT for question processing
+        \item \texttt{claude\_client} -- Claude Sonnet for graph transformation
+        \item \texttt{gemini\_client} -- Gemini Flash for general tasks
+    \end{itemize}
+    \item \textbf{Graph Transformer} -- \texttt{LLMGraphTransformer} using Claude for entity extraction
+\end{enumerate}
+
+% ----------------------------------------------------------------------------
+\subsection{PDF Processing Pipeline}
+% ----------------------------------------------------------------------------
+
+\subsubsection{Loading PDFs}
+
+\begin{lstlisting}[caption={PDF loading function}]
+def load_pdf(self, pdf_path: str):
+    loader = PyPDFLoader(pdf_path)
+    return loader.load()
+\end{lstlisting}
+
+Uses LangChain's \texttt{PyPDFLoader} to extract text content from PDF files.
+
+\subsubsection{Processing Pipeline}
+
+The \texttt{process\_pdf()} method executes the following pipeline:
+
+\begin{enumerate}
+    \item \textbf{Load PDF} -- Extract raw text from document
+    \item \textbf{Chunk Text} -- Split using \texttt{SpacyTextSplitter} for sentence-aware chunking
+    \item \textbf{For each chunk}:
+    \begin{itemize}
+        \item Generate embedding vector
+        \item Create a \texttt{Chunk} node with text, embedding, and page metadata
+        \item Transform chunk into graph documents using \texttt{LLMGraphTransformer}
+        \item Create \texttt{HAS} relationships between chunks and extracted entities
+    \end{itemize}
+    \item \textbf{Store in Neo4j} -- Add all graph documents to the database
+    \item \textbf{Update Vector Stores} -- Index nodes and relationships for similarity search
+\end{enumerate}
+
+\begin{lstlisting}[caption={Chunk node creation}]
+chunk_node = Node(
+    id=chunk_id,
+    type="Chunk",
+    properties={
+        "text": document.page_content,
+        "embedding": chunk_embedding,
+        "page": document.metadata.get("page", 0)
+    }
+)
+\end{lstlisting}
+
+% ----------------------------------------------------------------------------
+\subsection{Querying Functions}
+% ----------------------------------------------------------------------------
+
+\subsubsection{Graph Database Query}
+
+\texttt{query\_graph\_database(question)} converts natural language to Cypher queries using an LLM agent:
+
+\begin{enumerate}
+    \item Retrieves graph schema (node labels, relationship types, sample data)
+    \item Creates an agent with a \texttt{search\_database} tool
+    \item Agent iteratively explores the database with Cypher queries
+    \item Returns structured response with query, explanation, and data
+    \item Formats results into natural language answer
+\end{enumerate}
+
+The agent uses a structured output schema:
+\begin{lstlisting}[caption={Response schema structure}]
+response_schema = {
+    "cypher_query": "Final Cypher query",
+    "explanation": "Query strategy explanation",
+    "data": "JSON string of results",
+    "nodes_found": ["list", "of", "node", "ids"],
+    "relationships_found": ["nodeA -[REL]-> nodeB"]
+}
+\end{lstlisting}
+
+\subsubsection{Vector Database Query}
+
+\begin{lstlisting}[caption={Vector similarity search}]
+def query_vector_database(self, database: Neo4jVector,
+                          question: str, k: int = 5):
+    return database.similarity_search(query=question, k=k)
+\end{lstlisting}
+
+Performs semantic similarity search on vector stores to find relevant nodes or relationships.
+
+\subsubsection{Chunk Similarity Query}
+
+\begin{lstlisting}[caption={Cosine similarity search on chunks}]
+def query_chunks_by_similarity(self, question: str, k: int = 5):
+    question_embedding = self.embeddings.embed_query(question)
+    result = self.graph.query("""
+        MATCH (c:Chunk)
+        WITH c, gds.similarity.cosine(c.embedding, $embedding) AS score
+        ORDER BY score DESC
+        LIMIT $k
+        RETURN c.text AS text, c.page AS page, score
+    """, {"embedding": question_embedding, "k": k})
+    return result
+\end{lstlisting}
+
+Uses Neo4j's Graph Data Science library for cosine similarity computation directly in the database.
+
+% ----------------------------------------------------------------------------
+\subsection{Answer Generation}
+% ----------------------------------------------------------------------------
+
+\subsubsection{Validation and Final Answer}
+
+\texttt{validate\_and\_answer()} combines results from multiple sources:
+
+\begin{itemize}
+    \item Node vector search results
+    \item Relationship vector search results
+    \item Chunk vector search results
+    \item Graph query results
+    \item Optional advanced search results
+\end{itemize}
+
+All results are formatted into a prompt, and the LLM generates a comprehensive natural language answer.
+
+\subsubsection{Interactive Question Interface}
+
+\texttt{invoke\_question()} provides an interactive CLI:
+
+\begin{itemize}
+    \item \texttt{-h} -- Display help instructions
+    \item \texttt{-s} -- Show graph schema
+    \item \texttt{exit} -- Exit the interface
+    \item Any other input -- Process as a question
+\end{itemize}
+
+The function orchestrates:
+\begin{enumerate}
+    \item Vector searches on nodes, relationships, and chunks
+    \item Graph query via \texttt{GraphCypherQAChain}
+    \item Optional advanced search (if enabled)
+    \item Final answer validation and generation
+\end{enumerate}
+
+% ============================================================================
+\section{Testing Module: RomeoJulietGraphTester}
+% ============================================================================
+
+The \texttt{test\_romeo\_juliet\_graph.py} module validates knowledge graph accuracy by comparing graph query results against authoritative sources.
+
+% ----------------------------------------------------------------------------
+\subsection{Test Pipeline Overview}
+% ----------------------------------------------------------------------------
+
+The test suite executes a 4-step process for each test iteration:
+
+\begin{enumerate}
+    \item \textbf{Generate Question} -- LLM creates varied test questions
+    \item \textbf{Query Graph} -- Execute question against Neo4j
+    \item \textbf{Get Ground Truth} -- Search web for authoritative answer
+    \item \textbf{Compare \& Score} -- Evaluate accuracy (0-100 scale)
+\end{enumerate}
+
+% ----------------------------------------------------------------------------
+\subsection{Question Generation}
+% ----------------------------------------------------------------------------
+
+\begin{lstlisting}[caption={Question generation with schema constraints}]
+def generate_test_question(self, iteration: int) -> Dict[str, Any]:
+    # Returns: question, question_type, expected_nodes,
+    #          expected_relationships
+\end{lstlisting}
+
+The function:
+\begin{itemize}
+    \item Rotates through question categories (relationships, attributes, events, locations, multi-hop)
+    \item Uses graph schema to constrain expected node/relationship types
+    \item Tracks previous questions to avoid duplicates
+    \item Returns structured output with validation constraints
+\end{itemize}
+
+Question types:
+\begin{itemize}
+    \item \texttt{relationship} -- Character relationships
+    \item \texttt{character\_attribute} -- Traits, roles, affiliations
+    \item \texttt{event} -- Plot events and connections
+    \item \texttt{location} -- Settings and places
+    \item \texttt{multi\_hop} -- Complex traversal queries
+\end{itemize}
+
+% ----------------------------------------------------------------------------
+\subsection{Graph Querying with Agent}
+% ----------------------------------------------------------------------------
+
+The \texttt{query\_graph\_database()} method uses an LLM agent with tool access:
+
+\begin{lstlisting}[caption={Database search tool}]
+@tool
+def search_database(cypher_query: str) -> str:
+    """Execute a Cypher query against Neo4j.
+    Returns JSON string of results or error message."""
+    # Handles Neo4j object serialization
+    # Returns JSON-formatted results
+\end{lstlisting}
+
+The agent follows this strategy:
+\begin{enumerate}
+    \item Analyze question to identify relevant nodes/relationships
+    \item Start with exploration queries
+    \item Refine iteratively based on results
+    \item Return best Cypher query with found data
+\end{enumerate}
+
+% ----------------------------------------------------------------------------
+\subsection{Comparison and Scoring}
+% ----------------------------------------------------------------------------
+
+\texttt{compare\_and\_score()} evaluates graph accuracy:
+
+\begin{lstlisting}[caption={Scoring rubric}]
+Scoring Rubric:
+- 100:   Perfect match, all information correct
+- 80-99: Mostly accurate, minor details missing
+- 60-79: Partially accurate, some key info missing
+- 40-59: Significantly inaccurate or incomplete
+- 0-39:  Mostly incorrect or no useful data
+\end{lstlisting}
+
+Output includes:
+\begin{itemize}
+    \item \texttt{score} -- Numeric accuracy score (0-100)
+    \item \texttt{accuracy\_assessment} -- Detailed explanation
+    \item \texttt{discrepancies} -- Specific errors found
+    \item \texttt{missing\_data} -- Information gaps
+    \item \texttt{correct\_elements} -- What the graph got right
+    \item \texttt{recommendations} -- Improvement suggestions
+\end{itemize}
+
+% ----------------------------------------------------------------------------
+\subsection{Report Generation}
+% ----------------------------------------------------------------------------
+
+\texttt{generate\_final\_report()} produces:
+\begin{itemize}
+    \item JSON file with all test results
+    \item Statistics: average, min, max scores
+    \item Aggregated recommendations and issues
+    \item Letter grade (A-F) based on average score
+\end{itemize}
+
+% ============================================================================
+\section{Utility Functions}
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+\subsection{JSON Serialization}
+% ----------------------------------------------------------------------------
+
+\texttt{serialize\_for\_json()} handles Neo4j object conversion:
+
+\begin{lstlisting}[caption={Object type handling}]
+Supported types:
+- Neo4j Node    -> {_type, labels, properties}
+- Neo4j Relationship -> {_type, type, properties}
+- Neo4j Path    -> {_type, nodes[], relationships[]}
+- datetime      -> ISO format string
+- dict/list     -> Recursive serialization
+- primitives    -> Pass through
+- other         -> String representation
+\end{lstlisting}
+
+% ----------------------------------------------------------------------------
+\subsection{SpaCy Graph Extraction}
+% ----------------------------------------------------------------------------
+
+\texttt{spacy\_to\_graph\_document()} extracts knowledge from text:
+
+\begin{enumerate}
+    \item \textbf{Entity Extraction} -- Named entities become nodes
+    \item \textbf{SVO Triple Extraction} -- Subject-Verb-Object patterns
+    \begin{itemize}
+        \item Find ROOT verbs in dependency parse
+        \item Extract subjects (\texttt{nsubj}, \texttt{nsubjpass})
+        \item Extract objects (\texttt{dobj}, \texttt{pobj}, \texttt{attr})
+        \item Create relationships with verb lemma as type
+    \end{itemize}
+\end{enumerate}
+
+% ============================================================================
+\section{Architecture Diagram}
+% ============================================================================
+
+\begin{verbatim}
++------------------+     +-------------------+     +------------------+
+|   PDF Document   | --> | SpacyTextSplitter | --> |     Chunks       |
++------------------+     +-------------------+     +------------------+
+                                                          |
+                                                          v
+                                              +------------------------+
+                                              | LLMGraphTransformer    |
+                                              | (Claude)               |
+                                              +------------------------+
+                                                          |
+                         +--------------------------------+
+                         |                                |
+                         v                                v
+              +-------------------+            +--------------------+
+              |   Neo4j Graph     |            |   Vector Stores    |
+              | (Nodes + Rels)    |            | (Embeddings)       |
+              +-------------------+            +--------------------+
+                         |                                |
+                         +----------------+---------------+
+                                          |
+                                          v
+                              +------------------------+
+                              |   Query Processing     |
+                              | - Cypher Generation    |
+                              | - Similarity Search    |
+                              | - Answer Synthesis     |
+                              +------------------------+
+                                          |
+                                          v
+                              +------------------------+
+                              |   Natural Language     |
+                              |       Answer           |
+                              +------------------------+
+\end{verbatim}
+
+% ============================================================================
+\section{Key Dependencies}
+% ============================================================================
+
+\begin{itemize}
+    \item \texttt{langchain-neo4j} -- Neo4j integration with LangChain
+    \item \texttt{langchain-experimental} -- Graph transformers
+    \item \texttt{langchain-openai} -- OpenAI models and embeddings
+    \item \texttt{langchain-anthropic} -- Claude models
+    \item \texttt{langchain-google-genai} -- Gemini models
+    \item \texttt{spacy} -- NLP and text splitting
+    \item \texttt{neo4j} -- Python driver for Neo4j
+    \item \texttt{python-dotenv} -- Environment variable management
+\end{itemize}
+
+\end{document}

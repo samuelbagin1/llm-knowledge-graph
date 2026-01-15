@@ -25,6 +25,8 @@ Multi-model RAG: https://surrealdb.com/blog/multi-model-rag-with-langchain?utm_c
 
 Prompt optimization: https://blog.langchain.com/exploring-prompt-optimization/
 
+Check validity - RAGAS: https://docs.ragas.io/en/stable/
+
 
 ## example
 UK working for legal documents https://github.com/ICLRandD/Blackstone

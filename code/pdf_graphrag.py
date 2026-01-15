@@ -139,8 +139,9 @@ class PDFGraphRAG:
             api_key=openai_api_key
         )
         
+        # use claude-sonnet-4-5
         self.claude_client = ChatAnthropic(
-            model="claude-sonnet-4-5-20250929",
+            model="claude-haiku-4-5",
             temperature=0,
             api_key=claude_api_key
         )
@@ -737,6 +738,15 @@ Return ONLY the answer text, no preamble or JSON formatting."""
         
         return structured_answer.strip()
     
+    
+    """ semanticke vyhladavanie:
+    1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
+    2. pre kazdu otazku najst podmet, predmet, vztah
+    3. pomocou MCP posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
+    4. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
+    5. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
+       vytvorene otazky, povodna pouzivatelova otazka, grafy (vratene entity a vztahy), text z chunkov, (system prompt na vyhodnotenie)
+    """
     
 
     def invoke_question(self):

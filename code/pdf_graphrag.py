@@ -795,7 +795,71 @@ Generate {number_of_questions} alternative phrasings."""
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         questions = response["structured_response"]["questions"]
         return questions
+    
+    
+    # possiblu use or implement spacy or other NLP
+    def find_svo(self, question: str) -> Dict[str, str]:
+        """
+        A function to extract subject, verb, object from a question using LLM
+        
+        Args:
+            question: Original user question
+        Returns:
+            Dictionary with question, subject, verb, object
+        """
+        
+        system_prompt = """You are a linguistic analysis expert specialized in extracting grammatical components from questions.
 
+Your task is to identify the Subject, Verb, and Object (SVO) from a given question:
+- Subject: The entity performing the action or being asked about
+- Verb: The main action or state being queried
+- Object: The entity receiving the action or being related to the subject
+
+Guidelines:
+- For questions, convert the interrogative form to a declarative statement to identify SVO
+- Extract the core semantic components, not just surface-level words
+- If a component is implicit or missing, infer it from context
+- Keep each component concise (a few words maximum)"""
+
+        user_prompt = f"""Extract the subject, verb, and object from the following question:
+
+Question: {question}
+
+Identify the SVO components."""
+
+        response_schema = {
+            "title": "SubjectVerbObject",
+            "type": "object",
+            "description": "A dictionary with subject, verb, and object extracted from the question",
+            "properties": {
+                "question": {
+                    "type": "string",
+                    "description": "The original question"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The subject extracted from the question"
+                },
+                "verb": {
+                    "type": "string",
+                    "description": "The verb extracted from the question"
+                },
+                "object": {
+                    "type": "string",
+                    "description": "The object extracted from the question"
+                }
+            },
+            "required": ["question", "subject", "verb", "object"]
+        }
+        
+        agent = create_agent(model=self.claude_client, tools=[], response_format=ToolStrategy(schema=response_schema), system_prompt=system_prompt)
+
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        svo = response["structured_response"]
+        return svo
+    
+    
+    # ---------------- INTERACTIVE QUESTIONING ----------------
     def invoke_question(self):
         """
         A function for question input and invoking the question LLM, Graph and Vector Databases

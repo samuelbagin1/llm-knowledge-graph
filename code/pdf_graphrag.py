@@ -743,11 +743,58 @@ Return ONLY the answer text, no preamble or JSON formatting."""
     1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
     2. pre kazdu otazku najst podmet, predmet, vztah
     3. pomocou MCP posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
-    4. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
-    5. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
+    4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke, najst Multi-hop
+    5. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
+    6. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
        vytvorene otazky, povodna pouzivatelova otazka, grafy (vratene entity a vztahy), text z chunkov, (system prompt na vyhodnotenie)
     """
     
+    def create_variety_questions(self, question: str, number_of_questions: int = 3) -> List[str]:
+        """
+        A function to create a variety of reformulated questions from the original question
+        
+        Args:
+            question: Original user question
+            number_of_questions: Number of reformulated questions to generate
+            
+        Returns:
+            List of reformulated questions
+        """
+        system_prompt = """You are a question reformulation expert. Your task is to create alternative phrasings of a given question while preserving the exact same meaning and context.
+
+Each reformulated question should:
+- Ask for the same information as the original
+- Use different wording, sentence structure, or perspective
+- Maintain the same level of specificity
+- Be clear and well-formed
+
+Do not add new constraints, change the scope, or alter the intent of the original question."""
+
+        user_prompt = f"""Create exactly {number_of_questions} different reformulations of the following question. Each version should ask for the same information but use different wording.
+
+Original question: {question}
+
+Generate {number_of_questions} alternative phrasings."""
+
+        response_schema = {
+            "title": "VarietyQuestions",
+            "type": "object",
+            "description": "A list of reformulated questions",
+            "properties": {
+                "questions": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "A list of reformulated questions"
+                }
+            },
+            "required": ["questions"]
+        }
+        
+        agent = create_agent(model=self.claude_client, tools=[], response_format=ToolStrategy(schema=response_schema), system_prompt=system_prompt)
+
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        questions = response["structured_response"]["questions"]
+        return questions
 
     def invoke_question(self):
         """

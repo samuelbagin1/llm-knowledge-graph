@@ -27,6 +27,8 @@ Prompt optimization: https://blog.langchain.com/exploring-prompt-optimization/
 
 Check validity - RAGAS: https://docs.ragas.io/en/stable/
 
+Neo4j GenAI ecosystem: https://neo4j.com/labs/genai-ecosystem/?&utm_campaign=Demos&utm_content=&utm_medium=&utm_source=YouTube&utm_justglobal=NA
+
 
 ## example
 UK working for legal documents https://github.com/ICLRandD/Blackstone

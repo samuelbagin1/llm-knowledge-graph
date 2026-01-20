@@ -303,6 +303,7 @@ class PDFGraphRAG:
         print("PDF loaded successfully.")
         return loader.load()
 
+    # send to claude api the file and then process
     def process_pdf(self, pdf_path: str, max_pages: int = None, allowed_entities: Optional[List[str]] = None):
         
         # Load PDF documents
@@ -416,7 +417,7 @@ class PDFGraphRAG:
 
     # ---------------- QUERYING METHODS ----------------
     
-    def query_graph_database(self, question: str) -> Dict[str, Any]:
+    def query_graph_database(self, question: str, similar_nodes: str, similar_relationships: str, svo: Dict) -> Dict[str, Any]:
         """
         Function 2: Convert question to Cypher query and retrieve data from Neo4j
 
@@ -445,7 +446,7 @@ class PDFGraphRAG:
         # System prompt - defines the agent's role and capabilities
         system_prompt = """You are a Neo4j Cypher expert agent specialized in querying knowledge graphs.
 
-Your task is to answer questions by querying a Neo4j graph database about Romeo and Juliet.
+Your task is to answer questions by querying a Neo4j graph database.
 
 ## Your Capabilities
 You have access to the `search_database` tool which executes Cypher queries against Neo4j.
@@ -464,6 +465,7 @@ You have access to the `search_database` tool which executes Cypher queries agai
 - Use undirected relationships `-[r]-` when direction is unknown
 - Always add `LIMIT 25` to prevent large result sets
 - Return useful properties: `RETURN n.id, labels(n), type(r), properties(n)`
+- Keep queries efficient, focused and short
 
 ## Important
 - You MUST use the search_database tool to query the database
@@ -484,7 +486,16 @@ You have access to the `search_database` tool which executes Cypher queries agai
 {json.dumps(rel_types_list, indent=2)}
 
 ### Sample Data (shows actual property structure):
-{schema_info}
+{self.graph.schema()}
+
+### Similar Nodes (based on question context):
+{similar_nodes}
+
+### Similar Relationships (based on question context):
+{similar_relationships}
+
+### Subject-Verb-Object from question:
+{json.dumps(svo, indent=2)}
 
 ## Your Task
 1. Analyze the question to determine which node labels and relationship types are relevant
@@ -509,10 +520,6 @@ Begin by identifying the relevant node labels and relationship types, then query
                     "type": "string",
                     "description": "Explanation of the query strategy and what was found"
                 },
-                "data": {
-                    "type": "string",
-                    "description": "The relevant data returned from the database (JSON string)"
-                },
                 "nodes_found": {
                     "type": "array",
                     "items": {"type": "string"},
@@ -524,7 +531,7 @@ Begin by identifying the relevant node labels and relationship types, then query
                     "description": "List of relationships found (format: 'nodeA -[REL_TYPE]-> nodeB')"
                 }
             },
-            "required": ["cypher_query", "explanation", "data"]
+            "required": ["cypher_query", "explanation", "nodes_found", "relationships_found"]
         }
 
 
@@ -606,17 +613,6 @@ Begin by identifying the relevant node labels and relationship types, then query
         # structured_response is already a dict when using ProviderStrategy
         query_data = response["structured_response"]
 
-        try:
-            cypher_query = query_data['cypher_query']
-            # data field might be a JSON string or already parsed
-            data_field = query_data.get('data', '[]')
-            records = json.loads(data_field) if isinstance(data_field, str) else (data_field or [])
-
-        except (json.JSONDecodeError, KeyError) as e:
-            print(f"Failed to parse query response: {e}")
-            cypher_query = "MATCH (n) RETURN n LIMIT 10"
-            records = []
-
         # Fallback if no results
         if not records and node_count > 0:
             try:
@@ -629,40 +625,18 @@ Begin by identifying the relevant node labels and relationship types, then query
                 print(f"Fallback query failed: {e}")
                 records = []
 
-
-
-        # Format results into natural language answer
-        format_prompt = f"""Based on the following graph database query results, provide a clear, concise answer to the original question.
-
-Question: {question}
-
-Query Results:
-{json.dumps(records, indent=2) if records else "No results found"}
-
-Provide a natural language answer that:
-1. Directly answers the question
-2. Includes specific names, relationships, and details from the results
-3. Acknowledges if information is missing or incomplete
-4. Is clear and concise (2-4 sentences)
-
-Return ONLY the answer text, no preamble or JSON formatting."""
-
-
-        structured_answer = self.openai_client.invoke(format_prompt).content
-
-        print(f"Answer: {structured_answer}")
-
-        return {"graph_data": query_data, "structured_answer": structured_answer.strip()}
+        return query_data
     
     
     
-    def query_vector_database(self, database: Neo4jVector, question: str, k: int = 5):
+    def query_vector_database(self, database: Neo4jVector, question: str, svo: List = None, k: int = 5):
         """
         Function: Query vector database to retrieve relevant chunks and nodes
 
         Args:
             question: Test question to answer using vector search
             database: 'chunks' or 'nodes' to specify which vector store to query
+            svo: Subject-Verb-Object dictionary extracted from the question (optional)
 
         Returns:
             vector results
@@ -672,6 +646,10 @@ Return ONLY the answer text, no preamble or JSON formatting."""
             query=question,
             k=k
         )
+        
+        if svo is not None:
+            for item in svo:
+                vector_results.append(database.similarity_search(query=item))
 
         return vector_results
     
@@ -739,15 +717,6 @@ Return ONLY the answer text, no preamble or JSON formatting."""
         return structured_answer.strip()
     
     
-    """ semanticke vyhladavanie:
-    1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
-    2. pre kazdu otazku najst podmet, predmet, vztah
-    3. pomocou MCP posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
-    4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke, najst Multi-hop
-    5. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
-    6. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
-       vytvorene otazky, povodna pouzivatelova otazka, grafy (vratene entity a vztahy), text z chunkov, (system prompt na vyhodnotenie)
-    """
     
     def create_variety_questions(self, question: str, number_of_questions: int = 3) -> List[str]:
         """
@@ -797,7 +766,8 @@ Generate {number_of_questions} alternative phrasings."""
         return questions
     
     
-    # possiblu use or implement spacy or other NLP
+    
+    # possibly use or implement spacy or other NLP
     def find_svo(self, question: str) -> Dict[str, str]:
         """
         A function to extract subject, verb, object from a question using LLM
@@ -832,10 +802,6 @@ Identify the SVO components."""
             "type": "object",
             "description": "A dictionary with subject, verb, and object extracted from the question",
             "properties": {
-                "question": {
-                    "type": "string",
-                    "description": "The original question"
-                },
                 "subject": {
                     "type": "string",
                     "description": "The subject extracted from the question"
@@ -849,7 +815,7 @@ Identify the SVO components."""
                     "description": "The object extracted from the question"
                 }
             },
-            "required": ["question", "subject", "verb", "object"]
+            "required": ["subject", "verb", "object"]
         }
         
         agent = create_agent(model=self.claude_client, tools=[], response_format=ToolStrategy(schema=response_schema), system_prompt=system_prompt)
@@ -859,6 +825,16 @@ Identify the SVO components."""
         return svo
     
     
+    
+        """ semanticke vyhladavanie:
+    1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
+    2. pre kazdu otazku najst podmet, predmet, vztah
+    3. pomocou MCP posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
+    4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke, najst Multi-hop
+    5. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
+    6. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
+       vytvorene otazky, povodna pouzivatelova otazka, grafy (vratene entity a vztahy), text z chunkov, (system prompt na vyhodnotenie)
+    """
     # ---------------- INTERACTIVE QUESTIONING ----------------
     def invoke_question(self):
         """
@@ -875,18 +851,24 @@ Identify the SVO components."""
             print("Exiting...")
             return
         
+        various_questions = self.create_variety_questions(question, number_of_questions=3)
         
-        nodes_vector_results = self.query_vector_database(database=self.vector_store_nodes, question=question)
-        relationship_vector_results = self.query_vector_database(database=self.vector_store_relationships, question=question)
-        chunk_vector_results = self.query_chunks_by_similarity(question=question)
+        questions = [{'id': 'question0', 'question': question, 'svo': self.find_svo(question)}]
+        for i, q in enumerate(various_questions):
+            questions.append(
+                {'id': f'question{i}', 'question': q, 'svo': self.find_svo(q)}
+            )  
+        print(f"\nGenerated Reformulated Questions\n\n: {[q['question'] + '\nSVO: ' + str(q['svo']) + '\n' for q in questions]}")
         
-        graph_schema = self.get_graph_schema()
-        chain = GraphCypherQAChain.from_llm(
-            self.openai_client,
-            graph=self.graph,
-            graph_schema=self.graph.get_schema(),
-            allow_dangerous_queries=True
-        )
+        
+        for i, q in enumerate(questions):
+            sub_obj = q['svo']['subject'] + q['svo']['object']
+            q['similar_nodes'] = self.query_vector_database(database=self.vector_store_nodes, question=q['question'], svo=sub_obj)
+            q['similar_relationships'] = self.query_vector_database(database=self.vector_store_relationships, question=q['question'], svo=q['svo']['verb'])
+        
+        
+        graph_schema = self.graph.get_schema()
+        
         
         advanced_search_result = None
         graph_query_result = chain.invoke( {"query": question} )

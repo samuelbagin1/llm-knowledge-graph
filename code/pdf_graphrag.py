@@ -371,7 +371,7 @@ class PDFGraphRAG:
         # dependency: APOC plugin in neo4j database
         self.graph.add_graph_documents(
             graph_documents=all_graph_docs,
-            include_source=True,
+            include_source=False,
             baseEntityLabel=True
         )
         

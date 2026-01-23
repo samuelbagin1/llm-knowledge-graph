@@ -16,15 +16,18 @@ Automatická extrakcia a prepojenie informácií z právnych textov do interakt�
 
 ## 🎯 Prehľad
 
-Cieľom projektu je vytvoriť AI systém na automatickú extrakciu a prepojenie informácií z právnych textov do znalostného grafu. Výsledkom je interaktívny graf znázorňujúcy väzby medzi právnymi pojmami a ustanoveniami v zákone.
+Cieľom projektu je vytvoriť AI systém na automatickú extrakciu a prepojenie informácií z právnych textov (PDF) do znalostného grafu s pokročilým sémantickým vyhľadávaním. Systém kombinuje grafovú databázu (Neo4j) s vektorovým úložiskom pre hybridné vyhľadávanie, ktoré umožňuje používateľom klásť otázky v prirodzenom jazyku a získavať presné odpovede na základe štruktúrovaných vzťahov aj sémantickej podobnosti. Výsledkom je interaktívny graf znázorňujúci väzby medzi právnymi pojmami a ustanoveniami v zákone.
 
 ### Hlavné funkcie
 
-- 🔍 Automatická extrakcia právnych entít (paragrafy, pojmy, inštitúcie)
+- 📄 Spracovanie PDF dokumentov s automatickým chunkovaním (SpaCy)
+- 🔍 Automatická extrakcia právnych entít pomocou LLM (paragrafy, pojmy, inštitúcie)
 - 🔗 Identifikácia vzťahov medzi právnymi ustanoveniami
-- 📊 Vizualizácia znalostného grafu
-- 🔎 Interaktívne prehľadávanie a explorácia
-- 💬 Sémantické vyhľadávanie a Q&A
+- 📊 Uloženie a vizualizácia znalostného grafu v Neo4j
+- 🔎 Hybridné vyhľadávanie kombinujúce grafové dotazy (Cypher) a vektorovú podobnosť
+- 💬 Sémantické Q&A v prirodzenom jazyku s automatickou reformuláciou otázok
+- 🎯 SVO (Subject-Verb-Object) extrakcia pre presnejšie vyhľadávanie
+- 🔄 Multi-hop traversal pre komplexné dotazy naprieč grafom
 
 ## 🏗️ Architektúra
 

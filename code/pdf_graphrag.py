@@ -19,7 +19,44 @@ import spacy
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_extraction, system_prompt_for_extracting
+from prompts import response_schema_for_extraction, system_prompt_for_extracting, system_prompt_for_generating_query, response_schema_for_generating_query
+
+
+# Default node type when type is missing or empty
+DEFAULT_NODE_TYPE = "Entity"
+
+
+def format_property_key(s: str) -> str:
+    """Convert property key to camelCase format.
+
+    Example: "first name" -> "firstName"
+    """
+    words = s.split()
+    if not words:
+        return s
+    first_word = words[0].lower()
+    capitalized_words = [word.capitalize() for word in words[1:]]
+    return "".join([first_word] + capitalized_words)
+
+
+def format_node_type(node_type: Optional[str]) -> str:
+    """Normalize node type to capitalized format.
+
+    Example: "person" -> "Person", "" -> DEFAULT_NODE_TYPE
+    """
+    if not node_type or not node_type.strip():
+        return DEFAULT_NODE_TYPE
+    return node_type.strip().capitalize()
+
+
+def format_relationship_type(rel_type: str) -> str:
+    """Normalize relationship type to uppercase with underscores.
+
+    Example: "works for" -> "WORKS_FOR"
+    """
+    if not rel_type:
+        return "RELATED_TO"
+    return rel_type.strip().replace(" ", "_").upper()
 
 
 # extract nodes and relationships from spacy doc
@@ -101,10 +138,12 @@ def serialize_for_json(obj):
 class PDFGraphRAG:
     
     # CONSTRUCTOR
-    def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str, 
-                 neo4j_uri: str, neo4j_user: str, neo4j_password: str, 
-                 openai_api_key: str = None, google_api_key: str = None, 
-                 claude_api_key: str = None, advanced_search: bool = False):
+    def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str,
+                 neo4j_uri: str, neo4j_user: str, neo4j_password: str,
+                 openai_api_key: str = None, google_api_key: str = None,
+                 claude_api_key: str = None, advanced_search: bool = False,
+                 strict_mode: bool = True):
+        self.strict_mode = strict_mode  # Enforce schema compliance via post-extraction filtering
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
@@ -312,13 +351,18 @@ class PDFGraphRAG:
     def convert_to_graph_document(self, data, i, document) -> GraphDocument:
         """
         Convert extracted data into a GraphDocument.
+
+        Includes:
+        - Property key formatting (camelCase)
+        - Validation for missing node IDs (skips invalid nodes)
+        - Node type fallback to DEFAULT_NODE_TYPE
+        - Relationship type normalization
         """
-        # This is a placeholder implementation. Actual implementation will depend on the data format.
         nodes = []
         relationships = []
-        
+
         chunk_id = f"chunk_{i}"
-            
+
         chunk_embedding = self.embeddings.embed_query(document.page_content)
         chunk_node = Node(
             id=chunk_id,
@@ -329,27 +373,73 @@ class PDFGraphRAG:
                 "page": document.metadata.get("page", 0)
             }
         )
-        
+
+        # Process nodes with validation and formatting
         for node_data in data.get("nodes", []):
+            # Skip nodes without valid IDs
+            node_id = node_data.get("id")
+            if not node_id or not str(node_id).strip():
+                continue
+
+            # Format node type with fallback
+            node_type = format_node_type(node_data.get("label") or node_data.get("type"))
+
+            # Format property keys to camelCase
+            raw_properties = node_data.get("properties", {})
+            formatted_properties = {
+                format_property_key(k): v
+                for k, v in raw_properties.items()
+            } if raw_properties else {}
+
+            # Normalize node ID (title case for consistency)
+            normalized_id = str(node_id).strip()
+            if normalized_id and not normalized_id[0].isdigit():
+                normalized_id = normalized_id.title()
+
             node = Node(
-                id=node_data["id"],
-                type=node_data["label"],
-                properties=node_data.get("properties", {})
+                id=normalized_id,
+                type=node_type,
+                properties=formatted_properties
             )
             nodes.append(node)
-        
+
+        # Process relationships with validation and formatting
         for rel_data in data.get("relationships", []):
-            source_node = next((n for n in nodes if n.id == rel_data["source_node_id"]), None)
-            target_node = next((n for n in nodes if n.id == rel_data["target_node_id"]), None)
+            source_id = rel_data.get("source_node_id")
+            target_id = rel_data.get("target_node_id")
+            rel_type = rel_data.get("relation") or rel_data.get("type")
+
+            # Skip relationships with missing mandatory fields
+            if not source_id or not target_id or not rel_type:
+                continue
+
+            # Find matching nodes (case-insensitive)
+            source_node = next(
+                (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
+                None
+            )
+            target_node = next(
+                (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
+                None
+            )
+
             if source_node and target_node:
+                # Format relationship properties
+                raw_rel_props = rel_data.get("properties", {})
+                formatted_rel_props = {
+                    format_property_key(k): v
+                    for k, v in raw_rel_props.items()
+                } if raw_rel_props else {}
+
                 relationship = Relationship(
                     source=source_node,
                     target=target_node,
-                    type=rel_data["relation"],
-                    properties=rel_data.get("properties", {})
+                    type=format_relationship_type(rel_type),
+                    properties=formatted_rel_props
                 )
                 relationships.append(relationship)
-                
+
+        # Link chunk to all extracted nodes
         for node in nodes:
             relationships.append(
                 Relationship(
@@ -358,35 +448,107 @@ class PDFGraphRAG:
                     type="HAS"
                 )
             )
-        
+
         nodes.append(chunk_node)
-        
+
         return GraphDocument(
             nodes=nodes,
             relationships=relationships
         )
-    
-    async def named_entity_extraction(self, i, document: Document, allowed_entities: Optional[List[str]] = None) -> GraphDocument:
+
+    def _filter_by_strict_mode(
+        self,
+        graph_doc: GraphDocument,
+        allowed_entities: Optional[List[str]] = None,
+        allowed_relationships: Optional[List[str]] = None
+    ) -> GraphDocument:
         """
-        Async function to extract named entities and relationships from a document and transform into a GraphDocument.
+        Apply strict mode filtering to ensure extracted entities conform to allowed types.
+
+        This is a post-extraction safety net that filters out any nodes or relationships
+        that don't match the specified schema, similar to LangChain's strict_mode.
+
+        Args:
+            graph_doc: The GraphDocument to filter
+            allowed_entities: List of allowed node types (case-insensitive)
+            allowed_relationships: List of allowed relationship types (case-insensitive)
+
+        Returns:
+            Filtered GraphDocument with only conforming nodes and relationships
         """
-        node = None
-        relationships = None
-        
+        if not allowed_entities and not allowed_relationships:
+            return graph_doc
+
+        filtered_nodes = list(graph_doc.nodes)
+        filtered_relationships = list(graph_doc.relationships)
+
+        # Filter nodes by allowed types
+        if allowed_entities:
+            lower_allowed_entities = [e.lower() for e in allowed_entities]
+            # Keep Chunk nodes regardless of allowed_entities
+            filtered_nodes = [
+                node for node in filtered_nodes
+                if node.type.lower() in lower_allowed_entities or node.type == "Chunk"
+            ]
+
+            # Also filter relationships to only include those between valid nodes
+            valid_node_ids = {node.id for node in filtered_nodes}
+            filtered_relationships = [
+                rel for rel in filtered_relationships
+                if rel.source.id in valid_node_ids and rel.target.id in valid_node_ids
+            ]
+
+        # Filter relationships by allowed types
+        if allowed_relationships:
+            lower_allowed_rels = [r.lower().replace(" ", "_") for r in allowed_relationships]
+            # Keep HAS relationships (chunk-to-entity links) regardless
+            filtered_relationships = [
+                rel for rel in filtered_relationships
+                if rel.type.lower() in lower_allowed_rels or rel.type == "HAS"
+            ]
+
+        return GraphDocument(
+            nodes=filtered_nodes,
+            relationships=filtered_relationships,
+            source=graph_doc.source
+        )
+
+    async def named_entity_extraction(
+        self,
+        i: int,
+        document: Document,
+        allowed_entities: Optional[List[str]] = None,
+        allowed_relationships: Optional[List[str]] = None,
+        strict_mode: bool = True
+    ) -> GraphDocument:
+        """
+        Async function to extract named entities and relationships from a document
+        and transform into a GraphDocument.
+
+        Args:
+            i: Document index (used for chunk ID generation)
+            document: The document to process
+            allowed_entities: List of allowed node types for extraction guidance and filtering
+            allowed_relationships: List of allowed relationship types
+            strict_mode: If True, applies post-extraction filtering to enforce schema
+
+        Returns:
+            GraphDocument with extracted and optionally filtered nodes/relationships
+        """
         text = document.page_content
         user_prompt = f"""
         Extract named entities and relationships from the text
-        
-        Allowed nodes:
-        {nodes}
-        
-        Allowd relationships:
-        {relationships}
-        
+
+        Allowed entities:
+        {allowed_entities}
+
+        Allowed relationships:
+        {allowed_relationships}
+
         Text:
         {text}
         """
-        
+
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
@@ -397,16 +559,47 @@ class PDFGraphRAG:
 
         # structured_response is already a dict when using ProviderStrategy
         data = response["structured_response"]
-        
+
+        # Convert to graph document with validation and formatting
         graph_document = self.convert_to_graph_document(data, i, document)
-        
+
+        # Apply strict mode filtering if enabled
+        if strict_mode and (allowed_entities or allowed_relationships):
+            graph_document = self._filter_by_strict_mode(
+                graph_document,
+                allowed_entities=allowed_entities,
+                allowed_relationships=allowed_relationships
+            )
+
         return graph_document
     
-    async def async_process(self, documents: List[Document], allowed_entities: Optional[List[str]] = None) -> List[GraphDocument]:
+    async def async_process(
+        self,
+        documents: List[Document],
+        allowed_entities: Optional[List[str]] = None,
+        allowed_relationships: Optional[List[str]] = None,
+        strict_mode: bool = True
+    ) -> List[GraphDocument]:
         """
         Asynchronously process documents to extract graph documents.
+
+        Args:
+            documents: List of documents to process
+            allowed_entities: List of allowed node types
+            allowed_relationships: List of allowed relationship types
+            strict_mode: If True, applies post-extraction filtering
+
+        Returns:
+            List of GraphDocuments
         """
-        tasks = [asyncio.create_task(self.named_entity_extraction(i, doc, allowed_entities)) for i, doc in enumerate(documents)]
+        tasks = [
+            asyncio.create_task(
+                self.named_entity_extraction(
+                    i, doc, allowed_entities, allowed_relationships, strict_mode
+                )
+            )
+            for i, doc in enumerate(documents)
+        ]
         res = await asyncio.gather(*tasks)
         return res
     
@@ -423,13 +616,23 @@ class PDFGraphRAG:
         documents = self.load_pdf(pdf_path)
         if max_pages:
             documents = documents[:max_pages]
+            
+        allowed_entities = ["Paragraf", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Subjekt", "Dokument"]
+        allowed_relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "RUSI", "DOPLNUJE", "PODMIENUJE"]
 
         
-        splitter = RecursiveCharacterTextSplitter()
+        splitter = RecursiveCharacterTextSplitter(2000)
         chunked_documents = splitter.split_documents(documents)
 
-        graph_docs = await self.async_process(chunked_documents)
-        print("\nAll chunks processed into graph documents.")
+        graph_docs = asyncio.run(
+            self.async_process(
+                chunked_documents,
+                allowed_entities,
+                allowed_relationships,
+                strict_mode=self.strict_mode
+            )
+        )
+        print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
         
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
@@ -508,34 +711,7 @@ class PDFGraphRAG:
         node_labels_list = [node['label'] for node in node_labels]
         rel_types_list = [rel['relationshipType'] for rel in rel_types]
 
-        # System prompt - defines the agent's role and capabilities
-        system_prompt = """You are a Neo4j Cypher expert agent specialized in querying knowledge graphs.
-
-Your task is to answer questions by querying a Neo4j graph database.
-
-## Your Capabilities
-You have access to the `search_database` tool which executes Cypher queries against Neo4j.
-
-## Query Strategy
-1. **Analyze the question** to identify what nodes and relationships are relevant
-2. **Start with exploration queries** to understand what data exists:
-   - For nodes: `MATCH (n:Label) RETURN n.id, labels(n)`
-   - For relationships: `MATCH (a)-[r:TYPE]->(b) RETURN a.id, type(r), b.id`
-3. **Refine iteratively** - use results from initial queries to build more specific queries
-4. **Find the best matches** - keep querying until you find the most relevant data
-
-## Cypher Query Rules
-- Use backticks for labels/types with special characters: `MATCH (n:`Special-Label`) ...`
-- For text matching use case-insensitive: `WHERE toLower(n.id) CONTAINS toLower('romeo')`
-- Use undirected relationships `-[r]-` when direction is unknown
-- Always add `LIMIT 25` to prevent large result sets
-- Return useful properties: `RETURN n.id, labels(n), type(r), properties(n)`
-- Keep queries efficient, focused and short
-
-## Important
-- You MUST use the search_database tool to query the database
-- Make multiple queries if needed to find the best answer
-- When you have found sufficient data, provide your final answer with the best Cypher query"""
+        
 
         # User prompt - provides the specific question and schema
         user_prompt = f"""Answer this question about Romeo and Juliet by querying the graph database:
@@ -571,33 +747,6 @@ You have access to the `search_database` tool which executes Cypher queries agai
 
 Begin by identifying the relevant node labels and relationship types, then query the database."""
 
-        # Response schema
-        response_schema = {
-            "title": "GraphQueryResult",
-            "type": "object",
-            "description": "Final query results from graph database exploration",
-            "properties": {
-                "cypher_query": {
-                    "type": "string",
-                    "description": "The final/best Cypher query that answers the question"
-                },
-                "explanation": {
-                    "type": "string",
-                    "description": "Explanation of the query strategy and what was found"
-                },
-                "nodes_found": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "List of node IDs that are relevant to the answer"
-                },
-                "relationships_found": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "List of relationships found (format: 'nodeA -[REL_TYPE]-> nodeB')"
-                }
-            },
-            "required": ["cypher_query", "explanation", "nodes_found", "relationships_found"]
-        }
 
 
         @tool
@@ -670,8 +819,8 @@ Begin by identifying the relevant node labels and relationship types, then query
         agent = create_agent(
             model=self.openai_client,
             tools=[search_database],
-            response_format=ProviderStrategy(schema=response_schema),
-            system_prompt=system_prompt
+            response_format=ProviderStrategy(schema=response_schema_for_generating_query),
+            system_prompt=system_prompt_for_generating_query
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 

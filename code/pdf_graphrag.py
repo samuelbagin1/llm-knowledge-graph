@@ -980,6 +980,140 @@ Generate {number_of_questions} alternative phrasings."""
         return questions
     
     
+    def convert_sentence_to_graph_document(self, data) -> GraphDocument:
+        """
+        Convert extracted data into a GraphDocument.
+
+        Includes:
+        - Property key formatting (camelCase)
+        - Validation for missing node IDs (skips invalid nodes)
+        - Node type fallback to DEFAULT_NODE_TYPE
+        - Relationship type normalization
+        """
+        nodes = []
+        relationships = []
+
+
+        # Process nodes with validation and formatting
+        for node_data in data.get("nodes", []):
+            # Skip nodes without valid IDs
+            node_id = node_data.get("id")
+            if not node_id or not str(node_id).strip():
+                continue
+
+            # Format node type with fallback
+            node_type = format_node_type(node_data.get("label") or node_data.get("type"))
+
+            # Format property keys to camelCase
+            raw_properties = node_data.get("properties", {})
+            formatted_properties = {
+                format_property_key(k): v
+                for k, v in raw_properties.items()
+            } if raw_properties else {}
+
+            # Normalize node ID (title case for consistency)
+            normalized_id = str(node_id).strip()
+            if normalized_id and not normalized_id[0].isdigit():
+                normalized_id = normalized_id.title()
+
+            node = Node(
+                id=normalized_id,
+                type=node_type,
+                properties=formatted_properties
+            )
+            nodes.append(node)
+
+        # Process relationships with validation and formatting
+        for rel_data in data.get("relationships", []):
+            source_id = rel_data.get("source_node_id")
+            target_id = rel_data.get("target_node_id")
+            rel_type = rel_data.get("relation") or rel_data.get("type")
+
+            # Skip relationships with missing mandatory fields
+            if not source_id or not target_id or not rel_type:
+                continue
+
+            # Find matching nodes (case-insensitive)
+            source_node = next(
+                (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
+                None
+            )
+            target_node = next(
+                (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
+                None
+            )
+
+            if source_node and target_node:
+                # Format relationship properties
+                raw_rel_props = rel_data.get("properties", {})
+                formatted_rel_props = {
+                    format_property_key(k): v
+                    for k, v in raw_rel_props.items()
+                } if raw_rel_props else {}
+
+                relationship = Relationship(
+                    source=source_node,
+                    target=target_node,
+                    type=format_relationship_type(rel_type),
+                    properties=formatted_rel_props
+                )
+                relationships.append(relationship)
+
+        return GraphDocument(
+            nodes=nodes,
+            relationships=relationships
+        )
+    
+    
+    def named_entity_extraction_from_sentence(
+        self,
+        text: str,
+        allowed_entities: Optional[List[str]] = None,
+        allowed_relationships: Optional[List[str]] = None,
+    ) -> GraphDocument:
+        """
+        Async function to extract named entities and relationships from a document
+        and transform into a GraphDocument.
+
+        Args:
+            text: The text to process
+            allowed_entities: List of allowed node types for extraction guidance and filtering
+            allowed_relationships: List of allowed relationship types
+            strict_mode: If True, applies post-extraction filtering to enforce schema
+
+        Returns:
+            GraphDocument with extracted and optionally filtered nodes/relationships
+        """
+        user_prompt = f"""
+        Extract named entities and relationships from the text
+
+        Allowed entities:
+        {allowed_entities}
+
+        Allowed relationships:
+        {allowed_relationships}
+
+        Text:
+        {text}
+        """
+
+        # Create and run the agent
+        agent = create_agent(
+            model=self.openai_graph_transform,
+            response_format=ProviderStrategy(schema=response_schema_for_extraction),
+            system_prompt=system_prompt_for_extracting
+        )
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+
+        # structured_response is already a dict when using ProviderStrategy
+        data = response["structured_response"]
+
+        # Convert to graph document with validation and formatting
+        graph_document = self.convert_to_graph_document(data)
+
+
+        return graph_document
+    
     
     # possibly use or implement spacy or other NLP
     def find_svo(self, question: str) -> Dict[str, str]:

@@ -18,6 +18,8 @@ import spacy
 
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
+import asyncio
+from prompts import response_schema_for_extraction, system_prompt_for_extracting
 
 
 # extract nodes and relationships from spacy doc
@@ -153,7 +155,15 @@ class PDFGraphRAG:
             google_api_key=google_api_key
         )
 
-        self.graph_transformer = LLMGraphTransformer(llm=self.claude_client)
+        self.graph_transformer = LLMGraphTransformer(
+            llm=self.claude_client,
+            allowed_nodes=["Paragraph", "LegalConcept", "Institution", "Subject", "Document"],
+            allowed_relationships=["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "RUŠUJE", "DOPLŇUJE"],
+            strict_mode=True,
+            node_properties=["context"],
+            additional_instructions="Extrahuj právne entity zo slovenského právneho textu. Zameraj sa na paragrafy (§), právne pojmy, inštitúcie a krížové odkazy."
+        )
+
 
     def _init_vector_stores(self):
         """Initialize vector stores, creating empty ones if indices don't exist"""
@@ -298,6 +308,109 @@ class PDFGraphRAG:
 
 
     # ---------------- PDF to Graph and Vector Processing
+    
+    def convert_to_graph_document(self, data, i, document) -> GraphDocument:
+        """
+        Convert extracted data into a GraphDocument.
+        """
+        # This is a placeholder implementation. Actual implementation will depend on the data format.
+        nodes = []
+        relationships = []
+        
+        chunk_id = f"chunk_{i}"
+            
+        chunk_embedding = self.embeddings.embed_query(document.page_content)
+        chunk_node = Node(
+            id=chunk_id,
+            type="Chunk",
+            properties={
+                "text": document.page_content,
+                "embedding": chunk_embedding,
+                "page": document.metadata.get("page", 0)
+            }
+        )
+        
+        for node_data in data.get("nodes", []):
+            node = Node(
+                id=node_data["id"],
+                type=node_data["label"],
+                properties=node_data.get("properties", {})
+            )
+            nodes.append(node)
+        
+        for rel_data in data.get("relationships", []):
+            source_node = next((n for n in nodes if n.id == rel_data["source_node_id"]), None)
+            target_node = next((n for n in nodes if n.id == rel_data["target_node_id"]), None)
+            if source_node and target_node:
+                relationship = Relationship(
+                    source=source_node,
+                    target=target_node,
+                    type=rel_data["relation"],
+                    properties=rel_data.get("properties", {})
+                )
+                relationships.append(relationship)
+                
+        for node in nodes:
+            relationships.append(
+                Relationship(
+                    source=chunk_node,
+                    target=node,
+                    type="HAS"
+                )
+            )
+        
+        nodes.append(chunk_node)
+        
+        return GraphDocument(
+            nodes=nodes,
+            relationships=relationships
+        )
+    
+    async def named_entity_extraction(self, i, document: Document) -> GraphDocument:
+        """
+        Async function to extract named entities and relationships from a document and transform into a GraphDocument.
+        """
+        node = None
+        relationships = None
+        
+        text = document.page_content
+        user_prompt = f"""
+        Extract named entities and relationships from the text
+        
+        Allowed nodes:
+        {nodes}
+        
+        Allowd relationships:
+        {relationships}
+        
+        Text:
+        {text}
+        """
+        
+        # Create and run the agent
+        agent = create_agent(
+            model=self.openai_graph_transform,
+            response_format=ProviderStrategy(schema=response_schema_for_extraction),
+            system_prompt=system_prompt_for_extracting
+        )
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+
+        # structured_response is already a dict when using ProviderStrategy
+        data = response["structured_response"]
+        
+        graph_document = self.convert_to_graph_document(data, i, document)
+        
+        return graph_document
+    
+    async def async_process(self, documents: List[Document]) -> List[GraphDocument]:
+        """
+        Asynchronously process documents to extract graph documents.
+        """
+        tasks = [asyncio.create_task(self.named_entity_extraction(i, doc)) for i, doc in enumerate(documents)]
+        res = await asyncio.gather(*tasks)
+        return res
+    
+    
     def load_pdf(self, pdf_path: str):
         loader = PyPDFLoader(pdf_path)
         print("PDF loaded successfully.")

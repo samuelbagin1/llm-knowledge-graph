@@ -366,7 +366,7 @@ class PDFGraphRAG:
             relationships=relationships
         )
     
-    async def named_entity_extraction(self, i, document: Document) -> GraphDocument:
+    async def named_entity_extraction(self, i, document: Document, allowed_entities: Optional[List[str]] = None) -> GraphDocument:
         """
         Async function to extract named entities and relationships from a document and transform into a GraphDocument.
         """
@@ -402,11 +402,11 @@ class PDFGraphRAG:
         
         return graph_document
     
-    async def async_process(self, documents: List[Document]) -> List[GraphDocument]:
+    async def async_process(self, documents: List[Document], allowed_entities: Optional[List[str]] = None) -> List[GraphDocument]:
         """
         Asynchronously process documents to extract graph documents.
         """
-        tasks = [asyncio.create_task(self.named_entity_extraction(i, doc)) for i, doc in enumerate(documents)]
+        tasks = [asyncio.create_task(self.named_entity_extraction(i, doc, allowed_entities)) for i, doc in enumerate(documents)]
         res = await asyncio.gather(*tasks)
         return res
     
@@ -417,80 +417,32 @@ class PDFGraphRAG:
         return loader.load()
 
     # send to claude api the file and then process
-    def process_pdf(self, pdf_path: str, max_pages: int = None, allowed_entities: Optional[List[str]] = None):
+    def process(self, pdf_path: str, max_pages: int = None):
         
         # Load PDF documents
         documents = self.load_pdf(pdf_path)
         if max_pages:
             documents = documents[:max_pages]
 
-        # TODO: study and implement better chunking strategy
-        # TODO: study and implement better NER and relationship extraction
-        # TODO: research spaCy
         
-        splitter = SpacyTextSplitter()
+        splitter = RecursiveCharacterTextSplitter()
         chunked_documents = splitter.split_documents(documents)
-        # nlp = spacy.load("en_core_web_sm")
 
-        all_graph_docs = []
-        all_nodes = []
-        for i, document in enumerate(chunked_documents):
-            print(f"Processing chunk {i+1}/{len(chunked_documents)}")
-            chunk_id = f"chunk_{i}"
-            
-            chunk_embedding = self.embeddings.embed_query(document.page_content)
-            chunk_node = Node(
-                id=chunk_id,
-                type="Chunk",
-                properties={
-                    "text": document.page_content,
-                    "embedding": chunk_embedding,
-                    "page": document.metadata.get("page", 0)
-                }
-            )
-            
-            # spacy NLP and NER 
-            # doc = nlp(document.page_content)
-            # entities = [ent.text for ent in doc.ents]
-            
-            # Transform documents into graph documents using LLMGraphTransformer
-            graph_docs = self.graph_transformer.convert_to_graph_documents([document])
-            
-            chunk_relationships = []
-            # forEach graph doc, add Chunk node and HAS relationship
-            for graph_doc in graph_docs:
-                for node in graph_doc.nodes:
-                    all_nodes.append(Document(page_content=node.id))
-                    chunk_relationships.append(
-                        Relationship(
-                            source=chunk_node,
-                            target=node,
-                            type="HAS"
-                        )
-                    )
-                        
-                all_graph_docs.append(graph_doc)
-            
-            chunk_graph_doc = GraphDocument(
-                nodes=[chunk_node],
-                relationships=chunk_relationships,
-                source=document
-            )
-            all_graph_docs.append(chunk_graph_doc)
+        graph_docs = await self.async_process(chunked_documents)
         print("\nAll chunks processed into graph documents.")
-        # ------------------ END OF LOOP ------------------
         
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
         self.graph.add_graph_documents(
-            graph_documents=all_graph_docs,
+            graph_documents=graph_docs,
             include_source=False,
             baseEntityLabel=True
         )
         
         self.graph.refresh_schema()
             
-        
+        all_nodes = self.graph.query("MATCH (n) RETURN n")
+        all_nodes = [Document(page_content=node['n']) for node in all_nodes]
         rel_types = self.graph.query("CALL db.relationshipTypes()")
         all_relationships = [Document(page_content=rel['relationshipType']) for rel in rel_types]
 

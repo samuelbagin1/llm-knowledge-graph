@@ -17,5 +17,5 @@ graphrag = PDFGraphRAG(
 )
 
 # processing
-graphrag.process_pdf("code/romeo-juliet/pdf/romeo-and-juliet.pdf")
+graphrag.process("datasets/vyhlasene_znenie_4480183-2.pdf")
 print("\nKnowledge graph successfully created in Neo4j!")

@@ -1,5 +1,5 @@
 # TODO: set the examples for legal documents
-examples = [
+examples_for_extraction = [
     {
         "text": (
             "Adam is a software engineer in Microsoft since 2009, "

@@ -28,7 +28,7 @@ Adhere to the rules strictly. Non-compliance will result in termination."""
 
 
 response_schema_for_extraction = {
-            "title": "Graph Extraction Result",
+            "title": "GraphExtractionResult",
             "type": "object",
             "description": "Result schema for extracting a knowledge graph from text",
             "properties": {

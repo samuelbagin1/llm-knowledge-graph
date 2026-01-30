@@ -20,6 +20,7 @@ from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
 from prompts import response_schema_for_extraction, system_prompt_for_extracting, system_prompt_for_generating_query, response_schema_for_generating_query
+from examples import examples_for_extraction
 
 
 # Default node type when type is missing or empty
@@ -57,6 +58,43 @@ def format_relationship_type(rel_type: str) -> str:
     if not rel_type:
         return "RELATED_TO"
     return rel_type.strip().replace(" ", "_").upper()
+
+
+def graph_document_to_json(graph_doc: "GraphDocument") -> dict:
+    """Convert a GraphDocument to a JSON-serializable dictionary.
+
+    Args:
+        graph_doc: A GraphDocument containing nodes, relationships, and source
+
+    Returns:
+        Dictionary with all node and relationship data
+    """
+    nodes_json = []
+    for node in graph_doc.nodes:
+        node_dict = {
+            "id": node.id,
+            "type": node.type,
+            "properties": node.properties if node.properties else {}
+        }
+        nodes_json.append(node_dict)
+
+    relationships_json = []
+    for rel in graph_doc.relationships:
+        rel_dict = {
+            "source_id": rel.source.id,
+            "source_type": rel.source.type,
+            "relation": rel.type,
+            "target_id": rel.target.id,
+            "target_type": rel.target.type,
+            "properties": rel.properties if rel.properties else {}
+        }
+        relationships_json.append(rel_dict)
+
+    return {
+        "nodes": nodes_json,
+        "relationships": relationships_json,
+        "source": graph_doc.source.page_content if graph_doc.source else None
+    }
 
 
 # extract nodes and relationships from spacy doc
@@ -142,7 +180,7 @@ class PDFGraphRAG:
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str,
                  openai_api_key: str = None, google_api_key: str = None,
                  claude_api_key: str = None, advanced_search: bool = False,
-                 strict_mode: bool = True):
+                 strict_mode: bool = False):
         self.strict_mode = strict_mode  # Enforce schema compliance via post-extraction filtering
         self.graph = Neo4jGraph(
             url=neo4j_uri,
@@ -453,8 +491,11 @@ class PDFGraphRAG:
 
         return GraphDocument(
             nodes=nodes,
-            relationships=relationships
+            relationships=relationships,
+            source=document
         )
+
+
 
     def _filter_by_strict_mode(
         self,
@@ -513,13 +554,15 @@ class PDFGraphRAG:
             source=graph_doc.source
         )
 
+
+
     async def named_entity_extraction(
         self,
         i: int,
         document: Document,
         allowed_entities: Optional[List[str]] = None,
         allowed_relationships: Optional[List[str]] = None,
-        strict_mode: bool = True
+        strict_mode: bool = False
     ) -> GraphDocument:
         """
         Async function to extract named entities and relationships from a document
@@ -534,31 +577,41 @@ class PDFGraphRAG:
 
         Returns:
             GraphDocument with extracted and optionally filtered nodes/relationships
+            
+            TODO: add this
+            # Examples:
+            {examples_for_extraction}
         """
         text = document.page_content
         user_prompt = f"""
-        Extract named entities and relationships from the text
+        Based on the following example, extract entities and relations from the provided text
 
-        Allowed entities:
-        {allowed_entities}
+        
+        
+        {"# Allowed entities (Use the following entity types, don't use other entity that is not defined below): " + str(allowed_entities) if allowed_entities else ""}
 
-        Allowed relationships:
-        {allowed_relationships}
+        {"# Allowed relationships (Use the following relation types, don't use other relation that is not defined below:): " + str(allowed_relationships) if allowed_relationships else ""}
+        
+        ## Important Instructions:
+        Use IDs in range {i*10000} to {(i+1)*10000 - 1} for entities in this chunk.
 
-        Text:
+        # Text:
         {text}
         """
 
+        print(f"NER: chunk {i}")
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
             response_format=ProviderStrategy(schema=response_schema_for_extraction),
             system_prompt=system_prompt_for_extracting
         )
-        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
 
         # structured_response is already a dict when using ProviderStrategy
         data = response["structured_response"]
+        
+        print(data)
 
         # Convert to graph document with validation and formatting
         graph_document = self.convert_to_graph_document(data, i, document)
@@ -572,6 +625,8 @@ class PDFGraphRAG:
             )
 
         return graph_document
+    
+    
     
     async def async_process(
         self,
@@ -592,6 +647,7 @@ class PDFGraphRAG:
         Returns:
             List of GraphDocuments
         """
+        print("Creating tasks for asynchronous processing of documents...")
         tasks = [
             asyncio.create_task(
                 self.named_entity_extraction(
@@ -602,6 +658,7 @@ class PDFGraphRAG:
         ]
         res = await asyncio.gather(*tasks)
         return res
+    
     
     
     def load_pdf(self, pdf_path: str):
@@ -617,22 +674,29 @@ class PDFGraphRAG:
         if max_pages:
             documents = documents[:max_pages]
             
-        allowed_entities = ["Paragraf", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Subjekt", "Dokument"]
-        allowed_relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "RUSI", "DOPLNUJE", "PODMIENUJE"]
+        # allowed_entities = ["Paragraf", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Subjekt", "Dokument"]
+        # allowed_relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "RUSI", "DOPLNUJE", "PODMIENUJE"]
 
         
-        splitter = RecursiveCharacterTextSplitter(2000)
+        splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
         chunked_documents = splitter.split_documents(documents)
 
         graph_docs = asyncio.run(
             self.async_process(
                 chunked_documents,
-                allowed_entities,
-                allowed_relationships,
+                # allowed_entities,
+                # allowed_relationships,
                 strict_mode=self.strict_mode
             )
         )
         print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
+        
+
+        graph_docs_json = [graph_document_to_json(doc) for doc in graph_docs]
+        with open("./GRAPH_DOCS.json", "w", encoding="utf-8") as f:
+            json.dump(graph_docs_json, f, ensure_ascii=False, indent=2)
+        
+        """ 
         
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
@@ -676,6 +740,8 @@ class PDFGraphRAG:
             self.vector_store_relationships.add_documents(all_relationships)
         
         print("Knowledge graph and vector stores successfully updated in Neo4j!")
+        
+        """
             
             
         
@@ -980,7 +1046,7 @@ Generate {number_of_questions} alternative phrasings."""
         return questions
     
     
-    def convert_sentence_to_graph_document(self, data) -> GraphDocument:
+    def convert_sentence_to_graph_document(self, data, text: str = "") -> GraphDocument:
         """
         Convert extracted data into a GraphDocument.
 
@@ -992,6 +1058,7 @@ Generate {number_of_questions} alternative phrasings."""
         """
         nodes = []
         relationships = []
+        source_document = Document(page_content=text)
 
 
         # Process nodes with validation and formatting
@@ -1061,10 +1128,11 @@ Generate {number_of_questions} alternative phrasings."""
 
         return GraphDocument(
             nodes=nodes,
-            relationships=relationships
+            relationships=relationships,
+            source=source_document
         )
-    
-    
+
+
     def named_entity_extraction_from_sentence(
         self,
         text: str,
@@ -1109,12 +1177,11 @@ Generate {number_of_questions} alternative phrasings."""
         data = response["structured_response"]
 
         # Convert to graph document with validation and formatting
-        graph_document = self.convert_to_graph_document(data)
-
+        graph_document = self.convert_sentence_to_graph_document(data, text)
 
         return graph_document
-    
-    
+
+
     # possibly use or implement spacy or other NLP
     def find_svo(self, question: str) -> Dict[str, str]:
         """

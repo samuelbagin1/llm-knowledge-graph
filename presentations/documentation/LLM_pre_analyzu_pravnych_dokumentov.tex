@@ -1,0 +1,109 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+% Code listing style
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{gray}\itshape,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!10}
+}
+
+
+\title{Využitie LLM pre analýzu právnych dokumentov:\\Hybrid GraphRAG Documentation}
+\author{Samuel Bagín}
+% \supervisor{Ing. Marek Vančo, PhD.}
+
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Úvod}
+S nárastom využívania veľkých jazykových modelov (LLM) v rôznych oblastiach sa objavuje potreba
+efektívnych metód na analýzu a spracovanie špecifických typov dokumentov, ako sú právne dokumenty.
+Samotné LLM si často nevedia poradiť s komplexnými štruktúrami a vzťahmi v textoch, čo vedie k halucinácií
+a obmedzeniam v ich schopnosti poskytovať presné a relevantné informácie.
+
+\
+
+Veľké jazykové modely uľahčujú extrakciu entít a vzťahov z textu. Alternatívne riešienie na extrakciu
+entít a vzťahov by bolo možné využiť strojové učenie, avšak to by vyžadovalo trénovanie modelov na
+určený jazyk, extrakciu presne stanovenej ontológie a využitie veľkého množstva dát na efektívne natrénovanie modelu.
+Slovenská legislatívna doména je veľmi veľká, komplexná a členitá.
+
+\
+
+Ako riešenie prichádza využitie LLM na transformáciu neštruktúrovaného textu na štruktúrovné dáta.
+Uloženie dát do znalostného grafu (KG) a následné využitie týchto dát na zodpovedanie otázok pomocou
+metódy GraphRAG (Graph Retrieval-Augmented Generation).
+
+\
+
+\section{Cieľ práce}
+Cieľom projektu je vytvoriť AI systém na automatickú extrakciu a
+prepojenie informácií z právnych textov do znalostného grafu s
+pokročilým sémantickým vyhľadávaním. Systém kombinuje grafovú
+databázu s vektorovým úložiskom pre hybridné vyhľadávanie, ktoré
+umožňuje používateľom klásť otázky v prirodzenom jazyku a získavať
+presné odpovede na základe štruktúrovaných vzťahov aj sémantickej
+podobnosti.
+
+
+\newpage
+\section{System Overview}
+
+Tento projekt je postavený na pomocou jazyku Python a využíva knižnicu LangChain.
+
+\ 
+
+\subsection{Využívané LLM}
+\begin{itemize}
+    \item OpenAI
+        \begin{itemize}
+            \item \textbf{gpt-4o}: Model používaný na extrakciu schémy, entít a vztťahov z textu. Najbohatšia a najpresnejšia extrakcia.
+            Cena (I/O pre 1M tokenov): \textbf{\$2.50 / \$10.00}
+        \end{itemize}
+    \item Anthropic
+        \begin{itemize}
+            \item \textbf{sonnet-3.5}: Model používaný na tvorenie Cypher Queries pre dotazovanie sa na grafovú databázu. Silné znalosti na tvorenie kódu a SQL, rýchly, efektívny a riešenie problémov.
+            Cena (I/O pre 1M tokenov): \textbf{\$3.00 / \$15.00}
+        \end{itemize}
+    \item Google
+        \begin{itemize}
+            \item \textbf{gemini-3-flash}: Model používaný na klasifikáciu dokumentu a vytvorenie odpovede na základe získaných dát. Najlepšie pre spracovanie a zosumarizovanie veľkých kontextových okien.
+            Cena (I/O pre 1M tokenov): \textbf{\$0.50 / \$3.00}
+        \end{itemize}
+\end{itemize}
+
+\
+
+\subsection{Databázy}
+Pre používanie tohto projektu, používateľ si musí stiahnuť a nainštalovať aplikáciu Neo4j Desktop, a vytvoriť si lokálnu inštanciu.
+\begin{itemize}
+    \item Neo4j: Grafová databáza na ukladanie entít a vzťahov.
+    \item Neo4jVector: Neo4j vektorová databáza na ukladanie vektorových embeddingov (vzťahy a entity) a vykonávanie vektorového vyhľadávania.
+\end{itemize}
+
+
+\end{document}

@@ -105,5 +105,60 @@ Pre používanie tohto projektu, používateľ si musí stiahnuť a nainštalova
     \item Neo4jVector: Neo4j vektorová databáza na ukladanie vektorových embeddingov (vzťahy a entity) a vykonávanie vektorového vyhľadávania.
 \end{itemize}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../grafova_databaza.png}
+  \caption{Ukážka grafovej databázy}
+  \label{fig:grafova_databaza}
+\end{figure}
+
+
+\newpage
+\subsection{Embeddingy}
+Na embeddovanie chunkov (rozsekané častí textu dokumentu), entít a vzťahov na vektory, používam od
+OpenAIEmbeddings model \textbf{text-embedding-3-large}. Tieto embeddingy (iba vzťahy a entity) sú uložené v Neo4jVector databáze
+a slúžia na hybridné rýchlejšie vyhľadávanie. Na základe sémantickej podobnosti sú vrátené entity a vzťahy
+z položenej používateľovej otázky a poskytnuté LLM na dopytovanie znalostného grafu.
+
+
+\
+\subsection{Návod na používanie}
+Po tom čo si používateľ nainštaluje Neo4j Desktop, musí si vytvoríť lokálnu inštanciu, zapamätať si meno (väčšinou \texttt{neo4j}), heslo a uri (väčšinou \texttt{neo4j://127.0.0.1:7687}). Následne si treba stiahnuť
+knižnice z requirements.txt. Do vytvoreného súboru \textbf{.env}, používateľ zadá svoje API
+kľúče pre OpenAI, Anthropic, Google a Neo4j.
+
+\begin{verbatim}
+NEO4J_URI=your_neo4j_uri_here
+NEO4J_USERNAME=neo4j
+NEO4J_PASSWORD=your_password_here
+GOOGLE_API_KEY=your_google_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+\end{verbatim}
+
+Následne, pre používanie treba zadefinovať v \textbf{main.py}:
+
+\begin{lstlisting}
+import os
+from dotenv import load_dotenv
+from pdf_graphrag import PDFGraphRAG
+
+load_dotenv()
+
+graphrag = PDFGraphRAG(
+    neo4j_uri=os.getenv("NEO4J_URI"),
+    neo4j_user=os.getenv("NEO4J_USERNAME"),
+    neo4j_password=os.getenv("NEO4J_PASSWORD"),
+    openai_api_key=os.getenv("OPENAI_API_KEY"),
+    google_api_key=os.getenv("GOOGLE_API_KEY"),
+    claude_api_key=os.getenv("ANTHROPIC_API_KEY"),
+    vector_store_nodes_name='node_store',
+    vector_store_relationships_name='relationship_store'
+)
+\end{lstlisting}
+
+
+\newpage
+\section{Spracovanie}
 
 \end{document}

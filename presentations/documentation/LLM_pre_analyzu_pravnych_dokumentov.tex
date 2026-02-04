@@ -37,7 +37,16 @@
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+  \centering
+  \vspace*{\fill}
+  {\textbf{\Large Využitie LLM pre analýzu právnych dokumentov:\\Hybrid GraphRAG Documentation}}
+  \vspace{1.5cm}
+  \\Samuel Bagín\\
+  \vspace*{\fill}
+\end{titlepage}
+
+
 
 \newpage
 \tableofcontents
@@ -276,7 +285,7 @@ do \texttt{GraphDocument} objektu.
 \ 
 
 Výsledkom je bohatý, konzistentný znalostný graf, ktorý obsahuje všetky relevantné informácie z právnych dokumentov.
-Chunky a dokumenty sú pospájané pomocou vzťahu \texttt{PART\textunderscore OF} a chunky s entitami pomocou vzťahu
+Chunky a dokumenty sú pospájané pomocou vzťahu \texttt{IN\textunderscore DOCUMENT} a chunky s entitami pomocou vzťahu
 \texttt{HAS\textunderscore ENTITY}. Medzi entitami sú vzťahy, ktoré sú extrahované z dokumentu.
 
 \
@@ -301,9 +310,9 @@ Chunky a dokumenty sú pospájané pomocou vzťahu \texttt{PART\textunderscore O
   \node[ent, below=of c2] (ey) {Entity $y$};
   \node[ent, below right=of c2] (ez) {Entity $z$};
 
-  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize PART\_OF} (doc);
-  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize PART\_OF} (doc);
-  \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize PART\_OF} (doc);
+  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+  \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
 
   \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ex);
   \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ey);
@@ -315,7 +324,103 @@ Chunky a dokumenty sú pospájané pomocou vzťahu \texttt{PART\textunderscore O
 \end{tikzpicture}
 \end{center}
 
+
 \newpage
 \subsection{Vkladanie do databázy}
+Údaje vkladáme do dvoch typov databáz: grafovej databázy Neo4j a vektorovej databázy Neo4jVector.
+
+\
+
+\noindent\textbf{Grafová databáza}
+\ 
+
+Do grafovej databázy vkladáme \texttt{GraphDocument}. Na úspešne vloženie je potrebné si doinštalovať
+do inštancie \textbf{APOC plugin} cez Neo4j Desktop aplikáciu.
+
+\
+
+\noindent Úkažka \texttt{GraphDocument}:
+{\scriptsize
+\begin{verbatim}
+{
+    "nodes": [
+      {
+        "id": "POŽIADAVKY NA BEZPEČNOSTNÝ RIADIACI SYSTÉM",
+        "type": "Document",
+        "properties": {
+          "name": "POŽIADAVKY NA BEZPEČNOSTNÝ RIADIACI SYSTÉM"
+        }
+      },
+      {
+        "id": "Organizačná štruktúra podniku",
+        "type": "Organizational_structure",
+        "properties": {
+          "name": "Organizačná štruktúra podniku"
+        }
+      },
+      ... ,
+      {
+        "id": "chunk_0",
+        "type": "Chunk",
+        "properties": {
+          "text": "25 \n \n \nPOŽIADAVKY NA BEZPEČNOSTNÝ RIADIACI SYSTÉM \n ...",
+          "embedding": [
+            0.013147621415555477,
+            -0.027107400819659233,
+            0.005099280271679163,
+            ...
+          ]
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source_id": "POŽIADAVKY NA BEZPEČNOSTNÝ RIADIACI SYSTÉM",
+        "source_type": "Document",
+        "relation": "CONTAINS",
+        "target_id": "Organizačná štruktúra podniku",
+        "target_type": "Organizational_structure",
+        "properties": {}
+      },
+      {
+        "source_id": "Organizačná štruktúra podniku",
+        "source_type": "Organizational_structure",
+        "relation": "INCLUDES",
+        "target_id": "zamestnanci",
+        "target_type": "Employee",
+        "properties": {}
+      },
+      ...
+    ],
+    "source": {
+
+    }
+}
+\end{verbatim}
+}
+{\scriptsize * \textit{... znamená že text pokračuje ďalej alebo existujú ďaľšie entity a vzťahy}}
+
+\newpage
+V grafovej databáze majú údaje podobnú štruktúru ako v \texttt{GraphDocument}. Pri \texttt{nodes}, má
+každá entita svoj unikátny \texttt{elementId}, \texttt{labels} (štítok alebo typ v Neo4j), kde
+každý \texttt{node} má typ \textunderscore\textunderscore Entity\textunderscore\textunderscore a svoj vlastný typ, 
+a \texttt{properties}. Pri \texttt{relationships} je \texttt{type}, \texttt{elementId}, \texttt{startNodeElementId} a
+\texttt{endNodeElementId}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{../legal_graph.png}
+  \caption{Grafová databáza so zobrazenými entitami a vzťahmi}
+  \label{fig:legal_graph}
+\end{figure}
+
+\
+
+\noindent\textbf{Vektorová databáza}
+\
+
+Do vektorovej databázy vkladáme embeddingy entít a vzťahov. Tieto embeddingy sú využívané na rýchlejšie
+sémantické vyhľadávanie. Vektorová databáza je prepojená s grafovou databázou cez unikátne \texttt{elementId}.
+Výsledky sa vyhľadávajú pomocou podobnosti vektorov a ich kosínusovej vzdialenosti.
 
 \end{document}

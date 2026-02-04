@@ -696,7 +696,7 @@ class PDFGraphRAG:
         with open("./GRAPH_DOCS.json", "w", encoding="utf-8") as f:
             json.dump(graph_docs_json, f, ensure_ascii=False, indent=2)
         
-        """ 
+        
         
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
@@ -708,6 +708,7 @@ class PDFGraphRAG:
         
         self.graph.refresh_schema()
             
+        """
         all_nodes = self.graph.query("MATCH (n) RETURN n")
         all_nodes = [Document(page_content=node['n']) for node in all_nodes]
         rel_types = self.graph.query("CALL db.relationshipTypes()")
@@ -740,9 +741,8 @@ class PDFGraphRAG:
             self.vector_store_relationships.add_documents(all_relationships)
         
         print("Knowledge graph and vector stores successfully updated in Neo4j!")
-        
-        """
-            
+
+            """
             
         
         

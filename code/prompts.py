@@ -133,3 +133,34 @@ response_schema_for_generating_query = {
             },
             "required": ["cypher_query", "explanation", "nodes_found", "relationships_found"]
         }
+
+
+
+# classification
+system_prompt_for_classification = """
+You are an expert at classifying text into predefined categories. """
+
+response_schema_for_classification = {
+    "title": "TextClassificationResult",
+    "type": "object",
+    "description": "Result schema for classifying text into predefined categories",
+    "properties": {
+        "type_legislation": {
+            "type": "object",
+            "description": "The category that best fits the provided text",
+            "properties": {
+                "name": {"type": "string", "description": "Name of the category"},
+                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
+            },
+        },
+        "type_category": {
+            "type": "object",
+            "description": "The category that best fits the provided text",
+            "properties": {
+                "name": {"type": "string", "description": "Name of the category"},
+                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
+            },
+        }
+    },
+    "required": ["type_legislation", "type_category"]
+}

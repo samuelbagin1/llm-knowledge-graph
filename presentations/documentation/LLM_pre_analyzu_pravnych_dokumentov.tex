@@ -8,6 +8,10 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 
 \geometry{margin=1in}
 
@@ -159,6 +163,159 @@ graphrag = PDFGraphRAG(
 
 
 \newpage
-\section{Spracovanie}
+\section{Spracovanie textu}
+Na spracovanie textu dokumentu, používateľ zavolá funkciu \textbf{process} s parametrom cesty k PDF dokumentu a alternatívne
+s maximálnym počtom strán na spracovanie:
+\begin{lstlisting}
+graphrag.process("path_to_pdf_document.pdf")
+\end{lstlisting}
+
+
+
+Tento proces pozostáva z troch hlavných krokov:
+\begin{center}
+\begin{tikzpicture}[
+  node distance=18mm,
+  box/.style={draw, rounded corners, minimum height=8mm, minimum width=32mm, align=center},
+  arr/.style={-Latex, thick}
+]
+  \node[box] (pre) {Predspracovanie};
+  \node[box, right=of pre] (ext) {Extrakcia};
+  \node[box, right=of ext] (db) {Vlo\v{z}enie\\do datab\'azy};
+
+  \draw[arr] (pre) -- (ext);
+  \draw[arr] (ext) -- (db);
+\end{tikzpicture}
+\end{center}
+
+
+\subsection{Predspracovanie}
+V tomto kroku sa PDF dokument načíta, klasifikuje a rozdelí na chunky. Dokument po načítaní
+je klasifikovaný pomocou LLM Google Gemini-3-Flash, ktorý určí typ dokumentu (zmluva, zákon, vyhláška, atď.)
+a do akého typu práva spadá (ústavné, finančné, občianske, atď.). Pre toto klasifikovanie využívam gemini, kvôli
+jeho schopnosti spracovať veľké kontextové okná, rýchlosť ale taktiež pre najlepšie zosumarizovanie textu.
+LLM posielam prvých 900,000 tokenov z dokumentu, system prompt, typy dokumentov a právnych odvetví,
+a vzor na štruktúrovanú odpoveď.
+
+\
+
+Ako odpoveď dostanem objekt, kde je uložený typ dokumentu \texttt{type\textunderscore category} a typ právneho odvetvia \texttt{type\textunderscore legislation}.
+V oboch pripádoch LLM musí uviesť percentuálnu istotu týchto údajov (v rozmedzí 0-100\%). K týmto údajom sa 
+dá následne pristupovať ako k Python Dictionary.
+
+\
+
+V ďaľšom kroku prichádza na rozdelenie textu na časti. Využívam funkciu \textbf{RecursiveCharacterTextSplitter}
+z balíku \texttt{langchain\textunderscore text\textunderscore splitters}. V otvorenej doméne na extrakciu
+schémy rozdeľujem chunky s veľosťou 1200 tokenov a s prekrývaním 200 tokenov. Pri schéme-riadenom extrahovaní
+su chunky nastavené na veľkosť 1024 tokenov s prekrývaním 128 tokenov.
+
+
+\newpage
+\subsection{Extrakcia}
+Pri extrahovaní entít a vzťahov využívam hybridný prístup na extrakciu na základe štúdie tímu z
+apple: \textbf{ODKE+: Ontology-Guided Open-Domain Knowledge Extraction with LLMs}. Kľúčovou vlastnosťou tohto
+prístupu je využitie oboch prístupov: štruktúrovaného (schémov-riadené) a neštruktúrovaného (otvorená doména) extrahovania.
+
+\ 
+
+Prečo nie iba schémov-riadené extrahovanie? Navrhnutie výstižnej a bohatej ontológie pre všetky typy práv je
+časovo veľmi náročné. S najväčšou pravdepodobnosťou môže nastať situácia,
+kde v nejakom dokumente sa vyskytne entita alebo vzťah, ktorý nie je definovaný v ontológii a je kľúčový
+pre pochopenie dokumentu. Preto využívam kombináciu oboch prístupov. Je to časovo a cenovo neefektívne riešenie,
+avšak prináša najlepšie výsledky. Presnosť extrahovania na základe štúdie dosahuje 98.8\%, čo je pre nás kľúčové.
+
+\
+
+Prečo nie iba extrahovanie v otvorenej doméne? Po tomto prístupe by sme získali veľmi bohatý znalostný graf,
+avšak s množstvom nekonzistentných údajov, duplicít a graf by bol chaotický. Kde by boli rozdielne typy entít
+ako \texttt{Miesto} a \texttt{Lokácia}, a vznikala by fragmentácia.
+
+\begin{center}
+\begin{tikzpicture}[
+  node distance=18mm,
+  box/.style={draw, rounded corners, minimum height=10mm, minimum width=44mm, align=center},
+  arr/.style={-Latex, thick}
+]
+  \node[box] (det) {Otvoren\'a\\dom\'enov\'a detekcia};
+  \node[box, right=of det] (onto) {Upravenie\\vytvorenej ontol\'ogie};
+  \node[box, right=of onto] (extr) {Sch\'emov-riaden\'e\\extrahovanie};
+
+  \draw[arr] (det) -- (onto);
+  \draw[arr] (onto) -- (extr);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Otvorená doménová detekcia}
+Funkcia vytvorí z každého chunku proces, kde všetky procesy bežia paralelne na zníženie času spracovania.
+V každom procese je volaný asynchrónne \texttt{agent}. Jehou úlohou je extrahovať každú jednu možnú entitu a vzťah,
+ktoré sa nachádzajú v texte chunku. Je to z toho dôvodu, lebo tento krok odhalí nepreddefinované entity a vzťahy,
+ktoré môžu byť kľúčové. Vďaka tomuto postupu sa ontológia dynamicky prispôsobí a rozšíri na klasifikovaný 
+typ dokumentu a právneho odvetvia. Na tento účel využívam model gpt-4o pre jeho bohaté rozpoznávanie
+textu. Následne je vrátená schéma ako zoznamy \texttt{list\textunderscore nodes}
+a \texttt{list\textunderscore relationships}.
+
+\subsubsection{Upravenie vytvorenej ontológie}
+Vytvorená schéma z predchádzajúceho kroku je poslaná na upravenie. LLM porovná schému s 
+preddefinovanou vzorovou ontológiou (sada vytvorených ontológií, ktoré sú konzistentné naprieč slovenským
+právom napr. \texttt{Osoba}, \texttt{Zákon}, \texttt{Paragraf}, ...) alebo s už existujúcou schémou znalostného grafu. Tento krok je dôležitý, aby boli údaje
+konzistentné, nevytvárali sa sémanticky podobné entity a vzťahy (napr. \texttt{UPRAVUJE} vs \texttt{UPRAVIL})
+a nevznikali duplicity. Výstupom tohto kroku je upravená schéma ako zoznamy \texttt{nodes} a \texttt{relationships}.
+Využívaný model je gemini-3-flash kvôli jeho dobrým schopnostiam rozmýšľať a odvôvodniť.
+
+\
+
+\subsubsection{Schémov-riadené extrahovanie}
+Najprecíznejší krok extrakcie, ktorý zaručuje najvyššiu presnosť a kvalitu extrakcie. Tak isto ako v
+otvorenej doméne, aj tu je každý chunk je spracovaný paralelne.
+LLM je poskytnutá ontológia z predošlého kroku a na jej základe extrahuje konzistentné entity a vzťahy.
+\texttt{Agent} vráti zoznamy \texttt{nodes} a \texttt{relationships}, ktoré sú následne transformované
+do \texttt{GraphDocument} objektu.
+
+
+\ 
+
+Výsledkom je bohatý, konzistentný znalostný graf, ktorý obsahuje všetky relevantné informácie z právnych dokumentov.
+Chunky a dokumenty sú pospájané pomocou vzťahu \texttt{PART\textunderscore OF} a chunky s entitami pomocou vzťahu
+\texttt{HAS\textunderscore ENTITY}. Medzi entitami sú vzťahy, ktoré sú extrahované z dokumentu.
+
+\
+
+\begin{center}
+\begin{tikzpicture}[
+  node distance=26mm and 32mm,
+  doc/.style={circle, draw, fill=gray!20, minimum size=14mm, align=center},
+  chunk/.style={circle, draw, fill=gray!50, minimum size=14mm, align=center},
+  ent/.style={circle, draw, fill=gray!90, minimum size=14mm, align=center},
+  arr/.style={-Latex, thick}
+]
+
+  \node[doc] (doc) {Document};
+  \node[doc, right=of doc] (doc2) {Document $\beta$};
+
+  \node[chunk, below left=of doc] (c1) {Chunk 1};
+  \node[chunk, below=of doc] (c2) {Chunk 2};
+  \node[chunk, below right=of doc] (cn) {Chunk $n$};
+
+  \node[ent, below left=of c2] (ex) {Entity $x$};
+  \node[ent, below=of c2] (ey) {Entity $y$};
+  \node[ent, below right=of c2] (ez) {Entity $z$};
+
+  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize PART\_OF} (doc);
+  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize PART\_OF} (doc);
+  \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize PART\_OF} (doc);
+
+  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ex);
+  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ey);
+  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ey);
+  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ez);
+
+  \draw[arr] (ex) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ey);
+  \draw[arr] (ey) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ez);
+\end{tikzpicture}
+\end{center}
+
+\newpage
+\subsection{Vkladanie do databázy}
 
 \end{document}

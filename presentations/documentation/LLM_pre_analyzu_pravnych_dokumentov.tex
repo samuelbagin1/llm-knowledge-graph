@@ -11,7 +11,10 @@
 \usepackage{graphicx}
 \usepackage{tikz-cd}
 \usepackage{tikz}
+\usepackage{subcaption}
 \usetikzlibrary{arrows.meta,positioning}
+\usetikzlibrary{calc}
+
 
 \geometry{margin=1in}
 
@@ -30,7 +33,7 @@
 }
 
 
-\title{Využitie LLM pre analýzu právnych dokumentov:\\Hybrid GraphRAG Documentation}
+\title{Využitie LLM pre analýzu právnych dokumentov}
 \author{Samuel Bagín}
 % \supervisor{Ing. Marek Vančo, PhD.}
 
@@ -40,7 +43,7 @@
 \begin{titlepage}
   \centering
   \vspace*{\fill}
-  {\textbf{\Large Využitie LLM pre analýzu právnych dokumentov:\\Hybrid GraphRAG Documentation}}
+  {\textbf{\Large Využitie LLM pre analýzu právnych dokumentov}}
   \vspace{1.5cm}
   \\Samuel Bagín\\
   \vspace*{\fill}
@@ -203,7 +206,7 @@ V tomto kroku sa PDF dokument načíta, klasifikuje a rozdelí na chunky. Dokume
 je klasifikovaný pomocou LLM Google Gemini-3-Flash, ktorý určí typ dokumentu (zmluva, zákon, vyhláška, atď.)
 a do akého typu práva spadá (ústavné, finančné, občianske, atď.). Pre toto klasifikovanie využívam gemini, kvôli
 jeho schopnosti spracovať veľké kontextové okná, rýchlosť ale taktiež pre najlepšie zosumarizovanie textu.
-LLM posielam prvých 900,000 tokenov z dokumentu, system prompt, typy dokumentov a právnych odvetví,
+LLM posielam prvé dve strany dokumentu, system prompt, typy dokumentov a právnych odvetví,
 a vzor na štruktúrovanú odpoveď.
 
 \
@@ -226,6 +229,12 @@ Pri extrahovaní entít a vzťahov využívam hybridný prístup na extrakciu na
 apple: \textbf{ODKE+: Ontology-Guided Open-Domain Knowledge Extraction with LLMs}. Kľúčovou vlastnosťou tohto
 prístupu je využitie oboch prístupov: štruktúrovaného (schémov-riadené) a neštruktúrovaného (otvorená doména) extrahovania.
 
+\
+
+Prečo nie iba extrahovanie v otvorenej doméne? Po tomto prístupe by sme získali veľmi bohatý znalostný graf,
+avšak s množstvom nekonzistentných údajov, duplicít a graf by bol chaotický. Kde by boli rozdielne typy entít
+ako \texttt{Miesto} a \texttt{Lokácia}, a vznikala by fragmentácia.
+
 \ 
 
 Prečo nie iba schémov-riadené extrahovanie? Navrhnutie výstižnej a bohatej ontológie pre všetky typy práv je
@@ -234,11 +243,6 @@ kde v nejakom dokumente sa vyskytne entita alebo vzťah, ktorý nie je definovan
 pre pochopenie dokumentu. Preto využívam kombináciu oboch prístupov. Je to časovo a cenovo neefektívne riešenie,
 avšak prináša najlepšie výsledky. Presnosť extrahovania na základe štúdie dosahuje 98.8\%, čo je pre nás kľúčové.
 
-\
-
-Prečo nie iba extrahovanie v otvorenej doméne? Po tomto prístupe by sme získali veľmi bohatý znalostný graf,
-avšak s množstvom nekonzistentných údajov, duplicít a graf by bol chaotický. Kde by boli rozdielne typy entít
-ako \texttt{Miesto} a \texttt{Lokácia}, a vznikala by fragmentácia.
 
 \begin{center}
 \begin{tikzpicture}[
@@ -314,10 +318,10 @@ Chunky a dokumenty sú pospájané pomocou vzťahu \texttt{IN\textunderscore DOC
   \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
   \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
 
-  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ex);
-  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ey);
-  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ey);
-  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_ENTITY} (ez);
+  \draw[arr] (ex) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
+  \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
+  \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
+  \draw[arr] (ez) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
 
   \draw[arr] (ex) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ey);
   \draw[arr] (ey) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ez);
@@ -409,10 +413,22 @@ a \texttt{properties}. Pri \texttt{relationships} je \texttt{type}, \texttt{elem
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\textwidth]{../legal_graph.png}
-  \caption{Grafová databáza so zobrazenými entitami a vzťahmi}
-  \label{fig:legal_graph}
+  \begin{subfigure}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../legal_graph.png}
+    \caption{Grafová databáza so zobrazenými entitami a vzťahmi}
+    \label{fig:legal_graph}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../legal_graph_data.png}
+    \caption{Grafová databáza so dátami}
+    \label{fig:legal_graph_data}
+  \end{subfigure}
 \end{figure}
+
+
 
 \
 
@@ -422,5 +438,185 @@ a \texttt{properties}. Pri \texttt{relationships} je \texttt{type}, \texttt{elem
 Do vektorovej databázy vkladáme embeddingy entít a vzťahov. Tieto embeddingy sú využívané na rýchlejšie
 sémantické vyhľadávanie. Vektorová databáza je prepojená s grafovou databázou cez unikátne \texttt{elementId}.
 Výsledky sa vyhľadávajú pomocou podobnosti vektorov a ich kosínusovej vzdialenosti.
+
+
+\
+
+\section{Vyhľadávanie}
+Na vyhľadávanie respektíve na zodpovedanie otázky od používateľa, využívam metódu hybridný GraphRAG (Graph Retrieval-Augmented Generation).
+Je to kombinácia dvoch prístupov: vyhľadávanie v znalostnom grafe a sémantické vyhľadávanie pomocou vektorovej databázy.
+
+\ 
+
+Následujúci graf zobrazuje jednotlivé kroky, pri hľadaní odpovede na otázku od používateľa:
+
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tikzpicture}[
+  node distance=14mm and 16mm,
+  box/.style={draw, rounded corners, align=left, minimum width=45mm, minimum height=9mm, inner sep=4pt},
+  arr/.style={-Latex, thick}
+]
+  % 1st row
+  \node[box] (uq) {Používateľ zadá otázku};
+  \node[box, right=of uq] (rq) {Preformulovanie\\(3--5 otázok)};
+  \node[box, right=of rq] (svo) {ER extrakcia};
+  \node[box, right=of svo] (kg) {KG dotazovanie\\(tool loop)};
+
+  % 2nd row (wrap)
+  \node[box, below=18mm of uq] (mh) {Overenie \\+ multi-hop};
+  \node[box, right=of mh] (ch) {Výber Chunk vrcholov};
+  \node[box, right=of ch] (ans) {Finálna odpoveď};
+
+  \draw[arr] (uq) -- (rq);
+  \draw[arr] (rq) -- (svo);
+  \draw[arr] (svo) -- (kg);
+
+  \draw[arr] (kg.south) -- ++(0,-8mm) -- ($(mh.north)+(0,8mm)$) -- (mh.north);
+  \draw[arr] (mh) -- (ch);
+  \draw[arr] (ch) -- (ans);
+\end{tikzpicture}
+}
+\end{center}
+
+\subsection{Používateľ zadá otázku}
+Používateľ zadá otázku v prirodzenom jazyku, prostredníctvom metódy \texttt{graphrag.query}.
+\begin{lstlisting}
+graphrag.query(user_question)
+\end{lstlisting}
+
+\subsection{Preformulovanie}
+LLM vytvorí 3-5 preformulovaných otázok. V každej jednej otázke sa snaží zahrnúť kľúčové informácie z 
+pôvodnej otázky, ale formulované iným spôsobom. Cieľom je získať rôzne pohľady na otázku, aby sme 
+maximalizovali šancu na získanie relevantných informácií z grafovej databázy.
+
+\subsection{ER extrakcia}
+Pre každú preformulovanú otázku, LLM extrahuje entity a vzťahy. Využíva sa extrakcia na otvorenej doméne,
+kde sa neberie ohľad na typ entít a vzťahov, ale extrahujú sa všetky možné entity a vzťahy, ktoré sa 
+nachádzajú v otázke. Tieto entity a vzťahy sú následne použité na dotazovanie sa do grafovej databázy.
+
+\subsection{KG dotazovanie}
+Pre každú entitu a vzťah sa nájdu entity a vzťahy vo vektorovej databáze na základe sémantickej podobnosti.
+Tieto entity a vzťahy sú prepojené s grafovou databázou cez \texttt{elementId}.
+Následne pomocou týchto entít a vzťahov, LLM vytvorí Cypher Query, ktoré sa použije na dotazovanie 
+do grafovej databázy. Tento krok je iteratívny, kde LLM môže vytvoriť viacero dotazov, 
+ktoré sa postupne spúšťajú, pomocou nástroja, ktorý ma obmedzený prístup do databázy. 
+Výsledky z týchto dotazov sú následne použité na overenie a multi-hop vyhľadávanie.
+
+\subsection{Overenie + multi-hop}
+Tento krok predstavuje kontrolný mechanizmus a logické jadro vyhľadávacieho procesu. LLM analyzuje 
+výsledky získané z predchádzajúcich grafových dopytov a posudzuje ich relevanciu vzhľadom na komplexnosť 
+právneho problému.
+
+\
+
+Ak sú získané informácie fragmentované alebo neúplné, aktivuje sa multi-hop reasoning. Tento proces 
+umožňuje systému: 
+\begin{itemize} 
+    \item \textbf{Prechádzanie relácií:} Identifikovať prepojenia medzi 
+    entitami, ktoré nie sú v priamom vzťahu (napr. prepojenie konkrétnej osoby cez zmluvu až k príslušnému 
+    zákonu). 
+    \item \textbf{Dopĺňanie kontextu:} Ak odpoveď vyžaduje informáciu z inej časti grafu, model 
+    iniciuje ďalšiu iteráciu dopytovania na základe novoobjavených uzlov. 
+    \item \textbf{Eliminácia halucinácií:} Overením faktov priamo voči štruktúre grafu sa zabezpečí, 
+    že výsledná odpoveď bude podložená reálnymi vzťahmi v legislatívnom dokumente, nie len 
+    pravdepodobnostným odhadom modelu. 
+\end{itemize}
+
+\noindent Výsledkom je overený vedomostný základ, ktorý slúži ako presný podklad pre finálnu syntézu odpovede.
+
+\subsection{Výber Chunk vrcholov}
+Pre všetky nájdené vrcholy z grafu vrátime pomocou vzťahu \texttt{HAS\textunderscore CHUNK} vrcholy Chunk a ich atribút s textom.
+
+\subsection{Finálna odpoveď}
+Výsledná odpoveď je vytvorená z:
+\begin{itemize}
+    \item pôvodnej otázky od používateľa,
+    \item preformulovaných otázok,
+    \item znalostných grafov,
+    \item textu z Chunk vrcholov,
+    \item System prompt.
+\end{itemize}
+
+\noindent Tieto informácie sú poskytnuté Gemini, ktorý vďaka jeho veľkému kontextovému oknu, dokáže spracovať údaje
+a odpovedať na otázku.
+
+
+
+
+\section{Testovanie a výsledky}
+Testovanie systému bolo robené na knihe \textbf{Romeo a Júlia}, kde bolo otestované spracovanie knihy a vyhľadávanie.
+
+\
+
+Prvotné spracovanie knihy bolo robené na otvorenej doméne, kde sa extrahovali všetky možné entity a vzťahy. Toto
+riešenie prinieslo bohatý graf, avšak chýbala konzistencia. Následne bolo testované schémov-riadené extrahovanie, 
+kde sa použila mnou upravená schéma z otvorenej domény. Toto riešenie prinieslo konzistentný graf a počet 
+entít bol približne rovnaký ako v otvorenej doméne: $N_{oe} = 2536 \approx N_{sde} = 2512$. Taktiež bolo 
+upravené spracovanie zo synchrónneho na asynchrónne, čo znížilo čas spracovania pri tejto knihe
+približne \textit{6x}: $T_{sync} = 12min \approx T_{async} = 2min$.
+
+\
+
+Na overenie spracovania grafu a relevantnosti údajov, som vytvoril agenta na iteratívne dotazovanie databázy.
+Tento agent má obmedzený prístup do grafovej databázy, kde pomocou nástroja môže spúšťať Cypher Queries a upravovať
+ich podľa vrátených údajov. Pri tomto vyhľadávaní bol čas spracovávania v rozmedzí \textit{20 sekúnd} až \textit{4 minúty}.
+Problém je v jeho neobmedzenosti a hľadania do posledného detailu. Relevantné údaje však vždy našiel a odpoveď bola 
+vďaka týmto údajom vždy presná a správna. 
+
+Príklad vytvorenej Cypher Query na otázku \textit{"Which Characters who belong to the Capulet house are in love with a Character who belongs to the Montague house?"}:
+
+{\scriptsize
+\begin{verbatim}
+    MATCH (cap)-[b:BELONGS_TO]-(h:House)\nWHERE toLower(h.id) CONTAINS toLower('capulet') AND 
+    (cap:Character OR cap:Person)\nMATCH (cap)-[r]-(m)\nWHERE type(r) IN ['LOVES','IN_LOVE_WITH','LOVE',
+    'EXPRESSES_FEELING_FOR','TENDER_LOVE','POTENTIAL_LOVE','WOO','LOVER'] AND (m:Character OR m:Person)\nMATCH 
+    (m)-[bm:BELONGS_TO]-(h2:House)\nWHERE toLower(h2.id) CONTAINS toLower('montague')\nRETURN DISTINCT cap.id AS 
+    capulet_character, labels(cap) AS capulet_labels, type(r) AS rel_type, m.id AS montague_character, labels(m) AS 
+    montague_labels, properties(cap) AS cap_props, properties(m) AS mont_props\nLIMIT 25
+\end{verbatim}
+}
+
+\noindent Vrátené údaje z tejto query:
+{\scriptsize
+\begin{verbatim}
+    "nodes_found": [
+            "Juliet",
+            "Romeo",
+            "Capulet",
+            "Montague"
+          ],
+          "relationships_found": [
+            "Juliet -[LOVES]-> Romeo",
+            "Juliet -[EXPRESSES_FEELING_FOR]-> Romeo",
+            "Juliet -[LOVER]-> Romeo",
+            "Juliet -[LOVE]-> Romeo",
+            "Juliet -[IN_LOVE_WITH]-> Romeo",
+            "Juliet -[BELONGS_TO]-> Capulet",
+            "Romeo -[BELONGS_TO]-> Montague"
+          ]
+        },
+\end{verbatim}
+}
+
+\noindent Tu vidíme nekonzistentnosť vzťahov v otvorenej doméne. Namiesto jedného vzťahu
+\texttt{LOVES} máme päť. Na základe týchto údajov odpoveď bola správna: \texttt{Juliet}.
+Spracovanie na tejto knihe pomohlo upresniť a vylepšiť systém. Overovať kvalitu údajov bolo
+veľmi jednoduché a presné, čo by sa na zbierke zákona robilo veľmi obtiažne.
+
+\      
+
+Následne som začal s implementáciou hybridného spracovania pre legálne dokumenty.
+Tu testujem spracovanie na dokumentoch zo zbierky zákona. Ako zdroj dokuemntov používam: \url{https://www.slov-lex.sk}.
+Dokumenty sa dajú vyhľadávať podľa odvetvia práva a typu dokumentu.
+
+
+
+\section{Plán na letný semester}
+\begin{itemize}
+    \item Dokončiť implementáciu vyhľadávania a multi-hopu
+    \item Optimalizácia promptov pre rýchlejšie spracovanie a vyhľadávanie
+    \item Vytvorenie používateľského rozhrania (webová aplikácia) pre jednoduché zadávanie otázok, zobrazenie nájdených znalostných grafov a zobrazovanie odpovedí.
+\end{itemize}   
 
 \end{document}

@@ -28,7 +28,7 @@ Adhere to the rules strictly. Non-compliance will result in termination."""
 
 
 response_schema_for_extraction = {
-            "title": "Graph Extraction Result",
+            "title": "GraphExtractionResult",
             "type": "object",
             "description": "Result schema for extracting a knowledge graph from text",
             "properties": {
@@ -75,3 +75,92 @@ response_schema_for_extraction = {
             },
             "required": ["nodes", "relationships"]
         }
+
+
+# System prompt - defines the agent's role and capabilities
+system_prompt_for_generating_query = """You are a Neo4j Cypher expert agent specialized in querying knowledge graphs.
+
+Your task is to answer questions by querying a Neo4j graph database.
+
+## Your Capabilities
+You have access to the `search_database` tool which executes Cypher queries against Neo4j.
+
+## Query Strategy
+1. **Analyze the question** to identify what nodes and relationships are relevant
+2. **Start with exploration queries** to understand what data exists:
+   - For nodes: `MATCH (n:Label) RETURN n.id, labels(n)`
+   - For relationships: `MATCH (a)-[r:TYPE]->(b) RETURN a.id, type(r), b.id`
+3. **Refine iteratively** - use results from initial queries to build more specific queries
+4. **Find the best matches** - keep querying until you find the most relevant data
+
+## Cypher Query Rules
+- Use backticks for labels/types with special characters: `MATCH (n:`Special-Label`) ...`
+- For text matching use case-insensitive: `WHERE toLower(n.id) CONTAINS toLower('romeo')`
+- Use undirected relationships `-[r]-` when direction is unknown
+- Always add `LIMIT 25` to prevent large result sets
+- Return useful properties: `RETURN n.id, labels(n), type(r), properties(n)`
+- Keep queries efficient, focused and short
+
+## Important
+- You MUST use the search_database tool to query the database
+- Make multiple queries if needed to find the best answer
+- When you have found sufficient data, provide your final answer with the best Cypher query"""
+
+
+response_schema_for_generating_query = {
+            "title": "GraphQueryResult",
+            "type": "object",
+            "description": "Final query results from graph database exploration",
+            "properties": {
+                "cypher_query": {
+                    "type": "string",
+                    "description": "The final/best Cypher query that answers the question"
+                },
+                "explanation": {
+                    "type": "string",
+                    "description": "Explanation of the query strategy and what was found"
+                },
+                "nodes_found": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "List of node IDs that are relevant to the answer"
+                },
+                "relationships_found": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "List of relationships found (format: 'nodeA -[REL_TYPE]-> nodeB')"
+                }
+            },
+            "required": ["cypher_query", "explanation", "nodes_found", "relationships_found"]
+        }
+
+
+
+# classification
+system_prompt_for_classification = """
+You are an expert at classifying text into predefined categories. """
+
+response_schema_for_classification = {
+    "title": "TextClassificationResult",
+    "type": "object",
+    "description": "Result schema for classifying text into predefined categories",
+    "properties": {
+        "type_legislation": {
+            "type": "object",
+            "description": "The category that best fits the provided text",
+            "properties": {
+                "name": {"type": "string", "description": "Name of the category"},
+                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
+            },
+        },
+        "type_category": {
+            "type": "object",
+            "description": "The category that best fits the provided text",
+            "properties": {
+                "name": {"type": "string", "description": "Name of the category"},
+                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
+            },
+        }
+    },
+    "required": ["type_legislation", "type_category"]
+}

@@ -89,7 +89,7 @@ podobnosti.
 \newpage
 \section{System Overview}
 
-Tento projekt je postavený na pomocou jazyku Python a využíva knižnicu LangChain.
+Tento projekt je postavený pomocou jazyku Python a využíva knižnicu LangChain.
 
 \ 
 
@@ -102,7 +102,7 @@ Tento projekt je postavený na pomocou jazyku Python a využíva knižnicu LangC
         \end{itemize}
     \item Anthropic
         \begin{itemize}
-            \item \textbf{sonnet-3.5}: Model používaný na tvorenie Cypher Queries pre dotazovanie sa na grafovú databázu. Silné znalosti na tvorenie kódu a SQL, rýchly, efektívny a riešenie problémov.
+            \item \textbf{sonnet-3.5}: Model používaný na tvorenie Cypher Queries pre dopytovanie na grafovú databázu. Silné znalosti na tvorenie kódu a SQL, rýchly, efektívny na riešenie problémov.
             Cena (I/O pre 1M tokenov): \textbf{\$3.00 / \$15.00}
         \end{itemize}
     \item Google
@@ -140,7 +140,7 @@ z položenej používateľovej otázky a poskytnuté LLM na dopytovanie znalostn
 \
 \subsection{Návod na používanie}
 Po tom čo si používateľ nainštaluje Neo4j Desktop, musí si vytvoríť lokálnu inštanciu, zapamätať si meno (väčšinou \texttt{neo4j}), heslo a uri (väčšinou \texttt{neo4j://127.0.0.1:7687}). Následne si treba stiahnuť
-knižnice z requirements.txt. Do vytvoreného súboru \textbf{.env}, používateľ zadá svoje API
+knižnice z \texttt{requirements.txt}. Do vytvoreného súboru \textbf{.env}, používateľ zadá svoje API
 kľúče pre OpenAI, Anthropic, Google a Neo4j.
 
 \begin{verbatim}
@@ -280,7 +280,7 @@ Využívaný model je gemini-3-flash kvôli jeho dobrým schopnostiam rozmýšľ
 
 \subsubsection{Schémov-riadené extrahovanie}
 Najprecíznejší krok extrakcie, ktorý zaručuje najvyššiu presnosť a kvalitu extrakcie. Tak isto ako v
-otvorenej doméne, aj tu je každý chunk je spracovaný paralelne.
+otvorenej doméne, aj tu je každý chunk spracovaný paralelne.
 LLM je poskytnutá ontológia z predošlého kroku a na jej základe extrahuje konzistentné entity a vzťahy.
 \texttt{Agent} vráti zoznamy \texttt{nodes} a \texttt{relationships}, ktoré sú následne transformované
 do \texttt{GraphDocument} objektu.
@@ -423,7 +423,7 @@ a \texttt{properties}. Pri \texttt{relationships} je \texttt{type}, \texttt{elem
   \begin{subfigure}[c]{0.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{../legal_graph_data.png}
-    \caption{Grafová databáza so dátami}
+    \caption{Grafová databáza s dátami}
     \label{fig:legal_graph_data}
   \end{subfigure}
 \end{figure}
@@ -480,7 +480,7 @@ Následujúci graf zobrazuje jednotlivé kroky, pri hľadaní odpovede na otázk
 \end{center}
 
 \subsection{Používateľ zadá otázku}
-Používateľ zadá otázku v prirodzenom jazyku, prostredníctvom metódy \texttt{graphrag.query}.
+Používateľ zadá otázku v prirodzenom jazyku, prostredníctvom metódy \textbf{query}.
 \begin{lstlisting}
 graphrag.query(user_question)
 \end{lstlisting}
@@ -519,8 +519,7 @@ umožňuje systému:
     \item \textbf{Dopĺňanie kontextu:} Ak odpoveď vyžaduje informáciu z inej časti grafu, model 
     iniciuje ďalšiu iteráciu dopytovania na základe novoobjavených uzlov. 
     \item \textbf{Eliminácia halucinácií:} Overením faktov priamo voči štruktúre grafu sa zabezpečí, 
-    že výsledná odpoveď bude podložená reálnymi vzťahmi v legislatívnom dokumente, nie len 
-    pravdepodobnostným odhadom modelu. 
+    že výsledná odpoveď bude podložená reálnymi vzťahmi.
 \end{itemize}
 
 \noindent Výsledkom je overený vedomostný základ, ktorý slúži ako presný podklad pre finálnu syntézu odpovede.

@@ -19,7 +19,7 @@ import spacy
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_extraction, system_prompt_for_extracting, system_prompt_for_generating_query, response_schema_for_generating_query
+from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd
 from examples import examples_for_extraction
 
 
@@ -384,7 +384,11 @@ class PDFGraphRAG:
     
 
 
-    # ---------------- PDF to Graph and Vector Processing
+    # ---------------- PDF to Graph and Vector Processing ---------------
+    class Schema:
+        nodes: List[str]
+        relationships: List[str]
+        
     
     def convert_to_graph_document(self, data, i, document) -> GraphDocument:
         """
@@ -494,6 +498,11 @@ class PDFGraphRAG:
             relationships=relationships,
             source=document
         )
+        
+        
+        
+    def _convert_to_schema(self, data) -> Schema:
+        pass
 
 
 
@@ -556,7 +565,93 @@ class PDFGraphRAG:
 
 
 
-    async def named_entity_extraction(
+
+    
+    def classification():
+        pass
+
+
+
+
+
+    async def open_domain_detection(
+        self,
+        i: int,
+        document: Document,
+    ) -> Schema:
+        """
+        Async function to entity labels and relationships from a document
+        and transform into a Schema.
+
+        Args:
+            document: The document to process
+
+        Returns:
+            Schema with extracted node labels and relationships
+        """
+        text = document.page_content
+        user_prompt = f"""
+
+        # Text:
+        {text}
+        """
+
+        # Create and run the agent
+        agent = create_agent(
+            model=self.openai_graph_transform,
+            response_format=ProviderStrategy(schema=response_schema_for_odd),
+            system_prompt=system_prompt_for_odd
+        )
+        response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
+
+        # structured_response is already a dict when using ProviderStrategy
+        data = response["structured_response"]
+        
+        print(data)
+
+        # Convert extracted data to Schema
+        schema = self.convert_to_graph_document(data)
+
+
+        return schema
+    
+    
+    
+    async def async_open_domain_detection(
+        self,
+        documents: List[Document],
+    ) -> List[Schema]:
+        """
+        Asynchronously process documents to extract schemas.
+
+        Args:
+            documents: List of documents to process
+
+        Returns:
+            List of Schema
+        """
+        print("Creating tasks for asynchronous processing of documents...")
+        tasks = [
+            asyncio.create_task(
+                self.open_domain_detection(
+                     i, doc
+                )
+            )
+            for i, doc in enumerate(documents)
+        ]
+        res = await asyncio.gather(*tasks)
+        return res
+    
+    
+    
+    
+    def schema_refinement():
+        pass
+    
+    
+    
+    
+    async def schema_driven_extraction(
         self,
         i: int,
         document: Document,
@@ -584,16 +679,8 @@ class PDFGraphRAG:
         """
         text = document.page_content
         user_prompt = f"""
-        Based on the following example, extract entities and relations from the provided text
+        Based on the following schema, extract entities and relationships from the provided text
 
-        
-        
-        {"# Allowed entities (Use the following entity types, don't use other entity that is not defined below): " + str(allowed_entities) if allowed_entities else ""}
-
-        {"# Allowed relationships (Use the following relation types, don't use other relation that is not defined below:): " + str(allowed_relationships) if allowed_relationships else ""}
-        
-        ## Important Instructions:
-        Use IDs in range {i*10000} to {(i+1)*10000 - 1} for entities in this chunk.
 
         # Text:
         {text}
@@ -603,8 +690,8 @@ class PDFGraphRAG:
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
-            response_format=ProviderStrategy(schema=response_schema_for_extraction),
-            system_prompt=system_prompt_for_extracting
+            response_format=ProviderStrategy(schema=response_schema_for_sde),
+            system_prompt=system_prompt_for_sde
         )
         response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
 
@@ -628,7 +715,7 @@ class PDFGraphRAG:
     
     
     
-    async def async_process(
+    async def async_schema_driven_extraction(
         self,
         documents: List[Document],
         allowed_entities: Optional[List[str]] = None,
@@ -650,7 +737,7 @@ class PDFGraphRAG:
         print("Creating tasks for asynchronous processing of documents...")
         tasks = [
             asyncio.create_task(
-                self.named_entity_extraction(
+                self.schema_driven_extraction(
                     i, doc, allowed_entities, allowed_relationships, strict_mode
                 )
             )
@@ -661,12 +748,23 @@ class PDFGraphRAG:
     
     
     
+    
+    
     def load_pdf(self, pdf_path: str):
         loader = PyPDFLoader(pdf_path)
         print("PDF loaded successfully.")
         return loader.load()
 
-    # send to claude api the file and then process
+
+
+    # --------- PROCESS STRATEGY ----------
+    # 1. classification
+    # 2. open domain schema detection
+    # 3. schema refinement
+    # 4. schema guided extraction
+
+
+
     def process(self, pdf_path: str, max_pages: int = None):
         
         # Load PDF documents
@@ -674,15 +772,15 @@ class PDFGraphRAG:
         if max_pages:
             documents = documents[:max_pages]
             
-        # allowed_entities = ["Paragraf", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Subjekt", "Dokument"]
-        # allowed_relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "RUSI", "DOPLNUJE", "PODMIENUJE"]
+            
+        document_classification = self.classification()
 
         
-        splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
+        splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
         chunked_documents = splitter.split_documents(documents)
 
         graph_docs = asyncio.run(
-            self.async_process(
+            self.async_open_domain_detection(
                 chunked_documents,
                 # allowed_entities,
                 # allowed_relationships,
@@ -690,6 +788,25 @@ class PDFGraphRAG:
             )
         )
         print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
+        
+        
+        refined_schema = self.schema_refinement()
+        
+        
+        splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
+        chunked_documents = splitter.split_documents(documents)
+        
+        graph_docs = asyncio.run(
+            self.async_schema_driven_extraction(
+                chunked_documents,
+                # allowed_entities,
+                # allowed_relationships,
+                strict_mode=self.strict_mode
+            )
+        )
+        print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
+        
+        
         
 
         graph_docs_json = [graph_document_to_json(doc) for doc in graph_docs]

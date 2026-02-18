@@ -19,7 +19,7 @@ import spacy
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd
+from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement
 from examples import examples_for_extraction
 
 
@@ -610,7 +610,7 @@ class PDFGraphRAG:
         print(data)
 
         # Convert extracted data to Schema
-        schema = self.convert_to_graph_document(data)
+        schema = self._convert_to_schema(data)
 
 
         return schema
@@ -630,7 +630,7 @@ class PDFGraphRAG:
         Returns:
             List of Schema
         """
-        print("Creating tasks for asynchronous processing of documents...")
+        print("creating tasks: OPEN-DOMAIN DETECTION")
         tasks = [
             asyncio.create_task(
                 self.open_domain_detection(
@@ -645,8 +645,46 @@ class PDFGraphRAG:
     
     
     
-    def schema_refinement():
-        pass
+    def schema_refinement(self, schema: Schema) -> Schema:
+        """
+        Function to refine and consolidate extracted schema information across documents, ensuring consistency and resolving conflicts.
+
+        Args:
+            schema: The schema to refine
+
+        Returns:
+            Schema with extracted node labels and relationships
+        """
+        
+        print("SCHEMA REFINEMENT")
+        
+        user_prompt = f"""
+        # Schema
+        ## Node Types:
+        {schema.nodes}
+        
+        ## Relationship Types:
+        {schema.relationships}
+        """
+
+        # Create and run the agent
+        agent = create_agent(
+            model=self.gemini_client,
+            response_format=ToolStrategy(Schema()),
+            system_prompt=system_prompt_for_schema_refinement
+        )
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+
+        # structured_response is already a dict when using ProviderStrategy
+        data = response["structured_response"]
+        
+        print(data)
+
+        # Convert extracted data to Schema
+        schema = self._convert_to_schema(data)
+
+
+        return schema
     
     
     
@@ -655,9 +693,7 @@ class PDFGraphRAG:
         self,
         i: int,
         document: Document,
-        allowed_entities: Optional[List[str]] = None,
-        allowed_relationships: Optional[List[str]] = None,
-        strict_mode: bool = False
+        schema: Schema
     ) -> GraphDocument:
         """
         Async function to extract named entities and relationships from a document
@@ -666,21 +702,21 @@ class PDFGraphRAG:
         Args:
             i: Document index (used for chunk ID generation)
             document: The document to process
-            allowed_entities: List of allowed node types for extraction guidance and filtering
-            allowed_relationships: List of allowed relationship types
-            strict_mode: If True, applies post-extraction filtering to enforce schema
+            schema: The Schema defining allowed node labels and relationship types
 
         Returns:
             GraphDocument with extracted and optionally filtered nodes/relationships
-            
-            TODO: add this
-            # Examples:
-            {examples_for_extraction}
         """
         text = document.page_content
         user_prompt = f"""
         Based on the following schema, extract entities and relationships from the provided text
-
+        
+        # Schema
+        ## Node Types:
+        {schema.nodes}
+        
+        ## Relationship Types:
+        {schema.relationships}
 
         # Text:
         {text}
@@ -718,9 +754,7 @@ class PDFGraphRAG:
     async def async_schema_driven_extraction(
         self,
         documents: List[Document],
-        allowed_entities: Optional[List[str]] = None,
-        allowed_relationships: Optional[List[str]] = None,
-        strict_mode: bool = True
+        schema: Schema
     ) -> List[GraphDocument]:
         """
         Asynchronously process documents to extract graph documents.
@@ -734,19 +768,17 @@ class PDFGraphRAG:
         Returns:
             List of GraphDocuments
         """
-        print("Creating tasks for asynchronous processing of documents...")
+        print("creating tasks: SCHEMA-DRIVEN EXTRACTION")
         tasks = [
             asyncio.create_task(
                 self.schema_driven_extraction(
-                    i, doc, allowed_entities, allowed_relationships, strict_mode
+                    i, doc, schema
                 )
             )
             for i, doc in enumerate(documents)
         ]
         res = await asyncio.gather(*tasks)
         return res
-    
-    
     
     
     
@@ -782,9 +814,6 @@ class PDFGraphRAG:
         graph_docs = asyncio.run(
             self.async_open_domain_detection(
                 chunked_documents,
-                # allowed_entities,
-                # allowed_relationships,
-                strict_mode=self.strict_mode
             )
         )
         print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
@@ -799,9 +828,7 @@ class PDFGraphRAG:
         graph_docs = asyncio.run(
             self.async_schema_driven_extraction(
                 chunked_documents,
-                # allowed_entities,
-                # allowed_relationships,
-                strict_mode=self.strict_mode
+                schema=refined_schema
             )
         )
         print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")

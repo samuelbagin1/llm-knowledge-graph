@@ -1,6 +1,7 @@
 import datetime
 import json
 import os
+from dataclasses import dataclass
 from typing import Dict, List, Any, Optional, Generic, TypeVar
 from langchain_neo4j import Neo4jGraph, Neo4jVector, GraphCypherQAChain
 from langchain_experimental.graph_transformers import LLMGraphTransformer
@@ -385,7 +386,9 @@ class PDFGraphRAG:
 
 
     # ---------------- PDF to Graph and Vector Processing ---------------
+
     class Schema:
+        """Schema dataclass to hold extracted node types and relationship types."""
         nodes: List[str]
         relationships: List[str]
         
@@ -654,6 +657,7 @@ Text:
     
     
     
+    
     def schema_refinement(self, schema: Schema) -> Schema:
         """
         Function to refine and consolidate extracted schema information across documents, ensuring consistency and resolving conflicts.
@@ -665,9 +669,26 @@ Text:
             Schema with extracted node labels and relationships
         """
         
+        @dataclass
+        class Schema:
+            """Schema dataclass to hold extracted node types and relationship types."""
+            nodes: List[str]
+            relationships: List[str]
+            
+            
+        
         print("SCHEMA REFINEMENT")
         
         user_prompt = f"""
+        Refine the following raw schema produced by open-domain detection. Your goal is to produce a clean, consistent, deduplicated schema suitable for schema-driven entity and relationship extraction.
+
+Step through the following reasoning before producing your answer:
+
+1. Review all node_types. Identify any that are semantically equivalent, overlapping, or overly specific. Merge or generalize as needed.
+2. Review all relationship_types. Identify any that are synonymous, near-duplicate, or inconsistently named. Unify them under a single canonical label.
+3. Verify cross-consistency: ensure every node type that participates in a relationship is present in the final node_types list.
+4. Document every merge decision in the merge_log with the canonical label as key and the original labels as values.
+        
         # Schema
         ## Node Types:
         {schema.nodes}
@@ -679,8 +700,8 @@ Text:
         # Create and run the agent
         agent = create_agent(
             model=self.gemini_client,
-            response_format=ToolStrategy(Schema()),
-            system_prompt=system_prompt_for_schema_refinement
+            system_prompt=system_prompt_for_schema_refinement,
+            response_format=ToolStrategy(Schema)
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
@@ -694,6 +715,7 @@ Text:
 
 
         return schema
+    
     
     
     

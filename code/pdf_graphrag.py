@@ -580,7 +580,7 @@ class PDFGraphRAG:
         document: Document,
     ) -> Schema:
         """
-        Async function to entity labels and relationships from a document
+        Async function to extract entity labels and relationships from a document
         and transform into a Schema.
 
         Args:
@@ -589,11 +589,19 @@ class PDFGraphRAG:
         Returns:
             Schema with extracted node labels and relationships
         """
+        print(f"ODD: chunk {i}")
+        
         text = document.page_content
         user_prompt = f"""
+        Identify every distinct node type and relationship type present in the following text. Reason through the text step by step before producing your answer:
 
-        # Text:
-        {text}
+1. Read the text carefully.
+2. Identify all distinct node types, using general elementary labels. For each, note the supporting phrase(s) that justify its inclusion.
+3. Identify all distinct relationship types between entities, using general timeless labels. For each, note the supporting phrase(s).
+4. If any type is ambiguous or context-dependent, note the ambiguity briefly.
+
+Text:
+{text}
         """
 
         # Create and run the agent
@@ -639,6 +647,7 @@ class PDFGraphRAG:
             )
             for i, doc in enumerate(documents)
         ]
+        
         res = await asyncio.gather(*tasks)
         return res
     

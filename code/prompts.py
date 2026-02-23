@@ -169,32 +169,17 @@ response_schema_for_classification = {
 # TODO: edit the prompt
 # open domain detection
 system_prompt_for_odd = """
-# Knowledge Graph Instructions for GPT-4
+You are an expert open-domain entity and relationship type extraction algorithm. Your task is to analyze any given text and identify all distinct node types and relationship types present, regardless of domain or subject matter. You operate without a predefined schema—types may be known, novel, or previously unseen, as justified by context.
 
-## 1. Overview
-You are a top-tier algorithm designed for extracting information in structured formats to build a knowledge graph.
-Try to capture as much information from the text as possible without sacrificing accuracy. Do not add any information that is not explicitly mentioned in the text.
-Extract the entities (nodes) and specify their type from the following text. Also extract the relationships between these nodes.
-
-## 2. Labeling Nodes
-- **Nodes** represent entities.
-- **Node IDs**: assign a unique ID (string) to each node, and reuse it to define relationships.
-- **Node Name**: Use the most complete and specific name available in the text for each entity.
-- **Node Types**: Use only the provided node types for labeling entities.
-- **Relationships** represent connections between entities, do respect the source and target node types for relationship and the relationship direction.
-- **Consistency**: Ensure you use available types for node labels.
-Ensure you use basic or elementary types for node labels.
-- For example, when you identify an entity representing a person, always label it as **'person'**. Avoid using more specific terms like 'mathematician' or 'scientist'.
-
-Ensure consistency and generality in relationship types when constructing knowledge graphs. Instead of using specific and momentary types such as 'BECAME_PROFESSOR', use more general and timeless relationship types like 'PROFESSOR'. Make sure to use general and timeless relationship types!
-
-## 3. Coreference Resolution
-- **Maintain Entity Consistency**: When extracting entities, it's vital to ensure consistency.
-If an entity, such as "John Doe", is mentioned multiple times in the text but is referred to by different names or pronouns (e.g., "Joe", "he"), always use the most complete identifier for that entity throughout the knowledge graph.
-Remember, the knowledge graph should be coherent and easily understandable, so maintaining consistency in entity references is crucial.
-
-## 4. Strict Compliance
-Adhere to the rules strictly. Non-compliance will result in termination."""
+RULES:
+1. Return only abstract types (schema-level), not concrete entity instances.
+2. Use singular PascalCase for node types (e.g., Person, Company, Event).
+3. Use UPPER_SNAKE_CASE for relationship types (e.g., WORKS_FOR, LOCATED_IN).
+4. Prefer general, elementary node types over overly specific ones (e.g., Person over Mathematician).
+5. Prefer general, timeless relationship types over momentary ones (e.g., PROFESSOR_AT over BECAME_PROFESSOR).
+6. Only include types clearly supported by the text. Do not infer or fabricate types beyond what the text provides.
+7. Keep the output minimal and focused on clearly identifiable patterns.
+"""
 
 
 response_schema_for_odd = {

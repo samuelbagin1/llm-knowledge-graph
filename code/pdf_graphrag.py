@@ -17,6 +17,7 @@ from openai import embeddings
 from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter, SpacyTextSplitter
 import spacy
 
+from classes import Schema, ClassifiedDocument
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
@@ -386,11 +387,6 @@ class PDFGraphRAG:
 
 
     # ---------------- PDF to Graph and Vector Processing ---------------
-
-    class Schema:
-        """Schema dataclass to hold extracted node types and relationship types."""
-        nodes: List[str]
-        relationships: List[str]
         
     
     def _convert_to_graph_document(self, data, i, document) -> GraphDocument:
@@ -678,7 +674,7 @@ class PDFGraphRAG:
         """
         
         @dataclass
-        class Schema:
+        class SchemaResponse:
             """Schema dataclass to hold extracted node types and relationship types."""
             nodes: List[str]
             relationships: List[str]
@@ -741,7 +737,7 @@ class PDFGraphRAG:
         agent = create_agent(
             model=self.gemini_client,
             system_prompt=system_prompt_for_schema_refinement,
-            response_format=ToolStrategy(Schema)
+            response_format=ToolStrategy(SchemaResponse)
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
@@ -778,6 +774,8 @@ class PDFGraphRAG:
         Returns:
             GraphDocument with extracted and optionally filtered nodes/relationships
         """
+        print(f"SDE: chunk {i}")
+        
         text = document.page_content
         user_prompt = f"""
         Extract all entities and relationships from the following text using ONLY the entity types and relationship types defined in the schema below. Do not use types outside this schema. If an entity or relationship does not match the schema, omit it.

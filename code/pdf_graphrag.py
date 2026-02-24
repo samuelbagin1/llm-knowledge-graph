@@ -17,6 +17,7 @@ from openai import embeddings
 from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter, SpacyTextSplitter
 import spacy
 
+from classification import classify
 from classes import Schema, ClassifiedDocument
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
@@ -573,8 +574,8 @@ class PDFGraphRAG:
 
 
     
-    def classification():
-        pass
+    def classification(documents: List[Document]) -> ClassifiedDocument:
+        return classify(documents)
 
 
 

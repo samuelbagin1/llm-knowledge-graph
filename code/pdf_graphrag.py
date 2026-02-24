@@ -393,7 +393,7 @@ class PDFGraphRAG:
         relationships: List[str]
         
     
-    def convert_to_graph_document(self, data, i, document) -> GraphDocument:
+    def _convert_to_graph_document(self, data, i, document) -> GraphDocument:
         """
         Convert extracted data into a GraphDocument.
 
@@ -505,7 +505,14 @@ class PDFGraphRAG:
         
         
     def _convert_to_schema(self, data) -> Schema:
-        pass
+        """
+        Convert LLM response data (matching response_schema_for_odd or
+        response_schema_for_schema_refinement) into a Schema instance.
+        """
+        return self.Schema(
+            nodes=data.get("node_types", []),
+            relationships=data.get("relationship_types", []),
+        )
 
 
 
@@ -598,13 +605,14 @@ class PDFGraphRAG:
         user_prompt = f"""
         Identify every distinct node type and relationship type present in the following text. Reason through the text step by step before producing your answer:
 
-1. Read the text carefully.
-2. Identify all distinct node types, using general elementary labels. For each, note the supporting phrase(s) that justify its inclusion.
-3. Identify all distinct relationship types between entities, using general timeless labels. For each, note the supporting phrase(s).
-4. If any type is ambiguous or context-dependent, note the ambiguity briefly.
+        # RULES
+        1. Read the text carefully.
+        2. Identify all distinct node types, using general elementary labels. For each, note the supporting phrase(s) that justify its inclusion.
+        3. Identify all distinct relationship types between entities, using general timeless labels. For each, note the supporting phrase(s).
+        4. If any type is ambiguous or context-dependent, note the ambiguity briefly.
 
-Text:
-{text}
+        # TEXT
+        {text}
         """
 
         # Create and run the agent
@@ -658,7 +666,7 @@ Text:
     
     
     
-    def schema_refinement(self, schema: Schema) -> Schema:
+    def schema_refinement(self, odd_schema: Schema, existing_schema: Schema) -> Schema:
         """
         Function to refine and consolidate extracted schema information across documents, ensuring consistency and resolving conflicts.
 
@@ -682,19 +690,51 @@ Text:
         user_prompt = f"""
         Refine the following raw schema produced by open-domain detection. Your goal is to produce a clean, consistent, deduplicated schema suitable for schema-driven entity and relationship extraction.
 
-Step through the following reasoning before producing your answer:
+        # REFINEMENT MODE
+        You are provided with two inputs:
+        1. The raw schema from open-domain detection.
+        2. A base ontology (existing schema), if available.
 
-1. Review all node_types. Identify any that are semantically equivalent, overlapping, or overly specific. Merge or generalize as needed.
-2. Review all relationship_types. Identify any that are synonymous, near-duplicate, or inconsistently named. Unify them under a single canonical label.
-3. Verify cross-consistency: ensure every node type that participates in a relationship is present in the final node_types list.
-4. Document every merge decision in the merge_log with the canonical label as key and the original labels as values.
+        {"""
+        If a base ontology is provided:
+        - Align the raw schema to the base ontology where there is clear semantic overlap. Map raw types to existing base types when they are equivalent or near-synonymous.
+        - Preserve any raw types that are genuinely distinct and not represented in the base ontology. Add them to the refined schema as new types.
+        - Do not force-fit distinct raw types into base ontology types. Only merge when semantic alignment is clear.
+        - The base ontology takes naming precedence: if a raw type merges into a base type, adopt the base ontology's label.
         
-        # Schema
+        """ if existing_schema else """ 
+        
+        If no base ontology is provided:
+        - Refine the raw schema standalone by merging semantically similar types and normalizing labels.
+        """}
+
+        # RULES
+        - This is a light refinement pass. Only merge types with clear semantic overlap.
+        - If types are distinct, keep them — do not over-consolidate.
+        - Prefer the more general and reusable label when merging.
+        - Do not invent types absent from both the raw schema and the base ontology.
+        - Do not drop genuinely distinct types to minimize the schema.
+
+        Step through the following reasoning before producing your answer:
+        1. Review all node_types against the base ontology (if provided). Identify semantic matches, overlaps, and genuinely new types.
+        2. Review all relationship_types against the base ontology (if provided). Identify synonymous, near-duplicate, or already-covered types versus distinct new ones.
+        3. Merge only where semantic similarity is clear. Retain distinct types as-is.
+        4. Verify cross-consistency: ensure every node type that participates in a relationship is present in the final node_types list.
+        5. Document every merge decision in the merge_log with the canonical label as key and the original labels as values.
+
+        # BASE ONTOLOGY
         ## Node Types:
-        {schema.nodes}
-        
+        {existing_schema.nodes if existing_schema else "None provided"}
+
         ## Relationship Types:
-        {schema.relationships}
+        {existing_schema.relationships if existing_schema else "None provided"}
+
+        # OPEN-DOMAIN DETECTED SCHEMA
+        ## Node Types:
+        {odd_schema.nodes}
+
+        ## Relationship Types:
+        {odd_schema.relationships}
         """
 
         # Create and run the agent
@@ -740,16 +780,16 @@ Step through the following reasoning before producing your answer:
         """
         text = document.page_content
         user_prompt = f"""
-        Based on the following schema, extract entities and relationships from the provided text
-        
-        # Schema
-        ## Node Types:
+        Extract all entities and relationships from the following text using ONLY the entity types and relationship types defined in the schema below. Do not use types outside this schema. If an entity or relationship does not match the schema, omit it.
+
+        # SCHEMA
+        ## Entity Types:
         {schema.nodes}
-        
+
         ## Relationship Types:
         {schema.relationships}
 
-        # Text:
+        # TEXT:
         {text}
         """
 
@@ -768,15 +808,15 @@ Step through the following reasoning before producing your answer:
         print(data)
 
         # Convert to graph document with validation and formatting
-        graph_document = self.convert_to_graph_document(data, i, document)
+        graph_document = self._convert_to_graph_document(data, i, document)
 
         # Apply strict mode filtering if enabled
-        if strict_mode and (allowed_entities or allowed_relationships):
-            graph_document = self._filter_by_strict_mode(
-                graph_document,
-                allowed_entities=allowed_entities,
-                allowed_relationships=allowed_relationships
-            )
+        # if strict_mode and (allowed_entities or allowed_relationships):
+        #     graph_document = self._filter_by_strict_mode(
+        #         graph_document,
+        #         allowed_entities=allowed_entities,
+        #         allowed_relationships=allowed_relationships
+        #     )
 
         return graph_document
     

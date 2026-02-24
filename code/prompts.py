@@ -1,30 +1,25 @@
 system_prompt_for_sde = """
-# Knowledge Graph Instructions for GPT-4
+You are an expert knowledge graph extraction algorithm. Your task is to extract named entities (nodes) and relationships from text according to a provided ontology schema.
 
-## 1. Overview
-You are a top-tier algorithm designed for extracting information in structured formats to build a knowledge graph.
-Try to capture as much information from the text as possible without sacrificing accuracy. Do not add any information that is not explicitly mentioned in the text.
-Extract the entities (nodes) and specify their type from the following text. Also extract the relationships between these nodes.
+## Core Principles
+- Extract as much information as possible without sacrificing accuracy.
+- Do not add any information that is not explicitly mentioned in the text.
+- Use ONLY the entity types and relationship types defined in the provided schema. Do not invent or use types outside the schema.
 
-## 2. Labeling Nodes
-- **Nodes** represent entities.
-- **Node IDs**: assign a unique ID (string) to each node, and reuse it to define relationships.
-- **Node Name**: Use the most complete and specific name available in the text for each entity.
-- **Node Types**: Use only the provided node types for labeling entities.
-- **Relationships** represent connections between entities, do respect the source and target node types for relationship and the relationship direction.
-- **Consistency**: Ensure you use available types for node labels.
-Ensure you use basic or elementary types for node labels.
-- For example, when you identify an entity representing a person, always label it as **'person'**. Avoid using more specific terms like 'mathematician' or 'scientist'.
+## Node Extraction
+- **Label Consistency**: Always use the entity types provided in the schema. Do not substitute with more specific or alternative labels.
+- **Node IDs**: Use the most complete human-readable name or identifier found in the text. Never use integers as node IDs.
+- **Properties**: Include properties only when explicitly stated in the text and confidently inferable.
 
-Ensure consistency and generality in relationship types when constructing knowledge graphs. Instead of using specific and momentary types such as 'BECAME_PROFESSOR', use more general and timeless relationship types like 'PROFESSOR'. Make sure to use general and timeless relationship types!
+## Relationship Extraction
+- Use ONLY relationship types from the provided schema.
+- Ensure correct directionality: the start node and end node must match the semantic direction of the relationship.
+- Include relationship properties only when explicitly stated in the text.
 
-## 3. Coreference Resolution
-- **Maintain Entity Consistency**: When extracting entities, it's vital to ensure consistency.
-If an entity, such as "John Doe", is mentioned multiple times in the text but is referred to by different names or pronouns (e.g., "Joe", "he"), always use the most complete identifier for that entity throughout the knowledge graph.
-Remember, the knowledge graph should be coherent and easily understandable, so maintaining consistency in entity references is crucial.
-
-## 4. Strict Compliance
-Adhere to the rules strictly. Non-compliance will result in termination."""
+## Coreference Resolution
+- If an entity is mentioned multiple times by different names or pronouns (e.g., "John Doe", "Joe", "he"), always resolve to the most complete identifier as the node ID.
+- Maintain consistency across all references to the same entity.
+"""
 
 
 response_schema_for_sde = {
@@ -187,49 +182,50 @@ response_schema_for_odd = {
             "type": "object",
             "description": "Result schema for open domain detection of entities and relationships from text",
             "properties": {
-                "list_nodes": {
+                "node_types": {
                     "type": "array",
-                    "description": "List of extracted entity labels from the text",
+                    "description": "List of canonical node type labels",
                     "items": {
                         "type": "string",
                         "description": "The label/type of the entity (e.g., Person, Organization)"
                     }
                 },
-                "list_relationships": {
+                "relationship_types": {
                     "type": "array",
-                    "description": "List of relationships between nodes",
+                    "description": "List of canonical relationship types",
                     "items": {
                         "type": "string",
-                        "description": "The type of relationship between nodes (e.g., KNOWS, WORKS_AT)"
+                        "description": "The type of relationship between nodes (e.g., WORKS_FOR, LOCATED_IN)"
                     }
                 }
             },
-            "required": ["list_nodes", "list_relationships"]
+            "required": ["node_types", "relationship_types"]
         }
 
 
 
-# TODO: edit the prompt
+
 # schema refinement
 system_prompt_for_schema_refinement = """
 You are an expert knowledge graph schema refinement algorithm. You receive a raw schema (node_types and relationship_types) produced by open-domain detection and refine it into a clean, consistent, deduplicated schema ready for schema-driven extraction.
 
-YOUR OBJECTIVES:
-1. **Deduplicate**: Merge relationship types that are semantically equivalent or near-synonymous into a single canonical type (e.g., WORKS_AT + EMPLOYED_BY → WORKS_FOR).
+This is a light refinement pass — not a restructuring. Only merge types with clear semantic overlap. If types are distinct, keep them.
+
+# YOUR OBJECTIVES:
+1. **Deduplicate**: Merge node types and relationship types that are semantically equivalent or near-synonymous into a single canonical type (e.g., WORKS_AT + EMPLOYED_BY → WORKS_FOR).
 2. **Normalize**: Ensure all node types use singular PascalCase and all relationship types use UPPER_SNAKE_CASE consistently.
 3. **Generalize**: Replace overly specific or momentary types with general, timeless equivalents (e.g., BECAME_CEO → LEADS; Scientist → Person).
-4. **Ensure Consistency**: Every node type referenced in relationship patterns must exist in the node_types list. Remove orphan types that have no clear relationship context, unless they are clearly justified.
-5. **Resolve Ambiguity**: If two types overlap semantically, choose the more general one and document the merge.
-6. **Preserve Coverage**: Do not drop types that represent genuinely distinct concepts. Only merge when semantic overlap is clear.
+4. **Align to Base Ontology**: If a base ontology is provided, align raw types to existing base types where there is clear semantic match. The base ontology takes naming precedence — adopt its labels when merging. Preserve any raw types that are genuinely distinct and not represented in the base ontology as new additions.
+5. **Ensure Consistency**: Every node type referenced in relationship patterns must exist in the final node_types list. Remove orphan types that have no clear relationship context, unless they are clearly justified.
+6. **Resolve Ambiguity**: If two types overlap semantically, choose the more general one and document the merge.
+7. **Preserve Coverage**: Do not drop types that represent genuinely distinct concepts. Do not force-fit distinct raw types into base ontology types. Only merge when semantic alignment is clear.
 
-RULES:
-- Do not invent new types that were not present or clearly implied in the input schema.
+# RULES:
+- Do not invent new types that were not present or clearly implied in the input schema or base ontology.
 - Do not remove types that are semantically distinct just to minimize the schema.
-- When merging, always select the most general and widely applicable label as the canonical form.
-- Output a merge log so the downstream extraction step knows which original types map to which canonical types.
-
-
-Only include entries in merge_log where a merge actually occurred. If a type was kept as-is, omit it from the log."""
+- When merging, always select the most general and widely applicable label as the canonical form (base ontology label takes precedence if available).
+- Only include entries in merge_log where a merge actually occurred. If a type was kept as-is, omit it from the log.
+"""
 
 
 response_schema_for_schema_refinement = {

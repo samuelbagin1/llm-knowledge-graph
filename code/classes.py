@@ -9,7 +9,7 @@ class Schema:
 class Type:
     type_of: str
     scoring: float
-    reasong: str
+    reason: str
 
     
 class ClassifiedDocument:

@@ -18,7 +18,7 @@ from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTe
 import spacy
 
 from classification import classify
-from classes import Schema, ClassifiedDocument
+from classes import Schema, ClassifiedDocument, Type, SVO, Question
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
@@ -962,7 +962,7 @@ class PDFGraphRAG:
         
         
         
-
+# ====================================================================================================
     # ---------------- QUERYING METHODS ----------------
     
     def query_graph_database(self, question: str, similar_nodes: str, similar_relationships: str, svo: Dict) -> Dict[str, Any]:
@@ -1123,30 +1123,48 @@ Begin by identifying the relevant node labels and relationship types, then query
     
     
     
-    def query_vector_database(self, database: Neo4jVector, question: str, svo: List = None, k: int = 5):
+    def query_vector_database(self, database: Neo4jVector, question: str, svo: SVO = None, k: int = 5) -> List[Any]:
         """
         Function: Query vector database to retrieve relevant chunks and nodes
 
         Args:
             question: Test question to answer using vector search
             database: 'chunks' or 'nodes' to specify which vector store to query
-            svo: Subject-Verb-Object dictionary extracted from the question (optional)
+            svo: Subject-Verb-Object object extracted from the question (optional)
 
         Returns:
             vector results
         """
 
-        vector_results = database.similarity_search(
+        question_results = database.similarity_search(
             query=question,
             k=k
         )
         
-        if svo is not None:
-            for item in svo:
-                vector_results.append(database.similarity_search(query=item))
+        sub_result = database.similarity_search(query=svo.sub, k=k)
+        obj_result = database.similarity_search(query=svo.obj, k=k)
+        
 
-        return vector_results
-    
+        return [question_results, sub_result, obj_result]
+        
+        
+    def query_vector_database_relationships(self, database: Neo4jVector, question: str, svo: SVO = None, k: int = 5) -> List[Any]:
+        """
+        Function: Query vector database to retrieve relevant relationships based on question and SVO
+
+        Args:
+            question: Test question to answer using vector search
+            svo: Subject-Verb-Object object extracted from the question (optional)
+
+        Returns:
+            vector results for relationships
+        """
+
+        question_results = database.similarity_search(query=question, k=k)
+        verb_result = database.similarity_search(query=svo.verb, k=k)
+        
+
+        return [question_results, verb_result]
     
     
     def query_chunks_by_similarity(self, question: str, k: int = 5):
@@ -1350,8 +1368,7 @@ Generate {number_of_questions} alternative phrasings."""
     def named_entity_extraction_from_sentence(
         self,
         text: str,
-        allowed_entities: Optional[List[str]] = None,
-        allowed_relationships: Optional[List[str]] = None,
+        schema: Schema,
     ) -> GraphDocument:
         """
         Async function to extract named entities and relationships from a document
@@ -1367,23 +1384,24 @@ Generate {number_of_questions} alternative phrasings."""
             GraphDocument with extracted and optionally filtered nodes/relationships
         """
         user_prompt = f"""
-        Extract named entities and relationships from the text
+        Extract all entities and relationships from the following text using ONLY the entity types and relationship types defined in the schema below. Do not use types outside this schema. If an entity or relationship does not match the schema, omit it.
 
-        Allowed entities:
-        {allowed_entities}
+        # SCHEMA
+        ## Entity Types:
+        {schema.nodes}
 
-        Allowed relationships:
-        {allowed_relationships}
+        ## Relationship Types:
+        {schema.relationships}
 
-        Text:
+        # TEXT:
         {text}
         """
 
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
-            response_format=ProviderStrategy(schema=response_schema_for_extraction),
-            system_prompt=system_prompt_for_extracting
+            response_format=ProviderStrategy(schema=response_schema_for_sde),
+            system_prompt=system_prompt_for_sde
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
@@ -1482,18 +1500,25 @@ Identify the SVO components."""
         
         various_questions = self.create_variety_questions(question, number_of_questions=3)
         
-        questions = [{'id': 'question0', 'question': question, 'svo': self.find_svo(question)}]
+        questions = []
+        
+        questions.append(Question(id='question0', question=question, svo=self.find_svo(question)))
         for i, q in enumerate(various_questions):
             questions.append(
-                {'id': f'question{i}', 'question': q, 'svo': self.find_svo(q)}
-            )  
-        print(f"\nGenerated Reformulated Questions\n\n: {[q['question'] + '\nSVO: ' + str(q['svo']) + '\n' for q in questions]}")
+                Question(id=f'question{i}', question=q, svo=self.find_svo(q))
+            )
+            
+        print(f"\nGenerated Reformulated Questions\n\n: {[q.question + '\nSVO: ' + str(q.svo) + '\n' for q in questions]}")
         
         
-        for i, q in enumerate(questions):
-            sub_obj = q['svo']['subject'] + q['svo']['object']
-            q['similar_nodes'] = self.query_vector_database(database=self.vector_store_nodes, question=q['question'], svo=sub_obj)
-            q['similar_relationships'] = self.query_vector_database(database=self.vector_store_relationships, question=q['question'], svo=q['svo']['verb'])
+        
+        
+        for i, q in enumerate(questions):       
+            q.similar_nodes = self.query_vector_database(database=self.vector_store_nodes, question=q.question, svo=q.svo)
+            q.similar_rel = self.query_vector_database_relationships(database=self.vector_store_relationships, question=q.question, svo=q.svo)
+            q.similar_nodes.append(self.named_entity_extraction_from_sentence(text=q.question, schema=self.graph.get_schema()))
+            
+        
         
         
         graph_schema = self.graph.get_schema()

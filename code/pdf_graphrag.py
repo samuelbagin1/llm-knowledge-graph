@@ -24,6 +24,7 @@ from langchain_community.graphs.graph_document import GraphDocument, Node, Relat
 import asyncio
 from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement
 from examples import examples_for_extraction
+from pydantic import BaseModel, Field
 
 
 # Default node type when type is missing or empty
@@ -150,12 +151,14 @@ def serialize_for_json(obj):
 class PDFGraphRAG:
     
     # CONSTRUCTOR
-    def __init__(self, vector_store_chunk_name: str, vector_store_nodes_name: str, vector_store_relationships_name: str,
+    def __init__(self,
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str,
                  openai_api_key: str = None, google_api_key: str = None,
                  claude_api_key: str = None, advanced_search: bool = False,
                  strict_mode: bool = False):
+        
         self.strict_mode = strict_mode  # Enforce schema compliance via post-extraction filtering
+        
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
@@ -170,9 +173,9 @@ class PDFGraphRAG:
         self._neo4j_uri = neo4j_uri
         self._neo4j_user = neo4j_user
         self._neo4j_password = neo4j_password
-        self._vector_store_chunk_name = vector_store_chunk_name
-        self._vector_store_nodes_name = vector_store_nodes_name
-        self._vector_store_relationships_name = vector_store_relationships_name
+        self._vector_store_chunk_name = "chunk_vector_store"
+        self._vector_store_nodes_name = "nodes_vector_store"
+        self._vector_store_relationships_name = "relationships_vector_store"
         self._advanced_search = advanced_search
 
         # Initialize vector stores - will be created when first documents are added
@@ -220,13 +223,7 @@ class PDFGraphRAG:
         """Initialize vector stores, creating empty ones if indices don't exist"""
         try:
             # Try to load existing indices
-            self.vector_store_nodes = Neo4jVector.from_existing_index(
-                self.embeddings,
-                url=self._neo4j_uri,
-                username=self._neo4j_user,
-                password=self._neo4j_password,
-                index_name=self._vector_store_nodes_name,
-            )
+            
             self.vector_store_relationships = Neo4jVector.from_existing_index(
                 self.embeddings,
                 url=self._neo4j_uri,
@@ -234,13 +231,15 @@ class PDFGraphRAG:
                 password=self._neo4j_password,
                 index_name=self._vector_store_relationships_name,
             )
-            print("Loaded existing vector store indices")
+            
+            
         except ValueError:
             # Indices don't exist yet - set to None and they'll be created on first use
-            print("Vector store indices not found - will be created when documents are added")
-            self.vector_store_chunk = None
-            self.vector_store_nodes = None
+            print("Vector store indice for relationship not found - will be created when documents are added")
             self.vector_store_relationships = None
+            
+            
+            
 
     # ----------------- METHODS -----------------
     def add_graph_docs_without_apoc(self, graph_docs):
@@ -272,6 +271,19 @@ class PDFGraphRAG:
                     "target_id": rel.target.id,
                     "properties": rel.properties or {}
                 })
+                
+                
+    def get_graph_schema(self) -> Schema:
+        # Get node labels and relationship types
+        node_labels = self.graph.query("CALL db.labels()")
+        rel_types = self.graph.query("CALL db.relationshipTypes()")
+        
+        schema = Schema(
+            nodes=[node['label'] for node in node_labels],
+            relationships=[rel['relationshipType'] for rel in rel_types]
+        )
+        
+        return schema
                 
                 
                 
@@ -337,6 +349,9 @@ class PDFGraphRAG:
             print(f"Error retrieve schema: {e}")
             return "Schema information unavailable", [], []
         
+        
+        
+        
     # TODO
     def get_help():
         help_text = """
@@ -376,13 +391,11 @@ class PDFGraphRAG:
 
         chunk_id = f"chunk_{i}"
 
-        chunk_embedding = self.embeddings.embed_query(document.page_content)
         chunk_node = Node(
             id=chunk_id,
             type="Chunk",
             properties={
                 "text": document.page_content,
-                "embedding": chunk_embedding,
                 "page": document.metadata.get("page", 0)
             }
         )
@@ -653,8 +666,8 @@ class PDFGraphRAG:
         @dataclass
         class SchemaResponse:
             """Schema dataclass to hold extracted node types and relationship types."""
-            nodes: List[str]
-            relationships: List[str]
+            nodes: List[str] = Field(description="List of node types in the refined schema")
+            relationships: List[str] = Field(description="List of relationship types in the refined schema")
             
             
         
@@ -854,15 +867,18 @@ class PDFGraphRAG:
         splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
         chunked_documents = splitter.split_documents(documents)
 
-        graph_docs = asyncio.run(
+        extracted_schema_list = asyncio.run(
             self.async_open_domain_detection(
                 chunked_documents,
             )
         )
         print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
         
-        
-        refined_schema = self.schema_refinement()
+        extracted_schema = Schema(
+            nodes=list(set(node for schema in extracted_schema_list for node in schema.nodes)),
+            relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
+        )
+        refined_schema = self.schema_refinement(odd_schema=extracted_schema, existing_schema=self.get_graph_schema())
         
         
         splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
@@ -894,28 +910,38 @@ class PDFGraphRAG:
         )
         
         self.graph.refresh_schema()
-            
-        """
-        all_nodes = self.graph.query("MATCH (n) RETURN n")
-        all_nodes = [Document(page_content=node['n']) for node in all_nodes]
+        # Remove __Entity__ label from Chunk nodes so the node vector store excludes them
+        self.graph.query("MATCH (n:Chunk:__Entity__) REMOVE n:__Entity__")
+        
+        
+        # create vector stores from existing graph
+        self.vector_store_nodes = Neo4jVector.from_existing_graph(
+            embedding=self.embeddings,
+            url=self._neo4j_uri,
+            username=self._neo4j_user,
+            password=self._neo4j_password,
+            index_name=self._vector_store_nodes_name,
+            node_label="__Entity__",
+            text_node_properties=["id"],  # properties to concatenate as text to embed
+            embedding_node_property="embedding",
+        )
+        
+        self.vector_store_chunks = Neo4jVector.from_existing_graph(
+            embedding=self.embeddings,
+            url=self._neo4j_uri,
+            username=self._neo4j_user,
+            password=self._neo4j_password,
+            index_name=self._vector_store_chunk_name,
+            node_label="Chunk",
+            text_node_properties=["text"],
+            embedding_node_property="embedding",
+        )
+        
+        
         rel_types = self.graph.query("CALL db.relationshipTypes()")
         all_relationships = [Document(page_content=rel['relationshipType']) for rel in rel_types]
-
-        # Initialize vector stores if they don't exist yet
-        if self.vector_store_nodes is None:
-            print("Creating vector store indices...")
-            self.vector_store_nodes = Neo4jVector.from_documents(
-                all_nodes,
-                embedding=self.embeddings,
-                url=self._neo4j_uri,
-                username=self._neo4j_user,
-                password=self._neo4j_password,
-                index_name=self._vector_store_nodes_name,
-            )
-        else:
-            self.vector_store_nodes.add_documents(all_nodes)
-
         if self.vector_store_relationships is None:
+        
             self.vector_store_relationships = Neo4jVector.from_documents(
                 all_relationships,
                 embedding=self.embeddings,
@@ -924,12 +950,13 @@ class PDFGraphRAG:
                 password=self._neo4j_password,
                 index_name=self._vector_store_relationships_name,
             )
+            
         else:
             self.vector_store_relationships.add_documents(all_relationships)
+            
+
         
         print("Knowledge graph and vector stores successfully updated in Neo4j!")
-
-            """
             
         
         
@@ -1164,19 +1191,19 @@ Begin by identifying the relevant node labels and relationship types, then query
         """
         system_prompt = """You are a question reformulation expert. Your task is to create alternative phrasings of a given question while preserving the exact same meaning and context.
 
-Each reformulated question should:
-- Ask for the same information as the original
-- Use different wording, sentence structure, or perspective
-- Maintain the same level of specificity
-- Be clear and well-formed
+        Each reformulated question should:
+        - Ask for the same information as the original
+        - Use different wording, sentence structure, or perspective
+        - Maintain the same level of specificity
+        - Be clear and well-formed
 
-Do not add new constraints, change the scope, or alter the intent of the original question."""
+        Do not add new constraints, change the scope, or alter the intent of the original question."""
 
         user_prompt = f"""Create exactly {number_of_questions} different reformulations of the following question. Each version should ask for the same information but use different wording.
 
-Original question: {question}
+        Original question: {question}
 
-Generate {number_of_questions} alternative phrasings."""
+        Generate {number_of_questions} alternative phrasings."""
 
         response_schema = {
             "title": "VarietyQuestions",
@@ -1286,19 +1313,7 @@ Generate {number_of_questions} alternative phrasings."""
             relationships=relationships,
             source=source_document
         )
-
-
-    def get_graph_schema(self) -> Schema:
-        # Get node labels and relationship types
-        node_labels = self.graph.query("CALL db.labels()")
-        rel_types = self.graph.query("CALL db.relationshipTypes()")
         
-        schema = Schema(
-            nodes=[node['label'] for node in node_labels],
-            relationships=[rel['relationshipType'] for rel in rel_types]
-        )
-        
-        return schema
 
 
     def named_entity_extraction_from_sentence(

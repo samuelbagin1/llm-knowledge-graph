@@ -36,6 +36,7 @@ class Question:
     id: str = ""
     question: str = ""
     svo: SVO = field(default_factory=lambda: SVO(sub="", verb="", obj=""))
+    extracted_nodes: List[Node] = field(default_factory=list)
     similar_nodes: List[Node] = field(default_factory=list)
     similar_rel: List[Relationship] = field(default_factory=list)
     

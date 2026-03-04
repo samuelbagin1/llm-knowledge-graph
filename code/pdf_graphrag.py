@@ -100,35 +100,6 @@ def graph_document_to_json(graph_doc: "GraphDocument") -> dict:
     }
 
 
-# extract nodes and relationships from spacy doc
-def spacy_to_graph_document(doc, source_document):
-    nodes = {}
-    relationships = []
-    
-    # Extract entities as nodes
-    for ent in doc.ents:
-        nodes[ent.text] = Node(id=ent.text, type=ent.label_)
-    
-    # Extract SVO triples from dependency parse
-    for token in doc:
-        if token.dep_ == "ROOT" and token.pos_ == "VERB":
-            subj = [w for w in token.children if w.dep_ in ("nsubj", "nsubjpass")]
-            obj = [w for w in token.children if w.dep_ in ("dobj", "pobj", "attr")]
-            
-            for s in subj:
-                for o in obj:
-                    if s.text in nodes and o.text in nodes:
-                        relationships.append(Relationship(
-                            source=nodes[s.text],
-                            target=nodes[o.text],
-                            type=token.lemma_.upper()
-                        ))
-    
-    return GraphDocument(
-        nodes=list(nodes.values()),
-        relationships=relationships,
-        source=source_document
-    )
 
 
 def serialize_for_json(obj):
@@ -304,7 +275,7 @@ class PDFGraphRAG:
                 
                 
                 
-    def get_graph_schema(self):
+    def get_graph_schema_detailed(self):
         """Get Neo4j graph schema information with sample data
         
         Args:
@@ -573,10 +544,15 @@ class PDFGraphRAG:
 
 
 
+
+    def load_pdf(self, pdf_path: str):
+        loader = PyPDFLoader(pdf_path)
+        print("PDF loaded successfully.")
+        return loader.load()
+    
     
     def classification(documents: List[Document]) -> ClassifiedDocument:
         return classify(documents)
-
 
 
 
@@ -852,10 +828,6 @@ class PDFGraphRAG:
     
     
     
-    def load_pdf(self, pdf_path: str):
-        loader = PyPDFLoader(pdf_path)
-        print("PDF loaded successfully.")
-        return loader.load()
 
 
 
@@ -864,6 +836,7 @@ class PDFGraphRAG:
     # 2. open domain schema detection
     # 3. schema refinement
     # 4. schema guided extraction
+    # 5. vector store from graph
 
 
 
@@ -1123,7 +1096,7 @@ Begin by identifying the relevant node labels and relationship types, then query
     
     
     
-    def query_vector_database(self, database: Neo4jVector, question: str, svo: SVO = None, k: int = 5) -> List[Any]:
+    def query_vector_database(self, database: Neo4jVector, question: str, array: List = None, k: int = 5) -> List[Any]:
         """
         Function: Query vector database to retrieve relevant chunks and nodes
 
@@ -1135,37 +1108,20 @@ Begin by identifying the relevant node labels and relationship types, then query
         Returns:
             vector results
         """
-
-        question_results = database.similarity_search(
-            query=question,
-            k=k
-        )
         
-        sub_result = database.similarity_search(query=svo.sub, k=k)
-        obj_result = database.similarity_search(query=svo.obj, k=k)
+        result = []
+        for a in array:
+            result.append(
+                database.similarity_search(
+                    query=a,
+                    k=k
+                )
+            )
+            
+        return result
         
-
-        return [question_results, sub_result, obj_result]
         
         
-    def query_vector_database_relationships(self, database: Neo4jVector, question: str, svo: SVO = None, k: int = 5) -> List[Any]:
-        """
-        Function: Query vector database to retrieve relevant relationships based on question and SVO
-
-        Args:
-            question: Test question to answer using vector search
-            svo: Subject-Verb-Object object extracted from the question (optional)
-
-        Returns:
-            vector results for relationships
-        """
-
-        question_results = database.similarity_search(query=question, k=k)
-        verb_result = database.similarity_search(query=svo.verb, k=k)
-        
-
-        return [question_results, verb_result]
-    
     
     def query_chunks_by_similarity(self, question: str, k: int = 5):
         """
@@ -1192,41 +1148,6 @@ Begin by identifying the relevant node labels and relationship types, then query
         return result
     
     
-    
-    def validate_and_answer(self, question, node_result, relationship_result, chunk_result, graph_result, advanced_search: str = None) -> str:
-        # Format results into natural language answer
-        if advanced_search is not None:
-            advanced_search_text = f"Advanced Deeper Search:\n{json.dumps(advanced_search, indent=2)}\n"
-        else:
-            advanced_search_text = ""
-        
-        format_prompt = f"""Based on the following graph database query results, provide a clear, concise answer to the original question.
-
-Question: {question}
-
-Node Vector Results: {node_result}
-
-Relationship Vector Results: {relationship_result}
-
-Chunk Vector Results: {chunk_result}
-
-Query Results:
-{graph_result if graph_result else "No results found"}
-
-{advanced_search_text}
-
-Provide a natural language answer that:
-1. Directly answers the question
-2. Includes specific names, relationships, and details from the results
-3. Acknowledges if information is missing or incomplete
-4. Is clear and concise
-
-Return ONLY the answer text, no preamble or JSON formatting."""
-
-
-        structured_answer = self.openai_client.invoke(format_prompt).content
-        
-        return structured_answer.strip()
     
     
     
@@ -1276,6 +1197,8 @@ Generate {number_of_questions} alternative phrasings."""
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         questions = response["structured_response"]["questions"]
         return questions
+    
+    
     
     
     def convert_sentence_to_graph_document(self, data, text: str = "") -> GraphDocument:
@@ -1365,6 +1288,19 @@ Generate {number_of_questions} alternative phrasings."""
         )
 
 
+    def get_graph_schema(self) -> Schema:
+        # Get node labels and relationship types
+        node_labels = self.graph.query("CALL db.labels()")
+        rel_types = self.graph.query("CALL db.relationshipTypes()")
+        
+        schema = Schema(
+            nodes=[node['label'] for node in node_labels],
+            relationships=[rel['relationshipType'] for rel in rel_types]
+        )
+        
+        return schema
+
+
     def named_entity_extraction_from_sentence(
         self,
         text: str,
@@ -1414,7 +1350,8 @@ Generate {number_of_questions} alternative phrasings."""
         return graph_document
 
 
-    # possibly use or implement spacy or other NLP
+
+
     def find_svo(self, question: str) -> Dict[str, str]:
         """
         A function to extract subject, verb, object from a question using LLM
@@ -1427,22 +1364,22 @@ Generate {number_of_questions} alternative phrasings."""
         
         system_prompt = """You are a linguistic analysis expert specialized in extracting grammatical components from questions.
 
-Your task is to identify the Subject, Verb, and Object (SVO) from a given question:
-- Subject: The entity performing the action or being asked about
-- Verb: The main action or state being queried
-- Object: The entity receiving the action or being related to the subject
+        Your task is to identify the Subject, Verb, and Object (SVO) from a given question:
+        - Subject: The entity performing the action or being asked about
+        - Verb: The main action or state being queried
+        - Object: The entity receiving the action or being related to the subject
 
-Guidelines:
-- For questions, convert the interrogative form to a declarative statement to identify SVO
-- Extract the core semantic components, not just surface-level words
-- If a component is implicit or missing, infer it from context
-- Keep each component concise (a few words maximum)"""
+        Guidelines:
+        - For questions, convert the interrogative form to a declarative statement to identify SVO
+        - Extract the core semantic components, not just surface-level words
+        - If a component is implicit or missing, infer it from context
+        - Keep each component concise (a few words maximum)"""
 
         user_prompt = f"""Extract the subject, verb, and object from the following question:
 
-Question: {question}
+        Question: {question}
 
-Identify the SVO components."""
+        Identify the SVO components."""
 
         response_schema = {
             "title": "SubjectVerbObject",
@@ -1473,6 +1410,51 @@ Identify the SVO components."""
     
     
     
+    
+    def validate_and_answer(self, question, node_result, relationship_result, chunk_result, graph_result, advanced_search: str = None) -> str:
+        # Format results into natural language answer
+        if advanced_search is not None:
+            advanced_search_text = f"Advanced Deeper Search:\n{json.dumps(advanced_search, indent=2)}\n"
+        else:
+            advanced_search_text = ""
+        
+        format_prompt = f"""Based on the following graph database query results, provide a clear, concise answer to the original question.
+
+        Question: {question}
+
+        Node Vector Results: {node_result}
+
+        Relationship Vector Results: {relationship_result}
+
+        Chunk Vector Results: {chunk_result}
+
+        Query Results:
+        {graph_result if graph_result else "No results found"}
+
+        {advanced_search_text}
+
+        Provide a natural language answer that:
+        1. Directly answers the question
+        2. Includes specific names, relationships, and details from the results
+        3. Acknowledges if information is missing or incomplete
+        4. Is clear and concise
+
+        Return ONLY the answer text, no preamble or JSON formatting."""
+
+
+        structured_answer = self.openai_client.invoke(format_prompt).content
+        
+        return structured_answer.strip()
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
         """ semanticke vyhladavanie:
     1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
     2. pre kazdu otazku najst podmet, predmet, vztah
@@ -1497,26 +1479,29 @@ Identify the SVO components."""
         elif (question.lower()=='exit'):
             print("Exiting...")
             return
-        
+            
+            
+            
+        # 1. create various reformulations of the question
         various_questions = self.create_variety_questions(question, number_of_questions=3)
         
+        # 2. for each question, find subject, verb, object and extraxt nodes from question using SDE
         questions = []
-        
-        questions.append(Question(id='question0', question=question, svo=self.find_svo(question)))
+        questions.append(
+            Question(id='question0', question=question, svo=self.find_svo(question), extracted_nodes=self.named_entity_extraction_from_sentence(text=question, schema=self.get_graph_schema()))
+        )
         for i, q in enumerate(various_questions):
             questions.append(
-                Question(id=f'question{i}', question=q, svo=self.find_svo(q))
+                Question(id=f'question{i}', question=q, svo=self.find_svo(q), extracted_nodes=self.named_entity_extraction_from_sentence(text=q, schema=self.get_graph_schema()))
             )
             
         print(f"\nGenerated Reformulated Questions\n\n: {[q.question + '\nSVO: ' + str(q.svo) + '\n' for q in questions]}")
         
         
         
-        
-        for i, q in enumerate(questions):       
-            q.similar_nodes = self.query_vector_database(database=self.vector_store_nodes, question=q.question, svo=q.svo)
-            q.similar_rel = self.query_vector_database_relationships(database=self.vector_store_relationships, question=q.question, svo=q.svo)
-            q.similar_nodes.append(self.named_entity_extraction_from_sentence(text=q.question, schema=self.graph.get_schema()))
+        # find similar nodes in graph from extracted nodes in queestion
+        for i, q in enumerate(questions): 
+            q.similar_nodes = self.query_vector_database(database=self.vector_store_nodes, question=q.question, array=q.extracted_nodes, k=5)
             
         
         

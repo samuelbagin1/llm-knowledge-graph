@@ -994,38 +994,38 @@ class PDFGraphRAG:
         
 
         # User prompt - provides the specific question and schema
-        user_prompt = f"""Answer this question about Romeo and Juliet by querying the graph database:
+        user_prompt = f"""Answer this question by querying the graph database:
 
-**Question:** {question}
+        **Question:** {question}
 
-## Available Graph Schema
+        ## Available Graph Schema
 
-### Node Labels (use these exact labels in queries):
-{json.dumps(node_labels_list, indent=2)}
+        ### Node Labels (use these exact labels in queries):
+        {json.dumps(node_labels_list, indent=2)}
 
-### Relationship Types (use these exact types in queries):
-{json.dumps(rel_types_list, indent=2)}
+        ### Relationship Types (use these exact types in queries):
+        {json.dumps(rel_types_list, indent=2)}
 
-### Sample Data (shows actual property structure):
-{self.graph.schema()}
+        ### Sample Data (shows actual property structure):
+        {self.graph.schema()}
 
-### Similar Nodes (based on question context):
-{similar_nodes}
+        ### Similar Nodes (based on question context):
+        {similar_nodes}
 
-### Similar Relationships (based on question context):
-{similar_relationships}
+        ### Similar Relationships (based on question context):
+        {similar_relationships}
 
-### Subject-Verb-Object from question:
-{json.dumps(svo, indent=2)}
+        ### Subject-Verb-Object from question:
+        {json.dumps(svo, indent=2)}
 
-## Your Task
-1. Analyze the question to determine which node labels and relationship types are relevant
-2. Use the `search_database` tool to query the database with Cypher queries
-3. Start broad, then refine based on results
-4. Continue querying until you find the best matching nodes, properties, and relationships
-5. Return your final answer with the most effective Cypher query and the data you found
+        ## Your Task
+        1. Analyze the question to determine which node labels and relationship types are relevant
+        2. Use the `search_database` tool to query the database with Cypher queries
+        3. Start broad, then refine based on results
+        4. Continue querying until you find the best matching nodes, properties, and relationships
+        5. Return your final answer with the most effective Cypher query and the data you found
 
-Begin by identifying the relevant node labels and relationship types, then query the database."""
+        Begin by identifying the relevant node labels and relationship types, then query the database."""
 
 
 

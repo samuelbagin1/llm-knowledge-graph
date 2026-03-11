@@ -1,3 +1,158 @@
+
+
+# classification
+system_prompt_for_classification = """
+You are an expert at classifying text into predefined categories. """
+
+response_schema_for_classification = {
+    "title": "TextClassificationResult",
+    "type": "object",
+    "description": "Result schema for classifying text into predefined categories",
+    "properties": {
+        "type_legislation": {
+            "type": "object",
+            "description": "The category that best fits the provided text",
+            "properties": {
+                "name": {"type": "string", "description": "Name of the category"},
+                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
+            },
+        },
+        "type_category": {
+            "type": "object",
+            "description": "The category that best fits the provided text",
+            "properties": {
+                "name": {"type": "string", "description": "Name of the category"},
+                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
+            },
+        }
+    },
+    "required": ["type_legislation", "type_category"]
+}
+
+
+
+# open domain detection
+system_prompt_for_odd = """
+Si expertný algoritmus na extrakciu typov entít a vzťahov z otvorenej domény. Tvojou úlohou je analyzovať ľubovoľný zadaný text a identifikovať všetky odlišné typy uzlov a typy vzťahov, ktoré sa v ňom nachádzajú, bez ohľadu na doménu alebo tematickú oblasť. Pracuješ bez vopred definovanej schémy — typy môžu byť známe, nové alebo dosiaľ nevídané, pokiaľ sú odôvodnené kontextom.
+
+PRAVIDLÁ:
+1. Vráť iba abstraktné typy (na úrovni schémy), nie konkrétne inštancie entít.
+2. Pre typy uzlov používaj singulár v PascalCase BEZ DIAKRITIKY (napr. Osoba, Spolocnost, Udalost, nie Spoločnosť alebo Udalosť).
+3. Pre typy vzťahov používaj UPPER_SNAKE_CASE BEZ DIAKRITIKY (napr. PRACUJE_PRE, NACHADZA_SA_V, nie NACHÁDZA_SA_V).
+4. Uprednostňuj všeobecné, elementárne typy uzlov pred príliš špecifickými (napr. Osoba namiesto Matematik).
+5. Uprednostňuj všeobecné, nadčasové typy vzťahov pred momentálnymi (napr. PROFESOR_NA namiesto STAL_SA_PROFESOROM).
+6. Zahrň iba typy jednoznačne podložené textom. Neodvodzuj ani nevymýšľaj typy nad rámec toho, čo text poskytuje.
+7. Výstup udržuj minimálny a zameraný na jasne identifikovateľné vzory.
+8. Všetky extrahované názvy typov uzlov aj vzťahov musia byť BEZ DIAKRITIKY — nahraď znaky s diakritikou ich základnými ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+"""
+
+
+response_schema_for_odd = {
+            "title": "DocumentOpenDomainDetectionResult",
+            "type": "object",
+            "description": "Result schema for open domain detection of entities and relationships from text",
+            "properties": {
+                "node_types": {
+                    "type": "array",
+                    "description": "List of canonical node type labels",
+                    "items": {
+                        "type": "string",
+                        "description": "The label/type of the entity (e.g., Person, Organization)"
+                    }
+                },
+                "relationship_types": {
+                    "type": "array",
+                    "description": "List of canonical relationship types",
+                    "items": {
+                        "type": "string",
+                        "description": "The type of relationship between nodes (e.g., WORKS_FOR, LOCATED_IN)"
+                    }
+                }
+            },
+            "required": ["node_types", "relationship_types"]
+        }
+
+
+
+
+# schema refinement
+system_prompt_for_schema_refinement = """
+Si expertný algoritmus na spresňovanie schém znalostných grafov. Dostávaš surovú schému (typy uzlov a typy vzťahov) vytvorenú detekciou z otvorenej domény a tvojou úlohou je spresniť ju na čistú, konzistentnú a deduplikovanú schému pripravenú na extrakciu riadenú schémou.
+
+Ide o ľahký spresňovací prechod — nie o reštrukturalizáciu. Zlučuj iba typy s jasným sémantickým prekryvom. Ak sú typy odlišné, ponechaj ich.
+
+# TVOJE CIELE:
+1. **Deduplikácia**: Zlúč typy uzlov a typy vzťahov, ktoré sú sémanticky ekvivalentné alebo takmer synonymné, do jedného kanonického typu (napr. PRACUJE_NA + ZAMESTNANY_V → PRACUJE_PRE).
+2. **Normalizácia**: Zabezpeč, aby všetky typy uzlov používali singulár v PascalCase a všetky typy vzťahov používali UPPER_SNAKE_CASE konzistentne.
+3. **Generalizácia**: Nahraď príliš špecifické alebo momentálne typy všeobecnými, nadčasovými ekvivalentmi (napr. STAL_SA_RIADITELOM → VEDIE; Vedec → Osoba).
+4. **Zarovnanie na základnú ontológiu**: Ak je poskytnutá základná ontológia, zarovnaj surové typy na existujúce základné typy tam, kde existuje jasná sémantická zhoda. Základná ontológia má prednosť v pomenovaniach — pri zlučovaní preberaj jej označenia. Zachovaj všetky surové typy, ktoré sú skutočne odlišné a nie sú zastúpené v základnej ontológii, ako nové doplnenia.
+5. **Zabezpečenie konzistencie**: Každý typ uzla referencovaný vo vzoroch vzťahov musí existovať vo výslednom zozname typov uzlov. Odstráň osirelé typy, ktoré nemajú jasný kontext vzťahu, pokiaľ nie sú jasne odôvodnené.
+6. **Riešenie nejednoznačnosti**: Ak sa dva typy sémanticky prekrývajú, vyber ten všeobecnejší a zdokumentuj zlúčenie.
+7. **Zachovanie pokrytia**: Neodstraňuj typy, ktoré reprezentujú skutočne odlišné koncepty. Nenúť odlišné surové typy do typov základnej ontológie. Zlučuj iba vtedy, keď je sémantické zarovnanie jasné.
+
+# PRAVIDLÁ:
+- Nevymýšľaj nové typy, ktoré neboli prítomné alebo jasne implikované vo vstupnej schéme alebo základnej ontológii.
+- Neodstraňuj typy, ktoré sú sémanticky odlišné, len kvôli minimalizácii schémy.
+- Pri zlučovaní vždy vyber najvšeobecnejšie a najširšie použiteľné označenie ako kanonickú formu (označenie základnej ontológie má prednosť, ak je dostupné).
+- Do merge_log zahrň iba záznamy, kde skutočne došlo k zlúčeniu. Ak bol typ ponechaný bez zmeny, vynechaj ho z logu.
+- Všetky extrahované názvy typov uzlov aj vzťahov musia byť BEZ DIAKRITIKY — nahraď znaky s diakritikou ich základnými ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+"""
+
+
+response_schema_for_schema_refinement = {
+            "title": "DocumentSchemaRefinementResult",
+            "type": "object",
+            "description": "Result schema for schema refinement of entities and relationships from text",
+            "properties": {
+                "node_types": {
+                    "type": "array",
+                    "description": "List of canonical node type labels",
+                    "items": {
+                        "type": "string",
+                        "description": "The label/type of the entity (e.g., Person, Organization)"
+                    }
+                },
+                "relationship_types": {
+                    "type": "array",
+                    "description": "List of canonical relationship types",
+                    "items": {
+                        "type": "string",
+                        "description": "The type of relationship between nodes (e.g., WORKS_FOR, LOCATED_IN)"
+                    }
+                },
+                "merge_log": {
+                    "type": "object",
+                    "description": "Log of merged types mapping canonical types to their original variants",
+                    "properties": {
+                        "node_types": {
+                            "type": "object",
+                            "description": "Mapping of canonical node types to lists of original types that were merged",
+                            "additionalProperties": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "relationship_types": {
+                            "type": "object",
+                            "description": "Mapping of canonical relationship types to lists of original types that were merged",
+                            "additionalProperties": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": ["node_types", "relationship_types"]
+                }
+            },
+            "required": ["node_types", "relationship_types", "merge_log"]
+        }
+
+
+# schema driven extraction
 system_prompt_for_sde = """
 You are an expert knowledge graph extraction algorithm. Your task is to extract named entities (nodes) and relationships from text according to a provided ontology schema.
 
@@ -72,6 +227,13 @@ response_schema_for_sde = {
         }
 
 
+
+
+
+
+
+
+
 # System prompt - defines the agent's role and capabilities
 system_prompt_for_generating_query = """You are a Neo4j Cypher expert agent specialized in querying knowledge graphs.
 
@@ -129,153 +291,3 @@ response_schema_for_generating_query = {
             "required": ["cypher_query", "explanation", "nodes_found", "relationships_found"]
         }
 
-
-
-# classification
-system_prompt_for_classification = """
-You are an expert at classifying text into predefined categories. """
-
-response_schema_for_classification = {
-    "title": "TextClassificationResult",
-    "type": "object",
-    "description": "Result schema for classifying text into predefined categories",
-    "properties": {
-        "type_legislation": {
-            "type": "object",
-            "description": "The category that best fits the provided text",
-            "properties": {
-                "name": {"type": "string", "description": "Name of the category"},
-                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
-            },
-        },
-        "type_category": {
-            "type": "object",
-            "description": "The category that best fits the provided text",
-            "properties": {
-                "name": {"type": "string", "description": "Name of the category"},
-                "confidence": {"type": "number", "description": "A confidence score between 0 and 100 indicating the certainty of the classification"}
-            },
-        }
-    },
-    "required": ["type_legislation", "type_category"]
-}
-
-
-
-# open domain detection
-system_prompt_for_odd = """
-You are an expert open-domain entity and relationship type extraction algorithm. Your task is to analyze any given text and identify all distinct node types and relationship types present, regardless of domain or subject matter. You operate without a predefined schema—types may be known, novel, or previously unseen, as justified by context.
-
-RULES:
-1. Return only abstract types (schema-level), not concrete entity instances.
-2. Use singular PascalCase for node types (e.g., Person, Company, Event).
-3. Use UPPER_SNAKE_CASE for relationship types (e.g., WORKS_FOR, LOCATED_IN).
-4. Prefer general, elementary node types over overly specific ones (e.g., Person over Mathematician).
-5. Prefer general, timeless relationship types over momentary ones (e.g., PROFESSOR_AT over BECAME_PROFESSOR).
-6. Only include types clearly supported by the text. Do not infer or fabricate types beyond what the text provides.
-7. Keep the output minimal and focused on clearly identifiable patterns.
-"""
-
-
-response_schema_for_odd = {
-            "title": "DocumentOpenDomainDetectionResult",
-            "type": "object",
-            "description": "Result schema for open domain detection of entities and relationships from text",
-            "properties": {
-                "node_types": {
-                    "type": "array",
-                    "description": "List of canonical node type labels",
-                    "items": {
-                        "type": "string",
-                        "description": "The label/type of the entity (e.g., Person, Organization)"
-                    }
-                },
-                "relationship_types": {
-                    "type": "array",
-                    "description": "List of canonical relationship types",
-                    "items": {
-                        "type": "string",
-                        "description": "The type of relationship between nodes (e.g., WORKS_FOR, LOCATED_IN)"
-                    }
-                }
-            },
-            "required": ["node_types", "relationship_types"]
-        }
-
-
-
-
-# schema refinement
-system_prompt_for_schema_refinement = """
-You are an expert knowledge graph schema refinement algorithm. You receive a raw schema (node_types and relationship_types) produced by open-domain detection and refine it into a clean, consistent, deduplicated schema ready for schema-driven extraction.
-
-This is a light refinement pass — not a restructuring. Only merge types with clear semantic overlap. If types are distinct, keep them.
-
-# YOUR OBJECTIVES:
-1. **Deduplicate**: Merge node types and relationship types that are semantically equivalent or near-synonymous into a single canonical type (e.g., WORKS_AT + EMPLOYED_BY → WORKS_FOR).
-2. **Normalize**: Ensure all node types use singular PascalCase and all relationship types use UPPER_SNAKE_CASE consistently.
-3. **Generalize**: Replace overly specific or momentary types with general, timeless equivalents (e.g., BECAME_CEO → LEADS; Scientist → Person).
-4. **Align to Base Ontology**: If a base ontology is provided, align raw types to existing base types where there is clear semantic match. The base ontology takes naming precedence — adopt its labels when merging. Preserve any raw types that are genuinely distinct and not represented in the base ontology as new additions.
-5. **Ensure Consistency**: Every node type referenced in relationship patterns must exist in the final node_types list. Remove orphan types that have no clear relationship context, unless they are clearly justified.
-6. **Resolve Ambiguity**: If two types overlap semantically, choose the more general one and document the merge.
-7. **Preserve Coverage**: Do not drop types that represent genuinely distinct concepts. Do not force-fit distinct raw types into base ontology types. Only merge when semantic alignment is clear.
-
-# RULES:
-- Do not invent new types that were not present or clearly implied in the input schema or base ontology.
-- Do not remove types that are semantically distinct just to minimize the schema.
-- When merging, always select the most general and widely applicable label as the canonical form (base ontology label takes precedence if available).
-- Only include entries in merge_log where a merge actually occurred. If a type was kept as-is, omit it from the log.
-"""
-
-
-response_schema_for_schema_refinement = {
-            "title": "DocumentSchemaRefinementResult",
-            "type": "object",
-            "description": "Result schema for schema refinement of entities and relationships from text",
-            "properties": {
-                "node_types": {
-                    "type": "array",
-                    "description": "List of canonical node type labels",
-                    "items": {
-                        "type": "string",
-                        "description": "The label/type of the entity (e.g., Person, Organization)"
-                    }
-                },
-                "relationship_types": {
-                    "type": "array",
-                    "description": "List of canonical relationship types",
-                    "items": {
-                        "type": "string",
-                        "description": "The type of relationship between nodes (e.g., WORKS_FOR, LOCATED_IN)"
-                    }
-                },
-                "merge_log": {
-                    "type": "object",
-                    "description": "Log of merged types mapping canonical types to their original variants",
-                    "properties": {
-                        "node_types": {
-                            "type": "object",
-                            "description": "Mapping of canonical node types to lists of original types that were merged",
-                            "additionalProperties": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "relationship_types": {
-                            "type": "object",
-                            "description": "Mapping of canonical relationship types to lists of original types that were merged",
-                            "additionalProperties": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    },
-                    "required": ["node_types", "relationship_types"]
-                }
-            },
-            "required": ["node_types", "relationship_types", "merge_log"]
-        }

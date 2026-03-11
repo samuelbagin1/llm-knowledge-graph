@@ -1,0 +1,4045 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "Document",
+          "Law",
+          "Entity",
+          "Tax",
+          "Country",
+          "Region"
+        ],
+        "relationships": [
+          "GOVERNS",
+          "APPLIES_TO",
+          "LOCATED_IN",
+          "REGULATES"
+        ]
+      },
+      {
+        "nodes": [
+          "Region",
+          "Country"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "CONSIDERED_AS"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "EconomicActivity",
+          "Property",
+          "Relationship"
+        ],
+        "relationships": [
+          "PERFORMS",
+          "OWNS",
+          "ENGAGES_IN",
+          "SUBORDINATES_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "GovernmentBody",
+          "LegalEntity",
+          "StateReserve",
+          "TransportMeans"
+        ],
+        "relationships": [
+          "OBLIGATED_TO_FOLLOW",
+          "PART_OF",
+          "CONDUCTS_ACTIVITY",
+          "IS_TAXABLE_ENTITY",
+          "PURCHASES",
+          "SELLS"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "TaxableEntity",
+          "GoodsOrServices",
+          "TaxPayer"
+        ],
+        "relationships": [
+          "SUPPLIES",
+          "BECOMES",
+          "HAS_ADDRESS",
+          "IS_LOCATED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Entity",
+          "Asset",
+          "Organization"
+        ],
+        "relationships": [
+          "BECAME_SUCCESSOR",
+          "ACQUIRED",
+          "PART_OF"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Person",
+          "Asset",
+          "TaxAuthority",
+          "Business"
+        ],
+        "relationships": [
+          "HAS_ASSET",
+          "SUBMITS_REQUEST_TO",
+          "PROVIDES_SERVICE",
+          "LOCATED_IN",
+          "RECEIVES_PAYMENT"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "TaxAuthority",
+          "Request"
+        ],
+        "relationships": [
+          "SUBMITS",
+          "REQUIRED_FOR",
+          "BECOMES"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "TaxAuthority",
+          "Document"
+        ],
+        "relationships": [
+          "SUBMITS",
+          "REQUIRES",
+          "REGISTERED_BY",
+          "ASSIGNED_ID"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "TaxApplication",
+          "TaxIdentificationNumber",
+          "Decision"
+        ],
+        "relationships": [
+          "REQUIRED_TO_SUBMIT",
+          "ASSIGNED_IDENTIFICATION_NUMBER",
+          "ISSUED_DECISION",
+          "BECOMES_VALID"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Entity",
+          "TaxPayer",
+          "IdentificationNumber"
+        ],
+        "relationships": [
+          "HAS_IDENTIFICATION_NUMBER",
+          "REQUIRED_TO_REGISTER_FOR_TAX",
+          "BECAME_TAXPAYER"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "TaxAuthority",
+          "RegistrationRequest"
+        ],
+        "relationships": [
+          "BECOMES_TAXPAYER",
+          "SUBMITS_REQUEST_TO",
+          "ISSUES_DECISION_ON"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "TaxAuthority",
+          "TaxRegistrationDecision",
+          "Taxpayer",
+          "GoodsOrServices"
+        ],
+        "relationships": [
+          "REGISTERED_WITH",
+          "HAS_TAX_ID",
+          "BECOMES_PAYER",
+          "NOTIFIES",
+          "CANCELS_DECISION",
+          "APPLIES_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "TaxAuthority",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "REGISTERED_AS",
+          "NOTIFIES",
+          "BECOMES_PAYABLE"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "TaxAuthority",
+          "Taxpayer",
+          "Decision"
+        ],
+        "relationships": [
+          "SUBMITS",
+          "REGISTERS_FOR",
+          "NOTIFIES",
+          "ISSUES"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxablePerson",
+          "TaxAuthority",
+          "Taxpayer",
+          "IdentificationNumber"
+        ],
+        "relationships": [
+          "REGISTERED_FOR_TAX",
+          "SUBMITTED_APPLICATION",
+          "HAS_IDENTIFICATION_NUMBER"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "TaxAuthority",
+          "Business",
+          "Service"
+        ],
+        "relationships": [
+          "SUBMITS",
+          "ASSIGNED_TO",
+          "LOCATED_IN",
+          "HAS_PERMANENT_RESIDENCE",
+          "HAS_BUSINESS_LOCATION",
+          "EXEMPTS_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Goods",
+          "Asset"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "INCLUDED_IN",
+          "SUPPLEMENTARY_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalEntity",
+          "Group",
+          "ControllingEntity"
+        ],
+        "relationships": [
+          "PART_OF",
+          "CONTROLLED_BY",
+          "CONNECTED_FINANCIALLY",
+          "CONNECTED_ECONOMICALLY",
+          "CONNECTED_ORGANIZATIONALLY"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "TaxAuthority",
+          "Member",
+          "Representative",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "REGISTERED_WITH",
+          "REPRESENTS",
+          "SUBMITS",
+          "LOCATED_IN",
+          "ASSIGNED_TAX_ID"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "TaxAuthority",
+          "Representative",
+          "Member"
+        ],
+        "relationships": [
+          "REGISTERED_AS",
+          "RESPONSIBLE_FOR",
+          "ACTS_ON_BEHALF_OF",
+          "HAS_OBLIGATION"
+        ]
+      },
+      {
+        "nodes": [
+          "Regulation",
+          "Group",
+          "Member",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "PART_OF",
+          "REQUIRES_PAYMENT",
+          "VIOLATES_OBLIGATION"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "TaxableEntity",
+          "Representative",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "MEMBER_OF",
+          "SUBMITS",
+          "ISSUES",
+          "TRANSFERS_RIGHTS",
+          "EXPIRES_ON"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "Representative",
+          "TaxAuthority",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "MEMBER_OF",
+          "SUBMITS",
+          "ISSUES",
+          "BECOMES_INDEPENDENT",
+          "TRANSFERS_RIGHTS_AND_OBLIGATIONS"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "Member",
+          "LegalSuccessor",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "HAS_MEMBER",
+          "HAS_SUCCESSOR",
+          "SUBMITS_REQUEST",
+          "ISSUES_DECISION",
+          "TRANSFERS_RIGHTS_AND_OBLIGATIONS"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "TaxAuthority",
+          "Member",
+          "Representative",
+          "Country"
+        ],
+        "relationships": [
+          "REGISTERED_UNDER",
+          "HAS_MEMBER",
+          "REPRESENTS",
+          "LOCATED_IN",
+          "PERFORMS_BUSINESS"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "Representative",
+          "Authority"
+        ],
+        "relationships": [
+          "HAS_MEMBER",
+          "APPOINTS",
+          "NOTIFIES"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Authority",
+          "Group",
+          "Representative",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "ISSUES",
+          "DECIDES",
+          "REGISTERED_AS",
+          "HAS_REPRESENTATIVE",
+          "SUBMITS_APPEAL"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "Member",
+          "TaxAuthority",
+          "Representative",
+          "Decision"
+        ],
+        "relationships": [
+          "REGISTERED_AS",
+          "HAS_MEMBER",
+          "REPRESENTS",
+          "ISSUES",
+          "SUBMITS",
+          "APPLIES_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "Member",
+          "Group",
+          "Representative",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "BELONGS_TO",
+          "REPRESENTS",
+          "SUBMITS",
+          "REQUIRED_BY",
+          "ASSIGNED_AS"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "TaxAuthority",
+          "Member",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "HAS_MEMBER",
+          "ISSUES_DECISION",
+          "REGISTERED_AS",
+          "EXCLUDES_MEMBER",
+          "HAS_RIGHTS_AND_OBLIGATIONS"
+        ]
+      },
+      {
+        "nodes": [
+          "Group",
+          "Member",
+          "LegalSuccessor",
+          "TaxAuthority",
+          "Decision"
+        ],
+        "relationships": [
+          "HAS_MEMBER",
+          "HAS_SUCCESSOR",
+          "ISSUES_DECISION",
+          "CHANGES_REGISTRATION",
+          "HAS_RIGHTS_AND_OBLIGATIONS"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "GroupMember",
+          "LegalSuccessor",
+          "TaxAuthority",
+          "Taxpayer",
+          "Penalty",
+          "ForeignEntity"
+        ],
+        "relationships": [
+          "HAS_MEMBER",
+          "HAS_SUCCESSOR",
+          "REGISTERED_AS",
+          "SUBJECT_TO",
+          "APPLIES_TO",
+          "IMPOSED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Entity",
+          "Service",
+          "Goods",
+          "Tax"
+        ],
+        "relationships": [
+          "BECOMES_PAYER",
+          "PROVIDES",
+          "RECEIVES",
+          "ACQUIRES",
+          "EXEMPTS_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Person",
+          "TaxPayer",
+          "TaxRepresentative",
+          "MemberState"
+        ],
+        "relationships": [
+          "REQUIRES_TAX",
+          "REPRESENTED_BY",
+          "PARTICIPATES_IN",
+          "SUBJECT_TO_SPECIAL_REGULATIONS"
+        ]
+      },
+      {
+        "nodes": [
+          "Country",
+          "LegalDocument",
+          "TaxAuthority",
+          "ForeignEntity",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "SUBJECT_TO",
+          "REGISTERED_WITH",
+          "ASSIGNED_ID",
+          "EXEMPT_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxAuthority",
+          "ForeignEntity",
+          "Taxpayer",
+          "Asset"
+        ],
+        "relationships": [
+          "ASSIGNED_ID",
+          "REGISTERED_AS",
+          "BECAME_TAXPAYER",
+          "ACQUIRED_ASSET"
+        ]
+      },
+      {
+        "nodes": [
+          "Taxpayer",
+          "Tax Authority",
+          "Document",
+          "Identification Number",
+          "Foreign Entity"
+        ],
+        "relationships": [
+          "SUBMITS",
+          "VERIFIES",
+          "REGISTERS",
+          "ASSIGNS",
+          "BECOMES"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxAuthority",
+          "ForeignEntity",
+          "TaxPayer",
+          "Decision"
+        ],
+        "relationships": [
+          "ASSIGNED_IDENTIFICATION_NUMBER",
+          "REGISTERED_BY",
+          "SUBJECT_TO_DECISION",
+          "BECAME_TAXPAYER"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "TaxPayer",
+          "FinancialDirectorate",
+          "PaymentServiceProvider",
+          "BankAccount"
+        ],
+        "relationships": [
+          "HAS_IDENTIFICATION_NUMBER",
+          "REQUIRED_TO_NOTIFY",
+          "USES_ACCOUNT",
+          "PART_OF_GROUP",
+          "REQUIRED_TO_REGISTER"
+        ]
+      },
+      {
+        "nodes": [
+          "Payer",
+          "FinancialAuthority",
+          "PaymentServiceProvider",
+          "BankAccount"
+        ],
+        "relationships": [
+          "NOTIFIES",
+          "PUBLISHED_ON",
+          "MANAGED_BY",
+          "REPORTED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Organization",
+          "Account",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "OWNS",
+          "REGISTERED_AS",
+          "RESPONSIBLE_FOR",
+          "SUBJECT_TO",
+          "NOTIFIES"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "REGISTERED_UNDER",
+          "NOTIFIES"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "Entity",
+          "TaxAuthority",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "HAS_STATUS",
+          "REGISTERED_UNDER",
+          "NOTIFIES",
+          "ISSUES_DECISION",
+          "REQUIRES_REGISTRATION"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "LegalEntity",
+          "TaxAuthority",
+          "Goods"
+        ],
+        "relationships": [
+          "REQUIRED_TO_REGISTER",
+          "SUBMITS_APPLICATION_TO",
+          "ASSIGNED_TAX_ID"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxAuthority",
+          "TaxableEntity",
+          "Service",
+          "MemberState"
+        ],
+        "relationships": [
+          "ASSIGNED_IDENTIFICATION_NUMBER",
+          "RECEIVES_SERVICE",
+          "REQUIRED_TO_REGISTER",
+          "LOCATED_IN",
+          "SUPPLIES_SERVICE"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxAuthority",
+          "TaxableEntity",
+          "IdentificationNumber"
+        ],
+        "relationships": [
+          "REGISTERED_FOR_TAX",
+          "ASSIGNED_IDENTIFICATION_NUMBER"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "TaxAuthority",
+          "Goods",
+          "Contract",
+          "Currency",
+          "Bank"
+        ],
+        "relationships": [
+          "ASSIGNED_BY",
+          "INCLUDES",
+          "TRANSFERRED_BY",
+          "BASED_ON",
+          "RECEIVED_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "Contract",
+          "Goods",
+          "Entity",
+          "TaxablePerson",
+          "StateAuthority"
+        ],
+        "relationships": [
+          "OWNS",
+          "TRANSFERS",
+          "DELIVERS",
+          "PURCHASES",
+          "RECEIVES",
+          "LOCATED_IN",
+          "FOR_BUSINESS_PURPOSES"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "MemberState",
+          "Business"
+        ],
+        "relationships": [
+          "SHIPPED_TO",
+          "TRANSPORTED_BY",
+          "PURPOSE_OF",
+          "EXEMPT_FROM_TAX",
+          "INSTALLED_BY",
+          "SOLD_BY",
+          "DELIVERED_TO",
+          "PROCESSED_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "Goods",
+          "MemberState"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "RETURNED_TO",
+          "PROCESSED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "MemberState",
+          "Goods",
+          "Service",
+          "TaxablePerson",
+          "Gas",
+          "Electricity",
+          "Heat",
+          "Cold",
+          "Contract"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "USED_FOR",
+          "SUBJECT_TO",
+          "PURCHASED_BY",
+          "SOLD_BY",
+          "DELIVERED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxablePerson",
+          "Goods",
+          "ElectronicCommunicationInterface",
+          "ThirdParty"
+        ],
+        "relationships": [
+          "PURCHASED",
+          "SOLD",
+          "FACILITATES",
+          "RECEIVED",
+          "DELIVERED",
+          "SHIPPED_BY",
+          "TRANSPORTED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "TaxablePerson",
+          "Taxpayer",
+          "MemberState"
+        ],
+        "relationships": [
+          "SHIPPED_TO",
+          "IDENTIFIED_FOR_TAX",
+          "HAS_TAX_ID",
+          "LOCATED_IN",
+          "DELIVERED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "Goods",
+          "MemberState",
+          "ThirdParty"
+        ],
+        "relationships": [
+          "ACQUIRES",
+          "SHIPPED_TO",
+          "TRANSPORTED_BY",
+          "OWNS"
+        ]
+      },
+      {
+        "nodes": [
+          "State",
+          "Goods",
+          "TaxablePerson",
+          "Condition"
+        ],
+        "relationships": [
+          "SENT_TO",
+          "REPLACED_BY",
+          "RETURNED_TO",
+          "TRANSFERRED_RIGHTS"
+        ]
+      },
+      {
+        "nodes": [
+          "Condition",
+          "TaxableEntity",
+          "Goods",
+          "State"
+        ],
+        "relationships": [
+          "REPLACED_BY",
+          "SHIPPED_TO",
+          "CONDITIONS_MET",
+          "CONDITIONS_BROKEN",
+          "DESTROYED",
+          "LOST",
+          "STOLEN"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Goods",
+          "IntangibleAsset",
+          "MaterialAsset",
+          "LegalEntity",
+          "TaxPayer",
+          "Employee"
+        ],
+        "relationships": [
+          "DELIVERS",
+          "OWNS",
+          "PROVIDES_RIGHT_TO_USE",
+          "RECEIVES_CONTRACT",
+          "SUBJECT_TO_LEGAL_DECISION",
+          "CONSUMES",
+          "EMPLOYS"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Service",
+          "Person",
+          "TaxableEntity",
+          "Voucher",
+          "Goods"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "RECEIVES",
+          "OBTAINS",
+          "DELIVERS",
+          "ASSOCIATED_WITH",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Voucher",
+          "TaxablePerson",
+          "Supplier",
+          "Goods",
+          "Service"
+        ],
+        "relationships": [
+          "CONCERNS",
+          "DELIVERS",
+          "ACTS_ON_BEHALF_OF",
+          "REGARDED_AS"
+        ]
+      },
+      {
+        "nodes": [
+          "Supplier",
+          "TaxableEntity",
+          "Goods",
+          "Service",
+          "Voucher",
+          "BusinessEntity",
+          "Organization"
+        ],
+        "relationships": [
+          "SUPPLIES",
+          "RECEIVES",
+          "SUBJECT_TO_TAX",
+          "TRANSFERRED_BY",
+          "PART_OF"
+        ]
+      },
+      {
+        "nodes": [
+          "Organization",
+          "Business",
+          "Entity"
+        ],
+        "relationships": [
+          "PART_OF",
+          "CONTRIBUTES_TO",
+          "ACQUIRES"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalEntity",
+          "Taxpayer",
+          "Business",
+          "Asset"
+        ],
+        "relationships": [
+          "IS_SUCCESSOR_OF",
+          "PART_OF",
+          "INVOLVES",
+          "EXEMPTS_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "Company",
+          "LegalEntity",
+          "Asset",
+          "TaxablePerson",
+          "Supplier"
+        ],
+        "relationships": [
+          "IS_SUCCESSOR_OF",
+          "OWNS",
+          "SUPPLIES",
+          "IS_TAXABLE_PERSON",
+          "IS_IDENTIFIED_FOR_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "MemberState",
+          "TaxableEntity",
+          "Goods",
+          "Person",
+          "LegalEntity"
+        ],
+        "relationships": [
+          "IDENTIFIED_FOR_TAX",
+          "PURCHASED_FOR_CONSIDERATION",
+          "EXEMPT_FROM_TAX",
+          "REGISTERED_FOR_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "Tax",
+          "Regulation"
+        ],
+        "relationships": [
+          "HAS_RIGHT_TO",
+          "SUBJECT_TO",
+          "DECIDES_ON",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Entity",
+          "TaxAuthority",
+          "Goods",
+          "MemberState",
+          "ArmedForces",
+          "CivilianEmployee"
+        ],
+        "relationships": [
+          "DECIDES_TO_TAX",
+          "REQUIRES_REGISTRATION",
+          "ACQUIRES_GOODS",
+          "SENDS_GOODS",
+          "TRANSPORTS_GOODS",
+          "PROVIDES_GOODS",
+          "USED_FOR_BUSINESS"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "State",
+          "CivilEmployee",
+          "LegalEntity",
+          "MemberState",
+          "TransportMeans",
+          "Vehicle",
+          "Vessel",
+          "Aircraft"
+        ],
+        "relationships": [
+          "ASSIGNED_TO",
+          "USED_BY",
+          "PURCHASED_BY",
+          "TRANSPORTED_FROM",
+          "TRANSPORTED_TO",
+          "EXEMPT_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Vehicle",
+          "Watercraft"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "DEFINED_AS"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Country",
+          "Goods",
+          "Military",
+          "Entity",
+          "TaxIdentificationNumber"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "IDENTIFIED_BY",
+          "ASSIGNED_TO",
+          "PURCHASED_FROM",
+          "USED_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "TaxablePerson",
+          "MemberState",
+          "CustomsRegulation",
+          "EuropeanUnion",
+          "Supplier"
+        ],
+        "relationships": [
+          "SHIPPED_FROM",
+          "LOCATED_IN",
+          "DELIVERED_TO",
+          "SUBJECT_TO",
+          "CONNECTED_TO",
+          "OWNS"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Supplier",
+          "Location",
+          "Merchant",
+          "Entity"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "DELIVERED_TO",
+          "INSTALLED_AT",
+          "HAS_ACCOUNT",
+          "PROVIDES"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "Person",
+          "Goods",
+          "Location",
+          "Entity"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "PURCHASED_BY",
+          "USED_BY",
+          "DELIVERED_TO",
+          "HAS_MAIN_ACTIVITY"
+        ]
+      },
+      {
+        "nodes": [
+          "Location",
+          "Goods",
+          "Transport",
+          "Person",
+          "MemberState"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "SHIPPED_FROM",
+          "TRANSPORTED_TO",
+          "PART_OF",
+          "DELIVERED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "MemberState",
+          "Supplier",
+          "Customer",
+          "Goods",
+          "Intermediary",
+          "ThirdParty",
+          "Buyer"
+        ],
+        "relationships": [
+          "SHIPPED_FROM",
+          "SHIPPED_TO",
+          "DELIVERED_TO",
+          "ASSIGNED_TO",
+          "INVOICED_BY",
+          "SOLD_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Supplier",
+          "Customer",
+          "TaxableEntity",
+          "LegalEntity"
+        ],
+        "relationships": [
+          "DELIVERED_BY",
+          "PURCHASED_BY",
+          "LOCATED_IN",
+          "SUBJECT_TO_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Supplier",
+          "Customer",
+          "TaxablePerson",
+          "LegalEntity",
+          "MemberState",
+          "EuropeanUnion"
+        ],
+        "relationships": [
+          "DELIVERED_BY",
+          "PURCHASED_BY",
+          "LOCATED_IN",
+          "SUBJECT_TO_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Customer",
+          "MemberState",
+          "TaxableEntity",
+          "Service"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "DELIVERED_TO",
+          "SUBJECT_TO",
+          "PROVIDED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "TaxableEntity",
+          "Service",
+          "Location"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "PROVIDES",
+          "RECEIVES"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "LegalEntity"
+        ],
+        "relationships": [
+          "IDENTIFIED_FOR_TAX",
+          "PROVIDES_SERVICE"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "Service",
+          "Property",
+          "Person",
+          "Customer",
+          "Vehicle",
+          "Architect",
+          "Entity"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "PROVIDES",
+          "RENTED_BY",
+          "RENTAL_LOCATION",
+          "HAS_ADDRESS",
+          "PHYSICALLY_AVAILABLE"
+        ]
+      },
+      {
+        "nodes": [
+          "Place",
+          "Service",
+          "Person"
+        ],
+        "relationships": [
+          "PROVIDED_AT",
+          "LOCATED_IN",
+          "RECEIVED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Event",
+          "Person",
+          "State",
+          "Goods"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "DELIVERED_TO",
+          "TRANSPORTED_BY",
+          "STARTS_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "State",
+          "Goods",
+          "Service",
+          "Person"
+        ],
+        "relationships": [
+          "TRANSPORTS",
+          "LOCATED_IN",
+          "PROVIDES"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Location",
+          "Person",
+          "Transport"
+        ],
+        "relationships": [
+          "PROVIDED_AT",
+          "LOCATED_IN",
+          "STARTS_AT",
+          "ENDS_AT"
+        ]
+      },
+      {
+        "nodes": [
+          "EuropeanUnion",
+          "TransportMeans",
+          "Passenger",
+          "Service",
+          "Person",
+          "Goods"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "PROVIDES",
+          "DELIVERED_TO",
+          "CONDUCTS_ON_BEHALF_OF",
+          "HAS_LOCATION"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Service",
+          "Location"
+        ],
+        "relationships": [
+          "HAS_ADDRESS",
+          "RECEIVES",
+          "PROVIDES",
+          "LOCATED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "System",
+          "Network",
+          "Service"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "CONNECTED_TO",
+          "PROVIDES_ACCESS_TO",
+          "TRANSPORTS",
+          "DISTRIBUTES"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Service",
+          "Software",
+          "Database",
+          "Event",
+          "Customer",
+          "Supplier"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "INCLUDES",
+          "DELIVERS",
+          "TEACHES",
+          "COMMUNICATES_WITH",
+          "ACCESS_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Person",
+          "Goods",
+          "Location",
+          "Organization"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "LOCATED_IN",
+          "SOLD_TO",
+          "SHIPPED_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Service",
+          "MemberState",
+          "Person",
+          "Supplier"
+        ],
+        "relationships": [
+          "SHIPPED_TO",
+          "PROVIDED_TO",
+          "LOCATED_IN",
+          "DECIDES_ON",
+          "REQUIRED_TO_APPLY"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "MemberState",
+          "Buyer",
+          "TaxIdentificationNumber"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "ORDERED_BY",
+          "ASSIGNED_TO",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxBase",
+          "MemberState",
+          "Goods",
+          "Buyer",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "PURCHASED_BY",
+          "SUBJECT_TO_TAX",
+          "REQUIRED_TO_REPORT"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "CustomsRegime",
+          "MemberState",
+          "TaxObligation",
+          "Buyer",
+          "Property"
+        ],
+        "relationships": [
+          "ENTERS",
+          "HAS_STATUS",
+          "LOCATED_IN",
+          "TRIGGERS",
+          "ACQUIRES_RIGHT",
+          "DELIVERED_TO",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Property",
+          "Contract",
+          "Construction",
+          "Goods",
+          "Tenant"
+        ],
+        "relationships": [
+          "OWNERSHIP",
+          "DELIVERED_TO",
+          "BASED_ON"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Service",
+          "Goods",
+          "Tax Obligation",
+          "Contract",
+          "Payment Period"
+        ],
+        "relationships": [
+          "INCLUDES",
+          "CONTAINS",
+          "RELATED_TO",
+          "OCCURS_ON",
+          "AGREED_UPON"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Recipient",
+          "Payment",
+          "Invoice",
+          "Goods",
+          "Property",
+          "CommunicationNetwork",
+          "CommunicationService",
+          "Entity"
+        ],
+        "relationships": [
+          "REQUIRES",
+          "PROVIDES",
+          "INVOICED_FOR",
+          "DELIVERED_ON",
+          "OWES_TAX",
+          "HAS_PERMISSION"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Tax Obligation",
+          "Goods",
+          "Invoice",
+          "Person"
+        ],
+        "relationships": [
+          "RECEIVES",
+          "OWES",
+          "DELIVERED_BY",
+          "BASED_ON",
+          "REQUESTS_PAYMENT"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Person",
+          "Invoice",
+          "Tax Obligation",
+          "Organization",
+          "Copyright Holder"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "REQUIRES_PAYMENT",
+          "OWES_TAX",
+          "COLLECTS_ON_BEHALF_OF",
+          "RECEIVES_PAYMENT"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Tax Obligation",
+          "Member State",
+          "Payment Method",
+          "Customs Authority"
+        ],
+        "relationships": [
+          "DELIVERED_TO",
+          "SUBJECT_TO",
+          "CONFIRMED_BY",
+          "EXEMPT_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "Taxpayer",
+          "Market",
+          "Tax",
+          "Deposit"
+        ],
+        "relationships": [
+          "OWES_TAX",
+          "SUPPLIES",
+          "RETURNS",
+          "CALCULATES_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "TaxableEntity",
+          "Goods",
+          "Invoice",
+          "TaxLiability",
+          "TransportMeans"
+        ],
+        "relationships": [
+          "PURCHASED_BY",
+          "DELIVERED_TO",
+          "SUBJECT_TO_TAX",
+          "ISSUED_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Goods",
+          "CustomsAuthority",
+          "TaxPayer"
+        ],
+        "relationships": [
+          "SUBJECT_TO",
+          "RELEASED_IN",
+          "NOTIFIED_TO",
+          "DUE_ON"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Tax",
+          "Goods",
+          "CustomsRegulation",
+          "Interest"
+        ],
+        "relationships": [
+          "OWES",
+          "SUBJECT_TO",
+          "PAID_ON_TIME",
+          "SUBJECT_TO_CUSTOMS_REGULATIONS"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxBase",
+          "Supplier",
+          "Recipient",
+          "Service",
+          "Goods",
+          "Cost",
+          "Subsidy"
+        ],
+        "relationships": [
+          "INCLUDES",
+          "RECEIVES",
+          "APPLIES_TO",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Tax",
+          "Customer",
+          "Supplier",
+          "Goods",
+          "Service",
+          "Discount"
+        ],
+        "relationships": [
+          "INCLUDES",
+          "PROVIDES",
+          "REQUIRES",
+          "DECREASES",
+          "IS_BASED_ON"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Goods",
+          "Taxpayer",
+          "Value",
+          "BusinessEntity",
+          "OrganizationalUnit"
+        ],
+        "relationships": [
+          "INCLUDES",
+          "CALCULATED_BASED_ON",
+          "DELIVERED_TO",
+          "HAS_RELATIONSHIP_WITH",
+          "TRANSFERS_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Service",
+          "Goods",
+          "MarketValue",
+          "TaxPayer"
+        ],
+        "relationships": [
+          "HAS_RELATIONSHIP_WITH",
+          "DELIVERS",
+          "IS_BASED_ON",
+          "IS_COMPARABLE_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Organization"
+        ],
+        "relationships": [
+          "OWNS",
+          "CONTROLS",
+          "MEMBER_OF",
+          "SUBORDINATE_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "LegalEntity",
+          "Organization"
+        ],
+        "relationships": [
+          "MEMBER_OF",
+          "SUPPLIES",
+          "LIVES_WITH",
+          "CLOSE_RELATIVE",
+          "HAS_STATUTORY_BODY"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Tax",
+          "Goods",
+          "Service",
+          "MemberState",
+          "CustomsValue",
+          "Cost",
+          "Payment",
+          "Destination"
+        ],
+        "relationships": [
+          "RELATED_TO",
+          "DETERMINED_BY",
+          "INCLUDES",
+          "SUBJECT_TO",
+          "ACCOMPANIED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Location",
+          "Document",
+          "Goods",
+          "TaxBase",
+          "Service"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "ACCOMPANIES",
+          "INCLUDES",
+          "CONCERNS",
+          "EXEMPTS",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Tax",
+          "Goods",
+          "Service",
+          "Entity"
+        ],
+        "relationships": [
+          "INCLUDES",
+          "APPLIES_TO",
+          "RETURNED_TO",
+          "REDUCED_BY",
+          "REPORTED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Service",
+          "Taxpayer",
+          "Tax Authority",
+          "Tax Return"
+        ],
+        "relationships": [
+          "RECEIVES",
+          "SUBMITS",
+          "APPLIES_FOR",
+          "EXEMPTS_FROM",
+          "CALCULATES"
+        ]
+      },
+      {
+        "nodes": [
+          "Taxpayer",
+          "CustomsAuthority",
+          "Goods",
+          "LegalEntity",
+          "Tax"
+        ],
+        "relationships": [
+          "PAYS_TAX",
+          "RECEIVES_REFUND",
+          "IMPORTS_GOODS",
+          "SUBJECT_TO_TAX",
+          "PROVIDES_EVIDENCE"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "TaxPayer",
+          "State"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "AGREES_ON",
+          "SUBJECT_TO_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Tax",
+          "Entity",
+          "Creditor",
+          "Debtor",
+          "Invoice"
+        ],
+        "relationships": [
+          "APPLIES_TO",
+          "OWES",
+          "BECOMES_UNCOLLECTIBLE",
+          "REQUIRES_PAYMENT",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Debtor",
+          "Creditor",
+          "Court",
+          "BankruptcyProceeding",
+          "LegalDocument"
+        ],
+        "relationships": [
+          "OWES",
+          "CLAIMS",
+          "SUBMITTED_TO",
+          "PARTICIPATES_IN",
+          "ANNOUNCED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Debtor",
+          "Claim",
+          "Court",
+          "Bankruptcy"
+        ],
+        "relationships": [
+          "HAS_CLAIM",
+          "IS_SUBJECT_TO",
+          "HAS_COURT_ORDER",
+          "IS_PART_OF_BANKRUPTCY"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "LegalEntity",
+          "Court",
+          "Debt",
+          "Resolution"
+        ],
+        "relationships": [
+          "HAS_DEBT",
+          "IS_RELATED_TO",
+          "IS_SUBJECT_TO",
+          "HAS_RESOLUTION",
+          "IS_PART_OF"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Debt",
+          "TaxBase",
+          "GoodsOrServices",
+          "Bankruptcy"
+        ],
+        "relationships": [
+          "OWES",
+          "HAS_DEBT",
+          "DELIVERS",
+          "SUBJECT_TO",
+          "CORRECTS"
+        ]
+      },
+      {
+        "nodes": [
+          "GoodsOrServices",
+          "Debtor",
+          "Creditor",
+          "LegalEntity",
+          "CourtProceeding"
+        ],
+        "relationships": [
+          "DELIVERED_TO",
+          "OWES",
+          "PARTICIPATES_IN",
+          "HAS_DEBT",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalProceeding",
+          "Debtor",
+          "Creditor"
+        ],
+        "relationships": [
+          "HAS_CLAIM",
+          "PARTICIPATES_IN",
+          "IS_SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Entity",
+          "Debt",
+          "Payment",
+          "TaxReturn"
+        ],
+        "relationships": [
+          "PUBLISHED_IN",
+          "SUBJECT_TO",
+          "INHERITED_BY",
+          "ASSIGNED_TO",
+          "RECEIVED_PAYMENT",
+          "REQUIRED_TO_CORRECT"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Taxpayer",
+          "Invoice",
+          "Tax"
+        ],
+        "relationships": [
+          "REQUIRES",
+          "CONTAINS",
+          "PERTAINS_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Date",
+          "Amount",
+          "TaxPayer",
+          "TaxReturnPeriod"
+        ],
+        "relationships": [
+          "HAS_IDENTIFIER",
+          "HAS_DATE",
+          "HAS_DATA",
+          "HAS_INFORMATION",
+          "HAS_AMOUNT",
+          "REQUIRES_DOCUMENT",
+          "SUBMITTED_BY",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Taxpayer",
+          "Tax",
+          "Debt",
+          "Service",
+          "Goods",
+          "LegalProceeding"
+        ],
+        "relationships": [
+          "OBLIGATED_TO",
+          "RELATED_TO",
+          "APPLIES_TO",
+          "BECAME_UNCOLLECTIBLE",
+          "INCLUDES"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Court",
+          "TaxAuthority",
+          "Currency",
+          "Bank"
+        ],
+        "relationships": [
+          "SUBMITS",
+          "DECIDES",
+          "REQUIRES",
+          "CALCULATES",
+          "ANNOUNCES"
+        ]
+      },
+      {
+        "nodes": [
+          "Regulation",
+          "TaxAuthority",
+          "Currency",
+          "Goods",
+          "Service",
+          "MemberState"
+        ],
+        "relationships": [
+          "APPLIES_TO",
+          "NOTIFIES",
+          "CALCULATED_ON",
+          "CONVERTED_TO",
+          "ROUNDING_RULE",
+          "HAS_RATE"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "TaxRate",
+          "Goods",
+          "Service",
+          "SocialEnterprise",
+          "Building",
+          "Contract",
+          "Tenant"
+        ],
+        "relationships": [
+          "APPLIES_TO",
+          "INCLUDES",
+          "SUPPORTS",
+          "USES_FOR",
+          "SPECIFIED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Housing",
+          "Contract",
+          "Building",
+          "Tax",
+          "Service"
+        ],
+        "relationships": [
+          "SUPPORTED_BY",
+          "SPECIFIED_IN",
+          "RELATED_TO",
+          "APPLIES_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxRate",
+          "PostalService",
+          "HealthcareService",
+          "HealthcareFacility",
+          "Goods",
+          "Service"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "PROVIDES",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "HealthcareService",
+          "Person",
+          "Organization",
+          "SocialService"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "RELATED_TO",
+          "EXEMPT_FROM_TAX",
+          "DELIVERED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Goods",
+          "LegalEntity",
+          "Person",
+          "Condition"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "PROVIDED_BY",
+          "REQUIRED_FOR",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalProvision",
+          "Service",
+          "Person",
+          "Organization"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "MEMBER_OF",
+          "RELATED_TO",
+          "EXEMPT_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalEntity",
+          "Person",
+          "Service",
+          "Activity"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "PARTICIPATES_IN",
+          "REQUIRES",
+          "EXEMPTS_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalEntity",
+          "Person",
+          "Event",
+          "Service"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "ORGANIZED_FOR",
+          "PROVIDES",
+          "INCLUDES"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "Building",
+          "ConstructionWork",
+          "Property"
+        ],
+        "relationships": [
+          "LOCATED_ON",
+          "SUBJECT_TO",
+          "INVOLVES"
+        ]
+      },
+      {
+        "nodes": [
+          "Building",
+          "Land",
+          "RealEstate",
+          "Service",
+          "Person"
+        ],
+        "relationships": [
+          "RENTED_BY",
+          "EXEMPT_FROM_TAX",
+          "PART_OF",
+          "PROVIDED_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "RentalAgreement",
+          "Property",
+          "Apartment",
+          "House",
+          "NonResidentialSpace",
+          "ConstructionPermit"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "RELATED_TO",
+          "PART_OF",
+          "SUBLET",
+          "APPROVED_FOR_USE"
+        ]
+      },
+      {
+        "nodes": [
+          "Space",
+          "Value",
+          "Market"
+        ],
+        "relationships": [
+          "HAS_VALUE",
+          "COMPARED_TO",
+          "LOCATED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "ConstructionWork",
+          "ResidentialUnit",
+          "NonResidentialUnit",
+          "Taxpayer"
+        ],
+        "relationships": [
+          "REGULATES",
+          "INVOLVES",
+          "EXEMPTS",
+          "DELIVERS"
+        ]
+      },
+      {
+        "nodes": [
+          "Apartment",
+          "Building",
+          "Person",
+          "FinancialService",
+          "Loan",
+          "Guarantee",
+          "Deposit",
+          "Payment",
+          "Security"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "PROVIDES",
+          "MANAGES",
+          "INVOLVES",
+          "EXEMPTS_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "FinancialInstrument",
+          "Service",
+          "Fund",
+          "Client",
+          "Transaction"
+        ],
+        "relationships": [
+          "INVOLVES",
+          "MANAGED_BY",
+          "PROVIDED_TO",
+          "TRADES_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Law",
+          "Service",
+          "Person",
+          "Entity"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "PROVIDES",
+          "REQUIRES_PERMISSION",
+          "CONDUCTS",
+          "ACTS_ON_BEHALF_OF"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "TaxablePerson",
+          "MemberState",
+          "LegalEntity"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "DELIVERED_TO",
+          "FACILITATES_DELIVERY",
+          "SHIPPED_FROM",
+          "PURCHASED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "LegalEntity",
+          "TaxAuthority",
+          "Goods",
+          "TransportMeans"
+        ],
+        "relationships": [
+          "IDENTIFIED_FOR_TAX",
+          "DELIVERED_TO",
+          "EXEMPT_FROM_TAX",
+          "SENT_FROM",
+          "TRANSPORTED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Country",
+          "LegalEntity",
+          "TaxableEntity",
+          "Goods",
+          "Invoice",
+          "Document"
+        ],
+        "relationships": [
+          "IDENTIFIED_FOR_TAX",
+          "EXEMPT_FROM_TAX",
+          "REQUIRES_PROOF",
+          "TRANSPORTED_BY",
+          "PURCHASED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Organization",
+          "Document",
+          "Goods",
+          "Vehicle"
+        ],
+        "relationships": [
+          "PURCHASES",
+          "DELIVERS",
+          "RECEIVES",
+          "PROVIDES",
+          "LOCATED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Service",
+          "Goods",
+          "DiplomaticMission",
+          "ConsularAuthority",
+          "State",
+          "Worker",
+          "Organization",
+          "Bank",
+          "Military",
+          "Civilian"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "DELIVERED_TO",
+          "ESTABLISHED_IN",
+          "NOT_A_CITIZEN_OF",
+          "HAS_PERMANENT_RESIDENCE",
+          "SUBJECT_TO_INTERNATIONAL_TREATY",
+          "SUPPLIED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "ArmedForce",
+          "CivilianEmployee",
+          "State",
+          "MemberState",
+          "SupplyFacility"
+        ],
+        "relationships": [
+          "USES",
+          "ACCOMPANIES",
+          "PARTICIPATES_IN",
+          "SUPPLIES"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Entity",
+          "Organization",
+          "State",
+          "Policy",
+          "Pandemic",
+          "Taxpayer",
+          "Recipient"
+        ],
+        "relationships": [
+          "SUBJECT_TO",
+          "PARTICIPATES_IN",
+          "ASSIGNED_TO",
+          "REQUIRED_TO",
+          "PROVIDES",
+          "EXEMPTS",
+          "DELIVERS"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Document",
+          "TaxExemption",
+          "Goods",
+          "Entity"
+        ],
+        "relationships": [
+          "REQUIRES",
+          "SUBMITTED_BY",
+          "EXEMPT_FROM_TAX",
+          "DELIVERS",
+          "IS_TAXABLE"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Person",
+          "MemberState",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "PARTICIPATES_IN",
+          "IDENTIFIED_FOR_TAX",
+          "SHIPPED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Supplier",
+          "Buyer",
+          "Person",
+          "State"
+        ],
+        "relationships": [
+          "USES_TAX_ID",
+          "SHIPS_TO",
+          "ASSIGNED_BY",
+          "LOCATED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Entity",
+          "Tax",
+          "Invoice",
+          "Goods",
+          "Island"
+        ],
+        "relationships": [
+          "RECEIVES",
+          "PAYS_TAX",
+          "ISSUES",
+          "LOCATED_IN",
+          "PARTICIPATES_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Goods",
+          "Person",
+          "Location",
+          "Entity"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "TRANSPORTS",
+          "DELIVERED_TO",
+          "SENT_BY",
+          "PURCHASED_BY",
+          "LOCATED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Buyer",
+          "Goods",
+          "TransportMeans",
+          "CustomsAuthority",
+          "Document"
+        ],
+        "relationships": [
+          "PURCHASES",
+          "TRANSPORTS",
+          "REQUIRES",
+          "CONFIRMS"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Regulation",
+          "Goods",
+          "Person",
+          "LegalEntity",
+          "Airport",
+          "Port"
+        ],
+        "relationships": [
+          "CONTAINS",
+          "EXEMPTS_FROM_TAX",
+          "SELLS_TO",
+          "REQUIRES",
+          "LOCATED_IN",
+          "PURCHASED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Service",
+          "Person",
+          "Entity",
+          "Country",
+          "Operation",
+          "Vessel"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "CONNECTED_TO",
+          "PROVIDED_BY",
+          "LOCATED_IN",
+          "USED_FOR",
+          "INCLUDES"
+        ]
+      },
+      {
+        "nodes": [
+          "Food",
+          "Vessel",
+          "War",
+          "Code",
+          "Port",
+          "Service",
+          "Equipment",
+          "Aircraft",
+          "Airline",
+          "Bank",
+          "Goods"
+        ],
+        "relationships": [
+          "DELIVERS",
+          "EXEMPTS_FROM_TAX",
+          "REPAIRS",
+          "RENTS",
+          "MAINTAINS",
+          "SUPPLIES",
+          "USES",
+          "PERFORMS",
+          "PURCHASES"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Services",
+          "Person",
+          "Entity",
+          "Region"
+        ],
+        "relationships": [
+          "PURCHASED_BY",
+          "PROVIDED_BY",
+          "LOCATED_IN",
+          "EXEMPT_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Law",
+          "Entity",
+          "Ministry",
+          "Goods",
+          "FinancialAuthority"
+        ],
+        "relationships": [
+          "CONTAINS",
+          "SIGNED_BETWEEN",
+          "SUBJECT_TO",
+          "EXEMPT_FROM",
+          "PRESENTED_TO",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Person",
+          "Entity",
+          "Substance",
+          "Animal",
+          "BiologicalMaterial",
+          "ChemicalMaterial",
+          "EducationalInstitution",
+          "ResearchInstitution"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "BELONGS_TO",
+          "INTENDED_FOR",
+          "PROVIDES",
+          "RESEARCHES",
+          "ACQUIRED_BY",
+          "USED_FOR"
+        ]
+      },
+      {
+        "nodes": [
+          "Education",
+          "Research",
+          "PharmaceuticalProduct",
+          "CharitableOrganization",
+          "Goods",
+          "NaturalDisasterVictim",
+          "Award",
+          "StateRepresentative",
+          "Exhibition",
+          "AdvertisingMaterial"
+        ],
+        "relationships": [
+          "CONDUCTS",
+          "USED_IN",
+          "SUPPLIED_TO",
+          "AWARDED_TO",
+          "INTENDED_FOR",
+          "IMPORTS_FOR",
+          "ANALYZED_IN"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Person",
+          "Goods",
+          "State",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "RECEIVES",
+          "EXEMPTS_FROM",
+          "CONTAINS",
+          "TRANSPORTED_TO",
+          "REPRESENTS"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxPayer",
+          "CustomsAuthority",
+          "Goods",
+          "Contract",
+          "Person",
+          "Organization"
+        ],
+        "relationships": [
+          "PROVIDES_INFORMATION_TO",
+          "EXEMPTS_FROM_TAX",
+          "REPRESENTS",
+          "SHIPPED_FROM",
+          "SHIPPED_TO",
+          "HAS_IDENTIFICATION_NUMBER",
+          "HAS_PRIVILEGES"
+        ]
+      },
+      {
+        "nodes": [
+          "Organization",
+          "State",
+          "Military",
+          "Bank",
+          "Commodity",
+          "Service"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "PARTICIPATES_IN",
+          "IMPORTS",
+          "PROVIDES",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Commodity",
+          "TaxAuthority",
+          "Entity",
+          "EuropeanCommission",
+          "Agency",
+          "Organization"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "IMPORTS",
+          "REPRESENTS",
+          "ASSIGNED_TASKS",
+          "REGULATED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "EuropeanUnion",
+          "Commission",
+          "Agency",
+          "Authority",
+          "CustomsOffice",
+          "Military",
+          "Person",
+          "Goods"
+        ],
+        "relationships": [
+          "INFORMS",
+          "REQUIRED_BY",
+          "EXEMPT_FROM_TAX",
+          "USED_FOR",
+          "SENT_BY",
+          "SENT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Person",
+          "Passenger",
+          "Aircraft",
+          "Baggage"
+        ],
+        "relationships": [
+          "SENT_BY",
+          "RECEIVED_BY",
+          "TRAVELS_BY",
+          "USED_FOR",
+          "EXEMPT_FROM_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "PublicAuthority",
+          "Baggage",
+          "Traveler",
+          "CustomsAuthority"
+        ],
+        "relationships": [
+          "PRESENTS",
+          "REGISTERED_AS"
+        ]
+      },
+      {
+        "nodes": [
+          "Company",
+          "Goods",
+          "Person",
+          "State"
+        ],
+        "relationships": [
+          "RESPONSIBLE_FOR",
+          "DESIGNED_FOR",
+          "EXEMPT_FROM_TAX",
+          "IMPORTS",
+          "TRAVELS_WITH"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Traveler",
+          "TaxExemption",
+          "TobaccoProduct"
+        ],
+        "relationships": [
+          "SUBJECT_TO",
+          "EXEMPT_FROM",
+          "LIMITED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Quantity",
+          "TaxExemption",
+          "TobaccoProduct",
+          "AlcoholicBeverage",
+          "Passenger"
+        ],
+        "relationships": [
+          "APPLIES_TO",
+          "INCLUDES",
+          "LIMITED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "Alcohol",
+          "Person",
+          "Goods",
+          "Tax"
+        ],
+        "relationships": [
+          "EXEMPT_FROM",
+          "APPLIES_TO",
+          "REQUIRES",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Organization",
+          "Document",
+          "Goods",
+          "Tax"
+        ],
+        "relationships": [
+          "REQUIRES_PAYMENT",
+          "ISSUES",
+          "PROVIDES",
+          "LOCATED_IN",
+          "RECEIVES"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Organization",
+          "Document",
+          "Goods",
+          "Location"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "RECEIVES",
+          "VERIFIES",
+          "CONFIRMS",
+          "TRANSPORTS"
+        ]
+      },
+      {
+        "nodes": [
+          "FinancialAuthority",
+          "MemberState",
+          "Document",
+          "Tax",
+          "CustomsOffice"
+        ],
+        "relationships": [
+          "CONFIRMS",
+          "SUBMITTED_TO",
+          "EXEMPTS_FROM",
+          "REVOKES",
+          "ASSESSES"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "CustomsAuthority",
+          "TaxExemption",
+          "Service",
+          "TaxWarehouse"
+        ],
+        "relationships": [
+          "SUBMITTED_TO",
+          "EXEMPT_FROM_TAX",
+          "RELATED_TO",
+          "LOCATED_IN",
+          "RELEASED_TO",
+          "WITHDRAWN_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "Condition",
+          "Goods",
+          "Service",
+          "TaxWarehouse",
+          "MemberState"
+        ],
+        "relationships": [
+          "EXEMPT_FROM_TAX",
+          "RELATED_TO",
+          "LOCATED_IN",
+          "ACQUIRED_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "Service",
+          "Tax"
+        ],
+        "relationships": [
+          "REQUIRES_PAYMENT",
+          "PROVIDES",
+          "SUBJECT_TO",
+          "APPLIES_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "CustomsWarehouseOperator"
+        ],
+        "relationships": [
+          "DELIVERS",
+          "NOTIFIES",
+          "APPLIES_TO",
+          "RELEASES_FROM_CUSTOMS_REGIME"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "CustomsWarehouse",
+          "Invoice"
+        ],
+        "relationships": [
+          "RECEIVES",
+          "PLACED_IN",
+          "OBLIGATED_TO",
+          "RELATED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "CustomsWarehouseOperator",
+          "Person",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "HAS_RECORD",
+          "REQUESTS",
+          "RESPONSIBLE_FOR",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Regime",
+          "Operator",
+          "CustomWarehouse",
+          "Goods",
+          "Value",
+          "Currency",
+          "Bank"
+        ],
+        "relationships": [
+          "HAS_INFORMATION",
+          "CALCULATED_FROM",
+          "PUBLISHED_ON",
+          "CONVERTED_TO",
+          "DETERMINED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "StorageFacility",
+          "Goods",
+          "Taxpayer",
+          "Authority",
+          "TechnicalDocumentation"
+        ],
+        "relationships": [
+          "LOCATED_IN",
+          "REQUIRES_PERMISSION",
+          "SUBMITS_REQUEST",
+          "CONTAINS",
+          "HAS_CAPACITY"
+        ]
+      },
+      {
+        "nodes": [
+          "Address",
+          "StorageCapacity",
+          "TechnicalDocumentation",
+          "StationaryTank",
+          "Measurement",
+          "Person",
+          "TaxAuthority",
+          "CustomsAuthority",
+          "Goods",
+          "Deposit",
+          "Decision"
+        ],
+        "relationships": [
+          "LOCATED_AT",
+          "HAS_CAPACITY",
+          "INCLUDES",
+          "REQUIRES",
+          "SUBMITTED_TO",
+          "DETERMINED_BY",
+          "PAID_TO",
+          "SUBJECT_TO",
+          "COMPLIES_WITH"
+        ]
+      },
+      {
+        "nodes": [
+          "Currency",
+          "Bank",
+          "TaxAuthority",
+          "Permit",
+          "TaxPayer",
+          "SpecialWarehouseOperator"
+        ],
+        "relationships": [
+          "CALCULATED_IN",
+          "ISSUED_BY",
+          "REQUIRES",
+          "PROVIDES",
+          "DEPOSITS",
+          "RETURNS"
+        ]
+      },
+      {
+        "nodes": [
+          "Law",
+          "TaxAuthority",
+          "SpecialWarehouseOperator",
+          "Tax",
+          "Debt"
+        ],
+        "relationships": [
+          "HAS_PERMISSION",
+          "REVOKES_PERMISSION",
+          "APPLIES_FOR",
+          "HAS_DEBT",
+          "USES_FOR_PAYMENT"
+        ]
+      },
+      {
+        "nodes": [
+          "Permission",
+          "TaxAuthority",
+          "Person",
+          "Goods",
+          "SpecialWarehouse"
+        ],
+        "relationships": [
+          "HAS_PERMISSION",
+          "RECEIVES",
+          "SUPPLIES",
+          "NOTIFIES",
+          "EXEMPTS_FROM_TAX",
+          "REQUIRES",
+          "WITHDRAWS_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "Operator",
+          "SpecialWarehouse",
+          "Invoice",
+          "Goods",
+          "Service",
+          "Person"
+        ],
+        "relationships": [
+          "ASSIGNED_TO",
+          "DELIVERED_TO",
+          "RECEIVED_FROM",
+          "PLACED_IN",
+          "ISSUED_BY",
+          "REQUESTED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Record",
+          "Operator",
+          "TaxAuthority",
+          "Goods",
+          "Collateral",
+          "Value"
+        ],
+        "relationships": [
+          "REQUIRED_TO_KEEP",
+          "PROHIBITED_FROM_REMOVING",
+          "RESPONSIBLE_FOR_TAX",
+          "USED_FOR_PAYMENT",
+          "CALCULATED_FROM_VALUE"
+        ]
+      },
+      {
+        "nodes": [
+          "Goods",
+          "Tax",
+          "CustomsAuthority",
+          "WarehouseOperator",
+          "CurrencyExchangeRate"
+        ],
+        "relationships": [
+          "EXEMPT_FROM",
+          "REQUIRED_FOR",
+          "LOCATED_IN",
+          "APPLIES_TO",
+          "DETERMINED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "CustomsAuthority",
+          "Taxpayer",
+          "Goods",
+          "Tax",
+          "TaxWarehouse",
+          "Regulation"
+        ],
+        "relationships": [
+          "RELEASES",
+          "OWES",
+          "APPLIES_FOR",
+          "SUBJECT_TO",
+          "NOTIFIES"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxableEntity",
+          "CustomsOffice",
+          "TaxWarehouseOperator",
+          "TaxGuarantee"
+        ],
+        "relationships": [
+          "SUBMITS",
+          "REQUIRES",
+          "APPLIES_FOR",
+          "RELEASES"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Tax",
+          "Goods",
+          "Person",
+          "TaxAuthority",
+          "WarehouseOperator"
+        ],
+        "relationships": [
+          "REQUIRES_PAYMENT",
+          "NOTIFIES",
+          "DELIVERS",
+          "EXEMPTS_FROM_TAX",
+          "RETURNS_DEPOSIT",
+          "USES_DEPOSIT"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Goods",
+          "TaxWarehouse",
+          "Invoice"
+        ],
+        "relationships": [
+          "REQUIRES",
+          "OWES_TAX",
+          "PROVIDES",
+          "RECEIVES"
+        ]
+      },
+      {
+        "nodes": [
+          "Invoice",
+          "Goods",
+          "Service",
+          "TaxWarehouseOperator",
+          "Person",
+          "TaxAuthority"
+        ],
+        "relationships": [
+          "ISSUED_FOR",
+          "RELATED_TO",
+          "LOCATED_IN",
+          "REQUIRED_BY",
+          "MAINTAINS_RECORDS"
+        ]
+      },
+      {
+        "nodes": [
+          "Record",
+          "Operator",
+          "TaxWarehouse",
+          "Person",
+          "TaxAuthority",
+          "Goods"
+        ],
+        "relationships": [
+          "REQUIRED_TO_KEEP",
+          "SUBJECT_TO",
+          "RESPONSIBLE_FOR",
+          "ALLOWS_WITHDRAWAL",
+          "CALCULATED_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxPayer",
+          "Goods",
+          "Services",
+          "Tax",
+          "MemberState",
+          "CustomsAuthority"
+        ],
+        "relationships": [
+          "HAS_TAX_RIGHT",
+          "CAN_DEDUCT_TAX",
+          "SUBJECT_TO_TAX",
+          "EXEMPT_FROM_TAX",
+          "APPLIES_TAX",
+          "RECEIVES_GOODS",
+          "RECEIVES_SERVICES"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxPayer",
+          "Goods",
+          "Services",
+          "Customer",
+          "InvestmentGold",
+          "FinancialServices",
+          "InsuranceServices",
+          "EURegion"
+        ],
+        "relationships": [
+          "PROVIDES",
+          "EXEMPT_FROM_TAX",
+          "CONNECTED_TO",
+          "LOCATED_IN",
+          "ACQUIRES",
+          "CALCULATES_TAX"
+        ]
+      },
+      {
+        "nodes": [
+          "Taxpayer",
+          "InvestmentAsset",
+          "BusinessPurpose",
+          "Service",
+          "Goods"
+        ],
+        "relationships": [
+          "ACQUIRES",
+          "USED_FOR",
+          "DEDUCTS",
+          "CONSIDERED_AS"
+        ]
+      },
+      {
+        "nodes": [
+          "Business",
+          "GoodsAndServices",
+          "Tax",
+          "Income"
+        ],
+        "relationships": [
+          "USED_FOR",
+          "DEDUCTED_FROM",
+          "CALCULATED_BASED_ON"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "GoodsAndServices",
+          "Business",
+          "Tax"
+        ],
+        "relationships": [
+          "USES",
+          "OWES",
+          "APPLIES_TO",
+          "CAN_DEDUCT",
+          "IS_FOREIGN"
+        ]
+      },
+      {
+        "nodes": [
+          "Person",
+          "Entity",
+          "Tax",
+          "GoodsAndServices",
+          "InvestmentProperty"
+        ],
+        "relationships": [
+          "APPLIES_TO",
+          "REGISTERED_AS",
+          "USED_FOR",
+          "RELATED_TO",
+          "SUBJECT_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "Business",
+          "Asset",
+          "Tax",
+          "Coefficient"
+        ],
+        "relationships": [
+          "USED_FOR",
+          "CALCULATED_AS",
+          "DETERMINED_BY"
+        ]
+      },
+      {
+        "nodes": [
+          "Service",
+          "Value",
+          "Business",
+          "Asset",
+          "Organization"
+        ],
+        "relationships": [
+          "INCLUDES",
+          "USED_FOR",
+          "PART_OF",
+          "CALCULATED_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "LegalDocument",
+          "Taxpayer",
+          "Tax",
+          "TimePeriod"
+        ],
+        "relationships": [
+          "SUBJECT_TO",
+          "CALCULATED_FOR",
+          "PROVIDES",
+          "DETERMINED_BY",
+          "CALCULATED_FROM"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxPayer",
+          "Invoice",
+          "Supplier",
+          "MemberState",
+          "CustomsAuthority",
+          "Goods"
+        ],
+        "relationships": [
+          "HAS_INVOICE",
+          "HAS_RECORDS",
+          "HAS_GOODS",
+          "HAS_CUSTOMS_DOCUMENT",
+          "IS_FROM_MEMBER_STATE"
+        ]
+      },
+      {
+        "nodes": [
+          "Taxpayer",
+          "Document",
+          "TaxPeriod"
+        ],
+        "relationships": [
+          "HAS_DOCUMENT",
+          "PERFORMS_DEDUCTION",
+          "HAS_RIGHT_TO_DEDUCTION"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxPeriod",
+          "Taxpayer",
+          "Invoice",
+          "TaxReturn"
+        ],
+        "relationships": [
+          "HAS_RIGHT_TO_DEDUCT",
+          "SUBMITS",
+          "OWES_TAX",
+          "HAS_INVOICE"
+        ]
+      },
+      {
+        "nodes": [
+          "Document",
+          "Law",
+          "Person",
+          "Tax",
+          "Vehicle",
+          "MemberState"
+        ],
+        "relationships": [
+          "CONTAINS",
+          "REGULATES",
+          "OWNS",
+          "HAS_RIGHT_TO_DEDUCT",
+          "IS_DELIVERED_TO"
+        ]
+      },
+      {
+        "nodes": [
+          "TaxPayer",
+          "Asset",
+          "Period"
+        ],
+        "relationships": [
+          "HAS_RIGHT_TO_DEDUCT",
+          "USED_FOR_BUSINESS",
+          "HAS_USEFUL_LIFE",
+          "ADJUSTED_OVER_PERIOD",
+          "APPLIES_DEDUCTION"
+        ]
+      },
+      {
+        "nodes": [
+          "Taxpayer",
+          "Tax",
+          "TaxBaseAdjustment"
+        ],
+        "relationships": [
+          "APPLIES_FOR",
+          "HAS_RIGHT_TO",
+          "REQUIRED_TO_CORRECT"
+        ]
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "State",
+        "Employee",
+        "Invoice",
+        "EuropeanCommission",
+        "Payer",
+        "Document",
+        "TimePeriod",
+        "Military",
+        "RegistrationRequest",
+        "Organization",
+        "Tenant",
+        "FinancialInstrument",
+        "TaxablePerson",
+        "Software",
+        "TransportMeans",
+        "LegalProceeding",
+        "Vehicle",
+        "Operation",
+        "Airline",
+        "Place",
+        "Heat",
+        "AlcoholicBeverage",
+        "Merchant",
+        "ChemicalMaterial",
+        "Fund",
+        "Asset",
+        "Cold",
+        "HealthcareService",
+        "SpecialWarehouse",
+        "Education",
+        "CustomsOffice",
+        "LegalProvision",
+        "ThirdParty",
+        "OrganizationalUnit",
+        "Measurement",
+        "InvestmentGold",
+        "Amount",
+        "Taxpayer",
+        "Traveler",
+        "TaxWarehouseOperator",
+        "System",
+        "TaxRepresentative",
+        "Tax Authority",
+        "Bankruptcy",
+        "Research",
+        "NaturalDisasterVictim",
+        "CustomsWarehouse",
+        "Income",
+        "BusinessPurpose",
+        "StateRepresentative",
+        "Land",
+        "Quantity",
+        "Passenger",
+        "DiplomaticMission",
+        "Electricity",
+        "TechnicalDocumentation",
+        "Business",
+        "Account",
+        "StateAuthority",
+        "CustomWarehouse",
+        "Permit",
+        "SpecialWarehouseOperator",
+        "CustomsAuthority",
+        "TaxLiability",
+        "Currency",
+        "Transaction",
+        "Debtor",
+        "Value",
+        "Subsidy",
+        "Record",
+        "Period",
+        "Agency",
+        "ArmedForces",
+        "ConsularAuthority",
+        "TaxAuthority",
+        "InsuranceServices",
+        "CharitableOrganization",
+        "Copyright Holder",
+        "CourtProceeding",
+        "Date",
+        "LegalDocument",
+        "Intermediary",
+        "Client",
+        "Airport",
+        "HealthcareFacility",
+        "EconomicActivity",
+        "Substance",
+        "Permission",
+        "InvestmentProperty",
+        "Port",
+        "GoodsAndServices",
+        "IntangibleAsset",
+        "Equipment",
+        "CustomsWarehouseOperator",
+        "Cost",
+        "Loan",
+        "StorageFacility",
+        "Destination",
+        "CommunicationService",
+        "Services",
+        "Property",
+        "TobaccoProduct",
+        "Apartment",
+        "CustomsRegime",
+        "Authority",
+        "Company",
+        "CurrencyExchangeRate",
+        "Member",
+        "FinancialService",
+        "Island",
+        "GovernmentBody",
+        "Event",
+        "Voucher",
+        "Ministry",
+        "IdentificationNumber",
+        "Regime",
+        "Request",
+        "CommunicationNetwork",
+        "EuropeanUnion",
+        "Recipient",
+        "House",
+        "PaymentServiceProvider",
+        "TaxReturnPeriod",
+        "Customer",
+        "Bank",
+        "Discount",
+        "LegalSuccessor",
+        "Construction",
+        "Customs Authority",
+        "MarketValue",
+        "Aircraft",
+        "Goods",
+        "Penalty",
+        "ConstructionWork",
+        "FinancialDirectorate",
+        "NonResidentialUnit",
+        "ResidentialUnit",
+        "Animal",
+        "StationaryTank",
+        "Supplier",
+        "FinancialAuthority",
+        "Watercraft",
+        "Group",
+        "Database",
+        "Exhibition",
+        "Gas",
+        "Vessel",
+        "Interest",
+        "Contract",
+        "Activity",
+        "Security",
+        "Foreign Entity",
+        "Food",
+        "Guarantee",
+        "BankruptcyProceeding",
+        "Service",
+        "TaxPeriod",
+        "Coefficient",
+        "TaxPayer",
+        "SocialEnterprise",
+        "Resolution",
+        "TaxExemption",
+        "TaxBaseAdjustment",
+        "Policy",
+        "TaxRegistrationDecision",
+        "ForeignEntity",
+        "TaxObligation",
+        "EURegion",
+        "Claim",
+        "RentalAgreement",
+        "Pandemic",
+        "Commission",
+        "Operator",
+        "Relationship",
+        "Member State",
+        "Alcohol",
+        "ResearchInstitution",
+        "Representative",
+        "Code",
+        "CustomsValue",
+        "InvestmentAsset",
+        "ArmedForce",
+        "CivilEmployee",
+        "GroupMember",
+        "Space",
+        "Decision",
+        "NonResidentialSpace",
+        "FinancialServices",
+        "AdvertisingMaterial",
+        "TaxableEntity",
+        "War",
+        "Collateral",
+        "Network",
+        "Law",
+        "BusinessEntity",
+        "EducationalInstitution",
+        "Person",
+        "Architect",
+        "PharmaceuticalProduct",
+        "Location",
+        "PostalService",
+        "Commodity",
+        "Tax Obligation",
+        "TaxReturn",
+        "CivilianEmployee",
+        "BiologicalMaterial",
+        "Regulation",
+        "ElectronicCommunicationInterface",
+        "ControllingEntity",
+        "Payment",
+        "Identification Number",
+        "Payment Method",
+        "Deposit",
+        "Housing",
+        "Address",
+        "Entity",
+        "Buyer",
+        "Tax Return",
+        "SupplyFacility",
+        "TaxWarehouse",
+        "Country",
+        "SocialService",
+        "Debt",
+        "RealEstate",
+        "GoodsOrServices",
+        "Baggage",
+        "ConstructionPermit",
+        "MaterialAsset",
+        "WarehouseOperator",
+        "TaxRate",
+        "StorageCapacity",
+        "Court",
+        "Tax",
+        "Condition",
+        "TaxBase",
+        "PublicAuthority",
+        "TaxApplication",
+        "MemberState",
+        "Creditor",
+        "LegalEntity",
+        "Payment Period",
+        "StateReserve",
+        "Market",
+        "Civilian",
+        "BankAccount",
+        "Building",
+        "Region",
+        "Transport",
+        "Award",
+        "TaxGuarantee",
+        "CustomsRegulation",
+        "TaxIdentificationNumber",
+        "Worker"
+      ],
+      "relationships": [
+        "DECREASES",
+        "TRAVELS_WITH",
+        "HAS_RIGHT_TO",
+        "EXEMPTS",
+        "HAS_ADDRESS",
+        "USES",
+        "DESIGNED_FOR",
+        "HAS_ASSET",
+        "CONDUCTS_ON_BEHALF_OF",
+        "RECEIVES_CONTRACT",
+        "SOLD",
+        "RECEIVED_BY",
+        "ASSOCIATED_WITH",
+        "SENT_TO",
+        "USES_FOR_PAYMENT",
+        "PROVIDES_INFORMATION_TO",
+        "IS_TAXABLE",
+        "AGREED_UPON",
+        "RECEIVED_FOR",
+        "EXEMPT_FROM",
+        "CALCULATED_BASED_ON",
+        "SIGNED_BETWEEN",
+        "REQUIRES_TAX",
+        "RECEIVED",
+        "SUBMITS_REQUEST_TO",
+        "SHIPPED_TO",
+        "IS_COMPARABLE_TO",
+        "RESEARCHES",
+        "BECOMES",
+        "ORGANIZED_FOR",
+        "NOT_A_CITIZEN_OF",
+        "REPAIRS",
+        "HAS_PRIVILEGES",
+        "REQUIRED_FOR",
+        "CAN_DEDUCT",
+        "USED_IN",
+        "REGULATED_BY",
+        "PART_OF",
+        "PERFORMS",
+        "IMPORTS_GOODS",
+        "CONCERNS",
+        "REVOKES_PERMISSION",
+        "HAS_STATUTORY_BODY",
+        "HAS_GOODS",
+        "HAS_CUSTOMS_DOCUMENT",
+        "PURPOSE_OF",
+        "SENDS_GOODS",
+        "RECEIVED_FROM",
+        "USED_FOR_PAYMENT",
+        "IMPOSED_BY",
+        "DISTRIBUTES",
+        "DECIDES_ON",
+        "ASSESSES",
+        "SUBJECT_TO",
+        "MEMBER_OF",
+        "AWARDED_TO",
+        "MAINTAINS_RECORDS",
+        "REQUIRES",
+        "IS_BASED_ON",
+        "REGISTERS",
+        "ASSIGNED_TASKS",
+        "PERFORMS_DEDUCTION",
+        "WITHDRAWS_FROM",
+        "COMPARED_TO",
+        "HAS_BUSINESS_LOCATION",
+        "CLOSE_RELATIVE",
+        "CALCULATED_FOR",
+        "ISSUES",
+        "GOVERNS",
+        "RELEASED_IN",
+        "DETERMINED_BY",
+        "ACQUIRES",
+        "RESPONSIBLE_FOR_TAX",
+        "HAS_INFORMATION",
+        "CONTROLS",
+        "REGISTERED_UNDER",
+        "REPRESENTS",
+        "DUE_ON",
+        "HAS_RECORD",
+        "SPECIFIED_IN",
+        "ACCOMPANIED_BY",
+        "CONSUMES",
+        "DECIDES_TO_TAX",
+        "DELIVERED",
+        "PRESENTED_TO",
+        "RECEIVES_REFUND",
+        "USED_BY",
+        "REQUESTED_BY",
+        "PROCESSED_FOR",
+        "CONDUCTS_ACTIVITY",
+        "RECEIVES_SERVICE",
+        "SUPPORTED_BY",
+        "INHERITED_BY",
+        "AGREES_ON",
+        "SOLD_BY",
+        "REQUIRED_TO_CORRECT",
+        "REGISTERED_BY",
+        "DELIVERED_TO",
+        "PROVIDES",
+        "HAS_OBLIGATION",
+        "COMPLIES_WITH",
+        "HAS_RIGHTS_AND_OBLIGATIONS",
+        "CONDITIONS_BROKEN",
+        "REGISTERED_WITH",
+        "HAS_PERMANENT_RESIDENCE",
+        "RECEIVES_GOODS",
+        "DELIVERED_BY",
+        "PROVIDED_FOR",
+        "TRANSFERRED_BY",
+        "ACTS_ON_BEHALF_OF",
+        "ASSIGNED_TAX_ID",
+        "ACCESS_TO",
+        "BECOMES_PAYER",
+        "DEDUCTED_FROM",
+        "CONNECTED_ECONOMICALLY",
+        "REPORTED_IN",
+        "REQUIRES_REGISTRATION",
+        "USES_ACCOUNT",
+        "DELIVERS",
+        "ASSIGNED_TO",
+        "PHYSICALLY_AVAILABLE",
+        "CLAIMS",
+        "RELEASES",
+        "ASSIGNED_IDENTIFICATION_NUMBER",
+        "SUBJECT_TO_SPECIAL_REGULATIONS",
+        "ADJUSTED_OVER_PERIOD",
+        "SOLD_TO",
+        "BECOMES_UNCOLLECTIBLE",
+        "TRAVELS_BY",
+        "OBTAINS",
+        "RETURNED_TO",
+        "SUPPLIES",
+        "SUBORDINATE_TO",
+        "INVOICED_BY",
+        "PROVIDES_GOODS",
+        "SUBMITS",
+        "BECOMES_INDEPENDENT",
+        "MAINTAINS",
+        "CONTRIBUTES_TO",
+        "ACCOMPANIES",
+        "HAS_DEBT",
+        "DEDUCTS",
+        "SUPPORTS",
+        "PROCESSED_IN",
+        "SUBJECT_TO_LEGAL_DECISION",
+        "SENT_BY",
+        "CHANGES_REGISTRATION",
+        "OBLIGATED_TO",
+        "INCLUDES",
+        "TRANSPORTED_FROM",
+        "APPLIES_FOR",
+        "BECAME_UNCOLLECTIBLE",
+        "PAYS_TAX",
+        "PUBLISHED_ON",
+        "ASSIGNED_BY",
+        "FOR_BUSINESS_PURPOSES",
+        "REQUIRES_PERMISSION",
+        "PROVIDES_SERVICE",
+        "IDENTIFIED_BY",
+        "REVOKES",
+        "ESTABLISHED_IN",
+        "IS_TAXABLE_PERSON",
+        "HAS_STATUS",
+        "DEFINED_AS",
+        "IMPORTS_FOR",
+        "RENTS",
+        "CONFIRMED_BY",
+        "TRIGGERS",
+        "OWNS",
+        "EXEMPTS_FROM_TAX",
+        "PUBLISHED_IN",
+        "PLACED_IN",
+        "SUPPLIES_SERVICE",
+        "TRANSFERS",
+        "IS_PART_OF",
+        "REQUIRES_PAYMENT",
+        "TRANSFERS_TO",
+        "LOST",
+        "ASSIGNS",
+        "APPOINTS",
+        "PROVIDED_TO",
+        "REGULATES",
+        "CALCULATED_ON",
+        "HAS_TAX_RIGHT",
+        "OWES_TAX",
+        "SUPPLEMENTARY_TO",
+        "HAS_MAIN_ACTIVITY",
+        "APPLIES_DEDUCTION",
+        "IS_SUBJECT_TO",
+        "CONTAINS",
+        "TRANSPORTS_GOODS",
+        "IDENTIFIED_FOR_TAX",
+        "CANCELS_DECISION",
+        "USED_FOR_BUSINESS",
+        "COLLECTS_ON_BEHALF_OF",
+        "SUBJECT_TO_DECISION",
+        "REPRESENTED_BY",
+        "CALCULATED_FROM",
+        "DESTROYED",
+        "PURCHASED_FOR_CONSIDERATION",
+        "CONNECTED_FINANCIALLY",
+        "HAS_IDENTIFICATION_NUMBER",
+        "IS_IDENTIFIED_FOR_TAX",
+        "HAS_CLAIM",
+        "TRANSFERRED_RIGHTS",
+        "EXEMPTS_FROM",
+        "SUBMITS_APPEAL",
+        "ISSUED_DECISION",
+        "PURCHASED_FROM",
+        "BECAME_SUCCESSOR",
+        "ORDERED_BY",
+        "BECOMES_TAXPAYER",
+        "CONFIRMS",
+        "INSTALLED_BY",
+        "USES_FOR",
+        "HAS_USEFUL_LIFE",
+        "REQUESTS_PAYMENT",
+        "CONVERTED_TO",
+        "BELONGS_TO",
+        "LOCATED_IN",
+        "PROVIDED_BY",
+        "CONSIDERED_AS",
+        "REPORTED_TO",
+        "EXEMPT_FROM_TAX",
+        "SUBMITTED_APPLICATION",
+        "MANAGES",
+        "REQUIRED_TO_REGISTER",
+        "TRADES_FOR",
+        "VERIFIES",
+        "TRANSPORTED_BY",
+        "SUPPLIED_TO",
+        "OWNERSHIP",
+        "NOTIFIED_TO",
+        "ALLOWS_WITHDRAWAL",
+        "ACQUIRED",
+        "BECOMES_VALID",
+        "CALCULATES_TAX",
+        "ISSUES_DECISION",
+        "STOLEN",
+        "IS_RELATED_TO",
+        "INVOICED_FOR",
+        "OBLIGATED_TO_FOLLOW",
+        "ACQUIRED_FROM",
+        "SHIPPED_BY",
+        "PROHIBITED_FROM_REMOVING",
+        "REQUIRES_PROOF",
+        "HAS_DATA",
+        "SUBJECT_TO_TAX",
+        "IS_FOREIGN",
+        "FACILITATES_DELIVERY",
+        "PAID_TO",
+        "PARTICIPATES_IN",
+        "USES_DEPOSIT",
+        "INFORMS",
+        "HAS_PERMISSION",
+        "REQUIRED_TO",
+        "IS_DELIVERED_TO",
+        "SELLS",
+        "STARTS_IN",
+        "HAS_DOCUMENT",
+        "DELIVERED_ON",
+        "PERFORMS_BUSINESS",
+        "INSTALLED_AT",
+        "PROVIDES_EVIDENCE",
+        "PROVIDES_ACCESS_TO",
+        "TEACHES",
+        "SUBMITS_REQUEST",
+        "TRANSPORTS",
+        "SUBJECT_TO_CUSTOMS_REGULATIONS",
+        "REQUIRED_TO_SUBMIT",
+        "PROVIDES_RIGHT_TO_USE",
+        "CONDUCTS",
+        "ANALYZED_IN",
+        "CONNECTED_ORGANIZATIONALLY",
+        "LOCATED_ON",
+        "WITHDRAWN_FROM",
+        "ISSUED_BY",
+        "ENTERS",
+        "REQUESTS",
+        "REGISTERED_FOR_TAX",
+        "FACILITATES",
+        "HAS_RECORDS",
+        "HAS_ACCOUNT",
+        "INTENDED_FOR",
+        "HAS_REPRESENTATIVE",
+        "ASSIGNED_AS",
+        "INVOLVES",
+        "CORRECTS",
+        "HAS_VALUE",
+        "RELATED_TO",
+        "SELLS_TO",
+        "HAS_COURT_ORDER",
+        "CALCULATES",
+        "SUBLET",
+        "ANNOUNCES",
+        "SHIPS_TO",
+        "BECOMES_PAYABLE",
+        "PROVIDED_AT",
+        "RECEIVED_PAYMENT",
+        "REQUIRED_TO_KEEP",
+        "RECEIVES_PAYMENT",
+        "HAS_SUCCESSOR",
+        "RELEASES_FROM_CUSTOMS_REGIME",
+        "CONTROLLED_BY",
+        "RECEIVES_SERVICES",
+        "OCCURS_ON",
+        "HAS_AMOUNT",
+        "EXCLUDES_MEMBER",
+        "RECEIVES",
+        "APPLIES_TAX",
+        "HAS_LOCATION",
+        "HAS_MEMBER",
+        "HAS_RIGHT_TO_DEDUCTION",
+        "APPLIES_TO",
+        "OWES",
+        "SUBMITTED_TO",
+        "PERTAINS_TO",
+        "HAS_DATE",
+        "CONDITIONS_MET",
+        "IS_LOCATED_IN",
+        "HAS_RESOLUTION",
+        "ACQUIRED_BY",
+        "HAS_INVOICE",
+        "BECAME_TAXPAYER",
+        "CAN_DEDUCT_TAX",
+        "USED_FOR",
+        "SUBORDINATES_TO",
+        "ROUNDING_RULE",
+        "SUBMITTED_BY",
+        "IS_FROM_MEMBER_STATE",
+        "INCLUDED_IN",
+        "RENTED_BY",
+        "HAS_TAX_ID",
+        "BASED_ON",
+        "TRANSFERS_RIGHTS_AND_OBLIGATIONS",
+        "CONNECTED_TO",
+        "ASSIGNED_ID",
+        "REGISTERS_FOR",
+        "CALCULATED_IN",
+        "HAS_IDENTIFIER",
+        "HAS_RIGHT_TO_DEDUCT",
+        "DEPOSITS",
+        "EMPLOYS",
+        "REQUIRED_TO_NOTIFY",
+        "ENDS_AT",
+        "PAID_ON_TIME",
+        "CALCULATED_FROM_VALUE",
+        "ENGAGES_IN",
+        "PART_OF_GROUP",
+        "DECIDES",
+        "COMMUNICATES_WITH",
+        "ANNOUNCED_IN",
+        "REGISTERED_AS",
+        "HAS_CAPACITY",
+        "REQUIRED_TO_APPLY",
+        "VIOLATES_OBLIGATION",
+        "SUBJECT_TO_INTERNATIONAL_TREATY",
+        "IMPORTS",
+        "SENT_FROM",
+        "EXPIRES_ON",
+        "MANAGED_BY",
+        "RELEASED_TO",
+        "REQUIRED_TO_REGISTER_FOR_TAX",
+        "RETURNS_DEPOSIT",
+        "IS_PART_OF_BANKRUPTCY",
+        "LIVES_WITH",
+        "PURCHASED",
+        "CALCULATED_AS",
+        "ACQUIRES_RIGHT",
+        "TRANSPORTED_TO",
+        "RENTAL_LOCATION",
+        "REDUCED_BY",
+        "HAS_RELATIONSHIP_WITH",
+        "NOTIFIES",
+        "PRESENTS",
+        "REQUIRED_BY",
+        "IS_SUCCESSOR_OF",
+        "REGARDED_AS",
+        "ACQUIRED_ASSET",
+        "PURCHASES",
+        "REPLACED_BY",
+        "ISSUES_DECISION_ON",
+        "ISSUED_FOR",
+        "PURCHASED_BY",
+        "LIMITED_TO",
+        "APPROVED_FOR_USE",
+        "ACQUIRES_GOODS",
+        "SUBMITS_APPLICATION_TO",
+        "TRANSFERS_RIGHTS",
+        "HAS_RATE",
+        "SHIPPED_FROM",
+        "LOCATED_AT",
+        "RETURNS",
+        "RESPONSIBLE_FOR",
+        "STARTS_AT",
+        "IS_TAXABLE_ENTITY",
+        "REQUIRED_TO_REPORT",
+        "REQUIRES_DOCUMENT",
+        "USES_TAX_ID"
+      ]
+    }
+  }
+]

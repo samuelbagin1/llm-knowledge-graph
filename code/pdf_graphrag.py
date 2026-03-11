@@ -190,7 +190,7 @@ class PDFGraphRAG:
         )
         
         self.openai_graph_transform = ChatOpenAI(
-            model="gpt-4o-mini",
+            model="gpt-4o-mini",     # -mini 
             temperature=0,
             api_key=openai_api_key
         )
@@ -490,7 +490,7 @@ class PDFGraphRAG:
         Convert LLM response data (matching response_schema_for_odd or
         response_schema_for_schema_refinement) into a Schema instance.
         """
-        return self.Schema(
+        return Schema(
             nodes=data.get("node_types", []),
             relationships=data.get("relationship_types", []),
         )
@@ -589,13 +589,14 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-        Identify every distinct node type and relationship type present in the following text. Reason through the text step by step before producing your answer:
+        Identifikuj každý odlišný typ uzla a typ vzťahu prítomný v nasledujúcom texte. Pred vytvorením odpovede postupuj textom krok za krokom a zdôvodni svoje závery:
 
-        # RULES
-        1. Read the text carefully.
-        2. Identify all distinct node types, using general elementary labels. For each, note the supporting phrase(s) that justify its inclusion.
-        3. Identify all distinct relationship types between entities, using general timeless labels. For each, note the supporting phrase(s).
-        4. If any type is ambiguous or context-dependent, note the ambiguity briefly.
+        # PRAVIDLÁ
+        1. Pozorne si prečítaj text.
+        2. Identifikuj všetky odlišné typy uzlov pomocou všeobecných elementárnych označení. Pri každom uveď podpornú frázu (frázy) z textu, ktoré odôvodňujú jeho zaradenie.
+        3. Identifikuj všetky odlišné typy vzťahov medzi entitami pomocou všeobecných nadčasových označení. Pri každom uveď podpornú frázu (frázy).
+        4. Ak je niektorý typ nejednoznačný alebo závislý od kontextu, stručne poznač túto nejednoznačnosť.
+        5. Všetky extrahované názvy typov (uzlov aj vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
 
         # TEXT
         {text}
@@ -625,26 +626,30 @@ class PDFGraphRAG:
     async def async_open_domain_detection(
         self,
         documents: List[Document],
+        max_concurrent: int = 10,
     ) -> List[Schema]:
         """
         Asynchronously process documents to extract schemas.
 
         Args:
             documents: List of documents to process
+            max_concurrent: Maximum number of concurrent API calls
 
         Returns:
             List of Schema
         """
         print("creating tasks: OPEN-DOMAIN DETECTION")
+        semaphore = asyncio.Semaphore(max_concurrent)
+
+        async def limited(i, doc):
+            async with semaphore:
+                return await self.open_domain_detection(i, doc)
+
         tasks = [
-            asyncio.create_task(
-                self.open_domain_detection(
-                     i, doc
-                )
-            )
+            asyncio.create_task(limited(i, doc))
             for i, doc in enumerate(documents)
         ]
-        
+
         res = await asyncio.gather(*tasks)
         return res
     
@@ -652,7 +657,7 @@ class PDFGraphRAG:
     
     
     
-    def schema_refinement(self, odd_schema: Schema, existing_schema: Schema) -> Schema:
+    def schema_refinement(self, odd_schema: Schema, existing_schema: Schema = None) -> Schema:
         """
         Function to refine and consolidate extracted schema information across documents, ensuring consistency and resolving conflicts.
 
@@ -663,77 +668,92 @@ class PDFGraphRAG:
             Schema with extracted node labels and relationships
         """
         
-        @dataclass
-        class SchemaResponse:
-            """Schema dataclass to hold extracted node types and relationship types."""
-            nodes: List[str] = Field(description="List of node types in the refined schema")
-            relationships: List[str] = Field(description="List of relationship types in the refined schema")
+        
+        class SchemaRefinementResponse(BaseModel):
+            """Result of schema refinement of entities and relationships from text."""
+
+            class MergeLog(BaseModel):
+                """Log of merged types mapping canonical types to their original variants."""
+                node_types: Dict[str, List[str]] = Field(description="Mapping of canonical node types to lists of original types that were merged")
+                relationship_types: Dict[str, List[str]] = Field(description="Mapping of canonical relationship types to lists of original types that were merged")
+
+            node_types: List[str] = Field(description="List of canonical node type labels")
+            relationship_types: List[str] = Field(description="List of canonical relationship types")
+            merge_log: MergeLog = Field(description="Log of merged types mapping canonical types to their original variants")
             
             
         
         print("SCHEMA REFINEMENT")
         
         user_prompt = f"""
-        Refine the following raw schema produced by open-domain detection. Your goal is to produce a clean, consistent, deduplicated schema suitable for schema-driven entity and relationship extraction.
+        Spresni nasledujúcu surovú schému vytvorenú detekciou z otvorenej domény. Tvojím cieľom je vytvoriť čistú, konzistentnú a deduplikovanú schému vhodnú na extrakciu entít a vzťahov riadenú schémou.
 
-        # REFINEMENT MODE
-        You are provided with two inputs:
-        1. The raw schema from open-domain detection.
-        2. A base ontology (existing schema), if available.
+        # REŽIM SPRESŇOVANIA
+        Dostávaš dva vstupy:
+        1. Surovú schému z detekcie z otvorenej domény.
+        2. Základnú ontológiu (existujúcu schému), ak je dostupná.
 
         {"""
-        If a base ontology is provided:
-        - Align the raw schema to the base ontology where there is clear semantic overlap. Map raw types to existing base types when they are equivalent or near-synonymous.
-        - Preserve any raw types that are genuinely distinct and not represented in the base ontology. Add them to the refined schema as new types.
-        - Do not force-fit distinct raw types into base ontology types. Only merge when semantic alignment is clear.
-        - The base ontology takes naming precedence: if a raw type merges into a base type, adopt the base ontology's label.
+        Ak je poskytnutá základná ontológia:
+        - Zarovnaj surovú schému na základnú ontológiu tam, kde existuje jasný sémantický prekryv. Mapuj surové typy na existujúce základné typy, keď sú ekvivalentné alebo takmer synonymné.
+        - Zachovaj všetky surové typy, ktoré sú skutočne odlišné a nie sú zastúpené v základnej ontológii. Pridaj ich do spresnenej schémy ako nové typy.
+        - Nenúť odlišné surové typy do typov základnej ontológie. Zlučuj iba vtedy, keď je sémantické zarovnanie jasné.
+        - Základná ontológia má prednosť v pomenovaniach: ak sa surový typ zlučuje so základným typom, preberaj označenie základnej ontológie.
         
         """ if existing_schema else """ 
         
-        If no base ontology is provided:
-        - Refine the raw schema standalone by merging semantically similar types and normalizing labels.
+        Ak nie je poskytnutá žiadna základná ontológia:
+        - Spresni surovú schému samostatne zlúčením sémanticky podobných typov a normalizáciou označení.
         """}
 
-        # RULES
-        - This is a light refinement pass. Only merge types with clear semantic overlap.
-        - If types are distinct, keep them — do not over-consolidate.
-        - Prefer the more general and reusable label when merging.
-        - Do not invent types absent from both the raw schema and the base ontology.
-        - Do not drop genuinely distinct types to minimize the schema.
+        # PRAVIDLÁ
+        - Ide o ľahký spresňovací prechod. Zlučuj iba typy s jasným sémantickým prekryvom.
+        - Ak sú typy odlišné, ponechaj ich — neprekonsolidovávaj.
+        - Pri zlučovaní uprednostňuj všeobecnejšie a znovupoužiteľnejšie označenie.
+        - Nevymýšľaj typy, ktoré sa nenachádzajú ani v surovej schéme, ani v základnej ontológii.
+        - Neodstraňuj skutočne odlišné typy kvôli minimalizácii schémy.
+        - Všetky názvy typov (uzlov aj vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
 
-        Step through the following reasoning before producing your answer:
-        1. Review all node_types against the base ontology (if provided). Identify semantic matches, overlaps, and genuinely new types.
-        2. Review all relationship_types against the base ontology (if provided). Identify synonymous, near-duplicate, or already-covered types versus distinct new ones.
-        3. Merge only where semantic similarity is clear. Retain distinct types as-is.
-        4. Verify cross-consistency: ensure every node type that participates in a relationship is present in the final node_types list.
-        5. Document every merge decision in the merge_log with the canonical label as key and the original labels as values.
+        Pred vytvorením odpovede prejdi nasledujúcim uvažovaním:
+        1. Prezri všetky typy uzlov oproti základnej ontológii (ak je poskytnutá). Identifikuj sémantické zhody, prekryvy a skutočne nové typy.
+        2. Prezri všetky typy vzťahov oproti základnej ontológii (ak je poskytnutá). Identifikuj synonymné, takmer duplicitné alebo už pokryté typy oproti odlišným novým.
+        3. Zlučuj iba tam, kde je sémantická podobnosť jasná. Odlišné typy ponechaj bez zmeny.
+        4. Over krížovú konzistenciu: zabezpeč, aby každý typ uzla, ktorý sa podieľa na vzťahu, bol prítomný vo výslednom zozname typov uzlov.
+        5. Zdokumentuj každé rozhodnutie o zlúčení v merge_log s kanonickým označením ako kľúčom a pôvodnými označeniami ako hodnotami.
 
-        # BASE ONTOLOGY
-        ## Node Types:
-        {existing_schema.nodes if existing_schema else "None provided"}
+        # ZÁKLADNÁ ONTOLÓGIA
+        ## Typy uzlov:
+        {existing_schema.nodes if existing_schema else "Neposkytnutá"}
 
-        ## Relationship Types:
-        {existing_schema.relationships if existing_schema else "None provided"}
+        ## Typy vzťahov:
+        {existing_schema.relationships if existing_schema else "Neposkytnuté"}
 
-        # OPEN-DOMAIN DETECTED SCHEMA
-        ## Node Types:
+        # SCHÉMA DETEGOVANÁ Z OTVORENEJ DOMÉNY
+        ## Typy uzlov:
         {odd_schema.nodes}
 
-        ## Relationship Types:
+        ## Typy vzťahov:
         {odd_schema.relationships}
         """
 
-        # Create and run the agent
+        # Create and run the agent (ProviderStrategy uses Gemini's native JSON output)
         agent = create_agent(
             model=self.gemini_client,
             system_prompt=system_prompt_for_schema_refinement,
-            response_format=ToolStrategy(SchemaResponse)
+            response_format=SchemaRefinementResponse
         )
-        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        for attempt in range(3):
+            try:
+                response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+                break
+            except Exception as e:
+                print(f"Schema refinement attempt {attempt + 1}/3 failed: {e}")
+                if attempt == 2:
+                    raise
 
         # structured_response is already a dict when using ProviderStrategy
         data = response["structured_response"]
-        
+
         print(data)
 
         # Convert extracted data to Schema
@@ -864,6 +884,7 @@ class PDFGraphRAG:
         document_classification = self.classification()
 
         
+        # odd
         splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
         chunked_documents = splitter.split_documents(documents)
 
@@ -874,6 +895,8 @@ class PDFGraphRAG:
         )
         print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
         
+        
+        # refinement
         extracted_schema = Schema(
             nodes=list(set(node for schema in extracted_schema_list for node in schema.nodes)),
             relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
@@ -881,6 +904,7 @@ class PDFGraphRAG:
         refined_schema = self.schema_refinement(odd_schema=extracted_schema, existing_schema=self.get_graph_schema())
         
         
+        # sde
         splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
         chunked_documents = splitter.split_documents(documents)
         

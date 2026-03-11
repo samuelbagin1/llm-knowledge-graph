@@ -1,0 +1,4136 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "Zakon",
+          "Dokument",
+          "Uzemie",
+          "Osoba",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "UPRAVUJE",
+          "USKUTOCNENE_ZDANITELNOU_OSOBOU",
+          "NACHADZA_SA_V",
+          "VYHLASENE",
+          "UCINNE_OD"
+        ]
+      },
+      {
+        "nodes": [
+          "Uzemie",
+          "Stat",
+          "Kniezatsvo"
+        ],
+        "relationships": [
+          "POVAZOVANE_ZA",
+          "URCENE_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Cinnost",
+          "Majetok",
+          "Vztah"
+        ],
+        "relationships": [
+          "VYKONAVA",
+          "POVAZOVANE_ZA",
+          "VYUZIVANIE_NA",
+          "PODRIADENOST",
+          "NADRIADENOST"
+        ]
+      },
+      {
+        "nodes": [
+          "FyzickaOsoba",
+          "Organizacia",
+          "PravnickaOsoba",
+          "StatnyOrgan",
+          "Fond",
+          "UzemnaSamosprava",
+          "HmotnaRezerva"
+        ],
+        "relationships": [
+          "PODRIADENOST",
+          "VYKONAVA",
+          "KONAJU_V",
+          "ZDAJITELNA_OSOBA",
+          "NARUSUJE_HOSPODARSKU_SUTAZ"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "DopravnyProstriedok",
+          "ClenskyStat",
+          "PlatitelDane",
+          "Sídlo",
+          "MiestoPodnikania",
+          "Prevadzkarna",
+          "Bydlisko"
+        ],
+        "relationships": [
+          "DODAVA",
+          "STAVA_PLATITELOM",
+          "MA",
+          "ZDRZIAVA_SE_V",
+          "JE_NASTUPCOM"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Podnik",
+          "Majetok"
+        ],
+        "relationships": [
+          "STAL_SA_PRAVNYM_NASTUPCOM",
+          "NADOBUDOL_MAJETOK",
+          "NADOBUDOL_PODNIK"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Zakon",
+          "Tovar",
+          "Služba",
+          "Majetok",
+          "Podnik",
+          "Úrad"
+        ],
+        "relationships": [
+          "DODAVA",
+          "PRIJIMA",
+          "NADOBUDA",
+          "PODLA",
+          "PODAVA",
+          "PLATI",
+          "REGISTRUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Urad",
+          "Ziadost"
+        ],
+        "relationships": [
+          "POVAZUJE_SE_K",
+          "PODAVA",
+          "REGISTRUJE_SE_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Ziadost",
+          "Platitel",
+          "Doklad",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "POVAZUJE_SE",
+          "PODAVA",
+          "REGISTRUJE",
+          "VYDA",
+          "PRIDELUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Dokument",
+          "Cislo"
+        ],
+        "relationships": [
+          "PODAVA",
+          "PRIDELUJE",
+          "VYDAVA",
+          "NADOBUDA_PLATNOST"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Platitel",
+          "Zakon"
+        ],
+        "relationships": [
+          "MA",
+          "REGISTRUJE",
+          "NADOBUDA_PLATNOST"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "DanovyUrad",
+          "Registracia"
+        ],
+        "relationships": [
+          "PODAVA_ZIADOST_O",
+          "OZNAMUJE",
+          "REGISTRUJE",
+          "PRIDELUJE_IDENTIFIKACNE_CISLO"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Urad",
+          "Rozhodnutie",
+          "ZdanitelnaOsoba",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "REGISTRUJE",
+          "PRIDELUJE",
+          "VYDAVA",
+          "STAVA_PLATITELOM",
+          "OZNAMUJE",
+          "ZRUCUJE",
+          "VZTAHUJE_SE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "ZdanitelnaOsoba",
+          "Tovar",
+          "Sluzba",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "REGISTRUJE_PRE",
+          "DODAVA",
+          "OZNAMUJE",
+          "STAVA_PLATITELOM"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Rozhodnutie",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "PODAVA_ZIADOST_O",
+          "NEZAREGISTRUJE_ZDOVODU",
+          "OZNAMUJE_SKUTOCNOST"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Zakon",
+          "Dokument"
+        ],
+        "relationships": [
+          "REGISTROVANY_PRE_DAN",
+          "MA_PRIDELENE_IDENTIFIKACNE_CISLO",
+          "OZNAMUJE_SKUTOCNOST"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "ZdanitelnaOsoba",
+          "Osoba",
+          "Zakon",
+          "Prevadzkarna",
+          "Tovar",
+          "Sluzba",
+          "Služba"
+        ],
+        "relationships": [
+          "MA_IDENTIFIKACNE_CISLO",
+          "PODAVA_ZIADOST_O_REGISTRACIU",
+          "MA_BYDLISKO",
+          "MA_PREVADZKARE",
+          "DODAVA",
+          "OSLOBODENA_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Služba",
+          "Majetok"
+        ],
+        "relationships": [
+          "OSLOBODENA_OD_DANE",
+          "DODANA_PRI"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Skupina"
+        ],
+        "relationships": [
+          "SPAJANE_FINANCNE",
+          "SPAJANE_EKONOMICKY",
+          "SPAJANE_ORGANIZACNE",
+          "JE_CLENOM"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Osoba",
+          "Urad",
+          "Zastupca"
+        ],
+        "relationships": [
+          "MA",
+          "ZASTUPUJE",
+          "REGISTRUJE",
+          "PRIDELUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Clen",
+          "Zastupca",
+          "Urad"
+        ],
+        "relationships": [
+          "REGISTRUJE",
+          "ZASTUPUJE",
+          "ZODPOVEDA",
+          "VYKONAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Clen",
+          "Urad",
+          "Zakon"
+        ],
+        "relationships": [
+          "POZADUJE",
+          "VYPLYVA_Z",
+          "ZRUŠENIE",
+          "VYSTUPENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Skupina",
+          "Zastupca",
+          "Zakon"
+        ],
+        "relationships": [
+          "CLEN_SKUPINY",
+          "PODAVA_ZIADOST",
+          "MA_PRAVA_A_POVINNOSTI",
+          "NASTAVA_UCINOK"
+        ]
+      },
+      {
+        "nodes": [
+          "ClenSkupiny",
+          "ZastupcaSkupiny",
+          "Skupina",
+          "DanovyUrad",
+          "ZdanitelnaOsoba"
+        ],
+        "relationships": [
+          "VYSTUPUJE_Z",
+          "PODAVA_ZIADOST_O",
+          "VYDA_VYHODNOCENIE_O",
+          "PRECHADZA_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Osoba",
+          "Zastupca",
+          "PravnyNastupca",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "ZANIKOL_BEZ_LIKVIDACIE",
+          "PRECHADZA_NA",
+          "PODAVA_ZIADOST_O",
+          "VYDAVA_ROZHODNUTIE_O",
+          "VZTAHUJE_SE_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Clen",
+          "Urad",
+          "Zastupca",
+          "Zakon"
+        ],
+        "relationships": [
+          "REGISTRUJE",
+          "VYZVE",
+          "MA_UCINOK",
+          "VYKONAVA",
+          "OBCHADZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Zastupca",
+          "Urad"
+        ],
+        "relationships": [
+          "URCUJE",
+          "OZNAMUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Urad",
+          "Skupina",
+          "Zastupca"
+        ],
+        "relationships": [
+          "VYZVE",
+          "ROZHODNE_O",
+          "PODA_ODVOLANIE",
+          "STAVA_PLATITELOM"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Clen",
+          "Zastupca",
+          "Urad",
+          "Rozhodnutie"
+        ],
+        "relationships": [
+          "PRISLUSNY_PRE",
+          "PODAVA",
+          "VYDAVA",
+          "ZANIKAJU",
+          "VZTAHUJE_SE"
+        ]
+      },
+      {
+        "nodes": [
+          "ClenSkupiny",
+          "ZastupcaSkupiny",
+          "Skupina",
+          "Rozhodnutie",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "MA",
+          "PODAVA",
+          "URCUJE",
+          "ZANIKAJU",
+          "NADOBUDA_PRAVOPLATNOST"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Clen",
+          "Urad",
+          "ZdanitelnaOsoba"
+        ],
+        "relationships": [
+          "URCENY_ZASTUPCA",
+          "VYDAVA_ROZHODNUTIE",
+          "PRESTAL_SPLNAT_PODMIENKY",
+          "NADOBUDNUTIE_PRAVOPLATNOSTI",
+          "PRECHADZA_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Skupina",
+          "Clen",
+          "PravnyNastupca",
+          "Zastupca",
+          "Urad",
+          "Rozhodnutie"
+        ],
+        "relationships": [
+          "MAJETOK_PRECHADZA_NA",
+          "PODAVA_ZIADOST_O",
+          "URCUJE_ZASTUPCU",
+          "VYDAVA_ROZHODNUTIE_O",
+          "PRECHADZA_PRAVA_A_POVINNOSTI"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Skupina",
+          "PravnyNastupca",
+          "ClenSkupiny",
+          "ZastupcaSkupiny",
+          "DanovyUrad",
+          "ZdanitelnaOsoba"
+        ],
+        "relationships": [
+          "MA",
+          "ZANIKOL_BEZ_LIKVIDACIE",
+          "PRIDELUJE_IDENTIFIKACNE_CISLO",
+          "ULOZIL_POKUTU",
+          "ZAPISUJE_DO_REGISTRACIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Sluzba",
+          "Podnik",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "STAVA_PLATITELOM",
+          "DODAVA",
+          "PRIJIMA_PLATBU",
+          "NADOBUDA",
+          "OSLOBODENIE_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "PLATI_DAN",
+          "DOVEZENY_Z",
+          "ZASTUPENY",
+          "UCASNI_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "Urad"
+        ],
+        "relationships": [
+          "REGISTRUJE_PRE",
+          "PODAVA_ZIADOST_O",
+          "PRIDELUJE_IDENTIFIKACNE_CISLO"
+        ]
+      },
+      {
+        "nodes": [
+          "Urad",
+          "Osoba",
+          "Majetok",
+          "Platitel"
+        ],
+        "relationships": [
+          "REGISTRUJE",
+          "STAVA_SE",
+          "PRECHAZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Urad",
+          "Doklad",
+          "Ziadost",
+          "Osoba"
+        ],
+        "relationships": [
+          "PODAVA",
+          "PREVERUJE",
+          "ZAREGISTRUJE",
+          "PRIDELUJE",
+          "VYDAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Urad",
+          "Osoba",
+          "Zakon",
+          "Rozhodnutie",
+          "Platitel"
+        ],
+        "relationships": [
+          "PRIDELUJE",
+          "REGISTRUJE",
+          "PODA_ODVOLANIE",
+          "POVAZOVANY_ZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Platitel",
+          "FinancneRiaditelstvo",
+          "BankovyUcet"
+        ],
+        "relationships": [
+          "MA",
+          "OZNAMUJE",
+          "PODLHA"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "PoskytovatelPlatobnychSluzieb",
+          "FinancneRiaditelstvo",
+          "BankovyUcet"
+        ],
+        "relationships": [
+          "OZNAMUJE",
+          "ZVEREJNUJE",
+          "VZTAHUJE_SE_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Platitel",
+          "PoskytovatelPlatobnychSluzieb",
+          "BankovyUcet",
+          "ZdanitelnaOsoba",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "MA_UCET",
+          "ZODPOVEDA_ZA",
+          "REGISTROVANY_PRE",
+          "ULOZIL_POKUTU",
+          "PRIHLIADOL_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Platitel",
+          "Status",
+          "Cinnost",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "REGISTROVANY_PODLA",
+          "PRESTAVA_SPLNAT",
+          "OZNAMUJE",
+          "VYKONAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Zakon",
+          "Miesto"
+        ],
+        "relationships": [
+          "SPLNA_PODMIENKY",
+          "REGISTROVANA",
+          "MA_SIDLO",
+          "ZDRZIAVA_SE",
+          "OZNAMUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "PravnickaOsoba",
+          "Tovar",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "PODAVA_ZIADOST_O",
+          "NADOBUDA_TOVAR",
+          "REGISTRUJE_PRE_DAN",
+          "PRIDELUJE_IDENTIFIKACNE_CISLO"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Urad",
+          "Služba",
+          "ZdanitelnaOsoba"
+        ],
+        "relationships": [
+          "POVAZUJE_SE_K",
+          "REGISTRUJE_PRE",
+          "DODAVA_SLUZBU",
+          "PRIJIMA_SLUZBU"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Urad",
+          "ZdanitelnaOsoba"
+        ],
+        "relationships": [
+          "REGISTROVANY_PRE",
+          "MA_IDENTIFIKACNE_CISLO",
+          "PODAVA_ZIADOST_O"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "HmotnyMajetok",
+          "Tovar",
+          "Zmluva",
+          "Bankovka",
+          "Minca"
+        ],
+        "relationships": [
+          "PRIDELUJE",
+          "DODAVA",
+          "PREVOD_PRAVA",
+          "ODOVZDAVA",
+          "NADOBUDA_VLASTNICKE_PRAVO"
+        ]
+      },
+      {
+        "nodes": [
+          "Zmluva",
+          "Tovar",
+          "Osoba",
+          "Majetok",
+          "Organ",
+          "Podnikanie"
+        ],
+        "relationships": [
+          "MAJETOK_K",
+          "PREVOD_VLASTNICKEHO_PRAVA",
+          "DODANIE_TOVARU",
+          "OSOBA_ZAMESTNANEC",
+          "PREMIETNUTIE_TOVARU",
+          "DODANIE_BEZODPLATNE",
+          "DODANIE_ZA_PROTIHODNOTU"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ClenskyStat",
+          "EuropskaUnia"
+        ],
+        "relationships": [
+          "ODOSLANY_DO",
+          "PREPRAVENY_NA",
+          "DODANIE_TOVARU",
+          "URCENY_NA",
+          "OSLOBODENY_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Osoba",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "VYKONAVA_PRE",
+          "VRACI_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Tovar",
+          "Siet",
+          "Obdobie",
+          "ClenskyStat",
+          "EurópskaUnia"
+        ],
+        "relationships": [
+          "DODAVA",
+          "PREPRAVUJE",
+          "OBSTARAVA",
+          "PREDAVA",
+          "POVAŽUJE_SA_ZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ZdanitelnaOsoba",
+          "ElektronickeKomunikacneRozhranie",
+          "TretaOsoba"
+        ],
+        "relationships": [
+          "OBSTARAVA",
+          "DODAVA",
+          "PRIJIMA",
+          "USKUTOCNUJE",
+          "VYUZIVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Platitel",
+          "ZdanitelnaOsoba",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "ODOSIELA",
+          "PREPRAVUJE",
+          "DODAVA",
+          "MA_SIDLO_V",
+          "IDENTIFIKOVANA_PRE_DAN"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ClenskyStat",
+          "Platitel"
+        ],
+        "relationships": [
+          "ODOSLANY_DO",
+          "PREPRAVENY_DO",
+          "MA_PRAVO_NAKLADAT",
+          "OSLOBODENY_OD_DANE",
+          "USKUTOCNENY_PLATITELOM"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Tovar",
+          "Premiestnenie"
+        ],
+        "relationships": [
+          "ODOSLAL",
+          "PREPRAVIL",
+          "NHRADIL",
+          "VRATIL_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Stat",
+          "ZdanitelnaOsoba"
+        ],
+        "relationships": [
+          "DODANIE",
+          "PREPRAVA",
+          "ODOSLANIE",
+          "NHRADENIE",
+          "PLNENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Služba",
+          "Majetok",
+          "Osoba",
+          "Organizacia",
+          "StatnyOrgan"
+        ],
+        "relationships": [
+          "DODANIE",
+          "VLASTNICTVO",
+          "UZIVANIE",
+          "ZAVAZOK",
+          "ROZHODNUTIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "Služba",
+          "Tovar",
+          "Poukaz",
+          "Organizacia"
+        ],
+        "relationships": [
+          "DODAVA",
+          "PRIJIMA",
+          "POUZIVA",
+          "MA",
+          "VYKONAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Poukaz",
+          "Osoba",
+          "Tovar",
+          "Sluzba",
+          "Dodavatel"
+        ],
+        "relationships": [
+          "VZTAHUJE_SE_NA",
+          "DODANIE",
+          "PREVOD",
+          "USKUTOCNENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Dodavatel",
+          "ZdanitelnaOsoba",
+          "Tovar",
+          "Sluzba",
+          "Poukaz",
+          "Podnik",
+          "OrganizacnaZlozka",
+          "ObchodnaSpolocnost",
+          "Druzstvo"
+        ],
+        "relationships": [
+          "DODAVA",
+          "PREVOD",
+          "PREDMET_DANE",
+          "VYSTAVIL",
+          "PRIJAL",
+          "NIE_JE_ZDANITELNY",
+          "NIE_POVAZUJE_SE_ZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Organizacia",
+          "Podnik",
+          "Druzstvo"
+        ],
+        "relationships": [
+          "NADOBUDA",
+          "VKLADA_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "Spolocnost",
+          "Majetok"
+        ],
+        "relationships": [
+          "POVAZUJE_ZA",
+          "NADOBUDA",
+          "PREVADZA",
+          "DODAVA",
+          "VYLUCNE_DODAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Spolocnost",
+          "Zakon",
+          "Majetok",
+          "Osoba",
+          "ZdanitelnaOsoba",
+          "Dodavatel",
+          "Nadobudatel"
+        ],
+        "relationships": [
+          "POVAZOVANY_ZA",
+          "NADOBUDNUTIE",
+          "DODANIE",
+          "POSTUPENIE",
+          "EMISIA",
+          "PRECHOD",
+          "IDENTIFIKOVANY_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ClenskyStat",
+          "PravnaOsoba"
+        ],
+        "relationships": [
+          "DODAVA",
+          "NADOBUDA",
+          "IDENTIFIKOVANA_PRE_DAN",
+          "OSLOBODENE_OD_DANE",
+          "REGISTROVANA_PRE_DAN"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Predpis",
+          "Cislo",
+          "Hodnota"
+        ],
+        "relationships": [
+          "MA_NAROK_NA",
+          "NADOBUDA",
+          "ZDAŇUJE",
+          "ODOSLANY_Z",
+          "PREPRAVENY_Z",
+          "VZTAHUJE_SE_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Nadobudatel",
+          "Tovar",
+          "ZdanitelnaOsoba",
+          "Podnikanie",
+          "Stat",
+          "Zamestnanec"
+        ],
+        "relationships": [
+          "MA_ROZHODNUTIE_O",
+          "OZNAMUJE",
+          "PODLIEHA",
+          "POUZIVA",
+          "PREPRAVUJE_DO",
+          "POVAZUJE_ZA",
+          "PRIDELUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Stat",
+          "Osoba",
+          "PravnickaOsoba",
+          "DopravnyProstriedok"
+        ],
+        "relationships": [
+          "PRIDELENIE",
+          "NADOBUDNUTIE",
+          "PREPRAVA",
+          "URCENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "DopravnyProstriedok",
+          "Vozidlo",
+          "Plavidlo"
+        ],
+        "relationships": [
+          "OSLOBODENY_OD_DANE",
+          "MA_NAJAZDENE",
+          "UPLYNUL_CAS_OD_UVEDENIA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "ClenskyStat",
+          "Osoba",
+          "Cinnost"
+        ],
+        "relationships": [
+          "NADOBUDNUTE_V",
+          "IDENTIFIKOVANY_PRE",
+          "PRIDELENY_DO",
+          "POUZITY_PRE",
+          "PREPRAVENY_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ClenskyStat",
+          "ZdanitelnaOsoba",
+          "Obchod"
+        ],
+        "relationships": [
+          "DODAVANY_PRE",
+          "PREPRAVOVANY_DO",
+          "NACHADZA_SA_V",
+          "USKUTOCNENY_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Miesto",
+          "Obchodnik",
+          "Siet"
+        ],
+        "relationships": [
+          "DODANIE_DO",
+          "NACHADZA_SA_V",
+          "PRIPOJENA_K",
+          "ZACINA_V"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "Tovar",
+          "Miesto",
+          "Zakaznik",
+          "Sustava",
+          "Siet"
+        ],
+        "relationships": [
+          "MA_HLAVNU_CINNOST",
+          "DODAVA_DO",
+          "VYUZIVA",
+          "SPOTREBUJE",
+          "MA_SIDLO",
+          "MA_PREVADZKAREN"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ClenskyStat",
+          "Cestujuci",
+          "Doprava"
+        ],
+        "relationships": [
+          "DODANIE",
+          "PREPRAVA",
+          "ZACINA_V",
+          "SKONCENIE_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Dodavatel",
+          "Zakaznik",
+          "Tovar",
+          "Osoba"
+        ],
+        "relationships": [
+          "ODOSIELA",
+          "PREPRAVUJE",
+          "PRIRADUJE_K",
+          "USKUTOCNIL",
+          "ZASAHUJE_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Dodavatel",
+          "ZdanitelnaOsoba",
+          "PravnaOsoba",
+          "Osoba"
+        ],
+        "relationships": [
+          "DODANIE_TOVARU",
+          "PREPRAVA_TOVARU",
+          "USKUTOCNUJE_PRE",
+          "NADOBUDNUTIE_TOVARU"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Osoba",
+          "PravnickaOsoba",
+          "ZdanitelnaOsoba",
+          "Clen",
+          "Stat"
+        ],
+        "relationships": [
+          "DODANIE_TOVARU",
+          "PREPRAVA_TOVARU",
+          "NACHADZA_SA_V",
+          "USKUTOCNUJE_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ZdanitelnaOsoba",
+          "ClenskyStat",
+          "Miestododania"
+        ],
+        "relationships": [
+          "DODANIE_K",
+          "PREPRAVA_K",
+          "ODOSLANIE_K"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Služba",
+          "Miesto",
+          "Dodavatel"
+        ],
+        "relationships": [
+          "DODANIE_K",
+          "URCENIE_MIESTA",
+          "MA",
+          "ZDRZIAVA_SE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "PravnickaOsoba",
+          "Služba"
+        ],
+        "relationships": [
+          "VYKONAVA",
+          "POVAZOVANA_ZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Nehnutelnost",
+          "Služba",
+          "DopravnyProstriedok",
+          "Zákazník"
+        ],
+        "relationships": [
+          "NACHADZA_SA_V",
+          "POSKYTUJE",
+          "MA",
+          "DRZANIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Miesto",
+          "Osoba",
+          "Služba",
+          "Podujatie"
+        ],
+        "relationships": [
+          "DODANE_V",
+          "VYKONANE_V",
+          "ZDRZIAVA_SE_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Podujatie",
+          "Osoba",
+          "Stat",
+          "Služba",
+          "Preprava"
+        ],
+        "relationships": [
+          "DODAVA_PRE",
+          "VYKONAVA_V",
+          "ZAHAJA_V",
+          "VYKONAVA_V_KRAJINE"
+        ]
+      },
+      {
+        "nodes": [
+          "Stat",
+          "Tovar",
+          "Sluha",
+          "Osoba"
+        ],
+        "relationships": [
+          "PREPRAVA_MEDZI",
+          "DODANIE_SLUZIEB"
+        ]
+      },
+      {
+        "nodes": [
+          "Služba",
+          "Miesto",
+          "Doprava",
+          "Cestujuci"
+        ],
+        "relationships": [
+          "DODANE_OSOBE",
+          "POSKYTOVANE_NA",
+          "ZAHRNUJE",
+          "ZA_CAST_OSOBNE_DOPRAVY"
+        ]
+      },
+      {
+        "nodes": [
+          "Unia",
+          "Cestujuci",
+          "DopravneProstriedky",
+          "Miesto",
+          "Osoba",
+          "Služba",
+          "Tovar"
+        ],
+        "relationships": [
+          "NASTUPUJE_DO",
+          "SKONCENIE_V",
+          "DODANIE_SLUZBY",
+          "SPOCIVA_V",
+          "ZDRZIAVA_SE",
+          "SPOJENIE_S",
+          "PREDMET_SPROSTREDKOVANIA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Služba",
+          "Miesto",
+          "Pravo"
+        ],
+        "relationships": [
+          "DODAVA",
+          "MA",
+          "ZDRZIAVA_SE_V",
+          "POSKYTUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Sustava",
+          "Uzemie",
+          "Siet",
+          "Sluzba"
+        ],
+        "relationships": [
+          "NACHADZA_SA_V",
+          "PRIPOJENA_K",
+          "DODAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Služba",
+          "Program",
+          "Informácia",
+          "Udalosť",
+          "Zákazník",
+          "Dodávateľ"
+        ],
+        "relationships": [
+          "POSKYTOVANIE",
+          "DODANIE",
+          "SPRACOVANIE",
+          "VYUCOVANIE",
+          "KOMUNIKACIA",
+          "PRENOS"
+        ]
+      },
+      {
+        "nodes": [
+          "Služba",
+          "Tovar",
+          "Osoba",
+          "Miesto",
+          "ČlenskyStat"
+        ],
+        "relationships": [
+          "DODAVANA_OSOBE",
+          "ODOSIELANA_DO",
+          "PREPRAVOVANA_DO",
+          "MA_SIDLO_V",
+          "ZDRZIAVA_SE_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Služba",
+          "Osoba",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "DODAVA",
+          "PREPRAVUJE_DO",
+          "MENI_MIESTO_DODANIA",
+          "SPLNA_PODMIENKY"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ClenskyStat",
+          "Nadobudatel"
+        ],
+        "relationships": [
+          "NADOBUDNUTIE_Z",
+          "OBJEDNAVA_OD",
+          "PREUKAZUJE_V",
+          "SKONCENIE_ODOSLANIA"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ClenskyStat",
+          "Osoba"
+        ],
+        "relationships": [
+          "NADOBUDA_V",
+          "IDENTIFIKOVANY_PRE",
+          "PLATI_DAN",
+          "USKUTOCNUJE",
+          "NACHADZA_SA_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ClenskaStat",
+          "Nehnutelnost",
+          "Zmluva"
+        ],
+        "relationships": [
+          "VSTUPUJE_DO",
+          "VZNIKA",
+          "ODOVZDANIE",
+          "PREVOD"
+        ]
+      },
+      {
+        "nodes": [
+          "Nehnutelnost",
+          "Zmluva",
+          "Tovar",
+          "Najemca"
+        ],
+        "relationships": [
+          "VLASTNICTVO_K",
+          "DODANIE",
+          "ODOVZDANIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Služba",
+          "Tovar",
+          "Zmluva",
+          "Obdobie"
+        ],
+        "relationships": [
+          "VZNIKA",
+          "DODANIE",
+          "POVAŽUJE_SA",
+          "USKUTOČNUJE",
+          "PLATBA_ZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Služba",
+          "Platiteľ",
+          "Nehnuteľnosť",
+          "Tovar",
+          "Osoba",
+          "ElektronickáSlužba",
+          "ElektronickáKomunikačnáSlužba",
+          "Faktúra"
+        ],
+        "relationships": [
+          "POSKYTUJE",
+          "POVAZOVANA_ZA",
+          "POZIADUJE",
+          "DODANA_DNOM",
+          "VZNIKA"
+        ]
+      },
+      {
+        "nodes": [
+          "Služba",
+          "Tovar",
+          "Osoba",
+          "Zmluva",
+          "Platba"
+        ],
+        "relationships": [
+          "VZNIKA",
+          "DODAVA",
+          "POZIADUJE",
+          "PLODI",
+          "OBSTARAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Služba",
+          "Faktura",
+          "Organizacia",
+          "Pravo"
+        ],
+        "relationships": [
+          "OBSTARAVA",
+          "POZADUJE",
+          "VZNIKA",
+          "PLATI",
+          "VYBERA",
+          "POSKYTUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "ClenskyStat",
+          "ColnyOrgan",
+          "Obal"
+        ],
+        "relationships": [
+          "DODANIE",
+          "VZNIK_DANOVEJ_POVINNOSTI",
+          "PREPRAVA",
+          "OSLOBODENIE_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Obal",
+          "Tovar",
+          "KalendarnyRok",
+          "Zaznam",
+          "Dan"
+        ],
+        "relationships": [
+          "UVADZA_NA_TRH",
+          "DODAVA",
+          "VYTVARA_DANOVU_POVINNOST",
+          "VRACIA_SE_Z_TRHU",
+          "ZNIZUJE_O_DAN"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Stat",
+          "DopravnyProstriedok",
+          "DaňováPovinnosť"
+        ],
+        "relationships": [
+          "DODANIE",
+          "NADOBUDNUTIE",
+          "VZNIK",
+          "PREDAVANIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "ColnyRezim",
+          "Osoba"
+        ],
+        "relationships": [
+          "VZNIKA_PRI",
+          "PREPUSTENIE_DO",
+          "OZNAMUJE_OSOBE",
+          "VYPOCITAVA_SE_V",
+          "SPLATNA_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Dan",
+          "Urok"
+        ],
+        "relationships": [
+          "MA_POVINNOST_PLATIT",
+          "ZAPLATENA_ONESKORENE",
+          "VZNIK_DANOVEJ_POVINNOSTI",
+          "SPLATNA_DO",
+          "ZNIŽENA_O"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Ustanovenie",
+          "Tovar",
+          "Sluzba",
+          "Dodavatel",
+          "Prijemca",
+          "Osoba",
+          "Naklady"
+        ],
+        "relationships": [
+          "ZAHŔŇA",
+          "VZŤAHUJE_SE",
+          "PRIJIMA",
+          "MA_PRIJAT",
+          "SÚVISIACE_S"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "Sluha",
+          "Zlavy",
+          "Obal"
+        ],
+        "relationships": [
+          "ZAHŔŇA",
+          "POSKYTUJE",
+          "DODAVA",
+          "ZAKLAD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Služba",
+          "Platiteľ",
+          "Záväzok",
+          "HmotnyMajetok",
+          "NehmotnyMajetok",
+          "OrganizacnaZlozka"
+        ],
+        "relationships": [
+          "DODANIE",
+          "PRECHOD_NA",
+          "VYPOCET_DANE",
+          "URCENIE_ZAKLADU_DANE",
+          "VZTAH_K_PLATITELI"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Sluzba",
+          "Platitel",
+          "Dodavatel"
+        ],
+        "relationships": [
+          "MA_VZTAH_K",
+          "DODAVA",
+          "OBSTARAVA",
+          "MA_PRAVO_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Platitel",
+          "Služba",
+          "Tovar"
+        ],
+        "relationships": [
+          "MA_VZTAH_K",
+          "DODAVA",
+          "VLASTNI",
+          "KONTROLUJE",
+          "JE_CLENOM"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "PravnickaOsoba",
+          "Platitel",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "CLEN_ORGANA",
+          "PRACOVNOPRAVNY_VZTAH",
+          "BLIZKY",
+          "DODAVA",
+          "ZIVI_S",
+          "NACHADZA_SA_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Dokument",
+          "ClnaHodnota",
+          "Naklady",
+          "Miesto"
+        ],
+        "relationships": [
+          "URCENY_PRE",
+          "SPOJENE_S",
+          "ZAHŔŇAJÚ_SA_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "Miesto",
+          "Tovar",
+          "Dokument",
+          "Naklady",
+          "Služba",
+          "ColnyRezim"
+        ],
+        "relationships": [
+          "URCENIE_V",
+          "SPOJENE_S",
+          "ZAHŔŇA",
+          "NEZAHŔŇA",
+          "PREPUSTENY_DO"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "Sluzba",
+          "ClenskyStat",
+          "Nadobudatel",
+          "Prijemca"
+        ],
+        "relationships": [
+          "OPRAVUJE",
+          "NADOBUDA_V",
+          "ZVYSUJE_CENU",
+          "ZNIZUJE_CENU",
+          "VRACIA_SE",
+          "PLATI_DAN"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Služba",
+          "Osoba",
+          "Orgán",
+          "Doklad",
+          "ZdaňovacieObdobie"
+        ],
+        "relationships": [
+          "PLATI_DAN",
+          "OBDRZAL_DOKLAD",
+          "VYHOTOVUJE_DOKLAD",
+          "VRATI_DAN",
+          "ODPUSTI_DAN",
+          "ZNIŽUJE_HODNOTU",
+          "VYKONA",
+          "VYROBIL_DAN"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "ColnyOrgan",
+          "Tovar",
+          "PravnickaOsoba",
+          "ClenskyStat",
+          "Dan"
+        ],
+        "relationships": [
+          "VYKONAVA",
+          "VRATI",
+          "ODPOCITAVA",
+          "PREUKAZUJE",
+          "ZNIŽUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Služba",
+          "Platiteľ",
+          "ČlenskyStat"
+        ],
+        "relationships": [
+          "PREUKAZUJE",
+          "NADOBUDNUTIE",
+          "DOHODLI_SE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Pohladavka",
+          "Tovar",
+          "Sluzba",
+          "Platitel",
+          "Odberatel"
+        ],
+        "relationships": [
+          "VZTAHUJE_SE_K",
+          "ZNIZUJE",
+          "NEZAPLATIL",
+          "STAVA_SE"
+        ]
+      },
+      {
+        "nodes": [
+          "Pohladavka",
+          "Platitel",
+          "Odberatel",
+          "Konkurz",
+          "Udalost"
+        ],
+        "relationships": [
+          "MA",
+          "NACHADZA_SA_V",
+          "ZAPLATENA_ZA",
+          "ZASTAVENA_PRE",
+          "ZRUŠENA_PRE",
+          "VYHLASENA"
+        ]
+      },
+      {
+        "nodes": [
+          "Pohladavka",
+          "Odberatel",
+          "Konkurz",
+          "Soud"
+        ],
+        "relationships": [
+          "NACHADZA_SA_V",
+          "SKONCENY_Z_DOVODU",
+          "VYHLASENY_KONKURZ",
+          "URCENY_SPLATKOVY_KALENDAR"
+        ]
+      },
+      {
+        "nodes": [
+          "PravnickaOsoba",
+          "Osoba",
+          "Pohladavka",
+          "Udalost"
+        ],
+        "relationships": [
+          "ZOMREL",
+          "ZANIKOL",
+          "ZASTAVIL_KONANIE_O_DEDICSTVE",
+          "PRIHLASENA_V_KONANI_O_LIKVIDACII",
+          "SKONCENIE_RESTRUKTURALIZACIE",
+          "ZVERENENE_UZNESENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Pohladavka",
+          "Tovar",
+          "Služba",
+          "Odberatel",
+          "Dlžnik",
+          "Konkurz"
+        ],
+        "relationships": [
+          "VYKONAVA_OPRAVU",
+          "DODAVA",
+          "MA_VZTAH_K",
+          "STAL_SE_NEVMOZITELNYM"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Sluha",
+          "Odberatel",
+          "Dlznik",
+          "Platitel",
+          "Pohladavka",
+          "Konkurz",
+          "ObchodnyVztah"
+        ],
+        "relationships": [
+          "DODANIE_OD",
+          "VYKONAVA_OPRAVU",
+          "UPLATNUJE_POHLEDAVKU",
+          "ZANIKAJU_PRAVA",
+          "ZACINA_KONKURZNE_KONANIE",
+          "ZASTAVUJE_KONKURZNE_KONANIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Konkurz",
+          "Pohladavka",
+          "Dlznik",
+          "Platitel",
+          "Odberatel"
+        ],
+        "relationships": [
+          "MA_JE",
+          "ZACINA_V",
+          "ZASTAVUJE_V",
+          "ZISTUJE_V",
+          "ZRUŠUJE_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "Pohladavka",
+          "Konanie",
+          "Platitel"
+        ],
+        "relationships": [
+          "VYHLASUJE",
+          "ZVEREJNUJE",
+          "UMIERA",
+          "PRIJIMA",
+          "POSTUPUJE",
+          "VYKONAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Odberatel",
+          "Doklad",
+          "Pohladavka",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "VYHOTOVUJE",
+          "OPRAVUJE",
+          "TÝKA_SE",
+          "OBSAHUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Doklad",
+          "Platitel",
+          "Pohladavka",
+          "Dane",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "VYHOTOVUJE",
+          "ODOSIELA",
+          "PRIJIMA",
+          "VYKONAVA_OPRAVU",
+          "PRISLUCHA"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Zaznam",
+          "Zakon",
+          "Obdobie",
+          "Pohladavka",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "POVINNY_UVIEST",
+          "OPRAVUJE",
+          "VZTAHUJE_SE",
+          "NEUZNA",
+          "VYKONAVA",
+          "DOCHAZI_K"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Platitel",
+          "Soud",
+          "Pohladavka",
+          "Tovar",
+          "Sluzba",
+          "Mena",
+          "Kurz",
+          "Bank"
+        ],
+        "relationships": [
+          "MA",
+          "ZAPLATENIE",
+          "URCENIE",
+          "OZNAMENIE",
+          "VYHLASENIE",
+          "VYKONANIE",
+          "ZAVAZNOST"
+        ]
+      },
+      {
+        "nodes": [
+          "Predpis",
+          "Urad",
+          "Tovar",
+          "Služba",
+          "Sadzba"
+        ],
+        "relationships": [
+          "POUZIVA",
+          "URCUJE",
+          "ZAOKRULUJE",
+          "VYPOCITANA_PRI"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "Sluzba",
+          "SociálnyPodnik",
+          "Stavba",
+          "Prenajímateľ"
+        ],
+        "relationships": [
+          "UPLATNUJE_NA",
+          "DODAVA",
+          "MA",
+          "SPLNA_PODMIENKY",
+          "JE_PRIJEMCEM"
+        ]
+      },
+      {
+        "nodes": [
+          "Stavba",
+          "Zmluva",
+          "Prenajimatel",
+          "Tovar",
+          "ColnyOrgan",
+          "SadzbaDane"
+        ],
+        "relationships": [
+          "MA",
+          "VZTAHUJE_SE_NA",
+          "VYDANA",
+          "PLATNA_V_DEN",
+          "PODPOROVANA"
+        ]
+      },
+      {
+        "nodes": [
+          "SadzbaDane",
+          "Povinnost",
+          "Sluha",
+          "ZdravotnaStarostlivost",
+          "Zariadenie",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "OSLOBODENA_OD_DANE",
+          "SOUVISI_S",
+          "POSKYTOVANA_V",
+          "ZAHŔŇA"
+        ]
+      },
+      {
+        "nodes": [
+          "ZdravotnaStarostlivost",
+          "Služba",
+          "Osoba",
+          "Zariadenie",
+          "Tovar"
+        ],
+        "relationships": [
+          "POSKYTOVANA_V",
+          "SOUVISIACE_S",
+          "DODANA_SPOLU_S",
+          "OSLOBODENA_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "PravnaOsoba",
+          "FyzickaOsoba",
+          "Sluha",
+          "Tovar",
+          "Urad",
+          "Služba"
+        ],
+        "relationships": [
+          "POSKYTUJE",
+          "DODAVA",
+          "SPLNA_PODMIENKU",
+          "SPRAVOVANA_NA_ZASADE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Sluha",
+          "Organizacia",
+          "Sluzba"
+        ],
+        "relationships": [
+          "POSKYTUJE",
+          "DODAVA",
+          "OSLOBODENE_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "PravnaOsoba",
+          "FyzickaOsoba",
+          "Cinnost",
+          "Služba",
+          "HospodarskaSutaz"
+        ],
+        "relationships": [
+          "POSKYTOVANA_OD",
+          "OSLOBODENA_OD_DANE",
+          "SPOJENA_S",
+          "ZUCASNUJE_SE_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "PravnaOsoba",
+          "Podujatie",
+          "Služba",
+          "Organizacia"
+        ],
+        "relationships": [
+          "OSLOBODENA_OD_DANE",
+          "USPORIADANA_NA",
+          "POSKYTOVANA_V",
+          "ZAHŇA_POISTENIE",
+          "ZAHŇA_ZAISTENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Stavba",
+          "Pozemok",
+          "Ucel"
+        ],
+        "relationships": [
+          "OSLOBODENE_OD_DANE",
+          "POVOLUJE_UZIVANIE",
+          "ZMENENY_UCEL",
+          "VYKONANE_STAVEBNE_PRACE"
+        ]
+      },
+      {
+        "nodes": [
+          "Stavba",
+          "Pozemok",
+          "Nehnutelnost",
+          "Sluha",
+          "Platitel"
+        ],
+        "relationships": [
+          "DODAVA",
+          "PRENAJIMA",
+          "OSLOBODENY_OD_DANE",
+          "VZTAHUJE_SE_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Nehnutelnost",
+          "Byt",
+          "Apartman",
+          "NebytovyPriestor",
+          "Stavba"
+        ],
+        "relationships": [
+          "OSLOBODENY_OD",
+          "VZTAHUJE_SE_NA",
+          "USKUTOCNENY_PO",
+          "POVOLENIE_UZIVANIA"
+        ]
+      },
+      {
+        "nodes": [
+          "Priestor",
+          "Byt",
+          "Apartman",
+          "NebytovyPriestor",
+          "Hodnota"
+        ],
+        "relationships": [
+          "MA_HODNOTU",
+          "POROVNAVA_S",
+          "NA_TRHU"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Stavba",
+          "Byt",
+          "Apartman",
+          "NebytovyPriestor",
+          "Platitel"
+        ],
+        "relationships": [
+          "POVOLUJE_UZIVANIE",
+          "DODAVA",
+          "URCENA_NA",
+          "SPLNA_PODMIENKY"
+        ]
+      },
+      {
+        "nodes": [
+          "Apartman",
+          "Stavba",
+          "Osoba",
+          "FinancnaSluzba",
+          "Zaruka",
+          "CennýPapier"
+        ],
+        "relationships": [
+          "DODAVA",
+          "OSLOBODENE_OD_DANE",
+          "SPRAVUJE",
+          "POSKYTUJE",
+          "SPROSTREDKUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Cinnost",
+          "PlatobnyProstriedok",
+          "CennyPapier",
+          "ObchodnyPodiel",
+          "Akreditiv",
+          "Inkaso",
+          "Pienaze",
+          "Zmenarenstvo",
+          "Fond",
+          "Obchod"
+        ],
+        "relationships": [
+          "TÝKA_SE",
+          "SPRAVUJE",
+          "OBCHODUJE_NA",
+          "SPOJENE_S",
+          "ZARABIA_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "Hra",
+          "Tovar",
+          "Služba"
+        ],
+        "relationships": [
+          "OSLOBODENY_OD_DANE",
+          "PREVADZKOVANY_PRE",
+          "ZABEZPECOVANY_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ZdanitelnaOsoba",
+          "ClenskyStat",
+          "PravnickaOsoba"
+        ],
+        "relationships": [
+          "DODANIE_OD",
+          "OSLOBODENIE_OD_DANE",
+          "PREPRAVENIE_Z",
+          "KONANIE_V_POSTAVENI"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "PravnickaOsoba",
+          "DopravnyProstriedok",
+          "Tovar",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "IDENTIFIKOVANY_PRE_DAN",
+          "OSLOBODENY_OD_DANE",
+          "ODOSLANY_DO",
+          "PREPRAVENY_DO",
+          "KUPUJE_OD",
+          "DODAVA_OD"
+        ]
+      },
+      {
+        "nodes": [
+          "Stat",
+          "PravnickaOsoba",
+          "Tovar",
+          "Platitel",
+          "Doklad"
+        ],
+        "relationships": [
+          "IDENTIFIKOVANY_PRE",
+          "OSLOBODENY_OD_DANE",
+          "ZABEZPECUJE_PRE",
+          "PREUKAZUJE",
+          "PREVZAJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Doklad",
+          "Zmluva",
+          "Služba"
+        ],
+        "relationships": [
+          "PREPRAVUJE",
+          "POTVRDUJE",
+          "DODAVA",
+          "ODBERA",
+          "PLATI"
+        ]
+      },
+      {
+        "nodes": [
+          "Dokument",
+          "Tovar",
+          "Služba",
+          "Organizacia",
+          "ClenskyStat",
+          "OzbrojenaSila",
+          "Obcan"
+        ],
+        "relationships": [
+          "DODANIE",
+          "OSLOBODENIE_OD_DANE",
+          "ZRIADENIE",
+          "URCENIE_PRE",
+          "PRACUJE_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "OzbrojenaSila",
+          "Zamestnanec",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "PODIELA_NA",
+          "URCENE_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Organizacia",
+          "Osoba",
+          "Tovar",
+          "Sila"
+        ],
+        "relationships": [
+          "URCENIE_DODAVOK",
+          "PODIELA_NA",
+          "PLNENIE_ULOH",
+          "OSLOBODENIE_OD_DANE",
+          "VYKONAVANIE_CINNOSTI",
+          "ZARADENIE_DO",
+          "ZRIADENIE_PODLA_PRAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Doklad",
+          "Tovar",
+          "Obdobie",
+          "Vyhlasenie"
+        ],
+        "relationships": [
+          "MA",
+          "DODAVA",
+          "OSLOBODENIE_OD_DANE",
+          "PODAVA",
+          "NEUZNA",
+          "NADOBUDNUTIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Osoba",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "ZUCASNUJE_SE_V",
+          "ODOSLANY_OD",
+          "PREPRAVENY_OD",
+          "IDENTIFIKOVANY_PRE_DAN"
+        ]
+      },
+      {
+        "nodes": [
+          "Dodavatel",
+          "Odberatel",
+          "Osoba",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "POUZIVA",
+          "ODOSLAL",
+          "PREPRAVIL",
+          "PRIDELUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Zakon",
+          "Obchod"
+        ],
+        "relationships": [
+          "PLATI_DAN",
+          "VYHOTOVUJE_FAKTURU",
+          "NADOBUDNUTIE_TOVARU",
+          "OSLOBODENIE_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Ostrov",
+          "Tovar",
+          "Osoba",
+          "Služba",
+          "TretíStat"
+        ],
+        "relationships": [
+          "OSLOBODENA_OD_DANE",
+          "PREPRAVENA_DO",
+          "DOPRAVENA_Z",
+          "DODANIE_TOVARU"
+        ]
+      },
+      {
+        "nodes": [
+          "Kupujuci",
+          "Tovar",
+          "Miesto",
+          "ColnyOrgan",
+          "Doklad"
+        ],
+        "relationships": [
+          "PREPRAVUJE_DO",
+          "POTVRDUJE_VYSTUP",
+          "POVINNY_PREUKAZAT"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "FyzickaOsoba",
+          "PravnickaOsoba",
+          "Letisko",
+          "Pristav",
+          "PredajnyDoklad"
+        ],
+        "relationships": [
+          "OSLOBODENY_OD_DANE",
+          "USKUTOCNUJE",
+          "PREDAVA",
+          "MA",
+          "NACHADZA_SA_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Osoba",
+          "Služba",
+          "Plavidlo",
+          "Uzemie"
+        ],
+        "relationships": [
+          "DODAVA",
+          "PREPRAVUJE",
+          "SPOLU_S",
+          "OSLOBODENE_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Plavidlo",
+          "Tovar",
+          "Lietadlo",
+          "Osoba",
+          "Bank",
+          "Služba"
+        ],
+        "relationships": [
+          "DODANIE_PRE",
+          "OPRAVA_PRE",
+          "UPRAVA_PRE",
+          "UDRZBA_PRE",
+          "NAJOM_PRE",
+          "OBSTARANIE_PRE",
+          "VYKONAVA_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Služba",
+          "Uzemie",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "OBSTARAVA_V_MENE_A_NA_UCET",
+          "OSLOBODENE_OD_DANE",
+          "DODANE_V_INOM_CLENSKOM_STATE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zmluva",
+          "Ministerstvo",
+          "Tovar",
+          "Platitel",
+          "Rok",
+          "ColneVyhlasenie"
+        ],
+        "relationships": [
+          "UZATVORENE_MEDZI",
+          "PREDLOZENE_FINANCNEMU_RIADITELSTVU",
+          "OSLOBODENE_OD_DANE",
+          "VZTAHUJE_SE_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Osoba",
+          "Majetok",
+          "Vybavenie",
+          "Zviera",
+          "BiologickaLatka",
+          "ChemickaLatka",
+          "Liečivo"
+        ],
+        "relationships": [
+          "OSLOBODENIE_OD_DANE",
+          "PREMIETNUTIE_DO_EU",
+          "URCENIE_PRE_VYSKUM",
+          "NADOBUDNUTIE_DEDENIM",
+          "UZAVRETIE_MANZELSTVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Vzdielavanie",
+          "Vyrobok",
+          "Organizacia",
+          "Tovar",
+          "Ocenienie",
+          "Podujatie",
+          "Obet"
+        ],
+        "relationships": [
+          "POUZIVA_SE_PRI",
+          "DOVAZA_V_PROSPECH",
+          "VENOVANE_V_RAMCI",
+          "URCENY_PRE",
+          "POUZIVANY_V",
+          "DOVAZANY_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Dokument",
+          "Materiál",
+          "Zvieratá",
+          "Pamätník",
+          "Cintorín",
+          "ClenStat",
+          "ColnyOrgan"
+        ],
+        "relationships": [
+          "URCENY_PRE",
+          "OSLOBODENY_OD_DANE",
+          "POSKYTUJE_INFORMACIE",
+          "PREPRAVOVANY_Z",
+          "SKONCENY_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ColnyOrgan",
+          "Zastupca",
+          "ClenskyStat",
+          "EurópskaUnia",
+          "Organ"
+        ],
+        "relationships": [
+          "ZASTUPUJE",
+          "MA",
+          "PRIDELENE_V",
+          "SKONCENIE_V",
+          "OSLOBODENIE_OD",
+          "POUZIVA_VYSADY_IMUNITY",
+          "ZRIADENY"
+        ]
+      },
+      {
+        "nodes": [
+          "Organizacia",
+          "Tovar",
+          "Sila",
+          "Služba",
+          "Bank",
+          "Zmluva"
+        ],
+        "relationships": [
+          "OSLOBODENY_OD",
+          "ZRIADENY_NIMI",
+          "ZUCASTNENY_V",
+          "DOVOZ",
+          "PODIELAJUCI_SE_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Tovar",
+          "Osoba",
+          "Organizacia",
+          "Ustanovenie"
+        ],
+        "relationships": [
+          "OSLOBODENY_OD_DANE",
+          "ZASTUPUJE",
+          "URCENY_NA_PLNENIE",
+          "ZRIADENY_PODLA_PRAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Organizacia",
+          "Tovar",
+          "Osoba",
+          "Udalost",
+          "Pravo"
+        ],
+        "relationships": [
+          "PODLIEHA",
+          "INFORMUJE_O",
+          "URCENY_NA",
+          "ZRIADENY_PODLA",
+          "VYUZIVANY_PRE",
+          "ZASIELANY_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zasielka",
+          "Tovar",
+          "Osoba",
+          "Cestujuci",
+          "Batozina",
+          "DopravnyProstriedok",
+          "OrganVerejnejMoci"
+        ],
+        "relationships": [
+          "ZASIELANA_OD",
+          "URCENA_PRE",
+          "POUZIVA_PRE",
+          "PREDLOZENA_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Organ",
+          "Batozina",
+          "Cestujuci"
+        ],
+        "relationships": [
+          "PREDLOZENA_COLNEMU_ORGANU",
+          "ZAREGISTROVANA_JAKO_PRIRUCNA_BATOZINA"
+        ]
+      },
+      {
+        "nodes": [
+          "Spolocnost",
+          "Tovar",
+          "Cestujuci",
+          "Domacnost",
+          "Cigara",
+          "Dovoz"
+        ],
+        "relationships": [
+          "ZODPOVEDNA_ZA",
+          "URCENY_NA",
+          "OSLOBODENY_OD_DANE",
+          "USKUTOCNUJE_PRILEZITOSTNE",
+          "NEPRESAHUJE_HODNOTU"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Cestujuci",
+          "Lieky",
+          "TabakovyVyrobok"
+        ],
+        "relationships": [
+          "OSLOBODENIE_OD_DANE",
+          "DOVOZ",
+          "CESTUJE_LETECKOU_DOPRAVOU",
+          "CESTUJE_INAK"
+        ]
+      },
+      {
+        "nodes": [
+          "Mnozstvo",
+          "TabakovyVyrobok",
+          "Alkohol",
+          "AlkoholickyNapoj",
+          "Cestujuci"
+        ],
+        "relationships": [
+          "OSLOBODENIE_OD_DANE",
+          "UPLATNUJE_SE_NA",
+          "PREDSTAVUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "Tovar",
+          "Alkohol",
+          "AlkoholickyNapoj",
+          "Dovoz",
+          "PohonneLatky"
+        ],
+        "relationships": [
+          "OSLOBODENIE_OD_DANE",
+          "UPLATNUJE_SE_NA",
+          "ZADA_VYHODU",
+          "ZABEZPECENIE_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ColnyUrad",
+          "Doklad"
+        ],
+        "relationships": [
+          "ZABEZPECENIE_DANE",
+          "OSLOBODENIE_OD_DANE",
+          "URCENIE_VYSKY_ZABEZPECENIA",
+          "PREPRAVA_TOVARU",
+          "ODBERATEL"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ClenskyStat",
+          "Doklad",
+          "ColnyUrad",
+          "FinancnyOrgan"
+        ],
+        "relationships": [
+          "PREVZAJA",
+          "VYKONAVA",
+          "ZABEZPECUJE",
+          "POTVRDUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "FinancnyOrgan",
+          "Doklad",
+          "ColnyUrad"
+        ],
+        "relationships": [
+          "POTVRDUJE",
+          "VYRUBUJE_DAN"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ColnyUrad",
+          "Sklad",
+          "Služba",
+          "Zakon"
+        ],
+        "relationships": [
+          "ZLOZIL_ZABEZPECENIE",
+          "PREVZA_VE",
+          "OSLOBODENIE_OD_DANE",
+          "DODANIE_TOVARU",
+          "DOVOZ_TOVARU",
+          "URCENY_NA_UMIESTNENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Služba",
+          "DaňovýSklad",
+          "ČlenskýŠtát"
+        ],
+        "relationships": [
+          "URCENY_NA",
+          "SÚVISI_S",
+          "OSLOBODENIE_OD_DANE",
+          "NADOBUDNUTIE",
+          "DODANIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Služba",
+          "Rezim",
+          "Situacia"
+        ],
+        "relationships": [
+          "PLATI",
+          "VYKONAVA",
+          "OSTAVA",
+          "ZODPOVEDA",
+          "VZTAHUJE_SE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ColnySklad"
+        ],
+        "relationships": [
+          "DODAVA",
+          "OZNAMUJE",
+          "OSLOBODUJE_OD_DANE",
+          "ZAVISLI_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Prevadzkovatel",
+          "ColnySklad",
+          "Faktura",
+          "Doklad"
+        ],
+        "relationships": [
+          "MA",
+          "PREDKLADA",
+          "UMIESTNUJE_DO",
+          "VIES",
+          "OZNAMUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "ColnySklad",
+          "Osoba",
+          "Prevadzkovatel"
+        ],
+        "relationships": [
+          "UMIESTNENY_DO",
+          "VYDANY_Z",
+          "POZIADAL_O",
+          "UCHOVAVANY_DO",
+          "MOZE_VYNIAT",
+          "ZODPOVEDNY_ZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Rezim",
+          "Prevadzkovatel",
+          "Tovar",
+          "Hodnota",
+          "WeboveSidlo",
+          "Bank",
+          "Kurz"
+        ],
+        "relationships": [
+          "URCENY_NA",
+          "VYPOCITANE_Z",
+          "ZVEREJNENE_NA",
+          "VYHNANE_Z",
+          "URCENE_A_VYHLASENE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Sklad",
+          "Tovar",
+          "Platitel",
+          "FinancneRiaditelstvo",
+          "Dokumentacia"
+        ],
+        "relationships": [
+          "URCENY_NA",
+          "MA",
+          "VYDA",
+          "PODAVA",
+          "OBSAHUJE",
+          "ZVEREJNUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Sklad",
+          "Dokumentacia",
+          "Tovar",
+          "Urad"
+        ],
+        "relationships": [
+          "MA",
+          "POZADUJE",
+          "SPLNA",
+          "URCUJE",
+          "ZLOZIT"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "WebSídlo",
+          "Organizácia",
+          "Úrad",
+          "Osoba",
+          "Záruka",
+          "Sklad",
+          "Platiteľ"
+        ],
+        "relationships": [
+          "VYDAVA",
+          "PREVERUJE",
+          "SKLADA",
+          "POSKYTUJE",
+          "MA_NAROK_NA",
+          "VYDAVA_POVOLENIE",
+          "VRACIA",
+          "DOPLNUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Urad",
+          "Sklad",
+          "Osoba",
+          "Ziadost"
+        ],
+        "relationships": [
+          "MA",
+          "ZANIKNE",
+          "POZIADA_O",
+          "PORUSI",
+          "MA_NEDOPLATKY",
+          "VRATI"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Sklad",
+          "DanovyUrad"
+        ],
+        "relationships": [
+          "DODAVA",
+          "OZNAMUJE",
+          "VYJIMA_Z",
+          "POVINNA_OZNAMIT"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Prevadzkovatel",
+          "Doklad"
+        ],
+        "relationships": [
+          "UMIESTNENY_DO",
+          "VYHOTOVENY_O",
+          "POZIADANY_O",
+          "OZNAMENY_PODLA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Prevadzkovatel",
+          "Tovar",
+          "Urad",
+          "Zabezpeka"
+        ],
+        "relationships": [
+          "POVINNOST_UCHOVAVAT",
+          "UMOZNIT_VYNATIE",
+          "ZODPOVEDNOST_ZA_DAN",
+          "OZNAMIT_PREVADZKOVATELOVI"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "SvetovaBanka",
+          "EurópskaCentrálnáBanka",
+          "ColnyUrad",
+          "PrevadzkovatelDanovehoSkladu",
+          "Zabezpeka"
+        ],
+        "relationships": [
+          "ZVERENENE_NA",
+          "PREPOCITANE_NA",
+          "URCENE_A_VYHLASENE",
+          "OSLOBODENIE_OD_DANE",
+          "ZLOZENIE_ZABEZPEKY",
+          "UVOĽNENIE_VRATENIE_ZABEZPEKY"
+        ]
+      },
+      {
+        "nodes": [
+          "ColnyUrad",
+          "Osoba",
+          "Tovar",
+          "Zabezpeka",
+          "DanovyUrad",
+          "Prevadzkovatel"
+        ],
+        "relationships": [
+          "UVOZNA",
+          "PLATI",
+          "OSLOBODENIE_OD_DANE",
+          "OZNAMUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "ColnyUrad",
+          "PrevadzkovatelDanovehoSkladu",
+          "ZabezpekaNaDan"
+        ],
+        "relationships": [
+          "UPLATNUJE",
+          "PREPRAVUJE",
+          "ZLOZENA",
+          "UVOLENU",
+          "VRATENA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "Tovar",
+          "ColnyUrad",
+          "DanovyUrad",
+          "Prevadzkovatel"
+        ],
+        "relationships": [
+          "DODAVA",
+          "OZNAMUJE",
+          "PLATI",
+          "UVOZNA",
+          "OSLOBODENIE_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Sklad",
+          "Služba"
+        ],
+        "relationships": [
+          "PRIZNA_DAN",
+          "DODAVA",
+          "OSLOBODENIE_OD_DANE",
+          "VYJATIE_Z_SKLADU"
+        ]
+      },
+      {
+        "nodes": [
+          "Tovar",
+          "Faktura",
+          "Osoba",
+          "Prevadzkovatel",
+          "Doklad"
+        ],
+        "relationships": [
+          "DODANIE",
+          "UMIESTNENIE",
+          "VYHOTOVENIE",
+          "VYDAJ",
+          "UCHOVAVANIE",
+          "PREDLOZENIE"
+        ]
+      },
+      {
+        "nodes": [
+          "Prevadzkovatel",
+          "Tovar",
+          "Osoba",
+          "Urad"
+        ],
+        "relationships": [
+          "UCHOVAVA",
+          "PREDLOZIT",
+          "UMOZNIT_VYNATIE",
+          "ZODPOVEDNY_ZA",
+          "VYPOCITAVA_ZA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Platitel",
+          "Tovar",
+          "Sluzba",
+          "Dan"
+        ],
+        "relationships": [
+          "MA_PRAVO",
+          "ODPOCITAVA_Z",
+          "POUZIJE_NA",
+          "OSLOBODENY_OD"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Tovar",
+          "Sluzba",
+          "Zakaznik",
+          "InvesticnyMajetok"
+        ],
+        "relationships": [
+          "POSKYTUJE",
+          "DODAVA",
+          "SPOLU_S",
+          "ODPOCITAVA_DAN",
+          "OSLOBODENY_OD_DANE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Majetok",
+          "Služba",
+          "Tovar"
+        ],
+        "relationships": [
+          "NADOBUDA",
+          "POUZIVA",
+          "ODPOCITAVA",
+          "VZTAHUJE_SE"
+        ]
+      },
+      {
+        "nodes": [
+          "Majetok",
+          "Podnikanie",
+          "Tovar",
+          "Sluzby",
+          "Prijem"
+        ],
+        "relationships": [
+          "URCUJE_POMER",
+          "ODPOCITAVA_DAN",
+          "PLATI_PRE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Tovar",
+          "Sluzba",
+          "Podnik",
+          "Konkurz",
+          "Osoba",
+          "Pohladavka"
+        ],
+        "relationships": [
+          "POUZIVA_NA",
+          "ODPOCITAVA_DAN",
+          "PREVADZKUJE",
+          "SPLNA_PODMIENKY",
+          "MA_POHLEDAVKU_PROTI"
+        ]
+      },
+      {
+        "nodes": [
+          "Osoba",
+          "Tovar",
+          "Sluzba",
+          "Zakon",
+          "Platitel"
+        ],
+        "relationships": [
+          "POVINNY_PLATIT_DAN",
+          "UPLATNUJE_ODPOCITANIE",
+          "VYKONAVA_CINNOSTI",
+          "MA_PRAVO_NA_ODPOCITANIE",
+          "POUZIVA_NA_UCELY"
+        ]
+      },
+      {
+        "nodes": [
+          "Podnikanie",
+          "InvesticnyMajetok",
+          "Platitel",
+          "Nehnutelnost",
+          "Dane",
+          "Tovar",
+          "Sluzba",
+          "Koeficient"
+        ],
+        "relationships": [
+          "URCUJE_PODLA",
+          "VYPOCITAVA",
+          "ODPOCITAVA",
+          "POUZIVA_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Služba",
+          "Tovar",
+          "Podnik",
+          "OrganizacnaZlozka",
+          "Majetok"
+        ],
+        "relationships": [
+          "PREDAVA",
+          "POUZIVA_NA",
+          "TVORI"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Platitel",
+          "Nehnutelnost",
+          "ZdanovacieObdobie",
+          "Dan",
+          "Rozpocet"
+        ],
+        "relationships": [
+          "POSKYTUJE",
+          "VYPOCITAVA",
+          "URCUJE",
+          "VYSPORIADAVA",
+          "STAL_SE",
+          "PRESTAL_BYT"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "Tovar",
+          "ClennyStat",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "MA",
+          "UPLATNUJE",
+          "POTVRDUJE",
+          "NADOBUDA",
+          "VYHOTOVUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "MA",
+          "VYKONAVA",
+          "POTVRDZENY"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Faktura",
+          "Obdobie"
+        ],
+        "relationships": [
+          "MA_PRAVO_NA",
+          "PODAVA",
+          "VZNIKA_V"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "DopravnyProstriedok",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "DODAVA",
+          "MA_PRAVO_ODPOCITAT",
+          "POVAZOVANA_K",
+          "VZNIKA_V_CASE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Majetok",
+          "Obdobie",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "POUZIVA",
+          "MA",
+          "UPLATNUJE",
+          "VZNIKLO"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Skutocnost",
+          "ZakladDane",
+          "Tovar",
+          "Sluha"
+        ],
+        "relationships": [
+          "UPLATNUJE_ODPOCITANIE",
+          "MA_PRAVO_OPRAVIT",
+          "POVINNOST_OPRAVIT",
+          "DOVOD_OPRAVY"
+        ]
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "ElektronickáKomunikačnáSlužba",
+        "Zakaznik",
+        "Cinnost",
+        "Alkohol",
+        "Registracia",
+        "Miesto",
+        "Konkurz",
+        "PoskytovatelPlatobnychSluzieb",
+        "StatnyOrgan",
+        "Záväzok",
+        "Lietadlo",
+        "Platitel",
+        "EuropskaUnia",
+        "Pozemok",
+        "Pienaze",
+        "Zákazník",
+        "BankovyUcet",
+        "Rozhodnutie",
+        "Mnozstvo",
+        "Doklad",
+        "MiestoPodnikania",
+        "Urad",
+        "Tovar",
+        "Premiestnenie",
+        "Cestujuci",
+        "ElektronickeKomunikacneRozhranie",
+        "Služba",
+        "Majetok",
+        "Sluha",
+        "Liečivo",
+        "Organ",
+        "Sídlo",
+        "Bankovka",
+        "ObchodnyPodiel",
+        "Vyrobok",
+        "KalendarnyRok",
+        "Prenajímateľ",
+        "FinancneRiaditelstvo",
+        "Uzemie",
+        "PlatitelDane",
+        "Prevadzkovatel",
+        "DanovyUrad",
+        "Prijemca",
+        "Vyhlasenie",
+        "Bydlisko",
+        "EurópskaCentrálnáBanka",
+        "AlkoholickyNapoj",
+        "Sadzba",
+        "Zastupca",
+        "PohonneLatky",
+        "WeboveSidlo",
+        "HmotnaRezerva",
+        "Sluzba",
+        "PrevadzkovatelDanovehoSkladu",
+        "Situacia",
+        "Pamätník",
+        "Miestododania",
+        "Organizácia",
+        "ČlenskyStat",
+        "TabakovyVyrobok",
+        "UzemnaSamosprava",
+        "DaňovýSklad",
+        "PravnickaOsoba",
+        "TretaOsoba",
+        "CennýPapier",
+        "ZdaňovacieObdobie",
+        "Zmluva",
+        "DopravneProstriedky",
+        "ColnyUrad",
+        "Povinnost",
+        "Prevadzkarna",
+        "Sustava",
+        "ClenskaStat",
+        "Platba",
+        "Pravo",
+        "OrganVerejnejMoci",
+        "EurópskaUnia",
+        "ObchodnaSpolocnost",
+        "Spolocnost",
+        "OrganizacnaZlozka",
+        "Naklady",
+        "Sluzby",
+        "Konanie",
+        "ColnySklad",
+        "Fond",
+        "Odberatel",
+        "HospodarskaSutaz",
+        "SadzbaDane",
+        "Kniezatsvo",
+        "ColnyRezim",
+        "NehmotnyMajetok",
+        "ZdanovacieObdobie",
+        "Informácia",
+        "Obal",
+        "ZabezpekaNaDan",
+        "Pristav",
+        "Zviera",
+        "Obet",
+        "Ustanovenie",
+        "Plavidlo",
+        "Preprava",
+        "Vzdielavanie",
+        "ClennyStat",
+        "ZdravotnaStarostlivost",
+        "ZakladDane",
+        "Dokumentacia",
+        "Zvieratá",
+        "Záruka",
+        "Skutocnost",
+        "Siet",
+        "Rozpocet",
+        "Obchod",
+        "Prenajimatel",
+        "Letisko",
+        "Obcan",
+        "Cintorín",
+        "Zabezpeka",
+        "Podnikanie",
+        "Druzstvo",
+        "Clen",
+        "Skupina",
+        "InvesticnyMajetok",
+        "Udalosť",
+        "OzbrojenaSila",
+        "Dane",
+        "Zasielka",
+        "Akreditiv",
+        "Zakon",
+        "Udalost",
+        "Dodavatel",
+        "Orgán",
+        "Kupujuci",
+        "ColneVyhlasenie",
+        "Materiál",
+        "Cigara",
+        "Hra",
+        "PlatobnyProstriedok",
+        "Unia",
+        "Soud",
+        "Bank",
+        "Byt",
+        "Zmenarenstvo",
+        "Nadobudatel",
+        "Vozidlo",
+        "Organizacia",
+        "Mena",
+        "Faktúra",
+        "Podnik",
+        "Ministerstvo",
+        "Zaruka",
+        "Priestor",
+        "Minca",
+        "Osoba",
+        "DopravnyProstriedok",
+        "Predpis",
+        "BiologickaLatka",
+        "Nehnutelnost",
+        "Program",
+        "Pohladavka",
+        "Inkaso",
+        "Batozina",
+        "WebSídlo",
+        "Ostrov",
+        "SvetovaBanka",
+        "FyzickaOsoba",
+        "Dlžnik",
+        "Ocenienie",
+        "ČlenskýŠtát",
+        "Kurz",
+        "Zamestnanec",
+        "Nehnuteľnosť",
+        "Ucel",
+        "CennyPapier",
+        "Zaznam",
+        "FinancnaSluzba",
+        "Dlznik",
+        "SociálnyPodnik",
+        "PravnaOsoba",
+        "Rezim",
+        "Urok",
+        "Hodnota",
+        "Dovoz",
+        "Lieky",
+        "Stavba",
+        "ClenStat",
+        "Domacnost",
+        "Sila",
+        "ZdanitelnaOsoba",
+        "Úrad",
+        "Stat",
+        "Faktura",
+        "Sklad",
+        "Doprava",
+        "Vybavenie",
+        "DaňováPovinnosť",
+        "Zlavy",
+        "Apartman",
+        "TretíStat",
+        "ZastupcaSkupiny",
+        "FinancnyOrgan",
+        "Najemca",
+        "ColnyOrgan",
+        "Obchodnik",
+        "ClenskyStat",
+        "Vztah",
+        "ElektronickáSlužba",
+        "HmotnyMajetok",
+        "Koeficient",
+        "ClnaHodnota",
+        "Cislo",
+        "Prijem",
+        "Ziadost",
+        "Obdobie",
+        "Poukaz",
+        "Status",
+        "PravnyNastupca",
+        "Zariadenie",
+        "PredajnyDoklad",
+        "Dodávateľ",
+        "Dan",
+        "ClenSkupiny",
+        "ObchodnyVztah",
+        "Dokument",
+        "Rok",
+        "ChemickaLatka",
+        "NebytovyPriestor",
+        "Podujatie",
+        "Platiteľ"
+      ],
+      "relationships": [
+        "STAL_SA_PRAVNYM_NASTUPCOM",
+        "POSTUPUJE",
+        "ZAHAJA_V",
+        "NASTUPUJE_DO",
+        "DOVOZ",
+        "POVINNY_PREUKAZAT",
+        "OBSAHUJE",
+        "ODOSLANY_DO",
+        "DODANIE_BEZODPLATNE",
+        "PREPRAVOVANA_DO",
+        "VYDAJ",
+        "DODANIE_K",
+        "ZACINA_KONKURZNE_KONANIE",
+        "ZRUŠUJE_V",
+        "NADOBUDOL_PODNIK",
+        "ZNIZUJE",
+        "ZARABIA_NA",
+        "ODOSLANIE",
+        "NADOBUDOL_MAJETOK",
+        "TÝKA_SE",
+        "POROVNAVA_S",
+        "ZANIKOL",
+        "POVINNA_OZNAMIT",
+        "OBSTARANIE_PRE",
+        "ODPOCITAVA_Z",
+        "OPRAVA_PRE",
+        "VYKONANE_V",
+        "VENOVANE_V_RAMCI",
+        "PODAVA_ZIADOST_O_REGISTRACIU",
+        "VZTAHUJE_SE_NA",
+        "PLATI_DAN",
+        "URCENY_SPLATKOVY_KALENDAR",
+        "VIES",
+        "VYHOTOVENIE",
+        "VYHLASENY_KONKURZ",
+        "NA_TRHU",
+        "ODOSLAL",
+        "MENI_MIESTO_DODANIA",
+        "VZNIK",
+        "OSLOBODENIE_OD",
+        "MA_POHLEDAVKU_PROTI",
+        "ZAVISLI_NA",
+        "ZARADENIE_DO",
+        "REGISTROVANA_PRE_DAN",
+        "UCHOVAVA",
+        "ZMENENY_UCEL",
+        "NADOBUDNUTE_V",
+        "POSKYTOVANA_V",
+        "ZNIZUJE_O_DAN",
+        "POVAZOVANA_ZA",
+        "ZRIADENY",
+        "MA_ROZHODNUTIE_O",
+        "ODOVZDAVA",
+        "VYPOCITANE_Z",
+        "ZAREGISTRUJE",
+        "SKONCENY_Z_DOVODU",
+        "ZABEZPECUJE",
+        "URCENIE_DODAVOK",
+        "SPOCIVA_V",
+        "POVAŽUJE_SA",
+        "PRENOS",
+        "CLEN_ORGANA",
+        "VYKONAVA_PRE",
+        "REGISTROVANY_PRE",
+        "PREVADZKUJE",
+        "PREVZAJE",
+        "DODAVA_OD",
+        "VYHOTOVENY_O",
+        "VYDA",
+        "PREDLOZENA_COLNEMU_ORGANU",
+        "ODOSLANY_Z",
+        "VYKONAVA_V",
+        "URCENY_NA",
+        "DOVOZ_TOVARU",
+        "DODAVA_SLUZBU",
+        "OSLOBODENA_OD_DANE",
+        "PREPRAVOVANY_DO",
+        "ZASTAVUJE_KONKURZNE_KONANIE",
+        "MA_UCINOK",
+        "POZIADANY_O",
+        "UPLATNUJE_SE_NA",
+        "PRIJAL",
+        "PODAVA_ZIADOST",
+        "VYDAVA_ROZHODNUTIE",
+        "VYDA_VYHODNOCENIE_O",
+        "KOMUNIKACIA",
+        "PRIDELUJE",
+        "PREVOD_VLASTNICKEHO_PRAVA",
+        "REGISTRUJE",
+        "ZODPOVEDNY_ZA",
+        "SPOLU_S",
+        "ZAPLATENA_ZA",
+        "NEPRESAHUJE_HODNOTU",
+        "PLNENIE_ULOH",
+        "UMIESTNENY_DO",
+        "PRIHLASENA_V_KONANI_O_LIKVIDACII",
+        "URCENIE_PRE",
+        "PRIDELUJE_IDENTIFIKACNE_CISLO",
+        "OSLOBODENY_OD_DANE",
+        "VYHLASENA",
+        "POUZIVA_NA",
+        "MA_UCET",
+        "USKUTOČNUJE",
+        "VYHNANE_Z",
+        "PODAVA",
+        "ODOSLANIE_K",
+        "URCENIE",
+        "URCUJE_ZASTUPCU",
+        "URCENA_NA",
+        "ZRIADENY_PODLA_PRAVA",
+        "NADRIADENOST",
+        "VYHOTOVUJE_DOKLAD",
+        "OBSTARAVA",
+        "ZLOZENA",
+        "VYDANA",
+        "PRIRADUJE_K",
+        "VZTAH_K_PLATITELI",
+        "NEUZNA",
+        "DODANA_SPOLU_S",
+        "ZNIŽUJE_HODNOTU",
+        "VYTVARA_DANOVU_POVINNOST",
+        "PREPRAVENIE_Z",
+        "ZNIŽUJE",
+        "OSLOBODENY_OD",
+        "ZAHŔŇAJÚ_SA_DO",
+        "URCENIE_V",
+        "URCENE_A_VYHLASENE",
+        "NADOBUDA_PLATNOST",
+        "POUZIVA",
+        "BLIZKY",
+        "VYPOCITAVA",
+        "PRIJIMA_PLATBU",
+        "URCENY_NA_PLNENIE",
+        "POUZIVA_SE_PRI",
+        "JE_CLENOM",
+        "ODOSIELA",
+        "ZAREGISTROVANA_JAKO_PRIRUCNA_BATOZINA",
+        "MA_SIDLO_V",
+        "PREDKLADA",
+        "PODIELA_NA",
+        "VYPLYVA_Z",
+        "PRISLUSNY_PRE",
+        "ZAVAZNOST",
+        "VZŤAHUJE_SE",
+        "SPRAVOVANA_NA_ZASADE",
+        "OPRAVUJE",
+        "PREVZA_VE",
+        "POSKYTOVANIE",
+        "ZANIKNE",
+        "NASTAVA_UCINOK",
+        "PRECHAZA",
+        "PREPRAVUJE",
+        "VYUZIVA",
+        "UVOLENU",
+        "SÚVISIACE_S",
+        "ZODPOVEDNOST_ZA_DAN",
+        "VYPOCITAVA_ZA",
+        "PRECHADZA_PRAVA_A_POVINNOSTI",
+        "ZRIADENIE_PODLA_PRAVA",
+        "PLNENIE",
+        "PRESTAL_BYT",
+        "SPOJENIE_S",
+        "POSKYTOVANA_OD",
+        "KUPUJE_OD",
+        "PREPRAVIL",
+        "MA_PRAVO_ODPOCITAT",
+        "KONAJU_V",
+        "MA_VZTAH_K",
+        "UZAVRETIE_MANZELSTVA",
+        "ZAVAZOK",
+        "ODBERATEL",
+        "POSKYTUJE_INFORMACIE",
+        "ZAHŔŇA",
+        "UCASNI_V",
+        "NADOBUDA_PRAVOPLATNOST",
+        "PREPRAVA",
+        "DODAVA_PRE",
+        "ZANIKAJU_PRAVA",
+        "PODLA",
+        "VLASTNICTVO_K",
+        "ODPOCITAVA",
+        "REGISTRUJE_PRE_DAN",
+        "PREVADZA",
+        "SPRAVUJE",
+        "VYDAVA_ROZHODNUTIE_O",
+        "URCENIE_PRE_VYSKUM",
+        "URCUJE_POMER",
+        "UCINNE_OD",
+        "NADOBUDA_TOVAR",
+        "ZANIKOL_BEZ_LIKVIDACIE",
+        "VYDAVA",
+        "UPLYNUL_CAS_OD_UVEDENIA",
+        "NADOBUDNUTIE_PRAVOPLATNOSTI",
+        "ZUCASTNENY_V",
+        "ODBERA",
+        "PODRIADENOST",
+        "ZRIADENY_NIMI",
+        "ZASTUPUJE",
+        "JE_NASTUPCOM",
+        "VYUCOVANIE",
+        "MA_SIDLO",
+        "VYKONAVA_OPRAVU",
+        "URCENY_ZASTUPCA",
+        "PORUSI",
+        "MA_PRIDELENE_IDENTIFIKACNE_CISLO",
+        "PRACUJE_PRE",
+        "MA_IDENTIFIKACNE_CISLO",
+        "MA_POVINNOST_PLATIT",
+        "PREDAVA",
+        "POVAZOVANE_ZA",
+        "VZNIKA",
+        "DOPRAVENA_Z",
+        "POTVRDUJE_VYSTUP",
+        "USKUTOCNENE_ZDANITELNOU_OSOBOU",
+        "ZRIADENIE",
+        "VZTAHUJE_SE_K",
+        "PRECHOD_NA",
+        "PREPOCITANE_NA",
+        "ZDRZIAVA_SE_V",
+        "UDRZBA_PRE",
+        "PREPRAVENA_DO",
+        "PRENAJIMA",
+        "VYKONAVANIE_CINNOSTI",
+        "ROZHODNUTIE",
+        "URCENE_PRE",
+        "UPLATNUJE_ODPOCITANIE",
+        "EMISIA",
+        "SOUVISI_S",
+        "USKUTOCNUJE_PRE",
+        "OSLOBODUJE_OD_DANE",
+        "NHRADENIE",
+        "TVORI",
+        "PODAVA_ZIADOST_O",
+        "ZNIŽENA_O",
+        "ZABEZPECENIE_DANE",
+        "ZAKLAD_DANE",
+        "ODOSIELANA_DO",
+        "ZASAHUJE_DO",
+        "NARUSUJE_HOSPODARSKU_SUTAZ",
+        "VZNIKA_PRI",
+        "PREVZAJA",
+        "PRECHADZA_NA",
+        "POZIADUJE",
+        "VRATI_DAN",
+        "PREPRAVENY_DO",
+        "URCUJE_PODLA",
+        "PREMIETNUTIE_DO_EU",
+        "ZVYSUJE_CENU",
+        "VYROBIL_DAN",
+        "POVOLENIE_UZIVANIA",
+        "UMIESTNENIE",
+        "OSTAVA",
+        "DODANA_PRI",
+        "PRIJIMA_SLUZBU",
+        "URCENIE_MIESTA",
+        "PLATBA_ZA",
+        "POVAZUJE_ZA",
+        "POSTUPENIE",
+        "ZASTAVENA_PRE",
+        "ZABEZPECOVANY_PRE",
+        "ZABEZPECUJE_PRE",
+        "MA_JE",
+        "DODANA_DNOM",
+        "MA_PRAVO_NAKLADAT",
+        "USKUTOCNUJE",
+        "PREPRAVENY_OD",
+        "PODPOROVANA",
+        "MA_NAROK_NA",
+        "CLEN_SKUPINY",
+        "MA_PRIJAT",
+        "VYKONANE_STAVEBNE_PRACE",
+        "VYKONAVA_CINNOSTI",
+        "PODLIEHA",
+        "UVOĽNENIE_VRATENIE_ZABEZPEKY",
+        "DODANIE_DO",
+        "ZUCASNUJE_SE_V",
+        "PRISLUCHA",
+        "ZLOZIT",
+        "OBJEDNAVA_OD",
+        "OZNAMUJE_OSOBE",
+        "ZVEREJNENE_NA",
+        "PREDMET_DANE",
+        "NADOBUDNUTIE_Z",
+        "ZRUŠENA_PRE",
+        "DODANIE_OD",
+        "NACHADZA_SA_V",
+        "OSLOBODENIE_OD_DANE",
+        "PREPRAVENY_Z",
+        "PLODI",
+        "IDENTIFIKOVANA_PRE_DAN",
+        "DOVAZANY_NA",
+        "URCENY_PRE",
+        "DODAVA_DO",
+        "VYKONANIE",
+        "VZNIKA_V",
+        "SPOJENE_S",
+        "UZIVANIE",
+        "UMIERA",
+        "MA_PRAVA_A_POVINNOSTI",
+        "VYSPORIADAVA",
+        "ODPOCITAVA_DAN",
+        "PRECHOD",
+        "PRIDELENY_DO",
+        "ZAPISUJE_DO_REGISTRACIE",
+        "USKUTOCNIL",
+        "REGISTROVANA",
+        "SPOTREBUJE",
+        "PREPRAVA_TOVARU",
+        "SPAJANE_ORGANIZACNE",
+        "PREVERUJE",
+        "PREPRAVENY_NA",
+        "POSKYTUJE",
+        "ZNIZUJE_CENU",
+        "ZIVI_S",
+        "ZLOZENIE_ZABEZPEKY",
+        "ZA_CAST_OSOBNE_DOPRAVY",
+        "OBCHADZA",
+        "SKONCENIE_V",
+        "USKUTOCNENY_PO",
+        "VRATENA",
+        "VKLADA_DO",
+        "REGISTRUJE_SE_PRE",
+        "ZAHŇA_ZAISTENIE",
+        "SPLNA_PODMIENKU",
+        "POTVRDZENY",
+        "KONTROLUJE",
+        "VYSTUPENIE",
+        "MA_HLAVNU_CINNOST",
+        "NADOBUDNUTIE_TOVARU",
+        "POVOLUJE_UZIVANIE",
+        "VYPOCET_DANE",
+        "VRACIA_SE",
+        "VZTAHUJE_SE",
+        "ZVERENENE_UZNESENIE",
+        "MA_PREVADZKAREN",
+        "UVADZA_NA_TRH",
+        "MAJETOK_PRECHADZA_NA",
+        "ZASIELANA_OD",
+        "PODLHA",
+        "OZNAMENY_PODLA",
+        "PLATI_PRE",
+        "STAL_SE",
+        "PREVADZKOVANY_PRE",
+        "ZODPOVEDNA_ZA",
+        "PREUKAZUJE",
+        "MA_PREVADZKARE",
+        "VYKONA",
+        "PREUKAZUJE_V",
+        "KONANIE_V_POSTAVENI",
+        "SÚVISI_S",
+        "USKUTOCNENY_PLATITELOM",
+        "OZNAMENIE",
+        "DODANIE_SLUZIEB",
+        "DOCHAZI_K",
+        "CESTUJE_INAK",
+        "PLATI",
+        "URCENIE_ZAKLADU_DANE",
+        "ZASTUPENY",
+        "POVAZOVANY_ZA",
+        "SPLNA",
+        "POVINNOST_OPRAVIT",
+        "OSOBA_ZAMESTNANEC",
+        "PLATNA_V_DEN",
+        "PREPUSTENY_DO",
+        "POVINNOST_UCHOVAVAT",
+        "NADOBUDA",
+        "ZODPOVEDA",
+        "VYZVE",
+        "ULOZIL_POKUTU",
+        "UMOZNIT_VYNATIE",
+        "ZADA_VYHODU",
+        "PRIDELENE_V",
+        "PRIZNA_DAN",
+        "STAL_SE_NEVMOZITELNYM",
+        "PREDMET_SPROSTREDKOVANIA",
+        "DODANIE",
+        "PREPRAVUJE_DO",
+        "VYJATIE_Z_SKLADU",
+        "VZNIK_DANOVEJ_POVINNOSTI",
+        "ZOMREL",
+        "PRIHLIADOL_NA",
+        "URCUJE",
+        "VYKONAVA",
+        "REGISTRUJE_PRE",
+        "MA_NAJAZDENE",
+        "PRACOVNOPRAVNY_VZTAH",
+        "VYBERA",
+        "ODPUSTI_DAN",
+        "VYPOCITAVA_SE_V",
+        "POVINNY_PLATIT_DAN",
+        "DODANE_V",
+        "POUZITY_PRE",
+        "VYHLASENE",
+        "POSKYTOVANE_NA",
+        "JE_PRIJEMCEM",
+        "VYUZIVANIE_NA",
+        "ZRIADENY_PODLA",
+        "MA",
+        "NADOBUDA_V",
+        "DOPLNUJE",
+        "POVAZOVANA_K",
+        "NADOBUDA_VLASTNICKE_PRAVO",
+        "OBCHODUJE_NA",
+        "SPLATNA_DO",
+        "VYHOTOVUJE_FAKTURU",
+        "POUZIVANY_V",
+        "MOZE_VYNIAT",
+        "VRATIL_DO",
+        "OBSTARAVA_V_MENE_A_NA_UCET",
+        "VYJIMA_Z",
+        "VYSTUPUJE_Z",
+        "NIE_JE_ZDANITELNY",
+        "UMIESTNUJE_DO",
+        "SKONCENIE_RESTRUKTURALIZACIE",
+        "PREVOD",
+        "PRESTAL_SPLNAT_PODMIENKY",
+        "VRACIA_SE_Z_TRHU",
+        "ZDAJITELNA_OSOBA",
+        "VYPOCITANA_PRI",
+        "MA_PRAVO",
+        "ZRUCUJE",
+        "DOHODLI_SE",
+        "ZASTAVUJE_V",
+        "SKONCENIE_ODOSLANIA",
+        "NHRADIL",
+        "MA_PRAVO_NA",
+        "REGISTROVANY_PODLA",
+        "ZVEREJNUJE",
+        "UPLATNUJE_POHLEDAVKU",
+        "SPAJANE_FINANCNE",
+        "MA_PRAVO_NA_ODPOCITANIE",
+        "VRACIA",
+        "URCENY_NA_UMIESTNENIE",
+        "OZNAMUJE_SKUTOCNOST",
+        "ROZHODNE_O",
+        "IDENTIFIKOVANY_PRE_DAN",
+        "IDENTIFIKOVANY_PRE",
+        "DODANIE_PRE",
+        "ZRUŠENIE",
+        "PREMIETNUTIE_TOVARU",
+        "NADOBUDNUTIE_DEDENIM",
+        "PREPRAVA_MEDZI",
+        "VYUZIVANY_PRE",
+        "MA_PRAVO_OPRAVIT",
+        "NIE_POVAZUJE_SE_ZA",
+        "ZAPLATENA_ONESKORENE",
+        "PREDLOZENE_FINANCNEMU_RIADITELSTVU",
+        "DOVEZENY_Z",
+        "VLASTNICTVO",
+        "OSLOBODENE_OD_DANE",
+        "SPROSTREDKUJE",
+        "POUZIVA_VYSADY_IMUNITY",
+        "NEZAHŔŇA",
+        "NADOBUDNUTIE",
+        "ZAHŇA_POISTENIE",
+        "URCENIE_VYSKY_ZABEZPECENIA",
+        "POZADUJE",
+        "VYSTAVIL",
+        "ZAPLATENIE",
+        "DODANE_OSOBE",
+        "PREPRAVA_K",
+        "DODANIE_SLUZBY",
+        "POVAZUJE_SE",
+        "MAJETOK_K",
+        "SKLADA",
+        "USKUTOCNUJE_PRILEZITOSTNE",
+        "DODAVA",
+        "UPRAVUJE",
+        "MA_HODNOTU",
+        "STAVA_SE",
+        "OZNAMIT_PREVADZKOVATELOVI",
+        "PRIPOJENA_K",
+        "UCHOVAVANY_DO",
+        "PODIELAJUCI_SE_NA",
+        "SPAJANE_EKONOMICKY",
+        "VYHOTOVUJE",
+        "ZISTUJE_V",
+        "OBDRZAL_DOKLAD",
+        "PRIJIMA",
+        "PRESTAVA_SPLNAT",
+        "PRIDELENIE",
+        "OZNAMUJE",
+        "ZODPOVEDA_ZA",
+        "VYLUCNE_DODAVA",
+        "POVINNY_UVIEST",
+        "UPLATNUJE_NA",
+        "SKONCENY_V",
+        "ZASIELANY_PRE",
+        "UVOZNA",
+        "VYDANY_Z",
+        "INFORMUJE_O",
+        "DODANIE_TOVARU",
+        "NEZAPLATIL",
+        "USPORIADANA_NA",
+        "DOVAZA_V_PROSPECH",
+        "POUZIVA_NA_UCELY",
+        "ZANIKAJU",
+        "VRACI_DO",
+        "PREPUSTENIE_DO",
+        "MA_BYDLISKO",
+        "VYHLASENIE",
+        "ZACINA_V",
+        "POVAŽUJE_SA_ZA",
+        "UPLATNUJE",
+        "SPOJENA_S",
+        "DODANE_V_INOM_CLENSKOM_STATE",
+        "POVAZUJE_SE_K",
+        "SOUVISIACE_S",
+        "POTVRDUJE",
+        "ZAHRNUJE",
+        "ZAOKRULUJE",
+        "VSTUPUJE_DO",
+        "PODA_ODVOLANIE",
+        "VRATI",
+        "DODAVANY_PRE",
+        "PREDLOZIT",
+        "USKUTOCNENIE",
+        "ZASTAVIL_KONANIE_O_DEDICSTVE",
+        "VZNIKA_V_CASE",
+        "VYRUBUJE_DAN",
+        "PREVOD_PRAVA",
+        "VLASTNI",
+        "UZATVORENE_MEDZI",
+        "STAVA_PLATITELOM",
+        "CESTUJE_LETECKOU_DOPRAVOU",
+        "DRZANIE",
+        "VYDAVA_POVOLENIE",
+        "POZIADA_O",
+        "ZVERENENE_NA",
+        "ZLOZIL_ZABEZPECENIE",
+        "MA_NEDOPLATKY",
+        "DODAVANA_OSOBE",
+        "DODANIE_ZA_PROTIHODNOTU",
+        "ODOVZDANIE",
+        "POUZIVA_PRE",
+        "NAJOM_PRE",
+        "PREDLOZENA_PRE",
+        "ZDRZIAVA_SE",
+        "USKUTOCNENY_PRE",
+        "SPRACOVANIE",
+        "PREDLOZENIE",
+        "PREDAVANIE",
+        "DOVOD_OPRAVY",
+        "UCHOVAVANIE",
+        "VZNIKLO",
+        "URCENA_PRE",
+        "ZDAŇUJE",
+        "REGISTROVANY_PRE_DAN",
+        "VYKONAVA_V_KRAJINE",
+        "POZIADAL_O",
+        "SPLNA_PODMIENKY",
+        "VYHLASUJE",
+        "PREDSTAVUJE",
+        "POUZIJE_NA",
+        "ODOSLANY_OD",
+        "PREPRAVOVANY_Z",
+        "NEZAREGISTRUJE_ZDOVODU",
+        "UPRAVA_PRE"
+      ]
+    }
+  }
+]

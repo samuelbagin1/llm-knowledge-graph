@@ -22,7 +22,7 @@ from classes import Schema, ClassifiedDocument, Type, SVO, Question
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement
+from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement
 from examples import examples_for_extraction
 from pydantic import BaseModel, Field
 
@@ -186,13 +186,17 @@ class PDFGraphRAG:
         self.openai_client = ChatOpenAI(
             model="gpt-5-mini",
             temperature=0,
-            api_key=openai_api_key
+            api_key=openai_api_key,
+            max_retries=3,
+            timeout=120
         )
         
         self.openai_graph_transform = ChatOpenAI(
-            model="gpt-4o-mini",     # -mini 
+            model="gpt-4o-mini",     # -mini
             temperature=0,
-            api_key=openai_api_key
+            api_key=openai_api_key,
+            max_retries=3,
+            timeout=120
         )
         
         # use claude-sonnet-4-5
@@ -204,9 +208,10 @@ class PDFGraphRAG:
 
         # Google Gemini for everything else
         self.gemini_client = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
-            temperature=0,
-            google_api_key=google_api_key
+            model="gemini-2.5-pro",
+            temperature=0.2,
+            google_api_key=google_api_key,
+            timeout=600
         )
 
         self.graph_transformer = LLMGraphTransformer(
@@ -683,6 +688,7 @@ class PDFGraphRAG:
             
             
         
+        
         print("SCHEMA REFINEMENT")
         
         user_prompt = f"""
@@ -730,39 +736,39 @@ class PDFGraphRAG:
 
         # SCHÉMA DETEGOVANÁ Z OTVORENEJ DOMÉNY
         ## Typy uzlov:
-        {odd_schema.nodes}
+        {", ".join(odd_schema.nodes)}
 
         ## Typy vzťahov:
-        {odd_schema.relationships}
+        {", ".join(odd_schema.relationships)}
         """
 
-        # Create and run the agent (ProviderStrategy uses Gemini's native JSON output)
-        agent = create_agent(
-            model=self.gemini_client,
-            system_prompt=system_prompt_for_schema_refinement,
-            response_format=SchemaRefinementResponse
+        
+        
+        structured_model = self.gemini_client.with_structured_output(
+            schema=SchemaRefinementResponse.model_json_schema(), method="json_schema"
         )
-        for attempt in range(3):
-            try:
-                response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-                break
-            except Exception as e:
-                print(f"Schema refinement attempt {attempt + 1}/3 failed: {e}")
-                if attempt == 2:
-                    raise
+        
+        response = structured_model.invoke([
+            ("system", system_prompt_for_schema_refinement),
+            ("human", user_prompt),
+        ])
+        
+        # agent = create_agent(
+        #     model=self.openai_graph_transform,
+        #     response_format=ProviderStrategy(schema=response_schema_for_schema_refinement),
+        #     system_prompt=system_prompt_for_schema_refinement
+        # )
+        # response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
         # structured_response is already a dict when using ProviderStrategy
-        data = response["structured_response"]
+        data = response # ["structured_response"]
+        
 
         print(data)
 
-        # Convert extracted data to Schema
-        schema = self._convert_to_schema(data)
+        return data
 
 
-        return schema
-    
-    
     
     
     
@@ -788,13 +794,16 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-        Extract all entities and relationships from the following text using ONLY the entity types and relationship types defined in the schema below. Do not use types outside this schema. If an entity or relationship does not match the schema, omit it.
+        Extrahuj všetky entity a vzťahy z nasledujúceho textu pomocou IBA typov entít a typov vzťahov definovaných v schéme nižšie. Nepoužívaj typy mimo tejto schémy. Ak entita alebo vzťah nezodpovedá schéme, vynechaj ich.
 
-        # SCHEMA
-        ## Entity Types:
+        # PRAVIDLÁ
+        - Všetky extrahované hodnoty (ID uzlov, názvy, vlastnosti, hodnoty vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+
+        # SCHÉMA
+        ## Typy entít:
         {schema.nodes}
 
-        ## Relationship Types:
+        ## Typy vzťahov:
         {schema.relationships}
 
         # TEXT:
@@ -804,7 +813,7 @@ class PDFGraphRAG:
         print(f"NER: chunk {i}")
         # Create and run the agent
         agent = create_agent(
-            model=self.openai_graph_transform,
+            model=self.openai_client,
             response_format=ProviderStrategy(schema=response_schema_for_sde),
             system_prompt=system_prompt_for_sde
         )

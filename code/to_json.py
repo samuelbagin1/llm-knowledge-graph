@@ -38,11 +38,11 @@ def refinement_to_json(data, output_dir: str = "./extracted_data"):
     os.makedirs(output_dir, exist_ok=True)
 
     output = {
-        "node_types": data.node_types,
-        "relationship_types": data.relationship_types,
+        "node_types": data['node_types'],
+        "relationship_types": data['relationship_types'],
         "merge_log": {
-            "node_types": data.merge_log.node_types,
-            "relationship_types": data.merge_log.relationship_types,
+            "node_types": data['merge_log']['node_types'],
+            "relationship_types": data['merge_log']['relationship_types'],
         },
     }
 

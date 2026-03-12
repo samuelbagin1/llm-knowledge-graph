@@ -52,6 +52,9 @@ extracted_schema = Schema(
     nodes=data[1]['nested']['nodes'],
     relationships=data[1]['nested']['relationships']
 )
+
+# print(", ".join(extracted_schema.nodes))
+
 refined_schema = graphrag.schema_refinement(odd_schema=extracted_schema)
 
 refinement_to_json(refined_schema)

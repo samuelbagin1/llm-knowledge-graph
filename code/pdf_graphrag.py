@@ -25,6 +25,7 @@ import asyncio
 from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement
 from examples import examples_for_extraction
 from pydantic import BaseModel, Field
+from to_json import odd_to_json, refinement_to_json, sde_to_json
 
 
 # Default node type when type is missing or empty
@@ -154,10 +155,8 @@ class PDFGraphRAG:
     def __init__(self,
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str,
                  openai_api_key: str = None, google_api_key: str = None,
-                 claude_api_key: str = None, advanced_search: bool = False,
-                 strict_mode: bool = False):
+                 claude_api_key: str = None):
         
-        self.strict_mode = strict_mode  # Enforce schema compliance via post-extraction filtering
         
         self.graph = Neo4jGraph(
             url=neo4j_uri,
@@ -176,7 +175,6 @@ class PDFGraphRAG:
         self._vector_store_chunk_name = "chunk_vector_store"
         self._vector_store_nodes_name = "nodes_vector_store"
         self._vector_store_relationships_name = "relationships_vector_store"
-        self._advanced_search = advanced_search
 
         # Initialize vector stores - will be created when first documents are added
         self._init_vector_stores()
@@ -212,15 +210,6 @@ class PDFGraphRAG:
             temperature=0.2,
             google_api_key=google_api_key,
             timeout=600
-        )
-
-        self.graph_transformer = LLMGraphTransformer(
-            llm=self.claude_client,
-            allowed_nodes=["Paragraph", "LegalConcept", "Institution", "Subject", "Document"],
-            allowed_relationships=["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "RUŠUJE", "DOPLŇUJE"],
-            strict_mode=True,
-            node_properties=["context"],
-            additional_instructions="Extrahuj právne entity zo slovenského právneho textu. Zameraj sa na paragrafy (§), právne pojmy, inštitúcie a krížové odkazy."
         )
 
 
@@ -486,6 +475,26 @@ class PDFGraphRAG:
             nodes=nodes,
             relationships=relationships,
             source=chunk_id
+        )
+        
+        
+        
+    def _add_document_chunk(self, count: int, path: str, properties: dict = None) -> GraphDocument:
+        chunk_ids = [f"chunk_{i}" for i in range(count)]
+        name = os.path.basename(path)
+
+        document_node = Node(id=name, type="Document", properties=properties)
+        chunk_nodes = [Node(id=chunk_id, type="Chunk") for chunk_id in chunk_ids]
+
+        relationships = [
+            Relationship(source=chunk_node, target=document_node, type="IN_DOCUMENT")
+            for chunk_node in chunk_nodes
+        ]
+
+        return GraphDocument(
+            nodes=[document_node] + chunk_nodes,
+            relationships=relationships,
+            source=name,
         )
         
         
@@ -921,6 +930,7 @@ class PDFGraphRAG:
 
 
     def process(self, pdf_path: str, max_pages: int = None):
+        name_of_chain = "chain1"
         
         # Load PDF documents
         documents = self.load_pdf(pdf_path)
@@ -928,7 +938,7 @@ class PDFGraphRAG:
             documents = documents[:max_pages]
             
             
-        document_classification = self.classification()
+        # document_classification = self.classification()
 
         
         # odd
@@ -940,7 +950,8 @@ class PDFGraphRAG:
                 chunked_documents,
             )
         )
-        print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
+        print(f"\n\nAll chunks processed into schema.\n\n")
+        odd_to_json(extracted_schema_list, name = name_of_chain)
         
         
         # refinement
@@ -949,6 +960,9 @@ class PDFGraphRAG:
             relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
         )
         refined_schema = self.schema_refinement(odd_schema=extracted_schema, existing_schema=self.get_graph_schema())
+        
+        print(f"\n\nSchema refined.\n\n")
+        refinement_to_json(refined_schema, name = name_of_chain)
         
         
         # sde
@@ -961,14 +975,14 @@ class PDFGraphRAG:
                 schema=refined_schema
             )
         )
-        print(f"\nAll chunks processed into graph documents. (strict_mode={self.strict_mode})")
+        
+        print(f"\n\nAll chunks processed into graph documents.\n\n")
+        sde_to_json(graph_docs, name = name_of_chain)
         
         
-        
-
-        graph_docs_json = [graph_document_to_json(doc) for doc in graph_docs]
-        with open("./GRAPH_DOCS.json", "w", encoding="utf-8") as f:
-            json.dump(graph_docs_json, f, ensure_ascii=False, indent=2)
+            
+        # add document chunk into graph documents  
+        graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path))
         
         
         
@@ -983,6 +997,7 @@ class PDFGraphRAG:
         self.graph.refresh_schema()
         # Remove __Entity__ label from Chunk nodes so the node vector store excludes them
         self.graph.query("MATCH (n:Chunk:__Entity__) REMOVE n:__Entity__")
+        self.graph.query("MATCH (n:Document:__Entity__) REMOVE n:__Entity__")
         
         
         # create vector stores from existing graph

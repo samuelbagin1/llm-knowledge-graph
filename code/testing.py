@@ -10,12 +10,9 @@ graphrag = PDFGraphRAG(
     neo4j_password='fseijkfbsj48@',
     openai_api_key=os.getenv("OPENAI_API_KEY"),
     google_api_key=os.getenv("GOOGLE_API_KEY"),
-    claude_api_key=os.getenv("ANTHROPIC_API_KEY"),
-    vector_store_chunk_name='pdf_romeo_juliet',
-    vector_store_nodes_name='pdf_romeo_juliet_nodes',
-    vector_store_relationships_name='pdf_romeo_juliet_relationships'
+    claude_api_key=os.getenv("ANTHROPIC_API_KEY")
 )
 
 # processing
-graphrag.process("datasets/vyhlasene_znenie_4480183-2.pdf")
+graphrag.process("./code/assets/ZZ_2004_222_20260101.pdf")
 print("\nKnowledge graph successfully created in Neo4j!")

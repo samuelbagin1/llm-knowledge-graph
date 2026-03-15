@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 from classes import Schema
 from typing import List
+from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 
 
 def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data"):
@@ -47,6 +48,39 @@ def refinement_to_json(data, output_dir: str = "./extracted_data"):
     }
 
     name = f"refinement_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+
+    with open(os.path.join(output_dir, name), "w") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+        
+
+def sde_to_json(data: List[GraphDocument], output_dir: str = "./extracted_data"):
+    os.makedirs(output_dir, exist_ok=True)
+
+    def node_to_dict(node: Node) -> dict:
+        return {
+            "id": node.id,
+            "type": node.type,
+            "properties": node.properties,
+        }
+
+    def relationship_to_dict(rel: Relationship) -> dict:
+        return {
+            "source": node_to_dict(rel.source),
+            "target": node_to_dict(rel.target),
+            "type": rel.type,
+            "properties": rel.properties,
+        }
+
+    output = []
+    for graph_doc in data:
+        entry = {
+            "source": graph_doc.source.page_content[:200] if graph_doc.source else None,
+            "nodes": [node_to_dict(n) for n in graph_doc.nodes],
+            "relationships": [relationship_to_dict(r) for r in graph_doc.relationships],
+        }
+        output.append(entry)
+
+    name = f"sde_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
 
     with open(os.path.join(output_dir, name), "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)

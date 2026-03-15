@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from classes import Schema
 from pdf_graphrag import PDFGraphRAG
-from to_json import odd_to_json, refinement_to_json
+from to_json import odd_to_json, refinement_to_json, sde_to_json
 
 load_dotenv()
 
@@ -22,8 +22,8 @@ graphrag = PDFGraphRAG(
 # ------ open domain detection ------
 
 # Load PDF documents
-# documents = graphrag.load_pdf(pdf_path)
-# documents = documents[:60]
+documents = graphrag.load_pdf(pdf_path)
+documents = documents[:60]
     
 
 
@@ -45,21 +45,38 @@ graphrag = PDFGraphRAG(
 
 # ------ schema refinement ------
 
-with open('./extracted_data/schemas_20260312002414.json') as f:
-    data = json.load(f)
+# with open('./extracted_data/schemas_20260312002414.json') as f:
+#     data = json.load(f)
 
-extracted_schema = Schema(
-    nodes=data[1]['nested']['nodes'],
-    relationships=data[1]['nested']['relationships']
-)
+# extracted_schema = Schema(
+#     nodes=data[1]['nested']['nodes'],
+#     relationships=data[1]['nested']['relationships']
+# )
 
-# print(", ".join(extracted_schema.nodes))
+# refined_schema = graphrag.schema_refinement(odd_schema=extracted_schema)
 
-refined_schema = graphrag.schema_refinement(odd_schema=extracted_schema)
-
-refinement_to_json(refined_schema)
+# refinement_to_json(refined_schema)
 
 
 
 
 # ------ schema driven extraction ------
+splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
+chunked_documents = splitter.split_documents(documents)
+
+with open('./extracted_data/refinement_20260312235044.json') as f:
+    data = json.load(f)
+
+refined_schema = Schema(
+    nodes=data['node_types'],
+    relationships=data['relationship_types']
+)
+
+graph_docs = asyncio.run(
+    graphrag.async_schema_driven_extraction(
+        chunked_documents,
+        schema=refined_schema
+    )
+)
+
+sde_to_json(graph_docs)

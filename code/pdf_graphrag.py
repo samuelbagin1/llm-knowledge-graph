@@ -485,7 +485,7 @@ class PDFGraphRAG:
         return GraphDocument(
             nodes=nodes,
             relationships=relationships,
-            source=document
+            source=chunk_id
         )
         
         
@@ -648,7 +648,16 @@ class PDFGraphRAG:
 
         async def limited(i, doc):
             async with semaphore:
-                return await self.open_domain_detection(i, doc)
+                for attempt in range(3):
+                    try:
+                        return await self.open_domain_detection(i, doc)
+                    except Exception as e:
+                        if attempt < 2:
+                            print(f"ODD chunk {i}: attempt {attempt + 1} failed ({e}), retrying in 60s...")
+                            await asyncio.sleep(60)
+                        else:
+                            print(f"ODD chunk {i}: all 3 attempts failed")
+                            raise
 
         tasks = [
             asyncio.create_task(limited(i, doc))
@@ -729,10 +738,10 @@ class PDFGraphRAG:
 
         # ZÁKLADNÁ ONTOLÓGIA
         ## Typy uzlov:
-        {existing_schema.nodes if existing_schema else "Neposkytnutá"}
+        {", ".join(existing_schema.nodes) if existing_schema else "Neposkytnutá"}
 
         ## Typy vzťahov:
-        {existing_schema.relationships if existing_schema else "Neposkytnuté"}
+        {", ".join(existing_schema.relationships) if existing_schema else "Neposkytnuté"}
 
         # SCHÉMA DETEGOVANÁ Z OTVORENEJ DOMÉNY
         ## Typy uzlov:
@@ -801,10 +810,10 @@ class PDFGraphRAG:
 
         # SCHÉMA
         ## Typy entít:
-        {schema.nodes}
+        {", ".join(schema.nodes)}
 
         ## Typy vzťahov:
-        {schema.relationships}
+        {", ".join(schema.relationships)}
 
         # TEXT:
         {text}
@@ -813,7 +822,7 @@ class PDFGraphRAG:
         print(f"NER: chunk {i}")
         # Create and run the agent
         agent = create_agent(
-            model=self.openai_client,
+            model=self.openai_graph_transform,
             response_format=ProviderStrategy(schema=response_schema_for_sde),
             system_prompt=system_prompt_for_sde
         )
@@ -842,7 +851,8 @@ class PDFGraphRAG:
     async def async_schema_driven_extraction(
         self,
         documents: List[Document],
-        schema: Schema
+        schema: Schema,
+        max_concurrent = 5
     ) -> List[GraphDocument]:
         """
         Asynchronously process documents to extract graph documents.
@@ -857,14 +867,26 @@ class PDFGraphRAG:
             List of GraphDocuments
         """
         print("creating tasks: SCHEMA-DRIVEN EXTRACTION")
+        semaphore = asyncio.Semaphore(max_concurrent)
+        
+        async def limited(i, doc):
+            async with semaphore:
+                for attempt in range(3):
+                    try:
+                        return await self.schema_driven_extraction(i, doc, schema)
+                    except Exception as e:
+                        if attempt < 2:
+                            print(f"SDE chunk {i}: attempt {attempt + 1} failed ({e}), retrying in 60s...")
+                            await asyncio.sleep(60)
+                        else:
+                            print(f"SDE chunk {i}: all 3 attempts failed")
+                            raise
+
         tasks = [
-            asyncio.create_task(
-                self.schema_driven_extraction(
-                    i, doc, schema
-                )
-            )
+            asyncio.create_task(limited(i, doc))
             for i, doc in enumerate(documents)
         ]
+
         res = await asyncio.gather(*tasks)
         return res
     

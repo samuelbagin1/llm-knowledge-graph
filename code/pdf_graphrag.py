@@ -389,6 +389,7 @@ class PDFGraphRAG:
             id=chunk_id,
             type="Chunk",
             properties={
+                "name": chunk_id,
                 "text": document.page_content,
                 "page": document.metadata.get("page", 0)
             }
@@ -474,12 +475,12 @@ class PDFGraphRAG:
         return GraphDocument(
             nodes=nodes,
             relationships=relationships,
-            source=chunk_id
+            source=Document(page_content="", metadata={"id": chunk_id})
         )
         
         
         
-    def _add_document_chunk(self, count: int, path: str, properties: dict = None) -> GraphDocument:
+    def _add_document_chunk(self, count: int, path: str, properties: dict = {}) -> GraphDocument:
         chunk_ids = [f"chunk_{i}" for i in range(count)]
         name = os.path.basename(path)
 
@@ -494,7 +495,7 @@ class PDFGraphRAG:
         return GraphDocument(
             nodes=[document_node] + chunk_nodes,
             relationships=relationships,
-            source=name,
+            source=Document(page_content="", metadata={"id": name}),
         )
         
         
@@ -688,7 +689,7 @@ class PDFGraphRAG:
     
     
     
-    def schema_refinement(self, odd_schema: Schema, existing_schema: Schema = None) -> Schema:
+    def schema_refinement(self, odd_schema: Schema, existing_schema: Schema = None):
         """
         Function to refine and consolidate extracted schema information across documents, ensuring consistency and resolving conflicts.
 
@@ -696,7 +697,7 @@ class PDFGraphRAG:
             schema: The schema to refine
 
         Returns:
-            Schema with extracted node labels and relationships
+            SchemaRefinement with extracted node_types and relationship_types and merge_log
         """
         
         
@@ -836,7 +837,6 @@ class PDFGraphRAG:
         {text}
         """
 
-        print(f"NER: chunk {i}")
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
@@ -968,6 +968,7 @@ class PDFGraphRAG:
         # sde
         splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
         chunked_documents = splitter.split_documents(documents)
+        refined_schema = self._convert_to_schema(refined_schema)
         
         graph_docs = asyncio.run(
             self.async_schema_driven_extraction(
@@ -979,9 +980,8 @@ class PDFGraphRAG:
         print(f"\n\nAll chunks processed into graph documents.\n\n")
         sde_to_json(graph_docs, name = name_of_chain)
         
-        
-            
-        # add document chunk into graph documents  
+
+        # add document chunk into graph documents
         graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path))
         
         

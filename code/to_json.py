@@ -6,7 +6,7 @@ from typing import List
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 
 
-def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data"):
+def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data", name: str = ""):
     os.makedirs(output_dir, exist_ok=True)
 
     schemas = []
@@ -28,14 +28,14 @@ def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data"):
     }
     output.append({"nested": merged})
 
-    name = f"schemas_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    name = f"{name}_schemas_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
 
     with open(os.path.join(output_dir, name), "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)  # ensure_ascii=False
         
         
         
-def refinement_to_json(data, output_dir: str = "./extracted_data"):
+def refinement_to_json(data, output_dir: str = "./extracted_data", name: str = ""):
     os.makedirs(output_dir, exist_ok=True)
 
     output = {
@@ -47,13 +47,14 @@ def refinement_to_json(data, output_dir: str = "./extracted_data"):
         },
     }
 
-    name = f"refinement_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    name = f"{name}_refinement_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
 
     with open(os.path.join(output_dir, name), "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
         
 
-def sde_to_json(data: List[GraphDocument], output_dir: str = "./extracted_data"):
+
+def sde_to_json(data: List[GraphDocument], output_dir: str = "./extracted_data", name: str = ""):
     os.makedirs(output_dir, exist_ok=True)
 
     def node_to_dict(node: Node) -> dict:
@@ -80,7 +81,7 @@ def sde_to_json(data: List[GraphDocument], output_dir: str = "./extracted_data")
         }
         output.append(entry)
 
-    name = f"sde_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    name = f"{name}_sde_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
 
     with open(os.path.join(output_dir, name), "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)

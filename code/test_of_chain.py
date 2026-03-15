@@ -19,26 +19,25 @@ graphrag = PDFGraphRAG(
     claude_api_key=os.getenv("ANTHROPIC_API_KEY")
 )
 
-# ------ open domain detection ------
+name = "gpt-5-mini"
 
 # Load PDF documents
 documents = graphrag.load_pdf(pdf_path)
 documents = documents[:60]
-    
 
+# ------ open domain detection ------
 
-# splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
-# chunked_documents = splitter.split_documents(documents)
+splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
+chunked_documents = splitter.split_documents(documents)
 
-# extracted_schema_list = asyncio.run(
-#     graphrag.async_open_domain_detection(
-#         chunked_documents,
-#     )
-# )
-# print(f"\nAll chunks processed into graph documents.")
+extracted_schema_list = asyncio.run(
+    graphrag.async_open_domain_detection(
+        chunked_documents,
+    )
+)
 
-
-# odd_to_json(extracted_schema_list)
+print(f"\nAll chunks processed into list of schema.")
+odd_to_json(extracted_schema_list, name = name)
 
 
 
@@ -53,9 +52,14 @@ documents = documents[:60]
 #     relationships=data[1]['nested']['relationships']
 # )
 
-# refined_schema = graphrag.schema_refinement(odd_schema=extracted_schema)
+merged_schema = Schema(
+    nodes=[n for s in extracted_schema_list for n in s.nodes],
+    relationships=[r for s in extracted_schema_list for r in s.relationships]
+)
+refined_schema = graphrag.schema_refinement(odd_schema=merged_schema)
 
-# refinement_to_json(refined_schema)
+print(f"\nRefined schema.")
+refinement_to_json(refined_schema, name = name)
 
 
 
@@ -64,13 +68,13 @@ documents = documents[:60]
 splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
 chunked_documents = splitter.split_documents(documents)
 
-with open('./extracted_data/refinement_20260312235044.json') as f:
-    data = json.load(f)
+# with open('./extracted_data/refinement_20260312235044.json') as f:
+#     data = json.load(f)
 
-refined_schema = Schema(
-    nodes=data['node_types'],
-    relationships=data['relationship_types']
-)
+# refined_schema = Schema(
+#     nodes=data['node_types'],
+#     relationships=data['relationship_types']
+# )
 
 graph_docs = asyncio.run(
     graphrag.async_schema_driven_extraction(
@@ -79,4 +83,5 @@ graph_docs = asyncio.run(
     )
 )
 
-sde_to_json(graph_docs)
+print(f"\nAll chunks processed into graph documents.")
+sde_to_json(graph_docs, name = name)

@@ -631,7 +631,7 @@ class PDFGraphRAG:
     async def async_open_domain_detection(
         self,
         documents: List[Document],
-        max_concurrent: int = 10,
+        max_concurrent: int = 5,
     ) -> List[Schema]:
         """
         Asynchronously process documents to extract schemas.
@@ -645,16 +645,24 @@ class PDFGraphRAG:
         """
         print("creating tasks: OPEN-DOMAIN DETECTION")
         semaphore = asyncio.Semaphore(max_concurrent)
+        pause_event = asyncio.Event()
+        pause_event.set()
+        pause_lock = asyncio.Lock()
 
         async def limited(i, doc):
-            async with semaphore:
-                for attempt in range(3):
+            for attempt in range(3):
+                await pause_event.wait()
+                async with semaphore:
                     try:
                         return await self.open_domain_detection(i, doc)
                     except Exception as e:
                         if attempt < 2:
-                            print(f"ODD chunk {i}: attempt {attempt + 1} failed ({e}), retrying in 60s...")
-                            await asyncio.sleep(60)
+                            async with pause_lock:
+                                if pause_event.is_set():
+                                    pause_event.clear()
+                                    print(f"ODD: error on chunk {i} ({e}), pausing all processing for 60s...")
+                                    await asyncio.sleep(60)
+                                    pause_event.set()
                         else:
                             print(f"ODD chunk {i}: all 3 attempts failed")
                             raise
@@ -868,16 +876,24 @@ class PDFGraphRAG:
         """
         print("creating tasks: SCHEMA-DRIVEN EXTRACTION")
         semaphore = asyncio.Semaphore(max_concurrent)
-        
+        pause_event = asyncio.Event()
+        pause_event.set()
+        pause_lock = asyncio.Lock()
+
         async def limited(i, doc):
-            async with semaphore:
-                for attempt in range(3):
+            for attempt in range(3):
+                await pause_event.wait()
+                async with semaphore:
                     try:
                         return await self.schema_driven_extraction(i, doc, schema)
                     except Exception as e:
                         if attempt < 2:
-                            print(f"SDE chunk {i}: attempt {attempt + 1} failed ({e}), retrying in 60s...")
-                            await asyncio.sleep(60)
+                            async with pause_lock:
+                                if pause_event.is_set():
+                                    pause_event.clear()
+                                    print(f"SDE: error on chunk {i} ({e}), pausing all processing for 60s...")
+                                    await asyncio.sleep(60)
+                                    pause_event.set()
                         else:
                             print(f"SDE chunk {i}: all 3 attempts failed")
                             raise

@@ -32,11 +32,25 @@ class SVO(BaseModel):
 
 
 @dataclass
+class GraphResult:
+    cypher_query: str
+    explanation: str
+    nodes_found: List[str]
+    relationships_found: List[str]
+    
+    
+@dataclass
+class Similar:
+    nodes: List[str]
+    relationships: List[str]
+    chunks: List[str]
+    
+    
+@dataclass
 class Question:
     id: str = ""
     question: str = ""
     svo: SVO = field(default_factory=lambda: SVO(sub="", verb="", obj=""))
-    extracted_nodes: List[Node] = field(default_factory=list)
-    similar_nodes: List[Node] = field(default_factory=list)
-    similar_rel: List[Relationship] = field(default_factory=list)
-    
+    extracted_graph: GraphDocument
+    graph_result: GraphResult
+    similar: Similar

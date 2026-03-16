@@ -18,7 +18,7 @@ from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTe
 import spacy
 
 from classification import classify
-from classes import Schema, ClassifiedDocument, Type, SVO, Question
+from classes import Schema, ClassifiedDocument, Type, SVO, Question, Similar, GraphResult
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
@@ -211,6 +211,14 @@ class PDFGraphRAG:
             google_api_key=google_api_key,
             timeout=600
         )
+        
+        self.gemini_client_thinking = ChatGoogleGenerativeAI(
+            model="gemini-2.5-pro",
+            temperature=0.2,
+            google_api_key=google_api_key,
+            timeout=600,
+            thinking_level='high'
+        )
 
 
     def _init_vector_stores(self):
@@ -281,22 +289,17 @@ class PDFGraphRAG:
                 
                 
                 
-    def get_graph_schema_detailed(self):
+    def get_sample_graph_schema(self) -> str:
         """Get Neo4j graph schema information with sample data
         
         Args:
             None
             
         Returns:
-            Tuple
-            schema, node_labels, rel_types
+            string of sample data
         
         """
         try:
-            # Get node labels and relationship types
-            node_labels = self.graph.query("CALL db.labels()")
-            rel_types = self.graph.query("CALL db.relationshipTypes()")
-
             # Get sample nodes with properties to understand schema
             sample_nodes = self.graph.query("""
                 MATCH (n)
@@ -318,13 +321,6 @@ class PDFGraphRAG:
             
 
             # Build comprehensive schema
-            schema = "Node Types:\n"
-            for label in node_labels:
-                schema += f"  - {label['label']}\n"
-
-            schema += "\nRelationship Types:\n"
-            for rel in rel_types:
-                schema += f"  - {rel['relationshipType']}\n"
 
             # Add sample data to understand property names
             schema += "\nSample Nodes (showing property structure):\n"
@@ -337,7 +333,7 @@ class PDFGraphRAG:
                 to_id = rel['to_props'].get('id', rel['to_props'].get('name', 'unknown'))
                 schema += f"  - ({rel['from_label']}: {from_id}) --[{rel['rel_type']}]--> ({rel['to_label']}: {to_id})\n"
 
-            return schema, node_labels, rel_types
+            return schema
 
         except Exception as e:
             print(f"Error retrieve schema: {e}")
@@ -1051,7 +1047,7 @@ class PDFGraphRAG:
 # ====================================================================================================
     # ---------------- QUERYING METHODS ----------------
     
-    def query_graph_database(self, question: str, similar_nodes: str, similar_relationships: str, svo: Dict) -> Dict[str, Any]:
+    def query_graph_database(self, question: str, similar_nodes: str, similar_relationships: str, svo: SVO) -> GraphResult:
         """
         Function 2: Convert question to Cypher query and retrieve data from Neo4j
 
@@ -1071,11 +1067,7 @@ class PDFGraphRAG:
             print(f" Database is EMPTY")
 
         # Get schema information
-        schema_info, node_labels, rel_types = self.get_graph_schema()
-
-        # Build node labels and relationship types lists for the prompt
-        node_labels_list = [node['label'] for node in node_labels]
-        rel_types_list = [rel['relationshipType'] for rel in rel_types]
+        schema = self.get_graph_schema()
 
         
 
@@ -1087,13 +1079,13 @@ class PDFGraphRAG:
         ## Available Graph Schema
 
         ### Node Labels (use these exact labels in queries):
-        {json.dumps(node_labels_list, indent=2)}
+        {", ".join(schema.nodes)}
 
         ### Relationship Types (use these exact types in queries):
-        {json.dumps(rel_types_list, indent=2)}
+        {", ".join(schema.relationships)}
 
         ### Sample Data (shows actual property structure):
-        {self.graph.schema()}
+        {self.get_sample_graph_schema()}
 
         ### Similar Nodes (based on question context):
         {similar_nodes}
@@ -1183,33 +1175,27 @@ class PDFGraphRAG:
 
         # Create and run the agent
         agent = create_agent(
-            model=self.openai_client,
+            model=self.claude_client,
             tools=[search_database],
-            response_format=ProviderStrategy(schema=response_schema_for_generating_query),
+            response_format=ToolStrategy(schema=response_schema_for_generating_query),
             system_prompt=system_prompt_for_generating_query
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
         # structured_response is already a dict when using ProviderStrategy
-        query_data = response["structured_response"]
+        res = response["structured_response"]
 
         # Fallback if no results
-        if not records and node_count > 0:
-            try:
-                fallback_query = "MATCH (n)-[r]-(m) RETURN n.id as node1, type(r) as rel_type, m.id as node2 LIMIT 50"
-                result = self.graph.query(fallback_query)
-                records = [dict(record) for record in result]
-                if records:
-                    print(f"Fallback query returned {len(records)} results")
-            except Exception as e:
-                print(f"Fallback query failed: {e}")
-                records = []
+        if not res and node_count > 0:
+            raise
 
-        return query_data
+
+        response = GraphResult(cypher_query=res['cypher_query'], explanation=res['explanation'], nodes_found=res['nodes_found'], relationships_found=res['relationships_found'])
+        return response
     
     
     
-    def query_vector_database(self, database: Neo4jVector, question: str, array: List = None, k: int = 5) -> List[Any]:
+    def query_vector_database(self, database: Neo4jVector, array: List = [], k: int = 5) -> List[Any]:
         """
         Function: Query vector database to retrieve relevant chunks and nodes
 
@@ -1305,7 +1291,7 @@ class PDFGraphRAG:
             "required": ["questions"]
         }
         
-        agent = create_agent(model=self.claude_client, tools=[], response_format=ToolStrategy(schema=response_schema), system_prompt=system_prompt)
+        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         questions = response["structured_response"]["questions"]
@@ -1402,7 +1388,7 @@ class PDFGraphRAG:
         
 
 
-    def named_entity_extraction_from_sentence(
+    def ner_from_sentence(
         self,
         text: str,
         schema: Schema,
@@ -1425,10 +1411,10 @@ class PDFGraphRAG:
 
         # SCHEMA
         ## Entity Types:
-        {schema.nodes}
+        {", ".join(schema.nodes)}
 
         ## Relationship Types:
-        {schema.relationships}
+        {", ".join(schema.relationships)}
 
         # TEXT:
         {text}
@@ -1453,7 +1439,7 @@ class PDFGraphRAG:
 
 
 
-    def find_svo(self, question: str) -> Dict[str, str]:
+    def find_svo(self, question: str) -> SVO:
         """
         A function to extract subject, verb, object from a question using LLM
         
@@ -1503,36 +1489,46 @@ class PDFGraphRAG:
             "required": ["subject", "verb", "object"]
         }
         
-        agent = create_agent(model=self.claude_client, tools=[], response_format=ToolStrategy(schema=response_schema), system_prompt=system_prompt)
+        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-        svo = response["structured_response"]
+        res = response["structured_response"]
+        
+        svo = SVO(sub=res['subject'], verb=res['verb'], obj=res['object'])
         return svo
     
     
     
     
-    def validate_and_answer(self, question, node_result, relationship_result, chunk_result, graph_result, advanced_search: str = None) -> str:
+    def validate_and_answer(self, questions: List[Question]) -> str:
         # Format results into natural language answer
-        if advanced_search is not None:
-            advanced_search_text = f"Advanced Deeper Search:\n{json.dumps(advanced_search, indent=2)}\n"
-        else:
-            advanced_search_text = ""
         
-        format_prompt = f"""Based on the following graph database query results, provide a clear, concise answer to the original question.
+        class Answer(BaseModel):
+            """Struktura vyslednej odpovede"""
+            answer: str = Field(description="Retazec odpovede.")
+            
+            
+        print("\n\nValidating and creating answer.\n\n")
+            
+        system_prompt = """
+        
+        """
+        
+        user_prompt = f"""Based on the following graph database query results, provide a clear, concise answer to the original question.
 
-        Question: {question}
+        Original Question: {questions[0].question}
 
-        Node Vector Results: {node_result}
+        Node Vector Results: {str([q.similar.nodes for q in questions])}
 
-        Relationship Vector Results: {relationship_result}
+        Relationship Vector Results: {str([q.similar.relationships for q in questions])}
 
-        Chunk Vector Results: {chunk_result}
+        Chunk Vector Results: {str([q.similar.chunks for q in questions])}
 
         Query Results:
-        {graph_result if graph_result else "No results found"}
-
-        {advanced_search_text}
+        {str([q.graph_result.explanation for q in questions])}
+        {str([q.graph_result.nodes_found for q in questions])}
+        {str([q.graph_result.relationships_found for q in questions])}
+        
 
         Provide a natural language answer that:
         1. Directly answers the question
@@ -1541,11 +1537,20 @@ class PDFGraphRAG:
         4. Is clear and concise
 
         Return ONLY the answer text, no preamble or JSON formatting."""
-
-
-        structured_answer = self.openai_client.invoke(format_prompt).content
         
-        return structured_answer.strip()
+        
+        structured_model = self.gemini_client_thinking.with_structured_output(
+            schema=Answer.model_json_schema(), method="json_schema"
+        )
+        
+        response = structured_model.invoke([
+            ("system", system_prompt),
+            ("human", user_prompt),
+        ])
+
+
+        
+        return response['answer']
         
         
     
@@ -1558,7 +1563,7 @@ class PDFGraphRAG:
     
         """ semanticke vyhladavanie:
     1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
-    2. pre kazdu otazku najst podmet, predmet, vztah
+    2. pre kazdu otazku najst podmet, predmet, prisudok, a extrahovat entity a vztahy
     3. pomocou MCP posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
     4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke, najst Multi-hop
     5. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
@@ -1589,42 +1594,48 @@ class PDFGraphRAG:
         # 2. for each question, find subject, verb, object and extraxt nodes from question using SDE
         questions = []
         questions.append(
-            Question(id='question0', question=question, svo=self.find_svo(question), extracted_nodes=self.named_entity_extraction_from_sentence(text=question, schema=self.get_graph_schema()))
+            Question(id='question0', question=question, svo=self.find_svo(question), extracted_graph=self.ner_from_sentence(text=question, schema=self.get_graph_schema()))
         )
         for i, q in enumerate(various_questions):
             questions.append(
-                Question(id=f'question{i}', question=q, svo=self.find_svo(q), extracted_nodes=self.named_entity_extraction_from_sentence(text=q, schema=self.get_graph_schema()))
+                Question(id=f'question{i}', question=q, svo=self.find_svo(q), extracted_graph=self.ner_from_sentence(text=q, schema=self.get_graph_schema()))
             )
             
-        print(f"\nGenerated Reformulated Questions\n\n: {[q.question + '\nSVO: ' + str(q.svo) + '\n' for q in questions]}")
+        print(f"\nGenerated Reformulated Questions\n\n: {[q.question + '\nSVO: ' + str(q.svo) + '\n\n Extracted graph from sentence: \n' + str(q.extracted_graph) for q in questions]}")
         
         
         
         # find similar nodes in graph from extracted nodes in queestion
-        for i, q in enumerate(questions): 
-            q.similar_nodes = self.query_vector_database(database=self.vector_store_nodes, question=q.question, array=q.extracted_nodes, k=5)
+        for (i, q) in enumerate(questions):
+            similar = Similar(nodes=[], relationships=[], chunks=[])
             
+            similar.nodes = self.query_vector_database(
+                    database=self.vector_store_nodes,
+                    array=[node.id for node in q.extracted_graph.nodes]
+                )
+            similar.relationships = self.query_vector_database(
+                    database=self.vector_store_relationships,
+                    array=[rel.type for rel in q.extracted_graph.relationships]
+                )
+            similar.chunks = self.query_vector_database(
+                    database=self.vector_store_chunks,
+                    array=[q.question]
+                )
+            
+            q.similar = similar
         
         
-        
-        graph_schema = self.graph.get_schema()
-        
-        
-        advanced_search_result = None
-        graph_query_result = chain.invoke( {"query": question} )
-        if (self._advanced_search):
-            advanced_search_result = self.query_graph_database(question=question)['query_data']
+        for i, q in enumerate(questions):
+            q.graph_result = self.query_graph_database(
+                question=question,
+                similar_nodes=q.similar.nodes,
+                similar_relationships=q.similar.relationships,
+                svo=q.svo
+            )
         
         
         
         # validate search results and generate final answer
-        final_answer = self.validate_and_answer(
-            question=question,
-            node_result=nodes_vector_results,
-            relationship_result=relationship_vector_results,
-            chunk_result=chunk_vector_results,
-            graph_result=graph_query_result,
-            advanced_search=advanced_search_result
-        )
+        final_answer = self.validate_and_answer(questions=questions)
         
         print(final_answer)

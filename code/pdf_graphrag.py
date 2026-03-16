@@ -476,9 +476,12 @@ class PDFGraphRAG:
         
         
         
-    def _add_document_chunk(self, count: int, path: str, properties: dict = {}) -> GraphDocument:
+    def _add_document_chunk(self, count: int, path: str, properties: dict | None = None) -> GraphDocument:
         chunk_ids = [f"chunk_{i}" for i in range(count)]
         name = os.path.basename(path)
+        
+        if properties is None:
+            properties = {}
 
         document_node = Node(id=name, type="Document", properties=properties)
         chunk_nodes = [Node(id=chunk_id, type="Chunk") for chunk_id in chunk_ids]
@@ -995,6 +998,8 @@ class PDFGraphRAG:
         self.graph.query("MATCH (n:Chunk:__Entity__) REMOVE n:__Entity__")
         self.graph.query("MATCH (n:Document:__Entity__) REMOVE n:__Entity__")
         
+        print("\n\nAdded Graph Documents into Graph database.\n\n")
+        
         
         # create vector stores from existing graph
         self.vector_store_nodes = Neo4jVector.from_existing_graph(
@@ -1007,6 +1012,7 @@ class PDFGraphRAG:
             text_node_properties=["id"],  # properties to concatenate as text to embed
             embedding_node_property="embedding",
         )
+        print("\n\nAdded embedded nodes into Vector database.\n\n")
         
         self.vector_store_chunks = Neo4jVector.from_existing_graph(
             embedding=self.embeddings,
@@ -1018,6 +1024,7 @@ class PDFGraphRAG:
             text_node_properties=["text"],
             embedding_node_property="embedding",
         )
+        print("\n\nAdded embedded chunks into Vector database.\n\n")
         
         
         rel_types = self.graph.query("CALL db.relationshipTypes()")
@@ -1032,9 +1039,11 @@ class PDFGraphRAG:
                 password=self._neo4j_password,
                 index_name=self._vector_store_relationships_name,
             )
+            print("\n\nAdded embedded relationships into Vector database.\n\n")
             
         else:
             self.vector_store_relationships.add_documents(all_relationships)
+            print("\n\nAdded embedded relationships into Vector database.\n\n")
             
 
         
@@ -1072,38 +1081,38 @@ class PDFGraphRAG:
         
 
         # User prompt - provides the specific question and schema
-        user_prompt = f"""Answer this question by querying the graph database:
+        user_prompt = f"""Odpovedz na túto otázku dopytovaním grafovej databázy:
 
-        **Question:** {question}
+        **Otázka:** {question}
 
-        ## Available Graph Schema
+        ## Dostupná schéma grafu
 
-        ### Node Labels (use these exact labels in queries):
+        ### Označenia uzlov (použi presne tieto označenia v dopytoch):
         {", ".join(schema.nodes)}
 
-        ### Relationship Types (use these exact types in queries):
+        ### Typy vzťahov (použi presne tieto typy v dopytoch):
         {", ".join(schema.relationships)}
 
-        ### Sample Data (shows actual property structure):
+        ### Vzorové dáta (ukazujú skutočnú štruktúru vlastností):
         {self.get_sample_graph_schema()}
 
-        ### Similar Nodes (based on question context):
+        ### Podobné uzly (na základe kontextu otázky):
         {similar_nodes}
 
-        ### Similar Relationships (based on question context):
+        ### Podobné vzťahy (na základe kontextu otázky):
         {similar_relationships}
 
-        ### Subject-Verb-Object from question:
+        ### Subjekt-Sloveso-Objekt z otázky:
         {json.dumps(svo, indent=2)}
 
-        ## Your Task
-        1. Analyze the question to determine which node labels and relationship types are relevant
-        2. Use the `search_database` tool to query the database with Cypher queries
-        3. Start broad, then refine based on results
-        4. Continue querying until you find the best matching nodes, properties, and relationships
-        5. Return your final answer with the most effective Cypher query and the data you found
+        ## Tvoja úloha
+        1. Analyzuj otázku a urči, ktoré označenia uzlov a typy vzťahov sú relevantné
+        2. Použi nástroj `search_database` na dopytovanie databázy pomocou Cypher dopytov
+        3. Začni široko, potom spresňuj na základe výsledkov
+        4. Pokračuj v dopytovaní, kým nenájdeš najlepšie zodpovedajúce uzly, vlastnosti a vzťahy
+        5. Vráť finálnu odpoveď s najefektívnejším Cypher dopytom a nájdenými dátami
 
-        Begin by identifying the relevant node labels and relationship types, then query the database."""
+        Začni identifikáciou relevantných označení uzlov a typov vzťahov, potom dopytuj databázu."""
 
 
 
@@ -1261,21 +1270,22 @@ class PDFGraphRAG:
         Returns:
             List of reformulated questions
         """
-        system_prompt = """You are a question reformulation expert. Your task is to create alternative phrasings of a given question while preserving the exact same meaning and context.
+        system_prompt = """Si expert na preformulovanie otázok. Tvojou úlohou je vytvoriť alternatívne formulácie danej otázky pri zachovaní presne rovnakého významu a kontextu.
 
-        Each reformulated question should:
-        - Ask for the same information as the original
-        - Use different wording, sentence structure, or perspective
-        - Maintain the same level of specificity
-        - Be clear and well-formed
+        Každá preformulovaná otázka musí:
+        - Pýtať sa na rovnakú informáciu ako pôvodná
+        - Používať odlišné slová, vetné štruktúry alebo perspektívu
+        - Zachovať rovnakú úroveň špecifickosti
+        - Byť jasná a správne formulovaná
 
-        Do not add new constraints, change the scope, or alter the intent of the original question."""
+        Nepridávaj nové obmedzenia, nemeň rozsah ani nezmeň zámer pôvodnej otázky."""
+        
 
-        user_prompt = f"""Create exactly {number_of_questions} different reformulations of the following question. Each version should ask for the same information but use different wording.
+        user_prompt = f"""Vytvor presne {number_of_questions} rôznych preformulácií nasledujúcej otázky. Každá verzia sa musí pýtať na rovnakú informáciu, ale inými slovami.
 
-        Original question: {question}
+        Pôvodná otázka: {question}
 
-        Generate {number_of_questions} alternative phrasings."""
+        Vygeneruj {number_of_questions} alternatívnych formulácií."""
 
         response_schema = {
             "title": "VarietyQuestions",
@@ -1407,13 +1417,16 @@ class PDFGraphRAG:
             GraphDocument with extracted and optionally filtered nodes/relationships
         """
         user_prompt = f"""
-        Extract all entities and relationships from the following text using ONLY the entity types and relationship types defined in the schema below. Do not use types outside this schema. If an entity or relationship does not match the schema, omit it.
+        Extrahuj všetky entity a vzťahy z nasledujúceho textu pomocou IBA typov entít a typov vzťahov definovaných v schéme nižšie. Nepoužívaj typy mimo tejto schémy. Ak entita alebo vzťah nezodpovedá schéme, vynechaj ich.
 
-        # SCHEMA
-        ## Entity Types:
+        # PRAVIDLÁ
+        - Všetky extrahované hodnoty (ID uzlov, názvy, vlastnosti, hodnoty vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+
+        # SCHÉMA
+        ## Typy entít:
         {", ".join(schema.nodes)}
 
-        ## Relationship Types:
+        ## Typy vzťahov:
         {", ".join(schema.relationships)}
 
         # TEXT:
@@ -1449,24 +1462,24 @@ class PDFGraphRAG:
             Dictionary with question, subject, verb, object
         """
         
-        system_prompt = """You are a linguistic analysis expert specialized in extracting grammatical components from questions.
+        system_prompt = """Si expert na lingvistickú analýzu špecializovaný na extrakciu gramatických zložiek z otázok.
 
-        Your task is to identify the Subject, Verb, and Object (SVO) from a given question:
-        - Subject: The entity performing the action or being asked about
-        - Verb: The main action or state being queried
-        - Object: The entity receiving the action or being related to the subject
+        Tvojou úlohou je identifikovať podmet, prísudok a predmet z danej otázky:
+        - Podmet: Entita, ktorá vykonáva činnosť alebo na ktorú sa otázka pýta
+        - Prísudok: Hlavná činnosť alebo stav, na ktorý sa otázka pýta
+        - Predmet: Entita, ktorá prijíma činnosť alebo je vo vzťahu k podmetu
 
-        Guidelines:
-        - For questions, convert the interrogative form to a declarative statement to identify SVO
-        - Extract the core semantic components, not just surface-level words
-        - If a component is implicit or missing, infer it from context
-        - Keep each component concise (a few words maximum)"""
+        Pokyny:
+        - Pri otázkach preveď opytovací tvar na oznamovací na identifikáciu podmetu, prísudku a predmetu
+        - Extrahuj hlavné sémantické zložky, nie len povrchové slová
+        - Ak je niektorá zložka implicitná alebo chýba, odvoď ju z kontextu
+        - Každú zložku uvádzaj stručne (maximálne niekoľko slov)"""
 
-        user_prompt = f"""Extract the subject, verb, and object from the following question:
+        user_prompt = f"""Extrahuj podmet, prísudok a predmet z nasledujúcej otázky:
 
-        Question: {question}
+        Otázka: {question}
 
-        Identify the SVO components."""
+        Identifikuj tieto tri gramatické zložky."""
 
         response_schema = {
             "title": "SubjectVerbObject",
@@ -1475,15 +1488,15 @@ class PDFGraphRAG:
             "properties": {
                 "subject": {
                     "type": "string",
-                    "description": "The subject extracted from the question"
+                    "description": "Extrahovany podmet z vety"
                 },
                 "verb": {
                     "type": "string",
-                    "description": "The verb extracted from the question"
+                    "description": "Extrahovany prisudok z vety"
                 },
                 "object": {
                     "type": "string",
-                    "description": "The object extracted from the question"
+                    "description": "Extrahovany predmet z vety"
                 }
             },
             "required": ["subject", "verb", "object"]
@@ -1511,32 +1524,37 @@ class PDFGraphRAG:
         print("\n\nValidating and creating answer.\n\n")
             
         system_prompt = """
-        
+        Si expert na generovanie odpovedí zo znalostných grafov. Tvojou úlohou je na základe poskytnutých výsledkov z grafovej databázy vytvoriť jasnú a stručnú odpoveď v prirodzenom jazyku na pôvodnú otázku.
+
+        Pokyny:
+        - Odpovedaj priamo na položenú otázku
+        - Zahrň konkrétne mená, vzťahy a detaily z poskytnutých výsledkov
+        - Ak informácie chýbajú alebo sú neúplné, otvorene to uveď
+        - Odpoveď formuluj jasne, stručne a v prirodzenom jazyku
+        - Nevymýšľaj informácie, ktoré sa nenachádzajú vo výsledkoch
         """
         
-        user_prompt = f"""Based on the following graph database query results, provide a clear, concise answer to the original question.
+        
+        user_prompt = f"""Na základe nasledujúcich výsledkov z grafovej databázy poskytni jasnú a stručnú odpoveď na pôvodnú otázku.
 
-        Original Question: {questions[0].question}
+        Pôvodná otázka: {questions[0].question}
 
-        Node Vector Results: {str([q.similar.nodes for q in questions])}
+        Vektorové výsledky uzlov: {str([q.similar.nodes for q in questions])}
 
-        Relationship Vector Results: {str([q.similar.relationships for q in questions])}
+        Vektorové výsledky vzťahov: {str([q.similar.relationships for q in questions])}
 
-        Chunk Vector Results: {str([q.similar.chunks for q in questions])}
+        Vektorové výsledky textových úsekov: {str([q.similar.chunks for q in questions])}
 
-        Query Results:
+        Výsledky dopytov:
         {str([q.graph_result.explanation for q in questions])}
         {str([q.graph_result.nodes_found for q in questions])}
         {str([q.graph_result.relationships_found for q in questions])}
-        
 
-        Provide a natural language answer that:
-        1. Directly answers the question
-        2. Includes specific names, relationships, and details from the results
-        3. Acknowledges if information is missing or incomplete
-        4. Is clear and concise
-
-        Return ONLY the answer text, no preamble or JSON formatting."""
+        Poskytni odpoveď v prirodzenom jazyku, ktorá:
+        1. Priamo odpovedá na otázku
+        2. Obsahuje konkrétne mená, vzťahy a detaily z výsledkov
+        3. Prizná, ak informácie chýbajú alebo sú neúplné
+        4. Je jasná a stručná"""
         
         
         structured_model = self.gemini_client_thinking.with_structured_output(

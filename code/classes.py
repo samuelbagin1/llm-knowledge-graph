@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from pydantic import BaseModel, Field
 from typing import List
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
+from langchain_core.documents import Document
 
 
 @dataclass
@@ -51,6 +52,6 @@ class Question:
     id: str = ""
     question: str = ""
     svo: SVO = field(default_factory=lambda: SVO(sub="", verb="", obj=""))
-    extracted_graph: GraphDocument
-    graph_result: GraphResult
-    similar: Similar
+    extracted_graph: GraphDocument = field(default_factory=lambda: GraphDocument(nodes=[], relationships=[], source=Document(page_content="")))
+    graph_result: GraphResult = field(default_factory=lambda: GraphResult(cypher_query="", explanation="", nodes_found=[], relationships_found=[]))
+    similar: Similar = field(default_factory=lambda: Similar(nodes=[], relationships=[], chunks=[]))

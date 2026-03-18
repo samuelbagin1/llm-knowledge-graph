@@ -460,9 +460,9 @@ class PDFGraphRAG:
         for node in nodes:
             relationships.append(
                 Relationship(
-                    source=chunk_node,
-                    target=node,
-                    type="HAS"
+                    source=node,
+                    target=chunk_node,
+                    type="IN_CHUNK"
                 )
             )
 
@@ -559,7 +559,7 @@ class PDFGraphRAG:
             # Keep HAS relationships (chunk-to-entity links) regardless
             filtered_relationships = [
                 rel for rel in filtered_relationships
-                if rel.type.lower() in lower_allowed_rels or rel.type == "HAS"
+                if rel.type.lower() in lower_allowed_rels or rel.type == "IN_CHUNK"
             ]
 
         return GraphDocument(
@@ -737,6 +737,9 @@ class PDFGraphRAG:
         Ak nie je poskytnutá žiadna základná ontológia:
         - Spresni surovú schému samostatne zlúčením sémanticky podobných typov a normalizáciou označení.
         """}
+        
+        # PRIDANIE
+        Medzi uzly pridaj novy typ: Paragraf
 
         # PRAVIDLÁ
         - Ide o ľahký spresňovací prechod. Zlučuj iba typy s jasným sémantickým prekryvom.
@@ -779,16 +782,9 @@ class PDFGraphRAG:
             ("human", user_prompt),
         ])
         
-        # agent = create_agent(
-        #     model=self.openai_graph_transform,
-        #     response_format=ProviderStrategy(schema=response_schema_for_schema_refinement),
-        #     system_prompt=system_prompt_for_schema_refinement
-        # )
-        # response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
         # structured_response is already a dict when using ProviderStrategy
-        data = response # ["structured_response"]
-        
+        data = response
 
         print(data)
 
@@ -820,20 +816,37 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-        Extrahuj všetky entity a vzťahy z nasledujúceho textu pomocou IBA typov entít a typov vzťahov definovaných v schéme nižšie. Nepoužívaj typy mimo tejto schémy. Ak entita alebo vzťah nezodpovedá schéme, vynechaj ich.
+        Extrahuj VSETKY entity a vztahy z nasledujuceho textu. Pouzivaj STRIKTNE IBA typy entit a typy vztahov z dole uvedenej schemy. Ziadne ine typy nie su povolene.
 
-        # PRAVIDLÁ
-        - Všetky extrahované hodnoty (ID uzlov, názvy, vlastnosti, hodnoty vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+        # PRAVIDLA
+        - Vsetky extrahovane hodnoty (ID uzlov, nazvy, vlastnosti, hodnoty vztahov) pis BEZ DIAKRITIKY (napr. c→c, s→s, z→z, a→a, e→e, i→i, o→o, u→u, y→y, n→n, t→t, d→d, l→l, o→o).
+        - Ak entita v texte nezodpoveda ziadnemu typu zo schemy, VYNECHAJ ju.
+        - Ak vztah v texte nezodpoveda ziadnemu typu zo schemy, VYNECHAJ ho.
+        - NEMODIFIKUJ nazvy typov - nepridavaj slova, sufixy, predlozky ani predpony.
+        - Pouzivaj VZDY najspecifickejsi povoleny typ zo schemy (napr. `InvesticnyMajetok` namiesto `Majetok`, `PravnyPredpis` namiesto `Dokument` pre zakony).
 
-        # SCHÉMA
-        ## Typy entít:
+        # POZIADAVKY NA DETAILNOST
+        - Neextrahuj len hlavne subjekty. Extrahuj AJ: dane, odpocty, zmluvy, cinnosti, casove obdobia, prava, povinnosti, sumy a sadzby.
+        - Zakony a zbierky zakonov zaraduj ako `PravnyPredpis`.
+        - Konkretne paragrafy a odseky (napr. § 54 ods. 2 pism. a) extrahuj ako samostatne entity typu `Paragraf` a prepoj ich so zakonom pomocou vztahu `OBSAHUJE`.
+        - Ak sa entita definuje alebo odkazuje na konkretny paragraf, vytvor vztah medzi entitou a paragrafom (napr. pomocou `PODLA`).
+
+        # SCHEMA - POVOLENE TYPY ENTIT (pouzivaj LEN tieto, PRESNE ako su napisane):
         {", ".join(schema.nodes)}
 
-        ## Typy vzťahov:
+        # SCHEMA - POVOLENE TYPY VZTAHOV (pouzivaj LEN tieto, PRESNE ako su napisane):
         {", ".join(schema.relationships)}
 
-        # TEXT:
+        # TEXT NA EXTRAKCIU:
         {text}
+
+        # KONTROLA PRED VYSTUPOM:
+        Pred tym nez odpovies, over si:
+        1. Je KAZDY typ uzla PRESNE v zozname povolenych typov entit vyssie? (nie modifikovany, nie vseobecnejsi)
+        2. Je KAZDY typ vztahu PRESNE v zozname povolenych typov vztahov vyssie?
+        3. Pouzil si najspecifickejsi dostupny typ (napr. InvesticnyMajetok, nie Majetok)?
+        4. Extrahoval si aj dane, zmluvy, cinnosti, casove obdobia a paragrafy?
+        Ak nie, oprav alebo doplnenie nepovolene polozky.
         """
 
         # Create and run the agent
@@ -935,6 +948,11 @@ class PDFGraphRAG:
         documents = self.load_pdf(pdf_path)
         if max_pages:
             documents = documents[:max_pages]
+            
+        
+        # TODO: use some pdf tool or something to find tables in pdf, those
+        #       tables send independently for named entity recognition (sde)
+        #       docling
             
             
         # document_classification = self.classification()
@@ -1103,7 +1121,7 @@ class PDFGraphRAG:
         {similar_relationships}
 
         ### Subjekt-Sloveso-Objekt z otázky:
-        {json.dumps(svo, indent=2)}
+        {svo.model_dump_json(indent=2)}
 
         ## Tvoja úloha
         1. Analyzuj otázku a urči, ktoré označenia uzlov a typy vzťahov sú relevantné
@@ -1196,7 +1214,7 @@ class PDFGraphRAG:
 
         # Fallback if no results
         if not res and node_count > 0:
-            raise
+            raise RuntimeError(f"Graph query returned no results despite {node_count} nodes in database")
 
 
         response = GraphResult(cypher_query=res['cypher_query'], explanation=res['explanation'], nodes_found=res['nodes_found'], relationships_found=res['relationships_found'])
@@ -1513,7 +1531,7 @@ class PDFGraphRAG:
     
     
     
-    def validate_and_answer(self, questions: List[Question]) -> str:
+    def answer(self, questions: List[Question]) -> str:
         # Format results into natural language answer
         
         class Answer(BaseModel):
@@ -1582,7 +1600,7 @@ class PDFGraphRAG:
         """ semanticke vyhladavanie:
     1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
     2. pre kazdu otazku najst podmet, predmet, prisudok, a extrahovat entity a vztahy
-    3. pomocou MCP posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
+    3. posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
     4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke, najst Multi-hop
     5. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
     6. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
@@ -1643,6 +1661,7 @@ class PDFGraphRAG:
             q.similar = similar
         
         
+        # query graph database for each question
         for i, q in enumerate(questions):
             q.graph_result = self.query_graph_database(
                 question=question,
@@ -1651,9 +1670,12 @@ class PDFGraphRAG:
                 svo=q.svo
             )
         
+        # TODO: validation agent - validates the graph retrieval by the svo and questions
+        #       - if not enough, find more relevant information (MULTIHOP)
+        # TODO: grab all chunks that are connected from retrieved nodes via IN_CHUNK relationship
         
         
-        # validate search results and generate final answer
-        final_answer = self.validate_and_answer(questions=questions)
+        # generate final answer
+        final_answer = self.answer(questions=questions)
         
         print(final_answer)

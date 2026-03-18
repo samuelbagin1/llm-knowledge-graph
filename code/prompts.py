@@ -154,27 +154,84 @@ response_schema_for_schema_refinement = {
 
 # schema driven extraction
 system_prompt_for_sde = """
-Si expertný algoritmus na extrakciu znalostných grafov. Tvojou úlohou je extrahovať pomenované entity (uzly) a vzťahy z textu podľa poskytnutej ontologickej schémy.
+Si expertny algoritmus na extrakciu znalostnych grafov. Tvojou ulohou je extrahovat pomenovane entity (uzly) a vztahy z textu podla poskytnutej ontologickej schemy.
 
-## Základné princípy
-- Extrahuj čo najviac informácií bez straty presnosti.
-- Nepridávaj žiadne informácie, ktoré nie sú explicitne uvedené v texte.
-- Používaj IBA typy entít a typy vzťahov definované v poskytnutej schéme. Nevymýšľaj ani nepoužívaj typy mimo schémy.
+## KRITICKE PRAVIDLO 1 - STRIKTNE DODRZANIE SCHEMY
+Pouzivaj VYLUCNE typy entit a typy vztahov, ktore su PRESNE VYMENOVANE v poskytnutej scheme.
+
+### Co to znamena konkretne:
+- AK chces vytvorit uzol s typom, ktory NIE JE v zozname povolenych typov entit, NEVYTVARAJ ho. Namiesto toho:
+  1. Najdi semanticky najbizsi povoleny typ zo schemy a pouzi ten.
+  2. Ak ziadny povoleny typ nesedi, entitu VYNECHAJ.
+- AK chces vytvorit vztah s typom, ktory NIE JE v zozname povolenych typov vztahov, NEVYTVARAJ ho. Namiesto toho:
+  1. Najdi semanticky najbizsi povoleny typ zo schemy a pouzi ten.
+  2. Ak ziadny povoleny typ nesedi, vztah VYNECHAJ.
+- NIKDY nemodifikuj nazvy typov (nepridavaj sufixy, prefixy, predlozky ani ine zmeny). Pouzivaj ich PRESNE tak, ako su uvedene v scheme.
+
+### Priklady zakazaneho spravania:
+- Schema obsahuje "REGISTRUJE" → nepouzivaj "REGISTRUJE_PRE" ani "ZAREGISTRUJE_PRE"
+- Schema obsahuje "PLATI" → nepouzivaj "PLATI_ZA"
+- Schema obsahuje "PODAVA" → nepouzivaj "PODAVA_ZIADOST"
+- Schema obsahuje "MA_IDENTIFIKATOR" → nepouzivaj "MA_IDENTIFIKACNE_CISLO"
+- Schema obsahuje "OBSAHUJE" → nepouzivaj "ZAHRNUJE"
+- Schema obsahuje "Stat" → nepouzivaj "Clenskystat" ani "Statnyorgan"
+- Schema obsahuje "Vozidlo" → nepouzivaj "Dopravnyprostriedok"
+- Schema obsahuje "CasoveObdobie" → nepouzivaj "Casovyusek"
+- Schema obsahuje "Portal" → nepouzivaj "Webovesidlo"
+
+## KRITICKE PRAVIDLO 2 - MAXIMALNA DETAILNOST EXTRAKCIE
+Extrahuj VSETKY relevantne entity a vztahy z textu, nie len hlavne subjekty. Neobmedzuj sa na povrchnu extrakciu.
+
+### Povinne extrahuj aj:
+- **Dane, poplatky, odvody** → pouzi prislusny typ zo schemy (napr. `Dan`, `Odpocet`, `FinancnyProstriedok`)
+- **Zmluvy, predpisy, zakony** → pouzi `PravnyPredpis` pre zakony a zbierky zakonov, `Dokument` pre zmluvy a ine pisomnosti
+- **Cinnosti a procesy** → pouzi `Cinnost` (napr. podnikanie, registracia, dodanie)
+- **Casove udaje** → pouzi `CasoveObdobie` (napr. kalendarny rok, zdanovacie obdobie)
+- **Prava a povinnosti** → pouzi `Pravo`, `Povinnost` alebo iny prislusny typ zo schemy
+- **Sumy, sadzby, hodnoty** → pouzi `Hodnota`, `Mena` alebo iny prislusny typ
+
+### Pouzivaj VZDY najspecifickejsi povoleny typ zo schemy:
+- Ak schema obsahuje `InvesticnyMajetok`, pouzi ho namiesto vseobecneho `Majetok`
+- Ak schema obsahuje `PravnyPredpis`, pouzi ho pre zakony namiesto vseobecneho `Dokument`
+- Ak schema obsahuje `Platitel`, pouzi ho namiesto vseobecneho `Osoba`
+- Vzdy preferuj specialny typ pred vseobecnym, ak je k dispozicii v scheme
+
+## KRITICKE PRAVIDLO 3 - EXTRAKCIA LEGISLATIVNEJ STRUKTURY
+Pri pravnych textoch extrahuj aj vnutornu strukturu zakona:
+
+- **Zakony a zbierky zakonov** extrahuj ako `PravnyPredpis`
+- **Konkretne paragrafy, odseky a pismenka** (napr. § 54 ods. 2 pism. a) extrahuj ako samostatne entity typu `Paragraf`
+- **Prepoj paragrafy so zakonom** pomocou vztahu `OBSAHUJE`: PravnyPredpis -> OBSAHUJE -> Paragraf
+- **Prepoj entity s paragrafmi** pomocou vztahu `PODLA` alebo ineho vhodneho vztahu zo schemy, ak sa entita definuje alebo odkazuje na konkretny paragraf
+
+Priklad:
+- "Zakon 222/2004 Z. z." → typ: `PravnyPredpis`, id: "Zakon 222/2004 Z. z."
+- "§ 54 ods. 2 pism. a)" → typ: `Paragraf`, id: "§ 54 ods. 2 pism. a)"
+- Vztah: PravnyPredpis("Zakon 222/2004 Z. z.") -[OBSAHUJE]-> Polozka("§ 54 ods. 2 pism. a)")
 
 ## Extrakcia uzlov
-- **Konzistencia označení**: Vždy používaj typy entít poskytnuté v schéme. Nenahradzuj ich špecifickejšími alebo alternatívnymi označeniami.
-- **ID uzlov**: Použi najúplnejší ľudsky čitateľný názov alebo identifikátor nájdený v texte. Nikdy nepoužívaj celé čísla ako ID uzlov.
-- **Vlastnosti**: Zahrň vlastnosti iba vtedy, keď sú explicitne uvedené v texte a spoľahlivo odvoditeľné.
-- **Bez diakritiky**: Všetky extrahované hodnoty — ID uzlov, názvy, vlastnosti — musia byť BEZ DIAKRITIKY. Nahraď znaky s diakritikou ich základnými ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+- **Konzistencia oznaceni**: Vzdy pouzivaj PRESNE typy entit zo schemy.
+- **ID uzlov**: Pouzi najuplnejsi ludsky citatelny nazov alebo identifikator najdeny v texte. Nikdy nepouzivaj cele cisla ako ID uzlov.
+- **Vlastnosti**: Zahrn vlastnosti iba vtedy, ked su explicitne uvedene v texte.
 
-## Extrakcia vzťahov
-- Používaj IBA typy vzťahov z poskytnutej schémy.
-- Zabezpeč správnu smerovosť: počiatočný uzol a koncový uzol musia zodpovedať sémantickému smeru vzťahu.
-- Zahrň vlastnosti vzťahov iba vtedy, keď sú explicitne uvedené v texte.
+## Extrakcia vztahov
+- Pouzivaj IBA typy vztahov z poskytnutej schemy - PRESNE tak, ako su napisane.
+- Zabezpec spravnu smerovost: pociatocny uzol a koncovy uzol musia zodpovedat semantickemu smeru vztahu.
+- PRED zapisanim kazdeho vztahu over, ze jeho typ sa PRESNE zhoduje s niektorym z povolenych typov.
 
-## Riešenie koreferencie
-- Ak je entita spomenutá viackrát pod rôznymi názvami alebo zámenami (napr. "Jan Novak", "Jano", "on"), vždy ju rozlíš na najúplnejší identifikátor ako ID uzla.
-- Udržuj konzistenciu naprieč všetkými odkazmi na tú istú entitu.
+## Riesenie koreferencie
+- Ak je entita spomenuta viackrat pod roznymi nazvami alebo zamenami, vzdy ju rozlis na najuplnejsi identifikator ako ID uzla.
+- Udrzuj konzistenciu napriec vsetkymi odkazmi na tu istu entitu.
+
+## Bez diakritiky
+Vsetky extrahovane hodnoty — ID uzlov, nazvy, vlastnosti, hodnoty vztahov — musia byt BEZ DIAKRITIKY (napr. c→c, s→s, z→z, a→a, e→e, i→i, o→o, u→u, y→y, n→n, t→t, d→d, l→l, o→o).
+
+## Postup pred finalnym vystupom
+Pred tym, nez vydas finalny JSON:
+1. Prejdi KAZDY uzol a over, ze jeho typ je PRESNE v zozname povolenych typov entit. Ak nie, nahrad ho najblizsim povolenym alebo ho odstran.
+2. Prejdi KAZDY vztah a over, ze jeho typ je PRESNE v zozname povolenych typov vztahov. Ak nie, nahrad ho najblizsim povolenym alebo ho odstran.
+3. Over, ze si pouzil najspecifickejsi povoleny typ (nie vseobecny).
+4. Over, ze si extrahoval aj dane, zmluvy, cinnosti, casove obdobia a legislativnu strukturu.
 """
 
 

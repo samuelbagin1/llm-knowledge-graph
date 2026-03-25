@@ -48,6 +48,14 @@ class Similar:
     
     
 @dataclass
+class ValidationResult:
+    is_sufficient: bool
+    missing_info: List[str]
+    key_nodes: List[str]
+    reasoning: str
+
+
+@dataclass
 class Question:
     id: str = ""
     question: str = ""

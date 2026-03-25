@@ -18,7 +18,7 @@ from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTe
 import spacy
 
 from classification import classify
-from classes import Schema, ClassifiedDocument, Type, SVO, Question, Similar, GraphResult
+from classes import Schema, ClassifiedDocument, Type, SVO, Question, Similar, GraphResult, ValidationResult
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
@@ -1530,8 +1530,178 @@ class PDFGraphRAG:
     
     
     
-    
-    def answer(self, questions: List[Question]) -> str:
+    def validation(self, questions: List[Question], result: GraphResult) -> ValidationResult:
+        """Validate retrieved data from graph database
+
+            in: questions: List[Question], result: GraphResult (aggregated)
+            out: ValidationResult
+        """
+
+        class ValidationSchema(BaseModel):
+            """Schema pre validaciu vysledkov z grafovej databazy"""
+            is_sufficient: bool = Field(description="Ci su ziskane udaje dostatocne na zodpovedanie otazky")
+            missing_info: List[str] = Field(description="Zoznam chybajucich informacii potrebnych na odpoved")
+            key_nodes: List[str] = Field(description="Najdolezitejsie vrcholy z vysledkov")
+            reasoning: str = Field(description="Vysvetlenie preco su alebo nie su data dostatocne")
+
+
+        print("\n\nValidating graph results.\n\n")
+
+        system_prompt = """Si validacny agent pre znalostne grafy. Tvojou ulohou je vyhodnotit, ci ziskane udaje z grafovej databazy obsahuju dostatocne informacie na zodpovedanie povodnej otazky.
+
+        Pokyny:
+        - Porovnaj povodnu otazku s najdenymi entitami a vztahmi
+        - Vyhodnot, ci subjekt, sloveso a objekt otazky su pokryte najdenymi datami
+        - Ak chybaju klucove entity alebo vztahy potrebne na odpoved, oznac vysledok ako nedostatocny
+        - Identifikuj, ktore konkretne informacie chybaju
+        - Urcite najdolezitejsie vrcholy (uzly) z vysledkov
+        - Bud prisny - ak odpoved nemoze byt uplna, oznac to
+        """
+
+        # Format per-question results
+        formatted_questions = ""
+        for i, q in enumerate(questions):
+            formatted_questions += f"""
+                Otazka {i}: {q.question}
+                SVO: podmet={q.svo.sub}, prisudok={q.svo.verb}, predmet={q.svo.obj}
+                Najdene entity: {", ".join(q.graph_result.nodes_found)}
+                Najdene vztahy: {", ".join(q.graph_result.relationships_found)}
+            """
+
+        user_prompt = f"""Povodna otazka: {questions[0].question}
+
+        Subjekt-Sloveso-Objekt z otazky:
+        - Podmet: {questions[0].svo.sub}
+        - Prisudok: {questions[0].svo.verb}
+        - Predmet: {questions[0].svo.obj}
+
+        Agregovane najdene entity: {", ".join(result.nodes_found)}
+        Agregovane najdene vztahy: {", ".join(result.relationships_found)}
+
+        Preformulovane otazky a ich vysledky:
+        {formatted_questions}
+
+        Vyhodnot, ci tieto udaje su dostatocne na zodpovedanie povodnej otazky.
+        Identifikuj najdolezitejsie vrcholy a chybajuce informacie."""
+
+
+        structured_model = self.gemini_client_thinking.with_structured_output(
+            schema=ValidationSchema.model_json_schema(), method="json_schema"
+        )
+
+        response = structured_model.invoke([
+            ("system", system_prompt),
+            ("human", user_prompt),
+        ])
+
+
+        return ValidationResult(
+            is_sufficient=response['is_sufficient'],
+            missing_info=response['missing_info'],
+            key_nodes=response['key_nodes'],
+            reasoning=response['reasoning']
+        )
+
+
+
+    def multihop_retrieval(self, questions: List[Question], validation_result: ValidationResult) -> List[Question]:
+        """Expand graph retrieval via multihop when validation finds insufficient data.
+
+        1. Expands 1-2 hops from key nodes identified by validation
+        2. Vector searches missing_info hints for additional relevant nodes
+        3. Merges new nodes/relationships into question results
+
+            in: questions, validation_result
+            out: updated questions with enriched graph_result
+        """
+        print("\n\nMultihop retrieval - rozsirenie vyhladavania.\n\n")
+
+        key_nodes = validation_result.key_nodes
+        additional_nodes = []
+        additional_rels = []
+
+        # 1. Expand 1-2 hops from key nodes via Cypher
+        if key_nodes:
+            try:
+                hop_results = self.graph.query("""
+                    MATCH (n)-[r1]->(m)
+                    WHERE n.id IN $key_nodes
+                    OPTIONAL MATCH (m)-[r2]->(o)
+                    RETURN n.id AS source, type(r1) AS rel1, m.id AS mid, labels(m) AS mid_labels,
+                           type(r2) AS rel2, o.id AS target, labels(o) AS target_labels
+                    LIMIT 50
+                """, {"key_nodes": key_nodes})
+
+                for record in hop_results:
+                    if record.get('mid'):
+                        additional_nodes.append(record['mid'])
+                        additional_rels.append(f"{record['source']} -[{record['rel1']}]-> {record['mid']}")
+                    if record.get('target') and record.get('rel2'):
+                        additional_nodes.append(record['target'])
+                        additional_rels.append(f"{record['mid']} -[{record['rel2']}]-> {record['target']}")
+
+            except Exception as e:
+                print(f"Chyba pri multihop expanzii: {e}")
+
+        # 2. Vector search for missing info hints
+        if validation_result.missing_info and self.vector_store_nodes is not None:
+            try:
+                missing_results = self.query_vector_database(
+                    database=self.vector_store_nodes,
+                    array=validation_result.missing_info,
+                    k=3
+                )
+                for result_list in missing_results:
+                    for doc in result_list:
+                        node_id = doc.page_content if hasattr(doc, 'page_content') else str(doc)
+                        additional_nodes.append(node_id)
+            except Exception as e:
+                print(f"Chyba pri vektorovom vyhladavani chybajucich info: {e}")
+
+        # 3. Merge additional data into the original question's graph_result
+        additional_nodes = list(set(additional_nodes))
+        additional_rels = list(set(additional_rels))
+
+        if additional_nodes or additional_rels:
+            print(f"Multihop nasiel {len(additional_nodes)} dalsich uzlov a {len(additional_rels)} dalsich vztahov.")
+            for q in questions:
+                q.graph_result.nodes_found = list(set(q.graph_result.nodes_found + additional_nodes))
+                q.graph_result.relationships_found = list(set(q.graph_result.relationships_found + additional_rels))
+        else:
+            print("Multihop nenasiel ziadne dalsie relevantne data.")
+
+        return questions
+
+
+
+    def get_chunks_from_nodes(self, node_ids: List[str]) -> List[str]:
+        """Retrieve text chunks connected to given nodes via IN_CHUNK relationship.
+
+            in: node_ids: List[str]
+            out: List[str] - chunk texts
+        """
+        if not node_ids:
+            return []
+
+        try:
+            results = self.graph.query("""
+                MATCH (n)-[:IN_CHUNK]->(c:Chunk)
+                WHERE n.id IN $node_ids
+                RETURN DISTINCT c.text AS text, c.page AS page, n.id AS source_node
+                ORDER BY c.page
+            """, {"node_ids": node_ids})
+
+            chunks = [record['text'] for record in results if record.get('text')]
+            print(f"\nNajdenych {len(chunks)} textovych usekov spojenych s uzlami.\n")
+            return chunks
+
+        except Exception as e:
+            print(f"Chyba pri ziskavani chunkov: {e}")
+            return []
+
+
+
+    def answer(self, questions: List[Question], chunks: List[str] = []) -> str:
         # Format results into natural language answer
         
         class Answer(BaseModel):
@@ -1539,7 +1709,7 @@ class PDFGraphRAG:
             answer: str = Field(description="Retazec odpovede.")
             
             
-        print("\n\nValidating and creating answer.\n\n")
+        print("\n\nCreating answer.\n\n")
             
         system_prompt = """
         Si expert na generovanie odpovedí zo znalostných grafov. Tvojou úlohou je na základe poskytnutých výsledkov z grafovej databázy vytvoriť jasnú a stručnú odpoveď v prirodzenom jazyku na pôvodnú otázku.
@@ -1568,11 +1738,15 @@ class PDFGraphRAG:
         {str([q.graph_result.nodes_found for q in questions])}
         {str([q.graph_result.relationships_found for q in questions])}
 
+        Textove useky spojene s najdenymi entitami:
+        {chr(10).join(chunks) if chunks else "Ziadne textove useky neboli najdene."}
+
         Poskytni odpoveď v prirodzenom jazyku, ktorá:
         1. Priamo odpovedá na otázku
         2. Obsahuje konkrétne mená, vzťahy a detaily z výsledkov
-        3. Prizná, ak informácie chýbajú alebo sú neúplné
-        4. Je jasná a stručná"""
+        3. Využíva textové úseky na doplnenie kontextu
+        4. Prizná, ak informácie chýbajú alebo sú neúplné
+        5. Je jasná a stručná"""
         
         
         structured_model = self.gemini_client_thinking.with_structured_output(
@@ -1601,9 +1775,10 @@ class PDFGraphRAG:
     1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
     2. pre kazdu otazku najst podmet, predmet, prisudok, a extrahovat entity a vztahy
     3. posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
-    4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke, najst Multi-hop
-    5. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
-    6. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
+    4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke,
+    5. ak nedostatocne tak najst Multi-hop
+    6. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
+    7. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
        vytvorene otazky, povodna pouzivatelova otazka, grafy (vratene entity a vztahy), text z chunkov, (system prompt na vyhodnotenie)
     """
     # ---------------- INTERACTIVE QUESTIONING ----------------
@@ -1661,7 +1836,7 @@ class PDFGraphRAG:
             q.similar = similar
         
         
-        # query graph database for each question
+        # 3. query graph database for each question
         for i, q in enumerate(questions):
             q.graph_result = self.query_graph_database(
                 question=question,
@@ -1670,12 +1845,25 @@ class PDFGraphRAG:
                 svo=q.svo
             )
         
-        # TODO: validation agent - validates the graph retrieval by the svo and questions
-        #       - if not enough, find more relevant information (MULTIHOP)
-        # TODO: grab all chunks that are connected from retrieved nodes via IN_CHUNK relationship
-        
-        
-        # generate final answer
-        final_answer = self.answer(questions=questions)
-        
+        # 4. Validate retrieved results
+        all_nodes = list(set(n for q in questions for n in q.graph_result.nodes_found))
+        all_rels = list(set(r for q in questions for r in q.graph_result.relationships_found))
+        aggregated = GraphResult(cypher_query="", explanation="", nodes_found=all_nodes, relationships_found=all_rels)
+
+        validation_result = self.validation(questions, aggregated)
+        print(f"\nValidacia: sufficient={validation_result.is_sufficient}, reasoning={validation_result.reasoning}\n")
+
+        # 5. If not sufficient, perform multihop retrieval
+        if not validation_result.is_sufficient:
+            print(f"\nNedostatocne data. Chybajuce info: {validation_result.missing_info}")
+            print(f"Vykonavam multihop retrieval...\n")
+            questions = self.multihop_retrieval(questions, validation_result)
+
+        # 6. Grab chunks connected to retrieved nodes via IN_CHUNK
+        all_node_ids = list(set(n for q in questions for n in q.graph_result.nodes_found))
+        connected_chunks = self.get_chunks_from_nodes(all_node_ids)
+
+        # 7. generate final answer
+        final_answer = self.answer(questions=questions, chunks=connected_chunks)
+
         print(final_answer)

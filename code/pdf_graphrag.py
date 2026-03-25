@@ -26,6 +26,12 @@ from prompts import response_schema_for_sde, system_prompt_for_sde, system_promp
 from examples import examples_for_extraction
 from pydantic import BaseModel, Field
 from to_json import odd_to_json, refinement_to_json, sde_to_json
+from pdf2image import convert_from_path
+from doclayout_yolo import YOLOv10
+from huggingface_hub import hf_hub_download
+from PIL import Image
+import base64
+from langchain_core.messages import HumanMessage, SystemMessage
 
 
 # Default node type when type is missing or empty
@@ -570,6 +576,180 @@ class PDFGraphRAG:
 
 
 
+
+
+
+
+
+    def detect_tables(self, pdf_path: str, output_dir: str = "./code/assets/detected_tables_figures", conf_threshold: float = 0.3):
+        print("detecting tables")
+        TARGET_CLASSES = {"table", "picture", "figure", "isolate_formula", "formula_caption"}
+
+        os.makedirs(output_dir, exist_ok=True)
+
+        
+        model_path = hf_hub_download(
+            repo_id="juliozhao/DocLayout-YOLO-DocStructBench",
+            filename="doclayout_yolo_docstructbench_imgsz1024.pt"
+        )
+        model = YOLOv10(model_path)
+        print("Model loaded.\n")
+
+        print(f"Converting PDF to images: {pdf_path}")
+        pages = convert_from_path(pdf_path, dpi=200)
+        print(f"Total pages: {len(pages)}\n")
+
+        print("Running detection on all pages...\n")
+        detections_found = []
+
+        for page_num, page_img in enumerate(pages, start=1):
+            results = model.predict(page_img, imgsz=1024, conf=conf_threshold, device="cpu")
+
+            for result in results:
+                boxes = result.boxes
+                if boxes is None or len(boxes) == 0:
+                    continue
+
+                class_names = result.names
+
+                for i, box in enumerate(boxes):
+                    cls_id = int(box.cls[0])
+                    cls_name = class_names[cls_id].lower()
+                    conf = float(box.conf[0])
+
+                    if cls_name not in TARGET_CLASSES:
+                        continue
+
+                    x1, y1, x2, y2 = [int(v) for v in box.xyxy[0].tolist()]
+
+                    cropped = page_img.crop((x1, y1, x2, y2))
+                    filename = f"page{page_num}_{cls_name}_{i}_conf{conf:.2f}.png"
+                    image_path = os.path.join(output_dir, filename)
+                    cropped.save(image_path)
+
+                    detections_found.append({
+                        "page": page_num,
+                        "class": cls_name,
+                        "confidence": conf,
+                        "bbox": (x1, y1, x2, y2),
+                        "image_path": image_path,
+                    })
+
+                    print(f"  Page {page_num:>3d} | {cls_name:<8s} | conf={conf:.2f} | bbox=({x1},{y1},{x2},{y2}) | saved: {filename}")
+
+        print(f"\n{'='*60}")
+        print(f"Detection complete.")
+        print(f"Total detections: {len(detections_found)}")
+        if detections_found:
+            table_pages = sorted(set(d["page"] for d in detections_found if d["class"] == "table"))
+            figure_pages = sorted(set(d["page"] for d in detections_found if d["class"] in ("picture", "figure")))
+            formula_pages = sorted(set(d["page"] for d in detections_found if d["class"] in ("isolate_formula", "formula_caption")))
+            if table_pages:
+                print(f"Tables found on pages: {table_pages}")
+            if figure_pages:
+                print(f"Figures found on pages: {figure_pages}")
+            if formula_pages:
+                print(f"Formulas found on pages: {formula_pages}")
+        print(f"Cropped images saved to: {output_dir}")
+
+        return detections_found
+
+
+    def transform_table_to_html(self, table_image_paths: list[str], output_dir: str = "./code/assets/detected_tables_figures"):
+
+        class TableHTMLResponse(BaseModel):
+            """HTML table extracted from image(s)."""
+            html: str = Field(description="Complete HTML <table> element with all rows and columns")
+            page_range: str = Field(description="Page range of the source table, e.g. '159-169'")
+            row_count: int = Field(description="Number of data rows in the table (excluding header)")
+            column_count: int = Field(description="Number of columns in the table")
+
+        system_prompt = """You are a document analysis expert specializing in table extraction from images.
+Your task is to convert table image(s) into a valid HTML table.
+
+RULES:
+- Output a complete HTML <table> element with <thead> and <tbody>.
+- If multiple images are provided, they are consecutive pages of the SAME table — merge them into ONE HTML table.
+- When merging multi-page tables: skip repeated headers, concatenate all data rows.
+- Preserve all data exactly as shown in the images — do not omit, summarize, or modify any cell values.
+- Use <th> for header cells, <td> for data cells.
+- If a cell spans multiple columns or rows, use colspan/rowspan attributes.
+- The text in the tables is in Slovak language — preserve the original text exactly."""
+
+        user_prompt = f"Convert the following {len(table_image_paths)} table image(s) into a single HTML <table>. These images are consecutive pages of the same table. Preserve all data exactly as shown."
+
+        content_parts = [{"type": "text", "text": user_prompt}]
+        for path in table_image_paths:
+            with open(path, "rb") as f:
+                img_data = base64.b64encode(f.read()).decode()
+            content_parts.append({
+                "type": "image_url",
+                "image_url": {"url": f"data:image/png;base64,{img_data}"}
+            })
+
+        structured_model = self.gemini_client.with_structured_output(
+            schema=TableHTMLResponse.model_json_schema(), method="json_schema"
+        )
+
+        print(f"Sending {len(table_image_paths)} table image(s) to Gemini for HTML conversion...")
+        response = structured_model.invoke([
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=content_parts),
+        ])
+
+        print(response)
+
+        # Extract page numbers from filenames for naming the output
+        page_numbers = []
+        for path in table_image_paths:
+            filename = os.path.basename(path)
+            page_num = filename.split("_")[0].replace("page", "")
+            if page_num.isdigit():
+                page_numbers.append(int(page_num))
+
+        if page_numbers:
+            page_range_str = f"{min(page_numbers)}-{max(page_numbers)}" if len(page_numbers) > 1 else str(page_numbers[0])
+        else:
+            page_range_str = "unknown"
+
+        html_filename = f"table_pages{page_range_str}.html"
+        html_path = os.path.join(output_dir, html_filename)
+
+        html_content = response.get("html", "") if isinstance(response, dict) else response.html if hasattr(response, "html") else str(response)
+
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(f"<!DOCTYPE html>\n<html><head><meta charset='utf-8'><style>table {{border-collapse: collapse; width: 100%;}} th, td {{border: 1px solid #ddd; padding: 8px; text-align: left;}} th {{background-color: #f2f2f2;}}</style></head><body>\n")
+            f.write(html_content)
+            f.write("\n</body></html>")
+
+        print(f"HTML table saved to: {html_path}")
+
+        return {"html_path": html_path, "response": response}
+
+
+    @staticmethod
+    def group_table_detections(detections: list[dict]) -> list[list[dict]]:
+        """Group consecutive table detections into multi-page table groups."""
+        table_detections = sorted(
+            [d for d in detections if d["class"] == "table"],
+            key=lambda d: d["page"]
+        )
+
+        if not table_detections:
+            return []
+
+        groups = []
+        current_group = [table_detections[0]]
+
+        for det in table_detections[1:]:
+            if det["page"] - current_group[-1]["page"] <= 1:
+                current_group.append(det)
+            else:
+                groups.append(current_group)
+                current_group = [det]
+        groups.append(current_group)
+
+        return groups
 
 
     def load_pdf(self, pdf_path: str):

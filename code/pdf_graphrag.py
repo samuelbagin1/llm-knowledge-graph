@@ -584,7 +584,6 @@ class PDFGraphRAG:
     def detect_tables(self, pdf_path: str, output_dir: str = "./code/assets/detected_tables_figures", conf_threshold: float = 0.3):
         print("detecting tables")
         TARGET_CLASSES = {"table", "picture", "figure", "isolate_formula", "formula_caption"}
-
         os.makedirs(output_dir, exist_ok=True)
 
         
@@ -593,13 +592,14 @@ class PDFGraphRAG:
             filename="doclayout_yolo_docstructbench_imgsz1024.pt"
         )
         model = YOLOv10(model_path)
-        print("Model loaded.\n")
+        print("model loaded\n")
 
-        print(f"Converting PDF to images: {pdf_path}")
+
         pages = convert_from_path(pdf_path, dpi=200)
-        print(f"Total pages: {len(pages)}\n")
+        print(f"\nconverted pdf to images, total pages: {len(pages)}\n")
 
-        print("Running detection on all pages...\n")
+
+        print("running detection\n")
         detections_found = []
 
         for page_num, page_img in enumerate(pages, start=1):
@@ -635,24 +635,28 @@ class PDFGraphRAG:
                         "image_path": image_path,
                     })
 
-                    print(f"  Page {page_num:>3d} | {cls_name:<8s} | conf={conf:.2f} | bbox=({x1},{y1},{x2},{y2}) | saved: {filename}")
+                    print(f"  page {page_num:>3d} | class={cls_name:<8s} | conf={conf:.2f} | bbox=({x1},{y1},{x2},{y2}) | saved: {filename}")
 
-        print(f"\n{'='*60}")
-        print(f"Detection complete.")
-        print(f"Total detections: {len(detections_found)}")
+
+
+        print(f"detection completed")
+        print(f"total detections: {len(detections_found)}")
+        
+        # format output
         if detections_found:
             table_pages = sorted(set(d["page"] for d in detections_found if d["class"] == "table"))
             figure_pages = sorted(set(d["page"] for d in detections_found if d["class"] in ("picture", "figure")))
             formula_pages = sorted(set(d["page"] for d in detections_found if d["class"] in ("isolate_formula", "formula_caption")))
+            
             if table_pages:
-                print(f"Tables found on pages: {table_pages}")
+                print(f"tables found on pages: {table_pages}")
             if figure_pages:
-                print(f"Figures found on pages: {figure_pages}")
+                print(f"figures found on pages: {figure_pages}")
             if formula_pages:
-                print(f"Formulas found on pages: {formula_pages}")
-        print(f"Cropped images saved to: {output_dir}")
+                print(f"formulas found on pages: {formula_pages}")
 
         return detections_found
+
 
 
     def transform_table_to_html(self, table_image_paths: list[str], output_dir: str = "./code/assets/detected_tables_figures"):
@@ -664,19 +668,21 @@ class PDFGraphRAG:
             row_count: int = Field(description="Number of data rows in the table (excluding header)")
             column_count: int = Field(description="Number of columns in the table")
 
-        system_prompt = """You are a document analysis expert specializing in table extraction from images.
-Your task is to convert table image(s) into a valid HTML table.
 
-RULES:
-- Output a complete HTML <table> element with <thead> and <tbody>.
-- If multiple images are provided, they are consecutive pages of the SAME table — merge them into ONE HTML table.
-- When merging multi-page tables: skip repeated headers, concatenate all data rows.
-- Preserve all data exactly as shown in the images — do not omit, summarize, or modify any cell values.
-- Use <th> for header cells, <td> for data cells.
-- If a cell spans multiple columns or rows, use colspan/rowspan attributes.
-- The text in the tables is in Slovak language — preserve the original text exactly."""
+        system_prompt = """You are a document analysis expert specializing in table extraction from images.
+        Your task is to convert table image(s) into a valid HTML table.
+
+        RULES:
+        - Output a complete HTML <table> element with <thead> and <tbody>.
+        - If multiple images are provided, they are consecutive pages of the SAME table — merge them into ONE HTML table.
+        - When merging multi-page tables: skip repeated headers, concatenate all data rows.
+        - Preserve all data exactly as shown in the images — do not omit, summarize, or modify any cell values.
+        - Use <th> for header cells, <td> for data cells.
+        - If a cell spans multiple columns or rows, use colspan/rowspan attributes.
+        - The text in the tables is in Slovak language — preserve the original text exactly."""
 
         user_prompt = f"Convert the following {len(table_image_paths)} table image(s) into a single HTML <table>. These images are consecutive pages of the same table. Preserve all data exactly as shown."
+        
 
         content_parts = [{"type": "text", "text": user_prompt}]
         for path in table_image_paths:
@@ -691,7 +697,6 @@ RULES:
             schema=TableHTMLResponse.model_json_schema(), method="json_schema"
         )
 
-        print(f"Sending {len(table_image_paths)} table image(s) to Gemini for HTML conversion...")
         response = structured_model.invoke([
             SystemMessage(content=system_prompt),
             HumanMessage(content=content_parts),
@@ -699,7 +704,7 @@ RULES:
 
         print(response)
 
-        # Extract page numbers from filenames for naming the output
+        # extract page numbers from filenames for naming the output
         page_numbers = []
         for path in table_image_paths:
             filename = os.path.basename(path)
@@ -722,7 +727,7 @@ RULES:
             f.write(html_content)
             f.write("\n</body></html>")
 
-        print(f"HTML table saved to: {html_path}")
+        print(f"created and saved table")
 
         return {"html_path": html_path, "response": response}
 
@@ -752,10 +757,12 @@ RULES:
         return groups
 
 
+
     def load_pdf(self, pdf_path: str):
         loader = PyPDFLoader(pdf_path)
         print("PDF loaded successfully.")
         return loader.load()
+    
     
     
     def classification(documents: List[Document]) -> ClassifiedDocument:
@@ -1129,10 +1136,22 @@ RULES:
         if max_pages:
             documents = documents[:max_pages]
             
-        
-        # TODO: use some pdf tool or something to find tables in pdf, those
-        #       tables send independently for named entity recognition (sde)
-        #       docling
+            
+            
+            
+        # --- Table/Figure/Formula Detection & HTML Conversion ---
+        detections = self.detect_tables(pdf_path)
+
+        # Group consecutive table detections into multi-page groups
+        table_groups = self.group_table_detections(detections)
+
+        # Convert each table group to HTML
+        for group in table_groups:
+            image_paths = [d["image_path"] for d in group]
+            result = self.transform_table_to_html(image_paths)
+            print(f"Saved: {result['html_path']}")
+            
+    
             
             
         # document_classification = self.classification()

@@ -767,28 +767,42 @@ class PDFGraphRAG:
             nodes: list[TableGraphNode] = Field(description="All nodes extracted from the table")
             relationships: list[TableGraphRelationship] = Field(description="All relationships between extracted nodes")
 
-        system_prompt = """You are an expert at transforming HTML tables into knowledge graph structures.
+        system_prompt = """Si expert na transformaciu HTML tabuliek do stromovych struktur znalostneho grafu.
 
-        Your task is to analyze an HTML table and produce a hierarchical tree of nodes and relationships
-        that captures the table's logical structure.
+        Tvoja uloha je analyzovat HTML tabulku a vytvorit hierarchicky strom uzlov a vztahov, ktory presne zachytava logicku strukturu tabulky.
 
-        RULES:
-        - Analyze the table columns, rows, rowspan/colspan attributes to understand the hierarchy.
-        - Create a ROOT node representing the entire table.
-        - Create PARENT nodes for each major grouping (e.g. sections indicated by rowspan in the first column).
-        - Create CHILD/LEAF nodes for individual items within each group.
-        - If a cell contains multiple comma-separated values, create a separate node for each value.
-        - Store descriptive text from other columns as 'description' in the node properties.
-        - Every node MUST have a 'name' key in its properties.
-        - Use UPPERCASE_WITH_UNDERSCORES for relationship types (e.g. HAS_SECTION, HAS_ITEM, CONTAINS).
-        - Preserve all text exactly as it appears — do not translate, summarize, or modify cell values.
-        - Node IDs should be unique and descriptive (e.g. 'section_1', 'chapter_ex_2').
-        - Write all values WITHOUT DIACRITICS (e.g. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u)."""
+        # PRAVIDLA
+        - Analyzuj stlpce, riadky, atributy rowspan/colspan a identifikuj hierarchiu dat.
+        - Vytvor KORENOVY uzol reprezentujuci celu tabulku (napr. 'Colny sadzobnik', 'Priloha', 'Zoznam').
+        - Vytvor RODICOVSKE uzly pre kazdu hlavnu skupinu (napr. body/sekcie oznacene rowspan v prvom stlpci).
+        - Vytvor DETSKE/LISTOVE uzly pre jednotlive polozky v kazdej skupine.
+        - Ak bunka obsahuje viacero hodnot oddelenych ciarkou (napr. 'ex 2, ex 4, ex 7'), vytvor SAMOSTATNY uzol pre kazdu hodnotu.
+        - Popisny text z ostatnych stlpcov uloz ako 'description' vo vlastnostiach uzla.
+        - Kazdy uzol MUSI mat kluc 'name' vo svojich vlastnostiach.
+        - Pre typy vztahov pouzivaj VELKE_PISMENA_S_PODTRZITKAMI (napr. MA_SEKCIU, MA_KAPITOLU, OBSAHUJE, MA_POLOZKU).
+        - Zachovaj vsetok text PRESNE tak, ako sa nachadza v tabulke — neprekladaj, neskracuj, nemodifikuj hodnoty buniek.
+        - ID uzlov musia byt unikatne a popisne (napr. 'sekcia_1', 'kapitola_ex_2', 'polozka_0504').
+        - Vsetky extrahovane hodnoty (ID uzlov, nazvy, vlastnosti, hodnoty vztahov) pis BEZ DIAKRITIKY (napr. c→c, s→s, z→z, a→a, e→e, i→i, o→o, u→u, y→y, n→n, t→t, d→d, l→l, o→o).
 
-        user_prompt = f"""Transform the following HTML table into a knowledge graph with nodes and relationships.
-        Build a hierarchical tree structure that reflects how the table data is organized.
+        # STRATEGIA TRANSFORMACIE
+        1. Identifikuj hlavickove riadky (<thead>/<th>) — tie urcuju vyznam jednotlivych stlpcov.
+        2. Stlpec s rowspan typicky oznacuje nadradenu kategoriu (rodic) — pouzivaj ho na vytvorenie rodicovskych uzlov.
+        3. Ostatne stlpce su detske uzly alebo vlastnosti rodicovskych uzlov.
+        4. Ak ma tabulka iba 2 stlpce (kluc-hodnota), modeluj ich ako vlastnosti jedneho uzla alebo ako pary uzlov.
+        5. Pre pravne dokumenty: paragrafy, odseky, pismena, ciselne znaky a predpisy modeluj ako samostatne uzly s presnym odkazom.
 
-        HTML TABLE:
+        # KONTROLA PRED VYSTUPOM
+        Pred tym nez odpovies, over si:
+        1. Ma KAZDY uzol unikatne 'id' a kluc 'name' vo vlastnostiach?
+        2. Su VSETKY hodnoty napisane BEZ DIAKRITIKY?
+        3. Su viacnasobne hodnoty v jednej bunke rozdelene na samostatne uzly?
+        4. Zachytava stromova struktura skutocnu hierarchiu tabulky (rodic→dieta)?
+        5. Je zachovany VSETOK text z tabulky bez strat?"""
+
+        user_prompt = f"""Transformuj nasledujucu HTML tabulku na znalostny graf s uzlami a vztahmi.
+        Vytvor hierarchicku stromovu strukturu, ktora odraža organizaciu dat v tabulke.
+
+        # HTML TABULKA:
         {html_content}"""
 
         structured_model = self.gemini_client.with_structured_output(schema=TableGraphResponse)

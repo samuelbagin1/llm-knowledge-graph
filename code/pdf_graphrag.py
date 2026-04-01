@@ -732,6 +732,82 @@ class PDFGraphRAG:
         return {"html_path": html_path, "response": response}
 
 
+    def transform_html_to_graph_document(self, html_content: str, page_range: str) -> GraphDocument:
+        """
+        Transform an HTML table into a GraphDocument using LLM-based extraction.
+
+        The LLM analyzes the table structure and produces a hierarchical tree
+        of nodes and relationships representing the table's logical content.
+
+        Args:
+            html_content: Raw HTML string of the table (from transform_table_to_html response)
+            page_range: Page range string for identification (e.g. '159-169')
+
+        Returns:
+            GraphDocument with nodes and relationships extracted from the table
+        """
+
+        class TableGraphNode(BaseModel):
+            """A node extracted from a table."""
+            id: str = Field(description="Unique identifier for the node")
+            label: str = Field(description="Type/label of the node (e.g. Section, Chapter, Item)")
+            properties: dict = Field(description="Properties of the node, including 'name' and optionally 'description'")
+
+        class TableGraphRelationship(BaseModel):
+            """A relationship between two nodes extracted from a table."""
+            source_node_id: str = Field(description="ID of the source/parent node")
+            target_node_id: str = Field(description="ID of the target/child node")
+            relation: str = Field(description="Type of relationship (e.g. HAS_SECTION, HAS_CHAPTER, CONTAINS)")
+            source_node_type: str = Field(description="Type/label of the source node")
+            target_node_type: str = Field(description="Type/label of the target node")
+            properties: dict = Field(default_factory=dict, description="Optional relationship properties")
+
+        class TableGraphResponse(BaseModel):
+            """Knowledge graph extracted from an HTML table."""
+            nodes: list[TableGraphNode] = Field(description="All nodes extracted from the table")
+            relationships: list[TableGraphRelationship] = Field(description="All relationships between extracted nodes")
+
+        system_prompt = """You are an expert at transforming HTML tables into knowledge graph structures.
+
+        Your task is to analyze an HTML table and produce a hierarchical tree of nodes and relationships
+        that captures the table's logical structure.
+
+        RULES:
+        - Analyze the table columns, rows, rowspan/colspan attributes to understand the hierarchy.
+        - Create a ROOT node representing the entire table.
+        - Create PARENT nodes for each major grouping (e.g. sections indicated by rowspan in the first column).
+        - Create CHILD/LEAF nodes for individual items within each group.
+        - If a cell contains multiple comma-separated values, create a separate node for each value.
+        - Store descriptive text from other columns as 'description' in the node properties.
+        - Every node MUST have a 'name' key in its properties.
+        - Use UPPERCASE_WITH_UNDERSCORES for relationship types (e.g. HAS_SECTION, HAS_ITEM, CONTAINS).
+        - Preserve all text exactly as it appears — do not translate, summarize, or modify cell values.
+        - Node IDs should be unique and descriptive (e.g. 'section_1', 'chapter_ex_2').
+        - Write all values WITHOUT DIACRITICS (e.g. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u)."""
+
+        user_prompt = f"""Transform the following HTML table into a knowledge graph with nodes and relationships.
+        Build a hierarchical tree structure that reflects how the table data is organized.
+
+        HTML TABLE:
+        {html_content}"""
+
+        structured_model = self.gemini_client.with_structured_output(schema=TableGraphResponse)
+
+        response = structured_model.invoke([
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=user_prompt),
+        ])
+
+        print(f"Table graph extraction for pages {page_range}: {len(response.nodes)} nodes, {len(response.relationships)} relationships")
+
+        data = response.model_dump()
+
+        source_doc = Document(page_content=html_content, metadata={"page_range": page_range, "source": "table"})
+        graph_document = self._convert_to_graph_document(data, f"table_{page_range}", source_doc)
+
+        return graph_document
+
+
     @staticmethod
     def group_table_detections(detections: list[dict]) -> list[list[dict]]:
         """Group consecutive table detections into multi-page table groups."""
@@ -1139,24 +1215,51 @@ class PDFGraphRAG:
             
             
             
-        # --- Table/Figure/Formula Detection & HTML Conversion ---
+        # detect tables in pdf
         detections = self.detect_tables(pdf_path)
 
-        # Group consecutive table detections into multi-page groups
+        # group consecutive table detections into multi-page groups
         table_groups = self.group_table_detections(detections)
 
-        # Convert each table group to HTML
+        # convert each table group to HTML and then to GraphDocument
+        table_graph_docs = []
+        table_pages_to_exclude = set()
+
         for group in table_groups:
             image_paths = [d["image_path"] for d in group]
             result = self.transform_table_to_html(image_paths)
             print(f"Saved: {result['html_path']}")
-            
-    
-            
-            
+
+            # access HTML from in-memory response
+            response = result['response']
+            html = response.get("html", "") if isinstance(response, dict) else response.html if hasattr(response, "html") else str(response)
+
+            # compute page range for this group
+            pages = sorted(d["page"] for d in group)
+            page_range = f"{min(pages)}-{max(pages)}" if len(pages) > 1 else str(pages[0])
+
+            # transform HTML table into GraphDocument via LLM
+            table_gd = self.transform_html_to_graph_document(html, page_range)
+            table_graph_docs.append(table_gd)
+
+            # collect interior table pages to exclude from text processing
+            # keep first and last pages (may have text above/below the table)
+            if len(pages) > 2:
+                table_pages_to_exclude.update(pages[1:-1])
+
+        # remove interior table pages from documents before ODD/SDE
+        # PyPDFLoader uses 0-based page numbers, detections use 1-based
+        if table_pages_to_exclude:
+            documents = [
+                doc for doc in documents
+                if (doc.metadata.get("page", -1) + 1) not in table_pages_to_exclude
+            ]
+            print(f"Excluded {len(table_pages_to_exclude)} interior table pages from text processing: {sorted(table_pages_to_exclude)}")
+
+
         # document_classification = self.classification()
 
-        
+
         # odd
         splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
         chunked_documents = splitter.split_documents(documents)
@@ -1199,9 +1302,11 @@ class PDFGraphRAG:
 
         # add document chunk into graph documents
         graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path))
-        
-        
-        
+
+        # add table-extracted graph documents
+        graph_docs.extend(table_graph_docs)
+
+
         # Add graph documents to Neo4j
         # dependency: APOC plugin in neo4j database
         self.graph.add_graph_documents(

@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from pydantic import BaseModel, Field
 from typing import List
-from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
+from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 from langchain_core.documents import Document
 
 

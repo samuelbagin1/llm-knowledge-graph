@@ -2,7 +2,7 @@ import datetime
 import json
 import os
 from dataclasses import dataclass
-from typing import Dict, List, Any, Optional, Generic, TypeVar
+from typing import Dict, List, Any, Optional, Generic, TypeVar, cast
 from langchain_neo4j import Neo4jGraph, Neo4jVector, GraphCypherQAChain
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -20,11 +20,12 @@ import spacy
 from classification import classify
 from classes import Schema, ClassifiedDocument, Type, SVO, Question, Similar, GraphResult, ValidationResult
 from langchain_core.documents import Document
-from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
+from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
 from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement
 from examples import examples_for_extraction
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, SecretStr
+import numpy as np
 from to_json import odd_to_json, refinement_to_json, sde_to_json
 from pdf2image import convert_from_path
 from doclayout_yolo import YOLOv10
@@ -160,8 +161,8 @@ class PDFGraphRAG:
     # CONSTRUCTOR
     def __init__(self,
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str,
-                 openai_api_key: str = None, google_api_key: str = None,
-                 claude_api_key: str = None):
+                 openai_api_key: str | None = None, google_api_key: str | None = None,
+                 claude_api_key: str | None = None):
         
         
         self.graph = Neo4jGraph(
@@ -172,7 +173,7 @@ class PDFGraphRAG:
         )
 
         # Initialize embeddings first - needed for vector stores
-        self.embeddings = OpenAIEmbeddings(model='text-embedding-3-large', api_key=openai_api_key)
+        self.embeddings = OpenAIEmbeddings(model='text-embedding-3-large', api_key=SecretStr(openai_api_key) if openai_api_key else None)
 
         # Store vector store configuration for lazy initialization
         self._neo4j_uri = neo4j_uri
@@ -190,24 +191,26 @@ class PDFGraphRAG:
         self.openai_client = ChatOpenAI(
             model="gpt-5-mini",
             temperature=0,
-            api_key=openai_api_key,
+            api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=120
         )
-        
+
         self.openai_graph_transform = ChatOpenAI(
             model="gpt-4o-mini",     # -mini
             temperature=0,
-            api_key=openai_api_key,
+            api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=120
         )
-        
+
         # use claude-sonnet-4-5
         self.claude_client = ChatAnthropic(
-            model="claude-haiku-4-5",
+            model_name="claude-haiku-4-5",
             temperature=0,
-            api_key=claude_api_key
+            api_key=SecretStr(claude_api_key) if claude_api_key else SecretStr(""),
+            timeout=120,
+            stop=None
         )
 
         # Google Gemini for everything else
@@ -327,6 +330,7 @@ class PDFGraphRAG:
             
 
             # Build comprehensive schema
+            schema = ""
 
             # Add sample data to understand property names
             schema += "\nSample Nodes (showing property structure):\n"
@@ -343,13 +347,13 @@ class PDFGraphRAG:
 
         except Exception as e:
             print(f"Error retrieve schema: {e}")
-            return "Schema information unavailable", [], []
+            return "Schema information unavailable"
         
         
         
         
     # TODO
-    def get_help():
+    def get_help(self):
         help_text = """
         Help Instructions:
         
@@ -603,7 +607,7 @@ class PDFGraphRAG:
         detections_found = []
 
         for page_num, page_img in enumerate(pages, start=1):
-            results = model.predict(page_img, imgsz=1024, conf=conf_threshold, device="cpu")
+            results = model.predict(np.array(page_img), imgsz=1024, conf=conf_threshold, device="cpu")
 
             for result in results:
                 boxes = result.boxes
@@ -684,7 +688,7 @@ class PDFGraphRAG:
         user_prompt = f"Convert the following {len(table_image_paths)} table image(s) into a single HTML <table>. These images are consecutive pages of the same table. Preserve all data exactly as shown."
         
 
-        content_parts = [{"type": "text", "text": user_prompt}]
+        content_parts: list[dict[str, Any]] = [{"type": "text", "text": user_prompt}]
         for path in table_image_paths:
             with open(path, "rb") as f:
                 img_data = base64.b64encode(f.read()).decode()
@@ -699,7 +703,7 @@ class PDFGraphRAG:
 
         response = structured_model.invoke([
             SystemMessage(content=system_prompt),
-            HumanMessage(content=content_parts),
+            HumanMessage(content=cast(list[str | dict[Any, Any]], content_parts)),
         ])
 
         print(response)
@@ -720,7 +724,7 @@ class PDFGraphRAG:
         html_filename = f"table_pages{page_range_str}.html"
         html_path = os.path.join(output_dir, html_filename)
 
-        html_content = response.get("html", "") if isinstance(response, dict) else response.html if hasattr(response, "html") else str(response)
+        html_content = response.get("html", "") if isinstance(response, dict) else getattr(response, "html", str(response))
 
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(f"<!DOCTYPE html>\n<html><head><meta charset='utf-8'><style>table {{border-collapse: collapse; width: 100%;}} th, td {{border: 1px solid #ddd; padding: 8px; text-align: left;}} th {{background-color: #f2f2f2;}}</style></head><body>\n")
@@ -812,9 +816,10 @@ class PDFGraphRAG:
             HumanMessage(content=user_prompt),
         ])
 
-        print(f"Table graph extraction for pages {page_range}: {len(response.nodes)} nodes, {len(response.relationships)} relationships")
+        typed_response = cast(TableGraphResponse, response)
+        print(f"Table graph extraction for pages {page_range}: {len(typed_response.nodes)} nodes, {len(typed_response.relationships)} relationships")
 
-        data = response.model_dump()
+        data = typed_response.model_dump()
 
         source_doc = Document(page_content=html_content, metadata={"page_range": page_range, "source": "table"})
         graph_document = self._convert_to_graph_document(data, f"table_{page_range}", source_doc)
@@ -855,7 +860,7 @@ class PDFGraphRAG:
     
     
     
-    def classification(documents: List[Document]) -> ClassifiedDocument:
+    def classification(self, documents: List[Document]) -> ClassifiedDocument:
         return classify(documents)
 
 
@@ -896,7 +901,7 @@ class PDFGraphRAG:
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
-            response_format=ProviderStrategy(schema=response_schema_for_odd),
+            response_format=ProviderStrategy(schema=response_schema_for_odd),  # type: ignore[arg-type]
             system_prompt=system_prompt_for_odd
         )
         response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
@@ -959,13 +964,13 @@ class PDFGraphRAG:
         ]
 
         res = await asyncio.gather(*tasks)
-        return res
-    
-    
-    
-    
-    
-    def schema_refinement(self, odd_schema: Schema, existing_schema: Schema = None):
+        return [r for r in res if r is not None]
+
+
+
+
+
+    def schema_refinement(self, odd_schema: Schema, existing_schema: Optional[Schema] = None):
         """
         Function to refine and consolidate extracted schema information across documents, ensuring consistency and resolving conflicts.
 
@@ -1129,7 +1134,7 @@ class PDFGraphRAG:
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
-            response_format=ProviderStrategy(schema=response_schema_for_sde),
+            response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
             system_prompt=system_prompt_for_sde
         )
         response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
@@ -1202,10 +1207,8 @@ class PDFGraphRAG:
         ]
 
         res = await asyncio.gather(*tasks)
-        return res
-    
-    
-    
+        return [r for r in res if r is not None]
+
 
 
 
@@ -1218,7 +1221,7 @@ class PDFGraphRAG:
 
 
 
-    def process(self, pdf_path: str, max_pages: int = None):
+    def process(self, pdf_path: str, max_pages: Optional[int] = None):
         name_of_chain = "chain1"
         
         # Load PDF documents
@@ -1522,7 +1525,7 @@ class PDFGraphRAG:
         agent = create_agent(
             model=self.claude_client,
             tools=[search_database],
-            response_format=ToolStrategy(schema=response_schema_for_generating_query),
+            response_format=ToolStrategy(schema=response_schema_for_generating_query),  # type: ignore[arg-type]
             system_prompt=system_prompt_for_generating_query
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
@@ -1637,7 +1640,7 @@ class PDFGraphRAG:
             "required": ["questions"]
         }
         
-        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)
+        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)  # type: ignore[arg-type]
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         questions = response["structured_response"]["questions"]
@@ -1772,7 +1775,7 @@ class PDFGraphRAG:
         # Create and run the agent
         agent = create_agent(
             model=self.openai_graph_transform,
-            response_format=ProviderStrategy(schema=response_schema_for_sde),
+            response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
             system_prompt=system_prompt_for_sde
         )
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
@@ -1838,7 +1841,7 @@ class PDFGraphRAG:
             "required": ["subject", "verb", "object"]
         }
         
-        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)
+        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)  # type: ignore[arg-type]
 
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         res = response["structured_response"]
@@ -1913,11 +1916,12 @@ class PDFGraphRAG:
         ])
 
 
+        response_dict = cast(dict, response)
         return ValidationResult(
-            is_sufficient=response['is_sufficient'],
-            missing_info=response['missing_info'],
-            key_nodes=response['key_nodes'],
-            reasoning=response['reasoning']
+            is_sufficient=response_dict['is_sufficient'],
+            missing_info=response_dict['missing_info'],
+            key_nodes=response_dict['key_nodes'],
+            reasoning=response_dict['reasoning']
         )
 
 
@@ -2078,7 +2082,7 @@ class PDFGraphRAG:
 
 
         
-        return response['answer']
+        return cast(dict, response)['answer']
         
         
     
@@ -2143,7 +2147,7 @@ class PDFGraphRAG:
                     array=[node.id for node in q.extracted_graph.nodes]
                 )
             similar.relationships = self.query_vector_database(
-                    database=self.vector_store_relationships,
+                    database=self.vector_store_relationships,  # type: ignore[arg-type]
                     array=[rel.type for rel in q.extracted_graph.relationships]
                 )
             similar.chunks = self.query_vector_database(

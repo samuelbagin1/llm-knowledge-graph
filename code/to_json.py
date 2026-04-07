@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from classes import Schema
 from typing import List
-from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
+from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 
 
 def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data", name: str = ""):

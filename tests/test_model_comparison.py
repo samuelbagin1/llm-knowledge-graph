@@ -14,6 +14,10 @@ from classes import Schema
 from pdf_graphrag import PDFGraphRAG
 from to_json import odd_to_json, refinement_to_json, sde_to_json
 
+# ================================
+# DEPRECATED
+# ================================
+
 load_dotenv()
 
 # ─── Configuration ───────────────────────────────────────────────────────────

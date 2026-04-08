@@ -18,11 +18,11 @@ from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTe
 import spacy
 
 from classification import classify
-from classes import Schema, ClassifiedDocument, Type, SVO, Question, Similar, GraphResult, ValidationResult
+from classes import Schema, ClassifiedDocument, Type, SubSentence
 from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_sde, system_prompt_for_sde, system_prompt_for_generating_query, response_schema_for_generating_query, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement
+from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference, response_schema_for_inference
 from examples import examples_for_extraction
 from pydantic import BaseModel, Field, SecretStr
 import numpy as np
@@ -1393,262 +1393,277 @@ class PDFGraphRAG:
         
         
 # ====================================================================================================
-    # ---------------- QUERYING METHODS ----------------
-    
-    def query_graph_database(self, question: str, similar_nodes: str, similar_relationships: str, svo: SVO) -> GraphResult:
-        """
-        Function 2: Convert question to Cypher query and retrieve data from Neo4j
+    # ---------------- KG-GPT QUERYING METHODS ----------------
+
+    def segment_question(self, question: str) -> List[SubSentence]:
+        """Stage 1 (KG-GPT): Break question into sub-sentences each aligned with one KG triple.
 
         Args:
-            question: Test question to answer using the graph
+            question: The user's natural language question
 
         Returns:
-            query_data, structured_answer.strip()
+            List of SubSentence objects, each with text and up to 2 entity mentions
         """
-        print(f"\n Querying graph database...")
+        print("\nStage 1: Sentence segmentation...")
 
-        # First, check if database has any data
-        node_count = self.graph.query("MATCH (n) RETURN count(n) as count")[0]['count']
-        rel_count = self.graph.query("MATCH ()-[r]->() RETURN count(r) as count")[0]['count']
+        # TODO: Design the segmentation prompt and response parsing here.
+        # This is the most impactful design choice in KG-GPT — how you decompose
+        # the question directly determines what gets retrieved.
+        #
+        # Guidance:
+        # - Use self.openai_client (fast, cheap) with with_structured_output()
+        # - system_prompt_for_segmentation and response_schema_for_segmentation are ready in prompts.py
+        # - The response will have {"sub_sentences": [{"text": ..., "entities": [...]}, ...]}
+        # - Wrap each dict in SubSentence(text=..., entities=...)
+        # - For single-hop questions, one SubSentence is enough
+        # - For multi-hop questions, each hop should be a separate SubSentence
+        #
+        # Consider: entity strings should match (or approximately match) node IDs in the KG.
+        # The segmentation prompt already instructs Title Case — this helps with Cypher CONTAINS matching.
 
-        if node_count == 0:
-            print(f" Database is EMPTY")
-
-        # Get schema information
-        schema = self.get_graph_schema()
-
-        
-
-        # User prompt - provides the specific question and schema
-        user_prompt = f"""Odpovedz na túto otázku dopytovaním grafovej databázy:
-
-        **Otázka:** {question}
-
-        ## Dostupná schéma grafu
-
-        ### Označenia uzlov (použi presne tieto označenia v dopytoch):
-        {", ".join(schema.nodes)}
-
-        ### Typy vzťahov (použi presne tieto typy v dopytoch):
-        {", ".join(schema.relationships)}
-
-        ### Vzorové dáta (ukazujú skutočnú štruktúru vlastností):
-        {self.get_sample_graph_schema()}
-
-        ### Podobné uzly (na základe kontextu otázky):
-        {similar_nodes}
-
-        ### Podobné vzťahy (na základe kontextu otázky):
-        {similar_relationships}
-
-        ### Subjekt-Sloveso-Objekt z otázky:
-        {svo.model_dump_json(indent=2)}
-
-        ## Tvoja úloha
-        1. Analyzuj otázku a urči, ktoré označenia uzlov a typy vzťahov sú relevantné
-        2. Použi nástroj `search_database` na dopytovanie databázy pomocou Cypher dopytov
-        3. Začni široko, potom spresňuj na základe výsledkov
-        4. Pokračuj v dopytovaní, kým nenájdeš najlepšie zodpovedajúce uzly, vlastnosti a vzťahy
-        5. Vráť finálnu odpoveď s najefektívnejším Cypher dopytom a nájdenými dátami
-
-        Začni identifikáciou relevantných označení uzlov a typov vzťahov, potom dopytuj databázu."""
-
-
-
-        @tool
-        def search_database(cypher_query: str) -> str:
-            """Execute a Cypher query against the Neo4j graph database.
-
-            Args:
-                cypher_query: A valid Cypher query string to execute
-
-            Returns:
-                JSON string of query results, or error message if query fails
-            """
-            def serialize_neo4j_object(obj):
-                """Convert Neo4j objects to JSON-serializable format."""
-                # Handle Neo4j Node objects
-                if hasattr(obj, 'labels') and hasattr(obj, 'items'):
-                    return {
-                        '_type': 'Node',
-                        'labels': list(obj.labels),
-                        'properties': dict(obj.items())
-                    }
-                # Handle Neo4j Relationship objects
-                if hasattr(obj, 'type') and hasattr(obj, 'start_node'):
-                    return {
-                        '_type': 'Relationship',
-                        'type': obj.type,
-                        'properties': dict(obj.items()) if hasattr(obj, 'items') else {}
-                    }
-                # Handle Neo4j Path objects
-                if hasattr(obj, 'nodes') and hasattr(obj, 'relationships'):
-                    return {
-                        '_type': 'Path',
-                        'nodes': [serialize_neo4j_object(n) for n in obj.nodes],
-                        'relationships': [serialize_neo4j_object(r) for r in obj.relationships]
-                    }
-                # Handle dict-like objects
-                if hasattr(obj, 'items'):
-                    return {k: serialize_neo4j_object(v) for k, v in obj.items()}
-                # Handle lists
-                if isinstance(obj, list):
-                    return [serialize_neo4j_object(item) for item in obj]
-                # Handle primitives
-                if isinstance(obj, (str, int, float, bool, type(None))):
-                    return obj
-                # Fallback to string representation
-                return str(obj)
-
-            try:
-                result = self.graph.query(cypher_query)
-                records = [dict(record) for record in result]
-
-                serialized = []
-                for record in records:
-                    serialized_record = {}
-                    for key, value in record.items():
-                        try:
-                            serialized_record[key] = serialize_neo4j_object(value)
-                        except Exception as e:
-                            serialized_record[key] = f"<serialization error: {str(e)}>"
-                    serialized.append(serialized_record)
-
-                return json.dumps(serialized, indent=2, default=str)
-
-            except Exception as e:
-                return f"Query error: {str(e)}"
-
-
-
-        # Create and run the agent
-        agent = create_agent(
-            model=self.claude_client,
-            tools=[search_database],
-            response_format=ToolStrategy(schema=response_schema_for_generating_query),  # type: ignore[arg-type]
-            system_prompt=system_prompt_for_generating_query
+        structured_model = self.openai_client.with_structured_output(
+            schema=response_schema_for_segmentation, method="json_schema"
         )
-        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
 
-        # structured_response is already a dict when using ProviderStrategy
-        res = response["structured_response"]
+        response = cast(dict, structured_model.invoke([
+            ("system", system_prompt_for_segmentation),
+            ("human", f"Otázka: {question}"),
+        ]))
 
-        # Fallback if no results
-        if not res and node_count > 0:
-            raise RuntimeError(f"Graph query returned no results despite {node_count} nodes in database")
+        sub_sentences = [
+            SubSentence(text=s["text"], entities=s["entities"])
+            for s in response.get("sub_sentences", [])
+        ]
 
+        if not sub_sentences:
+            sub_sentences = [SubSentence(text=question, entities=[])]
 
-        response = GraphResult(cypher_query=res['cypher_query'], explanation=res['explanation'], nodes_found=res['nodes_found'], relationships_found=res['relationships_found'])
-        return response
-    
-    
-    
-    def query_vector_database(self, database: Neo4jVector, array: List = [], k: int = 5) -> List[Any]:
-        """
-        Function: Query vector database to retrieve relevant chunks and nodes
+        print(f"  → {len(sub_sentences)} sub-sentence(s): {[s.text for s in sub_sentences]}")
+        return sub_sentences
+
+    def get_relation_candidates(self, entities: List[str]) -> List[str]:
+        """Stage 2a (KG-GPT): Get relation types connected to the given entity mentions in the KG.
+
+        Uses UNION of relation types across all entities for maximum recall.
+        The LLM then filters to the semantically relevant subset.
 
         Args:
-            question: Test question to answer using vector search
-            database: 'chunks' or 'nodes' to specify which vector store to query
-            svo: Subject-Verb-Object object extracted from the question (optional)
+            entities: List of entity mention strings (Title Case, from sentence segmentation)
 
         Returns:
-            vector results
+            List of unique relation type strings found in the KG
         """
-        
-        result = []
-        for a in array:
-            result.append(
-                database.similarity_search(
-                    query=a,
-                    k=k
+        if not entities:
+            # Fall back to full relation type list from schema
+            schema = self.get_graph_schema()
+            return schema.relationships
+
+        candidates: set[str] = set()
+        for entity in entities:
+            try:
+                results = self.graph.query(
+                    """
+                    MATCH (n)-[r]-()
+                    WHERE toLower(n.id) CONTAINS toLower($entity)
+                    RETURN DISTINCT type(r) AS rel_type
+                    LIMIT 50
+                    """,
+                    {"entity": entity}
                 )
-            )
-            
-        return result
-        
-        
-        
-    
-    def query_chunks_by_similarity(self, question: str, k: int = 5):
-        """
-        Function: Embed question and retrieve similar chunks from graph database
+                for row in results:
+                    if row.get("rel_type"):
+                        candidates.add(row["rel_type"])
+            except Exception as e:
+                print(f"  Relation candidate lookup failed for '{entity}': {e}")
+
+        # If no candidates found via entity matching, use full schema
+        if not candidates:
+            schema = self.get_graph_schema()
+            candidates = set(schema.relationships)
+
+        return list(candidates)
+
+    def retrieve_top_k_relations(self, sub_sentence: str, candidates: List[str], k: int = 5) -> List[str]:
+        """Stage 2b (KG-GPT): LLM picks the top-K most semantically relevant relations.
 
         Args:
-            question: Test question to answer using vector search
-            k: number of top similar chunks to retrieve
+            sub_sentence: The sub-sentence text (one implied triple)
+            candidates: Relation type strings from the KG
+            k: Maximum number of relations to return
 
         Returns:
-            vector results as text, page number and score
+            Top-K relation type strings
         """
+        if not candidates:
+            return []
 
-        question_embedding = self.embeddings.embed_query(question)
-        
-        result = self.graph.query("""
-                                  MATCH (c:Chunk)
-                                  WITH c, gds.similarity.cosine(c.embedding, $embedding) AS score
-                                  ORDER BY score DESC
-                                  LIMIT $k
-                                  RETURN c.text AS text, c.page AS page, score
-                                  """, { "embedding": question_embedding, "k": k})
+        structured_model = self.openai_client.with_structured_output(
+            schema=response_schema_for_relation_retrieval, method="json_schema"
+        )
 
-        return result
-    
-    
-    
-    
-    
-    def create_variety_questions(self, question: str, number_of_questions: int = 3) -> List[str]:
-        """
-        A function to create a variety of reformulated questions from the original question
-        
+        user_prompt = (
+            f"Pod-veta: {sub_sentence}\n\n"
+            f"Kandidátske vzťahy: {candidates}\n\n"
+            f"Vyber top-{k} najrelevantnejších vzťahov."
+        )
+
+        response = cast(dict, structured_model.invoke([
+            ("system", system_prompt_for_relation_retrieval),
+            ("human", user_prompt),
+        ]))
+
+        return response.get("relations", candidates[:k])[:k]
+
+    def retrieve_evidence_subgraph(self, entities: List[str], relations: List[str]) -> List[tuple]:
+        """Stage 2c (KG-GPT): Extract evidence triples from the KG.
+
+        Finds all triples (head, relation, tail) where the relation type is in
+        the top-K list AND at least one endpoint matches an entity mention.
+
         Args:
-            question: Original user question
-            number_of_questions: Number of reformulated questions to generate
-            
+            entities: Entity mention strings from the sub-sentence
+            relations: Top-K relation type strings selected by LLM
+
         Returns:
-            List of reformulated questions
+            List of (head_id, relation_type, tail_id) tuples
         """
-        system_prompt = """Si expert na preformulovanie otázok. Tvojou úlohou je vytvoriť alternatívne formulácie danej otázky pri zachovaní presne rovnakého významu a kontextu.
+        if not relations:
+            return []
 
-        Každá preformulovaná otázka musí:
-        - Pýtať sa na rovnakú informáciu ako pôvodná
-        - Používať odlišné slová, vetné štruktúry alebo perspektívu
-        - Zachovať rovnakú úroveň špecifickosti
-        - Byť jasná a správne formulovaná
+        triples: list[tuple] = []
+        for entity in entities:
+            try:
+                results = self.graph.query(
+                    """
+                    MATCH (a)-[r]->(b)
+                    WHERE type(r) IN $relations
+                      AND (toLower(a.id) CONTAINS toLower($entity)
+                           OR toLower(b.id) CONTAINS toLower($entity))
+                    RETURN a.id AS head, type(r) AS rel, b.id AS tail
+                    LIMIT 25
+                    """,
+                    {"relations": relations, "entity": entity}
+                )
+                for row in results:
+                    if row.get("head") and row.get("rel") and row.get("tail"):
+                        triples.append((row["head"], row["rel"], row["tail"]))
+            except Exception as e:
+                print(f"  Evidence subgraph query failed for '{entity}': {e}")
 
-        Nepridávaj nové obmedzenia, nemeň rozsah ani nezmeň zámer pôvodnej otázky."""
+        # Deduplicate while preserving order
+        seen: set = set()
+        unique: list[tuple] = []
+        for t in triples:
+            if t not in seen:
+                seen.add(t)
+                unique.append(t)
+        return unique
+
+    def get_chunks_from_nodes(self, node_ids: List[str]) -> List[str]:
+        """Retrieve text chunks connected to given nodes via IN_CHUNK relationship.
+
+            in: node_ids: List[str]
+            out: List[str] - chunk texts
+        """
+        if not node_ids:
+            return []
+
+        try:
+            results = self.graph.query("""
+                MATCH (n)-[:IN_CHUNK]->(c:Chunk)
+                WHERE n.id IN $node_ids
+                RETURN DISTINCT c.text AS text, c.page AS page, n.id AS source_node
+                ORDER BY c.page
+            """, {"node_ids": node_ids})
+
+            chunks = [record['text'] for record in results if record.get('text')]
+            print(f"\nNajdenych {len(chunks)} textovych usekov spojenych s uzlami.\n")
+            return chunks
+
+        except Exception as e:
+            print(f"Chyba pri ziskavani chunkov: {e}")
+            return []
+
+    def answer(self, question: str, evidence_triples: List[tuple], chunks: List[str] = []) -> str:
+        """Stage 3 (KG-GPT): Derive a natural language answer from evidence triples and chunk context.
+
+        Args:
+            question: The original user question
+            evidence_triples: List of (head, relation, tail) tuples from graph retrieval
+            chunks: Text chunks connected to retrieved nodes via IN_CHUNK
+
+        Returns:
+            Natural language answer string
+        """
+        print("\n\nStage 3: Inference...\n\n")
+
+        linearized = [[h, r, t] for h, r, t in evidence_triples]
+        chunk_text = "\n---\n".join(chunks) if chunks else "Žiadne textové úseky neboli nájdené."
+
+        user_prompt = (
+            f"Otázka: {question}\n\n"
+            f"Dôkazy z grafovej databázy:\n{json.dumps(linearized, ensure_ascii=False, indent=2)}\n\n"
+            f"Textový kontext z dokumentov:\n{chunk_text}"
+        )
+
+        structured_model = self.gemini_client_thinking.with_structured_output(
+            schema=response_schema_for_inference, method="json_schema"
+        )
+
+        response = structured_model.invoke([
+            ("system", system_prompt_for_inference),
+            ("human", user_prompt),
+        ])
+
+        return cast(dict, response)["answer"]
+
+    # ---------------- INTERACTIVE QUESTIONING ----------------
+
+    def invoke_question(self):
+        """KG-GPT 3-stage pipeline: Segment → Retrieve → Infer."""
+
+        question = input("Enter your question: ")
+
+        if question == '-h':
+            print("Help Instructions: \n - To exit, type 'exit' \n - To view graph schema, type '-s' \n")
+            return
+        elif question == '-s':
+            print(self.get_graph_schema())
+            return
+        elif question.lower() == 'exit':
+            print("Exiting...")
+            return
+
+        # Stage 1: Sentence Segmentation
+        sub_sentences = self.segment_question(question)
+
+        # Stage 2: Graph Retrieval (per sub-sentence)
+        all_triples: List[tuple] = []
+        all_node_ids: List[str] = []
+
+        for sub in sub_sentences:
+            print(f"\nStage 2: Retrieving evidence for: '{sub.text}'")
+            candidates = self.get_relation_candidates(sub.entities)
+            print(f"  Relation candidates ({len(candidates)}): {candidates[:10]}{'...' if len(candidates) > 10 else ''}")
+
+            top_relations = self.retrieve_top_k_relations(sub.text, candidates, k=5)
+            print(f"  Top-K relations: {top_relations}")
+
+            triples = self.retrieve_evidence_subgraph(sub.entities, top_relations)
+            print(f"  Evidence triples found: {len(triples)}")
+
+            all_triples.extend(triples)
+            all_node_ids.extend(node for triple in triples for node in (triple[0], triple[2]))
+
+        # Retrieve source text chunks via IN_CHUNK
+        chunks = self.get_chunks_from_nodes(list(set(all_node_ids)))
+
+        # Stage 3: Inference
+        final_answer = self.answer(question, all_triples, chunks)
+        print(f"\n{final_answer}")
+        
         
 
-        user_prompt = f"""Vytvor presne {number_of_questions} rôznych preformulácií nasledujúcej otázky. Každá verzia sa musí pýtať na rovnakú informáciu, ale inými slovami.
-
-        Pôvodná otázka: {question}
-
-        Vygeneruj {number_of_questions} alternatívnych formulácií."""
-
-        response_schema = {
-            "title": "VarietyQuestions",
-            "type": "object",
-            "description": "A list of reformulated questions",
-            "properties": {
-                "questions": {
-                    "type": "array",
-                    "items": { "type": "string" },
-                    "description": "A list of reformulated questions"
-                }
-            },
-            "required": ["questions"]
-        }
-        
-        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)  # type: ignore[arg-type]
-
-        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-        questions = response["structured_response"]["questions"]
-        return questions
-    
-    
-    
-    
     def convert_sentence_to_graph_document(self, data, text: str = "") -> GraphDocument:
         """
         Convert extracted data into a GraphDocument.
@@ -1737,455 +1752,3 @@ class PDFGraphRAG:
         
 
 
-    def ner_from_sentence(
-        self,
-        text: str,
-        schema: Schema,
-    ) -> GraphDocument:
-        """
-        Async function to extract named entities and relationships from a document
-        and transform into a GraphDocument.
-
-        Args:
-            text: The text to process
-            allowed_entities: List of allowed node types for extraction guidance and filtering
-            allowed_relationships: List of allowed relationship types
-            strict_mode: If True, applies post-extraction filtering to enforce schema
-
-        Returns:
-            GraphDocument with extracted and optionally filtered nodes/relationships
-        """
-        user_prompt = f"""
-        Extrahuj všetky entity a vzťahy z nasledujúceho textu pomocou IBA typov entít a typov vzťahov definovaných v schéme nižšie. Nepoužívaj typy mimo tejto schémy. Ak entita alebo vzťah nezodpovedá schéme, vynechaj ich.
-
-        # PRAVIDLÁ
-        - Všetky extrahované hodnoty (ID uzlov, názvy, vlastnosti, hodnoty vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
-
-        # SCHÉMA
-        ## Typy entít:
-        {", ".join(schema.nodes)}
-
-        ## Typy vzťahov:
-        {", ".join(schema.relationships)}
-
-        # TEXT:
-        {text}
-        """
-
-        # Create and run the agent
-        agent = create_agent(
-            model=self.openai_graph_transform,
-            response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
-            system_prompt=system_prompt_for_sde
-        )
-        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-
-        # structured_response is already a dict when using ProviderStrategy
-        data = response["structured_response"]
-
-        # Convert to graph document with validation and formatting
-        graph_document = self.convert_sentence_to_graph_document(data, text)
-
-        return graph_document
-
-
-
-
-    def find_svo(self, question: str) -> SVO:
-        """
-        A function to extract subject, verb, object from a question using LLM
-        
-        Args:
-            question: Original user question
-        Returns:
-            Dictionary with question, subject, verb, object
-        """
-        
-        system_prompt = """Si expert na lingvistickú analýzu špecializovaný na extrakciu gramatických zložiek z otázok.
-
-        Tvojou úlohou je identifikovať podmet, prísudok a predmet z danej otázky:
-        - Podmet: Entita, ktorá vykonáva činnosť alebo na ktorú sa otázka pýta
-        - Prísudok: Hlavná činnosť alebo stav, na ktorý sa otázka pýta
-        - Predmet: Entita, ktorá prijíma činnosť alebo je vo vzťahu k podmetu
-
-        Pokyny:
-        - Pri otázkach preveď opytovací tvar na oznamovací na identifikáciu podmetu, prísudku a predmetu
-        - Extrahuj hlavné sémantické zložky, nie len povrchové slová
-        - Ak je niektorá zložka implicitná alebo chýba, odvoď ju z kontextu
-        - Každú zložku uvádzaj stručne (maximálne niekoľko slov)"""
-
-        user_prompt = f"""Extrahuj podmet, prísudok a predmet z nasledujúcej otázky:
-
-        Otázka: {question}
-
-        Identifikuj tieto tri gramatické zložky."""
-
-        response_schema = {
-            "title": "SubjectVerbObject",
-            "type": "object",
-            "description": "A dictionary with subject, verb, and object extracted from the question",
-            "properties": {
-                "subject": {
-                    "type": "string",
-                    "description": "Extrahovany podmet z vety"
-                },
-                "verb": {
-                    "type": "string",
-                    "description": "Extrahovany prisudok z vety"
-                },
-                "object": {
-                    "type": "string",
-                    "description": "Extrahovany predmet z vety"
-                }
-            },
-            "required": ["subject", "verb", "object"]
-        }
-        
-        agent = create_agent(model=self.openai_client, response_format=ProviderStrategy(schema=response_schema), system_prompt=system_prompt)  # type: ignore[arg-type]
-
-        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-        res = response["structured_response"]
-        
-        svo = SVO(sub=res['subject'], verb=res['verb'], obj=res['object'])
-        return svo
-    
-    
-    
-    def validation(self, questions: List[Question], result: GraphResult) -> ValidationResult:
-        """Validate retrieved data from graph database
-
-            in: questions: List[Question], result: GraphResult (aggregated)
-            out: ValidationResult
-        """
-
-        class ValidationSchema(BaseModel):
-            """Schema pre validaciu vysledkov z grafovej databazy"""
-            is_sufficient: bool = Field(description="Ci su ziskane udaje dostatocne na zodpovedanie otazky")
-            missing_info: List[str] = Field(description="Zoznam chybajucich informacii potrebnych na odpoved")
-            key_nodes: List[str] = Field(description="Najdolezitejsie vrcholy z vysledkov")
-            reasoning: str = Field(description="Vysvetlenie preco su alebo nie su data dostatocne")
-
-
-        print("\n\nValidating graph results.\n\n")
-
-        system_prompt = """Si validacny agent pre znalostne grafy. Tvojou ulohou je vyhodnotit, ci ziskane udaje z grafovej databazy obsahuju dostatocne informacie na zodpovedanie povodnej otazky.
-
-        Pokyny:
-        - Porovnaj povodnu otazku s najdenymi entitami a vztahmi
-        - Vyhodnot, ci subjekt, sloveso a objekt otazky su pokryte najdenymi datami
-        - Ak chybaju klucove entity alebo vztahy potrebne na odpoved, oznac vysledok ako nedostatocny
-        - Identifikuj, ktore konkretne informacie chybaju
-        - Urcite najdolezitejsie vrcholy (uzly) z vysledkov
-        - Bud prisny - ak odpoved nemoze byt uplna, oznac to
-        """
-
-        # Format per-question results
-        formatted_questions = ""
-        for i, q in enumerate(questions):
-            formatted_questions += f"""
-                Otazka {i}: {q.question}
-                SVO: podmet={q.svo.sub}, prisudok={q.svo.verb}, predmet={q.svo.obj}
-                Najdene entity: {", ".join(q.graph_result.nodes_found)}
-                Najdene vztahy: {", ".join(q.graph_result.relationships_found)}
-            """
-
-        user_prompt = f"""Povodna otazka: {questions[0].question}
-
-        Subjekt-Sloveso-Objekt z otazky:
-        - Podmet: {questions[0].svo.sub}
-        - Prisudok: {questions[0].svo.verb}
-        - Predmet: {questions[0].svo.obj}
-
-        Agregovane najdene entity: {", ".join(result.nodes_found)}
-        Agregovane najdene vztahy: {", ".join(result.relationships_found)}
-
-        Preformulovane otazky a ich vysledky:
-        {formatted_questions}
-
-        Vyhodnot, ci tieto udaje su dostatocne na zodpovedanie povodnej otazky.
-        Identifikuj najdolezitejsie vrcholy a chybajuce informacie."""
-
-
-        structured_model = self.gemini_client_thinking.with_structured_output(
-            schema=ValidationSchema.model_json_schema(), method="json_schema"
-        )
-
-        response = structured_model.invoke([
-            ("system", system_prompt),
-            ("human", user_prompt),
-        ])
-
-
-        response_dict = cast(dict, response)
-        return ValidationResult(
-            is_sufficient=response_dict['is_sufficient'],
-            missing_info=response_dict['missing_info'],
-            key_nodes=response_dict['key_nodes'],
-            reasoning=response_dict['reasoning']
-        )
-
-
-
-    def multihop_retrieval(self, questions: List[Question], validation_result: ValidationResult) -> List[Question]:
-        """Expand graph retrieval via multihop when validation finds insufficient data.
-
-        1. Expands 1-2 hops from key nodes identified by validation
-        2. Vector searches missing_info hints for additional relevant nodes
-        3. Merges new nodes/relationships into question results
-
-            in: questions, validation_result
-            out: updated questions with enriched graph_result
-        """
-        print("\n\nMultihop retrieval - rozsirenie vyhladavania.\n\n")
-
-        key_nodes = validation_result.key_nodes
-        additional_nodes = []
-        additional_rels = []
-
-        # 1. Expand 1-2 hops from key nodes via Cypher
-        if key_nodes:
-            try:
-                hop_results = self.graph.query("""
-                    MATCH (n)-[r1]->(m)
-                    WHERE n.id IN $key_nodes
-                    OPTIONAL MATCH (m)-[r2]->(o)
-                    RETURN n.id AS source, type(r1) AS rel1, m.id AS mid, labels(m) AS mid_labels,
-                           type(r2) AS rel2, o.id AS target, labels(o) AS target_labels
-                    LIMIT 50
-                """, {"key_nodes": key_nodes})
-
-                for record in hop_results:
-                    if record.get('mid'):
-                        additional_nodes.append(record['mid'])
-                        additional_rels.append(f"{record['source']} -[{record['rel1']}]-> {record['mid']}")
-                    if record.get('target') and record.get('rel2'):
-                        additional_nodes.append(record['target'])
-                        additional_rels.append(f"{record['mid']} -[{record['rel2']}]-> {record['target']}")
-
-            except Exception as e:
-                print(f"Chyba pri multihop expanzii: {e}")
-
-        # 2. Vector search for missing info hints
-        if validation_result.missing_info and self.vector_store_nodes is not None:
-            try:
-                missing_results = self.query_vector_database(
-                    database=self.vector_store_nodes,
-                    array=validation_result.missing_info,
-                    k=3
-                )
-                for result_list in missing_results:
-                    for doc in result_list:
-                        node_id = doc.page_content if hasattr(doc, 'page_content') else str(doc)
-                        additional_nodes.append(node_id)
-            except Exception as e:
-                print(f"Chyba pri vektorovom vyhladavani chybajucich info: {e}")
-
-        # 3. Merge additional data into the original question's graph_result
-        additional_nodes = list(set(additional_nodes))
-        additional_rels = list(set(additional_rels))
-
-        if additional_nodes or additional_rels:
-            print(f"Multihop nasiel {len(additional_nodes)} dalsich uzlov a {len(additional_rels)} dalsich vztahov.")
-            for q in questions:
-                q.graph_result.nodes_found = list(set(q.graph_result.nodes_found + additional_nodes))
-                q.graph_result.relationships_found = list(set(q.graph_result.relationships_found + additional_rels))
-        else:
-            print("Multihop nenasiel ziadne dalsie relevantne data.")
-
-        return questions
-
-
-
-    def get_chunks_from_nodes(self, node_ids: List[str]) -> List[str]:
-        """Retrieve text chunks connected to given nodes via IN_CHUNK relationship.
-
-            in: node_ids: List[str]
-            out: List[str] - chunk texts
-        """
-        if not node_ids:
-            return []
-
-        try:
-            results = self.graph.query("""
-                MATCH (n)-[:IN_CHUNK]->(c:Chunk)
-                WHERE n.id IN $node_ids
-                RETURN DISTINCT c.text AS text, c.page AS page, n.id AS source_node
-                ORDER BY c.page
-            """, {"node_ids": node_ids})
-
-            chunks = [record['text'] for record in results if record.get('text')]
-            print(f"\nNajdenych {len(chunks)} textovych usekov spojenych s uzlami.\n")
-            return chunks
-
-        except Exception as e:
-            print(f"Chyba pri ziskavani chunkov: {e}")
-            return []
-
-
-
-    def answer(self, questions: List[Question], chunks: List[str] = []) -> str:
-        # Format results into natural language answer
-        
-        class Answer(BaseModel):
-            """Struktura vyslednej odpovede"""
-            answer: str = Field(description="Retazec odpovede.")
-            
-            
-        print("\n\nCreating answer.\n\n")
-            
-        system_prompt = """
-        Si expert na generovanie odpovedí zo znalostných grafov. Tvojou úlohou je na základe poskytnutých výsledkov z grafovej databázy vytvoriť jasnú a stručnú odpoveď v prirodzenom jazyku na pôvodnú otázku.
-
-        Pokyny:
-        - Odpovedaj priamo na položenú otázku
-        - Zahrň konkrétne mená, vzťahy a detaily z poskytnutých výsledkov
-        - Ak informácie chýbajú alebo sú neúplné, otvorene to uveď
-        - Odpoveď formuluj jasne, stručne a v prirodzenom jazyku
-        - Nevymýšľaj informácie, ktoré sa nenachádzajú vo výsledkoch
-        """
-        
-        
-        user_prompt = f"""Na základe nasledujúcich výsledkov z grafovej databázy poskytni jasnú a stručnú odpoveď na pôvodnú otázku.
-
-        Pôvodná otázka: {questions[0].question}
-
-        Vektorové výsledky uzlov: {str([q.similar.nodes for q in questions])}
-
-        Vektorové výsledky vzťahov: {str([q.similar.relationships for q in questions])}
-
-        Vektorové výsledky textových úsekov: {str([q.similar.chunks for q in questions])}
-
-        Výsledky dopytov:
-        {str([q.graph_result.explanation for q in questions])}
-        {str([q.graph_result.nodes_found for q in questions])}
-        {str([q.graph_result.relationships_found for q in questions])}
-
-        Textove useky spojene s najdenymi entitami:
-        {chr(10).join(chunks) if chunks else "Ziadne textove useky neboli najdene."}
-
-        Poskytni odpoveď v prirodzenom jazyku, ktorá:
-        1. Priamo odpovedá na otázku
-        2. Obsahuje konkrétne mená, vzťahy a detaily z výsledkov
-        3. Využíva textové úseky na doplnenie kontextu
-        4. Prizná, ak informácie chýbajú alebo sú neúplné
-        5. Je jasná a stručná"""
-        
-        
-        structured_model = self.gemini_client_thinking.with_structured_output(
-            schema=Answer.model_json_schema(), method="json_schema"
-        )
-        
-        response = structured_model.invoke([
-            ("system", system_prompt),
-            ("human", user_prompt),
-        ])
-
-
-        
-        return cast(dict, response)['answer']
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
-        """ semanticke vyhladavanie:
-    1. poslat otazku na preformulovanie a vytvorenie 3-5 roznych otazok (kontext otazky ten isty)
-    2. pre kazdu otazku najst podmet, predmet, prisudok, a extrahovat entity a vztahy
-    3. posielat a skusat query na KG, opakovat dokym nevrati najblizsie nody a edge k podmetu, prisudku a vztahu
-    4. poslat vytvotene otazky, UQ, vretene KGs a poslat LLM ci vratene hodnoty zodpovedaju otazke,
-    5. ak nedostatocne tak najst Multi-hop
-    6. zobrat vsetky chunky, kde sa nachadzaju tieto nody 
-    7. poslat LLM na vyhodnotenie a spracovanie vyslednej odpovede:
-       vytvorene otazky, povodna pouzivatelova otazka, grafy (vratene entity a vztahy), text z chunkov, (system prompt na vyhodnotenie)
-    """
-    # ---------------- INTERACTIVE QUESTIONING ----------------
-    def invoke_question(self):
-        """
-        A function for question input and invoking the question LLM, Graph and Vector Databases
-        """
-        
-        question = input("Enter your question: ")
-        
-        if (question=='-h'):
-            print("Help Instructions: \n - To exit, type 'exit' \n - To view graph schema, type '-s' \n")
-        elif (question=='-s'):
-            print(self.get_graph_schema())
-        elif (question.lower()=='exit'):
-            print("Exiting...")
-            return
-            
-            
-            
-        # 1. create various reformulations of the question
-        various_questions = self.create_variety_questions(question, number_of_questions=3)
-        
-        # 2. for each question, find subject, verb, object and extraxt nodes from question using SDE
-        questions = []
-        questions.append(
-            Question(id='question0', question=question, svo=self.find_svo(question), extracted_graph=self.ner_from_sentence(text=question, schema=self.get_graph_schema()))
-        )
-        for i, q in enumerate(various_questions):
-            questions.append(
-                Question(id=f'question{i}', question=q, svo=self.find_svo(q), extracted_graph=self.ner_from_sentence(text=q, schema=self.get_graph_schema()))
-            )
-            
-        print(f"\nGenerated Reformulated Questions\n\n: {[q.question + '\nSVO: ' + str(q.svo) + '\n\n Extracted graph from sentence: \n' + str(q.extracted_graph) for q in questions]}")
-        
-        
-        
-        # find similar nodes in graph from extracted nodes in queestion
-        for (i, q) in enumerate(questions):
-            similar = Similar(nodes=[], relationships=[], chunks=[])
-            
-            similar.nodes = self.query_vector_database(
-                    database=self.vector_store_nodes,
-                    array=[node.id for node in q.extracted_graph.nodes]
-                )
-            similar.relationships = self.query_vector_database(
-                    database=self.vector_store_relationships,  # type: ignore[arg-type]
-                    array=[rel.type for rel in q.extracted_graph.relationships]
-                )
-            similar.chunks = self.query_vector_database(
-                    database=self.vector_store_chunks,
-                    array=[q.question]
-                )
-            
-            q.similar = similar
-        
-        
-        # 3. query graph database for each question
-        for i, q in enumerate(questions):
-            q.graph_result = self.query_graph_database(
-                question=question,
-                similar_nodes=q.similar.nodes,
-                similar_relationships=q.similar.relationships,
-                svo=q.svo
-            )
-        
-        # 4. Validate retrieved results
-        all_nodes = list(set(n for q in questions for n in q.graph_result.nodes_found))
-        all_rels = list(set(r for q in questions for r in q.graph_result.relationships_found))
-        aggregated = GraphResult(cypher_query="", explanation="", nodes_found=all_nodes, relationships_found=all_rels)
-
-        validation_result = self.validation(questions, aggregated)
-        print(f"\nValidacia: sufficient={validation_result.is_sufficient}, reasoning={validation_result.reasoning}\n")
-
-        # 5. If not sufficient, perform multihop retrieval
-        if not validation_result.is_sufficient:
-            print(f"\nNedostatocne data. Chybajuce info: {validation_result.missing_info}")
-            print(f"Vykonavam multihop retrieval...\n")
-            questions = self.multihop_retrieval(questions, validation_result)
-
-        # 6. Grab chunks connected to retrieved nodes via IN_CHUNK
-        all_node_ids = list(set(n for q in questions for n in q.graph_result.nodes_found))
-        connected_chunks = self.get_chunks_from_nodes(all_node_ids)
-
-        # 7. generate final answer
-        final_answer = self.answer(questions=questions, chunks=connected_chunks)
-
-        print(final_answer)

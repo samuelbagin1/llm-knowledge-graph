@@ -22,22 +22,6 @@ Run from root:
 #   Controlled input already exists (DUPLICATE_ODD_SCHEMA), but no evaluator
 #   reads example.outputs["expected_canonical_nodes"] to verify deduplication.
 #
-# REF — eval_ref_structure
-#   Check that the response dict has exactly the three required keys:
-#     node_types, relationship_types, merge_log
-#   and that merge_log itself has sub-keys: node_types, relationship_types.
-#   Structural, no LLM needed.
-#
-# SDE — eval_sde_no_empty_ids
-#   Complement to eval_sde_node_ids_no_diacritics.
-#   Check that no node.id is an empty string or whitespace-only.
-#   Structural, no LLM needed.
-#
-# SDE — eval_sde_no_chunk_schema_bleed
-#   The "Chunk" node type is a system type injected by _convert_to_graph_document.
-#   It must never appear in run.inputs["schema"].nodes (the provided schema).
-#   If it does, the schema construction logic is leaking an internal type.
-#
 # ODD — PASCAL_CASE regex currently allows digits (^[A-Z][a-zA-Z0-9]+$).
 #   Spec says ^[A-Z][a-zA-Z]+$ (letters only). Decide whether digits are
 #   intentional (e.g. "ISO9001") and document the choice, or tighten the regex.
@@ -360,9 +344,6 @@ def eval_ref_no_diacritics(run, example) -> dict:
 #   Pattern: expected = ["Dokument", "PravnyPredpis", "Osoba", "Spolocnost"]
 #   score = len(present_canonicals) / len(expected)
 
-# TODO: eval_ref_structure — check response has keys {node_types, relationship_types,
-#   merge_log} and merge_log has sub-keys {node_types, relationship_types}.
-#   Return score=1.0 if all present, 0.0 otherwise, with comment listing missing keys.
 
 def eval_ref_distinct_not_merged(run, example) -> dict:
     """
@@ -476,13 +457,6 @@ def eval_sde_in_chunk_coverage(run, example) -> dict:
     }
 
 
-# TODO: eval_sde_no_empty_ids — check no node.id is empty or whitespace-only.
-#   flagged = [n.id for n in gd.nodes if not str(n.id).strip()]
-#   score = 1.0 if not flagged else 0.0
-
-# TODO: eval_sde_no_chunk_schema_bleed — verify "Chunk" is not in run.inputs["schema"].nodes.
-#   This is a schema construction check, not an LLM output check. If "Chunk" appears
-#   in the input schema, the pipeline is leaking an internal system type to the LLM.
 
 def eval_sde_entity_recall(run, example) -> dict:
     """

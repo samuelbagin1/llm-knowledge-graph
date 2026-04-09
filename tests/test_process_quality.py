@@ -59,7 +59,7 @@ ls_client = Client()
 # the pipeline is expected to produce (PravnyPredpis, Paragraf, Platitel, etc.)
 FIXTURE_TEXT = """
 Zákon č. 222/2004 Z. z. o dani z pridanej hodnoty v znení neskorších predpisov.
-§ 54 ods. 2 pism. a) – Platiteľ dane je povinný podať daňové priznanie do 25 dní
+§ 54 ods. 2 pism. a) - Platiteľ dane je povinný podať daňové priznanie do 25 dní
 po skončení zdaňovacieho obdobia. Ministerstvo financií Slovenskej republiky vydalo
 usmernenie č. 5/2024. Spoločnosť ABC s.r.o., so sídlom v Bratislave, je registrovaná
 ako platiteľ DPH podľa § 4 zákona č. 222/2004 Z. z.

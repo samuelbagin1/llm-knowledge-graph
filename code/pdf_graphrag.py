@@ -22,7 +22,7 @@ from classes import Schema, ClassifiedDocument, Type, SubSentence
 from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference, response_schema_for_inference
+from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference, response_schema_for_inference, system_prompt_for_generating_query, response_schema_for_generating_query
 from examples import examples_for_extraction
 from pydantic import BaseModel, Field, SecretStr
 import numpy as np
@@ -1559,6 +1559,90 @@ class PDFGraphRAG:
                 unique.append(t)
         return unique
 
+    def search_agent_retrieve(self, sub_sentence: str, entities: List[str]) -> tuple[List[tuple], List[str]]:
+        """ARK-V1-inspired Stage 2: Agent with search_database tool iteratively queries
+        the graph to find evidence triples for a single sub-sentence.
+
+        Args:
+            sub_sentence: Sub-sentence text from Stage 1 (one implied KG triple)
+            entities: Entity mentions from segmentation (Title Case)
+
+        Returns:
+            (evidence_triples, node_ids) — triples as (head, rel, tail) tuples and
+            node IDs for chunk retrieval, both compatible with Stage 3
+        """
+        import re
+
+        graph = self.graph
+
+        @tool
+        def search_database(cypher_query: str) -> str:
+            """Execute a Cypher query against the Neo4j graph database.
+
+            Args:
+                cypher_query: A valid Cypher query string to execute
+
+            Returns:
+                JSON string of query results, or error message if query fails
+            """
+            try:
+                results = graph.query(cypher_query)
+                serialized = serialize_for_json(results)
+                return json.dumps(serialized, ensure_ascii=False, indent=2)[:4000]
+            except Exception as e:
+                return f"Query error: {e}"
+
+        schema = self.get_graph_schema()
+        sample_schema = self.get_sample_graph_schema()
+
+        user_prompt = (
+            f"Pod-veta na zodpovedanie: {sub_sentence}\n\n"
+            f"Zmienene entity: {entities}\n\n"
+            f"Schema grafu:\n"
+            f"  Typy uzlov: {schema.nodes}\n"
+            f"  Typy vztahov: {schema.relationships}\n\n"
+            f"Vzorove data:\n{sample_schema}\n\n"
+            f"Najdi vsetky relevantne trojice (uzol-vztah-uzol) suvisiace s touto pod-vetou. "
+            f"Zacni preskumanim entit, potom sleduj relevantne vztahy."
+        )
+
+        agent = create_agent(
+            model=self.openai_client,
+            tools=[search_database],
+            response_format=ToolStrategy(schema=response_schema_for_generating_query),
+            system_prompt=system_prompt_for_generating_query,
+        )
+
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        result = response["structured_response"]
+
+        node_ids: List[str] = list(result.get("nodes_found", []))
+        triples: List[tuple] = []
+
+        for rel_str in result.get("relationships_found", []):
+            match = re.match(r"^(.+?)\s*-\[(.+?)\]->\s*(.+)$", rel_str.strip())
+            if match:
+                head, rel, tail = match.group(1).strip(), match.group(2).strip(), match.group(3).strip()
+                triples.append((head, rel, tail))
+                if head not in node_ids:
+                    node_ids.append(head)
+                if tail not in node_ids:
+                    node_ids.append(tail)
+
+        if not triples and result.get("cypher_query"):
+            try:
+                rows = self.graph.query(result["cypher_query"])
+                for row in rows:
+                    h = row.get("head") or row.get("a.id", "")
+                    r = row.get("rel") or row.get("type(r)", "")
+                    t = row.get("tail") or row.get("b.id", "")
+                    if h and r and t:
+                        triples.append((h, r, t))
+            except Exception:
+                pass
+
+        return triples, node_ids
+
     def get_chunks_from_nodes(self, node_ids: List[str]) -> List[str]:
         """Retrieve text chunks connected to given nodes via IN_CHUNK relationship.
 
@@ -1642,18 +1726,11 @@ class PDFGraphRAG:
         all_node_ids: List[str] = []
 
         for sub in sub_sentences:
-            print(f"\nStage 2: Retrieving evidence for: '{sub.text}'")
-            candidates = self.get_relation_candidates(sub.entities)
-            print(f"  Relation candidates ({len(candidates)}): {candidates[:10]}{'...' if len(candidates) > 10 else ''}")
-
-            top_relations = self.retrieve_top_k_relations(sub.text, candidates, k=5)
-            print(f"  Top-K relations: {top_relations}")
-
-            triples = self.retrieve_evidence_subgraph(sub.entities, top_relations)
-            print(f"  Evidence triples found: {len(triples)}")
-
+            print(f"\nStage 2 (Agent): Retrieving evidence for: '{sub.text}'")
+            triples, node_ids = self.search_agent_retrieve(sub.text, sub.entities)
+            print(f"  Agent found {len(triples)} triples, {len(node_ids)} nodes")
             all_triples.extend(triples)
-            all_node_ids.extend(node for triple in triples for node in (triple[0], triple[2]))
+            all_node_ids.extend(node_ids)
 
         # Retrieve source text chunks via IN_CHUNK
         chunks = self.get_chunks_from_nodes(list(set(all_node_ids)))

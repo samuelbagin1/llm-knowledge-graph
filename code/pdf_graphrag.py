@@ -1609,7 +1609,7 @@ class PDFGraphRAG:
         agent = create_agent(
             model=self.openai_client,
             tools=[search_database],
-            response_format=ToolStrategy(schema=response_schema_for_generating_query),
+            response_format=ToolStrategy(schema=response_schema_for_generating_query), # type: ignore[arg-type]
             system_prompt=system_prompt_for_generating_query,
         )
 
@@ -1703,7 +1703,7 @@ class PDFGraphRAG:
 
     # ---------------- INTERACTIVE QUESTIONING ----------------
 
-    def invoke_question(self):
+    def query(self):
         """KG-GPT 3-stage pipeline: Segment → Retrieve → Infer."""
 
         question = input("Enter your question: ")

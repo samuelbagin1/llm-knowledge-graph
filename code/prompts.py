@@ -291,6 +291,57 @@ response_schema_for_sde = {
 
 
 
+# ============================================================
+# Q&A prompts
+# ============================================================
+
+# Stage 1: Sentence Segmentation (KG-GPT Table 4 style)
+system_prompt_for_segmentation = """Rozdeľ danú otázku na niekoľko pod-viet, z ktorých každá môže byť reprezentovaná jedným trojičným vzťahom (trojicou): [entita, vzťah, entita].
+
+Pravidlá:
+- Každá pod-veta musí obsahovať MAXIMÁLNE DVE entity.
+- Každá entita sa môže použiť iba raz naprieč všetkými pod-vetami (okrem prípadov, keď je spájajúcim článkom medzi hopmi).
+- Pod-vety musia pokrývať celý sémantický obsah pôvodnej otázky.
+- Pri viac-hopových otázkach vytvor pod-vety, ktoré tvoria reťaz (výstupná entita jednej hop = vstupná entita ďalšej).
+- Ak je otázka jednoduchá (1 trojica), vráť iba jednu pod-vetu.
+
+Príklady:
+
+Otázka: "Kto je konateľ spoločnosti, ktorá vlastní budovu na Dunajskej ulici?"
+Pod-vety:
+1. "Budova na Dunajskej ulici patrí spoločnosti.", entity: ["Budova Na Dunajskej Ulici", "spolocnost"]
+2. "Spoločnosť má konateľa.", entity: ["spolocnost", "konatel"]
+
+Otázka: "Aké dane platí fyzická osoba registrovaná v SR?"
+Pod-vety:
+1. "Fyzická osoba je registrovaná v SR.", entity: ["Fyzicka Osoba", "SR"]
+2. "Fyzická osoba platí dane.", entity: ["Fyzicka Osoba", "dan"]"""
+
+response_schema_for_segmentation = {
+    "title": "SentenceSegmentation",
+    "type": "object",
+    "properties": {
+        "sub_sentences": {
+            "type": "array",
+            "description": "List of sub-sentences each aligned with one KG triple",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "text": {"type": "string", "description": "The sub-sentence text"},
+                    "entities": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Up to 2 entity mentions in this sub-sentence (use Title Case)"
+                    }
+                },
+                "required": ["text", "entities"]
+            }
+        }
+    },
+    "required": ["sub_sentences"]
+}
+
+
 
 # System prompt - defines the agent's role and capabilities
 system_prompt_for_generating_query = """Si expertný agent na Neo4j Cypher špecializovaný na dopytovanie znalostných grafov.
@@ -350,56 +401,6 @@ response_schema_for_generating_query = {
         }
 
 
-# ============================================================
-# KG-GPT Pipeline Prompts
-# ============================================================
-
-# Stage 1: Sentence Segmentation (KG-GPT Table 4 style)
-system_prompt_for_segmentation = """Rozdeľ danú otázku na niekoľko pod-viet, z ktorých každá môže byť reprezentovaná jedným trojičným vzťahom (trojicou): [entita, vzťah, entita].
-
-Pravidlá:
-- Každá pod-veta musí obsahovať MAXIMÁLNE DVE entity.
-- Každá entita sa môže použiť iba raz naprieč všetkými pod-vetami (okrem prípadov, keď je spájajúcim článkom medzi hopmi).
-- Pod-vety musia pokrývať celý sémantický obsah pôvodnej otázky.
-- Pri viac-hopových otázkach vytvor pod-vety, ktoré tvoria reťaz (výstupná entita jednej hop = vstupná entita ďalšej).
-- Ak je otázka jednoduchá (1 trojica), vráť iba jednu pod-vetu.
-
-Príklady:
-
-Otázka: "Kto je konateľ spoločnosti, ktorá vlastní budovu na Dunajskej ulici?"
-Pod-vety:
-1. "Budova na Dunajskej ulici patrí spoločnosti.", entity: ["Budova Na Dunajskej Ulici", "spolocnost"]
-2. "Spoločnosť má konateľa.", entity: ["spolocnost", "konatel"]
-
-Otázka: "Aké dane platí fyzická osoba registrovaná v SR?"
-Pod-vety:
-1. "Fyzická osoba je registrovaná v SR.", entity: ["Fyzicka Osoba", "SR"]
-2. "Fyzická osoba platí dane.", entity: ["Fyzicka Osoba", "dan"]"""
-
-response_schema_for_segmentation = {
-    "title": "SentenceSegmentation",
-    "type": "object",
-    "properties": {
-        "sub_sentences": {
-            "type": "array",
-            "description": "List of sub-sentences each aligned with one KG triple",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "text": {"type": "string", "description": "The sub-sentence text"},
-                    "entities": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                        "description": "Up to 2 entity mentions in this sub-sentence (use Title Case)"
-                    }
-                },
-                "required": ["text", "entities"]
-            }
-        }
-    },
-    "required": ["sub_sentences"]
-}
-
 
 # Stage 2: Relation Retrieval (KG-GPT Table 5 style)
 system_prompt_for_relation_retrieval = """Dostaneš pod-vetu a zoznam kandidátskych typov vzťahov z grafovej databázy.
@@ -423,6 +424,8 @@ response_schema_for_relation_retrieval = {
     },
     "required": ["relations"]
 }
+
+
 
 
 # Stage 3: Inference (KG-GPT Table 6 style)

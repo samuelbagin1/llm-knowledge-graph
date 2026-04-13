@@ -1394,91 +1394,91 @@ class PDFGraphRAG:
         
 # ====================================================================================================
 
-    def convert_sentence_to_graph_document(self, data, text: str = "") -> GraphDocument:
-        """
-        Convert extracted data into a GraphDocument.
+    # def convert_sentence_to_graph_document(self, data, text: str = "") -> GraphDocument:
+    #     """
+    #     Convert extracted data into a GraphDocument.
 
-        Includes:
-        - Property key formatting (camelCase)
-        - Validation for missing node IDs (skips invalid nodes)
-        - Node type fallback to DEFAULT_NODE_TYPE
-        - Relationship type normalization
-        """
-        nodes = []
-        relationships = []
-        source_document = Document(page_content=text)
+    #     Includes:
+    #     - Property key formatting (camelCase)
+    #     - Validation for missing node IDs (skips invalid nodes)
+    #     - Node type fallback to DEFAULT_NODE_TYPE
+    #     - Relationship type normalization
+    #     """
+    #     nodes = []
+    #     relationships = []
+    #     source_document = Document(page_content=text)
 
 
-        # Process nodes with validation and formatting
-        for node_data in data.get("nodes", []):
-            # Skip nodes without valid IDs
-            node_id = node_data.get("id")
-            if not node_id or not str(node_id).strip():
-                continue
+    #     # Process nodes with validation and formatting
+    #     for node_data in data.get("nodes", []):
+    #         # Skip nodes without valid IDs
+    #         node_id = node_data.get("id")
+    #         if not node_id or not str(node_id).strip():
+    #             continue
 
-            # Format node type with fallback
-            node_type = format_node_type(node_data.get("label") or node_data.get("type"))
+    #         # Format node type with fallback
+    #         node_type = format_node_type(node_data.get("label") or node_data.get("type"))
 
-            # Format property keys to camelCase
-            raw_properties = node_data.get("properties", {})
-            formatted_properties = {
-                format_property_key(k): v
-                for k, v in raw_properties.items()
-            } if raw_properties else {}
+    #         # Format property keys to camelCase
+    #         raw_properties = node_data.get("properties", {})
+    #         formatted_properties = {
+    #             format_property_key(k): v
+    #             for k, v in raw_properties.items()
+    #         } if raw_properties else {}
 
-            # Normalize node ID (title case for consistency)
-            normalized_id = str(node_id).strip()
-            if normalized_id and not normalized_id[0].isdigit():
-                normalized_id = normalized_id.title()
+    #         # Normalize node ID (title case for consistency)
+    #         normalized_id = str(node_id).strip()
+    #         if normalized_id and not normalized_id[0].isdigit():
+    #             normalized_id = normalized_id.title()
 
-            node = Node(
-                id=normalized_id,
-                type=node_type,
-                properties=formatted_properties
-            )
-            nodes.append(node)
+    #         node = Node(
+    #             id=normalized_id,
+    #             type=node_type,
+    #             properties=formatted_properties
+    #         )
+    #         nodes.append(node)
 
-        # Process relationships with validation and formatting
-        for rel_data in data.get("relationships", []):
-            source_id = rel_data.get("source_node_id")
-            target_id = rel_data.get("target_node_id")
-            rel_type = rel_data.get("relation") or rel_data.get("type")
+    #     # Process relationships with validation and formatting
+    #     for rel_data in data.get("relationships", []):
+    #         source_id = rel_data.get("source_node_id")
+    #         target_id = rel_data.get("target_node_id")
+    #         rel_type = rel_data.get("relation") or rel_data.get("type")
 
-            # Skip relationships with missing mandatory fields
-            if not source_id or not target_id or not rel_type:
-                continue
+    #         # Skip relationships with missing mandatory fields
+    #         if not source_id or not target_id or not rel_type:
+    #             continue
 
-            # Find matching nodes (case-insensitive)
-            source_node = next(
-                (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
-                None
-            )
-            target_node = next(
-                (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
-                None
-            )
+    #         # Find matching nodes (case-insensitive)
+    #         source_node = next(
+    #             (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
+    #             None
+    #         )
+    #         target_node = next(
+    #             (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
+    #             None
+    #         )
 
-            if source_node and target_node:
-                # Format relationship properties
-                raw_rel_props = rel_data.get("properties", {})
-                formatted_rel_props = {
-                    format_property_key(k): v
-                    for k, v in raw_rel_props.items()
-                } if raw_rel_props else {}
+    #         if source_node and target_node:
+    #             # Format relationship properties
+    #             raw_rel_props = rel_data.get("properties", {})
+    #             formatted_rel_props = {
+    #                 format_property_key(k): v
+    #                 for k, v in raw_rel_props.items()
+    #             } if raw_rel_props else {}
 
-                relationship = Relationship(
-                    source=source_node,
-                    target=target_node,
-                    type=format_relationship_type(rel_type),
-                    properties=formatted_rel_props
-                )
-                relationships.append(relationship)
+    #             relationship = Relationship(
+    #                 source=source_node,
+    #                 target=target_node,
+    #                 type=format_relationship_type(rel_type),
+    #                 properties=formatted_rel_props
+    #             )
+    #             relationships.append(relationship)
 
-        return GraphDocument(
-            nodes=nodes,
-            relationships=relationships,
-            source=source_document
-        )
+    #     return GraphDocument(
+    #         nodes=nodes,
+    #         relationships=relationships,
+    #         source=source_document
+    #     )
         
         
     # ---------------- KG-GPT QUERYING METHODS ----------------
@@ -1508,19 +1508,22 @@ class PDFGraphRAG:
         #
         # Consider: entity strings should match (or approximately match) node IDs in the KG.
         # The segmentation prompt already instructs Title Case — this helps with Cypher CONTAINS matching.
-
-        structured_model = self.openai_client.with_structured_output(
-            schema=response_schema_for_segmentation, method="json_schema"
+        
+        
+        
+        agent = create_agent(
+            model=self.openai_client,
+            response_format=ProviderStrategy(schema=response_schema_for_segmentation),  # type: ignore[arg-type]
+            system_prompt=system_prompt_for_segmentation
         )
+        response = agent.invoke({"messages": [{"role": "user", "content": f"Otázka: {question}"}]})
 
-        response = cast(dict, structured_model.invoke([
-            ("system", system_prompt_for_segmentation),
-            ("human", f"Otázka: {question}"),
-        ]))
+        # structured_response is already a dict when using ProviderStrategy
+        data = cast(dict, response["structured_response"])
 
         sub_sentences = [
             SubSentence(text=s["text"], entities=s["entities"])
-            for s in response.get("sub_sentences", [])
+            for s in data.get("sub_sentences", [])
         ]
 
         if not sub_sentences:
@@ -1712,8 +1715,8 @@ class PDFGraphRAG:
         response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
         result = response["structured_response"]
 
-        node_ids: List[str] = list(result.get("nodes_found", []))
-        triples: List[tuple] = []
+        node_ids: list[str] = list(result.get("nodes_found", []))
+        triples: list[tuple] = []
 
         for rel_str in result.get("relationships_found", []):
             match = re.match(r"^(.+?)\s*-\[(.+?)\]->\s*(.+)$", rel_str.strip())

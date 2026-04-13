@@ -1393,353 +1393,6 @@ class PDFGraphRAG:
         
         
 # ====================================================================================================
-    # ---------------- KG-GPT QUERYING METHODS ----------------
-
-    def segment_question(self, question: str) -> List[SubSentence]:
-        """Stage 1 (KG-GPT): Break question into sub-sentences each aligned with one KG triple.
-
-        Args:
-            question: The user's natural language question
-
-        Returns:
-            List of SubSentence objects, each with text and up to 2 entity mentions
-        """
-        print("\nStage 1: Sentence segmentation...")
-
-        # TODO: Design the segmentation prompt and response parsing here.
-        # This is the most impactful design choice in KG-GPT — how you decompose
-        # the question directly determines what gets retrieved.
-        #
-        # Guidance:
-        # - Use self.openai_client (fast, cheap) with with_structured_output()
-        # - system_prompt_for_segmentation and response_schema_for_segmentation are ready in prompts.py
-        # - The response will have {"sub_sentences": [{"text": ..., "entities": [...]}, ...]}
-        # - Wrap each dict in SubSentence(text=..., entities=...)
-        # - For single-hop questions, one SubSentence is enough
-        # - For multi-hop questions, each hop should be a separate SubSentence
-        #
-        # Consider: entity strings should match (or approximately match) node IDs in the KG.
-        # The segmentation prompt already instructs Title Case — this helps with Cypher CONTAINS matching.
-
-        structured_model = self.openai_client.with_structured_output(
-            schema=response_schema_for_segmentation, method="json_schema"
-        )
-
-        response = cast(dict, structured_model.invoke([
-            ("system", system_prompt_for_segmentation),
-            ("human", f"Otázka: {question}"),
-        ]))
-
-        sub_sentences = [
-            SubSentence(text=s["text"], entities=s["entities"])
-            for s in response.get("sub_sentences", [])
-        ]
-
-        if not sub_sentences:
-            sub_sentences = [SubSentence(text=question, entities=[])]
-
-        print(f"  → {len(sub_sentences)} sub-sentence(s): {[s.text for s in sub_sentences]}")
-        return sub_sentences
-
-    def get_relation_candidates(self, entities: List[str]) -> List[str]:
-        """Stage 2a (KG-GPT): Get relation types connected to the given entity mentions in the KG.
-
-        Uses UNION of relation types across all entities for maximum recall.
-        The LLM then filters to the semantically relevant subset.
-
-        Args:
-            entities: List of entity mention strings (Title Case, from sentence segmentation)
-
-        Returns:
-            List of unique relation type strings found in the KG
-        """
-        if not entities:
-            # Fall back to full relation type list from schema
-            schema = self.get_graph_schema()
-            return schema.relationships
-
-        candidates: set[str] = set()
-        for entity in entities:
-            try:
-                results = self.graph.query(
-                    """
-                    MATCH (n)-[r]-()
-                    WHERE toLower(n.id) CONTAINS toLower($entity)
-                    RETURN DISTINCT type(r) AS rel_type
-                    LIMIT 50
-                    """,
-                    {"entity": entity}
-                )
-                for row in results:
-                    if row.get("rel_type"):
-                        candidates.add(row["rel_type"])
-            except Exception as e:
-                print(f"  Relation candidate lookup failed for '{entity}': {e}")
-
-        # If no candidates found via entity matching, use full schema
-        if not candidates:
-            schema = self.get_graph_schema()
-            candidates = set(schema.relationships)
-
-        return list(candidates)
-
-    def retrieve_top_k_relations(self, sub_sentence: str, candidates: List[str], k: int = 5) -> List[str]:
-        """Stage 2b (KG-GPT): LLM picks the top-K most semantically relevant relations.
-
-        Args:
-            sub_sentence: The sub-sentence text (one implied triple)
-            candidates: Relation type strings from the KG
-            k: Maximum number of relations to return
-
-        Returns:
-            Top-K relation type strings
-        """
-        if not candidates:
-            return []
-
-        structured_model = self.openai_client.with_structured_output(
-            schema=response_schema_for_relation_retrieval, method="json_schema"
-        )
-
-        user_prompt = (
-            f"Pod-veta: {sub_sentence}\n\n"
-            f"Kandidátske vzťahy: {candidates}\n\n"
-            f"Vyber top-{k} najrelevantnejších vzťahov."
-        )
-
-        response = cast(dict, structured_model.invoke([
-            ("system", system_prompt_for_relation_retrieval),
-            ("human", user_prompt),
-        ]))
-
-        return response.get("relations", candidates[:k])[:k]
-
-    def retrieve_evidence_subgraph(self, entities: List[str], relations: List[str]) -> List[tuple]:
-        """Stage 2c (KG-GPT): Extract evidence triples from the KG.
-
-        Finds all triples (head, relation, tail) where the relation type is in
-        the top-K list AND at least one endpoint matches an entity mention.
-
-        Args:
-            entities: Entity mention strings from the sub-sentence
-            relations: Top-K relation type strings selected by LLM
-
-        Returns:
-            List of (head_id, relation_type, tail_id) tuples
-        """
-        if not relations:
-            return []
-
-        triples: list[tuple] = []
-        for entity in entities:
-            try:
-                results = self.graph.query(
-                    """
-                    MATCH (a)-[r]->(b)
-                    WHERE type(r) IN $relations
-                      AND (toLower(a.id) CONTAINS toLower($entity)
-                           OR toLower(b.id) CONTAINS toLower($entity))
-                    RETURN a.id AS head, type(r) AS rel, b.id AS tail
-                    LIMIT 25
-                    """,
-                    {"relations": relations, "entity": entity}
-                )
-                for row in results:
-                    if row.get("head") and row.get("rel") and row.get("tail"):
-                        triples.append((row["head"], row["rel"], row["tail"]))
-            except Exception as e:
-                print(f"  Evidence subgraph query failed for '{entity}': {e}")
-
-        # Deduplicate while preserving order
-        seen: set = set()
-        unique: list[tuple] = []
-        for t in triples:
-            if t not in seen:
-                seen.add(t)
-                unique.append(t)
-        return unique
-
-    def search_agent_retrieve(self, sub_sentence: str, entities: List[str]) -> tuple[List[tuple], List[str]]:
-        """ARK-V1-inspired Stage 2: Agent with search_database tool iteratively queries
-        the graph to find evidence triples for a single sub-sentence.
-
-        Args:
-            sub_sentence: Sub-sentence text from Stage 1 (one implied KG triple)
-            entities: Entity mentions from segmentation (Title Case)
-
-        Returns:
-            (evidence_triples, node_ids) — triples as (head, rel, tail) tuples and
-            node IDs for chunk retrieval, both compatible with Stage 3
-        """
-        import re
-
-        graph = self.graph
-
-        @tool
-        def search_database(cypher_query: str) -> str:
-            """Execute a Cypher query against the Neo4j graph database.
-
-            Args:
-                cypher_query: A valid Cypher query string to execute
-
-            Returns:
-                JSON string of query results, or error message if query fails
-            """
-            try:
-                results = graph.query(cypher_query)
-                serialized = serialize_for_json(results)
-                return json.dumps(serialized, ensure_ascii=False, indent=2)[:4000]
-            except Exception as e:
-                return f"Query error: {e}"
-
-        schema = self.get_graph_schema()
-        sample_schema = self.get_sample_graph_schema()
-
-        user_prompt = (
-            f"Pod-veta na zodpovedanie: {sub_sentence}\n\n"
-            f"Zmienene entity: {entities}\n\n"
-            f"Schema grafu:\n"
-            f"  Typy uzlov: {schema.nodes}\n"
-            f"  Typy vztahov: {schema.relationships}\n\n"
-            f"Vzorove data:\n{sample_schema}\n\n"
-            f"Najdi vsetky relevantne trojice (uzol-vztah-uzol) suvisiace s touto pod-vetou. "
-            f"Zacni preskumanim entit, potom sleduj relevantne vztahy."
-        )
-
-        agent = create_agent(
-            model=self.openai_client,
-            tools=[search_database],
-            response_format=ToolStrategy(schema=response_schema_for_generating_query), # type: ignore[arg-type]
-            system_prompt=system_prompt_for_generating_query,
-        )
-
-        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
-        result = response["structured_response"]
-
-        node_ids: List[str] = list(result.get("nodes_found", []))
-        triples: List[tuple] = []
-
-        for rel_str in result.get("relationships_found", []):
-            match = re.match(r"^(.+?)\s*-\[(.+?)\]->\s*(.+)$", rel_str.strip())
-            if match:
-                head, rel, tail = match.group(1).strip(), match.group(2).strip(), match.group(3).strip()
-                triples.append((head, rel, tail))
-                if head not in node_ids:
-                    node_ids.append(head)
-                if tail not in node_ids:
-                    node_ids.append(tail)
-
-        if not triples and result.get("cypher_query"):
-            try:
-                rows = self.graph.query(result["cypher_query"])
-                for row in rows:
-                    h = row.get("head") or row.get("a.id", "")
-                    r = row.get("rel") or row.get("type(r)", "")
-                    t = row.get("tail") or row.get("b.id", "")
-                    if h and r and t:
-                        triples.append((h, r, t))
-            except Exception:
-                pass
-
-        return triples, node_ids
-
-    def get_chunks_from_nodes(self, node_ids: List[str]) -> List[str]:
-        """Retrieve text chunks connected to given nodes via IN_CHUNK relationship.
-
-            in: node_ids: List[str]
-            out: List[str] - chunk texts
-        """
-        if not node_ids:
-            return []
-
-        try:
-            results = self.graph.query("""
-                MATCH (n)-[:IN_CHUNK]->(c:Chunk)
-                WHERE n.id IN $node_ids
-                RETURN DISTINCT c.text AS text, c.page AS page, n.id AS source_node
-                ORDER BY c.page
-            """, {"node_ids": node_ids})
-
-            chunks = [record['text'] for record in results if record.get('text')]
-            print(f"\nNajdenych {len(chunks)} textovych usekov spojenych s uzlami.\n")
-            return chunks
-
-        except Exception as e:
-            print(f"Chyba pri ziskavani chunkov: {e}")
-            return []
-
-    def answer(self, question: str, evidence_triples: List[tuple], chunks: List[str] = []) -> str:
-        """Stage 3 (KG-GPT): Derive a natural language answer from evidence triples and chunk context.
-
-        Args:
-            question: The original user question
-            evidence_triples: List of (head, relation, tail) tuples from graph retrieval
-            chunks: Text chunks connected to retrieved nodes via IN_CHUNK
-
-        Returns:
-            Natural language answer string
-        """
-        print("\n\nStage 3: Inference...\n\n")
-
-        linearized = [[h, r, t] for h, r, t in evidence_triples]
-        chunk_text = "\n---\n".join(chunks) if chunks else "Žiadne textové úseky neboli nájdené."
-
-        user_prompt = (
-            f"Otázka: {question}\n\n"
-            f"Dôkazy z grafovej databázy:\n{json.dumps(linearized, ensure_ascii=False, indent=2)}\n\n"
-            f"Textový kontext z dokumentov:\n{chunk_text}"
-        )
-
-        structured_model = self.gemini_client_thinking.with_structured_output(
-            schema=response_schema_for_inference, method="json_schema"
-        )
-
-        response = structured_model.invoke([
-            ("system", system_prompt_for_inference),
-            ("human", user_prompt),
-        ])
-
-        return cast(dict, response)["answer"]
-
-    # ---------------- INTERACTIVE QUESTIONING ----------------
-
-    def query(self):
-        """KG-GPT 3-stage pipeline: Segment → Retrieve → Infer."""
-
-        question = input("Enter your question: ")
-
-        if question == '-h':
-            print("Help Instructions: \n - To exit, type 'exit' \n - To view graph schema, type '-s' \n")
-            return
-        elif question == '-s':
-            print(self.get_graph_schema())
-            return
-        elif question.lower() == 'exit':
-            print("Exiting...")
-            return
-
-        # Stage 1: Sentence Segmentation
-        sub_sentences = self.segment_question(question)
-
-        # Stage 2: Graph Retrieval (per sub-sentence)
-        all_triples: List[tuple] = []
-        all_node_ids: List[str] = []
-
-        for sub in sub_sentences:
-            print(f"\nStage 2 (Agent): Retrieving evidence for: '{sub.text}'")
-            triples, node_ids = self.search_agent_retrieve(sub.text, sub.entities)
-            print(f"  Agent found {len(triples)} triples, {len(node_ids)} nodes")
-            all_triples.extend(triples)
-            all_node_ids.extend(node_ids)
-
-        # Retrieve source text chunks via IN_CHUNK
-        chunks = self.get_chunks_from_nodes(list(set(all_node_ids)))
-
-        # Stage 3: Inference
-        final_answer = self.answer(question, all_triples, chunks)
-        print(f"\n{final_answer}")
-        
-        
 
     def convert_sentence_to_graph_document(self, data, text: str = "") -> GraphDocument:
         """
@@ -1827,5 +1480,363 @@ class PDFGraphRAG:
             source=source_document
         )
         
+        
+    # ---------------- KG-GPT QUERYING METHODS ----------------
 
+    def segment_question(self, question: str) -> List[SubSentence]:
+        """Stage 1 (KG-GPT): Break question into sub-sentences each aligned with one KG triple.
 
+        Args:
+            question: The user's natural language question
+
+        Returns:
+            List of SubSentence objects, each with text and up to 2 entity mentions
+        """
+        print("\nStage 1: Sentence segmentation...")
+
+        # TODO: Design the segmentation prompt and response parsing here.
+        # This is the most impactful design choice in KG-GPT — how you decompose
+        # the question directly determines what gets retrieved.
+        #
+        # Guidance:
+        # - Use self.openai_client (fast, cheap) with with_structured_output()
+        # - system_prompt_for_segmentation and response_schema_for_segmentation are ready in prompts.py
+        # - The response will have {"sub_sentences": [{"text": ..., "entities": [...]}, ...]}
+        # - Wrap each dict in SubSentence(text=..., entities=...)
+        # - For single-hop questions, one SubSentence is enough
+        # - For multi-hop questions, each hop should be a separate SubSentence
+        #
+        # Consider: entity strings should match (or approximately match) node IDs in the KG.
+        # The segmentation prompt already instructs Title Case — this helps with Cypher CONTAINS matching.
+
+        structured_model = self.openai_client.with_structured_output(
+            schema=response_schema_for_segmentation, method="json_schema"
+        )
+
+        response = cast(dict, structured_model.invoke([
+            ("system", system_prompt_for_segmentation),
+            ("human", f"Otázka: {question}"),
+        ]))
+
+        sub_sentences = [
+            SubSentence(text=s["text"], entities=s["entities"])
+            for s in response.get("sub_sentences", [])
+        ]
+
+        if not sub_sentences:
+            sub_sentences = [SubSentence(text=question, entities=[])]
+
+        print(f"  → {len(sub_sentences)} sub-sentence(s): {[s.text for s in sub_sentences]}")
+        return sub_sentences
+    
+    
+
+    # def get_relation_candidates(self, entities: List[str]) -> List[str]:
+    #     """Stage 2a (KG-GPT): Get relation types connected to the given entity mentions in the KG.
+
+    #     Uses UNION of relation types across all entities for maximum recall.
+    #     The LLM then filters to the semantically relevant subset.
+
+    #     Args:
+    #         entities: List of entity mention strings (Title Case, from sentence segmentation)
+
+    #     Returns:
+    #         List of unique relation type strings found in the KG
+    #     """
+    #     if not entities:
+    #         # Fall back to full relation type list from schema
+    #         schema = self.get_graph_schema()
+    #         return schema.relationships
+
+    #     candidates: set[str] = set()
+    #     for entity in entities:
+    #         try:
+    #             results = self.graph.query(
+    #                 """
+    #                 MATCH (n)-[r]-()
+    #                 WHERE toLower(n.id) CONTAINS toLower($entity)
+    #                 RETURN DISTINCT type(r) AS rel_type
+    #                 LIMIT 50
+    #                 """,
+    #                 {"entity": entity}
+    #             )
+    #             for row in results:
+    #                 if row.get("rel_type"):
+    #                     candidates.add(row["rel_type"])
+    #         except Exception as e:
+    #             print(f"  Relation candidate lookup failed for '{entity}': {e}")
+
+    #     # If no candidates found via entity matching, use full schema
+    #     if not candidates:
+    #         schema = self.get_graph_schema()
+    #         candidates = set(schema.relationships)
+
+    #     return list(candidates)
+    
+    
+
+    # def retrieve_top_k_relations(self, sub_sentence: str, candidates: List[str], k: int = 5) -> List[str]:
+    #     """Stage 2b (KG-GPT): LLM picks the top-K most semantically relevant relations.
+
+    #     Args:
+    #         sub_sentence: The sub-sentence text (one implied triple)
+    #         candidates: Relation type strings from the KG
+    #         k: Maximum number of relations to return
+
+    #     Returns:
+    #         Top-K relation type strings
+    #     """
+    #     if not candidates:
+    #         return []
+
+    #     structured_model = self.openai_client.with_structured_output(
+    #         schema=response_schema_for_relation_retrieval, method="json_schema"
+    #     )
+
+    #     user_prompt = (
+    #         f"Pod-veta: {sub_sentence}\n\n"
+    #         f"Kandidátske vzťahy: {candidates}\n\n"
+    #         f"Vyber top-{k} najrelevantnejších vzťahov."
+    #     )
+
+    #     response = cast(dict, structured_model.invoke([
+    #         ("system", system_prompt_for_relation_retrieval),
+    #         ("human", user_prompt),
+    #     ]))
+
+    #     return response.get("relations", candidates[:k])[:k]
+    
+    
+
+    # def retrieve_evidence_subgraph(self, entities: List[str], relations: List[str]) -> List[tuple]:
+    #     """Stage 2c (KG-GPT): Extract evidence triples from the KG.
+
+    #     Finds all triples (head, relation, tail) where the relation type is in
+    #     the top-K list AND at least one endpoint matches an entity mention.
+
+    #     Args:
+    #         entities: Entity mention strings from the sub-sentence
+    #         relations: Top-K relation type strings selected by LLM
+
+    #     Returns:
+    #         List of (head_id, relation_type, tail_id) tuples
+    #     """
+    #     if not relations:
+    #         return []
+
+    #     triples: list[tuple] = []
+    #     for entity in entities:
+    #         try:
+    #             results = self.graph.query(
+    #                 """
+    #                 MATCH (a)-[r]->(b)
+    #                 WHERE type(r) IN $relations
+    #                   AND (toLower(a.id) CONTAINS toLower($entity)
+    #                        OR toLower(b.id) CONTAINS toLower($entity))
+    #                 RETURN a.id AS head, type(r) AS rel, b.id AS tail
+    #                 LIMIT 25
+    #                 """,
+    #                 {"relations": relations, "entity": entity}
+    #             )
+    #             for row in results:
+    #                 if row.get("head") and row.get("rel") and row.get("tail"):
+    #                     triples.append((row["head"], row["rel"], row["tail"]))
+    #         except Exception as e:
+    #             print(f"  Evidence subgraph query failed for '{entity}': {e}")
+
+    #     # Deduplicate while preserving order
+    #     seen: set = set()
+    #     unique: list[tuple] = []
+    #     for t in triples:
+    #         if t not in seen:
+    #             seen.add(t)
+    #             unique.append(t)
+    #     return unique
+    
+    
+
+    def search_agent_retrieve(self, sub_sentence: str, entities: List[str]) -> tuple[List[tuple], List[str]]:
+        """ARK-V1-inspired Stage 2: Agent with search_database tool iteratively queries
+        the graph to find evidence triples for a single sub-sentence.
+
+        Args:
+            sub_sentence: Sub-sentence text from Stage 1 (one implied KG triple)
+            entities: Entity mentions from segmentation (Title Case)
+
+        Returns:
+            (evidence_triples, node_ids) — triples as (head, rel, tail) tuples and
+            node IDs for chunk retrieval, both compatible with Stage 3
+        """
+        import re
+
+        graph = self.graph
+
+        @tool
+        def search_database(cypher_query: str) -> str:
+            """Execute a Cypher query against the Neo4j graph database.
+
+            Args:
+                cypher_query: A valid Cypher query string to execute
+
+            Returns:
+                JSON string of query results, or error message if query fails
+            """
+            try:
+                results = graph.query(cypher_query)
+                serialized = serialize_for_json(results)
+                return json.dumps(serialized, ensure_ascii=False, indent=2)[:4000]
+            except Exception as e:
+                return f"Query error: {e}"
+
+        schema = self.get_graph_schema()
+        sample_schema = self.get_sample_graph_schema()
+
+        user_prompt = (
+            f"Pod-veta na zodpovedanie: {sub_sentence}\n\n"
+            f"Zmienene entity: {entities}\n\n"
+            f"Schema grafu:\n"
+            f"  Typy uzlov: {schema.nodes}\n"
+            f"  Typy vztahov: {schema.relationships}\n\n"
+            f"Vzorove data:\n{sample_schema}\n\n"
+            f"Najdi vsetky relevantne trojice (uzol-vztah-uzol) suvisiace s touto pod-vetou. "
+            f"Zacni preskumanim entit, potom sleduj relevantne vztahy."
+        )
+
+        agent = create_agent(
+            model=self.openai_client,
+            tools=[search_database],
+            response_format=ToolStrategy(schema=response_schema_for_generating_query), # type: ignore[arg-type]
+            system_prompt=system_prompt_for_generating_query,
+        )
+
+        response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+        result = response["structured_response"]
+
+        node_ids: List[str] = list(result.get("nodes_found", []))
+        triples: List[tuple] = []
+
+        for rel_str in result.get("relationships_found", []):
+            match = re.match(r"^(.+?)\s*-\[(.+?)\]->\s*(.+)$", rel_str.strip())
+            if match:
+                head, rel, tail = match.group(1).strip(), match.group(2).strip(), match.group(3).strip()
+                triples.append((head, rel, tail))
+                if head not in node_ids:
+                    node_ids.append(head)
+                if tail not in node_ids:
+                    node_ids.append(tail)
+
+        if not triples and result.get("cypher_query"):
+            try:
+                rows = self.graph.query(result["cypher_query"])
+                for row in rows:
+                    h = row.get("head") or row.get("a.id", "")
+                    r = row.get("rel") or row.get("type(r)", "")
+                    t = row.get("tail") or row.get("b.id", "")
+                    if h and r and t:
+                        triples.append((h, r, t))
+            except Exception:
+                pass
+
+        return triples, node_ids
+    
+    
+
+    def get_chunks_from_nodes(self, node_ids: List[str]) -> List[str]:
+        """Retrieve text chunks connected to given nodes via IN_CHUNK relationship.
+
+            in: node_ids: List[str]
+            out: List[str] - chunk texts
+        """
+        if not node_ids:
+            return []
+
+        try:
+            results = self.graph.query("""
+                MATCH (n)-[:IN_CHUNK]->(c:Chunk)
+                WHERE n.id IN $node_ids
+                RETURN DISTINCT c.text AS text, c.page AS page, n.id AS source_node
+                ORDER BY c.page
+            """, {"node_ids": node_ids})
+
+            chunks = [record['text'] for record in results if record.get('text')]
+            print(f"\nNajdenych {len(chunks)} textovych usekov spojenych s uzlami.\n")
+            return chunks
+
+        except Exception as e:
+            print(f"Chyba pri ziskavani chunkov: {e}")
+            return []
+        
+        
+
+    def answer(self, question: str, evidence_triples: List[tuple], chunks: List[str] = []) -> str:
+        """Stage 3 (KG-GPT): Derive a natural language answer from evidence triples and chunk context.
+
+        Args:
+            question: The original user question
+            evidence_triples: List of (head, relation, tail) tuples from graph retrieval
+            chunks: Text chunks connected to retrieved nodes via IN_CHUNK
+
+        Returns:
+            Natural language answer string
+        """
+        print("\n\nStage 3: Inference...\n\n")
+
+        linearized = [[h, r, t] for h, r, t in evidence_triples]
+        chunk_text = "\n---\n".join(chunks) if chunks else "Žiadne textové úseky neboli nájdené."
+
+        user_prompt = (
+            f"Otázka: {question}\n\n"
+            f"Dôkazy z grafovej databázy:\n{json.dumps(linearized, ensure_ascii=False, indent=2)}\n\n"
+            f"Textový kontext z dokumentov:\n{chunk_text}"
+        )
+
+        structured_model = self.gemini_client_thinking.with_structured_output(
+            schema=response_schema_for_inference, method="json_schema"
+        )
+
+        response = structured_model.invoke([
+            ("system", system_prompt_for_inference),
+            ("human", user_prompt),
+        ])
+
+        return cast(dict, response)["answer"]
+    
+    
+
+    # ---------------- INTERACTIVE QUESTIONING ----------------
+
+    def query(self):
+        """KG-GPT 3-stage pipeline: Segment → Retrieve → Infer."""
+
+        question = input("Enter your question: ")
+
+        if question == '-h':
+            print("Help Instructions: \n - To exit, type 'exit' \n - To view graph schema, type '-s' \n")
+            return
+        elif question == '-s':
+            print(self.get_graph_schema())
+            return
+        elif question.lower() == 'exit':
+            print("Exiting...")
+            return
+
+        # Stage 1: Sentence Segmentation
+        sub_sentences = self.segment_question(question)
+
+        # Stage 2: Graph Retrieval (per sub-sentence)
+        all_triples: List[tuple] = []
+        all_node_ids: List[str] = []
+
+        for sub in sub_sentences:
+            print(f"\nStage 2 (Agent): Retrieving evidence for: '{sub.text}'")
+            triples, node_ids = self.search_agent_retrieve(sub.text, sub.entities)
+            print(f"  Agent found {len(triples)} triples, {len(node_ids)} nodes")
+            all_triples.extend(triples)
+            all_node_ids.extend(node_ids)
+
+        # Retrieve source text chunks via IN_CHUNK
+        chunks = self.get_chunks_from_nodes(list(set(all_node_ids)))
+
+        # Stage 3: Inference
+        final_answer = self.answer(question, all_triples, chunks)
+        print(f"\n{final_answer}")

@@ -1,3 +1,4 @@
+import re
 import datetime
 import json
 import os
@@ -37,6 +38,22 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 # Default node type when type is missing or empty
 DEFAULT_NODE_TYPE = "Entity"
+
+_STRIP_STRINGS_RE = re.compile(r'"[^"]*"|\'[^\']*\'')
+_CYPHER_WRITE_RE = re.compile(r'\b(CREATE|MERGE|DELETE|DETACH|SET|REMOVE)\b', re.IGNORECASE)
+
+def is_read_only_cypher(query: str) -> bool:
+    """Raise ValueError if query contains a write command, otherwise return True.
+
+    Blocks: CREATE, MERGE, DELETE, DETACH, SET, REMOVE.
+    Strips quoted string literals first so keywords inside WHERE string values
+    (e.g. WHERE n.name = "CREATE") are not flagged.
+    """
+    sanitized = _STRIP_STRINGS_RE.sub("", query)
+    m = _CYPHER_WRITE_RE.search(sanitized)
+    if m:
+        raise ValueError(f"Cypher query contains forbidden write keyword: '{m.group().upper()}'")
+    return True
 
 
 def format_property_key(s: str) -> str:
@@ -1685,6 +1702,7 @@ class PDFGraphRAG:
                 JSON string of query results, or error message if query fails
             """
             try:
+                is_read_only_cypher(cypher_query)
                 results = graph.query(cypher_query)
                 serialized = serialize_for_json(results)
                 return json.dumps(serialized, ensure_ascii=False, indent=2)[:4000]

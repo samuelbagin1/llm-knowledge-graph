@@ -1,0 +1,104 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "ZakonnaZbierka",
+          "DanovyPredpis",
+          "Paragraf",
+          "Odsek",
+          "PlatitelDane",
+          "FinancnaSluzba",
+          "Dan",
+          "Nehnutelnost",
+          "NajomNehnutelnosti",
+          "PrevodNehnutelnosti",
+          "ZdanovacieObdobie",
+          "KalendarnyRok",
+          "Koeficient",
+          "Vypocet",
+          "Odhad",
+          "SpravcaDane",
+          "Suhlas",
+          "Cinnost",
+          "OdpoctitelnaDan",
+          "Rozdiel",
+          "StatnyRozpocet"
+        ],
+        "relationships": [
+          "UPRAVUJE",
+          "ODKAZUJE_NA",
+          "POSKYTUJE",
+          "JE_OSLOBODENA_OD",
+          "VYKONAVA",
+          "POUZIJE",
+          "URCI",
+          "URCUJE_PODLA",
+          "SO_SUHLASOM",
+          "VYPOCITA",
+          "VYSPORIADA",
+          "MA_POSTAVENIE",
+          "STANE_SA",
+          "PRESTANE_BYT",
+          "ZA_OBDOBIE",
+          "V_PROSPECH",
+          "NA_TERCHU"
+        ]
+      }
+    ]
+  },
+  {
+    "chunk_texts": [
+      {
+        "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+        "page": 58
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "ZakonnaZbierka",
+        "Suhlas",
+        "NajomNehnutelnosti",
+        "Odhad",
+        "Koeficient",
+        "Nehnutelnost",
+        "KalendarnyRok",
+        "Odsek",
+        "DanovyPredpis",
+        "Rozdiel",
+        "FinancnaSluzba",
+        "PrevodNehnutelnosti",
+        "Dan",
+        "OdpoctitelnaDan",
+        "StatnyRozpocet",
+        "ZdanovacieObdobie",
+        "PlatitelDane",
+        "Paragraf",
+        "SpravcaDane",
+        "Vypocet",
+        "Cinnost"
+      ],
+      "relationships": [
+        "POUZIJE",
+        "MA_POSTAVENIE",
+        "PRESTANE_BYT",
+        "V_PROSPECH",
+        "NA_TERCHU",
+        "SO_SUHLASOM",
+        "ODKAZUJE_NA",
+        "VYPOCITA",
+        "URCUJE_PODLA",
+        "VYSPORIADA",
+        "URCI",
+        "STANE_SA",
+        "POSKYTUJE",
+        "ZA_OBDOBIE",
+        "UPRAVUJE",
+        "VYKONAVA",
+        "JE_OSLOBODENA_OD"
+      ]
+    }
+  }
+]

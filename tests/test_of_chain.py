@@ -21,7 +21,7 @@ graphrag = PDFGraphRAG(
     claude_api_key=os.getenv("ANTHROPIC_API_KEY")
 )
 
-name = "test-sample"
+name = "one-chunk-shortOddPrompts"
 
 # Load PDF documents
 documents = graphrag.load_pdf(pdf_path)
@@ -31,6 +31,8 @@ documents = documents[58:60]
 
 splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
 chunked_documents = splitter.split_documents(documents)
+
+chunked_documents = chunked_documents[:1]
 
 extracted_schema_list = asyncio.run(
     graphrag.async_open_domain_detection(
@@ -67,8 +69,8 @@ refinement_to_json(refined_schema_data, name = name)
 
 
 # ------ schema driven extraction ------
-splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
-chunked_documents = splitter.split_documents(documents)
+# splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
+# chunked_documents = splitter.split_documents(documents)
 
 # with open('./extracted_data/refinement_20260312235044.json') as f:
 #     data = json.load(f)

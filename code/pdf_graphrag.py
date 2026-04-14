@@ -911,22 +911,34 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-        Identifikuj každý odlišný typ uzla a typ vzťahu prítomný v nasledujúcom texte. Pred vytvorením odpovede postupuj textom krok za krokom a zdôvodni svoje závery:
+        # Uloha
+        Analyzuj nasledujuci text a identifikuj vsetky odlisne typy uzlov a typy vztahov.
 
-        # PRAVIDLÁ
-        1. Pozorne si prečítaj text.
-        2. Identifikuj všetky odlišné typy uzlov pomocou všeobecných elementárnych označení. Pri každom uveď podpornú frázu (frázy) z textu, ktoré odôvodňujú jeho zaradenie.
-        3. Identifikuj všetky odlišné typy vzťahov medzi entitami pomocou všeobecných nadčasových označení. Pri každom uveď podpornú frázu (frázy).
-        4. Ak je niektorý typ nejednoznačný alebo závislý od kontextu, stručne poznač túto nejednoznačnosť.
-        5. Všetky extrahované názvy typov (uzlov aj vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+        # Instrukcie
 
-        # TEXT
+        ## 1. Typy uzlov
+        - Pouzi vseobecne, ale rozlisitelne oznacenia
+        - Zahrn aj implicitne pravne a financne koncepty
+
+        ## 2. Typy vztahov
+        - Pouzi nadcasove a genericke oznacenia
+        - Zahrn aj normativne a procesne vztahy
+
+        ## 3. Pravna struktura
+        - Zachyt entity ako zakon, paragraf, odsek
+        - Zachyt mechanizmy, vypocty a casove ramce
+
+        ## 4. Validacia
+        - Odstran typy, ktore nedavaju zmysel v pravnom kontexte
+        - Dopln chybajuce centralne koncepty, ak mechanizmus nie je pokryty
+
+        # Text
         {text}
         """
 
         # Create and run the agent
         agent = create_agent(
-            model=self.openai_graph_transform,
+            model=self.openai_client,
             response_format=ProviderStrategy(schema=response_schema_for_odd),  # type: ignore[arg-type]
             system_prompt=system_prompt_for_odd
         )
@@ -1103,34 +1115,24 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-        Extract entities and relationships from text.
+    Identifikuj vsetky typy uzlov a typy vztahov v texte.
 
-        ### RULES
-        - only schema types (exact)
-        - no modifications
-        - skip unsupported
-        - most specific types
-        - no diacritics
-        - use only Slovak language
+    # PRAVIDLA
+    - iba typy (nie instancie)
+    - bez diakritiky
+    - pouzi vseobecne, ale presne oznacenia
+    - odstran nezmyselne typy
+    - dopln chybajuce klucove koncepty
+    - pouzivaj iba Slovensky jazyk
 
-        ### INCLUDE
-        taxes, contracts, activities, time, rights, obligations, amounts
+    # ZAMERANIE
+    - zakon, paragraf, odsek
+    - pravne vztahy (povinnost, pravo)
+    - financne a vypoctove mechanizmy
+    - casove entity
 
-        ### LEGAL[[gpt]]
-        - `PravnyPredpis`, `Paragraf`
-        - use `OBSAHUJE`, `PODLA`
-
-        ### SCHEMA
-        Entities: {", ".join(schema.nodes)}
-        Relationships: {", ".join(schema.relationships)}
-
-        ### TEXT
-        {text}
-
-        ### CHECK
-        - valid types only
-        - most specific used
-        - includes legal + detailed data
+    # TEXT
+    {text}
         """
 
         # Create and run the agent

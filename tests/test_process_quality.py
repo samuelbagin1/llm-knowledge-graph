@@ -58,16 +58,25 @@ ls_client = Client()
 # Short, representative Slovak legal text covering the main entity types
 # the pipeline is expected to produce (PravnyPredpis, Paragraf, Platitel, etc.)
 FIXTURE_TEXT = """
-Zákon č. 222/2004 Z. z. o dani z pridanej hodnoty v znení neskorších predpisov.
-§ 54 ods. 2 pism. a) - Platiteľ dane je povinný podať daňové priznanie do 25 dní
-po skončení zdaňovacieho obdobia. Ministerstvo financií Slovenskej republiky vydalo
-usmernenie č. 5/2024. Spoločnosť ABC s.r.o., so sídlom v Bratislave, je registrovaná
-ako platiteľ DPH podľa § 4 zákona č. 222/2004 Z. z.
+222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) 
+príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka 
+platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, 
+určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.
+\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho 
+roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach 
+a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo 
+v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom 
+alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.
 """
 
 # What ODD should minimally return for FIXTURE_TEXT
-EXPECTED_ODD_NODE_TYPES = {"PravnyPredpis", "Paragraf", "Platitel", "Ministerstvo", "Spolocnost"}
-EXPECTED_ODD_REL_TYPES = {"OBSAHUJE", "VYDAL", "PODLA"}
+EXPECTED_ODD_NODE_TYPES = { "ZakonnaZbierka", "Suhlas", "NajomNehnutelnosti", "Odhad", "Koeficient", "Nehnutelnost", "KalendarnyRok",
+        "Odsek", "DanovyPredpis", "Rozdiel", "FinancnaSluzba", "PrevodNehnutelnosti", "Dan",
+        "OdpoctitelnaDan", "StatnyRozpocet", "ZdanovacieObdobie", "PlatitelDane", "Paragraf",
+        "SpravcaDane", "Vypocet", "Cinnost" }
+EXPECTED_ODD_REL_TYPES = { "POUZIJE", "MA_POSTAVENIE", "PRESTANE_BYT", "V_PROSPECH", "NA_TERCHU",
+        "SO_SUHLASOM", "ODKAZUJE_NA", "VYPOCITA", "URCUJE_PODLA", "VYSPORIADA", "URCI", "STANE_SA",
+        "POSKYTUJE", "ZA_OBDOBIE", "UPRAVUJE", "VYKONAVA", "JE_OSLOBODENA_OD" }
 
 # Controlled raw schema with intentional duplicates for refinement testing
 DUPLICATE_ODD_SCHEMA = Schema(

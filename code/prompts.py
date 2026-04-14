@@ -33,17 +33,35 @@ response_schema_for_classification = {
 
 # open domain detection
 system_prompt_for_odd = """
-Si expertný algoritmus na extrakciu typov entít a vzťahov z otvorenej domény. Tvojou úlohou je analyzovať ľubovoľný zadaný text a identifikovať všetky odlišné typy uzlov a typy vzťahov, ktoré sa v ňom nachádzajú, bez ohľadu na doménu alebo tematickú oblasť. Pracuješ bez vopred definovanej schémy — typy môžu byť známe, nové alebo dosiaľ nevídané, pokiaľ sú odôvodnené kontextom.
+Extrahuj TYPY ENTIT (uzlov) a TYPY VZTAHOV z pravneho alebo financneho textu.
 
-PRAVIDLÁ:
-1. Vráť iba abstraktné typy (na úrovni schémy), nie konkrétne inštancie entít.
-2. Pre typy uzlov používaj singulár v PascalCase BEZ DIAKRITIKY (napr. Osoba, Spolocnost, Udalost, nie Spoločnosť alebo Udalosť).
-3. Pre typy vzťahov používaj UPPER_SNAKE_CASE BEZ DIAKRITIKY (napr. PRACUJE_PRE, NACHADZA_SA_V, nie NACHÁDZA_SA_V).
-4. Uprednostňuj všeobecné, elementárne typy uzlov pred príliš špecifickými (napr. Osoba namiesto Matematik).
-5. Uprednostňuj všeobecné, nadčasové typy vzťahov pred momentálnymi (napr. PROFESOR_NA namiesto STAL_SA_PROFESOROM).
-6. Zahrň iba typy jednoznačne podložené textom. Neodvodzuj ani nevymýšľaj typy nad rámec toho, čo text poskytuje.
-7. Výstup udržuj minimálny a zameraný na jasne identifikovateľné vzory.
-8. Všetky extrahované názvy typov uzlov aj vzťahov musia byť BEZ DIAKRITIKY — nahraď znaky s diakritikou ich základnými ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+# PRAVIDLA
+- Extrahuj iba TYPY, nie instancie
+- Pouzi vseobecne, ale rozlisitelne typy
+- Bez diakritiky
+- Uzly: PascalCase | Vztahy: UPPER_SNAKE_CASE
+- Nehalucinuj, zahrn len to, co dava zmysel v pravnom kontexte
+- Vyber spravny vyznam slova (napr. sluzba != sluha)
+- Pouzivaj jedine Slovensky jazyk.
+
+# COVERAGE
+Zachyt VSETKO relevantne:
+- pravne akty: Zakon, Paragraf, Odsek, Rozhodnutie
+- subjekty: Osoba, PravnickaOsoba, Organ, SpravcaDane
+- financne: Dan, Poplatok, Prijem, Zavazok
+- abstrakcie: Povinnost, Pravo, Narok, Sankcia, Lehota
+- mechanizmy: Koeficient, Vypocet, Sadzba
+- cas: ZdanovacieObdobie, KalendarnyRok
+
+# LOGIKA
+- Zachyt aj implicitne koncepty
+- Ak je pojem centralny (opakujuci sa), zahrn ho
+- Minimalizuj duplicity
+- Pouzi konzistentne nazvy
+
+# VZTAHY
+- Pouzi vseobecne vztahy (napr. UPRAVUJE, MA_POVINNOST, MA_PRAVO)
+- Zachyt aj ciel alebo protistranu akcie
 """
 
 

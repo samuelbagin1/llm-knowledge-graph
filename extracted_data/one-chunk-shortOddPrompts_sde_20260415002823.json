@@ -1,0 +1,1045 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Pravnypredpis",
+        "type": "Pravnypredpis",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf 39",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Casoveobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Kalendarny Rok",
+        "type": "Casoveobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Predchadzajuci Kalendarny Rok",
+        "type": "Casoveobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Prislusny Kalendarny Rok",
+        "type": "Casoveobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Skonceny Kalendarny Rok",
+        "type": "Casoveobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+        "type": "Casoveobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Platitel",
+        "type": "Osoba",
+        "properties": {}
+      },
+      {
+        "id": "Spravca Dane",
+        "type": "Organ",
+        "properties": {}
+      },
+      {
+        "id": "Statny Rozpocet",
+        "type": "Institucia",
+        "properties": {}
+      },
+      {
+        "id": "Financne Sluzby Oslobodene Od Dane",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Prilezitostny Prevod Nehnutelnosti",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Prilezitostny Najom Nehnutelnosti",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Koeficient",
+        "type": "Vypocetny mechanizmus",
+        "properties": {}
+      },
+      {
+        "id": "Odpočitatelna Dan",
+        "type": "Dan",
+        "properties": {}
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {}
+      },
+      {
+        "id": "Odpocitana Dan",
+        "type": "Dan",
+        "properties": {}
+      },
+      {
+        "id": "Rozdiel Medzi Odpocitanou Danou A Danou Vypocitanou Podla Prvej Vety",
+        "type": "Vypocetny mechanizmus",
+        "properties": {}
+      },
+      {
+        "id": "Suhlas Spravcu Dane",
+        "type": "Pravo",
+        "properties": {}
+      },
+      {
+        "id": "Povinnost Vypocitat Koeficient",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Povinnost Vypocitat Odpocitatelnu Dan",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Povinnost Vysporiadat Rozdiel",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Pravo Pouzit Koeficient Z Predchadzajuceho Kalendarneho Roka",
+        "type": "Pravo",
+        "properties": {}
+      },
+      {
+        "id": "chunk_0",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+          "page": 58
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Pravnypredpis",
+          "type": "Pravnypredpis",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Pravo Pouzit Koeficient Z Predchadzajuceho Kalendarneho Roka",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "type": "MA_PRAVO",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Povinnost Vypocitat Koeficient",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Povinnost Vypocitat Odpocitatelnu Dan",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Povinnost Vysporiadat Rozdiel",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vypocitat Koeficient",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vypocitat Odpocitatelnu Dan",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vysporiadat Rozdiel",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Pouzit Koeficient Z Predchadzajuceho Kalendarneho Roka",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vypocitat Koeficient",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koeficient",
+          "type": "Vypocetny mechanizmus",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koeficient",
+          "type": "Vypocetny mechanizmus",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpočitatelna Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozdiel Medzi Odpocitanou Danou A Danou Vypocitanou Podla Prvej Vety",
+          "type": "Vypocetny mechanizmus",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financne Sluzby Oslobodene Od Dane",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prilezitostny Prevod Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prilezitostny Najom Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predchadzajuci Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skonceny Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Spravca Dane",
+          "type": "Organ",
+          "properties": {}
+        },
+        "target": {
+          "id": "Suhlas Spravcu Dane",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "type": "SUHLASI_S",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozdiel Medzi Odpocitanou Danou A Danou Vypocitanou Podla Prvej Vety",
+          "type": "Vypocetny mechanizmus",
+          "properties": {}
+        },
+        "target": {
+          "id": "Statny Rozpocet",
+          "type": "Institucia",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis",
+          "type": "Pravnypredpis",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predchadzajuci Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skonceny Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+          "type": "Casoveobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Spravca Dane",
+          "type": "Organ",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Statny Rozpocet",
+          "type": "Institucia",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financne Sluzby Oslobodene Od Dane",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prilezitostny Prevod Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prilezitostny Najom Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koeficient",
+          "type": "Vypocetny mechanizmus",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpočitatelna Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpocitana Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozdiel Medzi Odpocitanou Danou A Danou Vypocitanou Podla Prvej Vety",
+          "type": "Vypocetny mechanizmus",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suhlas Spravcu Dane",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vypocitat Koeficient",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vypocitat Odpocitatelnu Dan",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vysporiadat Rozdiel",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Pouzit Koeficient Z Predchadzajuceho Kalendarneho Roka",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

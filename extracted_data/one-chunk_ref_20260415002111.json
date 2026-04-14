@@ -1,0 +1,173 @@
+{
+  "node_types": [
+    "FinancnaSluzba",
+    "Dan",
+    "UctovneObdobie",
+    "Danovnik",
+    "Koeficient",
+    "DanovyUrad",
+    "Suhlas",
+    "PodnikatelskaCinnost",
+    "OdpocetDane",
+    "Rozdiel",
+    "StatnyRozpocet",
+    "Nehnutelnost",
+    "Najom",
+    "Prevod",
+    "VypocetDane",
+    "Vymeranie",
+    "Vysporiadanie",
+    "StatusPlatitela",
+    "Paragraf"
+  ],
+  "relationship_types": [
+    "JE_OSLOBODENE_OD",
+    "POSKYTOVANE_KYM",
+    "POUZITE_V",
+    "POCAS_OBDOBIA",
+    "POUZIVA",
+    "Z_MINULEHO_OBDOBIA",
+    "ODHADNUTE_PODLA",
+    "ZALOZENE_NA",
+    "SO_SUHLASOM",
+    "VYPOCITAVA",
+    "ODPOCITAVA",
+    "MA_ROZDIEL_S",
+    "VYSPORIADANE_V",
+    "NA_TARCHU",
+    "V_PROSPECH",
+    "PLATI_PRE",
+    "STAVA_SA",
+    "PRESTAVA_BYT",
+    "MA_STATUS"
+  ],
+  "merge_log": {
+    "node_types": {
+      "FinancnaSluzba": [
+        "FinancialService",
+        "ExemptFinancialService"
+      ],
+      "Dan": [
+        "Tax",
+        "InputTax",
+        "DeductibleTax"
+      ],
+      "UctovneObdobie": [
+        "TaxablePeriod",
+        "CalendarYear",
+        "AccountingPeriod"
+      ],
+      "Danovnik": [
+        "Taxpayer"
+      ],
+      "Koeficient": [
+        "Coefficient"
+      ],
+      "DanovyUrad": [
+        "TaxAuthority"
+      ],
+      "Suhlas": [
+        "Consent"
+      ],
+      "PodnikatelskaCinnost": [
+        "BusinessActivity",
+        "OccasionalSupply"
+      ],
+      "OdpocetDane": [
+        "TaxDeduction"
+      ],
+      "Rozdiel": [
+        "Difference"
+      ],
+      "StatnyRozpocet": [
+        "StateBudget"
+      ],
+      "Nehnutelnost": [
+        "RealEstate"
+      ],
+      "Najom": [
+        "Lease",
+        "OccasionalLease"
+      ],
+      "Prevod": [
+        "Transfer",
+        "OccasionalTransfer"
+      ],
+      "VypocetDane": [
+        "TaxCalculation"
+      ],
+      "Vymeranie": [
+        "Assessment"
+      ],
+      "Vysporiadanie": [
+        "Settlement"
+      ],
+      "StatusPlatitela": [
+        "TaxablePersonStatus"
+      ]
+    },
+    "relationship_types": {
+      "JE_OSLOBODENE_OD": [
+        "IS_EXEMPT_FROM"
+      ],
+      "POSKYTOVANE_KYM": [
+        "PROVIDED_BY"
+      ],
+      "POUZITE_V": [
+        "USED_IN"
+      ],
+      "POCAS_OBDOBIA": [
+        "WITHIN_PERIOD",
+        "DURING",
+        "FOR_PERIOD_OF"
+      ],
+      "POUZIVA": [
+        "USES"
+      ],
+      "Z_MINULEHO_OBDOBIA": [
+        "FROM_PREVIOUS_PERIOD"
+      ],
+      "ODHADNUTE_PODLA": [
+        "IF_UNAVAILABLE_CALCULATE_BY_ESTIMATE",
+        "ESTIMATED_BY"
+      ],
+      "ZALOZENE_NA": [
+        "BASED_ON_CHARACTER_OF",
+        "BASED_ON"
+      ],
+      "SO_SUHLASOM": [
+        "WITH_CONSENT_OF"
+      ],
+      "VYPOCITAVA": [
+        "CALCULATES"
+      ],
+      "ODPOCITAVA": [
+        "DEDUCTS"
+      ],
+      "MA_ROZDIEL_S": [
+        "HAS_DIFFERENCE_WITH"
+      ],
+      "VYSPORIADANE_V": [
+        "SETTLED_IN"
+      ],
+      "NA_TARCHU": [
+        "ON_DEBIT_OF"
+      ],
+      "V_PROSPECH": [
+        "IN_FAVOR_OF"
+      ],
+      "PLATI_PRE": [
+        "APPLIES_TO"
+      ],
+      "STAVA_SA": [
+        "BECOMES"
+      ],
+      "PRESTAVA_BYT": [
+        "CEASES_TO_BE"
+      ],
+      "MA_STATUS": [
+        "HAS_STATUS"
+      ]
+    }
+  }
+}

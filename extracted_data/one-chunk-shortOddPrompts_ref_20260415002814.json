@@ -1,0 +1,164 @@
+{
+  "node_types": [
+    "Cinnost",
+    "Dan",
+    "DanovyPredpis",
+    "FinancnaSluzba",
+    "KalendarnyRok",
+    "Koeficient",
+    "NajomNehnutelnosti",
+    "Nehnutelnost",
+    "Odhad",
+    "OdpoctitelnaDan",
+    "Odsek",
+    "Paragraf",
+    "PlatitelDane",
+    "PrevodNehnutelnosti",
+    "Rozdiel",
+    "SpravcaDane",
+    "StatnyRozpocet",
+    "Suhlas",
+    "Vypocet",
+    "ZakonnaZbierka",
+    "ZdanovacieObdobie"
+  ],
+  "relationship_types": [
+    "JE_OSLOBODENA_OD",
+    "MA_POSTAVENIE",
+    "NA_TERCHU",
+    "ODKAZUJE_NA",
+    "POSKYTUJE",
+    "POUZIJE",
+    "PRESTANE_BYT",
+    "SO_SUHLASOM",
+    "STANE_SA",
+    "UPRAVUJE",
+    "URCI",
+    "URCUJE_PODLA",
+    "V_PROSPECH",
+    "VYKONAVA",
+    "VYPOCITA",
+    "VYSPORIADA",
+    "ZA_OBDOBIE"
+  ],
+  "merge_log": {
+    "node_types": {
+      "Cinnost": [
+        "Cinnost"
+      ],
+      "Dan": [
+        "Dan"
+      ],
+      "DanovyPredpis": [
+        "DanovyPredpis"
+      ],
+      "FinancnaSluzba": [
+        "FinancnaSluzba"
+      ],
+      "KalendarnyRok": [
+        "KalendarnyRok"
+      ],
+      "Koeficient": [
+        "Koeficient"
+      ],
+      "NajomNehnutelnosti": [
+        "NajomNehnutelnosti"
+      ],
+      "Nehnutelnost": [
+        "Nehnutelnost"
+      ],
+      "Odhad": [
+        "Odhad"
+      ],
+      "OdpoctitelnaDan": [
+        "OdpoctitelnaDan"
+      ],
+      "Odsek": [
+        "Odsek"
+      ],
+      "Paragraf": [
+        "Paragraf"
+      ],
+      "PlatitelDane": [
+        "PlatitelDane"
+      ],
+      "PrevodNehnutelnosti": [
+        "PrevodNehnutelnosti"
+      ],
+      "Rozdiel": [
+        "Rozdiel"
+      ],
+      "SpravcaDane": [
+        "SpravcaDane"
+      ],
+      "StatnyRozpocet": [
+        "StatnyRozpocet"
+      ],
+      "Suhlas": [
+        "Suhlas"
+      ],
+      "Vypocet": [
+        "Vypocet"
+      ],
+      "ZakonnaZbierka": [
+        "ZakonnaZbierka"
+      ],
+      "ZdanovacieObdobie": [
+        "ZdanovacieObdobie"
+      ]
+    },
+    "relationship_types": {
+      "JE_OSLOBODENA_OD": [
+        "JE_OSLOBODENA_OD"
+      ],
+      "MA_POSTAVENIE": [
+        "MA_POSTAVENIE"
+      ],
+      "NA_TERCHU": [
+        "NA_TERCHU"
+      ],
+      "ODKAZUJE_NA": [
+        "ODKAZUJE_NA"
+      ],
+      "POSKYTUJE": [
+        "POSKYTUJE"
+      ],
+      "POUZIJE": [
+        "POUZIJE"
+      ],
+      "PRESTANE_BYT": [
+        "PRESTANE_BYT"
+      ],
+      "SO_SUHLASOM": [
+        "SO_SUHLASOM"
+      ],
+      "STANE_SA": [
+        "STANE_SA"
+      ],
+      "UPRAVUJE": [
+        "UPRAVUJE"
+      ],
+      "URCI": [
+        "URCI"
+      ],
+      "URCUJE_PODLA": [
+        "URCUJE_PODLA"
+      ],
+      "V_PROSPECH": [
+        "V_PROSPECH"
+      ],
+      "VYKONAVA": [
+        "VYKONAVA"
+      ],
+      "VYPOCITA": [
+        "VYPOCITA"
+      ],
+      "VYSPORIADA": [
+        "VYSPORIADA"
+      ],
+      "ZA_OBDOBIE": [
+        "ZA_OBDOBIE"
+      ]
+    }
+  }
+}

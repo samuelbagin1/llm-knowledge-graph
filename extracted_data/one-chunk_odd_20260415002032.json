@@ -1,0 +1,126 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "FinancialService",
+          "Tax",
+          "TaxablePeriod",
+          "CalendarYear",
+          "Taxpayer",
+          "Coefficient",
+          "TaxAuthority",
+          "Consent",
+          "BusinessActivity",
+          "InputTax",
+          "DeductibleTax",
+          "TaxDeduction",
+          "Difference",
+          "StateBudget",
+          "AccountingPeriod",
+          "RealEstate",
+          "Lease",
+          "Transfer",
+          "ExemptFinancialService",
+          "OccasionalSupply",
+          "OccasionalTransfer",
+          "OccasionalLease",
+          "TaxCalculation",
+          "Assessment",
+          "Settlement",
+          "TaxablePersonStatus"
+        ],
+        "relationships": [
+          "IS_EXEMPT_FROM",
+          "PROVIDED_BY",
+          "USED_IN",
+          "WITHIN_PERIOD",
+          "DURING",
+          "USES",
+          "FROM_PREVIOUS_PERIOD",
+          "IF_UNAVAILABLE_CALCULATE_BY_ESTIMATE",
+          "ESTIMATED_BY",
+          "BASED_ON_CHARACTER_OF",
+          "WITH_CONSENT_OF",
+          "CALCULATES",
+          "BASED_ON",
+          "DEDUCTS",
+          "HAS_DIFFERENCE_WITH",
+          "SETTLED_IN",
+          "ON_DEBIT_OF",
+          "IN_FAVOR_OF",
+          "APPLIES_TO",
+          "BECOMES",
+          "CEASES_TO_BE",
+          "FOR_PERIOD_OF",
+          "HAS_STATUS"
+        ]
+      }
+    ]
+  },
+  {
+    "chunk_texts": [
+      {
+        "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+        "page": 58
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "DeductibleTax",
+        "Assessment",
+        "TaxablePeriod",
+        "Coefficient",
+        "ExemptFinancialService",
+        "Consent",
+        "StateBudget",
+        "InputTax",
+        "OccasionalLease",
+        "AccountingPeriod",
+        "Tax",
+        "CalendarYear",
+        "BusinessActivity",
+        "RealEstate",
+        "TaxablePersonStatus",
+        "TaxDeduction",
+        "TaxAuthority",
+        "Taxpayer",
+        "OccasionalSupply",
+        "TaxCalculation",
+        "Settlement",
+        "Difference",
+        "OccasionalTransfer",
+        "FinancialService",
+        "Lease",
+        "Transfer"
+      ],
+      "relationships": [
+        "DURING",
+        "CALCULATES",
+        "DEDUCTS",
+        "HAS_STATUS",
+        "WITHIN_PERIOD",
+        "USED_IN",
+        "HAS_DIFFERENCE_WITH",
+        "SETTLED_IN",
+        "BECOMES",
+        "PROVIDED_BY",
+        "CEASES_TO_BE",
+        "BASED_ON_CHARACTER_OF",
+        "WITH_CONSENT_OF",
+        "FOR_PERIOD_OF",
+        "USES",
+        "APPLIES_TO",
+        "IS_EXEMPT_FROM",
+        "IN_FAVOR_OF",
+        "ESTIMATED_BY",
+        "BASED_ON",
+        "IF_UNAVAILABLE_CALCULATE_BY_ESTIMATE",
+        "ON_DEBIT_OF",
+        "FROM_PREVIOUS_PERIOD"
+      ]
+    }
+  }
+]

@@ -39,20 +39,27 @@ from langchain_core.messages import HumanMessage, SystemMessage
 # Default node type when type is missing or empty
 DEFAULT_NODE_TYPE = "Entity"
 
-_STRIP_STRINGS_RE = re.compile(r'"[^"]*"|\'[^\']*\'')
-_CYPHER_WRITE_RE = re.compile(r'\b(CREATE|MERGE|DELETE|DETACH|SET|REMOVE)\b', re.IGNORECASE)
+_STRIP_COMMENTS_LINE = re.compile(r'//.*$', re.MULTILINE)
+_STRIP_COMMENTS_BLOCK = re.compile(r'/\*.*?\*/', re.DOTALL)
+_STRIP_STRINGS_RE = re.compile(r'"[^"]*"|\'[^\']*\'|`[^`]*`')
+_CYPHER_WRITE_RE = re.compile(
+    r'\b(CREATE|MERGE|DELETE|DETACH|SET|REMOVE|FOREACH|DROP|ALTER|LOAD)\b',
+    re.IGNORECASE,
+)
+_CYPHER_CALL_RE = re.compile(r'\bCALL\b', re.IGNORECASE)
 
 def is_read_only_cypher(query: str) -> bool:
-    """Raise ValueError if query contains a write command, otherwise return True.
+    sanitized = _STRIP_COMMENTS_BLOCK.sub("", query)
+    sanitized = _STRIP_COMMENTS_LINE.sub("", sanitized)
+    sanitized = _STRIP_STRINGS_RE.sub("", sanitized)
 
-    Blocks: CREATE, MERGE, DELETE, DETACH, SET, REMOVE.
-    Strips quoted string literals first so keywords inside WHERE string values
-    (e.g. WHERE n.name = "CREATE") are not flagged.
-    """
-    sanitized = _STRIP_STRINGS_RE.sub("", query)
     m = _CYPHER_WRITE_RE.search(sanitized)
     if m:
-        raise ValueError(f"Cypher query contains forbidden write keyword: '{m.group().upper()}'")
+        raise ValueError(f"Forbidden write keyword: '{m.group().upper()}'")
+
+    if _CYPHER_CALL_RE.search(sanitized):
+        raise ValueError("CALL procedures are not allowed in read-only mode")
+
     return True
 
 
@@ -1017,56 +1024,34 @@ class PDFGraphRAG:
         print("SCHEMA REFINEMENT")
         
         user_prompt = f"""
-        Spresni nasledujúcu surovú schému vytvorenú detekciou z otvorenej domény. Tvojím cieľom je vytvoriť čistú, konzistentnú a deduplikovanú schému vhodnú na extrakciu entít a vzťahov riadenú schémou.
+        # ÚLOHA
+        Spresni surovú schému detegovanú z otvorenej domény a integruj ju so základnou ontológiou (ak je dostupná).
 
-        # REŽIM SPRESŇOVANIA
-        Dostávaš dva vstupy:
-        1. Surovú schému z detekcie z otvorenej domény.
-        2. Základnú ontológiu (existujúcu schému), ak je dostupná.
+        # KONTEXTOVÉ PRÍDAVKY
+        - Do zoznamu uzlov (node_types) POVINNE pridaj nový typ: **Paragraf**.
 
-        {"""
-        Ak je poskytnutá základná ontológia:
-        - Zarovnaj surovú schému na základnú ontológiu tam, kde existuje jasný sémantický prekryv. Mapuj surové typy na existujúce základné typy, keď sú ekvivalentné alebo takmer synonymné.
-        - Zachovaj všetky surové typy, ktoré sú skutočne odlišné a nie sú zastúpené v základnej ontológii. Pridaj ich do spresnenej schémy ako nové typy.
-        - Nenúť odlišné surové typy do typov základnej ontológie. Zlučuj iba vtedy, keď je sémantické zarovnanie jasné.
-        - Základná ontológia má prednosť v pomenovaniach: ak sa surový typ zlučuje so základným typom, preberaj označenie základnej ontológie.
-        
-        """ if existing_schema else """ 
-        
-        Ak nie je poskytnutá žiadna základná ontológia:
-        - Spresni surovú schému samostatne zlúčením sémanticky podobných typov a normalizáciou označení.
-        """}
-        
-        # PRIDANIE
-        Medzi uzly pridaj novy typ: Paragraf
+        # POKYNY PRE Sémantiku
+        - **Nezlučuj agresívne**: Ak existuje nuansa (napr. Banka vs. StatnyOrgan), ponechaj ich oddelené, pokiaľ základná ontológia neurčuje inak.
+        - **Dôsledná ASCII normalizácia**: Skontroluj, či vo výsledku neostalo žiadne "š, č, ž, ý, á, í, é, ú, ä, ň, ť, ď, ľ, ô".
 
-        # PRAVIDLÁ
-        - Ide o ľahký spresňovací prechod. Zlučuj iba typy s jasným sémantickým prekryvom.
-        - Ak sú typy odlišné, ponechaj ich — neprekonsolidovávaj.
-        - Pri zlučovaní uprednostňuj všeobecnejšie a znovupoužiteľnejšie označenie.
-        - Nevymýšľaj typy, ktoré sa nenachádzajú ani v surovej schéme, ani v základnej ontológii.
-        - Neodstraňuj skutočne odlišné typy kvôli minimalizácii schémy.
-        - Všetky názvy typov (uzlov aj vzťahov) píš BEZ DIAKRITIKY — nahraď znaky s diakritikou ich ASCII ekvivalentmi (napr. č→c, š→s, ž→z, á→a, é→e, í→i, ó→o, ú→u, ý→y, ň→n, ť→t, ď→d, ľ→l, ô→o).
+        # PROCES UVAŽOVANIA (Chain of Thought)
+        Pred vygenerovaním JSONu vykonaj internú analýzu:
+        1. Identifikuj duplicity spôsobené preklepmi alebo diakritikou (napr. "Dan" a "Daň").
+        2. Porovnaj surové dáta so základnou ontológiou.
+        3. Skontroluj, či sa nepokúšaš zlúčiť nesúvisiace ontologické kategórie (napr. dokument a osoba).
+        4. Over, či sú všetky vzťahy v UPPER_SNAKE_CASE.
 
-        Pred vytvorením odpovede prejdi nasledujúcim uvažovaním:
-        1. Prezri všetky typy uzlov oproti základnej ontológii (ak je poskytnutá). Identifikuj sémantické zhody, prekryvy a skutočne nové typy.
-        2. Prezri všetky typy vzťahov oproti základnej ontológii (ak je poskytnutá). Identifikuj synonymné, takmer duplicitné alebo už pokryté typy oproti odlišným novým.
-        3. Zlučuj iba tam, kde je sémantická podobnosť jasná. Odlišné typy ponechaj bez zmeny.
-        4. Over krížovú konzistenciu: zabezpeč, aby každý typ uzla, ktorý sa podieľa na vzťahu, bol prítomný vo výslednom zozname typov uzlov.
-        5. Zdokumentuj každé rozhodnutie o zlúčení v merge_log s kanonickým označením ako kľúčom a pôvodnými označeniami ako hodnotami.
+        # VSTUPNÉ DÁTA
+        ## ZÁKLADNÁ ONTOLÓGIA
+        ### Typy uzlov:
+        {", ".join(existing_schema.nodes) if existing_schema else "Neposkytnuta"}
+        ### Typy vzťahov:
+        {", ".join(existing_schema.relationships) if existing_schema else "Neposkytnute"}
 
-        # ZÁKLADNÁ ONTOLÓGIA
-        ## Typy uzlov:
-        {", ".join(existing_schema.nodes) if existing_schema else "Neposkytnutá"}
-
-        ## Typy vzťahov:
-        {", ".join(existing_schema.relationships) if existing_schema else "Neposkytnuté"}
-
-        # SCHÉMA DETEGOVANÁ Z OTVORENEJ DOMÉNY
-        ## Typy uzlov:
+        ## SUROVÁ SCHÉMA (DETEKCIA)
+        ### Typy uzlov:
         {", ".join(odd_schema.nodes)}
-
-        ## Typy vzťahov:
+        ### Typy vzťahov:
         {", ".join(odd_schema.relationships)}
         """
 

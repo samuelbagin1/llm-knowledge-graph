@@ -186,14 +186,16 @@ class PDFGraphRAG:
     def __init__(self,
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str,
                  openai_api_key: str | None = None, google_api_key: str | None = None,
-                 claude_api_key: str | None = None):
+                 claude_api_key: str | None = None,
+                 database: str | None = None):
         
         
         self.graph = Neo4jGraph(
             url=neo4j_uri,
             username=neo4j_user,
             password=neo4j_password,
-            refresh_schema=False
+            database=database,
+            refresh_schema=False,
         )
 
         # Initialize embeddings first - needed for vector stores
@@ -1818,20 +1820,29 @@ class PDFGraphRAG:
 
     # ---------------- INTERACTIVE QUESTIONING ----------------
 
-    def query(self):
-        """KG-GPT 3-stage pipeline: Segment → Retrieve → Infer."""
+    def query(self, question: str | None = None, verbose: bool = True) -> str:
+        """KG-GPT 3-stage pipeline: Segment → Retrieve → Infer.
 
-        question = input("Enter your question: ")
+        Args:
+            question: the user question. If None, read from stdin (interactive mode).
+            verbose: print per-stage progress.
 
-        if question == '-h':
-            print("Help Instructions: \n - To exit, type 'exit' \n - To view graph schema, type '-s' \n")
-            return
-        elif question == '-s':
-            print(self.get_graph_schema())
-            return
-        elif question.lower() == 'exit':
-            print("Exiting...")
-            return
+        Returns:
+            The final answer string (also printed in interactive mode).
+        """
+        interactive = question is None
+        if interactive:
+            question = input("Enter your question: ")
+            if question == '-h':
+                print("Help Instructions: \n - To exit, type 'exit' \n - To view graph schema, type '-s' \n")
+                return ""
+            elif question == '-s':
+                schema = self.get_graph_schema()
+                print(schema)
+                return str(schema)
+            elif question.lower() == 'exit':
+                print("Exiting...")
+                return ""
 
         # Stage 1: Sentence Segmentation
         sub_sentences = self.segment_question(question)
@@ -1841,9 +1852,11 @@ class PDFGraphRAG:
         all_node_ids: List[str] = []
 
         for sub in sub_sentences:
-            print(f"\nStage 2 (Agent): Retrieving evidence for: '{sub.text}'")
+            if verbose:
+                print(f"\nStage 2 (Agent): Retrieving evidence for: '{sub.text}'")
             triples, node_ids = self.search_agent_retrieve(sub.text, sub.entities)
-            print(f"  Agent found {len(triples)} triples, {len(node_ids)} nodes")
+            if verbose:
+                print(f"  Agent found {len(triples)} triples, {len(node_ids)} nodes")
             all_triples.extend(triples)
             all_node_ids.extend(node_ids)
 
@@ -1852,4 +1865,6 @@ class PDFGraphRAG:
 
         # Stage 3: Inference
         final_answer = self.answer(question, all_triples, chunks)
-        print(f"\n{final_answer}")
+        if interactive:
+            print(f"\n{final_answer}")
+        return final_answer

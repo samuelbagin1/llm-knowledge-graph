@@ -1072,7 +1072,14 @@ class PDFGraphRAG:
 
         print(data)
 
-        return data
+        if not isinstance(data, dict):
+            data = data.model_dump() if hasattr(data, "model_dump") else dict(data)
+
+        schema = self._convert_to_schema(data)
+        if not schema.nodes and not schema.relationships:
+            raise ValueError(f"Schema refinement returned empty schema. Raw response: {data}")
+        return schema
+
 
 
     

@@ -606,58 +606,81 @@ def run_sde(inputs: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--run",
+        choices=["odd", "ref", "sde"],
+        default=None,
+        help="Run only one stage. Omit to run all three.",
+    )
+    args = parser.parse_args()
+    run = args.run  # None → run all
+
+    odd_ds = ref_ds = sde_ds = None
+
     print("Setting up LangSmith datasets...")
-    odd_ds = create_odd_dataset()
-    ref_ds = create_ref_dataset()
-    sde_ds = create_sde_dataset()
+    if run in (None, "odd"):
+        odd_ds = create_odd_dataset()
+    if run in (None, "ref"):
+        ref_ds = create_ref_dataset()
+    if run in (None, "sde"):
+        sde_ds = create_sde_dataset()
 
-    print("\n--- ODD evaluation ---")
-    odd_results = evaluate(
-        run_odd,
-        data=odd_ds.name,
-        evaluators=[
-            eval_odd_no_diacritics,
-            eval_odd_node_format,
-            eval_odd_rel_format,
-            eval_odd_not_empty,
-            eval_odd_recall,
-            eval_odd_precision,
-            eval_odd_no_instances,
-        ],
-        experiment_prefix="odd",
-        client=ls_client,
-    )
-    print(odd_results)
+    if run in (None, "odd"):
+        assert odd_ds is not None
+        print("\n--- ODD evaluation ---")
+        odd_results = evaluate(
+            run_odd,
+            data=odd_ds.name,
+            evaluators=[
+                eval_odd_no_diacritics,
+                eval_odd_node_format,
+                eval_odd_rel_format,
+                eval_odd_not_empty,
+                eval_odd_recall,
+                eval_odd_precision,
+                eval_odd_no_instances,
+            ],
+            experiment_prefix="odd",
+            client=ls_client,
+        )
+        print(odd_results)
 
-    print("\n--- Refinement evaluation ---")
-    ref_results = evaluate(
-        run_refinement,
-        data=ref_ds.name,
-        evaluators=[
-            eval_ref_paragraf_present,
-            eval_ref_no_new_types,
-            eval_ref_merge_log_consistency,
-            eval_ref_no_diacritics,
-            eval_ref_distinct_not_merged,
-        ],
-        experiment_prefix="refinement",
-        client=ls_client,
-    )
-    print(ref_results)
+    if run in (None, "ref"):
+        assert ref_ds is not None
+        print("\n--- Refinement evaluation ---")
+        ref_results = evaluate(
+            run_refinement,
+            data=ref_ds.name,
+            evaluators=[
+                eval_ref_paragraf_present,
+                eval_ref_no_new_types,
+                eval_ref_merge_log_consistency,
+                eval_ref_no_diacritics,
+                eval_ref_distinct_not_merged,
+            ],
+            experiment_prefix="refinement",
+            client=ls_client,
+        )
+        print(ref_results)
 
-    print("\n--- SDE evaluation ---")
-    sde_results = evaluate(
-        run_sde,
-        data=sde_ds.name,
-        evaluators=[
-            eval_sde_schema_compliance_nodes,
-            eval_sde_schema_compliance_rels,
-            eval_sde_referential_integrity,
-            eval_sde_node_ids_no_diacritics,
-            eval_sde_in_chunk_coverage,
-            eval_sde_entity_recall,
-        ],
-        experiment_prefix="sde",
-        client=ls_client,
-    )
-    print(sde_results)
+    if run in (None, "sde"):
+        assert sde_ds is not None
+        print("\n--- SDE evaluation ---")
+        sde_results = evaluate(
+            run_sde,
+            data=sde_ds.name,
+            evaluators=[
+                eval_sde_schema_compliance_nodes,
+                eval_sde_schema_compliance_rels,
+                eval_sde_referential_integrity,
+                eval_sde_node_ids_no_diacritics,
+                eval_sde_in_chunk_coverage,
+                eval_sde_entity_recall,
+            ],
+            experiment_prefix="sde",
+            client=ls_client,
+        )
+        print(sde_results)

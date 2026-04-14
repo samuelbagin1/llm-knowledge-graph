@@ -1,0 +1,166 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "Zakon",
+          "Platitel",
+          "Obdobie",
+          "Dan",
+          "Nehnutelnost",
+          "Rozpocet"
+        ],
+        "relationships": [
+          "VYPOCITAVA",
+          "URCUJE",
+          "POSKYTUJE",
+          "PREVADZA",
+          "VYSPORADAVA",
+          "STAL_SA",
+          "PRESTAL_BYT"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "Tovar",
+          "ClennyStat",
+          "Obdobie"
+        ],
+        "relationships": [
+          "MA",
+          "UPLATNUJE",
+          "POTVRDUJE",
+          "NADOBUDA",
+          "VYHOTOVUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "MA",
+          "VYKONAVA",
+          "POTVRDUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Obdobie",
+          "Platitel",
+          "Faktura",
+          "DanovaPovinnost"
+        ],
+        "relationships": [
+          "MA_PRAVO_NA",
+          "VYTVARA",
+          "PODAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "DopravnyProstriedok",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "DODAVA",
+          "MA_PRAVO_ODPOCITAT",
+          "POVAZOVANA_K",
+          "POUZIVA_NA"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Majetok",
+          "Obdobie",
+          "InvesticnyMajetek",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "POUZIVA_NA",
+          "MA",
+          "MA_PRAVO_NA",
+          "ZAHŔNA",
+          "VYŽADUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Skutocnost",
+          "ZakladDane",
+          "Tovar",
+          "Sluha"
+        ],
+        "relationships": [
+          "UPLATNUJE_ODPOCITANIE",
+          "OPRAVUJE_ODPOCITANU_DAN",
+          "MA_PRAVO_OPRAVIT",
+          "POVINNOST_OPRAVIT"
+        ]
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "Zakon",
+        "ZdanovacieObdobie",
+        "DanovaPovinnost",
+        "Nehnutelnost",
+        "Skutocnost",
+        "ClennyStat",
+        "Majetok",
+        "Sluha",
+        "DopravnyProstriedok",
+        "Obdobie",
+        "Rozpocet",
+        "InvesticnyMajetek",
+        "Faktura",
+        "Platitel",
+        "Doklad",
+        "Tovar",
+        "Osoba",
+        "Sluzba",
+        "ZakladDane",
+        "Dan"
+      ],
+      "relationships": [
+        "OPRAVUJE_ODPOCITANU_DAN",
+        "PRESTAL_BYT",
+        "DODAVA",
+        "PODAVA",
+        "PREVADZA",
+        "NADOBUDA",
+        "MA_PRAVO_NA",
+        "ZAHŔNA",
+        "STAL_SA",
+        "VYPOCITAVA",
+        "VYKONAVA",
+        "POUZIVA_NA",
+        "POTVRDUJE",
+        "POVAZOVANA_K",
+        "UPLATNUJE_ODPOCITANIE",
+        "MA",
+        "URCUJE",
+        "MA_PRAVO_ODPOCITAT",
+        "VYTVARA",
+        "POVINNOST_OPRAVIT",
+        "UPLATNUJE",
+        "MA_PRAVO_OPRAVIT",
+        "POSKYTUJE",
+        "VYSPORADAVA",
+        "VYHOTOVUJE",
+        "VYŽADUJE"
+      ]
+    }
+  }
+]

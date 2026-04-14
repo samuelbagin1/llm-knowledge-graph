@@ -1,0 +1,164 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "Zakon",
+          "Platitel",
+          "Obdobie",
+          "Dan",
+          "Nehnutelnost",
+          "Rozpocet"
+        ],
+        "relationships": [
+          "VYPOCITAVA",
+          "URCUJE",
+          "POSKYTUJE",
+          "PREVADZA",
+          "VYSPORADAVA",
+          "STAL_SE",
+          "PRESTAL_BYT"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "Tovar",
+          "Clny",
+          "ClenskyStat"
+        ],
+        "relationships": [
+          "MA",
+          "UPLATNUJE",
+          "POTVRDUJE",
+          "NADOBUDA",
+          "VYHOTOVUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "MA",
+          "VYKONAVA",
+          "POTVRDUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Obdobie",
+          "Platitel",
+          "Faktura",
+          "DanovaPovinnost"
+        ],
+        "relationships": [
+          "MA_PRAVO_NA",
+          "VZNIKLO_V",
+          "PODAVA",
+          "VYTVARA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "DopravnyProstriedok",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "DODAVA",
+          "MA_PRAVO_ODPOCITAT",
+          "POVAZOVANA_K",
+          "VZNIKA_V_CASE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Majetok",
+          "Tovar",
+          "Sluzba",
+          "Obdobie",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "POUZIVA",
+          "MA",
+          "VZNIKLO",
+          "UPLATNUJE",
+          "NASTAVA"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Skutocnost",
+          "Zakon"
+        ],
+        "relationships": [
+          "MA_PRAVO",
+          "POVINNOST",
+          "VYPLYNULA_Z"
+        ]
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "Skutocnost",
+        "Doklad",
+        "Dan",
+        "Zakon",
+        "Clny",
+        "Nehnutelnost",
+        "Majetok",
+        "Osoba",
+        "Faktura",
+        "ClenskyStat",
+        "Sluzba",
+        "Rozpocet",
+        "Platitel",
+        "DanovaPovinnost",
+        "ZdanovacieObdobie",
+        "DopravnyProstriedok",
+        "Obdobie",
+        "Tovar"
+      ],
+      "relationships": [
+        "MA",
+        "URCUJE",
+        "POSKYTUJE",
+        "NADOBUDA",
+        "MA_PRAVO_NA",
+        "MA_PRAVO_ODPOCITAT",
+        "POUZIVA",
+        "VYSPORADAVA",
+        "VZNIKLO",
+        "VYHOTOVUJE",
+        "VZNIKA_V_CASE",
+        "VYPOCITAVA",
+        "VYPLYNULA_Z",
+        "POTVRDUJE",
+        "DODAVA",
+        "VZNIKLO_V",
+        "PODAVA",
+        "POVINNOST",
+        "MA_PRAVO",
+        "VYKONAVA",
+        "VYTVARA",
+        "PRESTAL_BYT",
+        "POVAZOVANA_K",
+        "NASTAVA",
+        "UPLATNUJE",
+        "STAL_SE",
+        "PREVADZA"
+      ]
+    }
+  }
+]

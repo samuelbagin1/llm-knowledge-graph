@@ -6,7 +6,7 @@ from typing import List
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 
 
-def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data", name: str = ""):
+def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data", name: str = "", chunks: list = []):
     os.makedirs(output_dir, exist_ok=True)
 
     schemas = []
@@ -21,6 +21,13 @@ def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data", n
         
     output = []
     output.append({"chunked": schemas})
+    
+    chunk_texts = []
+    for chunk in chunks:
+        chunk_text = {"text": chunk.page_content, "page": chunk.metadata.get("page", 0)}
+        chunk_texts.append(chunk_text)
+        
+    output.append({"chunk_texts": chunk_texts})
 
     merged = {
         "nodes": list(set(all_nodes)),
@@ -28,7 +35,7 @@ def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data", n
     }
     output.append({"nested": merged})
 
-    name = f"{name}_schemas_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    name = f"{name}_odd_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
 
     with open(os.path.join(output_dir, name), "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)  # ensure_ascii=False
@@ -47,7 +54,7 @@ def refinement_to_json(data, output_dir: str = "./extracted_data", name: str = "
         },
     }
 
-    name = f"{name}_refinement_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    name = f"{name}_ref_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
 
     with open(os.path.join(output_dir, name), "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)

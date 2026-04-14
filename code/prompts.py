@@ -159,84 +159,44 @@ response_schema_for_schema_refinement = {
 
 # schema driven extraction
 system_prompt_for_sde = """
-Si expertny algoritmus na extrakciu znalostnych grafov. Tvojou ulohou je extrahovat pomenovane entity (uzly) a vztahy z textu podla poskytnutej ontologickej schemy.
+Extract a knowledge graph strictly using the provided schema.
 
-## KRITICKE PRAVIDLO 1 - STRIKTNE DODRZANIE SCHEMY
-Pouzivaj VYLUCNE typy entit a typy vztahov, ktore su PRESNE VYMENOVANE v poskytnutej scheme.
+### RULES
+- Use ONLY exact schema types (entities + relationships).
+- NO renaming, NO variations.
+- If type not available → use closest OR skip.
+- Prefer MOST SPECIFIC type.
+- Use only Slovak language.
 
-### Co to znamena konkretne:
-- AK chces vytvorit uzol s typom, ktory NIE JE v zozname povolenych typov entit, NEVYTVARAJ ho. Namiesto toho:
-  1. Najdi semanticky najbizsi povoleny typ zo schemy a pouzi ten.
-  2. Ak ziadny povoleny typ nesedi, entitu VYNECHAJ.
-- AK chces vytvorit vztah s typom, ktory NIE JE v zozname povolenych typov vztahov, NEVYTVARAJ ho. Namiesto toho:
-  1. Najdi semanticky najbizsi povoleny typ zo schemy a pouzi ten.
-  2. Ak ziadny povoleny typ nesedi, vztah VYNECHAJ.
-- NIKDY nemodifikuj nazvy typov (nepridavaj sufixy, prefixy, predlozky ani ine zmeny). Pouzivaj ich PRESNE tak, ako su uvedene v scheme.
+### COVERAGE
+Extract ALL:
+taxes, fees, laws (`PravnyPredpis`), documents, activities (`Cinnost`),
+time (`CasoveObdobie`), rights, obligations, amounts.
 
-### Priklady zakazaneho spravania:
-- Schema obsahuje "REGISTRUJE" → nepouzivaj "REGISTRUJE_PRE" ani "ZAREGISTRUJE_PRE"
-- Schema obsahuje "PLATI" → nepouzivaj "PLATI_ZA"
-- Schema obsahuje "PODAVA" → nepouzivaj "PODAVA_ZIADOST"
-- Schema obsahuje "MA_IDENTIFIKATOR" → nepouzivaj "MA_IDENTIFIKACNE_CISLO"
-- Schema obsahuje "OBSAHUJE" → nepouzivaj "ZAHRNUJE"
-- Schema obsahuje "Stat" → nepouzivaj "Clenskystat" ani "Statnyorgan"
-- Schema obsahuje "Vozidlo" → nepouzivaj "Dopravnyprostriedok"
-- Schema obsahuje "CasoveObdobie" → nepouzivaj "Casovyusek"
-- Schema obsahuje "Portal" → nepouzivaj "Webovesidlo"
+### LEGAL
+- laws → `PravnyPredpis`
+- sections → `Paragraf`
+- `PravnyPredpis` -[OBSAHUJE]-> `Paragraf`
+- entity -[PODLA]-> `Paragraf` (if referenced)
 
-## KRITICKE PRAVIDLO 2 - MAXIMALNA DETAILNOST EXTRAKCIE
-Extrahuj VSETKY relevantne entity a vztahy z textu, nie len hlavne subjekty. Neobmedzuj sa na povrchnu extrakciu.
+### NODES
+- ID = full readable name (not numeric only)
+- properties only if explicit
+- unify duplicates (coreference)
 
-### Povinne extrahuj aj:
-- **Dane, poplatky, odvody** → pouzi prislusny typ zo schemy (napr. `Dan`, `Odpocet`, `FinancnyProstriedok`)
-- **Zmluvy, predpisy, zakony** → pouzi `PravnyPredpis` pre zakony a zbierky zakonov, `Dokument` pre zmluvy a ine pisomnosti
-- **Cinnosti a procesy** → pouzi `Cinnost` (napr. podnikanie, registracia, dodanie)
-- **Casove udaje** → pouzi `CasoveObdobie` (napr. kalendarny rok, zdanovacie obdobie)
-- **Prava a povinnosti** → pouzi `Pravo`, `Povinnost` alebo iny prislusny typ zo schemy
-- **Sumy, sadzby, hodnoty** → pouzi `Hodnota`, `Mena` alebo iny prislusny typ
+### RELATIONSHIPS
+- only allowed types
+- correct direction
+- exact match required
 
-### Pouzivaj VZDY najspecifickejsi povoleny typ zo schemy:
-- Ak schema obsahuje `InvesticnyMajetok`, pouzi ho namiesto vseobecneho `Majetok`
-- Ak schema obsahuje `PravnyPredpis`, pouzi ho pre zakony namiesto vseobecneho `Dokument`
-- Ak schema obsahuje `Platitel`, pouzi ho namiesto vseobecneho `Osoba`
-- Vzdy preferuj specialny typ pred vseobecnym, ak je k dispozicii v scheme
+### FORMAT
+- NO DIACRITICS
 
-## KRITICKE PRAVIDLO 3 - EXTRAKCIA LEGISLATIVNEJ STRUKTURY
-Pri pravnych textoch extrahuj aj vnutornu strukturu zakona:
-
-- **Zakony a zbierky zakonov** extrahuj ako `PravnyPredpis`
-- **Konkretne paragrafy, odseky a pismenka** (napr. § 54 ods. 2 pism. a) extrahuj ako samostatne entity typu `Paragraf`
-- **Prepoj paragrafy so zakonom** pomocou vztahu `OBSAHUJE`: PravnyPredpis -> OBSAHUJE -> Paragraf
-- **Prepoj entity s paragrafmi** pomocou vztahu `PODLA` alebo ineho vhodneho vztahu zo schemy, ak sa entita definuje alebo odkazuje na konkretny paragraf
-
-Priklad:
-- "Zakon 222/2004 Z. z." → typ: `PravnyPredpis`, id: "Zakon 222/2004 Z. z."
-- "§ 54 ods. 2 pism. a)" → typ: `Paragraf`, id: "§ 54 ods. 2 pism. a)"
-- Vztah: PravnyPredpis("Zakon 222/2004 Z. z.") -[OBSAHUJE]-> Polozka("§ 54 ods. 2 pism. a)")
-
-## Extrakcia uzlov
-- **Konzistencia oznaceni**: Vzdy pouzivaj PRESNE typy entit zo schemy.
-- **ID uzlov**: Pouzi najuplnejsi ludsky citatelny nazov alebo identifikator najdeny v texte. Nikdy nepouzivaj cele cisla ako ID uzlov.
-- **Vlastnosti**: Zahrn vlastnosti iba vtedy, ked su explicitne uvedene v texte.
-
-## Extrakcia vztahov
-- Pouzivaj IBA typy vztahov z poskytnutej schemy - PRESNE tak, ako su napisane.
-- Zabezpec spravnu smerovost: pociatocny uzol a koncovy uzol musia zodpovedat semantickemu smeru vztahu.
-- PRED zapisanim kazdeho vztahu over, ze jeho typ sa PRESNE zhoduje s niektorym z povolenych typov.
-
-## Riesenie koreferencie
-- Ak je entita spomenuta viackrat pod roznymi nazvami alebo zamenami, vzdy ju rozlis na najuplnejsi identifikator ako ID uzla.
-- Udrzuj konzistenciu napriec vsetkymi odkazmi na tu istu entitu.
-
-## Bez diakritiky
-Vsetky extrahovane hodnoty — ID uzlov, nazvy, vlastnosti, hodnoty vztahov — musia byt BEZ DIAKRITIKY (napr. c→c, s→s, z→z, a→a, e→e, i→i, o→o, u→u, y→y, n→n, t→t, d→d, l→l, o→o).
-
-## Postup pred finalnym vystupom
-Pred tym, nez vydas finalny JSON:
-1. Prejdi KAZDY uzol a over, ze jeho typ je PRESNE v zozname povolenych typov entit. Ak nie, nahrad ho najblizsim povolenym alebo ho odstran.
-2. Prejdi KAZDY vztah a over, ze jeho typ je PRESNE v zozname povolenych typov vztahov. Ak nie, nahrad ho najblizsim povolenym alebo ho odstran.
-3. Over, ze si pouzil najspecifickejsi povoleny typ (nie vseobecny).
-4. Over, ze si extrahoval aj dane, zmluvy, cinnosti, casove obdobia a legislativnu strukturu.
+### VALIDATION
+Ensure:
+- all types valid
+- most specific used
+- includes detailed + legal entities
 """
 
 
@@ -349,7 +309,7 @@ response_schema_for_segmentation = {
 
 
 # System prompt - defines the agent's role and capabilities
-system_prompt_for_generating_query = """Si expertný agent na Neo4j Cypher špecializovaný na dopytovanie znalostných grafov.
+system_prompt_for_generating_query = r"""Si expertný agent na Neo4j Cypher špecializovaný na dopytovanie znalostných grafov.
 
 Tvojou úlohou je odpovedať na otázky dopytovaním grafovej databázy Neo4j.
 

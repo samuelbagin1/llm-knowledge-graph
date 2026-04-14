@@ -1,6 +1,8 @@
 import asyncio
 import json
 import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'code'))
 from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from classes import Schema
@@ -19,11 +21,11 @@ graphrag = PDFGraphRAG(
     claude_api_key=os.getenv("ANTHROPIC_API_KEY")
 )
 
-name = "gpt-5-mini"
+name = "test-sample"
 
 # Load PDF documents
 documents = graphrag.load_pdf(pdf_path)
-documents = documents[:60]
+documents = documents[58:60]
 
 # ------ open domain detection ------
 
@@ -37,7 +39,7 @@ extracted_schema_list = asyncio.run(
 )
 
 print(f"\nAll chunks processed into list of schema.")
-odd_to_json(extracted_schema_list, name = name)
+odd_to_json(extracted_schema_list, name = name, chunks = chunked_documents)
 
 
 
@@ -56,10 +58,10 @@ merged_schema = Schema(
     nodes=[n for s in extracted_schema_list for n in s.nodes],
     relationships=[r for s in extracted_schema_list for r in s.relationships]
 )
-refined_schema = graphrag.schema_refinement(odd_schema=merged_schema)
+refined_schema_data = graphrag.schema_refinement(odd_schema=merged_schema)
 
 print(f"\nRefined schema.")
-refinement_to_json(refined_schema, name = name)
+refinement_to_json(refined_schema_data, name = name)
 
 
 
@@ -75,6 +77,11 @@ chunked_documents = splitter.split_documents(documents)
 #     nodes=data['node_types'],
 #     relationships=data['relationship_types']
 # )
+
+refined_schema = Schema(
+    nodes=refined_schema_data['node_types'],  # type: ignore[index]
+    relationships=refined_schema_data['relationship_types']  # type: ignore[index]
+)
 
 graph_docs = asyncio.run(
     graphrag.async_schema_driven_extraction(

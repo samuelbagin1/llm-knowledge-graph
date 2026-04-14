@@ -1,0 +1,104 @@
+{
+  "node_types": [
+    "ClenskyStat",
+    "Dan",
+    "DanovaPovinnost",
+    "Doklad",
+    "DopravnyProstriedok",
+    "Majetok",
+    "Nehnutelnost",
+    "Obdobie",
+    "Osoba",
+    "Paragraf",
+    "Platitel",
+    "Skutocnost",
+    "Sluzba",
+    "Tovar",
+    "Zakon",
+    "ZakladDane"
+  ],
+  "relationship_types": [
+    "DODAVA",
+    "JE_POVAZOVANY_ZA",
+    "JE_UVEDENY_AKO",
+    "MA",
+    "MA_POVINNOST",
+    "MA_PRAVO",
+    "MA_ZA_NASLEDOK",
+    "NADOBUDA",
+    "PODAVA",
+    "POSKYTUJE",
+    "POTVRDZUJE",
+    "POUZIVA",
+    "PRESTAL_BYT",
+    "PREVADZA",
+    "STAL_SA",
+    "UPLATNUJE",
+    "URCUJE",
+    "VYHOTOVUJE",
+    "VYKONAVA",
+    "VYPOCITAVA",
+    "VYSPORADAVA",
+    "VYTVARA",
+    "VZNIKA"
+  ],
+  "merge_log": {
+    "node_types": {
+      "ClenskyStat": [
+        "ClennyStat"
+      ],
+      "Doklad": [
+        "Doklad",
+        "Faktura"
+      ],
+      "Obdobie": [
+        "Obdobie",
+        "ZdanovacieObdobie"
+      ],
+      "Osoba": [
+        "Osoba",
+        "Sluha"
+      ]
+    },
+    "relationship_types": {
+      "JE_POVAZOVANY_ZA": [
+        "POVAZOVANA_K"
+      ],
+      "JE_UVEDENY_AKO": [
+        "UVEDENY_JAKO"
+      ],
+      "MA_POVINNOST": [
+        "POVINNY_OPRAVIT"
+      ],
+      "MA_PRAVO": [
+        "MA_PRAVO_NA",
+        "MA_PRAVO_ODPOCITAT",
+        "PRAVO_OPRAVIT"
+      ],
+      "MA_ZA_NASLEDOK": [
+        "MA_ZA_NASLEDEK"
+      ],
+      "POTVRDZUJE": [
+        "POTVRDUJE",
+        "POTVRDZENY"
+      ],
+      "POUZIVA": [
+        "POUZIVA",
+        "DOCHADZA_K_POUZITI"
+      ],
+      "STAL_SA": [
+        "STAL_SE"
+      ],
+      "UPLATNUJE": [
+        "UPLATNUJE",
+        "UPLATNUJE_ODPOCITANIE"
+      ],
+      "VZNIKA": [
+        "VZNIKA_V",
+        "VZNIKA_V_CASE",
+        "VZNIKLO",
+        "NASTANE"
+      ]
+    }
+  }
+}

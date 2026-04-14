@@ -215,7 +215,7 @@ class PDFGraphRAG:
         # Initialize LLM clients
         # ChatOpenAI for question generation
         self.openai_client = ChatOpenAI(
-            model="gpt-5-mini",
+            model="gpt-5.4-mini",
             temperature=0,
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
@@ -1074,13 +1074,7 @@ class PDFGraphRAG:
 
         print(data)
 
-        if not isinstance(data, dict):
-            data = data.model_dump() if hasattr(data, "model_dump") else dict(data)
-
-        schema = self._convert_to_schema(data)
-        if not schema.nodes and not schema.relationships:
-            raise ValueError(f"Schema refinement returned empty schema. Raw response: {data}")
-        return schema
+        return data
 
 
 
@@ -1109,42 +1103,39 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-        Extrahuj VSETKY entity a vztahy z nasledujuceho textu. Pouzivaj STRIKTNE IBA typy entit a typy vztahov z dole uvedenej schemy. Ziadne ine typy nie su povolene.
+        Extract entities and relationships from text.
 
-        # PRAVIDLA
-        - Vsetky extrahovane hodnoty (ID uzlov, nazvy, vlastnosti, hodnoty vztahov) pis BEZ DIAKRITIKY (napr. c→c, s→s, z→z, a→a, e→e, i→i, o→o, u→u, y→y, n→n, t→t, d→d, l→l, o→o).
-        - Ak entita v texte nezodpoveda ziadnemu typu zo schemy, VYNECHAJ ju.
-        - Ak vztah v texte nezodpoveda ziadnemu typu zo schemy, VYNECHAJ ho.
-        - NEMODIFIKUJ nazvy typov - nepridavaj slova, sufixy, predlozky ani predpony.
-        - Pouzivaj VZDY najspecifickejsi povoleny typ zo schemy (napr. `InvesticnyMajetok` namiesto `Majetok`, `PravnyPredpis` namiesto `Dokument` pre zakony).
+        ### RULES
+        - only schema types (exact)
+        - no modifications
+        - skip unsupported
+        - most specific types
+        - no diacritics
+        - use only Slovak language
 
-        # POZIADAVKY NA DETAILNOST
-        - Neextrahuj len hlavne subjekty. Extrahuj AJ: dane, odpocty, zmluvy, cinnosti, casove obdobia, prava, povinnosti, sumy a sadzby.
-        - Zakony a zbierky zakonov zaraduj ako `PravnyPredpis`.
-        - Konkretne paragrafy a odseky (napr. § 54 ods. 2 pism. a) extrahuj ako samostatne entity typu `Paragraf` a prepoj ich so zakonom pomocou vztahu `OBSAHUJE`.
-        - Ak sa entita definuje alebo odkazuje na konkretny paragraf, vytvor vztah medzi entitou a paragrafom (napr. pomocou `PODLA`).
+        ### INCLUDE
+        taxes, contracts, activities, time, rights, obligations, amounts
 
-        # SCHEMA - POVOLENE TYPY ENTIT (pouzivaj LEN tieto, PRESNE ako su napisane):
-        {", ".join(schema.nodes)}
+        ### LEGAL[[gpt]]
+        - `PravnyPredpis`, `Paragraf`
+        - use `OBSAHUJE`, `PODLA`
 
-        # SCHEMA - POVOLENE TYPY VZTAHOV (pouzivaj LEN tieto, PRESNE ako su napisane):
-        {", ".join(schema.relationships)}
+        ### SCHEMA
+        Entities: {", ".join(schema.nodes)}
+        Relationships: {", ".join(schema.relationships)}
 
-        # TEXT NA EXTRAKCIU:
+        ### TEXT
         {text}
 
-        # KONTROLA PRED VYSTUPOM:
-        Pred tym nez odpovies, over si:
-        1. Je KAZDY typ uzla PRESNE v zozname povolenych typov entit vyssie? (nie modifikovany, nie vseobecnejsi)
-        2. Je KAZDY typ vztahu PRESNE v zozname povolenych typov vztahov vyssie?
-        3. Pouzil si najspecifickejsi dostupny typ (napr. InvesticnyMajetok, nie Majetok)?
-        4. Extrahoval si aj dane, zmluvy, cinnosti, casove obdobia a paragrafy?
-        Ak nie, oprav alebo doplnenie nepovolene polozky.
+        ### CHECK
+        - valid types only
+        - most specific used
+        - includes legal + detailed data
         """
 
         # Create and run the agent
         agent = create_agent(
-            model=self.openai_graph_transform,
+            model=self.openai_client,
             response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
             system_prompt=system_prompt_for_sde
         )
@@ -1669,7 +1660,7 @@ class PDFGraphRAG:
     
     
 
-    def search_agent_retrieve(self, sub_sentence: str, entities: List[str]) -> tuple[List[tuple], List[str]]:
+    def search_agent_retrieve(self, sub_sentence: str, entities: list[str]) -> tuple[list[tuple], list[str]]:
         """ARK-V1-inspired Stage 2: Agent with search_database tool iteratively queries
         the graph to find evidence triples for a single sub-sentence.
 
@@ -1865,6 +1856,7 @@ class PDFGraphRAG:
 
         # Stage 3: Inference
         final_answer = self.answer(question, all_triples, chunks)
+        
         if interactive:
             print(f"\n{final_answer}")
         return final_answer

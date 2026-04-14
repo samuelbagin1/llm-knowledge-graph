@@ -1,0 +1,4032 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+        "type": "Zakon",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Paragraf 39",
+        "type": "Paragraf",
+        "properties": {
+          "name": "paragraf 39"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Koeficient",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "koeficient"
+        }
+      },
+      {
+        "id": "Predchadzajuci Kalendarny Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "predchadzajuci kalendarny rok"
+        }
+      },
+      {
+        "id": "Prislusny Kalendarny Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "prislusny kalendarny rok"
+        }
+      },
+      {
+        "id": "Skonceny Kalendarny Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "skonceny kalendarny rok"
+        }
+      },
+      {
+        "id": "Jednotlive Zdanovacie Obdobia",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "jednotlive zdanovacie obdobia"
+        }
+      },
+      {
+        "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "posledne zdanovacie obdobie kalendarneho roka"
+        }
+      },
+      {
+        "id": "Odcitatelna Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "odcitatelna dan"
+        }
+      },
+      {
+        "id": "Dan Vypocitana Podla Prvej Vety",
+        "type": "Dan",
+        "properties": {
+          "name": "dan vypocitana podla prvej vety"
+        }
+      },
+      {
+        "id": "Statny Rozpocet",
+        "type": "Rozpocet",
+        "properties": {
+          "name": "statny rozpocet"
+        }
+      },
+      {
+        "id": "Odsec 2",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "odsec 2"
+        }
+      },
+      {
+        "id": "Odsec 3",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "odsec 3"
+        }
+      },
+      {
+        "id": "Odsec 4",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "odsec 4"
+        }
+      },
+      {
+        "id": "chunk_0",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+          "page": 58
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 39"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 39"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Koeficient",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "koeficient"
+          }
+        },
+        "type": "VYPOCITAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koeficient",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "koeficient"
+          }
+        },
+        "target": {
+          "id": "Predchadzajuci Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "predchadzajuci kalendarny rok"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Koeficient",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "koeficient"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koeficient",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "koeficient"
+          }
+        },
+        "target": {
+          "id": "Prislusny Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "prislusny kalendarny rok"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Odcitatelna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odcitatelna dan"
+          }
+        },
+        "type": "VYPOCITAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odcitatelna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odcitatelna dan"
+          }
+        },
+        "target": {
+          "id": "Odsec 2",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odsec 2"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Dan Vypocitana Podla Prvej Vety",
+          "type": "Dan",
+          "properties": {
+            "name": "dan vypocitana podla prvej vety"
+          }
+        },
+        "type": "VYSPORADAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Vypocitana Podla Prvej Vety",
+          "type": "Dan",
+          "properties": {
+            "name": "dan vypocitana podla prvej vety"
+          }
+        },
+        "target": {
+          "id": "Odsec 2",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odsec 2"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Vypocitana Podla Prvej Vety",
+          "type": "Dan",
+          "properties": {
+            "name": "dan vypocitana podla prvej vety"
+          }
+        },
+        "target": {
+          "id": "Jednotlive Zdanovacie Obdobia",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "jednotlive zdanovacie obdobia"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Statny Rozpocet",
+          "type": "Rozpocet",
+          "properties": {
+            "name": "statny rozpocet"
+          }
+        },
+        "type": "VYSPORADAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Koeficient",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "koeficient"
+          }
+        },
+        "type": "VYPOCITAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koeficient",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "koeficient"
+          }
+        },
+        "target": {
+          "id": "Odsec 4",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odsec 4"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Odcitatelna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odcitatelna dan"
+          }
+        },
+        "type": "VYPOCITAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odcitatelna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odcitatelna dan"
+          }
+        },
+        "target": {
+          "id": "Skonceny Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "skonceny kalendarny rok"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Statny Rozpocet",
+          "type": "Rozpocet",
+          "properties": {
+            "name": "statny rozpocet"
+          }
+        },
+        "type": "VYSPORADAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 39",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 39"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koeficient",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "koeficient"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predchadzajuci Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "predchadzajuci kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "prislusny kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skonceny Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "skonceny kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Jednotlive Zdanovacie Obdobia",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "jednotlive zdanovacie obdobia"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "posledne zdanovacie obdobie kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odcitatelna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odcitatelna dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Vypocitana Podla Prvej Vety",
+          "type": "Dan",
+          "properties": {
+            "name": "dan vypocitana podla prvej vety"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Statny Rozpocet",
+          "type": "Rozpocet",
+          "properties": {
+            "name": "statny rozpocet"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsec 2",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odsec 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsec 3",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odsec 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsec 4",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odsec 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "§ 51 Uplatnenie Prava Na Odpocitanie Dane",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 51 Uplatnenie prava na odpocitanie dane"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktura"
+        }
+      },
+      {
+        "id": "Dodatel Z Ineho Clenskeho Statu",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "dodatel z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Hodnoverny Doklad",
+        "type": "Doklad",
+        "properties": {
+          "name": "hodnoverny doklad"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Kalendarny Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "kalendarny rok"
+        }
+      },
+      {
+        "id": "Hospodarsky Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "hospodarsky rok"
+        }
+      },
+      {
+        "id": "Pravo Na Odpocitanie Dane",
+        "type": "Danovapovinnost",
+        "properties": {
+          "name": "pravo na odpocitanie dane"
+        }
+      },
+      {
+        "id": "Uplatnenie Prava Na Odpocitanie Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "uplatnenie prava na odpocitanie dane"
+        }
+      },
+      {
+        "id": "chunk_1",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_1",
+          "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+          "page": 58
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "§ 51 Uplatnenie Prava Na Odpocitanie Dane",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 51 Uplatnenie prava na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "§ 51 Uplatnenie Prava Na Odpocitanie Dane",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 51 Uplatnenie prava na odpocitanie dane"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "type": "MA_PRAVO_NA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Uplatnenie Prava Na Odpocitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "uplatnenie prava na odpocitanie dane"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "type": "UPLATNUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "Hodnoverny Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "hodnoverny doklad"
+          }
+        },
+        "type": "UPLATNUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "kalendarny rok"
+          }
+        },
+        "type": "UPLATNUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "Hospodarsky Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "hospodarsky rok"
+          }
+        },
+        "type": "MA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 51 Uplatnenie Prava Na Odpocitanie Dane",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 51 Uplatnenie prava na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodatel Z Ineho Clenskeho Statu",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "dodatel z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hodnoverny Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "hodnoverny doklad"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hospodarsky Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "hospodarsky rok"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpocitanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uplatnenie Prava Na Odpocitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "uplatnenie prava na odpocitanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_1",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_1",
+            "text": "alebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan"
+        }
+      },
+      {
+        "id": "Danovapovinnost",
+        "type": "Danovapovinnost",
+        "properties": {
+          "name": "DanovaPovinnost"
+        }
+      },
+      {
+        "id": "Doklad",
+        "type": "Doklad",
+        "properties": {
+          "name": "Doklad"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Zdanovacieobdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "ZdanovacieObdobie"
+        }
+      },
+      {
+        "id": "Pravo Na Odpočítanie Dane",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "Pravo na odpočítanie dane"
+        }
+      },
+      {
+        "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Dovozny Doklad",
+        "type": "Doklad",
+        "properties": {
+          "name": "dovozny doklad"
+        }
+      },
+      {
+        "id": "Colny Organ",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "colny organ"
+        }
+      },
+      {
+        "id": "Odcitanie Dane",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "odcitanie dane"
+        }
+      },
+      {
+        "id": "Kalendarny Rok",
+        "type": "Casoveobdobie",
+        "properties": {
+          "name": "kalendarny rok"
+        }
+      },
+      {
+        "id": "chunk_2",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_2",
+          "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+          "page": 58
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Danovapovinnost",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "DanovaPovinnost"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovozny Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozny doklad"
+          }
+        },
+        "target": {
+          "id": "Colny Organ",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "colny organ"
+          }
+        },
+        "type": "POTVRUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Pravo Na Odpočítanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Pravo na odpočítanie dane"
+          }
+        },
+        "type": "MA_PRAVO_NA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Odcitanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpočítanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Pravo na odpočítanie dane"
+          }
+        },
+        "target": {
+          "id": "Zdanovacieobdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "ZdanovacieObdobie"
+          }
+        },
+        "type": "VZNIKA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovapovinnost",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "DanovaPovinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "Doklad"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacieobdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "ZdanovacieObdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpočítanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Pravo na odpočítanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovozny Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozny doklad"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Organ",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "colny organ"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odcitanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Casoveobdobie",
+          "properties": {
+            "name": "kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_2",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_2",
+            "text": "hodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Doklad",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklad"
+        }
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktura"
+        }
+      },
+      {
+        "id": "Dodacne Danove Priznanie",
+        "type": "Doklad",
+        "properties": {
+          "name": "dodacne danove priznanie"
+        }
+      },
+      {
+        "id": "Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Danovapovinnost",
+        "properties": {
+          "name": "danova povinnost pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Pravo Na Odpoctanie Dane",
+        "type": "Danovapovinnost",
+        "properties": {
+          "name": "pravo na odpoctanie dane"
+        }
+      },
+      {
+        "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "posledne zdanovacie obdobie kalendarneho roka"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie, V Ktorom Dostane Doklad",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie, v ktorom dostane doklad"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie, V Ktorom Pravo Na Odpoctanie Dane Vzniklo",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie, v ktorom pravo na odpoctanie dane vzniklo"
+        }
+      },
+      {
+        "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka, V Ktorom Pravo Na Odpoctanie Dane Vzniklo",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "posledne zdanovacie obdobie kalendarneho roka, v ktorom pravo na odpoctanie dane vzniklo"
+        }
+      },
+      {
+        "id": "Podla § 49 Ods. 2 Pism. B)",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 49 ods. 2 pism. b)"
+        }
+      },
+      {
+        "id": "Podla § 20 Ods. 1 Pism. B)",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 20 ods. 1 pism. b)"
+        }
+      },
+      {
+        "id": "chunk_3",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_3",
+          "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+          "page": 58
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpoctanie dane"
+          }
+        },
+        "type": "MA_PRAVO_NA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Dodacne Danove Priznanie",
+          "type": "Doklad",
+          "properties": {
+            "name": "dodacne danove priznanie"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie, V Ktorom Pravo Na Odpoctanie Dane Vzniklo",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie, v ktorom pravo na odpoctanie dane vzniklo"
+          }
+        },
+        "type": "VZNIKA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "danova povinnost pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Podla § 20 Ods. 1 Pism. B)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 20 ods. 1 pism. b)"
+          }
+        },
+        "type": "VZNIKA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podla § 49 Ods. 2 Pism. B)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 49 ods. 2 pism. b)"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodacne Danove Priznanie",
+          "type": "Doklad",
+          "properties": {
+            "name": "dodacne danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "danova povinnost pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "posledne zdanovacie obdobie kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie, V Ktorom Dostane Doklad",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie, v ktorom dostane doklad"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie, V Ktorom Pravo Na Odpoctanie Dane Vzniklo",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie, v ktorom pravo na odpoctanie dane vzniklo"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledne Zdanovacie Obdobie Kalendarneho Roka, V Ktorom Pravo Na Odpoctanie Dane Vzniklo",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "posledne zdanovacie obdobie kalendarneho roka, v ktorom pravo na odpoctanie dane vzniklo"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podla § 49 Ods. 2 Pism. B)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 49 ods. 2 pism. b)"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podla § 20 Ods. 1 Pism. B)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 20 ods. 1 pism. b)"
+          }
+        },
+        "target": {
+          "id": "chunk_3",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_3",
+            "text": "priznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+            "page": 58
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z."
+        }
+      },
+      {
+        "id": "52",
+        "type": "Paragraf",
+        "properties": {
+          "name": "52"
+        }
+      },
+      {
+        "id": "52a",
+        "type": "Paragraf",
+        "properties": {
+          "name": "52a"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "Osoba"
+        }
+      },
+      {
+        "id": "Novy Dopravny Prostriedok",
+        "type": "Dopravnyprostriedok",
+        "properties": {
+          "name": "Novy dopravny prostriedok"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan"
+        }
+      },
+      {
+        "id": "Odpoctanie Dane",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "Odpoctanie dane"
+        }
+      },
+      {
+        "id": "Odpoctitelna Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "Odpoctitelna dan"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "Zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Mesiac Dodania",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "Mesiac dodania"
+        }
+      },
+      {
+        "id": "Hospodarsky Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "Hospodarsky rok"
+        }
+      },
+      {
+        "id": "chunk_4",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_4",
+          "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+          "page": 59
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "52a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "type": "VYPOCITAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Odpoctitelna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Odpoctitelna dan"
+          }
+        },
+        "type": "VYPOCITAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "Zdanovacie obdobie"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hospodarsky Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "Hospodarsky rok"
+          }
+        },
+        "target": {
+          "id": "52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "52a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52a"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Novy Dopravny Prostriedok",
+          "type": "Dopravnyprostriedok",
+          "properties": {
+            "name": "Novy dopravny prostriedok"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "Odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctitelna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Odpoctitelna dan"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "Zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mesiac Dodania",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "Mesiac dodania"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hospodarsky Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "Hospodarsky rok"
+          }
+        },
+        "target": {
+          "id": "chunk_4",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_4",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Pravnypredpis: Zakon O Dph",
+        "type": "Zakon",
+        "properties": {
+          "name": "Zakon o DPH"
+        }
+      },
+      {
+        "id": "Paragraf 52A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "Paragraf 52a"
+        }
+      },
+      {
+        "id": "Zdanovacieobdobie: Mesiac",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "mesiac"
+        }
+      },
+      {
+        "id": "Zdanovacieobdobie: 5 Kalendarnych Rokov",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "5 kalendarnych rokov"
+        }
+      },
+      {
+        "id": "Zdanovacieobdobie: 20 Kalendarnych Rokov",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "20 kalendarnych rokov"
+        }
+      },
+      {
+        "id": "Dan: Odpoctana Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "odpoctana dan"
+        }
+      },
+      {
+        "id": "Danovapovinnost: Pravo Na Odpoctanie Dane",
+        "type": "Danovapovinnost",
+        "properties": {
+          "name": "pravo na odpoctanie dane"
+        }
+      },
+      {
+        "id": "Skutocnost: Novy Dopravny Prostriedok Dodany",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "novy dopravny prostriedok dodany"
+        }
+      },
+      {
+        "id": "Skutocnost: Prvotne Pouzitie",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "prvotne pouzitie"
+        }
+      },
+      {
+        "id": "Skutocnost: Prve Skutocne Pouzitie Tovarov A Sluzieb",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "prve skutocne pouzitie tovarov a sluzieb"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "Tovar"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "Sluzba"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Majetok: Dlhodoby Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "dlhodoby majetok"
+        }
+      },
+      {
+        "id": "Majetok: Investicny Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "investicny majetok"
+        }
+      },
+      {
+        "id": "chunk_5",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_5",
+          "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+          "page": 59
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Pravnypredpis: Zakon O Dph",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zakon o DPH"
+          }
+        },
+        "target": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 52a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost: Novy Dopravny Prostriedok Dodany",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "novy dopravny prostriedok dodany"
+          }
+        },
+        "target": {
+          "id": "Zdanovacieobdobie: Mesiac",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "mesiac"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 52a"
+          }
+        },
+        "target": {
+          "id": "Skutocnost: Prvotne Pouzitie",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prvotne pouzitie"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 52a"
+          }
+        },
+        "target": {
+          "id": "Skutocnost: Prve Skutocne Pouzitie Tovarov A Sluzieb",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prve skutocne pouzitie tovarov a sluzieb"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost: Prve Skutocne Pouzitie Tovarov A Sluzieb",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prve skutocne pouzitie tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "Danovapovinnost: Pravo Na Odpoctanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpoctanie dane"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Skutocnost: Prve Skutocne Pouzitie Tovarov A Sluzieb",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prve skutocne pouzitie tovarov a sluzieb"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Majetok: Dlhodoby Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "dlhodoby majetok"
+          }
+        },
+        "type": "POUZIVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 52a"
+          }
+        },
+        "target": {
+          "id": "Zdanovacieobdobie: 5 Kalendarnych Rokov",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "5 kalendarnych rokov"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 52a"
+          }
+        },
+        "target": {
+          "id": "Zdanovacieobdobie: 20 Kalendarnych Rokov",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "20 kalendarnych rokov"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost: Prvotne Pouzitie",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prvotne pouzitie"
+          }
+        },
+        "target": {
+          "id": "Majetok: Investicny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis: Zakon O Dph",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zakon o DPH"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 52a"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacieobdobie: Mesiac",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "mesiac"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacieobdobie: 5 Kalendarnych Rokov",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "5 kalendarnych rokov"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacieobdobie: 20 Kalendarnych Rokov",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "20 kalendarnych rokov"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan: Odpoctana Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odpoctana dan"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovapovinnost: Pravo Na Odpoctanie Dane",
+          "type": "Danovapovinnost",
+          "properties": {
+            "name": "pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost: Novy Dopravny Prostriedok Dodany",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "novy dopravny prostriedok dodany"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost: Prvotne Pouzitie",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prvotne pouzitie"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost: Prve Skutocne Pouzitie Tovarov A Sluzieb",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prve skutocne pouzitie tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "Tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "Sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Majetok: Dlhodoby Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "dlhodoby majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Majetok: Investicny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_5",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_5",
+            "text": "môže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "§ 53",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "§ 54",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "§ 54A",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "§ 54D",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "§ 25",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "§ 68D",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "§ 49",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Oprava Odpoctanej Dane",
+        "type": "Skutocnost",
+        "properties": {}
+      },
+      {
+        "id": "Odpoctana Dan",
+        "type": "Dan",
+        "properties": {}
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {}
+      },
+      {
+        "id": "Oductanie Dane",
+        "type": "Skutocnost",
+        "properties": {}
+      },
+      {
+        "id": "Znizenie Zakladu Dane",
+        "type": "Skutocnost",
+        "properties": {}
+      },
+      {
+        "id": "Zvysenie Zakladu Dane",
+        "type": "Skutocnost",
+        "properties": {}
+      },
+      {
+        "id": "Kalendarny Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Hospodarsky Rok",
+        "type": "Zdanovacieobdobie",
+        "properties": {}
+      },
+      {
+        "id": "20 kalendarnych rokov",
+        "type": "Zdanovacieobdobie",
+        "properties": {}
+      },
+      {
+        "id": "Prvotne Pouzitie Investicneho Majetku",
+        "type": "Skutocnost",
+        "properties": {}
+      },
+      {
+        "id": "chunk_6",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_6",
+          "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+          "page": 59
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "§ 53",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "§ 25",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "§ 68D",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "§ 49",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odpoctana Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odpoctana Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "type": "MA_PRAVO_NA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oductanie Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Znizenie Zakladu Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "type": "VZNIKA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oductanie Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zvysenie Zakladu Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "type": "VZNIKA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Hospodarsky Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvotne Pouzitie Investicneho Majetku",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "§ 54",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "20 kalendarnych rokov",
+          "type": "Zdanovacieobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "§ 54",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "VYPLYNULA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 54",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 54A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 54D",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 25",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68D",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 49",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctana Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oductanie Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Znizenie Zakladu Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zvysenie Zakladu Dane",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hospodarsky Rok",
+          "type": "Zdanovacieobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "20 kalendarnych rokov",
+          "type": "Zdanovacieobdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvotne Pouzitie Investicneho Majetku",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "chunk_6",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_6",
+            "text": "b) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzba"
+        }
+      },
+      {
+        "id": "Pravnypredpis § 49",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 49"
+        }
+      },
+      {
+        "id": "Pravnypredpis § 8",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 8"
+        }
+      },
+      {
+        "id": "Pravnypredpis § 9",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 9"
+        }
+      },
+      {
+        "id": "Prvotne Pouzitie",
+        "type": "Skutocnost",
+        "properties": {
+          "name": "prvotne pouzitie"
+        }
+      },
+      {
+        "id": "chunk_7",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_7",
+          "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+          "page": 59
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Prvotne Pouzitie",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prvotne pouzitie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Pravnypredpis § 49",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 49"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Pravnypredpis § 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Pravnypredpis § 9",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis § 49",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 49"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis § 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis § 9",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvotne Pouzitie",
+          "type": "Skutocnost",
+          "properties": {
+            "name": "prvotne pouzitie"
+          }
+        },
+        "target": {
+          "id": "chunk_7",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_7",
+            "text": "nemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "Zakon",
+          "Platitel",
+          "Obdobie",
+          "Dan",
+          "Nehnutelnost",
+          "Rozpocet"
+        ],
+        "relationships": [
+          "VYPOCITAVA",
+          "URCUJE",
+          "POSKYTUJE",
+          "PREVADZA",
+          "VYSPORADAVA",
+          "STAL_SE",
+          "PRESTAL_BYT"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "Tovar",
+          "ClennyStat",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "MA",
+          "UPLATNUJE",
+          "POTVRDUJE",
+          "NADOBUDA",
+          "VYHOTOVUJE"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Doklad",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "MA",
+          "VYKONAVA",
+          "POTVRDZENY"
+        ]
+      },
+      {
+        "nodes": [
+          "Obdobie",
+          "Platitel",
+          "Faktura",
+          "DanovaPovinnost"
+        ],
+        "relationships": [
+          "MA_PRAVO_NA",
+          "VZNIKLO_V",
+          "PODAVA",
+          "VYTVARA"
+        ]
+      },
+      {
+        "nodes": [
+          "Zakon",
+          "Osoba",
+          "DopravnyProstriedok",
+          "Tovar",
+          "Sluzba"
+        ],
+        "relationships": [
+          "DODAVA",
+          "MA_PRAVO_ODPOCITAT",
+          "POVAZOVANY_AKO"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Majetok",
+          "Obdobie",
+          "ZdanovacieObdobie"
+        ],
+        "relationships": [
+          "MAJETOK_PRE",
+          "UPLATNUJE_ODPOCITANIE",
+          "NASTAVA_SKUTOCNOST"
+        ]
+      },
+      {
+        "nodes": [
+          "Platitel",
+          "Skutocnost",
+          "ZakladDane",
+          "Tovar",
+          "Sluha"
+        ],
+        "relationships": [
+          "UPLATNUJE_ODPOCITANIE",
+          "MA_VPLYV_NA",
+          "OPRAVUJE_ODPOCITANU_DAN",
+          "DODAVA"
+        ]
+      }
+    ]
+  },
+  {
+    "chunk_texts": [
+      {
+        "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.",
+        "page": 58
+      },
+      {
+        "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+        "page": 58
+      },
+      {
+        "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+        "page": 58
+      },
+      {
+        "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+        "page": 58
+      },
+      {
+        "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a\n(1) Na účely opravy odpočítanej dane podľa § 53 a 53a a úpravy odpočítanej dane podľa § 54 až\n54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov",
+        "page": 59
+      },
+      {
+        "text": "54d sa rozumie\na) prvotným použitím prvé skutočné použitie tovarov a služieb platiteľom na dodávky tovarov\na služieb, pri ktorých vzniklo právo na odpočítanie dane podľa § 49 ods. 1,\nb) dlhodobým majetkom platiteľa majetok, ktorý platiteľ používa na účely svojho podnikania,\nokrem majetku nadobudnutého alebo majetku vytvoreného vlastnou činnosťou na účely\nďalšieho predaja, a ktorého doba použiteľnosti je viac ako jeden rok.\n(2) Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\na) päť kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. a) a d),\nb) 20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n(3) Ak je účtovným obdobím platiteľa hospodársky rok, na účely úpravy odpočítanej dane podľa\n§ 54, § 54a alebo podľa § 54d sa kalendárnym rokom rozumie hospodársky rok.\n§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie",
+        "page": 59
+      },
+      {
+        "text": "§ 53\nOprava odpočítanej dane\n(1) Ak po skončení zdaňovacieho obdobia, v ktorom platiteľ\na) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25, ktorá má za následok zníženie\nzákladu dane, je platiteľ, ktorý odpočítal daň, povinný opraviť odpočítanú daň,\nb) uplatnil odpočítanie dane, nastane skutočnosť podľa § 25 alebo § 68d, ktorá má za následok\nzvýšenie základu dane, má platiteľ, ktorý odpočítal daň, právo opraviť odpočítanú daň,\nc) uplatnil odpočítanie dane, uplatnil pomerné odpočítanie dane podľa § 49 ods. 4 alebo ak platiteľ\nnemohol uplatniť odpočítanie dane podľa § 49 ods. 2, 3 alebo ods. 7, dôjde k prvotnému\npoužitiu,\n1. je platiteľ povinný opraviť odpočítanú daň, ak vykonal odpočítanie dane vo vyššej výške, ako\nby mohol vykonať na základe prvotného použitia; to neplatí, ak ide o dodanie tovaru podľa\n§ 8 ods. 3 alebo dodanie služby podľa § 9 ods. 2,",
+        "page": 59
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "Faktura",
+        "Majetok",
+        "Sluha",
+        "ZakladDane",
+        "Tovar",
+        "Sluzba",
+        "Rozpocet",
+        "Platitel",
+        "Dan",
+        "Nehnutelnost",
+        "ClennyStat",
+        "Doklad",
+        "Skutocnost",
+        "Obdobie",
+        "Osoba",
+        "ZdanovacieObdobie",
+        "DopravnyProstriedok",
+        "Zakon",
+        "DanovaPovinnost"
+      ],
+      "relationships": [
+        "POVAZOVANY_AKO",
+        "VZNIKLO_V",
+        "VYPOCITAVA",
+        "PREVADZA",
+        "PODAVA",
+        "STAL_SE",
+        "NADOBUDA",
+        "MA_VPLYV_NA",
+        "POTVRDZENY",
+        "MAJETOK_PRE",
+        "POSKYTUJE",
+        "NASTAVA_SKUTOCNOST",
+        "OPRAVUJE_ODPOCITANU_DAN",
+        "POTVRDUJE",
+        "VYTVARA",
+        "PRESTAL_BYT",
+        "VYHOTOVUJE",
+        "VYKONAVA",
+        "MA_PRAVO_NA",
+        "UPLATNUJE",
+        "MA",
+        "DODAVA",
+        "MA_PRAVO_ODPOCITAT",
+        "UPLATNUJE_ODPOCITANIE",
+        "VYSPORADAVA",
+        "URCUJE"
+      ]
+    }
+  }
+]

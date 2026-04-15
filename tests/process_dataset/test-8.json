@@ -1,0 +1,898 @@
+{
+  "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+  "odd": {
+    "nodes": [
+      "DazdovyAkt",
+      "Dan",
+      "DopravnyProstriedok",
+      "KalendarnyRok",
+      "Lehota",
+      "MiestoDodania",
+      "Nehnutelnost",
+      "Nájom",
+      "Odsek",
+      "Osoba",
+      "PravnickaOsoba",
+      "Pravo",
+      "Rozhodnutie",
+      "Sadzba",
+      "Sluzba",
+      "SpravcaDane",
+      "StavebnyDozor",
+      "UbytovaciaSluzba",
+      "Zakaznik",
+      "Zakon",
+      "ZdanitelnaOsoba",
+      "ZdanovacieObdobie",
+      "ZbierkaZakonov"
+    ],
+    "relationships": [
+      "BYVA_V",
+      "DADNY_VZTAH_K",
+      "JE_CASOVANE_OBMEDZENY",
+      "JE_MIESTOM_DODANIA",
+      "JE_POSKYTOVANA_V",
+      "JE_PRIPUTANY_K",
+      "MA_BYDLISKO_V",
+      "MA_DLZKU",
+      "MA_MIESTO",
+      "MA_POVINNOST",
+      "MA_PRAVO",
+      "MA_SIDLO_V",
+      "POSKYTUJE",
+      "PRISLUSA_K",
+      "RADI_SA_DO",
+      "SA_VZTAHUJE_NA",
+      "UPRAVUJE",
+      "VYTVARA",
+      "VYMEDZUJE"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "Dan",
+      "DazdovyAkt",
+      "DopravnyProstriedok",
+      "KalendarnyRok",
+      "Lehota",
+      "MiestoDodania",
+      "Najom",
+      "Nehnutelnost",
+      "Odsek",
+      "Osoba",
+      "Paragraf",
+      "PravnickaOsoba",
+      "Pravo",
+      "Rozhodnutie",
+      "Sadzba",
+      "Sluzba",
+      "SpravcaDane",
+      "StavebnyDozor",
+      "Zakon",
+      "ZdanitelnaOsoba",
+      "ZdanovacieObdobie",
+      "ZbierkaZakonov"
+    ],
+    "relationship_types": [
+      "JE_MIESTOM_DODANIA",
+      "JE_POSKYTOVANA_V",
+      "JE_PRIPUTANY_K",
+      "MA_BYDLISKO_V",
+      "MA_CASOVE_OBMEDZENIE",
+      "MA_MIESTO",
+      "MA_POVINNOST",
+      "MA_PRAVO",
+      "MA_SIDLO_V",
+      "POSKYTUJE",
+      "RADI_SA_DO",
+      "SA_VZTAHUJE_NA",
+      "UPRAVUJE",
+      "VYMEDZUJE",
+      "VYTVARA"
+    ],
+    "merge_log": {
+      "node_types": {
+        "Najom": [
+          "Nájom"
+        ],
+        "Osoba": [
+          "Osoba",
+          "Zakaznik"
+        ],
+        "Sluzba": [
+          "Sluzba",
+          "UbytovaciaSluzba"
+        ]
+      },
+      "relationship_types": {
+        "MA_BYDLISKO_V": [
+          "BYVA_V",
+          "MA_BYDLISKO_V"
+        ],
+        "MA_CASOVE_OBMEDZENIE": [
+          "JE_CASOVANE_OBMEDZENY",
+          "MA_DLZKU"
+        ],
+        "SA_VZTAHUJE_NA": [
+          "DADNY_VZTAH_K",
+          "PRISLUSA_K",
+          "SA_VZTAHUJE_NA"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Pravny Predpis",
+      "Paragraf 16",
+      "Odsek 1",
+      "Odsek 2",
+      "Cinnost Dodania Sluzby Vztahujuca Sa Na Nehnutelnost",
+      "Cinnost Realitna Cinnost",
+      "Cinnost Cinnost Znalcov",
+      "Cinnost Ubytovacie Sluzby",
+      "Cinnost Poskytnutie Prava Na Uzivanie Nehnutelnosti",
+      "Cinnost Priprava A Koordinacia Stavebnych Prac",
+      "Cinnost Sluzby Poskytovane Architektmi",
+      "Cinnost Stavebny Dozor",
+      "Cinnost Kratkodoby Najom Dopravnych Prostriedkov",
+      "Cinnost Iny Najom Dopravnych Prostriedkov",
+      "Casove Obdobie Nepresahujuce 30 Dni",
+      "Casove Obdobie Nepresahujuce 90 Dni",
+      "chunk_0"
+    ],
+    "relationships": [
+      "OBSAHUJE",
+      "PODLA",
+      "PODLA",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "VYMEDZUJE",
+      "MÁ_CASOVE_OBDOBIE",
+      "MÁ_CASOVE_OBDOBIE",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Pravny Predpis",
+            "type": "Pravnypredpis",
+            "properties": {
+              "name": "Pravny predpis"
+            }
+          },
+          {
+            "id": "Paragraf 16",
+            "type": "Paragraf",
+            "properties": {
+              "name": "§ 16"
+            }
+          },
+          {
+            "id": "Odsek 1",
+            "type": "Odsek",
+            "properties": {
+              "name": "(1)"
+            }
+          },
+          {
+            "id": "Odsek 2",
+            "type": "Odsek",
+            "properties": {
+              "name": "(2)"
+            }
+          },
+          {
+            "id": "Cinnost Dodania Sluzby Vztahujuca Sa Na Nehnutelnost",
+            "type": "Cinnost",
+            "properties": {
+              "name": "dodanie sluzby vztahujuca sa na nehnutelnost"
+            }
+          },
+          {
+            "id": "Cinnost Realitna Cinnost",
+            "type": "Cinnost",
+            "properties": {
+              "name": "realitna cinnost"
+            }
+          },
+          {
+            "id": "Cinnost Cinnost Znalcov",
+            "type": "Cinnost",
+            "properties": {
+              "name": "cinnost znalcov"
+            }
+          },
+          {
+            "id": "Cinnost Ubytovacie Sluzby",
+            "type": "Cinnost",
+            "properties": {
+              "name": "ubytovacie sluzby"
+            }
+          },
+          {
+            "id": "Cinnost Poskytnutie Prava Na Uzivanie Nehnutelnosti",
+            "type": "Cinnost",
+            "properties": {
+              "name": "poskytnutie prava na uzivanie nehnutelnosti"
+            }
+          },
+          {
+            "id": "Cinnost Priprava A Koordinacia Stavebnych Prac",
+            "type": "Cinnost",
+            "properties": {
+              "name": "priprava a koordinacia stavebnych prac"
+            }
+          },
+          {
+            "id": "Cinnost Sluzby Poskytovane Architektmi",
+            "type": "Cinnost",
+            "properties": {
+              "name": "sluzby poskytovane architektmi"
+            }
+          },
+          {
+            "id": "Cinnost Stavebny Dozor",
+            "type": "Cinnost",
+            "properties": {
+              "name": "stavebny dozor"
+            }
+          },
+          {
+            "id": "Cinnost Kratkodoby Najom Dopravnych Prostriedkov",
+            "type": "Cinnost",
+            "properties": {
+              "name": "kratkodoby najom dopravnych prostriedkov"
+            }
+          },
+          {
+            "id": "Cinnost Iny Najom Dopravnych Prostriedkov",
+            "type": "Cinnost",
+            "properties": {
+              "name": "iny najom dopravnych prostriedkov"
+            }
+          },
+          {
+            "id": "Casove Obdobie Nepresahujuce 30 Dni",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "nepresahujuce 30 dni"
+            }
+          },
+          {
+            "id": "Casove Obdobie Nepresahujuce 90 Dni",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "nepresahujuce 90 dni"
+            }
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+              "page": 21
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Pravny Predpis",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "Pravny predpis"
+              }
+            },
+            "target": {
+              "id": "Paragraf 16",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 16"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 16",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 16"
+              }
+            },
+            "target": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 16",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 16"
+              }
+            },
+            "target": {
+              "id": "Odsek 2",
+              "type": "Odsek",
+              "properties": {
+                "name": "(2)"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Dodania Sluzby Vztahujuca Sa Na Nehnutelnost",
+              "type": "Cinnost",
+              "properties": {
+                "name": "dodanie sluzby vztahujuca sa na nehnutelnost"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Realitna Cinnost",
+              "type": "Cinnost",
+              "properties": {
+                "name": "realitna cinnost"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Cinnost Znalcov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "cinnost znalcov"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Ubytovacie Sluzby",
+              "type": "Cinnost",
+              "properties": {
+                "name": "ubytovacie sluzby"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Poskytnutie Prava Na Uzivanie Nehnutelnosti",
+              "type": "Cinnost",
+              "properties": {
+                "name": "poskytnutie prava na uzivanie nehnutelnosti"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Priprava A Koordinacia Stavebnych Prac",
+              "type": "Cinnost",
+              "properties": {
+                "name": "priprava a koordinacia stavebnych prac"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Sluzby Poskytovane Architektmi",
+              "type": "Cinnost",
+              "properties": {
+                "name": "sluzby poskytovane architektmi"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Stavebny Dozor",
+              "type": "Cinnost",
+              "properties": {
+                "name": "stavebny dozor"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 2",
+              "type": "Odsek",
+              "properties": {
+                "name": "(2)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Kratkodoby Najom Dopravnych Prostriedkov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "kratkodoby najom dopravnych prostriedkov"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 2",
+              "type": "Odsek",
+              "properties": {
+                "name": "(2)"
+              }
+            },
+            "target": {
+              "id": "Cinnost Iny Najom Dopravnych Prostriedkov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "iny najom dopravnych prostriedkov"
+              }
+            },
+            "type": "VYMEDZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Kratkodoby Najom Dopravnych Prostriedkov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "kratkodoby najom dopravnych prostriedkov"
+              }
+            },
+            "target": {
+              "id": "Casove Obdobie Nepresahujuce 30 Dni",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "nepresahujuce 30 dni"
+              }
+            },
+            "type": "MÁ_CASOVE_OBDOBIE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Kratkodoby Najom Dopravnych Prostriedkov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "kratkodoby najom dopravnych prostriedkov"
+              }
+            },
+            "target": {
+              "id": "Casove Obdobie Nepresahujuce 90 Dni",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "nepresahujuce 90 dni"
+              }
+            },
+            "type": "MÁ_CASOVE_OBDOBIE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravny Predpis",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "Pravny predpis"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 16",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 16"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Odsek",
+              "properties": {
+                "name": "(1)"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 2",
+              "type": "Odsek",
+              "properties": {
+                "name": "(2)"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Dodania Sluzby Vztahujuca Sa Na Nehnutelnost",
+              "type": "Cinnost",
+              "properties": {
+                "name": "dodanie sluzby vztahujuca sa na nehnutelnost"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Realitna Cinnost",
+              "type": "Cinnost",
+              "properties": {
+                "name": "realitna cinnost"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Cinnost Znalcov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "cinnost znalcov"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Ubytovacie Sluzby",
+              "type": "Cinnost",
+              "properties": {
+                "name": "ubytovacie sluzby"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Poskytnutie Prava Na Uzivanie Nehnutelnosti",
+              "type": "Cinnost",
+              "properties": {
+                "name": "poskytnutie prava na uzivanie nehnutelnosti"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Priprava A Koordinacia Stavebnych Prac",
+              "type": "Cinnost",
+              "properties": {
+                "name": "priprava a koordinacia stavebnych prac"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Sluzby Poskytovane Architektmi",
+              "type": "Cinnost",
+              "properties": {
+                "name": "sluzby poskytovane architektmi"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Stavebny Dozor",
+              "type": "Cinnost",
+              "properties": {
+                "name": "stavebny dozor"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Kratkodoby Najom Dopravnych Prostriedkov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "kratkodoby najom dopravnych prostriedkov"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost Iny Najom Dopravnych Prostriedkov",
+              "type": "Cinnost",
+              "properties": {
+                "name": "iny najom dopravnych prostriedkov"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Casove Obdobie Nepresahujuce 30 Dni",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "nepresahujuce 30 dni"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Casove Obdobie Nepresahujuce 90 Dni",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "nepresahujuce 90 dni"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Strana 22 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nzdaniteľnú osobu.\n§ 16\n(1) Miestom dodania služby vzťahujúcej sa na nehnuteľnosť vrátane realitnej činnosti a činnosti\nznalcov, ubytovacích služieb, poskytnutia práva na užívanie nehnuteľnosti, služieb zameraných na\nprípravu a koordináciu stavebných prác, ako sú služby poskytované architektmi a osobami\nzabezpečujúcimi stavebný dozor, je miesto, kde sa nehnuteľnosť nachádza.\n(2) Miestom dodania služby spočívajúcej v poskytnutí krátkodobého nájmu dopravných\nprostriedkov je miesto, kde sa dopravný prostriedok fyzicky dá k dispozícii zákazníkovi;\nkrátkodobým nájmom sa rozumie nepretržité držanie alebo používanie dopravného prostriedku\npočas obdobia nepresahujúceho 30 dní alebo 90 dní, ak ide o nájom plavidiel. Miestom dodania\nslužby spočívajúcej v poskytnutí iného nájmu dopravných prostriedkov, ako je krátkodobý nájom,\nak je poskytnutý osobe inej ako zdaniteľnej osobe, je miesto, kde má táto osoba sídlo, bydlisko\nalebo miesto, kde sa obvykle zdržiava, okrem nájmu výletnej lode, pri ktorom je miestom dodania\nslužby miesto, kde sa dá výletná loď fyzicky k dispozícii zákazníkovi za podmienky, že v tomto",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

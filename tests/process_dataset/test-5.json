@@ -1,0 +1,696 @@
+{
+  "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+  "odd": {
+    "nodes": [
+      "ColnySklad",
+      "Prevadzkovatel",
+      "Tovar",
+      "Dan",
+      "ZakladDane",
+      "Hodnota",
+      "PriemernaCena",
+      "WeboveSidlo",
+      "SvetovaBanka",
+      "KalendarnyMesiac",
+      "Eur",
+      "ReferencnyVymennyKurz",
+      "EuropskaCentralnaBanka",
+      "Den",
+      "VyňatieZColnehoSkladu",
+      "Predaj",
+      "Prepočet"
+    ],
+    "relationships": [
+      "MÁ_INFORMÁCIU_O",
+      "URČUJE_ZÁKLAD_DANE",
+      "JE_HODNOTA",
+      "SA_VYPOCITA_ZO_ZÁKLADU",
+      "JE_URČENÁ_NA_ZÁKLADE",
+      "JE_ZVEREJNENÁ_NA",
+      "ZVEREJŇUJE",
+      "PREDCHÁDZA",
+      "PREPOČÍTA_NA",
+      "POUŽIJE_KURZ",
+      "URČUJE_A_VYHLASUJE",
+      "NENI_URČENÝ_V_DEŇ",
+      "NASLEDUJE_PO",
+      "SA_TÝKA_VYŇATIA",
+      "SA_POUŽIJE_PRE"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "ColnySklad",
+      "Dan",
+      "Den",
+      "FinancnaInstitucia",
+      "Hodnota",
+      "KalendarnyMesiac",
+      "Mena",
+      "Paragraf",
+      "Predaj",
+      "Prepocet",
+      "Prevadzkovatel",
+      "PriemernaCena",
+      "ReferencnyVymennyKurz",
+      "Tovar",
+      "VynatieZColnehoSkladu",
+      "WeboveSidlo",
+      "ZakladDane"
+    ],
+    "relationship_types": [
+      "JE_HODNOTA",
+      "MA_INFORMACIU_O",
+      "NASLEDUJE_PO",
+      "NIE_JE_URCENY_V_DEN",
+      "POUZIVA_KURZ",
+      "POUZIVA_SA_PRE",
+      "PREDCHADZA",
+      "PREPOCITA_NA",
+      "TYKA_SA",
+      "URCUJE_A_VYHLASUJE",
+      "URCUJE_ZAKLAD_DANE",
+      "VYCHADZA_Z",
+      "ZVEREJNUJE"
+    ],
+    "merge_log": {
+      "node_types": {
+        "FinancnaInstitucia": [
+          "SvetovaBanka",
+          "EuropskaCentralnaBanka"
+        ],
+        "Mena": [
+          "Eur"
+        ],
+        "Prepocet": [
+          "Prepočet"
+        ],
+        "VynatieZColnehoSkladu": [
+          "VyňatieZColnehoSkladu"
+        ]
+      },
+      "relationship_types": {
+        "MA_INFORMACIU_O": [
+          "MÁ_INFORMÁCIU_O"
+        ],
+        "NIE_JE_URCENY_V_DEN": [
+          "NENI_URČENÝ_V_DEŇ"
+        ],
+        "POUZIVA_KURZ": [
+          "POUŽIJE_KURZ"
+        ],
+        "POUZIVA_SA_PRE": [
+          "SA_POUŽIJE_PRE"
+        ],
+        "PREDCHADZA": [
+          "PREDCHÁDZA"
+        ],
+        "PREPOCITA_NA": [
+          "PREPOČÍTA_NA"
+        ],
+        "TYKA_SA": [
+          "SA_TÝKA_VYŇATIA"
+        ],
+        "URCUJE_A_VYHLASUJE": [
+          "URČUJE_A_VYHLASUJE"
+        ],
+        "URCUJE_ZAKLAD_DANE": [
+          "URČUJE_ZÁKLAD_DANE"
+        ],
+        "VYCHADZA_Z": [
+          "SA_VYPOCITA_ZO_ZÁKLADU",
+          "JE_URČENÁ_NA_ZÁKLADE"
+        ],
+        "ZVEREJNUJE": [
+          "JE_ZVEREJNENÁ_NA",
+          "ZVEREJŇUJE"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Pravnypredpis",
+      "Paragraf",
+      "Odsek",
+      "Dan",
+      "Zaklad Dane",
+      "Hodnota Vyňateho Tovaru",
+      "Priemerna Cena Tovaru",
+      "Webove Sidlo Svetovej Banky",
+      "Kalendarny Mesiac",
+      "Referencny Vymenny Kurz",
+      "Európska Centralna Banka",
+      "Den",
+      "Prevádzkovatel Colneho Skladu",
+      "Tovar",
+      "Colne Uskladnovanie",
+      "chunk_0"
+    ],
+    "relationships": [
+      "VYPOCITA_SA_Z",
+      "JE",
+      "URCENA_PODLA",
+      "ZVEREJNENA_NA",
+      "ZA",
+      "PREDCHADZA",
+      "URCENY_A_VYHLASENY",
+      "V_DEN",
+      "PREDCHADZA",
+      "VYNUJE",
+      "SUVISI_S",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Pravnypredpis",
+            "type": "Pravnypredpis",
+            "properties": {}
+          },
+          {
+            "id": "Paragraf",
+            "type": "Paragraf",
+            "properties": {}
+          },
+          {
+            "id": "Odsek",
+            "type": "Odsek",
+            "properties": {}
+          },
+          {
+            "id": "Dan",
+            "type": "Dan",
+            "properties": {}
+          },
+          {
+            "id": "Zaklad Dane",
+            "type": "Zaklad dane",
+            "properties": {}
+          },
+          {
+            "id": "Hodnota Vyňateho Tovaru",
+            "type": "Hodnota",
+            "properties": {}
+          },
+          {
+            "id": "Priemerna Cena Tovaru",
+            "type": "Cena",
+            "properties": {}
+          },
+          {
+            "id": "Webove Sidlo Svetovej Banky",
+            "type": "Webove sidlo",
+            "properties": {}
+          },
+          {
+            "id": "Kalendarny Mesiac",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Referencny Vymenny Kurz",
+            "type": "Vymennykurz",
+            "properties": {}
+          },
+          {
+            "id": "Európska Centralna Banka",
+            "type": "Institucia",
+            "properties": {}
+          },
+          {
+            "id": "Den",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Prevádzkovatel Colneho Skladu",
+            "type": "Osoba",
+            "properties": {}
+          },
+          {
+            "id": "Tovar",
+            "type": "Vec",
+            "properties": {}
+          },
+          {
+            "id": "Colne Uskladnovanie",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+              "page": 51
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {}
+            },
+            "target": {
+              "id": "Zaklad Dane",
+              "type": "Zaklad dane",
+              "properties": {}
+            },
+            "type": "VYPOCITA_SA_Z",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zaklad Dane",
+              "type": "Zaklad dane",
+              "properties": {}
+            },
+            "target": {
+              "id": "Hodnota Vyňateho Tovaru",
+              "type": "Hodnota",
+              "properties": {}
+            },
+            "type": "JE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Hodnota Vyňateho Tovaru",
+              "type": "Hodnota",
+              "properties": {}
+            },
+            "target": {
+              "id": "Priemerna Cena Tovaru",
+              "type": "Cena",
+              "properties": {}
+            },
+            "type": "URCENA_PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Priemerna Cena Tovaru",
+              "type": "Cena",
+              "properties": {}
+            },
+            "target": {
+              "id": "Webove Sidlo Svetovej Banky",
+              "type": "Webove sidlo",
+              "properties": {}
+            },
+            "type": "ZVEREJNENA_NA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Priemerna Cena Tovaru",
+              "type": "Cena",
+              "properties": {}
+            },
+            "target": {
+              "id": "Kalendarny Mesiac",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "ZA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Kalendarny Mesiac",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "Kalendarny Mesiac",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "PREDCHADZA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Referencny Vymenny Kurz",
+              "type": "Vymennykurz",
+              "properties": {}
+            },
+            "target": {
+              "id": "Európska Centralna Banka",
+              "type": "Institucia",
+              "properties": {}
+            },
+            "type": "URCENY_A_VYHLASENY",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Referencny Vymenny Kurz",
+              "type": "Vymennykurz",
+              "properties": {}
+            },
+            "target": {
+              "id": "Den",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "V_DEN",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Den",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "Den",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "PREDCHADZA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Prevádzkovatel Colneho Skladu",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Tovar",
+              "type": "Vec",
+              "properties": {}
+            },
+            "type": "VYNUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Tovar",
+              "type": "Vec",
+              "properties": {}
+            },
+            "target": {
+              "id": "Colne Uskladnovanie",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "type": "SUVISI_S",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zaklad Dane",
+              "type": "Zaklad dane",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Hodnota Vyňateho Tovaru",
+              "type": "Hodnota",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Priemerna Cena Tovaru",
+              "type": "Cena",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Webove Sidlo Svetovej Banky",
+              "type": "Webove sidlo",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Kalendarny Mesiac",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Referencny Vymenny Kurz",
+              "type": "Vymennykurz",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Európska Centralna Banka",
+              "type": "Institucia",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Den",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Prevádzkovatel Colneho Skladu",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Tovar",
+              "type": "Vec",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Colne Uskladnovanie",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "režim colné uskladňovanie. Ak prevádzkovateľ colného skladu nemá informáciu o sume, za ktorú\nbol tovar skutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru\nurčená na základe priemernej ceny tovaru zverejnenej na webovom sídle Svetovej banky za\nkalendárny mesiac, ktorý predchádza kalendárnemu mesiacu, v ktorom sa tovar vyňal z colného\nskladu, prepočítanej na eurá; na prepočet sa použije referenčný výmenný kurz určený a vyhlásený\nEurópskou centrálnou bankou v deň, ktorý predchádza dňu, keď sa tovar vyňal z colného skladu,\nalebo v nasledujúci deň, ak nebol v tento deň referenčný výmenný kurz určený a vyhlásený.",
+                "page": 51
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

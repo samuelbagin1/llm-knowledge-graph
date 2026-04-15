@@ -21,18 +21,18 @@ graphrag = PDFGraphRAG(
     claude_api_key=os.getenv("ANTHROPIC_API_KEY")
 )
 
-name = "three-chunks-example"
+name = "test-10"
 
 # Load PDF documents
 documents = graphrag.load_pdf(pdf_path)
-documents = documents[58:60]
+documents = documents[10:25]
 
 # ------ open domain detection ------
 
 splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
 chunked_documents = splitter.split_documents(documents)
 
-chunked_documents = chunked_documents[:3]
+chunked_documents = chunked_documents[3:4]
 
 extracted_schema_list = asyncio.run(
     graphrag.async_open_domain_detection(

@@ -1,0 +1,731 @@
+{
+  "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+  "odd": {
+    "nodes": [
+      "DanovyUrad",
+      "Oznamenie",
+      "Osoba",
+      "Platitel",
+      "PravnyStatus",
+      "PredmetDane",
+      "Cinnost",
+      "Tuzemsko",
+      "Lehota",
+      "ZakonneUstanovenie"
+    ],
+    "relationships": [
+      "REGISTRUJE_PODLA",
+      "PRESTAVA_SPALAT",
+      "POVAZUJE_SA_ZA",
+      "VYKONAVA",
+      "JE_PREDMETOM_DANE_V",
+      "MA_POVINNOST_OZNAMIT",
+      "OZNAMUJE",
+      "UVA DZA_V",
+      "OD_DNA",
+      "DO_LEHOTY",
+      "PODLA_USTANOVENIA"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "Cinnost",
+      "DanovyUrad",
+      "Lehota",
+      "Osoba",
+      "Oznamenie",
+      "Paragraf",
+      "Platitel",
+      "PravnyStatus",
+      "PredmetDane",
+      "Tuzemsko"
+    ],
+    "relationship_types": [
+      "DO_LEHOTY",
+      "JE_PREDMETOM_DANE_V",
+      "MA_POVINNOST_OZNAMIT",
+      "OD_DNA",
+      "OZNAMUJE",
+      "PODLA_USTANOVENIA",
+      "POVAZUJE_SA_ZA",
+      "PRESTAVA_PLATIT",
+      "REGISTRUJE_PODLA",
+      "UVADZA_V",
+      "VYKONAVA"
+    ],
+    "merge_log": {
+      "node_types": {
+        "Paragraf": [
+          "ZakonneUstanovenie"
+        ]
+      },
+      "relationship_types": {
+        "PRESTAVA_PLATIT": [
+          "PRESTAVA_SPALAT"
+        ],
+        "UVADZA_V": [
+          "UVA DZA_V"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Zakon",
+      "Paragraf 4",
+      "Paragraf 5",
+      "Zdanitelna Osoba",
+      "Platitel Registrovany Podla § 4",
+      "Zahranicna Osoba",
+      "Danovy Urad",
+      "Cinnost",
+      "Cinnost, Ktora Je Predmetom Dane V Tuzemsku",
+      "Status Zahranicnej Osoby",
+      "Povinnost Oznamit",
+      "Oznamenie",
+      "Desat Dni",
+      "Den, Ked Prestala Splnat Status Zahranicnej Osoby",
+      "chunk_0"
+    ],
+    "relationships": [
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "MA_PRAVO",
+      "MA_POVINNOST",
+      "VYNASTUPUJE_OD",
+      "TRVANIE",
+      "MA_DOKUMENT",
+      "VYKONAVA",
+      "SPOJENA_S",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Zakon",
+            "type": "Pravnypredpis",
+            "properties": {
+              "name": "Zakon"
+            }
+          },
+          {
+            "id": "Paragraf 4",
+            "type": "Paragraf",
+            "properties": {
+              "name": "Paragraf 4"
+            }
+          },
+          {
+            "id": "Paragraf 5",
+            "type": "Paragraf",
+            "properties": {
+              "name": "Paragraf 5"
+            }
+          },
+          {
+            "id": "Zdanitelna Osoba",
+            "type": "Osoba",
+            "properties": {
+              "name": "Zdanitelna osoba"
+            }
+          },
+          {
+            "id": "Platitel Registrovany Podla § 4",
+            "type": "Osoba",
+            "properties": {
+              "name": "Platitel registrovany podla § 4"
+            }
+          },
+          {
+            "id": "Zahranicna Osoba",
+            "type": "Osoba",
+            "properties": {
+              "name": "Zahranicna osoba"
+            }
+          },
+          {
+            "id": "Danovy Urad",
+            "type": "Organ",
+            "properties": {
+              "name": "Danovy urad"
+            }
+          },
+          {
+            "id": "Cinnost",
+            "type": "Cinnost",
+            "properties": {
+              "name": "Cinnost"
+            }
+          },
+          {
+            "id": "Cinnost, Ktora Je Predmetom Dane V Tuzemsku",
+            "type": "Cinnost",
+            "properties": {
+              "name": "Cinnost, ktora je predmetom dane v tuzemsku"
+            }
+          },
+          {
+            "id": "Status Zahranicnej Osoby",
+            "type": "Pravo",
+            "properties": {
+              "name": "Status zahranicnej osoby"
+            }
+          },
+          {
+            "id": "Povinnost Oznamit",
+            "type": "Povinnost",
+            "properties": {
+              "name": "Povinnost oznamit"
+            }
+          },
+          {
+            "id": "Oznamenie",
+            "type": "Dokument",
+            "properties": {
+              "name": "Oznamenie"
+            }
+          },
+          {
+            "id": "Desat Dni",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Desat dni"
+            }
+          },
+          {
+            "id": "Den, Ked Prestala Splnat Status Zahranicnej Osoby",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Den, ked prestala splnat status zahranicnej osoby"
+            }
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+              "page": 10
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Zakon",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "Zakon"
+              }
+            },
+            "target": {
+              "id": "Paragraf 4",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf 4"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zakon",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "Zakon"
+              }
+            },
+            "target": {
+              "id": "Paragraf 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf 5"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "Paragraf 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf 5"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel Registrovany Podla § 4",
+              "type": "Osoba",
+              "properties": {
+                "name": "Platitel registrovany podla § 4"
+              }
+            },
+            "target": {
+              "id": "Paragraf 4",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf 4"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "Paragraf 4",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf 4"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "Status Zahranicnej Osoby",
+              "type": "Pravo",
+              "properties": {
+                "name": "Status zahranicnej osoby"
+              }
+            },
+            "type": "MA_PRAVO",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "Povinnost Oznamit",
+              "type": "Povinnost",
+              "properties": {
+                "name": "Povinnost oznamit"
+              }
+            },
+            "type": "MA_POVINNOST",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Povinnost Oznamit",
+              "type": "Povinnost",
+              "properties": {
+                "name": "Povinnost oznamit"
+              }
+            },
+            "target": {
+              "id": "Den, Ked Prestala Splnat Status Zahranicnej Osoby",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Den, ked prestala splnat status zahranicnej osoby"
+              }
+            },
+            "type": "VYNASTUPUJE_OD",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Povinnost Oznamit",
+              "type": "Povinnost",
+              "properties": {
+                "name": "Povinnost oznamit"
+              }
+            },
+            "target": {
+              "id": "Desat Dni",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Desat dni"
+              }
+            },
+            "type": "TRVANIE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Povinnost Oznamit",
+              "type": "Povinnost",
+              "properties": {
+                "name": "Povinnost oznamit"
+              }
+            },
+            "target": {
+              "id": "Oznamenie",
+              "type": "Dokument",
+              "properties": {
+                "name": "Oznamenie"
+              }
+            },
+            "type": "MA_DOKUMENT",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "Cinnost, Ktora Je Predmetom Dane V Tuzemsku",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Cinnost, ktora je predmetom dane v tuzemsku"
+              }
+            },
+            "type": "VYKONAVA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost, Ktora Je Predmetom Dane V Tuzemsku",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Cinnost, ktora je predmetom dane v tuzemsku"
+              }
+            },
+            "target": {
+              "id": "Zdanitelna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "type": "SPOJENA_S",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zakon",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "Zakon"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 4",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf 4"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf 5"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel Registrovany Podla § 4",
+              "type": "Osoba",
+              "properties": {
+                "name": "Platitel registrovany podla § 4"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zahranicna Osoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zahranicna osoba"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danovy Urad",
+              "type": "Organ",
+              "properties": {
+                "name": "Danovy urad"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Cinnost"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost, Ktora Je Predmetom Dane V Tuzemsku",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Cinnost, ktora je predmetom dane v tuzemsku"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Status Zahranicnej Osoby",
+              "type": "Pravo",
+              "properties": {
+                "name": "Status zahranicnej osoby"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Povinnost Oznamit",
+              "type": "Povinnost",
+              "properties": {
+                "name": "Povinnost oznamit"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Oznamenie",
+              "type": "Dokument",
+              "properties": {
+                "name": "Oznamenie"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Desat Dni",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Desat dni"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Den, Ked Prestala Splnat Status Zahranicnej Osoby",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Den, ked prestala splnat status zahranicnej osoby"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+                "page": 10
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

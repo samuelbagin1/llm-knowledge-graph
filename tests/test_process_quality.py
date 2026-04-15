@@ -29,9 +29,11 @@ Run from root:
 """
 
 import asyncio
+import json
 import os
 import re
 import sys
+from pathlib import Path
 
 sys.path.insert(0, "./code")
 
@@ -52,53 +54,19 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 ls_client = Client()
 
 # ---------------------------------------------------------------------------
-# Curated fixtures
+# Test data loader
 # ---------------------------------------------------------------------------
 
-# Short, representative Slovak legal text covering the main entity types
-# the pipeline is expected to produce (PravnyPredpis, Paragraf, Platitel, etc.)
-FIXTURE_TEXT = """
-222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 59\nc) finančných služieb oslobodených od dane podľa § 39, ak ich platiteľ poskytol príležitostne,\nd) 
-príležitostného prevodu nehnuteľnosti a príležitostného nájmu nehnuteľnosti.\n(3) V jednotlivých zdaňovacích obdobiach v priebehu kalendárneho roka 
-platiteľ použije\nkoeficient z predchádzajúceho kalendárneho roka. Ak nemožno použiť koeficient\nz predchádzajúceho kalendárneho roka, 
-určí platiteľ koeficient na príslušný kalendárny rok\nodhadom podľa charakteru svojej činnosti so súhlasom správcu dane.
-\n(4) Po skončení kalendárneho roka vypočíta platiteľ spôsobom podľa odseku 2 koeficient\nz údajov z tohto skončeného kalendárneho 
-roka a vypočíta odpočítateľnú daň za tento kalendárny\nrok. Rozdiel medzi odpočítanou daňou v jednotlivých zdaňovacích obdobiach 
-a daňou vypočítanou\npodľa prvej vety vysporiada platiteľ v poslednom zdaňovacom období kalendárneho roka na ťarchu\nalebo 
-v prospech štátneho rozpočtu. Tým istým spôsobom postupuje aj platiteľ, ktorý sa\nv priebehu kalendárneho roka stal platiteľom 
-alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.
-"""
-
-# What ODD should minimally return for FIXTURE_TEXT
-EXPECTED_ODD_NODE_TYPES = { "ZakonnaZbierka", "Suhlas", "NajomNehnutelnosti", "Odhad", "Koeficient", "Nehnutelnost", "KalendarnyRok",
-        "Odsek", "DanovyPredpis", "Rozdiel", "FinancnaSluzba", "PrevodNehnutelnosti", "Dan",
-        "OdpoctitelnaDan", "StatnyRozpocet", "ZdanovacieObdobie", "PlatitelDane", "Paragraf",
-        "SpravcaDane", "Vypocet", "Cinnost" }
-EXPECTED_ODD_REL_TYPES = { "POUZIJE", "MA_POSTAVENIE", "PRESTANE_BYT", "V_PROSPECH", "NA_TERCHU",
-        "SO_SUHLASOM", "ODKAZUJE_NA", "VYPOCITA", "URCUJE_PODLA", "VYSPORIADA", "URCI", "STANE_SA",
-        "POSKYTUJE", "ZA_OBDOBIE", "UPRAVUJE", "VYKONAVA", "JE_OSLOBODENA_OD" }
+TEST_DATA_DIR = Path(__file__).parent / "process_dataset"
 
 
-# Controlled raw schema with intentional duplicates for refinement testing
-# from: extracted_data/three-chunks-example_odd_20260415004630.json
-DUPLICATE_ODD_SCHEMA = Schema(
-    nodes=[
-        "DovoznyDoklad", "Dan", "DanovyDoklad", "Doklad", "FinancnaSluzba", "Odsek",
-        "Zakon", "OdpoctanieDane", "SpravcaDane", "Paragraf", "Nehnutelnost", "PlatitelDane",
-        "HospodarskyRok", "Pismeno", "ClenskyStát", "Dovozca", "PravoNaOdpoctanie", "Tuzemsko", "Suhlas", "HodnovernyDoklad", "Narok",
-        "Tovar", "Faktura", "StátnyRozpocet", "LehotaNaPodanieDanovehoPriznania", "CasoveObdobie",
-        "ZdanovacieObdobie", "Cinnost", "DanovePriznanie", "DanovaPovinnost", "OdpoctitelnaDan", "KalendarnyRok",
-        "Platitel", "NajomNehnutelnosti", "Pravo", "ColnyOrgan", "Prijemca", "Zaznam", "Vypocet", "Dodavatel",
-        "PrevodNehnutelnosti", "Koeficient"
-    ],
-    relationships=[
-        "PRESTAVA_BYT", "VYHOTOVUJE", "URCUJE", "ODKAZUJE_NA", "JE_UVEDENA_V", "ROZUMIE_SA_AKO", "PLATI_PRE",
-        "OSVEDCUJE", "POTVRDZUJE", "VYPOCITA", "V_SLUZENI", "VYSPORIADA", "POSKYTUJE", "NAJSKOR_V",
-        "MA_PRAVO", "UPRAVUJE", "MÁ_DOKLAD", "NAJKORSIE_V", "UPLATNUJE", "POCHADZA_Z", "V_PODLA", "V_PROSPECH",
-        "VYKONAVA", "MA_VÝNIMKU", "NA_ZAKLADE", "JE_UVEDENY_AKO", "NAJNESKOR_V", "ODOBPIEDA_PODLA", "POUZIVA",
-        "PREUKAZUJE", "SO_SUHLASOM", "NA_TARCHU", "PODMIENUJE", "MA_DOKLAD", "VZNIKA", "STAVA_SA"
-    ],
-)
+def load_test_files() -> list[dict]:
+    files = sorted(
+        TEST_DATA_DIR.glob("test-*.json"),
+        key=lambda p: int(p.stem.split("-")[1]),
+    )
+    return [json.loads(p.read_text()) for p in files]
+
 
 # Type pairs that are semantically distinct and must NOT be merged by refinement
 DISTINCT_PAIRS = [
@@ -292,7 +260,9 @@ def eval_odd_no_instances(run, example) -> dict:
 
 def eval_ref_paragraf_present(run, example) -> dict:
     """'Paragraf' must always appear in refined node_types (hardcoded injection in prompt)."""
-    data: dict = run.outputs["output"]
+    data: dict | None = (run.outputs or {}).get("output")
+    if data is None:
+        return {"key": "ref_paragraf_present", "score": 0.0, "comment": "No output"}
     present = "Paragraf" in data.get("node_types", [])
     return {"key": "ref_paragraf_present", "score": 1.0 if present else 0.0}
 
@@ -303,17 +273,24 @@ def eval_ref_no_new_types(run, example) -> dict:
     The only allowed injection is 'Paragraf' (explicitly added by the prompt).
     Reference: run.inputs["odd_schema"] and run.inputs["existing_schema"]
     """
-    data: dict = run.outputs["output"]
+    data: dict | None = (run.outputs or {}).get("output")
+    if data is None:
+        return {"key": "ref_no_new_types", "score": 0.0, "comment": "No output"}
     inputs: dict = run.inputs
 
-    allowed_nodes = set(inputs["odd_schema"].nodes)
+    odd = inputs.get("odd_schema")
+    if odd is None:
+        return {"key": "ref_no_new_types", "score": 1.0, "comment": "No schema reference"}
+    allowed_nodes = set(odd["nodes"] if isinstance(odd, dict) else odd.nodes)
     if inputs.get("existing_schema"):
-        allowed_nodes |= set(inputs["existing_schema"].nodes)
+        ex = inputs["existing_schema"]
+        allowed_nodes |= set(ex["nodes"] if isinstance(ex, dict) else ex.nodes)
     allowed_nodes.add("Paragraf")
 
-    allowed_rels = set(inputs["odd_schema"].relationships)
+    allowed_rels = set(odd["relationships"] if isinstance(odd, dict) else odd.relationships)
     if inputs.get("existing_schema"):
-        allowed_rels |= set(inputs["existing_schema"].relationships)
+        ex = inputs["existing_schema"]
+        allowed_rels |= set(ex["relationships"] if isinstance(ex, dict) else ex.relationships)
 
     invented_nodes = [t for t in data.get("node_types", []) if t not in allowed_nodes]
     invented_rels = [t for t in data.get("relationship_types", []) if t not in allowed_rels]
@@ -330,7 +307,9 @@ def eval_ref_merge_log_consistency(run, example) -> dict:
     Every canonical key in merge_log must exist in the output type lists.
     Orphan keys mean the LLM documented a merge but forgot to include the canonical type.
     """
-    data: dict = run.outputs["output"]
+    data: dict | None = (run.outputs or {}).get("output")
+    if data is None:
+        return {"key": "ref_merge_log_consistency", "score": 0.0, "comment": "No output"}
     node_types = set(data.get("node_types", []))
     rel_types = set(data.get("relationship_types", []))
     merge_log = data.get("merge_log", {})
@@ -347,7 +326,9 @@ def eval_ref_merge_log_consistency(run, example) -> dict:
 
 def eval_ref_no_diacritics(run, example) -> dict:
     """All refined type names must be diacritic-free (same rule as ODD)."""
-    data: dict = run.outputs["output"]
+    data: dict | None = (run.outputs or {}).get("output")
+    if data is None:
+        return {"key": "ref_no_diacritics", "score": 0.0, "comment": "No output"}
     all_types = data.get("node_types", []) + data.get("relationship_types", [])
     violations = [t for t in all_types if _has_diacritics(t)]
     return {
@@ -366,7 +347,9 @@ def eval_ref_deduplication(run, example) -> dict:
     Score = fraction of canonicals satisfying all three conditions.
     Reference: example.outputs['expected_canonical_nodes']
     """
-    data: dict = run.outputs["output"]
+    data: dict | None = (run.outputs or {}).get("output")
+    if data is None:
+        return {"key": "ref_deduplication", "score": 0.0, "comment": "No output"}
     expected = example.outputs.get("expected_canonical_nodes", [])
     if not expected:
         return {"key": "ref_deduplication", "score": 1.0, "comment": "No reference"}
@@ -402,7 +385,9 @@ def eval_ref_distinct_not_merged(run, example) -> dict:
     Checks DISTINCT_PAIRS against the merge_log.
     A failure here means the model over-consolidated the schema.
     """
-    data: dict = run.outputs["output"]
+    data: dict | None = (run.outputs or {}).get("output")
+    if data is None:
+        return {"key": "ref_distinct_not_merged", "score": 0.0, "comment": "No output"}
     merge_log_nodes = data.get("merge_log", {}).get("node_types", {})
     violations = []
     for a, b in DISTINCT_PAIRS:
@@ -425,11 +410,16 @@ def eval_sde_schema_compliance_nodes(run, example) -> dict:
     """
     All extracted node types (except 'Chunk') must belong to the provided schema.
     Violations mean the LLM ignored schema constraints.
-    Reference: run.inputs["schema"].nodes
+    Reference: run.inputs["schema"]["nodes"]
     """
-    gd: GraphDocument = run.outputs["output"]
-    schema: Schema = run.inputs["schema"]
-    allowed = {t.lower() for t in schema.nodes} | {"chunk"}
+    gd: GraphDocument | None = (run.outputs or {}).get("output")
+    if gd is None:
+        return {"key": "sde_schema_compliance_nodes", "score": 0.0, "comment": "No output"}
+    schema = run.inputs.get("schema")
+    if schema is None:
+        return {"key": "sde_schema_compliance_nodes", "score": 1.0, "comment": "No schema reference"}
+    schema_nodes = schema["nodes"] if isinstance(schema, dict) else schema.nodes
+    allowed = {t.lower() for t in schema_nodes} | {"chunk"}
     violations = [n.type for n in gd.nodes if n.type.lower() not in allowed]
     score = max(0.0, 1.0 - len(violations) / max(len(gd.nodes), 1))
     return {
@@ -442,12 +432,17 @@ def eval_sde_schema_compliance_nodes(run, example) -> dict:
 def eval_sde_schema_compliance_rels(run, example) -> dict:
     """
     All relationship types (except system rels IN_CHUNK, IN_DOCUMENT) must be from schema.
-    Reference: run.inputs["schema"].relationships
+    Reference: run.inputs["schema"]["relationships"]
     """
-    gd: GraphDocument = run.outputs["output"]
-    schema: Schema = run.inputs["schema"]
+    gd: GraphDocument | None = (run.outputs or {}).get("output")
+    if gd is None:
+        return {"key": "sde_schema_compliance_rels", "score": 0.0, "comment": "No output"}
+    schema = run.inputs.get("schema")
+    if schema is None:
+        return {"key": "sde_schema_compliance_rels", "score": 1.0, "comment": "No schema reference"}
+    schema_rels = schema["relationships"] if isinstance(schema, dict) else schema.relationships
     system_rels = {"in_chunk", "in_document"}
-    allowed = {t.lower() for t in schema.relationships} | system_rels
+    allowed = {t.lower() for t in schema_rels} | system_rels
     violations = [r.type for r in gd.relationships if r.type.lower() not in allowed]
     score = max(0.0, 1.0 - len(violations) / max(len(gd.relationships), 1))
     return {
@@ -463,7 +458,9 @@ def eval_sde_referential_integrity(run, example) -> dict:
     Broken references mean the LLM hallucinated a node reference in a relationship
     without producing the corresponding Node object.
     """
-    gd: GraphDocument = run.outputs["output"]
+    gd: GraphDocument | None = (run.outputs or {}).get("output")
+    if gd is None:
+        return {"key": "sde_referential_integrity", "score": 0.0, "comment": "No output"}
     node_ids = {n.id for n in gd.nodes}
     broken = [
         (r.source.id, r.type, r.target.id)
@@ -480,7 +477,9 @@ def eval_sde_referential_integrity(run, example) -> dict:
 
 def eval_sde_node_ids_no_diacritics(run, example) -> dict:
     """Node IDs must not contain diacritics (same rule as type names in ODD/REF)."""
-    gd: GraphDocument = run.outputs["output"]
+    gd: GraphDocument | None = (run.outputs or {}).get("output")
+    if gd is None:
+        return {"key": "sde_node_ids_no_diacritics", "score": 0.0, "comment": "No output"}
     violations = [n.id for n in gd.nodes if _has_diacritics(str(n.id))]
     score = max(0.0, 1.0 - len(violations) / max(len(gd.nodes), 1))
     return {
@@ -496,7 +495,9 @@ def eval_sde_in_chunk_coverage(run, example) -> dict:
     This is added by _convert_to_graph_document — a missing link means
     the conversion logic dropped a node-chunk association.
     """
-    gd: GraphDocument = run.outputs["output"]
+    gd: GraphDocument | None = (run.outputs or {}).get("output")
+    if gd is None:
+        return {"key": "sde_in_chunk_coverage", "score": 0.0, "comment": "No output"}
     non_chunk_ids = {n.id for n in gd.nodes if n.type != "Chunk"}
     nodes_with_in_chunk = {r.source.id for r in gd.relationships if r.type == "IN_CHUNK"}
     missing = non_chunk_ids - nodes_with_in_chunk
@@ -508,14 +509,15 @@ def eval_sde_in_chunk_coverage(run, example) -> dict:
     }
 
 
-
 def eval_sde_entity_recall(run, example) -> dict:
     """
     Fraction of expected entity names (from fixture) found among extracted node IDs.
     Uses case-insensitive substring match — entities may be slightly reformatted by the LLM.
     Reference: example.outputs["expected_entities"]
     """
-    gd: GraphDocument = run.outputs["output"]
+    gd: GraphDocument | None = (run.outputs or {}).get("output")
+    if gd is None:
+        return {"key": "sde_entity_recall", "score": 0.0, "comment": "No output"}
     expected_entities: list = example.outputs.get("expected_entities", [])
     if not expected_entities:
         return {"key": "sde_entity_recall", "score": 1.0, "comment": "No reference"}
@@ -543,73 +545,72 @@ def _get_or_create_dataset(name: str, description: str):
 def create_odd_dataset():
     ds = _get_or_create_dataset(
         "odd_eval_v1",
-        "ODD: curated Slovak legal text + expected schema types"
+        "ODD: Slovak legal text chunks + expected schema types (10 test cases)",
     )
-    if not list(ls_client.list_examples(dataset_id=ds.id)):
-        ls_client.create_example(
-            inputs={"text": FIXTURE_TEXT},
-            outputs={
-                "expected_node_types": list(EXPECTED_ODD_NODE_TYPES),
-                "expected_rel_types": list(EXPECTED_ODD_REL_TYPES),
-            },
-            dataset_id=ds.id,
-        )
+    test_files = load_test_files()
+    existing_count = len(list(ls_client.list_examples(dataset_id=ds.id)))
+    if existing_count < len(test_files):
+        for t in test_files[existing_count:]:
+            ls_client.create_example(
+                inputs={"text": t["text"]},
+                outputs={
+                    "expected_node_types": t["odd"]["nodes"],
+                    "expected_rel_types": t["odd"]["relationships"],
+                },
+                dataset_id=ds.id,
+            )
     return ds
 
 
 def create_ref_dataset():
     ds = _get_or_create_dataset(
         "ref_eval_v1",
-        "Refinement: controlled schema with known synonyms and distinct pairs"
+        "Refinement: ODD schemas from 10 test cases with expected canonical nodes",
     )
-    if not list(ls_client.list_examples(dataset_id=ds.id)):
-        ls_client.create_example(
-            inputs={
-                "odd_schema": DUPLICATE_ODD_SCHEMA,
-                "existing_schema": None,
-            },
-            outputs={
-                "expected_canonical_nodes": ["Dokument", "PravnyPredpis", "Osoba", "Spolocnost"],
-            },
-            dataset_id=ds.id,
-        )
+    test_files = load_test_files()
+    existing_count = len(list(ls_client.list_examples(dataset_id=ds.id)))
+    if existing_count < len(test_files):
+        for t in test_files[existing_count:]:
+            ls_client.create_example(
+                inputs={
+                    "odd_schema": {
+                        "nodes": t["odd"]["nodes"],
+                        "relationships": t["odd"]["relationships"],
+                    },
+                    "existing_schema": None,
+                },
+                outputs={
+                    "expected_canonical_nodes": list(
+                        t["ref"]["merge_log"]["node_types"].keys()
+                    ),
+                },
+                dataset_id=ds.id,
+            )
     return ds
 
 
 def create_sde_dataset():
     ds = _get_or_create_dataset(
         "sde_eval_v1",
-        "SDE: curated text with fixed schema + expected extracted entities"
+        "SDE: text + refined schema from 10 test cases + expected extracted entities",
     )
-    if not list(ls_client.list_examples(dataset_id=ds.id)):
-        ls_client.create_example(
-            inputs={
-                "text": FIXTURE_TEXT,
-                "schema": Schema(
-                    nodes=[ "Cinnost", "ClenskyStat", "Dan", "DanovaPovinnost",
-                        "DanovePriznanie", "Dodavatel", "Doklad", "Dovozca", "Koeficient",
-                        "Lehota", "Nehnutelnost", "Odsek", "Paragraf", "Pismeno", "PlatitelDane",
-                        "Pravo", "Prijemca", "SpravcaDane", "StatnyRozpocet", "Suhlas", "Tovar", "Tuzemsko",
-                        "Vypocet", "Zakon", "Zaznam", "ZdanovacieObdobie"],
-                    relationships=[ "JE_DEFINOVANY_AKO", "JE_UVEDENY_V", "KONCI_NAJNESKOR", "MA_DOKLAD",
-                        "MA_PRAVO", "MA_VYNIMKU", "NA_TARCHU", "NA_ZAKLADE", "ODKAZUJE_NA", "PLATI_PRE", "POCHADZA_Z",
-                        "PODLA", "PODMIENUJE", "POSKYTUJE", "POTVRDZUJE", "POUZIVA", "PRESTAVA_BYT", "STAVA_SA", 
-                        "UPLATNUJE", "UPRAVUJE", "URCUJE", "V_PROSPECH", "VYHOTOVUJE", "VYKONAVA", "VYPOCITA", "VYSPORIADA",
-                        "VYZADUJE_SUHLAS", "VZNIKA", "ZACINA_NAJSKOR", "ZODPOVEDA_PODLA"]
-                ),
-            },
-            outputs={
-                "expected_entities": [
-                    "Pravny Predpis", "Paragraf 39", "Odsek 3", "Odsek 4",
-                    "Kalendarny Rok", "Prislusny Kalendarny Rok", "Jednotlive Zdanovacie Obdobia", "Predchadzajuci Kalendarny Rok",
-                    "Skonceny Kalendarny Rok", "Posledne Zdanovacie Obdobie Kalendarneho Roka",
-                    "Platitel", "Spravca Dane", "Statny Rozpocet", "Financne Sluzby Oslobodene Od Dane", "Prilezitostny Prevod Nehnutelnosti",
-                    "Prilezitostny Najom Nehnutelnosti", "Koeficient", "Odpocitatelna Dan",
-                    "Dan", "Rozdiel Medzi Odpocitanou Danou A Danou"
-                ],
-            },
-            dataset_id=ds.id,
-        )
+    test_files = load_test_files()
+    existing_count = len(list(ls_client.list_examples(dataset_id=ds.id)))
+    if existing_count < len(test_files):
+        for t in test_files[existing_count:]:
+            ls_client.create_example(
+                inputs={
+                    "text": t["text"],
+                    "schema": {
+                        "nodes": t["ref"]["node_types"],
+                        "relationships": t["ref"]["relationship_types"],
+                    },
+                },
+                outputs={
+                    "expected_entities": t["sde"]["nodes"],
+                },
+                dataset_id=ds.id,
+            )
     return ds
 
 
@@ -639,8 +640,8 @@ def run_odd(inputs: dict) -> dict:
 def run_refinement(inputs: dict) -> dict:
     rag = _make_rag()
     result = rag.schema_refinement(
-        odd_schema=inputs["odd_schema"],
-        existing_schema=inputs.get("existing_schema"),
+        odd_schema=Schema(**inputs["odd_schema"]),
+        existing_schema=Schema(**inputs["existing_schema"]) if inputs.get("existing_schema") else None,
     )
     return {"output": result}
 
@@ -649,7 +650,7 @@ def run_sde(inputs: dict) -> dict:
     rag = _make_rag()
     doc = Document(page_content=inputs["text"])
     graph_doc: GraphDocument = asyncio.run(
-        rag.schema_driven_extraction(0, doc, inputs["schema"])
+        rag.schema_driven_extraction(0, doc, Schema(**inputs["schema"]))
     )
     return {"output": graph_doc}
 

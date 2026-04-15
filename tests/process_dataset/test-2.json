@@ -1,0 +1,1081 @@
+{
+  "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+  "odd": {
+    "nodes": [
+      "KalendarnyRok",
+      "HospodarskyRok",
+      "Platitel",
+      "OdpoctenieDane",
+      "Dan",
+      "Faktura",
+      "Zaznam",
+      "Dodavatel",
+      "ClenskyStat",
+      "HodnovernyDoklad",
+      "Tovar",
+      "Tuzemsko",
+      "DanovaPovinnost",
+      "ZdanovacieObdobie",
+      "DovoznyDoklad",
+      "ColnyOrgan",
+      "Prijemca",
+      "Dovozca",
+      "Odsek",
+      "Pismeno",
+      "Paragraf"
+    ],
+    "relationships": [
+      "UDELUJE_PRAVO_NA",
+      "MOZE_UPLATNIT",
+      "MA_PODMIENKU",
+      "MA_DOKLAD",
+      "VYHOTOVUJE",
+      "EVIDUJE",
+      "POCHADZA_Z",
+      "PREUKAZUJE",
+      "OSVEDCUJE",
+      "VZNIKA_V",
+      "VZTAHUJE_SA_NA",
+      "POTVRDZUJE",
+      "UVADZA_AKO",
+      "PRIJIMA_ALEBO_DOVAZA",
+      "URCUJE",
+      "RADI_DO"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "ClenskyStat",
+      "ColnyOrgan",
+      "Dan",
+      "DanovaPovinnost",
+      "Dodavatel",
+      "Dovozca",
+      "DovoznyDoklad",
+      "Faktura",
+      "HodnovernyDoklad",
+      "HospodarskyRok",
+      "KalendarnyRok",
+      "OdpoctenieDane",
+      "Odsek",
+      "Paragraf",
+      "Pismeno",
+      "Platitel",
+      "Prijemca",
+      "Tovar",
+      "Tuzemsko",
+      "Zaznam",
+      "ZdanovacieObdobie"
+    ],
+    "relationship_types": [
+      "EVIDUJE",
+      "MA_DOKLAD",
+      "MA_PODMIENKU",
+      "MOZE_UPLATNIT",
+      "POCHADZA_Z",
+      "POTVRDZUJE",
+      "PREUKAZUJE",
+      "PRIJIMA_ALEBO_DOVAZA",
+      "RADI_DO",
+      "UDELUJE_PRAVO_NA",
+      "URCUJE",
+      "UVADZA_AKO",
+      "VZNIKA_V",
+      "VZTAHUJE_SA_NA",
+      "VYHOTOVUJE"
+    ],
+    "merge_log": {
+      "node_types": {},
+      "relationship_types": {
+        "POTVRDZUJE": [
+          "POTVRDZUJE",
+          "OSVEDCUJE"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Pravnypredpis",
+      "Paragraf 51",
+      "Odsek 1",
+      "Odsek 2",
+      "Odsek 4",
+      "Odsek 5",
+      "Kalendarny Rok",
+      "Hospodarsky Rok",
+      "Pravo Na Odpocitanie Dane",
+      "Platitel",
+      "Dan",
+      "Faktura",
+      "Zaznamy",
+      "Dovodny Doklad",
+      "Hodnoverny Doklad",
+      "Colny Organ",
+      "Zdaovacie Obdobie",
+      "Prisposobenie Postavenia Platitela",
+      "chunk_0"
+    ],
+    "relationships": [
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "ODKAZUJE_NA",
+      "ODKAZUJE_NA",
+      "UKLADA_POVINNOST",
+      "UDELUJE_PRAVO",
+      "VYZADUJE_DOKUMENT",
+      "VYZADUJE_DOKUMENT",
+      "VYZADUJE_DOKUMENT",
+      "VYZADUJE_DOKUMENT",
+      "POTVRDIL",
+      "ODKAZUJE_NA",
+      "ODKAZUJE_NA",
+      "ODKAZUJE_NA",
+      "VYZADUJE_CINNOST",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Pravnypredpis",
+            "type": "Pravnypredpis",
+            "properties": {
+              "name": "PravnyPredpis"
+            }
+          },
+          {
+            "id": "Paragraf 51",
+            "type": "Paragraf",
+            "properties": {
+              "name": "§ 51"
+            }
+          },
+          {
+            "id": "Odsek 1",
+            "type": "Paragraf",
+            "properties": {
+              "name": "ods. 1"
+            }
+          },
+          {
+            "id": "Odsek 2",
+            "type": "Paragraf",
+            "properties": {
+              "name": "ods. 2"
+            }
+          },
+          {
+            "id": "Odsek 4",
+            "type": "Paragraf",
+            "properties": {
+              "name": "ods. 4"
+            }
+          },
+          {
+            "id": "Odsek 5",
+            "type": "Paragraf",
+            "properties": {
+              "name": "ods. 5"
+            }
+          },
+          {
+            "id": "Kalendarny Rok",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "kalendarny rok"
+            }
+          },
+          {
+            "id": "Hospodarsky Rok",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "hospodarsky rok"
+            }
+          },
+          {
+            "id": "Pravo Na Odpocitanie Dane",
+            "type": "Pravo",
+            "properties": {
+              "name": "pravo na odpocitanie dane"
+            }
+          },
+          {
+            "id": "Platitel",
+            "type": "Osoba",
+            "properties": {
+              "name": "platitel"
+            }
+          },
+          {
+            "id": "Dan",
+            "type": "Dan",
+            "properties": {
+              "name": "dan"
+            }
+          },
+          {
+            "id": "Faktura",
+            "type": "Dokument",
+            "properties": {
+              "name": "faktura"
+            }
+          },
+          {
+            "id": "Zaznamy",
+            "type": "Dokument",
+            "properties": {
+              "name": "zaznamy"
+            }
+          },
+          {
+            "id": "Dovodny Doklad",
+            "type": "Dokument",
+            "properties": {
+              "name": "dovozny doklad"
+            }
+          },
+          {
+            "id": "Hodnoverny Doklad",
+            "type": "Dokument",
+            "properties": {
+              "name": "inny hodnoverny doklad"
+            }
+          },
+          {
+            "id": "Colny Organ",
+            "type": "Organ",
+            "properties": {
+              "name": "colny organ"
+            }
+          },
+          {
+            "id": "Zdaovacie Obdobie",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "prislusne zdaovacie obdobie"
+            }
+          },
+          {
+            "id": "Prisposobenie Postavenia Platitela",
+            "type": "Cinnost",
+            "properties": {
+              "name": "stal platitelom alebo prestal byt platitelom"
+            }
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+              "page": 58
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "PravnyPredpis"
+              }
+            },
+            "target": {
+              "id": "Paragraf 51",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 51"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 51",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 51"
+              }
+            },
+            "target": {
+              "id": "Odsek 1",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 1"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 51",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 51"
+              }
+            },
+            "target": {
+              "id": "Odsek 2",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 2"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 51",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 51"
+              }
+            },
+            "target": {
+              "id": "Odsek 4",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 4"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 51",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 51"
+              }
+            },
+            "target": {
+              "id": "Odsek 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 5"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 51",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 51"
+              }
+            },
+            "target": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Odsek 1",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 1"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Odsek 2",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 2"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Odsek 4",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 4"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Odsek 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 5"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 5"
+              }
+            },
+            "target": {
+              "id": "Kalendarny Rok",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "kalendarny rok"
+              }
+            },
+            "type": "ODKAZUJE_NA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 5"
+              }
+            },
+            "target": {
+              "id": "Hospodarsky Rok",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "hospodarsky rok"
+              }
+            },
+            "type": "ODKAZUJE_NA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 1"
+              }
+            },
+            "target": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {
+                "name": "platitel"
+              }
+            },
+            "type": "UKLADA_POVINNOST",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 1"
+              }
+            },
+            "target": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "type": "UDELUJE_PRAVO",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Faktura",
+              "type": "Dokument",
+              "properties": {
+                "name": "faktura"
+              }
+            },
+            "type": "VYZADUJE_DOKUMENT",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Zaznamy",
+              "type": "Dokument",
+              "properties": {
+                "name": "zaznamy"
+              }
+            },
+            "type": "VYZADUJE_DOKUMENT",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Dovodny Doklad",
+              "type": "Dokument",
+              "properties": {
+                "name": "dovozny doklad"
+              }
+            },
+            "type": "VYZADUJE_DOKUMENT",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Hodnoverny Doklad",
+              "type": "Dokument",
+              "properties": {
+                "name": "inny hodnoverny doklad"
+              }
+            },
+            "type": "VYZADUJE_DOKUMENT",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dovodny Doklad",
+              "type": "Dokument",
+              "properties": {
+                "name": "dovozny doklad"
+              }
+            },
+            "target": {
+              "id": "Colny Organ",
+              "type": "Organ",
+              "properties": {
+                "name": "colny organ"
+              }
+            },
+            "type": "POTVRDIL",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 1"
+              }
+            },
+            "target": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {
+                "name": "dan"
+              }
+            },
+            "type": "ODKAZUJE_NA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 1"
+              }
+            },
+            "target": {
+              "id": "Zdaovacie Obdobie",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "prislusne zdaovacie obdobie"
+              }
+            },
+            "type": "ODKAZUJE_NA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 5"
+              }
+            },
+            "target": {
+              "id": "Zdaovacie Obdobie",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "prislusne zdaovacie obdobie"
+              }
+            },
+            "type": "ODKAZUJE_NA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "Prisposobenie Postavenia Platitela",
+              "type": "Cinnost",
+              "properties": {
+                "name": "stal platitelom alebo prestal byt platitelom"
+              }
+            },
+            "type": "VYZADUJE_CINNOST",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "PravnyPredpis"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf 51",
+              "type": "Paragraf",
+              "properties": {
+                "name": "§ 51"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 1",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 1"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 2",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 2"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 4",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 4"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 5",
+              "type": "Paragraf",
+              "properties": {
+                "name": "ods. 5"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Kalendarny Rok",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "kalendarny rok"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Hospodarsky Rok",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "hospodarsky rok"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {
+                "name": "pravo na odpocitanie dane"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {
+                "name": "platitel"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {
+                "name": "dan"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Faktura",
+              "type": "Dokument",
+              "properties": {
+                "name": "faktura"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zaznamy",
+              "type": "Dokument",
+              "properties": {
+                "name": "zaznamy"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dovodny Doklad",
+              "type": "Dokument",
+              "properties": {
+                "name": "dovozny doklad"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Hodnoverny Doklad",
+              "type": "Dokument",
+              "properties": {
+                "name": "inny hodnoverny doklad"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Colny Organ",
+              "type": "Organ",
+              "properties": {
+                "name": "colny organ"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdaovacie Obdobie",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "prislusne zdaovacie obdobie"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Prisposobenie Postavenia Platitela",
+              "type": "Cinnost",
+              "properties": {
+                "name": "stal platitelom alebo prestal byt platitelom"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v priebehu kalendárneho roka stal platiteľom alebo v priebehu kalendárneho roka prestal byť\nplatiteľom, a to za obdobie kalendárneho roka, v ktorom mal postavenie platiteľa.\n(5) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odsekov 2 až 4 sa kalendárnym\nrokom rozumie hospodársky rok.\n§ 51\nUplatnenie práva na odpočítanie dane\n(1) Právo na odpočítanie dane podľa § 49 môže platiteľ uplatniť, ak\na) pri odpočítaní dane podľa § 49 ods. 2 písm. a) má faktúru od platiteľa vyhotovenú podľa § 71,\nb) pri odpočítaní dane podľa § 49 ods. 2 písm. b) je daň uvedená v záznamoch podľa § 70,\nc) pri odpočítaní dane podľa § 49 ods. 2 písm. c) má faktúru od dodávateľa z iného členského\nštátu; ak platiteľ nemá faktúru, môže uplatnenie práva na odpočítanie dane preukázať aj iným\nhodnoverným dokladom osvedčujúcim nadobudnutie tovaru v tuzemsku z iného členského\nštátu a vznik daňovej povinnosti pri nadobudnutí tovaru v tuzemsku z iného členského štátu\nv príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+  "odd": {
+    "nodes": [
+      "Dan",
+      "DaqovePriznanie",
+      "DodatozneDaqovePriznanie",
+      "OdpisitanieDane",
+      "Platitel",
+      "Faktura",
+      "DaqovaPovinnost",
+      "Tovar",
+      "ClenskyStat",
+      "Tuzemsko",
+      "DaqoveObdobie",
+      "KalendarnyRok",
+      "UctovneObdobie",
+      "HospodarskyRok",
+      "Povinnost",
+      "Pravo",
+      "Odsek",
+      "Paragraf",
+      "Pismeno",
+      "Zakon",
+      "OdpoctenieDane"
+    ],
+    "relationships": [
+      "VZNIKA",
+      "MA_PRAVO",
+      "MA_POVINNOST",
+      "PODAVA",
+      "TIKA_SA",
+      "STANOVUJE",
+      "VYKONAVA",
+      "DORUCUJE_SA",
+      "VYPLYVA_Z",
+      "VZTAHUJE_SA_NA",
+      "JE_PODMIENENE",
+      "NA_ZAKLADE"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "ClenskyStat",
+      "DanoveObdobie",
+      "DanovePriznanie",
+      "DanovaPovinnost",
+      "Faktura",
+      "HospodarskyRok",
+      "KalendarnyRok",
+      "OdpocitanieDane",
+      "Odsek",
+      "Paragraf",
+      "Pismeno",
+      "Platitel",
+      "Povinnost",
+      "Pravo",
+      "Tovar",
+      "Tuzemsko",
+      "UctovneObdobie",
+      "Zakon"
+    ],
+    "relationship_types": [
+      "DORUCUJE_SA",
+      "JE_PODMIENENE",
+      "MA_POVINNOST",
+      "MA_PRAVO",
+      "PODAVA",
+      "STANOVUJE",
+      "VYKONAVA",
+      "VYPLYVA_Z",
+      "VZNIKA",
+      "VZTAHUJE_SA_NA"
+    ],
+    "merge_log": {
+      "node_types": {
+        "DanovePriznanie": [
+          "DaqovePriznanie",
+          "DodatozneDaqovePriznanie"
+        ],
+        "DanovaPovinnost": [
+          "Dan",
+          "DaqovaPovinnost"
+        ],
+        "OdpocitanieDane": [
+          "OdpisitanieDane",
+          "OdpoctenieDane"
+        ]
+      },
+      "relationship_types": {
+        "VZTAHUJE_SA_NA": [
+          "TIKA_SA",
+          "VZTAHUJE_SA_NA"
+        ],
+        "VYPLYVA_Z": [
+          "VYPLYVA_Z",
+          "NA_ZAKLADE"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Pravnypredpis",
+      "Paragraf",
+      "Odsek",
+      "Pravo",
+      "Povinnost",
+      "Cinnost",
+      "Dane",
+      "Danovapovinnost",
+      "Danovepriznanie",
+      "Dodocnedanovepriznanie",
+      "Faktura",
+      "Platitel",
+      "Zdanovacieobdobie",
+      "Kalendarnyrok",
+      "Hospodarskyrok",
+      "Denpodaniadodocnehodanovehopriznania",
+      "Odocitaniedane",
+      "Vznikpravanaodocitaniedane",
+      "Vznikdanovejpovinnosti",
+      "Doručeniefaktury",
+      "Nadobudnutietovaruvtuzemskuzinéhoclenskehostatu",
+      "chunk_0"
+    ],
+    "relationships": [
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "PODLA",
+      "POVINNY",
+      "MA_PRAVO",
+      "V_ZDAŇOVACIOM_OBDOBI",
+      "PRED",
+      "NAJNESKOR",
+      "MA_PRAVO",
+      "POVINNY",
+      "VZNIKA_PODLA",
+      "SPOSOBUJE",
+      "V_ZDAŇOVACIOM_OBDOBI",
+      "KU_DNU",
+      "POTREBNA_PRE",
+      "MA_DANOVU_POVINNOST",
+      "VZNIKA_PODLA",
+      "NAMIETKOU_PRE",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Pravnypredpis",
+            "type": "Pravnypredpis",
+            "properties": {}
+          },
+          {
+            "id": "Paragraf",
+            "type": "Paragraf",
+            "properties": {}
+          },
+          {
+            "id": "Odsek",
+            "type": "Odsek",
+            "properties": {}
+          },
+          {
+            "id": "Pravo",
+            "type": "Pravo",
+            "properties": {}
+          },
+          {
+            "id": "Povinnost",
+            "type": "Povinnost",
+            "properties": {}
+          },
+          {
+            "id": "Cinnost",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Dane",
+            "type": "Dane",
+            "properties": {}
+          },
+          {
+            "id": "Danovapovinnost",
+            "type": "Danovapovinnost",
+            "properties": {}
+          },
+          {
+            "id": "Danovepriznanie",
+            "type": "Dokument",
+            "properties": {}
+          },
+          {
+            "id": "Dodocnedanovepriznanie",
+            "type": "Dokument",
+            "properties": {}
+          },
+          {
+            "id": "Faktura",
+            "type": "Dokument",
+            "properties": {}
+          },
+          {
+            "id": "Platitel",
+            "type": "Osoba",
+            "properties": {}
+          },
+          {
+            "id": "Zdanovacieobdobie",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Kalendarnyrok",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Hospodarskyrok",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Denpodaniadodocnehodanovehopriznania",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Odocitaniedane",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Vznikpravanaodocitaniedane",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Vznikdanovejpovinnosti",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Doručeniefaktury",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Nadobudnutietovaruvtuzemskuzinéhoclenskehostatu",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+              "page": 58
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {}
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Dodocnedanovepriznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "type": "POVINNY",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odocitaniedane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "type": "MA_PRAVO",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odocitaniedane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Zdanovacieobdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "V_ZDAŇOVACIOM_OBDOBI",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanovacieobdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "Kalendarnyrok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "PRED",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanovacieobdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "Kalendarnyrok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "NAJNESKOR",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Vznikpravanaodocitaniedane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "type": "MA_PRAVO",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Danovepriznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "type": "POVINNY",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danovapovinnost",
+              "type": "Danovapovinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "type": "VZNIKA_PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Doručeniefaktury",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Dodocnedanovepriznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "type": "SPOSOBUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dodocnedanovepriznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "Zdanovacieobdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "V_ZDAŇOVACIOM_OBDOBI",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dodocnedanovepriznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "Denpodaniadodocnehodanovehopriznania",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "KU_DNU",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Faktura",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odocitaniedane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "type": "POTREBNA_PRE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Danovapovinnost",
+              "type": "Danovapovinnost",
+              "properties": {}
+            },
+            "type": "MA_DANOVU_POVINNOST",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Nadobudnutietovaruvtuzemskuzinéhoclenskehostatu",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "type": "VZNIKA_PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Hospodarskyrok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "Kalendarnyrok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "NAMIETKOU_PRE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo",
+              "type": "Pravo",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Povinnost",
+              "type": "Povinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dane",
+              "type": "Dane",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danovapovinnost",
+              "type": "Danovapovinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danovepriznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dodocnedanovepriznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Faktura",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanovacieobdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Kalendarnyrok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Hospodarskyrok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Denpodaniadodocnehodanovehopriznania",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odocitaniedane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Vznikpravanaodocitaniedane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Vznikdanovejpovinnosti",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Doručeniefaktury",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Nadobudnutietovaruvtuzemskuzinéhoclenskehostatu",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "najskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.\n(3) Ak v dôsledku oneskoreného doručenia faktúry je platiteľ povinný podať dodatočné daňové\npriznanie z dôvodu, že daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského\nštátu vznikla podľa § 20 ods. 1 písm. b), má platiteľ právo vykonať odpočítanie dane v zdaňovacom\nobdobí, za ktoré podáva dodatočné daňové priznanie, ak ku dňu podania dodatočného daňového\npriznania má faktúru.\n(4) Ak je účtovným obdobím platiteľa hospodársky rok, na účely odseku 2 sa kalendárnym",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

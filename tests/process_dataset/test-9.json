@@ -1,0 +1,707 @@
+{
+  "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+  "odd": {
+    "nodes": [
+      "ClenskyStat",
+      "PrepravaTovaru",
+      "Miesto",
+      "Dodanie",
+      "DoplnkovaSluzba",
+      "Nakladanie",
+      "Vykladanie",
+      "Manipulacia",
+      "Osoba",
+      "ZdanitelnaOsoba",
+      "Odsek"
+    ],
+    "relationships": [
+      "MA_MIESTO_ZACIATKU",
+      "MA_MIESTO_SKONCENIA",
+      "PREBIEHA_NA_UZEMI",
+      "VZTAHUJE_SA_NA",
+      "JE_DODANA_OSOBE",
+      "JE_NA_UCELY",
+      "JE_TYPOM"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "ClenskyStat",
+      "PrepravaTovaru",
+      "Miesto",
+      "Dodanie",
+      "DoplnkovaSluzba",
+      "Nakladanie",
+      "Vykladanie",
+      "Manipulacia",
+      "Osoba",
+      "ZdanitelnaOsoba",
+      "Odsek",
+      "Paragraf"
+    ],
+    "relationship_types": [
+      "MA_MIESTO_ZACIATKU",
+      "MA_MIESTO_SKONCENIA",
+      "PREBIEHA_NA_UZEMI",
+      "VZTAHUJE_SA_NA",
+      "JE_DODANA_OSOBE",
+      "JE_NA_UCELY",
+      "JE_TYPOM"
+    ],
+    "merge_log": {
+      "node_types": {
+        "ClenskyStat": [
+          "ClenskyStat"
+        ],
+        "PrepravaTovaru": [
+          "PrepravaTovaru"
+        ],
+        "Miesto": [
+          "Miesto"
+        ],
+        "Dodanie": [
+          "Dodanie"
+        ],
+        "DoplnkovaSluzba": [
+          "DoplnkovaSluzba"
+        ],
+        "Nakladanie": [
+          "Nakladanie"
+        ],
+        "Vykladanie": [
+          "Vykladanie"
+        ],
+        "Manipulacia": [
+          "Manipulacia"
+        ],
+        "Osoba": [
+          "Osoba"
+        ],
+        "ZdanitelnaOsoba": [
+          "ZdanitelnaOsoba"
+        ],
+        "Odsek": [
+          "Odsek"
+        ]
+      },
+      "relationship_types": {
+        "MA_MIESTO_ZACIATKU": [
+          "MA_MIESTO_ZACIATKU"
+        ],
+        "MA_MIESTO_SKONCENIA": [
+          "MA_MIESTO_SKONCENIA"
+        ],
+        "PREBIEHA_NA_UZEMI": [
+          "PREBIEHA_NA_UZEMI"
+        ],
+        "VZTAHUJE_SA_NA": [
+          "VZTAHUJE_SA_NA"
+        ],
+        "JE_DODANA_OSOBE": [
+          "JE_DODANA_OSOBE"
+        ],
+        "JE_NA_UCELY": [
+          "JE_NA_UCELY"
+        ],
+        "JE_TYPOM": [
+          "JE_TYPOM"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Pravnypredpis",
+      "Paragraf",
+      "Odsek",
+      "Cinnost",
+      "Pravo",
+      "Povinnost",
+      "Casoveobdobie",
+      "Financnymechanizmus",
+      "Vypoctovymechanizmus",
+      "Preprava Tovaru Medzi Clenskymi Statmi",
+      "Mesto Zaciatku Prepravy Tovaru",
+      "Mesto Skoncenia Prepravy Tovaru",
+      "Doplnkove Sluzby Pri Preprave",
+      "Prekonana Vzdialenost",
+      "Odsek 5",
+      "Odsek 6",
+      "Odsek 7",
+      "Odsek 8",
+      "chunk_0"
+    ],
+    "relationships": [
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "PODLA",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Pravnypredpis",
+            "type": "Pravnypredpis",
+            "properties": {}
+          },
+          {
+            "id": "Paragraf",
+            "type": "Paragraf",
+            "properties": {}
+          },
+          {
+            "id": "Odsek",
+            "type": "Odsek",
+            "properties": {}
+          },
+          {
+            "id": "Cinnost",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Pravo",
+            "type": "Pravo",
+            "properties": {}
+          },
+          {
+            "id": "Povinnost",
+            "type": "Povinnost",
+            "properties": {}
+          },
+          {
+            "id": "Casoveobdobie",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Financnymechanizmus",
+            "type": "Financnymechanizmus",
+            "properties": {}
+          },
+          {
+            "id": "Vypoctovymechanizmus",
+            "type": "Vypoctovymechanizmus",
+            "properties": {}
+          },
+          {
+            "id": "Preprava Tovaru Medzi Clenskymi Statmi",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Mesto Zaciatku Prepravy Tovaru",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Mesto Skoncenia Prepravy Tovaru",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Doplnkove Sluzby Pri Preprave",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Prekonana Vzdialenost",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Odsek 5",
+            "type": "Odsek",
+            "properties": {}
+          },
+          {
+            "id": "Odsek 6",
+            "type": "Odsek",
+            "properties": {}
+          },
+          {
+            "id": "Odsek 7",
+            "type": "Odsek",
+            "properties": {}
+          },
+          {
+            "id": "Odsek 8",
+            "type": "Odsek",
+            "properties": {}
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+              "page": 21
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {}
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 7",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek 5",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 7",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek 6",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Preprava Tovaru Medzi Clenskymi Statmi",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek 7",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Mesto Zaciatku Prepravy Tovaru",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek 7",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Mesto Skoncenia Prepravy Tovaru",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek 7",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Doplnkove Sluzby Pri Preprave",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odsek 8",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Cinnost",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo",
+              "type": "Pravo",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Povinnost",
+              "type": "Povinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Casoveobdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Financnymechanizmus",
+              "type": "Financnymechanizmus",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Vypoctovymechanizmus",
+              "type": "Vypoctovymechanizmus",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Preprava Tovaru Medzi Clenskymi Statmi",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Mesto Zaciatku Prepravy Tovaru",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Mesto Skoncenia Prepravy Tovaru",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Doplnkove Sluzby Pri Preprave",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Prekonana Vzdialenost",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 5",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 6",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 7",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek 8",
+              "type": "Odsek",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "k prekonaným vzdialenostiam v týchto štátoch.\n(7) Na účely odsekov 5 a 6 je\na) prepravou tovaru medzi členskými štátmi preprava tovaru, ktorej miesto začatia a miesto\nskončenia sa nachádzajú na územiach dvoch rôznych členských štátov,\nb) miestom začatia prepravy tovaru miesto, kde sa preprava tovaru skutočne začína, bez ohľadu\nna prekonanú vzdialenosť do miesta, kde sa tovar nachádza,\nc) miestom skončenia prepravy tovaru miesto, kde sa preprava tovaru skutočne skončí.\n(8) Miestom dodania doplnkových služieb pri preprave, napríklad nakladanie, vykladanie,\nmanipulácia a podobné služby, ak sú tieto služby dodané osobe inej ako zdaniteľnej osobe, je",
+                "page": 21
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

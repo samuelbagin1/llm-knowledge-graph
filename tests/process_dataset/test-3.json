@@ -1,0 +1,784 @@
+{
+  "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+  "odd": {
+    "nodes": [
+      "Platitel",
+      "Dan",
+      "OdpoctenieDane",
+      "PravoNaOdpoctenieDane",
+      "Dodoklad",
+      "ColnyOrgan",
+      "Prijemca",
+      "Dovozca",
+      "ZdanovacieObdobie",
+      "KalendarnyRok",
+      "LehotaNaPodanieDanovehoPriznania",
+      "DanovePriznanie",
+      "Doklad"
+    ],
+    "relationships": [
+      "VYKONAVA",
+      "MA_PRAVO_NA",
+      "VZNIKA_V",
+      "NAJSKOR_V",
+      "NAJNESKOR_V",
+      "MA_DOKLAD",
+      "POTVRDZUJE",
+      "JE_UVEDENY_AKO",
+      "DOSTANE",
+      "UPLATNUJE_V"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "Platitel",
+      "Dan",
+      "OdpoctenieDane",
+      "PravoNaOdpoctenieDane",
+      "Doklad",
+      "ColnyOrgan",
+      "Prijemca",
+      "Dovozca",
+      "ZdanovacieObdobie",
+      "KalendarnyRok",
+      "LehotaNaPodanieDanovehoPriznania",
+      "DanovePriznanie",
+      "Paragraf"
+    ],
+    "relationship_types": [
+      "VYKONAVA",
+      "MA_PRAVO_NA",
+      "VZNIKA_V",
+      "NAJSKOR_V",
+      "NAJNESKOR_V",
+      "MA_DOKLAD",
+      "POTVRDZUJE",
+      "JE_UVEDENY_AKO",
+      "DOSTANE",
+      "UPLATNUJE_V"
+    ],
+    "merge_log": {
+      "node_types": {
+        "Platitel": [
+          "Platitel"
+        ],
+        "Dan": [
+          "Dan"
+        ],
+        "OdpoctenieDane": [
+          "OdpoctenieDane"
+        ],
+        "PravoNaOdpoctenieDane": [
+          "PravoNaOdpoctenieDane"
+        ],
+        "Doklad": [
+          "Dodoklad",
+          "Doklad"
+        ],
+        "ColnyOrgan": [
+          "ColnyOrgan"
+        ],
+        "Prijemca": [
+          "Prijemca"
+        ],
+        "Dovozca": [
+          "Dovozca"
+        ],
+        "ZdanovacieObdobie": [
+          "ZdanovacieObdobie"
+        ],
+        "KalendarnyRok": [
+          "KalendarnyRok"
+        ],
+        "LehotaNaPodanieDanovehoPriznania": [
+          "LehotaNaPodanieDanovehoPriznania"
+        ],
+        "DanovePriznanie": [
+          "DanovePriznanie"
+        ]
+      },
+      "relationship_types": {
+        "VYKONAVA": [
+          "VYKONAVA"
+        ],
+        "MA_PRAVO_NA": [
+          "MA_PRAVO_NA"
+        ],
+        "VZNIKA_V": [
+          "VZNIKA_V"
+        ],
+        "NAJSKOR_V": [
+          "NAJSKOR_V"
+        ],
+        "NAJNESKOR_V": [
+          "NAJNESKOR_V"
+        ],
+        "MA_DOKLAD": [
+          "MA_DOKLAD"
+        ],
+        "POTVRDZUJE": [
+          "POTVRDZUJE"
+        ],
+        "JE_UVEDENY_AKO": [
+          "JE_UVEDENY_AKO"
+        ],
+        "DOSTANE": [
+          "DOSTANE"
+        ],
+        "UPLATNUJE_V": [
+          "UPLATNUJE_V"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Pravnypredpis",
+      "Paragraf",
+      "Odstavec",
+      "Pismeno",
+      "Dovozny Doklad",
+      "Colny Organ",
+      "Platitel",
+      "Pravo Na Odpocitanie Dane",
+      "Odpocitanie Dane",
+      "Dan",
+      "Zdanovacie Obdobie",
+      "Kalendarny Rok",
+      "Lehota Na Podanie Danoveho Priznania",
+      "Danove Priznanie",
+      "Prijemca",
+      "Dovozca",
+      "chunk_0"
+    ],
+    "relationships": [
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "PODLA",
+      "MA_PRAVO",
+      "MA_POVINNOST",
+      "VYZADUJE",
+      "VYZADUJE",
+      "VYDAVA",
+      "IDENTIFIKUJE",
+      "IDENTIFIKUJE",
+      "ODOHRAVA_SA_V",
+      "ODOHRAVA_SA_V",
+      "ODOHRAVA_SA_V",
+      "VZNIKA_V",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Pravnypredpis",
+            "type": "Pravnypredpis",
+            "properties": {}
+          },
+          {
+            "id": "Paragraf",
+            "type": "Paragraf",
+            "properties": {}
+          },
+          {
+            "id": "Odstavec",
+            "type": "Odstavec",
+            "properties": {}
+          },
+          {
+            "id": "Pismeno",
+            "type": "Pismeno",
+            "properties": {}
+          },
+          {
+            "id": "Dovozny Doklad",
+            "type": "Dokument",
+            "properties": {}
+          },
+          {
+            "id": "Colny Organ",
+            "type": "Organ",
+            "properties": {}
+          },
+          {
+            "id": "Platitel",
+            "type": "Osoba",
+            "properties": {}
+          },
+          {
+            "id": "Pravo Na Odpocitanie Dane",
+            "type": "Pravo",
+            "properties": {}
+          },
+          {
+            "id": "Odpocitanie Dane",
+            "type": "Cinnost",
+            "properties": {}
+          },
+          {
+            "id": "Dan",
+            "type": "Dan",
+            "properties": {}
+          },
+          {
+            "id": "Zdanovacie Obdobie",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Kalendarny Rok",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Lehota Na Podanie Danoveho Priznania",
+            "type": "Casoveobdobie",
+            "properties": {}
+          },
+          {
+            "id": "Danove Priznanie",
+            "type": "Dokument",
+            "properties": {}
+          },
+          {
+            "id": "Prijemca",
+            "type": "Osoba",
+            "properties": {}
+          },
+          {
+            "id": "Dovozca",
+            "type": "Osoba",
+            "properties": {}
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+              "page": 58
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {}
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odstavec",
+              "type": "Odstavec",
+              "properties": {}
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odstavec",
+              "type": "Odstavec",
+              "properties": {}
+            },
+            "target": {
+              "id": "Pismeno",
+              "type": "Pismeno",
+              "properties": {}
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {}
+            },
+            "type": "MA_PRAVO",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "Odpocitanie Dane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "type": "MA_POVINNOST",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odpocitanie Dane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Danove Priznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "type": "VYZADUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odpocitanie Dane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Dovozny Doklad",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "type": "VYZADUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dovozny Doklad",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "Colny Organ",
+              "type": "Organ",
+              "properties": {}
+            },
+            "type": "VYDAVA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dovozny Doklad",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "Prijemca",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "type": "IDENTIFIKUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dovozny Doklad",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "Dovozca",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "type": "IDENTIFIKUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odpocitanie Dane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Zdanovacie Obdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "ODOHRAVA_SA_V",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odpocitanie Dane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Kalendarny Rok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "ODOHRAVA_SA_V",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odpocitanie Dane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "Lehota Na Podanie Danoveho Priznania",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "ODOHRAVA_SA_V",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {}
+            },
+            "target": {
+              "id": "Zdanovacie Obdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "type": "VZNIKA_V",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odstavec",
+              "type": "Odstavec",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pismeno",
+              "type": "Pismeno",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dovozny Doklad",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Colny Organ",
+              "type": "Organ",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platitel",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravo Na Odpocitanie Dane",
+              "type": "Pravo",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odpocitanie Dane",
+              "type": "Cinnost",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanovacie Obdobie",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Kalendarny Rok",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Lehota Na Podanie Danoveho Priznania",
+              "type": "Casoveobdobie",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danove Priznanie",
+              "type": "Dokument",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Prijemca",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dovozca",
+              "type": "Osoba",
+              "properties": {}
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "v príslušnom zdaňovacom období,\nd) pri odpočítaní dane podľa § 49 ods. 2 písm. d) má dovozný doklad potvrdený colným orgánom,\nv ktorom je platiteľ uvedený ako príjemca alebo dovozca.\n(2) Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. a), c) alebo písm. d) najskôr\nv zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr v poslednom\nzdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo, ak do\nuplynutia lehoty na podanie daňového priznania za zdaňovacie obdobie, v ktorom uplatňuje právo\nna odpočítanie dane, má doklad podľa odseku 1 písm. a), c) alebo písm. d). Ak platiteľ nemá\ndoklad podľa odseku 1 písm. a), c) alebo písm. d) do uplynutia lehoty na podanie daňového\npriznania za posledné zdaňovacie obdobie kalendárneho roka, v ktorom právo na odpočítanie dane\nvzniklo, vykoná odpočítanie dane v tom zdaňovacom období, v ktorom dostane doklad podľa\nodseku 1 písm. a), c) alebo písm. d). Platiteľ vykoná odpočítanie dane podľa § 49 ods. 2 písm. b)\nnajskôr v zdaňovacom období, v ktorom právo na odpočítanie dane vzniklo, a najneskôr\nv poslednom zdaňovacom období kalendárneho roka, v ktorom právo na odpočítanie dane vzniklo.",
+                "page": 58
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,896 @@
+{
+  "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+  "odd": {
+    "nodes": [
+      "Dan",
+      "DaňovéPriznanie",
+      "DaňovýÚrad",
+      "Lehota",
+      "Platba",
+      "Účet",
+      "ZdaniteľnáOsoba",
+      "Údaj",
+      "ZdaňovacieObdobie",
+      "ČlenskýŠtát",
+      "PracovnýPokoje",
+      "Sobota",
+      "Nedeľa",
+      "KalendárnyDeň",
+      "KalendárnyRok",
+      "Kurz",
+      "NárodnáBankaSlovenska",
+      "Výpočet",
+      "PríslušenstvoDane"
+    ],
+    "relationships": [
+      "PLATÍ_NA",
+      "UPLYNUTIE_LEHOTY",
+      "POUŽIJE_KURZ",
+      "URČUJE_A_VYHLASUJE",
+      "JE_PRIPÍSANÁ_NA",
+      "SA_PODÁVA_NAJNESKÔR_DO",
+      "ODKAZUJE_NA",
+      "JE_POVINNÁ_UVIESŤ",
+      "OBSAHUJE_ÚDAJ",
+      "TÝKA_SA_ZDAŇOVACIEHO_OBDOBIA",
+      "PRIPADÁ_NA",
+      "JE_URČENÝ_PRE"
+    ]
+  },
+  "ref": {
+    "node_types": [
+      "ClenskyStat",
+      "Dan",
+      "DanovePriznanie",
+      "DanovyUrad",
+      "DenPracovnehoPokoja",
+      "KalendarnyDen",
+      "KalendarnyRok",
+      "Kurz",
+      "Lehota",
+      "NarodnaBankaSlovenska",
+      "Nedela",
+      "Paragraf",
+      "Platba",
+      "PrislusenstvoDane",
+      "Sobota",
+      "Ucet",
+      "Udaj",
+      "Vypocet",
+      "ZdanitelnaOsoba",
+      "ZdanovacieObdobie"
+    ],
+    "relationship_types": [
+      "JE_POVINNA_UVIEST",
+      "JE_PRIPISANA_NA",
+      "JE_URCENY_PRE",
+      "OBSAHUJE_UDAJ",
+      "ODKAZUJE_NA",
+      "PLATI_NA",
+      "POUZIJE_KURZ",
+      "PRIPADA_NA",
+      "SA_PODAVA_NAJNESKOR_DO",
+      "TYKA_SA_ZDANOVACIEHO_OBDOBIA",
+      "UPLYNUTIE_LEHOTY",
+      "URCUJE_A_VYHLASUJE"
+    ],
+    "merge_log": {
+      "node_types": {
+        "ClenskyStat": [
+          "ČlenskýŠtát"
+        ],
+        "Dan": [
+          "Dan",
+          "Daň"
+        ],
+        "DanovePriznanie": [
+          "DaňovéPriznanie"
+        ],
+        "DanovyUrad": [
+          "DaňovýÚrad"
+        ],
+        "DenPracovnehoPokoja": [
+          "PracovnýPokoje"
+        ],
+        "KalendarnyDen": [
+          "KalendárnyDeň"
+        ],
+        "KalendarnyRok": [
+          "KalendárnyRok"
+        ],
+        "Kurz": [
+          "Kurz"
+        ],
+        "Lehota": [
+          "Lehota"
+        ],
+        "NarodnaBankaSlovenska": [
+          "NárodnáBankaSlovenska"
+        ],
+        "Nedela": [
+          "Nedeľa"
+        ],
+        "Platba": [
+          "Platba"
+        ],
+        "PrislusenstvoDane": [
+          "PríslušenstvoDane"
+        ],
+        "Sobota": [
+          "Sobota"
+        ],
+        "Ucet": [
+          "Účet"
+        ],
+        "Udaj": [
+          "Údaj"
+        ],
+        "Vypocet": [
+          "Výpočet"
+        ],
+        "ZdanitelnaOsoba": [
+          "ZdaniteľnáOsoba"
+        ],
+        "ZdanovacieObdobie": [
+          "ZdaňovacieObdobie"
+        ]
+      },
+      "relationship_types": {
+        "JE_POVINNA_UVIEST": [
+          "JE_POVINNÁ_UVIESŤ"
+        ],
+        "JE_PRIPISANA_NA": [
+          "JE_PRIPÍSANÁ_NA"
+        ],
+        "JE_URCENY_PRE": [
+          "JE_URČENÝ_PRE"
+        ],
+        "OBSAHUJE_UDAJ": [
+          "OBSAHUJE_ÚDAJ"
+        ],
+        "ODKAZUJE_NA": [
+          "ODKAZUJE_NA"
+        ],
+        "PLATI_NA": [
+          "PLATÍ_NA"
+        ],
+        "POUZIJE_KURZ": [
+          "POUŽIJE_KURZ"
+        ],
+        "PRIPADA_NA": [
+          "PRIPADÁ_NA"
+        ],
+        "SA_PODAVA_NAJNESKOR_DO": [
+          "SA_PODÁVA_NAJNESKÔR_DO"
+        ],
+        "TYKA_SA_ZDANOVACIEHO_OBDOBIA": [
+          "TÝKA_SA_ZDAŇOVACIEHO_OBDOBIA"
+        ],
+        "UPLYNUTIE_LEHOTY": [
+          "UPLYNUTIE_LEHOTY"
+        ],
+        "URCUJE_A_VYHLASUJE": [
+          "URČUJE_A_VYHLASUJE"
+        ]
+      }
+    }
+  },
+  "sde": {
+    "nodes": [
+      "Pravnypredpis",
+      "Paragraf",
+      "Odsek",
+      "Dan",
+      "Danovepriznanie",
+      "Danovyurad",
+      "Zdanitelnaosoba",
+      "Prijemnaucetdanovehouradu",
+      "Podaniedanovehopriznania",
+      "Platbadane",
+      "Lehotanapodaniedanovehopriznania",
+      "Lehotanazaplateniedane",
+      "Dnitriroky",
+      "Sobota",
+      "Nedela",
+      "Denpracovnehopokoja",
+      "Poslednydenzdanovaciehoobdobia",
+      "Nasledujuciden",
+      "chunk_0"
+    ],
+    "relationships": [
+      "OBSAHUJE",
+      "OBSAHUJE",
+      "PODLA",
+      "POVINNOST",
+      "PODLA",
+      "POVINNOST",
+      "VYZADUJE",
+      "VYZADUJE",
+      "VYRAZUJE",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK",
+      "IN_CHUNK"
+    ],
+    "graph_document": [
+      {
+        "source": "",
+        "nodes": [
+          {
+            "id": "Pravnypredpis",
+            "type": "Pravnypredpis",
+            "properties": {
+              "name": "PravnyPredpis"
+            }
+          },
+          {
+            "id": "Paragraf",
+            "type": "Paragraf",
+            "properties": {
+              "name": "Paragraf"
+            }
+          },
+          {
+            "id": "Odsek",
+            "type": "Odsek",
+            "properties": {
+              "name": "Odsek"
+            }
+          },
+          {
+            "id": "Dan",
+            "type": "Dan",
+            "properties": {
+              "name": "Dan"
+            }
+          },
+          {
+            "id": "Danovepriznanie",
+            "type": "Dokument",
+            "properties": {
+              "name": "Danove priznanie"
+            }
+          },
+          {
+            "id": "Danovyurad",
+            "type": "Organ",
+            "properties": {
+              "name": "Danovy urad"
+            }
+          },
+          {
+            "id": "Zdanitelnaosoba",
+            "type": "Osoba",
+            "properties": {
+              "name": "Zdanitelna osoba"
+            }
+          },
+          {
+            "id": "Prijemnaucetdanovehouradu",
+            "type": "Cinnost",
+            "properties": {
+              "name": "Pripisanie platby na ucet danoveho uradu"
+            }
+          },
+          {
+            "id": "Podaniedanovehopriznania",
+            "type": "Cinnost",
+            "properties": {
+              "name": "Podanie danoveho priznania"
+            }
+          },
+          {
+            "id": "Platbadane",
+            "type": "Cinnost",
+            "properties": {
+              "name": "Platba dane"
+            }
+          },
+          {
+            "id": "Lehotanapodaniedanovehopriznania",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Lehota na podanie danoveho priznania"
+            }
+          },
+          {
+            "id": "Lehotanazaplateniedane",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Lehota na zaplatenie dane"
+            }
+          },
+          {
+            "id": "Dnitriroky",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Tri roky"
+            }
+          },
+          {
+            "id": "Sobota",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Sobota"
+            }
+          },
+          {
+            "id": "Nedela",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Nedela"
+            }
+          },
+          {
+            "id": "Denpracovnehopokoja",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Den pracovneho pokoja"
+            }
+          },
+          {
+            "id": "Poslednydenzdanovaciehoobdobia",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Posledny den zdanovacieho obdobia"
+            }
+          },
+          {
+            "id": "Nasledujuciden",
+            "type": "Casoveobdobie",
+            "properties": {
+              "name": "Nasledujuci den"
+            }
+          },
+          {
+            "id": "chunk_0",
+            "type": "Chunk",
+            "properties": {
+              "name": "chunk_0",
+              "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+              "page": 88
+            }
+          }
+        ],
+        "relationships": [
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "PravnyPredpis"
+              }
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf"
+              }
+            },
+            "target": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {
+                "name": "Odsek"
+              }
+            },
+            "type": "OBSAHUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {
+                "name": "Dan"
+              }
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {
+                "name": "Dan"
+              }
+            },
+            "target": {
+              "id": "Platbadane",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Platba dane"
+              }
+            },
+            "type": "POVINNOST",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danovepriznanie",
+              "type": "Dokument",
+              "properties": {
+                "name": "Danove priznanie"
+              }
+            },
+            "target": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf"
+              }
+            },
+            "type": "PODLA",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelnaosoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "Podaniedanovehopriznania",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Podanie danoveho priznania"
+              }
+            },
+            "type": "POVINNOST",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platbadane",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Platba dane"
+              }
+            },
+            "target": {
+              "id": "Danovepriznanie",
+              "type": "Dokument",
+              "properties": {
+                "name": "Danove priznanie"
+              }
+            },
+            "type": "VYZADUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platbadane",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Platba dane"
+              }
+            },
+            "target": {
+              "id": "Danovyurad",
+              "type": "Organ",
+              "properties": {
+                "name": "Danovy urad"
+              }
+            },
+            "type": "VYZADUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Prijemnaucetdanovehouradu",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Pripisanie platby na ucet danoveho uradu"
+              }
+            },
+            "target": {
+              "id": "Lehotanazaplateniedane",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Lehota na zaplatenie dane"
+              }
+            },
+            "type": "VYRAZUJE",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Pravnypredpis",
+              "type": "Pravnypredpis",
+              "properties": {
+                "name": "PravnyPredpis"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Paragraf",
+              "type": "Paragraf",
+              "properties": {
+                "name": "Paragraf"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Odsek",
+              "type": "Odsek",
+              "properties": {
+                "name": "Odsek"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dan",
+              "type": "Dan",
+              "properties": {
+                "name": "Dan"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danovepriznanie",
+              "type": "Dokument",
+              "properties": {
+                "name": "Danove priznanie"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Danovyurad",
+              "type": "Organ",
+              "properties": {
+                "name": "Danovy urad"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Zdanitelnaosoba",
+              "type": "Osoba",
+              "properties": {
+                "name": "Zdanitelna osoba"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Prijemnaucetdanovehouradu",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Pripisanie platby na ucet danoveho uradu"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Podaniedanovehopriznania",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Podanie danoveho priznania"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Platbadane",
+              "type": "Cinnost",
+              "properties": {
+                "name": "Platba dane"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Lehotanapodaniedanovehopriznania",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Lehota na podanie danoveho priznania"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Lehotanazaplateniedane",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Lehota na zaplatenie dane"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Dnitriroky",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Tri roky"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Sobota",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Sobota"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Nedela",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Nedela"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Denpracovnehopokoja",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Den pracovneho pokoja"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Poslednydenzdanovaciehoobdobia",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Posledny den zdanovacieho obdobia"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          },
+          {
+            "source": {
+              "id": "Nasledujuciden",
+              "type": "Casoveobdobie",
+              "properties": {
+                "name": "Nasledujuci den"
+              }
+            },
+            "target": {
+              "id": "chunk_0",
+              "type": "Chunk",
+              "properties": {
+                "name": "chunk_0",
+                "text": "Národnou bankou Slovenska5a) platný posledný deň príslušného zdaňovacieho obdobia alebo\nnasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia tento kurz určený a vyhlásený.\n(18) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(19) Každú zmenu údajov z pôvodného daňového priznania je zdaniteľná osoba uvedená\nv odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+                "page": 88
+              }
+            },
+            "type": "IN_CHUNK",
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  }
+}

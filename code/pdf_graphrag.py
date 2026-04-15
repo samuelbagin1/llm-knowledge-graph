@@ -23,7 +23,7 @@ from classes import Schema, ClassifiedDocument, Type, SubSentence
 from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference, response_schema_for_inference, system_prompt_for_generating_query, response_schema_for_generating_query
+from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference,system_prompt_for_generating_query, response_schema_for_generating_query
 from examples import examples_for_extraction
 from pydantic import BaseModel, Field, SecretStr
 import numpy as np
@@ -253,6 +253,13 @@ class PDFGraphRAG:
             google_api_key=google_api_key,
             timeout=600,
             thinking_level='high'
+        )
+        
+        self.gemini_client_flash = ChatGoogleGenerativeAI(
+            model="gemini-2.5-flash",
+            temperature=0.0,
+            google_api_key=google_api_key,
+            timeout=600,
         )
 
 
@@ -1115,24 +1122,24 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-    Identifikuj vsetky typy uzlov a typy vztahov v texte.
+        Identifikuj vsetky typy uzlov a typy vztahov v texte.
 
-    # PRAVIDLA
-    - iba typy (nie instancie)
-    - bez diakritiky
-    - pouzi vseobecne, ale presne oznacenia
-    - odstran nezmyselne typy
-    - dopln chybajuce klucove koncepty
-    - pouzivaj iba Slovensky jazyk
+        # PRAVIDLA
+        - iba typy (nie instancie)
+        - bez diakritiky
+        - pouzi vseobecne, ale presne oznacenia
+        - odstran nezmyselne typy
+        - dopln chybajuce klucove koncepty
+        - pouzivaj iba Slovensky jazyk
 
-    # ZAMERANIE
-    - zakon, paragraf, odsek
-    - pravne vztahy (povinnost, pravo)
-    - financne a vypoctove mechanizmy
-    - casove entity
+        # ZAMERANIE
+        - zakon, paragraf, odsek
+        - pravne vztahy (povinnost, pravo)
+        - financne a vypoctove mechanizmy
+        - casove entity
 
-    # TEXT
-    {text}
+        # TEXT
+        {text}
         """
 
         # Create and run the agent
@@ -1398,91 +1405,6 @@ class PDFGraphRAG:
         
 # ====================================================================================================
 
-    # def convert_sentence_to_graph_document(self, data, text: str = "") -> GraphDocument:
-    #     """
-    #     Convert extracted data into a GraphDocument.
-
-    #     Includes:
-    #     - Property key formatting (camelCase)
-    #     - Validation for missing node IDs (skips invalid nodes)
-    #     - Node type fallback to DEFAULT_NODE_TYPE
-    #     - Relationship type normalization
-    #     """
-    #     nodes = []
-    #     relationships = []
-    #     source_document = Document(page_content=text)
-
-
-    #     # Process nodes with validation and formatting
-    #     for node_data in data.get("nodes", []):
-    #         # Skip nodes without valid IDs
-    #         node_id = node_data.get("id")
-    #         if not node_id or not str(node_id).strip():
-    #             continue
-
-    #         # Format node type with fallback
-    #         node_type = format_node_type(node_data.get("label") or node_data.get("type"))
-
-    #         # Format property keys to camelCase
-    #         raw_properties = node_data.get("properties", {})
-    #         formatted_properties = {
-    #             format_property_key(k): v
-    #             for k, v in raw_properties.items()
-    #         } if raw_properties else {}
-
-    #         # Normalize node ID (title case for consistency)
-    #         normalized_id = str(node_id).strip()
-    #         if normalized_id and not normalized_id[0].isdigit():
-    #             normalized_id = normalized_id.title()
-
-    #         node = Node(
-    #             id=normalized_id,
-    #             type=node_type,
-    #             properties=formatted_properties
-    #         )
-    #         nodes.append(node)
-
-    #     # Process relationships with validation and formatting
-    #     for rel_data in data.get("relationships", []):
-    #         source_id = rel_data.get("source_node_id")
-    #         target_id = rel_data.get("target_node_id")
-    #         rel_type = rel_data.get("relation") or rel_data.get("type")
-
-    #         # Skip relationships with missing mandatory fields
-    #         if not source_id or not target_id or not rel_type:
-    #             continue
-
-    #         # Find matching nodes (case-insensitive)
-    #         source_node = next(
-    #             (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
-    #             None
-    #         )
-    #         target_node = next(
-    #             (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
-    #             None
-    #         )
-
-    #         if source_node and target_node:
-    #             # Format relationship properties
-    #             raw_rel_props = rel_data.get("properties", {})
-    #             formatted_rel_props = {
-    #                 format_property_key(k): v
-    #                 for k, v in raw_rel_props.items()
-    #             } if raw_rel_props else {}
-
-    #             relationship = Relationship(
-    #                 source=source_node,
-    #                 target=target_node,
-    #                 type=format_relationship_type(rel_type),
-    #                 properties=formatted_rel_props
-    #             )
-    #             relationships.append(relationship)
-
-    #     return GraphDocument(
-    #         nodes=nodes,
-    #         relationships=relationships,
-    #         source=source_document
-    #     )
         
         
     # ---------------- KG-GPT QUERYING METHODS ----------------
@@ -1497,21 +1419,6 @@ class PDFGraphRAG:
             List of SubSentence objects, each with text and up to 2 entity mentions
         """
         print("\nStage 1: Sentence segmentation...")
-
-        # TODO: Design the segmentation prompt and response parsing here.
-        # This is the most impactful design choice in KG-GPT — how you decompose
-        # the question directly determines what gets retrieved.
-        #
-        # Guidance:
-        # - Use self.openai_client (fast, cheap) with with_structured_output()
-        # - system_prompt_for_segmentation and response_schema_for_segmentation are ready in prompts.py
-        # - The response will have {"sub_sentences": [{"text": ..., "entities": [...]}, ...]}
-        # - Wrap each dict in SubSentence(text=..., entities=...)
-        # - For single-hop questions, one SubSentence is enough
-        # - For multi-hop questions, each hop should be a separate SubSentence
-        #
-        # Consider: entity strings should match (or approximately match) node IDs in the KG.
-        # The segmentation prompt already instructs Title Case — this helps with Cypher CONTAINS matching.
         
         
         
@@ -1526,139 +1433,17 @@ class PDFGraphRAG:
         data = cast(dict, response["structured_response"])
 
         sub_sentences = [
-            SubSentence(text=s["text"], entities=s["entities"])
+            SubSentence(text=s.get("text", "").strip(), entities=s.get("entities", []) or [])
             for s in data.get("sub_sentences", [])
+            if s.get("text")
         ]
 
         if not sub_sentences:
             sub_sentences = [SubSentence(text=question, entities=[])]
 
+
         print(f"  → {len(sub_sentences)} sub-sentence(s): {[s.text for s in sub_sentences]}")
         return sub_sentences
-    
-    
-
-    # def get_relation_candidates(self, entities: List[str]) -> List[str]:
-    #     """Stage 2a (KG-GPT): Get relation types connected to the given entity mentions in the KG.
-
-    #     Uses UNION of relation types across all entities for maximum recall.
-    #     The LLM then filters to the semantically relevant subset.
-
-    #     Args:
-    #         entities: List of entity mention strings (Title Case, from sentence segmentation)
-
-    #     Returns:
-    #         List of unique relation type strings found in the KG
-    #     """
-    #     if not entities:
-    #         # Fall back to full relation type list from schema
-    #         schema = self.get_graph_schema()
-    #         return schema.relationships
-
-    #     candidates: set[str] = set()
-    #     for entity in entities:
-    #         try:
-    #             results = self.graph.query(
-    #                 """
-    #                 MATCH (n)-[r]-()
-    #                 WHERE toLower(n.id) CONTAINS toLower($entity)
-    #                 RETURN DISTINCT type(r) AS rel_type
-    #                 LIMIT 50
-    #                 """,
-    #                 {"entity": entity}
-    #             )
-    #             for row in results:
-    #                 if row.get("rel_type"):
-    #                     candidates.add(row["rel_type"])
-    #         except Exception as e:
-    #             print(f"  Relation candidate lookup failed for '{entity}': {e}")
-
-    #     # If no candidates found via entity matching, use full schema
-    #     if not candidates:
-    #         schema = self.get_graph_schema()
-    #         candidates = set(schema.relationships)
-
-    #     return list(candidates)
-    
-    
-
-    # def retrieve_top_k_relations(self, sub_sentence: str, candidates: List[str], k: int = 5) -> List[str]:
-    #     """Stage 2b (KG-GPT): LLM picks the top-K most semantically relevant relations.
-
-    #     Args:
-    #         sub_sentence: The sub-sentence text (one implied triple)
-    #         candidates: Relation type strings from the KG
-    #         k: Maximum number of relations to return
-
-    #     Returns:
-    #         Top-K relation type strings
-    #     """
-    #     if not candidates:
-    #         return []
-
-    #     structured_model = self.openai_client.with_structured_output(
-    #         schema=response_schema_for_relation_retrieval, method="json_schema"
-    #     )
-
-    #     user_prompt = (
-    #         f"Pod-veta: {sub_sentence}\n\n"
-    #         f"Kandidátske vzťahy: {candidates}\n\n"
-    #         f"Vyber top-{k} najrelevantnejších vzťahov."
-    #     )
-
-    #     response = cast(dict, structured_model.invoke([
-    #         ("system", system_prompt_for_relation_retrieval),
-    #         ("human", user_prompt),
-    #     ]))
-
-    #     return response.get("relations", candidates[:k])[:k]
-    
-    
-
-    # def retrieve_evidence_subgraph(self, entities: List[str], relations: List[str]) -> List[tuple]:
-    #     """Stage 2c (KG-GPT): Extract evidence triples from the KG.
-
-    #     Finds all triples (head, relation, tail) where the relation type is in
-    #     the top-K list AND at least one endpoint matches an entity mention.
-
-    #     Args:
-    #         entities: Entity mention strings from the sub-sentence
-    #         relations: Top-K relation type strings selected by LLM
-
-    #     Returns:
-    #         List of (head_id, relation_type, tail_id) tuples
-    #     """
-    #     if not relations:
-    #         return []
-
-    #     triples: list[tuple] = []
-    #     for entity in entities:
-    #         try:
-    #             results = self.graph.query(
-    #                 """
-    #                 MATCH (a)-[r]->(b)
-    #                 WHERE type(r) IN $relations
-    #                   AND (toLower(a.id) CONTAINS toLower($entity)
-    #                        OR toLower(b.id) CONTAINS toLower($entity))
-    #                 RETURN a.id AS head, type(r) AS rel, b.id AS tail
-    #                 LIMIT 25
-    #                 """,
-    #                 {"relations": relations, "entity": entity}
-    #             )
-    #             for row in results:
-    #                 if row.get("head") and row.get("rel") and row.get("tail"):
-    #                     triples.append((row["head"], row["rel"], row["tail"]))
-    #         except Exception as e:
-    #             print(f"  Evidence subgraph query failed for '{entity}': {e}")
-
-    #     # Deduplicate while preserving order
-    #     seen: set = set()
-    #     unique: list[tuple] = []
-    #     for t in triples:
-    #         if t not in seen:
-    #             seen.add(t)
-    #             unique.append(t)
-    #     return unique
     
     
 
@@ -1699,16 +1484,36 @@ class PDFGraphRAG:
         schema = self.get_graph_schema()
         sample_schema = self.get_sample_graph_schema()
 
-        user_prompt = (
-            f"Pod-veta na zodpovedanie: {sub_sentence}\n\n"
-            f"Zmienene entity: {entities}\n\n"
-            f"Schema grafu:\n"
-            f"  Typy uzlov: {schema.nodes}\n"
-            f"  Typy vztahov: {schema.relationships}\n\n"
-            f"Vzorove data:\n{sample_schema}\n\n"
-            f"Najdi vsetky relevantne trojice (uzol-vztah-uzol) suvisiace s touto pod-vetou. "
-            f"Zacni preskumanim entit, potom sleduj relevantne vztahy."
-        )
+        user_prompt = f"""
+        Pod-veta:
+        {sub_sentence}
+
+        Entity (anchors):
+        {entities}
+
+        Schéma grafu:
+        - Uzly: {schema.nodes}
+        - Vzťahy: {schema.relationships}
+
+        Ukážkové dáta:
+        {sample_schema}
+
+        Úloha:
+        Nájdi všetky relevantné trojice (uzol-vzťah-uzol) súvisiace s pod-vetou.
+
+        Postup:
+        1. Začni od entít (anchors)
+        2. Iteratívne vyberaj vzťahy zo schémy
+        3. Dopytuj graf pomocou Cypher
+        4. Rozhoduj, či pokračovať alebo zastaviť
+
+        Obmedzenia:
+        - Používaj iba vzťahy zo schémy
+        - Nevymýšľaj dáta
+        - Max hĺbka = 3
+        - Max retries pre výber vzťahu = 2
+        """
+        
 
         agent = create_agent(
             model=self.openai_client,
@@ -1792,14 +1597,30 @@ class PDFGraphRAG:
         linearized = [[h, r, t] for h, r, t in evidence_triples]
         chunk_text = "\n---\n".join(chunks) if chunks else "Žiadne textové úseky neboli nájdené."
 
-        user_prompt = (
-            f"Otázka: {question}\n\n"
-            f"Dôkazy z grafovej databázy:\n{json.dumps(linearized, ensure_ascii=False, indent=2)}\n\n"
-            f"Textový kontext z dokumentov:\n{chunk_text}"
-        )
+        user_prompt = f"""
+        ## Vstupné údaje pre analýzu
 
-        structured_model = self.gemini_client_thinking.with_structured_output(
-            schema=response_schema_for_inference, method="json_schema"
+        ### 1. Otázka používateľa
+        {question}
+
+        ### 2. Dôkazy z grafovej databázy (Primárne)
+        Nasledujúce trojice reprezentujú overené fakty v štruktúre [Subjekt, Relácia, Objekt]:
+        {json.dumps(linearized, ensure_ascii=False, indent=2)}
+
+        ### 3. Textový kontext z dokumentov (Doplnkové)
+        Tento text slúži na pochopenie širšieho kontextu a detailov:
+        {chunk_text}
+
+        ---
+        **Inštrukcia:** Na základe vyššie uvedených údajov vypracuj stručnú, ale výstižnú odpoveď. Zameraj sa na to, aby odpoveď priamo adresovala otázku a prioritne využívala fakty z grafových trojíc.
+        """
+
+        class InferenceAnswer(BaseModel):
+            """Natural language answer derived from evidence triples and chunk context."""
+            answer: str = Field(description="Natural language answer grounded in the evidence triples and chunk context")
+
+        structured_model = self.gemini_client_flash.with_structured_output(
+            schema=InferenceAnswer, method="json_schema"
         )
 
         response = structured_model.invoke([
@@ -1807,7 +1628,7 @@ class PDFGraphRAG:
             ("human", user_prompt),
         ])
 
-        return cast(dict, response)["answer"]
+        return cast(InferenceAnswer, response).answer
     
     
 
@@ -1854,7 +1675,7 @@ class PDFGraphRAG:
             all_node_ids.extend(node_ids)
 
         # Retrieve source text chunks via IN_CHUNK
-        chunks = self.get_chunks_from_nodes(list(set(all_node_ids)))
+        chunks = self.get_chunks_from_nodes(list(dict.fromkeys(all_node_ids)))
 
         # Stage 3: Inference
         final_answer = self.answer(question, all_triples, chunks)

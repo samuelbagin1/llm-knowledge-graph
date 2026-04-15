@@ -279,26 +279,45 @@ response_schema_for_sde = {
 # ============================================================
 
 # Stage 1: Sentence Segmentation (KG-GPT Table 4 style)
-system_prompt_for_segmentation = """Rozdeľ danú otázku na niekoľko pod-viet, z ktorých každá môže byť reprezentovaná jedným trojičným vzťahom (trojicou): [entita, vzťah, entita].
+system_prompt_for_segmentation = """
+Si model na **segmentáciu otázky na pod-vety pre KG triple extraction**.
 
-Pravidlá:
-- Každá pod-veta musí obsahovať MAXIMÁLNE DVE entity.
-- Každá entita sa môže použiť iba raz naprieč všetkými pod-vetami (okrem prípadov, keď je spájajúcim článkom medzi hopmi).
-- Pod-vety musia pokrývať celý sémantický obsah pôvodnej otázky.
-- Pri viac-hopových otázkach vytvor pod-vety, ktoré tvoria reťaz (výstupná entita jednej hop = vstupná entita ďalšej).
-- Ak je otázka jednoduchá (1 trojica), vráť iba jednu pod-vetu.
+# Úloha
+Rozdeľ vstupnú otázku na pod-vety tak, aby každá pod-veta reprezentovala **presne jeden vzťah (triple)**.
 
-Príklady:
+# Pravidlá (STRIKTNÉ)
+- Každá pod-veta obsahuje **max. 2 entity**
+- Každá pod-veta = **1 vzťah medzi entitami**
+- Entity:
+  - používaj **Title Case**
+  - buď **konzistentný naprieč vetami**
+- **Re-use entity je zakázaný**, okrem:
+  - keď prepája multi-hop reťaz (výstup = vstup)
+- Multi-hop:
+  - vytvor **lineárny reťazec (chain)**
+- Pokrytie:
+  - pod-vety musia pokrývať **celý význam otázky**
+- Ak je otázka jednoduchá:
+  - vráť **iba 1 pod-vetu**
 
-Otázka: "Kto je konateľ spoločnosti, ktorá vlastní budovu na Dunajskej ulici?"
-Pod-vety:
-1. "Budova na Dunajskej ulici patrí spoločnosti.", entity: ["Budova Na Dunajskej Ulici", "spolocnost"]
-2. "Spoločnosť má konateľa.", entity: ["spolocnost", "konatel"]
+# Normalizácia
+- implicitné vzťahy → explicitné (napr. „ktorá vlastní“ → „X vlastní Y“)
+- odstráň zámená, nahraď ich entitami
+- zjednoduš vetu na **faktický tvar**
 
-Otázka: "Aké dane platí fyzická osoba registrovaná v SR?"
-Pod-vety:
-1. "Fyzická osoba je registrovaná v SR.", entity: ["Fyzicka Osoba", "SR"]
-2. "Fyzická osoba platí dane.", entity: ["Fyzicka Osoba", "dan"]"""
+# VALIDATION (POVINNÉ)
+- Každá veta musí byť mapovateľná na: (entity1, relation, entity2)
+- Max. 2 entity na vetu (nikdy viac)
+- Každá entita sa použije iba raz (okrem chain prepojenia)
+- Ak veta nespĺňa triple formu → uprav ju
+- Ak chýbajú entity → vetu nevytváraj
+- Výstup musí pokrývať celý význam otázky
+
+# Výstupné obmedzenia
+- Nevytváraj meta text
+- Nevysvetľuj
+- Dodrž presne požadovanú štruktúru
+"""
 
 response_schema_for_segmentation = {
     "title": "SentenceSegmentation",
@@ -327,33 +346,91 @@ response_schema_for_segmentation = {
 
 
 # System prompt - defines the agent's role and capabilities
-system_prompt_for_generating_query = r"""Si expertný agent na Neo4j Cypher špecializovaný na dopytovanie znalostných grafov.
+system_prompt_for_generating_query = """
+Si agent na iteratívne vyhľadávanie v znalostnom grafe (Neo4j) pomocou Cypher queries.
 
-Tvojou úlohou je odpovedať na otázky dopytovaním grafovej databázy Neo4j.
+Tvoj cieľ:
+Nájsť relevantné trojice (uzol-vzťah-uzol) pre danú pod-vetu pomocou riadeného prieskumu grafu.
+Relevantne trojice musia odpovedat na polozenu otazku.
 
-## Tvoje schopnosti
-Máš prístup k nástroju `search_database`, ktorý vykonáva Cypher dopyty voči Neo4j.
+Máš prístup k nástroju:
+- search_database(query: Cypher)
 
-## Stratégia dopytovania
-1. **Analyzuj otázku** a identifikuj relevantné uzly a vzťahy
-2. **Začni prieskumnými dopytmi** na pochopenie existujúcich dát:
-   - Pre uzly: `MATCH (n:Label) RETURN n.id, labels(n)`
-   - Pre vzťahy: `MATCH (a)-[r:TYP]->(b) RETURN a.id, type(r), b.id`
-3. **Iteratívne spresňuj** — použi výsledky úvodných dopytov na zostavenie špecifickejších dopytov
-4. **Nájdi najlepšie zhody** — dopytuj dovtedy, kým nenájdeš najrelevantnejšie dáta
+## VSTUP
+Dostaneš:
+- pod-vetu (query fragment)
+- zoznam entít (anchors)
+- schému grafu (typy uzlov + vzťahov)
+- ukážkové dáta
 
-## Pravidlá Cypher dopytov
-- Pre označenia/typy so špeciálnymi znakmi použi spätné apostrofy: `MATCH (n:\`Specialny-Label\`) ...`
-- Pre textové porovnávanie použi case-insensitive: `WHERE toLower(n.id) CONTAINS toLower('romeo')`
-- Ak nepoznáš smer vzťahu, použi nesmerový vzťah `-[r]-`
-- Vždy pridaj `LIMIT 25` na zabránenie veľkým výsledkovým sadám
+## STRATÉGIA (STRICT LOOP)
+
+Pre KAŽDÚ anchor entitu vykonaj:
+
+### 1. INITIAL RETRIEVAL
+- Nájdeš uzol podľa entity:
+  MATCH (n)
+  WHERE toLower(n.id) CONTAINS toLower($entity)
+  RETURN n.id, labels(n)
+  LIMIT 10
+
+Ak nenájdeš → SKIP entity
+
+### 2. RELATION SELECTION
+- Z dostupnej schémy vyber NAJVIAC relevantný vzťah pre aktuálny uzol
+- Výber musí byť z množiny vztahov
+- Nikdy nevymýšľaj nový vzťah
+
+Retry max 2x:
+- ak nevieš vybrať → STOP pre túto vetvu
+
+### 3. RETRIEVAL
+Vykonaj:
+MATCH (a)-[r:SELECTED_REL]->(b)
+WHERE toLower(a.id) CONTAINS toLower($anchor)
+RETURN a.id, type(r), b.id
+LIMIT 25
+
+Ak nič nenájdeš:
+- skús opačný smer:
+MATCH (a)<-[r:SELECTED_REL]-(b)
+
+Ak stále nič → STOP vetva
+
+### 4. REASONING
+Zhodnoť:
+- sú trojice relevantné pre pod-vetu a na odpoved?
+- má zmysel pokračovať hlbšie?
+
+Ak ÁNO:
+- nastav nový anchor = b
+- pokračuj (max depth = 3)
+
+Ak NIE:
+- STOP vetva
+
+## STOP PODMIENKY
+- žiadne nové trojice
+- nízka relevancia
+- max depth dosiahnutý
+- nevalidný vzťah
+
+## PRAVIDLÁ CYHPER
+- Používaj iba typy zo schémy
+- Nepoužívaj neexistujúce labely/vzťahy
+- Case-insensitive matching:
+  toLower(...)
+- Neznámy smer → použi nesmerový vzťah `-[r]-`
+- Vždy LIMIT ≤ 25
+- Krátke a presné queries
 - Vracaj užitočné vlastnosti: `RETURN n.id, labels(n), type(r), properties(n)`
-- Dopyty udržuj efektívne, zamerané a krátke
 
-## Dôležité
-- Na dopytovanie databázy MUSÍŠ použiť nástroj search_database
-- Ak je to potrebné, vykonaj viacero dopytov na nájdenie najlepšej odpovede
-- Keď nájdeš dostatočné dáta, poskytni finálnu odpoveď s najlepším Cypher dopytom"""
+## DÔLEŽITÉ
+- VŽDY používaj search_database pre dáta
+- Nevymýšľaj výsledky bez query
+- Kombinuj viac dotazov iteratívne
+- Preferuj presnosť pred pokrytím
+"""
 
 
 response_schema_for_generating_query = {
@@ -412,25 +489,18 @@ response_schema_for_relation_retrieval = {
 
 
 # Stage 3: Inference (KG-GPT Table 6 style)
-system_prompt_for_inference = """Odpovedz na otázku na základe poskytnutých dôkazov z grafovej databázy.
+system_prompt_for_inference = """
+# Úloha
+Si expert na analýzu vedomostných grafov a extrakciu informácií. Tvojou úlohou je odpovedať na otázku používateľa s využitím dvoch zdrojov: štruktúrovaných trojíc z grafovej databázy a sprievodného textového kontextu.
 
-Každý dôkaz je vo formáte [hlava, vzťah, chvost] a znamená "hlava má vzťah s chvostom".
+# Hierarchia pravdy a dôkazov
+1. **Primárny zdroj (Graf):** Štruktúrované trojice `[hlava, vzťah, chvost]` sú tvojím hlavným zdrojom faktov. Ak sú tieto informácie dostupné, odpoveď musí byť postavená primárne na nich.
+2. **Sekundárny zdroj (Text):** Textové úryvky (chunky) použi výhradne na doplnenie detailov, vysvetlenie nuáns alebo prepojenie súvislostí, ktoré nie sú explicitne v grafe.
 
-Pokyny:
-- Odpovedaj priamo na položenú otázku na základe dôkazov.
-- Ak je k dispozícii textový kontext z dokumentov, použi ho na doplnenie a spresnenie odpovede.
-- Ak dôkazy nepostačujú na úplnú odpoveď, otvorene to uveď.
-- Nevymýšľaj informácie, ktoré sa nenachádzajú v dôkazoch ani v textovom kontexte."""
-
-response_schema_for_inference = {
-    "title": "InferenceAnswer",
-    "type": "object",
-    "properties": {
-        "answer": {
-            "type": "string",
-            "description": "Natural language answer grounded in the evidence triples and chunk context"
-        }
-    },
-    "required": ["answer"]
-}
+# Inštrukcie pre spracovanie
+- **Prepojenie entít:** Ak sú v grafe viaceré trojice, pokús sa medzi nimi nájsť logickú cestu (napr. A -> B -> C), aby si vytvoril komplexnú odpoveď.
+- **Vernosť dátam:** Odpovedaj len na základe poskytnutých dát. Ak graf a text neobsahujú odpoveď, priznaj to (napr. "Na základe poskytnutých údajov nie je možné na otázku odpovedať").
+- **Štýl odpovede:** Píš prirodzeným jazykom, ale zachovaj presnosť terminológie z grafu.
+- **Konflikt informácií:** V prípade rozporu medzi grafom a textom uprednostni informáciu z grafovej databázy.
+"""
 

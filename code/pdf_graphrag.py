@@ -19,11 +19,11 @@ from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTe
 import spacy
 
 from classification import classify
-from classes import Schema, ClassifiedDocument, Type, SubSentence
+from classes import Schema, ClassifiedDocument, Type, SubSentence, ReasoningStep
 from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
-from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference,system_prompt_for_generating_query, response_schema_for_generating_query
+from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference,system_prompt_for_generating_query, response_schema_for_generating_query, system_prompt_ark_select_relation, system_prompt_ark_reasoning
 from examples import examples_for_extraction
 from pydantic import BaseModel, Field, SecretStr
 import numpy as np
@@ -1551,8 +1551,230 @@ class PDFGraphRAG:
                 pass
 
         return triples, node_ids
+
+
+
+    # ---------------- ARK-V1 Stage 2 (state-machine retrieval) ----------------
+    
+    def _resolve_anchor(self, name: str) -> Optional[str]:
+        if not name:
+            return None
+        
+        rows = self.graph.query( "MATCH (n) WHERE toLower(n.id) = toLower($name) RETURN n.id AS id LIMIT 1", {"name": name})
+        if rows:
+            return rows[0]["id"]
+        
+        rows = self.graph.query( "MATCH (n) WHERE toLower(n.id) CONTAINS toLower($name) RETURN n.id AS id LIMIT 1", {"name": name})
+        return rows[0]["id"] if rows else None
+    
+
+    def _retrieve_relations(self, anchor: str) -> list[str]:
+        q_out = "MATCH (a)-[r]->() WHERE toLower(a.id) = toLower($anchor) RETURN DISTINCT type(r) AS rel"
+        q_in = "MATCH (a)<-[r]-() WHERE toLower(a.id) = toLower($anchor) RETURN DISTINCT type(r) AS rel"
+        
+        is_read_only_cypher(q_out)
+        is_read_only_cypher(q_in)
+        
+        rels: list[str] = []
+        seen: set[str] = set()
+        
+        for q in (q_out, q_in):
+            for row in self.graph.query(q, {"anchor": anchor}):
+                
+                r = row.get("rel")
+                if r and r not in seen:
+                    seen.add(r)
+                    rels.append(r)
+                    
+        return rels
+
+
+    def _retrieve_triples(self, anchor: str, rel: str) -> list[tuple]:
+        # f-string for rel type is safe: rel is validated to be in R^k returned by graph.
+        TRIPLE_LIMIT = 25
+        
+        q_out = f"MATCH (a)-[r:`{rel}`]->(t) WHERE toLower(a.id) = toLower($anchor) RETURN a.id AS h, type(r) AS r, t.id AS t LIMIT {TRIPLE_LIMIT}"
+        q_in = f"MATCH (a)<-[r:`{rel}`]-(t) WHERE toLower(a.id) = toLower($anchor) RETURN t.id AS h, type(r) AS r, a.id AS t LIMIT {TRIPLE_LIMIT}"
+        
+        is_read_only_cypher(q_out)
+        is_read_only_cypher(q_in)
+        
+        rows = self.graph.query(q_out, {"anchor": anchor})
+        if not rows:
+            rows = self.graph.query(q_in, {"anchor": anchor})
+            
+        out: list[tuple] = []
+        for row in rows:
+            
+            h, r, t = row.get("h"), row.get("r"), row.get("t")
+            if h and r and t:
+                out.append((h, r, t))
+                
+        return out
+
+
+    def _select_relation(self, sub_sentence: str, anchor: str, summary: str, relations: list[str]) -> Optional[str]:
+        C_MAX = 2
+        
+        class RelationChoice(BaseModel):
+            relation: Optional[str] = Field(
+                default=None,
+                description="Exactly one relation string from the provided list, or null if none relevant.",
+            )
+            rationale: str = Field(default="", description="Brief Slovak justification.")
+            
+            
+        model = self.gemini_client_flash.with_structured_output(
+            schema=RelationChoice, method="json_schema"
+        )
+        
+        last_err = ""
+        for attempt in range(C_MAX + 1):
+            user = (
+                f"Pod-veta: {sub_sentence}\n"
+                f"Anchor: {anchor}\n"
+                f"Doterajšie zhrnutie: {summary or '(prázdne)'}\n"
+                f"Kandidátne vzťahy (R^k): {relations}\n"
+                + (f"\nPredchádzajúci pokus bol neplatný: {last_err}\n" if last_err else "")
+                + "Vyber presne jeden vzťah z R^k alebo null."
+            )
+            
+            try:
+                resp = cast(RelationChoice, model.invoke([
+                    ("system", system_prompt_ark_select_relation),
+                    ("human", user),
+                ]))
+                
+            except Exception as e:
+                last_err = f"LLM error: {e}"
+                continue
+            
+            
+            chosen = resp.relation
+            
+            if chosen is None:
+                return None
+            if chosen in relations:
+                return chosen
+            
+            last_err = f"'{chosen}' nie je v zozname R^k."
+            
+        return None
+
+
+    def _reason_step(self, sub_sentence: str, anchor: str, rel: str, triples: list[tuple], summary: str) -> ReasoningStep:
+        
+        model = self.gemini_client_flash.with_structured_output(
+            schema=ReasoningStep, method="json_schema"
+        )
+        
+        numbered = "\n".join(f"[{i}] {h} -[{r}]-> {t}" for i, (h, r, t) in enumerate(triples))
+        
+        user = (
+            f"Pod-veta: {sub_sentence}\n"
+            f"Anchor: {anchor}\n"
+            f"Vybraný vzťah: {rel}\n"
+            f"Doterajšie zhrnutie: {summary or '(prázdne)'}\n"
+            f"Trojice:\n{numbered}\n"
+            "Vyber relevantné indexy, zhrň implikáciu, rozhodni o pokračovaní a navrhni next_anchor (tail vybratých trojíc) alebo null."
+        )
+        
+        try:
+            resp = model.invoke([
+                ("system", system_prompt_ark_reasoning),
+                ("human", user),
+            ])
+            
+        except Exception as e:
+            print(f"  [ark-v1] reasoning LLM error: {e}")
+            return ReasoningStep()
+
+        if not isinstance(resp, ReasoningStep):
+            print(f"  [ark-v1] reasoning unexpected response type: {type(resp).__name__}")
+            return ReasoningStep()
+        
+        return resp
     
     
+
+    def ark_v1_retrieve(self, sub_sentence: str, entities: list[str]) -> tuple[list[tuple], list[str]]:
+        """ARK-V1 (Klein & Ohnemus 2025) state-machine retrieval for a single sub-sentence.
+
+        For each anchor entity we perform up to K_MAX reasoning steps. Each step:
+        1) enumerate relations actually present in the graph for the anchor,
+        2) LLM picks one (validated against the candidate list, Cmax retries),
+        3) enumerate triples (anchor)-[rel]-(*) from the graph,
+        4) LLM selects relevant indices, summarizes implication, optionally advances
+           the anchor to a tail of a selected triple for the next hop.
+
+        The per-step prompt is rebuilt from scratch (system + Q + sub_sentence +
+        running summary + current candidates) so context size stays ~constant in k.
+        """
+        K_MAX = 3
+
+        evidence: list[tuple] = []
+        node_ids: list[str] = []
+        summary = ""
+
+        for raw_anchor in (entities or [])[:2]:
+            anchor = self._resolve_anchor(raw_anchor)
+            
+            if anchor is None:
+                print(f"  [ark-v1] anchor '{raw_anchor}' not found in graph, skipping")
+                continue
+
+            for k in range(K_MAX):
+                
+                relations = self._retrieve_relations(anchor)
+                if not relations:
+                    break
+                
+                rel = self._select_relation(sub_sentence, anchor, summary, relations)
+                if rel is None:
+                    break
+                
+                triples = self._retrieve_triples(anchor, rel)
+                if not triples:
+                    break
+
+                step = self._reason_step(sub_sentence, anchor, rel, triples, summary)
+                valid_idx = [i for i in step.selected_triple_indices if 0 <= i < len(triples)]
+                selected = [triples[i] for i in valid_idx]
+                
+                evidence.extend(selected)
+                for h, _, t in selected:
+                    
+                    if h not in node_ids:
+                        node_ids.append(h)
+                        
+                    if t not in node_ids:
+                        node_ids.append(t)
+                        
+
+                print(f"  [ark-v1] Step {k+1}: anchor={anchor} rel={rel} selected={len(selected)}/{len(triples)} → {step.implication}")
+                summary += f"\nKrok {k+1} (anchor={anchor}, rel={rel}): {step.implication}"
+
+                if not step.continue_reasoning:
+                    break
+                
+                tails = {t for (_, _, t) in selected}
+                if step.next_anchor and step.next_anchor in tails:
+                    anchor = step.next_anchor
+                else:
+                    break
+
+        # dedup triples while preserving order
+        seen = set()
+        dedup_triples: list[tuple] = []
+        
+        for tr in evidence:
+            if tr not in seen:
+                seen.add(tr)
+                dedup_triples.append(tr)
+                
+        return dedup_triples, node_ids
+
+
 
     def get_chunks_from_nodes(self, node_ids: List[str]) -> List[str]:
         """Retrieve text chunks connected to given nodes via IN_CHUNK relationship.
@@ -1667,10 +1889,10 @@ class PDFGraphRAG:
 
         for sub in sub_sentences:
             if verbose:
-                print(f"\nStage 2 (Agent): Retrieving evidence for: '{sub.text}'")
-            triples, node_ids = self.search_agent_retrieve(sub.text, sub.entities)
+                print(f"\nStage 2 (ARK-V1): Retrieving evidence for: '{sub.text}'")
+            triples, node_ids = self.ark_v1_retrieve(sub.text, sub.entities)
             if verbose:
-                print(f"  Agent found {len(triples)} triples, {len(node_ids)} nodes")
+                print(f"  ARK-V1 found {len(triples)} triples, {len(node_ids)} nodes")
             all_triples.extend(triples)
             all_node_ids.extend(node_ids)
 

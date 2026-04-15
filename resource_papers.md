@@ -1,3 +1,43 @@
+kg-gpt: https://aclanthology.org/2023.findings-emnlp.631.pdf
+ark-v1: https://arxiv.org/pdf/2509.18063
+GMeLLo: https://arxiv.org/html/2408.15903
+topic semgmentation: https://arxiv.org/html/2601.03276v1
+
+
+q&a
+https://aclanthology.org/2021.acl-demo.39.pdf
+https://arxiv.org/pdf/2212.00959
+https://arxiv.org/pdf/2505.20099
+https://arxiv.org/pdf/2408.15903
+https://medium.com/stanford-cs224w/knowledge-graph-augmented-natural-language-question-answering-51ede7e2b5c6
+https://arxiv.org/pdf/2511.19648
+https://arxiv.org/pdf/2510.19181
+https://arxiv.org/html/2510.02827v1
+https://www.mdpi.com/2079-9292/14/1/47
+
+
+process
+https://arxiv.org/pdf/2410.21306?
+https://medium.com/@khrizellelascano/analysis-of-legal-texts-using-nlp-774913be9a03
+https://www.mdpi.com/2079-9292/13/3/648
+https://arxiv.org/html/2508.06368v1
+https://ai.gov.uk/blogs/understanding-legislative-networks-building-a-knowledge-graph-of-uk-legislation/
+https://medium.com/neo4j/from-legal-documents-to-knowledge-graphs-ccd9cb062320
+
+https://blog.langchain.com/exploring-prompt-optimization/
+https://arxiv.org/pdf/2003.02320
+https://arxiv.org/pdf/1805.02262
+https://medium.com/@claudiubranzan/from-llms-to-knowledge-graphs-building-production-ready-graph-systems-in-2025-2b4aff1ec99a
+https://medium.com/@yu-joshua/a-unified-framework-for-ai-native-knowledge-graphs-8bd823385fe6
+https://pub.towardsai.net/why-llms-fail-at-knowledge-graph-extraction-and-what-works-instead-dcb029f35f5b
+https://pub.towardsai.net/building-a-self-updating-knowledge-graph-from-meeting-notes-with-llm-extraction-and-neo4j-b02d3d62a251
+https://medium.com/@visrow/semantic-graphrag-implementation-guide-build-real-world-ai-knowledge-systems-with-neo4j-qdrant-9d272d2f99c4
+https://medium.com/graph-quill/building-knowledge-graphs-from-homers-iliad-open-domain-vs-schema-guided-extraction-ef0bf3874a33
+https://arxiv.org/html/2509.04696v1
+
+
+---
+
 link:
 https://arxiv.org/pdf/2003.02320
 description:

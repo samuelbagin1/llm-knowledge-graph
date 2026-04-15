@@ -1,634 +1,143 @@
-# AI Knowledge Graph for Legal Texts
+# PDF GraphRAG
 
-Automatická extrakcia a prepojenie informácií z právnych textov do interaktívneho znalostného grafu.
+A retrieval-augmented generation (RAG) pipeline that converts PDF documents into a Neo4j knowledge graph + vector stores, then answers natural-language questions by combining symbolic graph traversal with LLM reasoning.
 
-## 📋 Obsah
-
-- [Prehľad](#prehľad)
-- [Architektúra](#architektúra)
-- [Technologický Stack](#technologický-stack)
-- [Inštalácia](#inštalácia)
-- [Implementácia](#implementácia)
-- [Komponenty](#komponenty)
-- [Študijné Materiály](#študijné-materiály)
-- [MVP Prototyp](#mvp-prototyp)
-- [Roadmap](#roadmap)
-
-## 🎯 Prehľad
-
-Cieľom projektu je vytvoriť AI systém na automatickú extrakciu a prepojenie informácií z právnych textov (PDF) do znalostného grafu s pokročilým sémantickým vyhľadávaním. Systém kombinuje grafovú databázu (Neo4j) s vektorovým úložiskom pre hybridné vyhľadávanie, ktoré umožňuje používateľom klásť otázky v prirodzenom jazyku a získavať presné odpovede na základe štruktúrovaných vzťahov aj sémantickej podobnosti. Výsledkom je interaktívny graf znázorňujúci väzby medzi právnymi pojmami a ustanoveniami v zákone.
-
-### Hlavné funkcie
-
-- 📄 Spracovanie PDF dokumentov s automatickým chunkovaním (SpaCy)
-- 🔍 Automatická extrakcia právnych entít pomocou LLM (paragrafy, pojmy, inštitúcie)
-- 🔗 Identifikácia vzťahov medzi právnymi ustanoveniami
-- 📊 Uloženie a vizualizácia znalostného grafu v Neo4j
-- 🔎 Hybridné vyhľadávanie kombinujúce grafové dotazy (Cypher) a vektorovú podobnosť
-- 💬 Sémantické Q&A v prirodzenom jazyku s automatickou reformuláciou otázok
-- 🎯 SVO (Subject-Verb-Object) extrakcia pre presnejšie vyhľadávanie
-- 🔄 Multi-hop traversal pre komplexné dotazy naprieč grafom
-
-## 🏗️ Architektúra
-
-### Tri-fázový proces
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ FÁZA 1: Spracovanie a Extrakcia                             │
-├─────────────────────────────────────────────────────────────┤
-│ Právny text → Preprocessing → NER & Relation Extraction     │
-│                              → Štruktúrované dáta            │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ FÁZA 2: Konštrukcia Grafu                                   │
-├─────────────────────────────────────────────────────────────┤
-│ Štruktúrované dáta → Graph Building                         │
-│                    → Knowledge Graph (Neo4j/NetworkX)        │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ FÁZA 3: Vizualizácia a Interakcia                           │
-├─────────────────────────────────────────────────────────────┤
-│ Knowledge Graph → Query & Visualization                     │
-│                 → Interaktívne rozhranie                     │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## 🛠️ Technologický Stack
-
-### Core Frameworky
-
-| Komponent | Technológia | Účel |
-|-----------|-------------|------|
-| **AI Orchestrácia** | LangGraph + LangChain | Workflow management, multi-step processing |
-| **LLM** | OpenAI API / Anthropic Claude | Entity & relation extraction |
-| **NLP** | Spacy (`sk_core_news_lg`) | Preprocessing, tokenizácia, NER |
-| **Graph DB** | Neo4j | Úložisko znalostného grafu |
-| **Vizualizácia** | Pyvis, Plotly, D3.js | Interaktívne grafy |
-| **Web Framework** | FastAPI / Dash | API a dashboard |
-
-### Doplnkové nástroje
-
-- **Hugging Face Transformers** - Fine-tuning modelov
-- **NetworkX** - Graph manipulation v Pythone
-- **ArangoDB / Amazon Neptune** - Alternatívne graph DB
-- **Docker** - Kontajnerizácia
-
-## 📦 Inštalácia
-
-### Požiadavky
-
-```bash
-Python 3.9+
-Neo4j 5.0+
-```
-
-### Setup
-
-```bash
-# Clone repository
-git clone https://github.com/your-username/legal-knowledge-graph.git
-cd legal-knowledge-graph
-
-# Vytvorenie virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate  # Windows
-
-# Inštalácia závislostí
-pip install -r requirements.txt
-
-# Download Spacy Slovak model
-python -m spacy download sk_core_news_lg
-
-# Setup Neo4j (Docker)
-docker run -d \
-  --name neo4j-legal \
-  -p 7474:7474 -p 7687:7687 \
-  -e NEO4J_AUTH=neo4j/password \
-  neo4j:latest
-```
-
-### requirements.txt
-
-```txt
-langchain>=0.1.0
-langgraph>=0.0.20
-openai>=1.0.0
-anthropic>=0.8.0
-spacy>=3.7.0
-neo4j>=5.14.0
-networkx>=3.2
-pyvis>=0.3.2
-plotly>=5.18.0
-dash>=2.14.0
-fastapi>=0.104.0
-uvicorn>=0.24.0
-python-dotenv>=1.0.0
-pydantic>=2.5.0
-```
-
-## 💻 Implementácia
-
-### Krok 1: Data Pipeline
-
-```python
-# legal_processor.py
-
-from typing import List, Dict
-import spacy
-from dataclasses import dataclass
-
-@dataclass
-class Entity:
-    text: str
-    type: str
-    context: str
-    span: tuple
-
-@dataclass
-class Relation:
-    source: str
-    target: str
-    type: str
-    confidence: float
-
-class LegalDocumentProcessor:
-    def __init__(self):
-        self.nlp = spacy.load("sk_core_news_lg")
-    
-    def preprocess(self, text: str) -> Dict:
-        """
-        Čistenie a segmentácia právneho textu
-        - Rozpoznanie §, odsekov, bodov
-        - Normalizácia textu
-        """
-        # Implementácia preprocessing logiky
-        pass
-    
-    def extract_entities(self, text: str) -> List[Entity]:
-        """
-        NER: právne pojmy, inštitúcie, § čísla
-        Využitie LLM-based extraction
-        """
-        # Implementácia entity extraction
-        pass
-    
-    def extract_relations(self, entities: List[Entity], 
-                         context: str) -> List[Relation]:
-        """
-        Extrakcia vzťahov medzi entitami
-        Typy: odkazuje_na, definuje, upravuje
-        """
-        # Implementácia relation extraction
-        pass
-```
-
-### Krok 2: LangGraph Workflow
-
-```python
-# workflow.py
-
-from langgraph.graph import StateGraph
-from typing import TypedDict, List
-import networkx as nx
-
-class GraphState(TypedDict):
-    document: str
-    entities: List[Entity]
-    relations: List[Relation]
-    graph: nx.Graph
-    metadata: Dict
-
-def parse_legal_document(state: GraphState) -> GraphState:
-    """Parse a segmentuj právny dokument"""
-    # Implementácia
-    return state
-
-def entity_extraction(state: GraphState) -> GraphState:
-    """Extrahuj právne entity"""
-    # Implementácia
-    return state
-
-def relation_extraction(state: GraphState) -> GraphState:
-    """Extrahuj vzťahy medzi entitami"""
-    # Implementácia
-    return state
-
-def construct_knowledge_graph(state: GraphState) -> GraphState:
-    """Vybuduj znalostný graf"""
-    # Implementácia
-    return state
-
-# Definícia workflow
-workflow = StateGraph(GraphState)
-
-# Pridanie nodov
-workflow.add_node("parse", parse_legal_document)
-workflow.add_node("extract_entities", entity_extraction)
-workflow.add_node("extract_relations", relation_extraction)
-workflow.add_node("build_graph", construct_knowledge_graph)
-
-# Pridanie edges
-workflow.add_edge("parse", "extract_entities")
-workflow.add_edge("extract_entities", "extract_relations")
-workflow.add_edge("extract_relations", "build_graph")
-
-# Compile
-app = workflow.compile()
-```
-
-### Krok 3: Prompt Engineering
-
-```python
-# prompts.py
-
-ENTITY_EXTRACTION_PROMPT = """
-Analyzuj tento slovenský právny text a identifikuj:
-
-1. **Právne pojmy** (napr. "zmluva", "náhrada škody", "zodpovednosť")
-2. **Odkazy na paragrafy** (§ X, § Y ods. Z)
-3. **Právne inštitúcie** (súd, orgán, komisia)
-4. **Subjekty práva** (fyzická osoba, právnická osoba)
-
-Text: {legal_text}
-
-Vráť výsledok v JSON formáte:
-{{
-    "entities": [
-        {{
-            "text": "názov entity",
-            "type": "LEGAL_CONCEPT|PARAGRAPH|INSTITUTION|SUBJECT",
-            "context": "kontext výskytu",
-            "span": [start, end]
-        }}
-    ]
-}}
-"""
-
-RELATION_EXTRACTION_PROMPT = """
-Pre nasledujúce entity z právneho textu identifikuj vzťahy medzi nimi.
-
-**Entities:** {entities}
-
-**Kontext:** {context}
-
-**Typy vzťahov:**
-- ODKAZUJE_NA: § X odkazuje na § Y
-- DEFINUJE: § X definuje pojem Y
-- UPRAVUJE: § X upravuje oblasť Y
-- RUŠUJE: § X ruší ustanovenie Y
-- DOPLŇUJE: § X dopĺňa § Y
-- PODMIEŇUJE: § X podmieňuje § Y
-
-Vráť výsledok v JSON formáte:
-{{
-    "relations": [
-        {{
-            "from": "source entity",
-            "to": "target entity",
-            "type": "RELATION_TYPE",
-            "confidence": 0.0-1.0,
-            "evidence": "textový dôkaz"
-        }}
-    ]
-}}
-"""
-```
-
-### Krok 4: Neo4j Integration
-
-```python
-# graph_store.py
-
-from neo4j import GraphDatabase
-from typing import List
-
-class LegalKnowledgeGraph:
-    def __init__(self, uri: str, user: str, password: str):
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
-    
-    def close(self):
-        self.driver.close()
-    
-    def create_entity(self, entity: Entity):
-        """Vytvor node v grafe"""
-        with self.driver.session() as session:
-            session.run(
-                """
-                CREATE (e:Entity {
-                    text: $text,
-                    type: $type,
-                    context: $context
-                })
-                """,
-                text=entity.text,
-                type=entity.type,
-                context=entity.context
-            )
-    
-    def create_relation(self, relation: Relation):
-        """Vytvor edge v grafe"""
-        with self.driver.session() as session:
-            session.run(
-                """
-                MATCH (a:Entity {text: $source})
-                MATCH (b:Entity {text: $target})
-                CREATE (a)-[r:RELATES_TO {
-                    type: $type,
-                    confidence: $confidence
-                }]->(b)
-                """,
-                source=relation.source,
-                target=relation.target,
-                type=relation.type,
-                confidence=relation.confidence
-            )
-    
-    def query_related_entities(self, entity_text: str, depth: int = 2):
-        """Nájdi prepojené entity"""
-        with self.driver.session() as session:
-            result = session.run(
-                """
-                MATCH path = (e:Entity {text: $text})-[*1..$depth]-(related)
-                RETURN path
-                """,
-                text=entity_text,
-                depth=depth
-            )
-            return [record["path"] for record in result]
-```
-
-## 🧩 Komponenty
-
-### Entity Recognition
-
-| Typ Entity | Príklady | Popis |
-|------------|----------|-------|
-| **LEGAL_CONCEPT** | zmluva, zodpovednosť, právo | Právne pojmy |
-| **PARAGRAPH** | § 123, § 45 ods. 2 písm. a) | Odkazy na paragrafy |
-| **SUBJECT** | fyzická osoba, právnická osoba | Subjekty práva |
-| **INSTITUTION** | súd, ministerstvo, komisia | Právne inštitúcie |
-| **DOCUMENT** | zákon, vyhláška, nariadenie | Typy dokumentov |
-
-### Relation Types
-
-```python
-RELATION_TYPES = {
-    "ODKAZUJE_NA": "§ X odkazuje na § Y",
-    "DEFINUJE": "§ X definuje pojem Y",
-    "UPRAVUJE": "§ X upravuje oblasť Y",
-    "RUŠUJE": "§ X ruší § Y",
-    "DOPLŇUJE": "§ X dopĺňa § Y",
-    "PODMIEŇUJE": "§ X podmieňuje § Y",
-    "VYLUČUJE": "§ X vylučuje aplikáciu § Y",
-    "SPRESŇUJE": "§ X spresňuje § Y"
-}
-```
-
-## 📚 Študijné Materiály
-
-### LangGraph & LangChain
-
-- 📖 [LangGraph Official Documentation](https://langchain-ai.github.io/langgraph/)
-- 🎥 Tutorial: "Building Knowledge Graphs with LangChain"
-- 💻 [GitHub: langgraph-examples](https://github.com/langchain-ai/langgraph/tree/main/examples)
-- 📝 [LangChain Cookbook](https://github.com/langchain-ai/langchain/tree/master/cookbook)
-
-### Knowledge Graphs & NLP
-
-- 📘 **Kniha:** "Knowledge Graphs" - Hogan et al. (2021)
-- 📄 **Paper:** "Construction of the Literature Graph in Semantic Scholar" (2018)
-- 🎓 **Course:** Stanford CS224W - Machine Learning with Graphs
-- 📊 **Tutorial:** "Knowledge Graph Construction from Text" - ACL 2020
-
-### Legal NLP
-
-- 🏛️ **Workshop:** Natural Legal Language Processing (NLLP)
-- 📦 **Library:** [LexNLP](https://github.com/LexPredict/lexpredict-lexnlp) - Legal NLP toolkit
-- ⚖️ **Project:** [BlackStone](https://github.com/ICLRandD/Blackstone) - Spacy model pre UK legal texts
-- 📑 **Dataset:** [Legal BERT](https://huggingface.co/nlpaueb/legal-bert-base-uncased)
-
-### Neo4j & Graph Databases
-
-- 🎓 [Neo4j Graph Academy](https://graphacademy.neo4j.com/) (free courses)
-- 📘 **Kniha:** "Graph Databases" - Robinson, Webber, Eifrem
-- 🔗 [Neo4j + LangChain Integration Guide](https://python.langchain.com/docs/integrations/graphs/neo4j_cypher)
-- 📊 [Cypher Query Language Reference](https://neo4j.com/docs/cypher-manual/current/)
-
-### Slovenské Právne Zdroje
-
-- 📜 [Slov-Lex](https://www.slov-lex.sk/) - Slovenská legislatíva
-- ⚖️ Judikáty slovenských súdov
-- 📰 [Zbierka zákonov SR](https://www.zakonypreludi.sk/)
-- 🏛️ [Najvyšší súd SR](https://www.nsud.sk/)
-
-### Akademické Papers
-
-- "Legal Information Extraction with NLP" (2021)
-- "Automated Knowledge Graph Construction from Legal Documents" (2022)
-- "Cross-lingual Legal NLP: Challenges and Opportunities" (2023)
-
-## 🚀 MVP Prototyp
-
-### Minimálny funkčný systém
-
-**Rozsah:**
-- ✅ Input: Jeden zákon (napr. časť Občianskeho zákonníka)
-- ✅ Extrakcia všetkých § a ich textov
-- ✅ Identifikácia krížových odkazov
-- ✅ Extrakcia 3-5 typov entít
-- ✅ Graf: Nodes (paragrafy, pojmy), Edges (odkazy, definície)
-- ✅ Interaktívna vizualizácia
-
-### Quick Start - MVP Implementácia
-
-```python
-# simple_legal_kg.py
-
-import spacy
-import networkx as nx
-from pyvis.network import Network
-import re
-
-class SimpleLegalKG:
-    def __init__(self):
-        self.nlp = spacy.load("sk_core_news_lg")
-        self.graph = nx.DiGraph()
-    
-    def extract_paragraphs(self, text: str):
-        """Extrahuj § čísla z textu"""
-        pattern = r'§\s*(\d+)'
-        return re.findall(pattern, text)
-    
-    def split_by_paragraph(self, text: str):
-        """Rozdel text podľa paragrafov"""
-        pattern = r'§\s*(\d+)[^\§]*'
-        sections = re.finditer(pattern, text)
-        
-        results = []
-        for match in sections:
-            section_id = f"§{match.group(1)}"
-            section_text = match.group(0)
-            results.append((section_id, section_text))
-        
-        return results
-    
-    def build_graph(self, legal_text: str):
-        """Vybuduj graf z právneho textu"""
-        sections = self.split_by_paragraph(legal_text)
-        
-        for section_id, section_text in sections:
-            # Pridaj node pre paragraf
-            self.graph.add_node(
-                section_id, 
-                text=section_text[:200],  # Preview
-                type="paragraph"
-            )
-            
-            # Nájdi odkazy na iné paragrafy
-            references = self.extract_paragraphs(section_text)
-            for ref in references:
-                ref_id = f"§{ref}"
-                if ref_id != section_id:
-                    self.graph.add_edge(
-                        section_id, 
-                        ref_id, 
-                        type="references"
-                    )
-    
-    def visualize(self, output_file: str = "legal_kg.html"):
-        """Vytvor interaktívnu vizualizáciu"""
-        net = Network(
-            height="750px", 
-            width="100%", 
-            directed=True,
-            notebook=False
-        )
-        
-        # Styling
-        net.barnes_hut(gravity=-80000, central_gravity=0.3)
-        
-        # Load from NetworkX
-        net.from_nx(self.graph)
-        
-        # Customize nodes
-        for node in net.nodes:
-            node["color"] = "#97C2FC"
-            node["size"] = 25
-            if node.get("type") == "paragraph":
-                node["shape"] = "box"
-        
-        # Save
-        net.show(output_file)
-        print(f"Graf uložený do: {output_file}")
-    
-    def query_connections(self, paragraph_id: str, depth: int = 2):
-        """Nájdi prepojené paragrafy"""
-        if paragraph_id not in self.graph:
-            return []
-        
-        # BFS na nájdenie spojených nodov
-        connected = nx.single_source_shortest_path_length(
-            self.graph, 
-            paragraph_id, 
-            cutoff=depth
-        )
-        return list(connected.keys())
-
-# Použitie
-if __name__ == "__main__":
-    # Načítaj právny text
-    with open("zakon.txt", "r", encoding="utf-8") as f:
-        legal_text = f.read()
-    
-    # Vytvor knowledge graph
-    kg = SimpleLegalKG()
-    kg.build_graph(legal_text)
-    kg.visualize()
-    
-    # Query
-    connections = kg.query_connections("§123", depth=2)
-    print(f"Paragrafy prepojené s §123: {connections}")
-```
-
-### Spustenie MVP
-
-```bash
-# Priprav sample legal text
-echo "§1 Táto zmluva sa riadi § 2 a § 5..." > zakon.txt
-
-# Spusti MVP
-python simple_legal_kg.py
-
-# Otvor legal_kg.html v prehliadači
-```
-
-## 🗺️ Roadmap
-
-### Fáza 1: MVP (4-6 týždňov)
-- [ ] Basic paragraph extraction
-- [ ] Simple cross-reference detection
-- [ ] NetworkX graph construction
-- [ ] Pyvis visualization
-- [ ] CLI interface
-
-### Fáza 2: AI Integration (6-8 týždňov)
-- [ ] LangGraph workflow setup
-- [ ] LLM-based entity extraction
-- [ ] Relation extraction s confidence scores
-- [ ] Neo4j migration
-- [ ] Prompt optimization pre slovenčinu
-
-### Fáza 3: Advanced Features (8-12 týždňov)
-- [ ] Semantic search
-- [ ] Conflict detection (protirečivé §)
-- [ ] Historical versioning
-- [ ] Multi-document linking
-- [ ] Q&A chatbot nad grafom
-- [ ] Automatic summarization
-
-### Fáza 4: Production (12+ týždňov)
-- [ ] Web dashboard (Dash/Streamlit)
-- [ ] REST API (FastAPI)
-- [ ] User authentication
-- [ ] Batch processing
-- [ ] Performance optimization
-- [ ] Deployment (Docker + Cloud)
-
-## 📊 Metriky Úspešnosti
-
-- **Entity Extraction Accuracy:** > 90%
-- **Relation Extraction F1:** > 85%
-- **Graph Completeness:** > 95% cross-references captured
-- **Query Response Time:** < 200ms
-- **Visualization Load Time:** < 3s pre 500 nodes
-
-## 🤝 Prispievanie
-
-Contributions sú vítané! Prosím pozri [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## 📄 Licencia
-
-MIT License - pozri [LICENSE](LICENSE) pre detaily.
-
-## 👥 Autori
-
-- Tvoje meno - Initial work
-
-## 🙏 Poďakovanie
-
-- LangChain & LangGraph community
-- Neo4j Graph Academy
-- Spacy SK model contributors
-- Legal NLP research community
+The core implementation lives in [code/pdf_graphrag.py](code/pdf_graphrag.py).
 
 ---
 
-**Poznámka:** Tento projekt je vo vývoji. Odporúčame začať s MVP prototypom a iteratívne pridávať funkcie podľa roadmapy.
+## 1. Overview
 
-**Kontakt:** your.email@example.com
+`PDFGraphRAG` is an end-to-end system that:
 
-**Dokumentácia:** [Wiki](https://github.com/your-username/legal-knowledge-graph/wiki)
+1. **Ingests** PDFs (text + tables + figures).
+2. **Builds a knowledge graph** in Neo4j using a two-phase schema construction (open-domain detection → schema refinement) followed by schema-driven extraction.
+3. **Embeds** nodes, chunks, and relationship types into Neo4j vector indices.
+4. **Answers questions** via a 3-stage pipeline inspired by **KG-GPT** (segment → retrieve → infer), where Stage 2 uses an **ARK-V1** state-machine retriever (Klein & Ohnemus 2025) for grounded, schema-constrained graph traversal.
+
+The domain target is Slovak legal/financial documents (laws, paragraphs, tariff tables), so many prompts are written in Slovak and enforce ASCII normalization (no diacritics).
+
+---
+
+## 2. Architecture & Components
+
+### 2.1 External dependencies
+
+- **Neo4j** (via `langchain_neo4j`) — graph store + vector store backend. APOC plugin is used by `add_graph_documents`.
+- **LLM clients** (initialized in `__init__`):
+  - `openai_client` (ChatOpenAI) — used for agent-based extraction stages (ODD, SDE, segmentation, search agent).
+  - `openai_graph_transform` (gpt-4o-mini) — reserved for graph transformation.
+  - `claude_client` (claude-haiku-4-5) — available but not used in the main pipeline.
+  - `gemini_client` / `gemini_client_thinking` / `gemini_client_flash` — used for schema refinement, table→graph transformation, relation selection, reasoning steps, and final inference.
+- **OpenAI embeddings** (`text-embedding-3-large`) — used for all three vector stores.
+- **DocLayout-YOLO** (`doclayout_yolo` + Hugging Face Hub) — detects tables/figures/formulas on PDF page images.
+- **pdf2image / PyPDFLoader / RecursiveCharacterTextSplitter** — PDF I/O and chunking.
+
+### 2.2 Module-level helpers
+
+- `is_read_only_cypher(query)` — regex-based sanitizer that rejects any Cypher containing write keywords (CREATE/MERGE/DELETE/SET/…) or `CALL` procedures. Used before every ad-hoc query in the retrieval path.
+- `format_property_key` / `format_node_type` / `format_relationship_type` — normalize raw LLM output (camelCase properties, Capitalized node types, UPPER_SNAKE_CASE relations).
+- `graph_document_to_json` / `serialize_for_json` — JSON-safe serializers for `GraphDocument` and Neo4j driver objects (Node, Relationship, Path, datetime).
+
+---
+
+## 3. Ingestion Pipeline — `process(pdf_path)`
+
+The `process` method ([pdf_graphrag.py:1235](code/pdf_graphrag.py#L1235)) orchestrates everything. Flow:
+
+### Step 1 — Load & detect layout
+- `load_pdf` → `PyPDFLoader` returns per-page `Document` objects.
+- `detect_tables` ([pdf_graphrag.py:621](code/pdf_graphrag.py#L621)) rasterizes each page at 200 DPI, runs DocLayout-YOLO, and saves crops of tables/figures/formulas to `code/assets/detected_tables_figures/`.
+
+### Step 2 — Group & transform tables
+- `group_table_detections` merges **consecutive page** table detections (for multi-page tables).
+- `transform_table_to_html` ([pdf_graphrag.py:699](code/pdf_graphrag.py#L699)) feeds the cropped images to Gemini with a strict prompt that:
+  - Produces a single merged `<table>` per group,
+  - Preserves Slovak text exactly,
+  - Uses `colspan`/`rowspan` for merged cells.
+- `transform_html_to_graph_document` ([pdf_graphrag.py:772](code/pdf_graphrag.py#L772)) asks Gemini to interpret the HTML as a **hierarchical tree** (root → sections → items), splitting comma-separated cells into separate nodes, stripping diacritics, and producing `TableGraphResponse` (nodes + relationships).
+- Interior table pages (i.e. pages fully inside a multi-page table) are **excluded** from subsequent text processing to avoid duplicate extraction. First/last pages are kept because they may contain surrounding prose.
+
+### Step 3 — Open-Domain Detection (ODD)
+- Text is chunked with `RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)`.
+- `async_open_domain_detection` ([pdf_graphrag.py:967](code/pdf_graphrag.py#L967)) runs `open_domain_detection` concurrently (semaphore limit 5) with retry + 60 s global pause on failures.
+- Each call uses a LangChain **agent** with `ProviderStrategy(response_schema_for_odd)` against `openai_client`. The response gives candidate `node_types` and `relationship_types` per chunk.
+- Results are aggregated into one union `Schema`.
+
+### Step 4 — Schema refinement
+- `schema_refinement` ([pdf_graphrag.py:1018](code/pdf_graphrag.py#L1018)) sends the raw merged schema + the existing graph schema to Gemini, which:
+  - Deduplicates (including diacritic variants — e.g. "Dan" vs "Daň"),
+  - Adds `Paragraf` as a mandatory node type,
+  - Produces a canonical list plus a `merge_log`.
+- Output persisted via `refinement_to_json` in [to_json.py](code/to_json.py).
+
+### Step 5 — Schema-Driven Extraction (SDE)
+- Text is re-chunked at `chunk_size=1024, chunk_overlap=128` (smaller for extraction precision).
+- `async_schema_driven_extraction` runs `schema_driven_extraction` per chunk against `openai_client` with `response_schema_for_sde`.
+- `_convert_to_graph_document` ([pdf_graphrag.py:412](code/pdf_graphrag.py#L412)) turns the LLM JSON into a `GraphDocument`:
+  - Creates a `Chunk` node (id=`chunk_i`, stores text + page),
+  - Validates/normalizes each node id, type, and properties,
+  - Matches relationships case-insensitively against extracted nodes,
+  - Links every entity to its chunk via `IN_CHUNK` — this edge is what later enables chunk retrieval from graph traversal results.
+- `_filter_by_strict_mode` ([pdf_graphrag.py:557](code/pdf_graphrag.py#L557)) is available as a post-filter against the refined schema (currently commented out — kept as an optional safety net).
+
+### Step 6 — Persist to Neo4j
+- A synthetic `Document` node plus `IN_DOCUMENT` edges to each `Chunk` are added via `_add_document_chunk`.
+- Table graph documents are appended.
+- `graph.add_graph_documents(..., baseEntityLabel=True)` writes everything; then the `__Entity__` label is removed from `Chunk` and `Document` nodes so they don't pollute the entity vector index.
+
+### Step 7 — Vector stores
+Three `Neo4jVector` indices are created/updated from the live graph:
+- `nodes_vector_store` — embeds `__Entity__.id`.
+- `chunk_vector_store` — embeds `Chunk.text`.
+- `relationships_vector_store` — embeds the set of distinct relationship type names (built from `CALL db.relationshipTypes()`).
+
+---
+
+## 4. Query Pipeline — `query(question)`
+
+`query` ([pdf_graphrag.py:1859](code/pdf_graphrag.py#L1859)) implements a 3-stage KG-GPT pipeline.
+
+### Stage 1 — `segment_question`
+An OpenAI agent splits the question into `SubSentence` objects, each supposed to map to **one KG triple**, with up to 2 anchor entities (Title Case). If segmentation fails, the whole question is used as one sub-sentence with no anchors.
+
+### Stage 2 — ARK-V1 state-machine retrieval
+For each sub-sentence, `ark_v1_retrieve` ([pdf_graphrag.py:1700](code/pdf_graphrag.py#L1700)) performs up to `K_MAX = 3` hops per anchor (first 2 anchors only):
+
+1. `_resolve_anchor` — exact-match then `CONTAINS` fallback on `n.id` (case-insensitive).
+2. `_retrieve_relations` — enumerates actual in/out relationship types for the anchor (this gives the candidate set R^k).
+3. `_select_relation` — Gemini Flash picks exactly one relation from R^k (validated; up to `C_MAX = 2` retries with error feedback). Returns `None` to stop.
+4. `_retrieve_triples` — executes a parameterized Cypher with the selected relation (limit 25 triples). The relation name is interpolated via f-string, which is safe because it came from the graph itself.
+5. `_reason_step` — Gemini Flash picks relevant triple indices, writes a Slovak implication summary, decides whether to continue, and optionally proposes a `next_anchor` (which MUST be a tail of a selected triple — prevents hallucinated hops).
+
+The running `summary` string is rebuilt each step so context stays roughly constant in k. Deduplicated triples and collected node ids are returned.
+
+A legacy alternative, `search_agent_retrieve` ([pdf_graphrag.py:1450](code/pdf_graphrag.py#L1450)), exposes a `search_database` tool to a LangChain agent that authors its own Cypher — not used by default in favor of ARK-V1's stricter state machine.
+
+### Stage 3 — `answer`
+`get_chunks_from_nodes` ([pdf_graphrag.py:1779](code/pdf_graphrag.py#L1779)) follows `IN_CHUNK` from every retrieved node to pull source `Chunk.text` values. Then `answer` ([pdf_graphrag.py:1806](code/pdf_graphrag.py#L1806)) asks Gemini Flash (structured `InferenceAnswer`) to synthesize a Slovak natural-language answer using:
+- Triples as **primary** evidence (serialized as `[subject, relation, object]` lists),
+- Chunks as supplementary context.
+
+---
+
+## 5. Data Types
+
+Defined in [code/classes.py](code/classes.py) (referenced throughout):
+- `Schema` — `{nodes, relationships}`.
+- `ClassifiedDocument` — output of the (currently unused) `classification` stage.
+- `SubSentence` — `{text, entities}` from Stage 1.
+- `ReasoningStep` — `{selected_triple_indices, implication, continue_reasoning, next_anchor}` from ARK-V1 Stage 2.
+
+Prompts and response schemas live in [code/prompts.py](code/prompts.py).
+
+---
+
+## 6. Design Notes
+
+- **Two-phase schema building** (ODD → refinement) produces a stable type vocabulary **before** extraction, so SDE across many chunks stays consistent.
+- **ARK-V1 over LLM-authored Cypher**: relation choices are always validated against the graph's actual schema, and next-hop anchors must exist in the selected triples. This eliminates the most common failure mode of agentic Cypher (fabricated labels/relations).
+- **`IN_CHUNK` edges** are the bridge between graph retrieval and textual grounding — without them, Stage 3 would have triples but no original text.
+- **Table handling is separate from text**: vision LLM → HTML → hierarchical graph. Interior pages of multi-page tables are removed from the text stream to prevent double-counting.
+- **Read-only guard**: every non-parametrized Cypher on the query path passes through `is_read_only_cypher`, rejecting writes and `CALL`s.
+- **Resilience**: async extraction stages use a semaphore + global pause-on-error event, so a rate-limit hit pauses all concurrent tasks for 60 s rather than cascading failures.

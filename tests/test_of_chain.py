@@ -21,7 +21,7 @@ graphrag = PDFGraphRAG(
     claude_api_key=os.getenv("ANTHROPIC_API_KEY")
 )
 
-name = "one-chunk-shortOddPrompts"
+name = "three-chunks-example"
 
 # Load PDF documents
 documents = graphrag.load_pdf(pdf_path)
@@ -32,7 +32,7 @@ documents = documents[58:60]
 splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
 chunked_documents = splitter.split_documents(documents)
 
-chunked_documents = chunked_documents[:1]
+chunked_documents = chunked_documents[:3]
 
 extracted_schema_list = asyncio.run(
     graphrag.async_open_domain_detection(

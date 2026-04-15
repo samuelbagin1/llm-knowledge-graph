@@ -1,0 +1,257 @@
+{
+  "node_types": [
+    "Cinnost",
+    "ClenskyStat",
+    "Dan",
+    "DanovaPovinnost",
+    "DanovePriznanie",
+    "Dodavatel",
+    "Doklad",
+    "Dovozca",
+    "Koeficient",
+    "Lehota",
+    "Nehnutelnost",
+    "Odsek",
+    "Paragraf",
+    "Pismeno",
+    "PlatitelDane",
+    "Pravo",
+    "Prijemca",
+    "SpravcaDane",
+    "StatnyRozpocet",
+    "Suhlas",
+    "Tovar",
+    "Tuzemsko",
+    "Vypocet",
+    "Zakon",
+    "Zaznam",
+    "ZdanovacieObdobie"
+  ],
+  "relationship_types": [
+    "JE_DEFINOVANY_AKO",
+    "JE_UVEDENY_V",
+    "KONCI_NAJNESKOR",
+    "MA_DOKLAD",
+    "MA_PRAVO",
+    "MA_VYNIMKU",
+    "NA_TARCHU",
+    "NA_ZAKLADE",
+    "ODKAZUJE_NA",
+    "PLATI_PRE",
+    "POCHADZA_Z",
+    "PODLA",
+    "PODMIENUJE",
+    "POSKYTUJE",
+    "POTVRDZUJE",
+    "POUZIVA",
+    "PRESTAVA_BYT",
+    "STAVA_SA",
+    "UPLATNUJE",
+    "UPRAVUJE",
+    "URCUJE",
+    "V_PROSPECH",
+    "VYHOTOVUJE",
+    "VYKONAVA",
+    "VYPOCITA",
+    "VYSPORIADA",
+    "VYZADUJE_SUHLAS",
+    "VZNIKA",
+    "ZACINA_NAJSKOR",
+    "ZODPOVEDA_PODLA"
+  ],
+  "merge_log": {
+    "node_types": {
+      "Cinnost": [
+        "Cinnost",
+        "NajomNehnutelnosti",
+        "PrevodNehnutelnosti",
+        "OdpoctanieDane"
+      ],
+      "ClenskyStat": [
+        "ClenskyStát"
+      ],
+      "Dan": [
+        "Dan",
+        "OdpoctitelnaDan"
+      ],
+      "DanovaPovinnost": [
+        "DanovaPovinnost"
+      ],
+      "DanovePriznanie": [
+        "DanovePriznanie"
+      ],
+      "Dodavatel": [
+        "Dodavatel"
+      ],
+      "Doklad": [
+        "Doklad",
+        "DanovyDoklad",
+        "HodnovernyDoklad",
+        "DovoznyDoklad",
+        "Faktura"
+      ],
+      "Dovozca": [
+        "Dovozca"
+      ],
+      "Koeficient": [
+        "Koeficient"
+      ],
+      "Lehota": [
+        "LehotaNaPodanieDanovehoPriznania"
+      ],
+      "Nehnutelnost": [
+        "Nehnutelnost"
+      ],
+      "Odsek": [
+        "Odsek"
+      ],
+      "Paragraf": [
+        "Paragraf"
+      ],
+      "Pismeno": [
+        "Pismeno"
+      ],
+      "PlatitelDane": [
+        "PlatitelDane",
+        "Platitel"
+      ],
+      "Pravo": [
+        "Pravo",
+        "Narok",
+        "PravoNaOdpoctanie"
+      ],
+      "Prijemca": [
+        "Prijemca"
+      ],
+      "SpravcaDane": [
+        "SpravcaDane",
+        "FinancnaSluzba",
+        "ColnyOrgan"
+      ],
+      "StatnyRozpocet": [
+        "StátnyRozpocet"
+      ],
+      "Suhlas": [
+        "Suhlas"
+      ],
+      "Tovar": [
+        "Tovar"
+      ],
+      "Tuzemsko": [
+        "Tuzemsko"
+      ],
+      "Vypocet": [
+        "Vypocet"
+      ],
+      "Zakon": [
+        "Zakon"
+      ],
+      "Zaznam": [
+        "Zaznam"
+      ],
+      "ZdanovacieObdobie": [
+        "ZdanovacieObdobie",
+        "KalendarnyRok",
+        "HospodarskyRok",
+        "CasoveObdobie"
+      ]
+    },
+    "relationship_types": {
+      "JE_DEFINOVANY_AKO": [
+        "ROZUMIE_SA_AKO"
+      ],
+      "JE_UVEDENY_V": [
+        "JE_UVEDENA_V",
+        "JE_UVEDENY_AKO"
+      ],
+      "KONCI_NAJNESKOR": [
+        "NAJNESKOR_V"
+      ],
+      "MA_DOKLAD": [
+        "MA_DOKLAD",
+        "MÁ_DOKLAD"
+      ],
+      "MA_PRAVO": [
+        "MA_PRAVO"
+      ],
+      "MA_VYNIMKU": [
+        "MA_VÝNIMKU"
+      ],
+      "NA_TARCHU": [
+        "NA_TARCHU"
+      ],
+      "NA_ZAKLADE": [
+        "NA_ZAKLADE"
+      ],
+      "ODKAZUJE_NA": [
+        "ODKAZUJE_NA"
+      ],
+      "PLATI_PRE": [
+        "PLATI_PRE"
+      ],
+      "POCHADZA_Z": [
+        "POCHADZA_Z"
+      ],
+      "PODLA": [
+        "V_PODLA"
+      ],
+      "PODMIENUJE": [
+        "PODMIENUJE"
+      ],
+      "POSKYTUJE": [
+        "POSKYTUJE"
+      ],
+      "POTVRDZUJE": [
+        "POTVRDZUJE",
+        "OSVEDCUJE",
+        "PREUKAZUJE"
+      ],
+      "POUZIVA": [
+        "POUZIVA"
+      ],
+      "PRESTAVA_BYT": [
+        "PRESTAVA_BYT"
+      ],
+      "STAVA_SA": [
+        "STAVA_SA"
+      ],
+      "UPLATNUJE": [
+        "UPLATNUJE"
+      ],
+      "UPRAVUJE": [
+        "UPRAVUJE"
+      ],
+      "URCUJE": [
+        "URCUJE"
+      ],
+      "V_PROSPECH": [
+        "V_PROSPECH"
+      ],
+      "VYHOTOVUJE": [
+        "VYHOTOVUJE"
+      ],
+      "VYKONAVA": [
+        "VYKONAVA"
+      ],
+      "VYPOCITA": [
+        "VYPOCITA"
+      ],
+      "VYSPORIADA": [
+        "VYSPORIADA"
+      ],
+      "VYZADUJE_SUHLAS": [
+        "SO_SUHLASOM"
+      ],
+      "VZNIKA": [
+        "VZNIKA"
+      ],
+      "ZACINA_NAJSKOR": [
+        "NAJKORSIE_V",
+        "NAJSKOR_V"
+      ],
+      "ZODPOVEDA_PODLA": [
+        "ODOBPIEDA_PODLA"
+      ]
+    }
+  }
+}

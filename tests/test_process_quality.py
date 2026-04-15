@@ -43,7 +43,7 @@ from langsmith.evaluation import evaluate
 
 from classes import Schema
 
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
 # ---------------------------------------------------------------------------
 # LangSmith client
@@ -78,15 +78,25 @@ EXPECTED_ODD_REL_TYPES = { "POUZIJE", "MA_POSTAVENIE", "PRESTANE_BYT", "V_PROSPE
         "SO_SUHLASOM", "ODKAZUJE_NA", "VYPOCITA", "URCUJE_PODLA", "VYSPORIADA", "URCI", "STANE_SA",
         "POSKYTUJE", "ZA_OBDOBIE", "UPRAVUJE", "VYKONAVA", "JE_OSLOBODENA_OD" }
 
+
 # Controlled raw schema with intentional duplicates for refinement testing
+# from: extracted_data/three-chunks-example_odd_20260415004630.json
 DUPLICATE_ODD_SCHEMA = Schema(
     nodes=[
-        "Dokument", "Dokumentacia", "PravnyPredpis", "Zakon",
-        "Osoba", "FyzickaOsoba", "Spolocnost", "Firma"
+        "DovoznyDoklad", "Dan", "DanovyDoklad", "Doklad", "FinancnaSluzba", "Odsek",
+        "Zakon", "OdpoctanieDane", "SpravcaDane", "Paragraf", "Nehnutelnost", "PlatitelDane",
+        "HospodarskyRok", "Pismeno", "ClenskyStát", "Dovozca", "PravoNaOdpoctanie", "Tuzemsko", "Suhlas", "HodnovernyDoklad", "Narok",
+        "Tovar", "Faktura", "StátnyRozpocet", "LehotaNaPodanieDanovehoPriznania", "CasoveObdobie",
+        "ZdanovacieObdobie", "Cinnost", "DanovePriznanie", "DanovaPovinnost", "OdpoctitelnaDan", "KalendarnyRok",
+        "Platitel", "NajomNehnutelnosti", "Pravo", "ColnyOrgan", "Prijemca", "Zaznam", "Vypocet", "Dodavatel",
+        "PrevodNehnutelnosti", "Koeficient"
     ],
     relationships=[
-        "OBSAHUJE", "MA_OBSAH", "VYDAL", "PUBLIKOVAL",
-        "PRACUJE_PRE", "JE_ZAMESTNANCOM"
+        "PRESTAVA_BYT", "VYHOTOVUJE", "URCUJE", "ODKAZUJE_NA", "JE_UVEDENA_V", "ROZUMIE_SA_AKO", "PLATI_PRE",
+        "OSVEDCUJE", "POTVRDZUJE", "VYPOCITA", "V_SLUZENI", "VYSPORIADA", "POSKYTUJE", "NAJSKOR_V",
+        "MA_PRAVO", "UPRAVUJE", "MÁ_DOKLAD", "NAJKORSIE_V", "UPLATNUJE", "POCHADZA_Z", "V_PODLA", "V_PROSPECH",
+        "VYKONAVA", "MA_VÝNIMKU", "NA_ZAKLADE", "JE_UVEDENY_AKO", "NAJNESKOR_V", "ODOBPIEDA_PODLA", "POUZIVA",
+        "PREUKAZUJE", "SO_SUHLASOM", "NA_TARCHU", "PODMIENUJE", "MA_DOKLAD", "VZNIKA", "STAVA_SA"
     ],
 )
 
@@ -347,11 +357,43 @@ def eval_ref_no_diacritics(run, example) -> dict:
     }
 
 
-# TODO: eval_ref_deduplication — verify that synonym groups in DUPLICATE_ODD_SCHEMA
-#   collapse correctly. Read example.outputs["expected_canonical_nodes"] and check
-#   each canonical type is in data["node_types"] AND that its synonyms are absent.
-#   Pattern: expected = ["Dokument", "PravnyPredpis", "Osoba", "Spolocnost"]
-#   score = len(present_canonicals) / len(expected)
+def eval_ref_deduplication(run, example) -> dict:
+    """
+    For each expected canonical node, verify:
+      1. canonical is present in data['node_types'],
+      2. merge_log records at least one synonym collapsed into it,
+      3. none of those logged synonyms remain in data['node_types'].
+    Score = fraction of canonicals satisfying all three conditions.
+    Reference: example.outputs['expected_canonical_nodes']
+    """
+    data: dict = run.outputs["output"]
+    expected = example.outputs.get("expected_canonical_nodes", [])
+    if not expected:
+        return {"key": "ref_deduplication", "score": 1.0, "comment": "No reference"}
+
+    node_types = set(data.get("node_types", []))
+    merge_log_nodes = data.get("merge_log", {}).get("node_types", {})
+
+    passing, failures = [], []
+    for canonical in expected:
+        synonyms = merge_log_nodes.get(canonical, [])
+        if canonical not in node_types:
+            failures.append(f"{canonical}: missing from node_types")
+            continue
+        if not synonyms:
+            failures.append(f"{canonical}: no synonyms in merge_log")
+            continue
+        leaked = [s for s in synonyms if s in node_types]
+        if leaked:
+            failures.append(f"{canonical}: synonyms still present {leaked}")
+            continue
+        passing.append(canonical)
+
+    return {
+        "key": "ref_deduplication",
+        "score": len(passing) / len(expected),
+        "comment": "; ".join(failures) if failures else "All canonicals deduplicated",
+    }
 
 
 def eval_ref_distinct_not_merged(run, example) -> dict:
@@ -544,24 +586,26 @@ def create_sde_dataset():
             inputs={
                 "text": FIXTURE_TEXT,
                 "schema": Schema(
-                    nodes=["PravnyPredpis", "Paragraf", "Platitel", "Ministerstvo", "Spolocnost"],
-                    relationships=["OBSAHUJE", "VYDAL", "PODLA", "JE_REGISTROVANY"]
+                    nodes=[ "Cinnost", "ClenskyStat", "Dan", "DanovaPovinnost",
+                        "DanovePriznanie", "Dodavatel", "Doklad", "Dovozca", "Koeficient",
+                        "Lehota", "Nehnutelnost", "Odsek", "Paragraf", "Pismeno", "PlatitelDane",
+                        "Pravo", "Prijemca", "SpravcaDane", "StatnyRozpocet", "Suhlas", "Tovar", "Tuzemsko",
+                        "Vypocet", "Zakon", "Zaznam", "ZdanovacieObdobie"],
+                    relationships=[ "JE_DEFINOVANY_AKO", "JE_UVEDENY_V", "KONCI_NAJNESKOR", "MA_DOKLAD",
+                        "MA_PRAVO", "MA_VYNIMKU", "NA_TARCHU", "NA_ZAKLADE", "ODKAZUJE_NA", "PLATI_PRE", "POCHADZA_Z",
+                        "PODLA", "PODMIENUJE", "POSKYTUJE", "POTVRDZUJE", "POUZIVA", "PRESTAVA_BYT", "STAVA_SA", 
+                        "UPLATNUJE", "UPRAVUJE", "URCUJE", "V_PROSPECH", "VYHOTOVUJE", "VYKONAVA", "VYPOCITA", "VYSPORIADA",
+                        "VYZADUJE_SUHLAS", "VZNIKA", "ZACINA_NAJSKOR", "ZODPOVEDA_PODLA"]
                 ),
             },
             outputs={
-                # TODO: VERIFY THESE AGAINST ACTUAL LLM OUTPUT.
-                # These are the entity strings the LLM is expected to extract
-                # from FIXTURE_TEXT and store as node.id values.
-                # Run SDE once manually, print [n.id for n in gd.nodes], and
-                # adjust the list to match real LLM formatting
-                # (e.g. "Zakon 222/2004" vs "Zákon č. 222/2004 Z. z.").
-                # The eval uses case-insensitive substring match so minor
-                # reformatting is tolerated, but the core token must be present.
                 "expected_entities": [
-                    "Zakon c. 222/2004 Z. z.",
-                    "§ 54 ods. 2 pism. a)",
-                    "Ministerstvo financii",
-                    "ABC s.r.o.",
+                    "Pravny Predpis", "Paragraf 39", "Odsek 3", "Odsek 4",
+                    "Kalendarny Rok", "Prislusny Kalendarny Rok", "Jednotlive Zdanovacie Obdobia", "Predchadzajuci Kalendarny Rok",
+                    "Skonceny Kalendarny Rok", "Posledne Zdanovacie Obdobie Kalendarneho Roka",
+                    "Platitel", "Spravca Dane", "Statny Rozpocet", "Financne Sluzby Oslobodene Od Dane", "Prilezitostny Prevod Nehnutelnosti",
+                    "Prilezitostny Najom Nehnutelnosti", "Koeficient", "Odpocitatelna Dan",
+                    "Dan", "Rozdiel Medzi Odpocitanou Danou A Danou"
                 ],
             },
             dataset_id=ds.id,
@@ -669,6 +713,7 @@ if __name__ == "__main__":
                 eval_ref_merge_log_consistency,
                 eval_ref_no_diacritics,
                 eval_ref_distinct_not_merged,
+                eval_ref_deduplication,
             ],
             experiment_prefix="refinement",
             client=ls_client,

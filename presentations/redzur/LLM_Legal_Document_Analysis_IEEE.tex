@@ -45,7 +45,7 @@ knowledge graph, large language models, legal document analysis, GraphRAG, Neo4j
 
 With the growing use of Large Language Models (LLMs) across various domains, there is an increasing need for effective methods to analyze and process specific document types such as legal texts. LLMs alone often struggle with the complex structures and relationships in legal documents, leading to hallucinations and limitations in providing precise information~\cite{b1}.
 
-We propose using LLMs to transform unstructured text into structured data stored in a knowledge graph (KG), subsequently used to answer questions via GraphRAG (Graph Retrieval-Augmented Generation)~\cite{b2}. The system combines a Neo4j~\cite{b3} graph database with a vector store for hybrid search, enabling users to ask questions in natural language and receive precise answers based on both structured relationships and semantic similarity.
+We propose using LLMs to transform unstructured text into structured data stored in a knowledge graph (KG), subsequently used to answer questions via GraphRAG (Graph Retrieval-Augmented Generation)~\cite{b2}. The system combines a Neo4j~\cite{b3} graph database, enabling users to ask questions in natural language and receive precise answers based on structured relationships.
 
 The remainder of this paper is organized as follows: Section~II describes the document processing pipeline, Section~III presents the search and retrieval mechanism, Section~IV covers testing and results, and Section~V concludes the paper.
 
@@ -54,6 +54,7 @@ The remainder of this paper is organized as follows: Section~II describes the do
 The processing pipeline transforms a PDF legal document into a structured knowledge graph through three main stages: preprocessing, extraction, and database insertion.
 
 \begin{center}
+\scalebox{0.8}{%
 \begin{tikzpicture}[
   node distance=14mm,
   box/.style={draw, rounded corners, minimum height=8mm, minimum width=28mm, align=center, font=\footnotesize},
@@ -65,19 +66,23 @@ The processing pipeline transforms a PDF legal document into a structured knowle
   \draw[arr] (pre) -- (ext);
   \draw[arr] (ext) -- (db);
 \end{tikzpicture}
+}
 \end{center}
 
 \subsection{Preprocessing}
 
-The PDF document is loaded, classified, and split into chunks. Classification is performed by Google Gemini-2.5-Flash, which determines the document type (contract, law, decree, etc.) and legal domain (constitutional, financial, civil, etc.) from the first two pages. Each classification includes a confidence percentage (0--100\%).
+The PDF document is loaded, then whole document is processed to look for tables, formulas, and finally split into chunks. 
 
-The text is then split into chunks using \texttt{RecursiveCharacterTextSplitter} from LangChain~\cite{b4}. For open-domain extraction, chunks are 1200 tokens with 200-token overlap; for schema-guided extraction, 1024 tokens with 128-token overlap.
+Before textual processing, PDF is rasterised at 200 DPI and run through DocLayout-YOLO v10 model (checkpoint juliozhao/DocLayout-YOLO-DocStructBench). Confidence threshold is set to $\tau=0.3$. For each page $p_i$ the detector returns a set of bounding boxes $B_i=\{(x_1,y_1,x_2,y_2,c)\}$ where $c\in\mathcal{C}_{\text{target}}=\{\text{table}\text{picture}, \text{figure}, \text{isolate\_formula}, \text{formula\_caption}\}$. Consecutive table detections (page distance $\leq 1$) are grouped into multi-page tables. Each group is sent to transform into HTML, which prompts a vision-enabled Gemini 2.5 Pro model. The resulting HTML is then transformed into a hierarchical subgraph, where LLM is instructed to emit a rooted tree whose nodes satisfy the invariants. Pages that are strictly interior to a multi-page table are removed from the text stream to avoid duplicate extraction, while the first and last pages are retained because they might contain surrounding text.
+
+The text is then split into chunks using RecursiveCharacterTextSplitter from LangChain~\cite{b4}. For open-domain extraction, chunks are 1200 tokens with 200-token overlap; for schema-guided extraction, 1024 tokens with 128-token overlap.
 
 \subsection{Extraction}
 
 We employ a hybrid extraction approach based on the ODKE+ study~\cite{b5}. Pure open-domain extraction yields rich but inconsistent graphs with duplicates and fragmentation (e.g., \texttt{Place} vs.\ \texttt{Location} as separate types). Pure schema-guided extraction risks missing entities not defined in the ontology. The hybrid approach combines both, achieving 98.8\% extraction accuracy~\cite{b5}.
 
 \begin{center}
+  \scalebox{0.75}{%
 \begin{tikzpicture}[
   node distance=10mm,
   box/.style={draw, rounded corners, minimum height=9mm, minimum width=32mm, align=center, font=\footnotesize},
@@ -89,13 +94,21 @@ We employ a hybrid extraction approach based on the ODKE+ study~\cite{b5}. Pure 
   \draw[arr] (det) -- (onto);
   \draw[arr] (onto) -- (extr);
 \end{tikzpicture}
+  }
 \end{center}
 
 \subsubsection{Open-Domain Detection (ODD)}
-Each chunk is processed in parallel by an asynchronous agent using GPT-4o~\cite{b6}, which extracts every possible entity and relationship. This reveals entities not predefined in any ontology that may be crucial. The ontology dynamically adapts based on the classified document type and legal domain. The output is a schema of node and relationship type lists.
+ODD mirrors the "schema discovery" phase of ODKE+~\cite{odkeplus2025}, in which a language model proposes candidate predicates before ontology pruning. For each chunk $c_i$ an asynchronous agent returns a local schema $S_i=(\mathcal{T}^{(i)}_V,\mathcal{T}^{(i)}_E)$, which extracts every possible entity and relationship. This reveals entities not predefined in any ontology that may be crucial.  Concurrency is controlled by Semaphore (5 chunks are concurrently processed) and a cooperative pause/retry event that back-offs the whole batch for 60 seconds on provider errors. The aggregeted schema is $S_{\text{ODD}}=\Big(\bigcup_i \mathcal{T}^{(i)}_V,\ \bigcup_i \mathcal{T}^{(i)}_E\Big)$
 
-\subsubsection{Ontology Refinement}
-The extracted schema is compared against a predefined reference ontology (consistent across Slovak law, e.g., \texttt{Person}, \texttt{Law}, \texttt{Paragraph}) or the existing graph schema. This ensures consistency, prevents semantically similar but differently named types (e.g., \texttt{REGULATES} vs.\ \texttt{REGULATED}), and eliminates duplicates. Gemini-2.5-Flash is used for this reasoning task.
+
+\subsubsection{Schema Refinement (SR)}
+The aggregated schema is still noisy: diacritic variants (e.g. Dan vs Daň), near-synonyms and ontology mismatches are common. This step invokes Gemini 2.5 Pro that returns canonical label sets together with a merge log $\mathcal{M}:S_{\text{ODD}}\to S^{\ast}$. The normalisation is conservative - the prompt explicitly forbids merging ontologically distinct kinds (person vs document). Following ODKE+~\cite{odkeplus2025}, an \emph{existing ontology} $S_0$ (the current
+Neo4j schema) is passed in so that the refined schema $S^\ast$ remains
+compatible with facts already stored:
+\[
+S^{\ast}=\Phi(S_{\text{ODD}},\,S_0),\qquad
+\Phi=\text{LLM-refiner}.
+\]
 
 \subsubsection{Schema-Guided Extraction (SDE)}
 The most precise step: each chunk is processed in parallel with the refined ontology provided to the LLM. The agent extracts consistent entities and relationships, returning \texttt{GraphDocument} objects. The result is a rich, consistent knowledge graph where chunks link to documents via \texttt{IN\_DOCUMENT} and to entities via \texttt{HAS\_ENTITY} relationships.
@@ -225,6 +238,26 @@ This paper was supported by DISIC (09I05-03-V2), NEXT (ERASMUS-EDU-2023-CBHE-STR
 \bibitem{b5} Q. Xia, H. Ye, and M.~Sap, ``ODKE+: Ontology-guided open-domain knowledge extraction with LLMs,'' arXiv preprint arXiv:2509.04696, 2025.
 \bibitem{b6} OpenAI, ``GPT-4o model card,'' 2024. [Online]. Available: https://openai.com/
 \bibitem{b7} Slov-Lex, ``Legal and information portal,'' Ministry of Justice of the Slovak Republic. [Online]. Available: https://www.slov-lex.sk/
+
+\bibitem{kggpt2023}
+Kim, J., Kwon, Y., Jo, Y., and Choi, E.
+\newblock \emph{KG-GPT: A General Framework for Reasoning on Knowledge Graphs
+Using Large Language Models}.
+\newblock Findings of EMNLP 2023.
+\newblock \url{https://aclanthology.org/2023.findings-emnlp.631.pdf}.
+
+\bibitem{arkv12025}
+Klein, J.\ F.\ and Ohnemus, J.
+\newblock \emph{ARK-V1: A State-Machine LLM Agent for Knowledge-Graph
+Question Answering}.
+\newblock arXiv:2509.18063, 2025.
+\newblock \url{https://arxiv.org/pdf/2509.18063}.
+
+\bibitem{odkeplus2025}
+Khorshidi, S.\ et al.\ (Apple Inc.).
+\newblock \emph{ODKE+: Ontology-Driven Knowledge Extraction at Web Scale}.
+\newblock arXiv:2509.04696, 2025.
+\newblock \url{https://arxiv.org/html/2509.04696v1}.
 \end{thebibliography}
 
 \end{document}

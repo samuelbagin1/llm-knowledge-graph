@@ -8,6 +8,8 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{url}
+\usepackage{graphicx}
+\usepackage{subcaption}
 \usetikzlibrary{arrows.meta,positioning,calc}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -110,61 +112,60 @@ After preprocessing, the remaining text pages are chunked and passed through a t
 The goal of the first step is to discover, from the document, which entity types and relation types are meaningful. Text is split using a recursive characters splitter with a chunk size of 1200 characters and an overlap of 200 characters. The relatively larger window is used deliberately: at this stage the GPT-5.4-mini model is asked about types, not instances, and a wider context helps it see more than one sentence at a time, which is important in legal language, where a concept such as \textit{tax base} is often introduced several sentences before it is first used. Each chunk $c_i$ is sent in parallel to an agent whose system prompt instructs it to return generic but distinguishable node labels and relationship labels, with an explicit focus on laws, paragraphs, obligations, rights and temporal entities. All Slovak diacritics are normalised to ASCII so that the graph uses a single consistent spelling. The output of this step is a list of per-chunk schemas $S_i=(\mathcal{T}^{(i)}_V,\mathcal{T}^{(i)}_E)$.
 
 \subsubsection{Schema Refinement (SR)}
-The per-chunk schemas are merged into a single set of node types and relation types $S_{\text{ODD}}=\Big(\bigcup_i \mathcal{T}^{(i)}_V,\ \bigcup_i \mathcal{T}^{(i)}_E\Big)$, and then sent to a schema refinemnt LLM call together with any existing ontology already stored in graph $S^{\ast}=\Phi(S_{\text{ODD}},\,S_0)$. The refinement step has a clear linguistic role: it resolves duplicates caused by diacritics or minor spelling variants (for example Dan vs Daň), it enforces upper-snake-case for relation types and it refuses to merge semantically distinct categories such as \textit{document} and \textit{person}. A merge log is kept that maps every canonical type back to the raw variants it absorbed, which is useful both for debugging and for auditing. A special type \textit{Paragraph} is always added to the node list, because every legal fact in the graph should be traceableback to the paragraph that states it.
+The per-chunk schemas are merged into a single set of node types and relation types $S_{\text{ODD}}=\Big(\bigcup_i \mathcal{T}^{(i)}_V,\ \bigcup_i \mathcal{T}^{(i)}_E\Big)$, and then sent to a schema refinemnt Gemini 2.5 Pro call together with any existing ontology already stored in graph $S^{\ast}=\Phi(S_{\text{ODD}},\,S_0)$. The refinement step has a clear linguistic role: it resolves duplicates caused by diacritics or minor spelling variants (for example Dan vs Daň), it enforces upper-snake-case for relation types and it refuses to merge semantically distinct categories such as \textit{document} and \textit{person}. A merge log is kept that maps every canonical type back to the raw variants it absorbed, which is useful both for debugging and for auditing. A special type \textit{Paragraph} is always added to the node list, because every legal fact in the graph should be traceableback to the paragraph that states it.
 
 \subsubsection{Schema-Driven Extraction (SDE)}
 The final extraction step uses the refined $S^{\ast}$ schema as a hard constraint. Text is rechunked with a smaller window of 1024 characters and an overlap of 128 characters. This smaller chunk is motivated by a different trade-off: at this stage the GPT-5.4-mini model must extract concrete instances and a shorter window pushes it to produce tighter, better-grounded triples $(e_h, r, e_t)$, where $e_h$ is head entity, $e_t$ is tail entity and $r$ is relationship between them. It reduces the chance that two unrelated facts are blended into one relation, and makes the per-chunk LLM cost predictable. The chunks are sent in parallel, with a bounded concurrency and an automatic pause-and-retry mechanism in case of provider errors (when user hits Tokens Per Minute limit). For each chunk $c_i$ the model returns nodes and relationships, that conform to the refined $S^{\ast}$ schema and yields a GraphDocument $G_i = (V_i, E_i, src_i)$. A lightweight post-processing step normalises node IDs to title case, normalises relation names to upper-snake-case, and drops entries with missing source or target. Every extracted node is also linked to a \textit{Chunk} node via an IN\_CHUNK relation, which later allows retrieval stage to fetch the original text that supports a given triple.
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\begin{center}
-\scalebox{0.6}{%
-\begin{tikzpicture}[
-  node distance=26mm and 32mm,
-  doc/.style={circle, draw, fill=gray!20, minimum size=14mm, align=center},
-  chunk/.style={circle, draw, fill=gray!50, minimum size=14mm, align=center},
-  ent/.style={circle, draw, fill=gray!90, minimum size=14mm, align=center},
-  arr/.style={-Latex, thick}
-]
 
-  \node[doc] (doc) {Document};
-  \node[doc, right=of doc] (doc2) {Document $\beta$};
+\begin{minipage}[t]{0.48\textwidth}
+  \centering
+  \scalebox{0.55}{%
+  \begin{tikzpicture}[
+    node distance=26mm and 32mm,
+    doc/.style={circle, draw, fill=gray!20, minimum size=14mm, align=center},
+    chunk/.style={circle, draw, fill=gray!50, minimum size=14mm, align=center},
+    ent/.style={circle, draw, fill=gray!90, minimum size=14mm, align=center},
+    arr/.style={-Latex, thick}
+  ]
+    \node[doc] (doc) {Document};
+    \node[doc, right=of doc] (doc2) {Document $\beta$};
 
-  \node[chunk, below left=of doc] (c1) {Chunk 1};
-  \node[chunk, below=of doc] (c2) {Chunk 2};
-  \node[chunk, below right=of doc] (cn) {Chunk $n$};
+    \node[chunk, below left=of doc] (c1) {Chunk 1};
+    \node[chunk, below=of doc] (c2) {Chunk 2};
+    \node[chunk, below right=of doc] (cn) {Chunk $n$};
 
-  \node[ent, below left=of c2] (ex) {Entity $x$};
-  \node[ent, below=of c2] (ey) {Entity $y$};
-  \node[ent, below right=of c2] (ez) {Entity $z$};
+    \node[ent, below left=of c2] (ex) {Entity $x$};
+    \node[ent, below=of c2] (ey) {Entity $y$};
+    \node[ent, below right=of c2] (ez) {Entity $z$};
 
-  \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
-  \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
-  \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+    \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+    \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+    \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
 
-  \draw[arr] (ex) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
-  \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
-  \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
-  \draw[arr] (ez) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
+    \draw[arr] (ex) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
+    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
+    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
+    \draw[arr] (ez) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
 
-  \draw[arr] (ex) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ey);
-  \draw[arr] (ey) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ez);
-\end{tikzpicture}
-}
-\end{center}
-\caption{Knowledge graph structure: document, chunk, entity and relationships.}
-\label{fig:graph_structure}
-\end{figure}
+    \draw[arr] (ex) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ey);
+    \draw[arr] (ey) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ez);
+  \end{tikzpicture}
+  }
+  \captionof{figure}{Knowledge graph structure: document, chunk, entity and relationships.}
+  \label{fig:graph_structure}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{../grafova_databaza.png}
+  \captionof{figure}{Graph database in Neo4j Desktop.}
+  \label{fig:dual_db}
+\end{minipage}
 
-
-\begin{figure}[!t]
-\centering
-\scalebox{0.6}{%
-\includegraphics[width=0.7\textwidth]{../grafova_databaza.png}
-}
-\caption{Graph database.}
-\label{fig:dual_db}
-\end{figure}
+\end{figure*}
 
 
 \subsection{Database Insertion}
@@ -209,6 +210,35 @@ $$
 where $\pi_3$ projects a triple onto its tail. The chain terminantes when the agent sets the \textit{continue} flag to false, when $R^k$ is empty or when $k$ reaches $K_{max}$
 
 Two design choices important noticing. First, the candidate set $R^k$ is always built from the graph itself. This means the agent can never propose a relation that does not exist for the current anchor, which eliminates an entire class of hallucinations. Second, the running summary $\Sigma_k$ is the only long-term memory carried between steps. The triples themselves are re-enumerated every time. This is what makes the context size predictable even for deep walks. At the end of the per-anchor loop the evidence triples are deduplicated while preserving insertion order.
+
+\begin{figure}[t]
+\centering
+\scalebox{0.55}{%
+\begin{tikzpicture}[
+    node distance=9mm and 8mm,
+    box/.style={draw, rounded corners, align=center, minimum width=3.2cm, minimum height=9mm},
+    line/.style={-{Latex[length=2mm]}, thick}
+]
+    \node[box] (query) {Sub-sentence\\+ up to two anchors};
+    \node[box, below=of query] (resolve) {Resolve current\\anchor $a_k$};
+    \node[box, below=of resolve] (relations) {Enumerate incident\\relations $R^k$};
+    \node[box, below=of relations] (choose) {LLM chooses one\\relation or null};
+    \node[box, below=of choose] (triples) {Enumerate triples\\$(a_k,r_k,t)$ and select evidence};
+    \node[box, below left=of triples, xshift=2mm] (update) {Update $E_k$, $\Sigma_k$,\\and next anchor};
+    \node[box, below right=of triples, xshift=-2mm] (stop) {Stop if null,\\$R^k=\varnothing$, or $k=K_{max}$};
+
+    \draw[line] (query) -- (resolve);
+    \draw[line] (resolve) -- (relations);
+    \draw[line] (relations) -- (choose);
+    \draw[line] (choose) -- node[right, font=\small] {$r_k$} (triples);
+    \draw[line] (triples) -- node[above left, font=\small] {continue} (update);
+    \draw[line] (triples) -- node[above right, font=\small] {stop} (stop);
+    \draw[line] (update.west) |- ++(-1.1,0) |- node[left, font=\small] {next step} (resolve.west);
+\end{tikzpicture}
+}
+\caption{Simple evidence-retrieval loop over the knowledge graph. For each anchor, the agent resolves the node, enumerates valid relations from the graph, chooses one relation, selects supporting triples, and either continues with a new anchor or stops.}
+\label{fig:graph-retrieval-flow}
+\end{figure}
 
 \subsection{Inference}
 The final stage aggregates the evidence triples from all sub-sentences into a single list and retrieves the text chunks linked to the involved nodes via the IN\_CHUNK relationship. A Gemini 2.5 Flash model is then prompted with three blocks: the original user question, retrieved evidence triples $(e_h, r, e_t)$ as primary evidence, and the retrieved chunks as supplementary context. The prompt instructs the model to prioritise the graph triples and to use the chunks only for wording and context. The output is a short Slovak answer grounded in explicit graph evidence.

@@ -1,0 +1,83 @@
+
+\section{Súčasný stav}
+
+\subsection{Klasické metódy extrakcie}
+
+\subsection{Konštrukcia KG}
+
+\subsection{Vyhľadávanie nad grafmi}
+
+\subsection{LLM v právnej doméne}
+
+
+\section{Analýza problému a návrh systému}
+
+\subsection{Charakteristika slovenských právnych dokumentov}
+
+\subsection{Ontológia pre právnu doménu}
+
+\subsection{Celková architekrúra}
+
+\subsection{Použité technológie}
+
+
+\section{Spracovanie dokumentov}
+Spracovanie transformuje PDF dokument Slovenského právneho odvetvia z neštruktúrovaného textu na štruktúrované dáta, ktoré sa uložia v znalostnom grafe (KG). Je to súvislá troj-kroková postupnosť: predspracovanie, extrakcia a vloženie do databázy. Tento tok dát je znázornený na obrázku č.\ref{fig:process}.
+
+\begin{figure}[h]
+    \centering
+    \scalebox{1}{%
+    \begin{tikzpicture}[
+        node distance=14mm,
+        box/.style={draw, rounded corners, minimum height=8mm, minimum width=28mm, align=center, font=\footnotesize},
+        arr/.style={-Latex, thick}
+        ]
+        \node[box] (pre) {Predspracovanie};
+        \node[box, right=of pre] (ext) {Extrakcia};
+        \node[box, right=of ext] (db) {Vloženie do\\databázy};
+        \draw[arr] (pre) -- (ext);
+        \draw[arr] (ext) -- (db);
+    \end{tikzpicture}
+    }
+    \caption{Graf popisujúci spracovanie.}
+    \label{fig:process}
+\end{figure}
+
+\subsection{Predspracovanie}
+Čisté spracovanie PDF dokumentu nie je dostačujúce pre legislatívne dokumenty. Napríklad tabuľky, ktoré sú nositeľmi dôležitých, opisných a rozvíjajucich vlastnosti, ako napríklad v zákone {222/2004 Z. z.}~\cite{SlovLex} na strane 159, kde je kapitola/číselný znak spoločného colného sadzobníka a k nemu podliehajúci opis tovaru. Dokonca, sa táto tabuľka rozkladá na viacero strán. Pri čítaní tabuľky, ako reťazca by sa tieto informácie roztrúsili a zničil by sa tak kontext celej tabuľky. Vzorce sa taktiež vyskytúju naprieč dokumentom (str. 149) a v PDF dokumente su uchované ako obrázky - nástroj na čítanie textu z dokumentu by tento obrázok nerozpoznal a nenašiel.
+
+\subsubsection{Detekcia rozloženia}
+V tomto kroku sa každá strana dokumentu konvertuje na obrázok s rozlíšením 200 DPI. Aplikuje sa DocLayout-YOLO model, ktorý prejde a zdetekuje rozloženie každej strany. Tento detektor je nakonfigurovaný aby rozoznal päť cieľových tried: tabuľka, obrázok, diagram, izolovaný vzorec a popis vzorca. Detekcie s istotou pod 0,3 sú zahodené. Pre každú nájdenú detekciu, naväzujúci box je vystrihnutý z obrázku stránky a uložený ako bezstratový PNG súbor. Všetky susedné obrázky na základe strany (ak rozdiel strán je menší ako 2) sú zoskupené, aby tabuľky, ktoré sa rozliehajú na viacero strán, boli pri sebe ako jeden logický celok.
+
+\subsubsection{Extrakcia tabuliek}
+Každá skupina tabuliek je spracovaná v dvoch krokoch. Prvý krok, optický schopný Gemini model, príjme všetky orezané obrázky skupiny spoločne s system promptom, ktorý nariaďuje aby bol výstup tabuľka v podobe HTML. Tento prompt zakazuje sumarizáciu tabuľky a nariaďuje aby model zachoval doslovný text bunky. Druhý krok, výsledný HTML výstup je poskytnutý ďaľšiemu LLM volaniu, kde tento krát ma model za úlohu transformovať tabuľu do hierarchickej podoby vrcholov a vzťahov: tabuľka je označená ako koreňový vrchol, bunky každého riadku prvého stĺpca ako rodič, a potomok pre každú daľšiu bunku daného riadku. Je to cesta ako zachovať význam tabuľky v znalostnom grafe. Vnútorné strany viac-stranovej tabuľky sú vyradené zo zoznamu strán PDF dokumentu, pre neskoršiu extrakciu aby sa predišlo duplicitám rovnakej informácie.
+
+\subsection{Trojkroková extrakcia}
+
+\subsubsection{Detekcia v otvorenej doméne}
+
+\subsubsection{Úprava a spresnenie schémy}
+
+\subsubsection{Schémou riadená extrakcia}
+
+\subsection{Vkladanie do databázy}
+
+
+\section{Vyhľadávanie a odpovedanie}
+
+\subsection{Segmentácia otázky}
+
+\subsection{Vyhľadávanie v grafe}
+
+\subsection{Generovanie odpovede}
+
+
+\section{Experimenty a vyhodnotenie}
+
+\subsection{Testovanie otázky nad slovenským zákonom}
+
+\subsection{Metriky: presnosť, úplnosť a uzemnenie}
+
+\subsection{Porovnanie s klasickým RAG}
+
+\subsection{Limity a budúca práca}

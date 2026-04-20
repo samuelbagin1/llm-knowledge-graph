@@ -47,12 +47,12 @@ knowledge graph, large language models, legal document analysis, GraphRAG, Neo4j
 
 With the growing use of Large Language Models (LLMs) across various domains, there is an increasing need for effective methods to analyze and process specific document types. Slovak legal and financial documents are long, heavily structured and full of cross-references. A typical act contains nested paragraphs, numbered items, tables and formulas that describe how to compute a tax. A lawyer or ordinary person who wants to answer a question, such as "which paragraph defines a given obligation" or "how a tax base is calculated", has to follow a chain of references across several pages. Classical retrieval-augmented generation (RAG) over plain text performs poorly in this setting. A single chunk rarely contains the full answer, and the model loses the structural information that paragraphs and tables carry. LLMs alone often struggle with the complex structures and relationships in legal documents, leading to hallucinations and limitations in providing precise information~\cite{b1}.
 
-This paper describes a complete pipeline that turns such documents into a knowledge graph (KG) stored in Neo4j~\cite{b3} graph database and then queries the graph with a large language model (LLM) agent. The construction phase is inspired by ODKE+~\cite{b5}\cite{odkeplus2025}, which uses an ontology to guide open-domain extraction. The query phase uses the three-stage {KG-GPT framework}~\cite{kggpt2023} and plugs the {ARK-V1 state-machine retrieval agent}~\cite{arkv12025} into its middle stage. The orchestration layer is built on top of LangChain~\cite{b4} and uses several LLMs for different tasks, such as GPT-5.4-mini, Gemini 2.5 Flash and Pro models.
+This paper describes a complete pipeline that turns such documents into a knowledge graph (KG) stored in Neo4j~\cite{b3} graph database and then queries the graph with a large language model (LLM) agent. The construction phase is inspired by ODKE+~\cite{odkeplus2025}, which uses an ontology to guide open-domain extraction. The query phase uses the three-stage {KG-GPT framework}~\cite{kggpt2023} and plugs the {ARK-V1 state-machine retrieval agent}~\cite{arkv12025} into its middle stage. The orchestration layer is built on top of LangChain~\cite{b4} and uses several LLMs for different tasks, such as GPT-5.4-mini, Gemini 2.5 Flash and Pro models.
 
 The main contributions are a preprocessing stage that detects tables and formulas with a document layout detector, a three-step extraction stage that produces a stable legal ontology, and a retrieval stage that walks the graph in small verifiable steps instead of generating a single complex Cypher query. The rest of the paper follows: Section~II reviews related work, Section~III describes document processing, Section~IV describes search and retrieval, and Section~V conclusion.
 
 \section{State of the Art}
-Recent work on knowledge graph construction from text has moved from pipeline systems with separate NER and relation extraction modules toward end-to-end LLM prompting. The GraphRAG approach of {Edge et al.}~\cite{2} demonstrated that a knowledge graph built by an LLM, combined with community summarization, outperforms classical RAG on query-focused summarization. However, their graphs are extracted in an open-domain fashion and the schema is not explicitly controlled, which is a problem for legal text where the ontology must be stable and auditable. ODKE+~\cite{b5}\cite{odkeplus2025} addresses this by combining open-domain detection with an ontology and a schema-driven extraction step. To improve fidelity, KnoBuilder~\cite{3} utilizes an iterative agentic loop featuring planning and self-refining modules, while GraphJudge~\cite{4} employs a discriminative judge to reach 90\% triple accuracy. For production, FalkorDB~\cite{6} and Cognee~\cite{14} provide low-latency, incremental memory layers. On the retrieval side, KG-GPT~\cite{kggpt2023} proposes a three-stage framework of segmentation, retrieval, and inference. ARK-V1~\cite{arkv12025} fills the gap with a state-machine agent that repeatedly selects relations and advances anchors to neighbors, ensuring every reasoning hop is explicit and auditable. This mirrors the discrete decision-making in {Reasoning with Trees (RwT)}~\cite{7}, which utilizes Monte Carlo Tree Search—balancing exploration and exploitation via the UCB formula—to navigate complex paths. For dynamic data, GMeLLo~\cite{11} translates natural language into SPARQL, while LightRAG~\cite{12} provides cost-efficient dual-level search. Additionally, LEGO-GraphRAG~\cite{13} improves reasoning by decomposing retrieval into specialized path refinement modules. LLM security and privacy considerations studied in {Security and Privacy in Large Language Models}~\cite{1} also matter in the legal domain, where hallucinated citations can have practical consequences. Grounding every answer in explicit graph evidence is one way to mitigate this risk, and it is one of the main motivations for the architecture proposed here.
+Building knowledge graphs from text has traditionally relied on pipelines of specialized NER and relation extraction modules, but recent work increasingly turns to LLMs to carry out the entire extraction end-to-end. The GraphRAG approach of {Edge et al.}~\cite{2} demonstrated that a knowledge graph built by an LLM, combined with community summarization, outperforms classical RAG on query-focused summarization. However, their graphs are extracted in an open-domain fashion and the schema is not explicitly controlled, which is a problem for legal text where the ontology must be stable and auditable. ODKE+~\cite{odkeplus2025} addresses this by combining open-domain detection with an ontology and a schema-driven extraction step. To improve fidelity, KnoBuilder~\cite{3} utilizes an iterative agentic loop featuring planning and self-refining modules, while GraphJudge~\cite{4} employs a discriminative judge to reach 90\% triple accuracy. On the retrieval side, KG-GPT~\cite{kggpt2023} proposes a three-stage framework of segmentation, retrieval, and inference. ARK-V1~\cite{arkv12025} fills the gap with a state-machine agent that repeatedly selects relations and advances anchors to neighbors, ensuring every reasoning hop is explicit and auditable. This mirrors the discrete decision-making in {Reasoning with Trees (RwT)}~\cite{7}, which utilizes Monte Carlo Tree Search—balancing exploration and exploitation via the UCB formula—to navigate complex paths. For dynamic data, GMeLLo~\cite{11} translates natural language into SPARQL, while LightRAG~\cite{12} provides cost-efficient dual-level search. Additionally, LEGO-GraphRAG~\cite{13} improves reasoning by decomposing retrieval into specialized path refinement modules. LLM security and privacy considerations studied in {Security and Privacy in Large Language Models}~\cite{1} also matter in the legal domain, where hallucinated citations can have practical consequences. Grounding every answer in explicit graph evidence is one way to mitigate this risk, and it is one of the main motivations for the architecture proposed here.
 
 \section{Document Processing}
 
@@ -87,7 +87,7 @@ Each table group is the processed in two steps. First a vision-capable Gemini mo
 
 \subsection{Extraction}
 
-After preprocessing, the remaining text pages are chunked and passed through a three-step extraction pipeline inspired by ODKE+~\cite{b5}\cite{odkeplus2025}.
+After preprocessing, the remaining text pages are chunked and passed through a three-step extraction pipeline inspired by ODKE+~\cite{odkeplus2025}.
 
 \begin{figure}[h]
   \centering
@@ -109,20 +109,20 @@ After preprocessing, the remaining text pages are chunked and passed through a t
 \end{figure}
 
 \subsubsection{Open-Domain Detection (ODD)}
-The goal of the first step is to discover, from the document, which entity types and relation types are meaningful. Text is split using a recursive characters splitter with a chunk size of 1200 characters and an overlap of 200 characters. The relatively larger window is used deliberately: at this stage the GPT-5.4-mini model is asked about types, not instances, and a wider context helps it see more than one sentence at a time, which is important in legal language, where a concept such as \textit{tax base} is often introduced several sentences before it is first used. Each chunk $c_i$ is sent in parallel to an agent whose system prompt instructs it to return generic but distinguishable node labels and relationship labels, with an explicit focus on laws, paragraphs, obligations, rights and temporal entities. All Slovak diacritics are normalised to ASCII so that the graph uses a single consistent spelling. The output of this step is a list of per-chunk schemas $S_i=(\mathcal{T}^{(i)}_V,\mathcal{T}^{(i)}_E)$.
+The goal of the first step is to discover, from the document, which entity types and relation types are meaningful. Text is split using a recursive characters splitter with a chunk size of 1200 characters and an overlap of 200 characters. The relatively larger window is used deliberately: at this stage the GPT-5.4-mini model is asked about types, not instances, and a wider context helps it see more than one sentence at a time, which is important in legal language, where a concept such as \textit{tax base} is often introduced several sentences before it is first used. Each chunk $c_i$ is sent in parallel to an agent whose system prompt instructs it to return generic but distinguishable node labels and relationship labels, with an explicit focus on laws, paragraphs, obligations, rights and temporal entities. All Slovak diacritics are normalised to ASCII so that the graph uses a single consistent spelling. The output of this step is a list of per-chunk schemas $S_i=(\mathcal{T}^{(i)}_V,\mathcal{T}^{(i)}_E)$. For next step, the per-chunk schemas are merged into a single united set of node types and relation types:$S_{\text{ODD}}=\bigcup_{i=1}^{|C|} S_i $
 
 \subsubsection{Schema Refinement (SR)}
-The per-chunk schemas are merged into a single set of node types and relation types $S_{\text{ODD}}=\Big(\bigcup_i \mathcal{T}^{(i)}_V,\ \bigcup_i \mathcal{T}^{(i)}_E\Big)$, and then sent to a schema refinemnt Gemini 2.5 Pro call together with any existing ontology already stored in graph $S^{\ast}=\Phi(S_{\text{ODD}},\,S_0)$. The refinement step has a clear linguistic role: it resolves duplicates caused by diacritics or minor spelling variants (for example Dan vs Daň), it enforces upper-snake-case for relation types and it refuses to merge semantically distinct categories such as \textit{document} and \textit{person}. A merge log is kept that maps every canonical type back to the raw variants it absorbed, which is useful both for debugging and for auditing. A special type \textit{Paragraph} is always added to the node list, because every legal fact in the graph should be traceableback to the paragraph that states it.
+The merged schema from ODD is sent to a schema refinemnt using Gemini 2.5 Pro call together with any existing ontology already stored in graph: $S^{\ast}=\Phi(S_{\text{ODD}},\,S_0)$. The refinement step has a clear linguistic role: it resolves duplicates caused by diacritics or minor spelling variants (for example Dan vs Daň), and semantically simillar types (for example Doklad, DanovyDoklad and HodnovernyDoklad into Doklad). It enforces upper-snake-case for relation types and it refuses to merge semantically distinct categories such as \textit{document} and \textit{person}. A merge log is kept that maps every canonical type back to the raw variants it absorbed, which is useful both for debugging and for auditing. A special type \textit{Paragraph} is always added to the node list, because every legal fact in the graph should be traceableback to the paragraph that states it.
 
 \subsubsection{Schema-Driven Extraction (SDE)}
 The final extraction step uses the refined $S^{\ast}$ schema as a hard constraint. Text is rechunked with a smaller window of 1024 characters and an overlap of 128 characters. This smaller chunk is motivated by a different trade-off: at this stage the GPT-5.4-mini model must extract concrete instances and a shorter window pushes it to produce tighter, better-grounded triples $(e_h, r, e_t)$, where $e_h$ is head entity, $e_t$ is tail entity and $r$ is relationship between them. It reduces the chance that two unrelated facts are blended into one relation, and makes the per-chunk LLM cost predictable. The chunks are sent in parallel, with a bounded concurrency and an automatic pause-and-retry mechanism in case of provider errors (when user hits Tokens Per Minute limit). For each chunk $c_i$ the model returns nodes and relationships, that conform to the refined $S^{\ast}$ schema and yields a GraphDocument $G_i = (V_i, E_i, src_i)$. A lightweight post-processing step normalises node IDs to title case, normalises relation names to upper-snake-case, and drops entries with missing source or target. Every extracted node is also linked to a \textit{Chunk} node via an IN\_CHUNK relation, which later allows retrieval stage to fetch the original text that supports a given triple.
 
-\begin{figure*}[!t]
+\begin{figure*}[t]
 \centering
 
 \begin{minipage}[t]{0.48\textwidth}
   \centering
-  \scalebox{0.55}{%
+  \scalebox{0.60}{%
   \begin{tikzpicture}[
     node distance=26mm and 32mm,
     doc/.style={circle, draw, fill=gray!20, minimum size=14mm, align=center},
@@ -154,7 +154,7 @@ The final extraction step uses the refined $S^{\ast}$ schema as a hard constrain
     \draw[arr] (ey) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ez);
   \end{tikzpicture}
   }
-  \captionof{figure}{Knowledge graph structure: document, chunk, entity and relationships.}
+  \captionof{figure}{{Knowledge graph structure: document, chunk, entity and relationships. Image taken and edited to our solution from Neo4j}~\cite{neo4jSchema}}
   \label{fig:graph_structure}
 \end{minipage}%
 \hfill
@@ -254,42 +254,36 @@ This paper was supported by DISIC (09I05-03-V2), NEXT (ERASMUS-EDU-2023-CBHE-STR
 
 \begin{thebibliography}{00}
 \bibitem{1}
-H. Wang et al., "Security and Privacy in Large Language Models: A Survey," \textit{arXiv preprint arXiv:2312.08625}, 2023.
+Badhan Chandra Das, M. Hadi Amini, Yanzhao Wu, "Security and Privacy in Large Language Models: A Survey," 2024.
+\url{https://arxiv.org/pdf/2402.00888}
 
 \bibitem{2}
 D. Edge et al., "From Local to Global: A GraphRAG Approach to Query-Focused Summarization," \textit{Microsoft Research}, 2024.
+\url{https://arxiv.org/pdf/2404.16130}
 
 \bibitem{3}
-X. Zhang et al., "KnoBuilder: Agentic Loops for Personalized Knowledge Graph Construction," \textit{Tech Report}, 2025.
+Bayron Jossue Serrano Mena, "KnoBuilder: An LLM-Agent for Autonomous and Personalized Knowledge Graph Construction from Unstructured Text", 2025. \url{https://openreview.net/pdf?id=teewCPCv2m}
 
 \bibitem{4}
-J. Doe and A. Smith, "GraphJudge: Discriminative Filtering for Denoising Knowledge Extraction," \textit{Journal of Neural Synthesis}, 2025.
-
-\bibitem{6}
-FalkorDB, "Graph-Native SDK for High-Performance Production RAG," \textit{Technical Documentation}, 2025.
+Huang et al., "Can LLMs be Good Graph Judge for Knowledge Graph Construction?," 2025. \url{https://aclanthology.org/2025.emnlp-main.554.pdf}
 
 \bibitem{7}
-S. Lee et al., "Reasoning with Trees: MCTS for Multi-Hop Question Answering," \textit{Neural Information Processing Systems}, 2024.
+Shen et al., "Reasoning with Trees: MCTS for Multi-Hop Question Answering," 2025. \url{https://aclanthology.org/2025.coling-main.211.pdf}
 
 \bibitem{11}
-T. Nguyen, "GMeLLo: SPARQL Synthesis for Factual Knowledge Editing," \textit{Data Engineering Review}, 2025.
+Chent et al., "GMeLLo: LLM-Based Multi-Hop Question Answering with Knowledge Graph Integration in Evolving Environments," 2025. \url{https://arxiv.org/html/2408.15903}
 
 \bibitem{12}
-K. Zhou, "LightRAG: Cost-Efficient Dual-Level Graph Retrieval," \textit{arXiv preprint arXiv:2410.12345}, 2024.
+Guo et al., "LightRAG: Simple and Fast Retrieval-Augmented Generation," 2024. \url{https://arxiv.org/pdf/2410.05779}
 
 \bibitem{13}
-W. Zhao, "LEGO-GraphRAG: Modular Decomposition of Reasoning Paths," \textit{AI Open}, 2025.
+Cao et al., "LEGO-GraphRAG: Modularizing Graph-based Retrieval-Augmented Generation for Design Space Exploration," 2025. \url{https://arxiv.org/pdf/2411.05844}
 
-\bibitem{14}
-Cognee, "Incremental Cognitive Memory Layers for AI Agents," \textit{System Architecture Whitepaper}, 2024.
 
 \bibitem{b1} Y. Yao, J. Duan, K. Xu, Y. Cai, Z. Sun, and Y. Zhang, ``A survey on large language model (LLM) security and privacy: The good, the bad, and the ugly,'' \textit{High-Confidence Computing}, vol.~4, no.~2, 2024, Art. no. 100211.
-\bibitem{b2} D. Edge \textit{et al.}, ``From local to global: A graph RAG approach to query-focused summarization,'' arXiv preprint arXiv:2404.16130, 2024.
-\bibitem{b3} Neo4j, Inc., ``Neo4j graph database,'' [Online]. Available: https://neo4j.com/
-\bibitem{b4} LangChain, Inc., ``LangChain documentation,'' [Online]. Available: https://docs.langchain.com/
-\bibitem{b5} Q. Xia, H. Ye, and M.~Sap, ``ODKE+: Ontology-guided open-domain knowledge extraction with LLMs,'' arXiv preprint arXiv:2509.04696, 2025.
-\bibitem{b6} OpenAI, ``GPT-4o model card,'' 2024. [Online]. Available: https://openai.com/
-\bibitem{b7} Slov-Lex, ``Legal and information portal,'' Ministry of Justice of the Slovak Republic. [Online]. Available: https://www.slov-lex.sk/
+\bibitem{b3} Neo4j, Inc., ``Neo4j graph database,''. https://neo4j.com/
+\bibitem{b4} LangChain, Inc., ``LangChain documentation,'' https://docs.langchain.com/
+\bibitem{b7} Slov-Lex, ``Legal and information portal,'' Ministry of Justice of the Slovak Republic. https://www.slov-lex.sk/
 
 \bibitem{kggpt2023}
 Kim, J., Kwon, Y., Jo, Y., and Choi, E.
@@ -312,6 +306,9 @@ Khorshidi, S.\ et al.\ (Apple Inc.).
 \newblock \url{https://arxiv.org/html/2509.04696v1}.
 
 \bibitem{sentenceSegmentation} ``Sentence segmentation for large language models,'' arXiv preprint arXiv:2601.03276, 2026. \url{https://arxiv.org/html/2601.03276v1}
+
+\bibitem{neo4jSchema} Neo4j Lexical Graph With Extracted Entities
+\url{https://neo4j.com/blog/developer/graphrag-field-guide-rag-patterns/}
 
 \end{thebibliography}
 

@@ -99,7 +99,7 @@ After preprocessing, the remaining text pages are chunked and passed through a t
 ]
   \node[box] (det) {Open-Domain\\Detection (ODD)};
   \node[box, right=of det] (onto) {Schema\\Refinement};
-  \node[box, right=of onto] (extr) {Schema-Guided\\Extraction (SDE)};
+  \node[box, right=of onto] (extr) {Schema-Driven\\Extraction (SDE)};
   \draw[arr] (det) -- (onto);
   \draw[arr] (onto) -- (extr);
 \end{tikzpicture}
@@ -109,7 +109,7 @@ After preprocessing, the remaining text pages are chunked and passed through a t
 \end{figure}
 
 \subsubsection{Open-Domain Detection (ODD)}
-The goal of the first step is to discover, from the document, which entity types and relation types are meaningful. Text is split using a recursive characters splitter with a chunk size of 1200 characters and an overlap of 200 characters. The relatively larger window is used deliberately: at this stage the GPT-5.4-mini model is asked about types, not instances, and a wider context helps it see more than one sentence at a time, which is important in legal language, where a concept such as \textit{tax base} is often introduced several sentences before it is first used. Each chunk $c_i$ is sent in parallel to an agent whose system prompt instructs it to return generic but distinguishable node labels and relationship labels, with an explicit focus on laws, paragraphs, obligations, rights and temporal entities. All Slovak diacritics are normalised to ASCII so that the graph uses a single consistent spelling. The output of this step is a list of per-chunk schemas $S_i=(\mathcal{T}^{(i)}_V,\mathcal{T}^{(i)}_E)$. For next step, the per-chunk schemas are merged into a single united set of node types and relation types:$S_{\text{ODD}}=\bigcup_{i=1}^{|C|} S_i $
+The goal of the first step is to discover, from the document, which entity types and relation types are meaningful. Text is split using a recursive characters splitter with a chunk size of 1200 characters and an overlap of 200 characters. The relatively larger window is used deliberately: at this stage the GPT-5.4-mini model is asked about types, not instances, and a wider context helps it see more than one sentence at a time, which is important in legal language, where a concept such as \textit{tax base} is often introduced several sentences before it is first used. Each chunk $c_i$ is sent in parallel to an agent whose system prompt instructs it to return generic but distinguishable node labels and relationship labels, with an explicit focus on laws, paragraphs, obligations, rights and temporal entities. All Slovak diacritics are normalised to ASCII so that the graph uses a single consistent spelling. The output of this step is a list of per-chunk schemas $S_i=(\mathcal{T}^{(i)}_V,\mathcal{T}^{(i)}_E)$. For next step, the per-chunk schemas are merged into a single united set of node types and relation types: $S_{\text{ODD}}=\bigcup_{i=1}^{|C|} S_i $
 
 \subsubsection{Schema Refinement (SR)}
 The merged schema from ODD is sent to a schema refinement using Gemini 2.5 Pro call together with any existing ontology already stored in graph: $S^{\ast}=\Phi(S_{\text{ODD}},\,S_0)$. The refinement step has a clear linguistic role: it resolves duplicates caused by diacritics or minor spelling variants (for example Dan vs Daň), and semantically similar types (for example \textit{Doklad}, \textit{DanovyDoklad} and \textit{HodnovernyDoklad} into \textit{Doklad}). It enforces upper-snake-case for relation types and it refuses to merge semantically distinct categories such as \textit{Document} (\textit{Dokument}) and \textit{Person} (\textit{Osoba}). A merge log is kept that maps every canonical type back to the raw variants it absorbed, which is useful both for debugging and for auditing. A special type \textit{Paragraph} is always added to the node list, because every legal fact in the graph should be traceable back to the paragraph that states it.
@@ -142,10 +142,10 @@ The merged schema from ODD is sent to a schema refinement using Gemini 2.5 Pro c
     \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
     \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
 
-    \draw[arr] (ex) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
-    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c1);
-    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
-    \draw[arr] (ez) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize HAS\_CHUNK} (c2);
+    \draw[arr] (ex) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c1);
+    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c1);
+    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c2);
+    \draw[arr] (ez) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c2);
 
     \draw[arr] (ex) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ey);
     \draw[arr] (ey) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ez);

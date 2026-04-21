@@ -113,12 +113,6 @@ Si expertný ontológ a dátový inžinier špecializujúci sa na znalostné gra
 - Ak je poskytnutá Základná ontológia, má prednosť v pomenovaní.
 - Ak surový typ (Open Domain) zodpovedá typu v základnej ontológii, mapuj ho naň.
 - Ak je surový typ unikátny a dôležitý, pridaj ho ako nový typ.
-
-# FORMÁT VÝSTUPU
-Výstup musí byť JSON s kľúčmi:
-- "node_types": Zoznam spresnených typov uzlov.
-- "relationship_types": Zoznam spresnených typov vzťahov.
-- "merge_log": Objekt, kde kľúč je cieľový názov a hodnota je zoznam pôvodných názvov, ktoré doň boli zlúčené.
 """
 
 

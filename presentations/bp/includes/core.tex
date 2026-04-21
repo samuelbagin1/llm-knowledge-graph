@@ -53,12 +53,44 @@ V tomto kroku sa každá strana dokumentu konvertuje na obrázok s rozlíšením
 Každá skupina tabuliek je spracovaná v dvoch krokoch. Prvý krok, optický schopný Gemini model, príjme všetky orezané obrázky skupiny spoločne s system promptom, ktorý nariaďuje aby bol výstup tabuľka v podobe HTML. Tento prompt zakazuje sumarizáciu tabuľky a nariaďuje aby model zachoval doslovný text bunky. Druhý krok, výsledný HTML výstup je poskytnutý ďaľšiemu LLM volaniu, kde tento krát ma model za úlohu transformovať tabuľu do hierarchickej podoby vrcholov a vzťahov: tabuľka je označená ako koreňový vrchol, bunky každého riadku prvého stĺpca ako rodič, a potomok pre každú daľšiu bunku daného riadku. Je to cesta ako zachovať význam tabuľky v znalostnom grafe. Vnútorné strany viac-stranovej tabuľky sú vyradené zo zoznamu strán PDF dokumentu, pre neskoršiu extrakciu aby sa predišlo duplicitám rovnakej informácie.
 
 \subsection{Trojkroková extrakcia}
+Po dokončení predspracovania, zvyšné strany dokumentu sú rozsekané na chunky textov a spracované cez trojkorovú extrakciu inšpirovanú výskumom {ODKE+}~\cite{odkeplus2025}. Táto extrakcia sa skladá z troch postupných krokov: detekcia v otvorenej doméne v a.j. \emph{„open-domain detection“} (ODD), úprava schémy v a.j. \emph{„schema refinement“} (SR) a v poslednom rade je to schémov riadená extrakcia, a.j. \emph{„schema-driven extraction“} (SDE). Tento tok je zobrazený na obrázku č. \ref{fig:extraction}.
 
-\subsubsection{Detekcia v otvorenej doméne}
+\begin{figure}[h]
+  \centering
+  \scalebox{1}{%
+    \begin{tikzpicture}[
+    node distance=10mm,
+    box/.style={draw, rounded corners, minimum height=9mm, minimum width=32mm, align=center, font=\footnotesize},
+    arr/.style={-Latex, thick}
+    ]
+    \node[box] (det) {Open-Domain\\Detection (ODD)};
+    \node[box, right=of det] (onto) {Schema\\Refinement};
+    \node[box, right=of onto] (extr) {Schema-Driven\\Extraction (SDE)};
+    \draw[arr] (det) -- (onto);
+    \draw[arr] (onto) -- (extr);
+    \end{tikzpicture}
+  }
+\caption{Extrakcia inšpirovaná {ODKE+}~\cite{odkeplus2025}}
+\label{fig:extraction}
+\end{figure}
 
-\subsubsection{Úprava a spresnenie schémy}
+\subsubsection{Detekcia v otvorenej doméne (ODD)}
+Cieľom tohto prvého kroku je nájsť, aké typy entít a vzťahov sa v dokumente vyskytujú. Text je rozdelený pomocou nástroja RecursiveCharacterTextSplitter, s veľkosťou chunku 1200 charakterov a prekryvom 200 charakterov. Relatívne väčšie okno textu je zvolené schválne. V tejto etape model GPT-5.4-mini je vynútený aby vyhľadal typy a nie konkrétne inštancie. Širšie kontextové okno napomáha aby model videl viac ako len jednu vetu včase, čo je veľmi dôležité v legisltaívnych dokumentoch, kde napríklad slovo \emph{„základ dane“} je uvedené niekoľko viet predtým ako je použité. 
 
-\subsubsection{Schémou riadená extrakcia}
+Každý chunk $c_i$ je paralelne poslný LLM agentovi, ktorého system prompt inštruuje aby našiel a vrátil všeobecné ale rozlíšiteľné typy entít a typy vzťahov. Agentovi je explicitne napísané aby sa zameriaval na na typy ako sú zákony, paragrafy, práva a povinnosti. Všetky diakritické znaky sú normalizované do ASCII aby znalostný graf používal jednotnú slovenskú výslovnosť bez diakritiky. Výstup tohto kroku je zjednotený zoznam schém chunkov: $S_{ODD} = \bigcup_{i=1}^{|C|} S_i$. Schému môžme zobraziť ako $S_i = (T^{(i)}_V, \, T^{(i)}_E)$, kde $T^{(i)}_V$ sú typy entít (vrcholov v znalostnom grafe) a $T^{(i)}_E$ sú typy vzťahov (hrán v znalostnom grafe) medzi entitami.
+
+\subsubsection{Úprava a spresnenie schémy (SR)}
+Zjednotené schémy z predošlého kroku detekcie (ODD), sú poslané na úpravu schémy modelu Gemini 2.5 Pro, spolu s existijúcou schémou znalostného grafu: $S^* = \Phi(S_{ODD},\, S_O)$. Tento krok úpravy ma čistú linguistickú úlohu: rieši duplikáty spôsobené dikaritikou alebo vynechaním písmena (Dan a Daň alebo ClenskyStat a ClenskStat) a v neposlednom rade zjednocuje sémanticky podobné typy a synonymá (Doklad, DanovyDoklad a HodnovernyDoklad zjednotí do Doklad). Zároveň nedovoľuje aby sa spojili sémanticky odlišné typu ako Dokument a Osoba. System prompt vynucuje pre typy vzťahov aby boli písané pomocou UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE) a pre typy entít PascalCase. Taktiež sa uchováva merge log, ktorý mapuje všetky typy do akého typu entity alebo vzťahu boli zjednotené. Pomáha to pri debuggovaní alebo auditovaní.
+
+\subsubsection{Schémou riadená extrakcia (SDE)}
+Posledný krok extrakcie je extrakcia pomocou natvrdo nanútenej schémy, v tomto prípade je to upravená $S^*$ schéma. Text je v tomto kroku znovu rozdelený na menšie chunky s veľkosťou 1024 charakterov a prekryvom 128 charakterov. Tento menší chunk je podnietený odlišnou úlohou ako pri ODD. V tomto kroku GPT-5.4-mini model musí extrahovať konkrétne inštancie entít a vzťahov medzi nimi. Menšia veľkosť textu vynucuje model k extrahovaniu presnejších a lepšie uzemnených trojíc $(e_h, r, e_t)$, kde $e_h$ je začiatočná entita vzťahu, $e_t$ je koncová entita vzťahu a $r$ je vzťah medzi danými entitami. Menšie kontextové okno znižuje pravdepodobnosť, že sa dva nesúvisiace fakty zmiešajú do jedného vzťahu. Chunky sú posielané paralelne s limitovanou súbežnosťou a pause-and-retry mechanizmom, v prípade vyčerpania užívateľových tokenov za minútu.
+
+Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešponduju upravenej schéme $S^*$. Týmto krokom získame GraphDocument $G_i = (V_i,\, E_i,\, src_i)$. Následne ľahká kontrola a opracovanie, znormalizuje id uzlov do title case a pre vzťahy do UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE), a vynechá trojice ktorým chýba zdroj alebo cieľ. Extrahované uzly z chunku sú spojené s uzlom \textit{Chunk} pomocou vzťahu IN\_CHUNK. Neskôr vďaka tomuto vzťahu v kroku na získavanie dát, môžme získať originánlny text, ktorý podporuje dané trojice.
+
+\
+
+\noindent\textbf{Mechanizmus semfaru}
+
 
 \subsection{Vkladanie do databázy}
 

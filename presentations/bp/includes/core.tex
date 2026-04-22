@@ -101,6 +101,7 @@ Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešponduju uprav
 
 
 \section{Implementácia}
+3 s.
 
 \subsection{Technologický stack}
 Python, LangChain + langchain-neo4j, Neo4j s APOC, modely (Gemini, OpenAI pre SDE, vision modely), DocLayout-YOLO, pdf2image.
@@ -113,22 +114,38 @@ Python, LangChain + langchain-neo4j, Neo4j s APOC, modely (Gemini, OpenAI pre SD
 \
 Pri spracovávaní dokumentov, ktoré sú rozdelené na desiatky či i stovky chunkov pomocou LLM modelu, nastávajú 2 problémy. Prvým problémom je, keď posielame veľa požiadaviek paralelne, tak prtažíme API a vyčerpáme limit tokenov za minútu (TPM - Tokens Per Minute). Druhým je, keď jedna požiadavka zlyhá kvôli týmto limitám, zvyšné požiadavky s istotou zlyhajú taktiež. Tieto problémy riešim pomocou koordinačného mechanizmu.
 
-Inicializácia začína vytvorením 3 kontrolných prvkov. Prvým je semafor, ktorý riadi konkurenčný limit, koľko úloh naraz môže byť obsluhovaných. V tomto implementovaní je to 5 konkurenčných úloh, zatiaľ čo ostatné čakajú. Zabraňuje to systému aby neodoslal stovky požiadaviek naraz. Druhým prvkom je globálny prepínač \textit{pause switch}, ktorý začína v pozícií \textit{on}. Pokiaľ tento prepínač je v zapnutej pozícií, systém môže voľne posielať API požiadavky. Akonáhle prepínač sa dostane do pozície vypnutej, každá pracovná úloha v systéme sa zastaví na rovnakom synchronizačnom bode a čaká. Posledným prvkom je zámok, ktorý povoľuje v prípade chyby alebo zlyhania pracovať iba jednej úlohe.
+Inicializácia začína vytvorením 3 kontrolných prvkov. Prvým je semafor, ktorý riadi konkurenčný limit, koľko úloh naraz môže byť obsluhovaných. V tomto implementovaní je to 5 konkurenčných úloh, zatiaľ čo ostatné čakajú. Zabraňuje to systému aby neodoslal stovky požiadaviek naraz. Druhým prvkom je globálny prepínač \textit{pause switch}, ktorý začína v pozícií \textit{on}. Pokiaľ tento prepínač je v zapnutej pozícií, systém môže voľne posielať API požiadavky. Akonáhle prepínač sa dostane do pozície vypnutej, každá pracovná úloha v systéme sa zastaví na rovnakom synchronizačnom bode a čaká. Posledným prvkom je zámok, ktorý povoľuje v prípade chyby alebo zlyhania pracovať iba na jednej úlohe.
 
 Po nastavení týchto riadiacich prvkov, je každému chunku pridelená asychrónna úloha. Každá úloha sa riadi rovnakou rutinou a má povolené až tri pokusy na dokončenie svojho procesu. Na začiatku každého pokusu úloha naprv overí stav globálneho prepínača. Ak je prepínač vypnutý, úloha čaká, kým sa znova nezapne. 
 
-Keď je prepínač aktívny, úloha sa pokúsi získať miesto v semafore. Akonáhle miesto získa, spustí samotnú extrakcie alebo detekciu volaním LLM modelu. Ak požiadavka prebehne úspešne, úloha skončí a vráti svoj výsledok. Ak volanie zlyhá vyhodením výnimky a úloha má ešte k dispozícii ďaľšie pokusy, nastáva sitácia, kedy úloha sa pokúsi získať zámok. Ten zaručuje, že iba úplne prvá úloha, ktorá zlyhanie zaregistruje, sa stáva zodpovednou za jeho riešenie. Táto úloha následne vypne globálny prepínač, čím okamžite pozastaví všetky ostatné úlohy v systéme. Následne sa systém uspí na 60 sekúnd, čo je dostatočne dlhý čas na to, aby sa rate limit modelu obnovil, a následne prepínač opäť zapne.
+Keď je prepínač aktívny, úloha sa pokúsi získať miesto v semafore. Akonáhle miesto získa, spustí samotnú extrakcie alebo detekciu volaním LLM modelu. Ak požiadavka prebehne úspešne, úloha skončí a vráti svoj výsledok. Ak volanie zlyhá vyhodením výnimky a úloha má ešte k dispozícii ďaľšie pokusy, nastáva sitácia, kedy sa úloha pokúsi získať zámok. Ten zaručuje, že iba úplne prvá úloha, ktorá zlyhanie zaregistruje, sa stáva zodpovednou za jeho riešenie. Táto úloha následne vypne globálny prepínač, čím okamžite pozastaví všetky ostatné úlohy v systéme. Následne sa systém uspí na 60 sekúnd, čo je dostatočne dlhý čas na to, aby sa rate limit modelu obnovil, a následne sa prepínač opäť zapne.
 
- Ak pracovná úloha nakoniec vyčerpá všetky tri pokusy bez úspechu, vzdá sa a propaguje výnimku ďalej, namiesto toho aby blokovala zvyšok systému. Medzitým boli všetky úlohy pôvodne spustené v rovnakom okamihu, skrz mechanizmus task creation a počas celého procesu bežia paralelne v rámci jedného event loopu. Hlavná rutina čaká pomocou agregačnej operácie gather, kým každá jednotlivá úloha neskončí.
+Ak pracovná úloha nakoniec vyčerpá všetky tri pokusy bez úspechu, vzdá sa a propaguje výnimku ďalej, namiesto toho aby blokovala zvyšok systému. Medzitým boli všetky úlohy spustené v rovnakom okamihu, skrz mechanizmus task creation a počas celého procesu bežia paralelne v rámci jedného event loopu. Hlavná rutina čaká pomocou agregačnej operácie gather, kým každá jednotlivá úloha neskončí.
 
- Precíznosť tohto návrhu spočíva v spôsobe, akým zaobchádza so zlyhaním ako so zdieľaným signálom, nie ako s súkromnou udalosťou. Jediné zlyhanie je interpretované ako dôkaz toho, že celý spracovateľský systém je obmedzený, a preto je cooldown aplikovaný kolektívne a nie individuálne. Zámok, tu zohráva zásadnú rolu, pretože bez neho by mohli desiatky úloh detekovať to isté zlyhanie v rovnakom okamihu a spustiť svoj 60 sekundový interval nezávisle.
+Precíznosť tohto návrhu spočíva v spôsobe, akým zaobchádza so zlyhaním ako so zdieľaným signálom, nie ako s súkromnou udalosťou. Jediné zlyhanie je interpretované ako dôkaz toho, že celý spracovateľský systém je obmedzený, a preto je cooldown aplikovaný kolektívne a nie individuálne. Zámok, tu zohráva zásadnú rolu, pretože bez neho by mohli desiatky úloh detekovať to isté zlyhanie v rovnakom okamihu a spustiť svoj 60 sekundový interval nezávisle.
 
+\
 
 \noindent\textbf{Štruktúrovaný výstup}
 
 \
-Structured output (porovnanie ProviderStrategy vs. with\_structured\_output), pre rôzne modely
+V kontexte spracovania prirodzeného jazyka prostredníctvom LLM predstavuje štruktúrovaný výstup zásadnú techniku, ktorá zaručuje, že odpoveď volania modelu bude zodpovedať definovanej schéme. Vďaka tomu sa eliminuje chybovosť, ktorú zapričuňuje parsovanie výstupných dát modelu. Vďaka tomuto môžme jednoducho deserializovať dáta do objektov (dictionary, json alebo class), ktoré následne preberá funkcia na ďaľšie spracovanie alebo ich využije. V prostredí knižnice LangChain existují dva odlišné spôsoby, ktoré majú svoje špecifické vlastnosti, výhody a obmedzenia v závislosti od použitého modelu.
 
+\
+
+Prvý prístup, ktorý sa v kóde uplatňuje predovšetkým na modely od spoločnosti OpenAI, je stratégia poskytovateľa (natívny prístup pre OpenAI modely). Táto stratégia funguje na úrovni vyššej abstrakcie, konkrétne u agentového rozhrania. Schéma očakavaného výstupu sa pri tomto prístupe odovzdáva ako parameter formátu odpovede priamo pri vytváraní agenta. Samotná validácia prebieha na strane poskytovateľa. Server poskytovateľa modelu je informovaný o presnej štruktúre, ktorú ma model spĺňať a model je obmedzovaný počas generovania odpovede takzvaným \textit{constrained decodingom}. Tento spôsob využíva natívnu podboru štruktúrovaného výstupu, ktorá zaručuje 100\% zhodu s požadovanou schémou.
+
+Hlavnou výhodou tejto stratégie je deterministická záruka, že vrátený objekt bude vždy validný voči zadanej schéme. Ďaľším významným prínosom je integrácia s agentovým ekosystémom, čo umožňuje plynulé rozšírenie o nástroje, kontextovú pamäť a iteratívne uvažovanie bez nutnosti meniť spôsob, akým sa štruktúrovaný výstup spracováva. V kóde projektu sa tento pristup uplatňuje pri kľúčových úlohach, akými sú detekcia v otvorenej doméne a schémou riadená extrakcia. Jeho nevýhodou je závislosť na konkrétnej implementácií poskytovateľa, modely od iných spoločnosti ako je OpenAI, tento prístup nemusia podporovať.
+
+\ 
+
+Druhý prístup, použitý v projekte pri komunikácií s modelmy Gemini, je metóda priameho štruktúrovaného výstupu. Tento prístup pracuje na nižšej úrovni abstrakcie a úplne obchádza agentovú vrstvu. Funguje tak, že existujúceho klienta modelu obalí do nového objektu. Od volania je konfigurovaný tak, aby vrátil odpoveď zodpovedajúcej schéme. V kóde sa tento princíp kombinuje s metódou založenou na prevode schémy do formátu JSON Schema.
+
+Pri modeloch Gemini je tento prístup obvzlášť efektívny, pretože tieto modely natívne podporujú generovanie odpovedí podľa špecifikácie JSON Schema na úrovni samotného inferenčného jadra. Nie je teda potrebné riešiť problém na úrovni promptu ani spoliehať sa na následnú validáciu.
+
+Výhodou tohto prístupu je jeho jednoduchosť volania a priamy návrat výsledku bez potreby extrahovania z vnoreného kontextového výstupu. To je obzvlášť prínosné v situáciach, kde je extrakcia štruktúrovaných dát atomická operácia, ktorá sa v rámci reťazca opakuje veľmi často. V kóde sa tento prístup uplatňuje pri spracovávaní tabuliek do HTML, transformácií HTML tabuliek do grafovej reprezentácie a pri úprave schémy.
+
+\ 
 
 \noindent\textbf{Normalizácia typov}
 
@@ -141,6 +158,7 @@ Dôraz na ASCII v názvoch typov (ako constraint pre property graph labels), cha
 
 
 \section{Experimenty a vyhodnotenie}
+9 s.
 
 \subsection{Testovanie dáta a experimentálne prostredie}
 1 s. Opis vybraných právnych textov (konkrétny zákon alebo colný sadzobník), štatistika vstupu (strany, tabuľky, odhadované entity), hardvér, použité verzie modelov.

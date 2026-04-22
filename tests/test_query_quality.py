@@ -8,19 +8,27 @@ Query-quality evaluation for PDFGraphRAG against three published benchmarks:
 Prerequisites:
   - .env with NEO4J_URI, NEO4J_USERNAME (or NEO4J_USER), NEO4J_PASSWORD,
     OPENAI_API_KEY, GOOGLE_API_KEY, ANTHROPIC_API_KEY
-  - Three Neo4j databases pre-populated: colota, factkg, metaqa
+  - Neo4j databases pre-populated (use tests/datasets/build_colota_kg.py):
+      colota_qa   — from CoLoTa_qa.json triples
+      colota_cv   — from CoLoTa_cv.json triples
+      factkg      — for FactKG
+      metaqa      — for MetaQA
   - Dataset files under tests/datasets/data/:
       CoLoTa_qa.json
+      CoLoTa_cv.json
       factkg_test.json
       1-hop/vanilla/qa_test.txt
       2-hop/vanilla/qa_test.txt
       3-hop/vanilla/qa_test.txt
 
 Run from repo root:
-  python tests/test_query_quality.py [colota|factkg|metaqa|all]
+  python tests/test_query_quality.py [colota_qa|colota_cv|colota|factkg|metaqa|all]
+
+  `colota` is an alias for `colota_qa` (backwards compat).
 
 Env vars:
   COLOTA_RUNS=30   number of stochastic runs (default 30, set to 1 for smoke test)
+  COLOTA_LIMIT=150 number of items per subset (default 150 = ARK-V1 baseline)
 """
 
 import json
@@ -81,13 +89,14 @@ def _dump_results(name: str, summary: dict, preds, gold) -> None:
 #   reliability:           entropy-based consistency across 30 runs (1 = stable)
 # ---------------------------------------------------------------------------
 
-def test_colota() -> None:
+def _run_colota_subset(name: str, data_path: Path, database: str) -> None:
+    """Shared driver for the QA and CV subsets (same schema, same metrics)."""
     load_dotenv()
-    data_path = Path("tests/datasets/data/CoLoTa_qa.json")
-    items = colota_loader.load_colota_items(data_path)[:200]
-    print(f"CoLoTa: {len(items)} items loaded")
+    limit = int(os.getenv("COLOTA_LIMIT", "150"))  # ARK-V1 paper uses 150
+    items = colota_loader.load_colota_items(data_path)[:limit]
+    print(f"{name}: {len(items)} items loaded (limit={limit})")
 
-    rag = _make_rag(database="colota")
+    rag = _make_rag(database=database)
     num_runs = int(os.getenv("COLOTA_RUNS", "30"))
     all_runs: List[List[Optional[bool]]] = []
 
@@ -105,9 +114,27 @@ def test_colota() -> None:
     gold = [i.answer for i in items]
     summary = metrics.colota_metrics(all_runs[-1], gold)
     summary["reliability"] = metrics.colota_reliability(all_runs)
-    _dump_results("colota", summary, all_runs, gold)
-    print("\n=== CoLoTa results ===")
+    _dump_results(name, summary, all_runs, gold)
+    print(f"\n=== {name} results ===")
     print(json.dumps(summary, indent=2))
+
+
+def test_colota() -> None:
+    """CoLoTa QA — binary yes/no questions (derived from StrategyQA)."""
+    _run_colota_subset(
+        name="colota_qa",
+        data_path=Path("tests/datasets/data/CoLoTa_qa.json"),
+        database="colota_qa",
+    )
+
+
+def test_colota_cv() -> None:
+    """CoLoTa CV — binary claim verification (derived from CREAK)."""
+    _run_colota_subset(
+        name="colota_cv",
+        data_path=Path("tests/datasets/data/CoLoTa_cv.json"),
+        database="colota_cv",
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -193,8 +220,10 @@ def test_metaqa() -> None:
 
 if __name__ == "__main__":
     which = sys.argv[1] if len(sys.argv) > 1 else "all"
-    if which in ("all", "colota"):
+    if which in ("all", "colota", "colota_qa"):
         test_colota()
+    if which in ("all", "colota_cv"):
+        test_colota_cv()
     if which in ("all", "factkg"):
         test_factkg()
     if which in ("all", "metaqa"):

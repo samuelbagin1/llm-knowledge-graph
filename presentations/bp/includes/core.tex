@@ -1,3 +1,5 @@
+v uvode obsiahnut problematiku
+
 
 \section{Súčasný stav}
 8 s. dokopy
@@ -104,7 +106,39 @@ Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešponduju uprav
 3 s.
 
 \subsection{Technologický stack}
-Python, LangChain + langchain-neo4j, Neo4j s APOC, modely (Gemini, OpenAI pre SDE, vision modely), DocLayout-YOLO, pdf2image.
+
+\noindent\textbf{Python}
+
+\
+Python slúži ako orchestračný jazyk celého systému. Je zvolený pre svoju rozsiahlu podporu v oblasti LLM. Jeho dynamické typovanie a množstvo knižníc umožňujú rýchlu integráciu komponentov - od klasifikácie obrázkov cez veľké jazykové modely až po databázove ovládače. V kóde sa využíva aj jeho podpora typových anotácií a dátových tried.
+
+\
+
+\noindent\textbf{LangChain}
+
+\
+LangChain je knižnica navrhnutá na budovanie systémov okolo LLM. Poskytuje abstrakcie nad rôznymi poskytovateľmi jazykových modelov, čo znamená, že výmena jedného modelu za druhý si nevyžaduje prepísanie aplikačnej logiky. V projekte sa využíva najmä jeho schopnosť reťaziť operácie, spravovať kontextové okná, pracovať s nástrojmi a budovať agentické workflowy. 
+
+\
+
+\noindent\textbf{Neo4j}
+
+\
+Neo4j je grafová databáza postavená na modeli grafov s vlastnosťami. Entity v grafe reprezentujú uzly s vlastnosťami, menovkami a vzťahy sú typové hramy. Tento typ služby som zvolil kvôli dobrému softvérovemu riešeniu, kde sa dá spravovať databáza, vizualizovať dáta a narábať s nimi pomocou Cypher queries. Taktiež je tu veľmi dobré riešenie prepájania grafov s vektorovým úložiskom, kde rôzne uzly môžu byť vektorizované a prepojené pomocou ich unikátneho ID.
+
+\
+
+\noindent\textbf{LLM modely}
+
+\
+Projekt využíva viac poskytovateľov LLM modelov súčasne. Modely sú volené od ich schopnosti, či to je rýchlosť, cena, kvalita spracovania, reasoning a ich určenie. Sú to konkrétne modely GPT-5.4-mini od OpenAI a Gemnini 2.5 Pro. Modely sú ukázané v metrike cena vstup/výstup, tokenov za minútu a požiadaviek za minútu.
+
+\begin{itemize}
+    \item GPT-5.4-mini: 0.75\$/4.50\$, 200 000 TPM a 500 RPM
+    \item Gemini 2.5 Pro: 1.25\$/10.00\$, 2 000 000 TPM a 150 RPM
+\end{itemize}
+
+\textit{K dňu 25.4.2026}
 
 
 \subsection{Kľúčové implementačné rozhodnutia}
@@ -188,4 +222,5 @@ Metriky z tvojho pipeline:
 1 s. Napr. LLMGraphTransformer bez schema refinement kroku — ukáže pridanú hodnotu tvojho trojfázového návrhu. Alebo porovnanie s ODD-only (bez refinementu).
 
 \subsection{Diskusia a limitácie}
+zaver
 1 s. Čo sa ukázalo ako silné stránky (konsolidácia schémy, hybridné spracovanie tabuliek), kde sú slabé miesta (náklady na LLM, závislosť na kvalite PDF, viacstránkové tabuľky s rozdielnou štruktúrou).

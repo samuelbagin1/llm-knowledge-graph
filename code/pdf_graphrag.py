@@ -1065,15 +1065,15 @@ class PDFGraphRAG:
         # VSTUPNÉ DÁTA
         ## ZÁKLADNÁ ONTOLÓGIA
         ### Typy uzlov:
-        {", ".join(existing_schema.nodes) if existing_schema else "Neposkytnuta"}
+        [{", ".join(existing_schema.nodes) if existing_schema else "Neposkytnuta"}]
         ### Typy vzťahov:
-        {", ".join(existing_schema.relationships) if existing_schema else "Neposkytnute"}
+        [{", ".join(existing_schema.relationships) if existing_schema else "Neposkytnute"}]
 
         ## SUROVÁ SCHÉMA (DETEKCIA)
         ### Typy uzlov:
-        {", ".join(odd_schema.nodes)}
+        [{", ".join(odd_schema.nodes)}]
         ### Typy vzťahov:
-        {", ".join(odd_schema.relationships)}
+        [{", ".join(odd_schema.relationships)}]
         """
 
         

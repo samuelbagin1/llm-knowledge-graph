@@ -28,9 +28,6 @@ GraphRAG (Microsoft)
 
 
 \section{Návrh riešenia}
-4 s. Blokový diagram funkcie process() — toto je tvoj najdôležitejší obrázok. PDF vstup → Load + Layout detection → dve paralelné vetvy (text a tabuľky) → ODD → Schema Refinement → SDE → Neo4j + Vector stores.
-
-
 Spracovanie transformuje PDF dokument Slovenského právneho odvetvia z neštruktúrovaného textu na štruktúrované dáta, ktoré sa uložia v znalostnom grafe (KG). Je to súvislá troj-kroková postupnosť: predspracovanie, extrakcia a vloženie do databázy. Tento tok dát je znázornený na obrázku č.\ref{fig:process}.
 
 \begin{figure}[h]
@@ -103,7 +100,6 @@ Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešponduju uprav
 
 
 \section{Implementácia}
-3 s.
 
 \subsection{Technologický stack}
 
@@ -131,7 +127,7 @@ Neo4j je grafová databáza postavená na modeli grafov s vlastnosťami. Entity 
 \noindent\textbf{LLM modely}
 
 \
-Projekt využíva viac poskytovateľov LLM modelov súčasne. Modely sú volené od ich schopnosti, či to je rýchlosť, cena, kvalita spracovania, reasoning a ich určenie. Sú to konkrétne modely GPT-5.4-mini od OpenAI a Gemnini 2.5 Pro. Modely sú ukázané v metrike cena vstup/výstup, tokenov za minútu a požiadaviek za minútu.
+Projekt využíva viac poskytovateľov LLM modelov súčasne. Modely sú volené od ich schopnosti, či to je rýchlosť, cena, kvalita spracovania, reasoning a ich určenie. Sú to konkrétne modely GPT-5.4-mini od OpenAI a Gemnini 2.5 Pro od Googlu. Modely sú ukázané v metrike cena vstup/výstup, tokenov za minútu a požiadaviek za minútu.
 
 \begin{itemize}
     \item GPT-5.4-mini: 0.75\$/4.50\$, 200 000 TPM a 500 RPM
@@ -140,15 +136,25 @@ Projekt využíva viac poskytovateľov LLM modelov súčasne. Modely sú volené
 
 \textit{K dňu 25.4.2026}
 
+Správy a inštrukcie sa následne posielajú v dvoch vstupoch. Prvým je systémová správa (SystemMessage, system\_prompt), ktorá definuje rolu, kontext a pravidlá, ktorými sa model má riadiť. Druhou je ľudská správa (HumanMessage, user role), ktorá obsahuje samotný vstup používateľa.
+
+\
+
+\noindent\textbf{DocLayout-YOLO}
+
+\
+DocLayout-YOLO je špecializovaná neurónová sieť založená na architektúre YOLO, ktorá bola natrénovaná na úlohy detekcie prvkov v dokumentoch. Na rozdiel od všeobecných detektorov objektov. ktoré hľadajú autá alebo ľudí, tento model rozpoznáva dokumentové prvky ako sú odseky textu, nadpisy, tabuľky, obrázky, vzorce, popisy obrázkov a ďaľšie. Výsledkom je štruktúrovaná reprezentácia vizuálneho rozloženia stránky s orezanými obdĺžnikmi a ich pravdepodobnosťami. Na to aby sa tento nástroj dal použiť potrebujeme konverziu dokumentu v PDF formáte na obrázky. To zaručí knižnica pdf2image, ktorá premení PDF dokument na rastrové obrázky.
+
+
 
 \subsection{Kľúčové implementačné rozhodnutia}
 
 \noindent\textbf{Mechanizmus semfaru}
 
 \
-Pri spracovávaní dokumentov, ktoré sú rozdelené na desiatky či i stovky chunkov pomocou LLM modelu, nastávajú 2 problémy. Prvým problémom je, keď posielame veľa požiadaviek paralelne, tak prtažíme API a vyčerpáme limit tokenov za minútu (TPM - Tokens Per Minute). Druhým je, keď jedna požiadavka zlyhá kvôli týmto limitám, zvyšné požiadavky s istotou zlyhajú taktiež. Tieto problémy riešim pomocou koordinačného mechanizmu.
+Pri spracovávaní dokumento pomocou LLM modelu, ktoré sú rozdelené na desiatky či i stovky chunkov, nastávajú 2 problémy. Prvým problémom je, keď posielame veľa požiadaviek paralelne, tak prtažíme API a vyčerpáme limit tokenov za minútu (TPM - Tokens Per Minute). Druhým je, keď jedna požiadavka zlyhá kvôli týmto limitám, zvyšné požiadavky s istotou zlyhajú taktiež. Tieto problémy riešim pomocou koordinačného mechanizmu.
 
-Inicializácia začína vytvorením 3 kontrolných prvkov. Prvým je semafor, ktorý riadi konkurenčný limit, koľko úloh naraz môže byť obsluhovaných. V tomto implementovaní je to 5 konkurenčných úloh, zatiaľ čo ostatné čakajú. Zabraňuje to systému aby neodoslal stovky požiadaviek naraz. Druhým prvkom je globálny prepínač \textit{pause switch}, ktorý začína v pozícií \textit{on}. Pokiaľ tento prepínač je v zapnutej pozícií, systém môže voľne posielať API požiadavky. Akonáhle prepínač sa dostane do pozície vypnutej, každá pracovná úloha v systéme sa zastaví na rovnakom synchronizačnom bode a čaká. Posledným prvkom je zámok, ktorý povoľuje v prípade chyby alebo zlyhania pracovať iba na jednej úlohe.
+Inicializácia začína vytvorením 3 kontrolných prvkov. Prvým je semafor, ktorý riadi konkurenčný limit, koľko úloh naraz môže byť obsluhovaných. V tomto implementovaní je to 5 konkurenčných úloh. Zabraňuje to systému aby neodoslal stovky požiadaviek naraz. Druhým prvkom je globálny prepínač \textit{pause switch}, ktorý začína v zapnutej pozícií. Pokiaľ tento prepínač je v zapnutej pozícií, systém môže voľne posielať API požiadavky. Akonáhle prepínač sa dostane do pozície vypnutej, každá pracovná úloha v systéme sa zastaví na rovnakom synchronizačnom bode a čaká. Posledným prvkom je zámok, ktorý povoľuje v prípade chyby alebo zlyhania pracovať iba na jednej úlohe.
 
 Po nastavení týchto riadiacich prvkov, je každému chunku pridelená asychrónna úloha. Každá úloha sa riadi rovnakou rutinou a má povolené až tri pokusy na dokončenie svojho procesu. Na začiatku každého pokusu úloha naprv overí stav globálneho prepínača. Ak je prepínač vypnutý, úloha čaká, kým sa znova nezapne. 
 
@@ -156,22 +162,18 @@ Keď je prepínač aktívny, úloha sa pokúsi získať miesto v semafore. Akon�
 
 Ak pracovná úloha nakoniec vyčerpá všetky tri pokusy bez úspechu, vzdá sa a propaguje výnimku ďalej, namiesto toho aby blokovala zvyšok systému. Medzitým boli všetky úlohy spustené v rovnakom okamihu, skrz mechanizmus task creation a počas celého procesu bežia paralelne v rámci jedného event loopu. Hlavná rutina čaká pomocou agregačnej operácie gather, kým každá jednotlivá úloha neskončí.
 
-Precíznosť tohto návrhu spočíva v spôsobe, akým zaobchádza so zlyhaním ako so zdieľaným signálom, nie ako s súkromnou udalosťou. Jediné zlyhanie je interpretované ako dôkaz toho, že celý spracovateľský systém je obmedzený, a preto je cooldown aplikovaný kolektívne a nie individuálne. Zámok, tu zohráva zásadnú rolu, pretože bez neho by mohli desiatky úloh detekovať to isté zlyhanie v rovnakom okamihu a spustiť svoj 60 sekundový interval nezávisle.
+Precíznosť tohto návrhu spočíva v spôsobe, akým zaobchádza so zlyhaním ako so zdieľaným signálom. Jediné zlyhanie je interpretované ako dôkaz toho, že celý spracovateľský systém je obmedzený, a preto je cooldown aplikovaný globálne a nie individuálne. Zámok, tu zohráva zásadnú rolu, pretože bez neho by mohli desiatky úloh detekovať to isté zlyhanie v rovnakom okamihu a spustiť svoj 60 sekundový interval nezávisle.
 
 \
 
 \noindent\textbf{Štruktúrovaný výstup}
 
 \
-V kontexte spracovania prirodzeného jazyka prostredníctvom LLM predstavuje štruktúrovaný výstup (a. j. structured output) zásadnú techniku, ktorá zaručuje, že odpoveď volania modelu bude zodpovedať definovanej schéme. Vďaka tomu sa eliminuje chybovosť, ktorú zapričuňuje parsovanie výstupných dát z modelu. Vďaka tomuto môžme jednoducho deserializovať dáta do Python objektov (dictionary, dataclass alebo Pydantic modelu). V prostredí knižnice LangChain existují dva odlišné spôsoby, ktoré majú svoje špecifické vlastnosti, výhody a obmedzenia v závislosti od použitého modelu.
+V kontexte spracovania prirodzeného jazyka prostredníctvom LLM predstavuje štruktúrovaný výstup (a. j. structured output) zásadnú techniku, ktorá zaručuje, že odpoveď volania modelu bude zodpovedať definovanej schéme. Vďaka tomu sa eliminuje chybovosť, ktorú zapričiňuje parsovanie výstupných dát z modelu, zaručí plynulosť spracovania a zdielania dát vo workflowe. Dáta môžme jednoducho deserializovať do Python objektov (dictionary, dataclass alebo Pydantic modelu). V prostredí knižnice LangChain existují dva odlišné spôsoby, ktoré majú svoje špecifické vlastnosti, výhody a obmedzenia v závislosti od použitého modelu.
 
 \
 
-Prvý prístup, ktorý sa v kóde uplatňuje predovšetkým na modely od spoločnosti OpenAI, je stratégia poskytovateľa (ProviderStrategy). Tento prístup využívajú modely, ktoré natívne podporujú štruktúrovaný výstup (OpenAI, Anthropic, xAI, Gemini)\cite{langchainStructuredOutput}. Schéma očakavaného výstupu sa pri tomto prístupe odovzdáva ako parameter formátu odpovede (response\_format) priamo pri vytváraní agenta. Samotná validácia prebieha na strane poskytovateľa, ktorý je o presnej štruktúre odpovede informovaný pred generovaním. 
-
-Model je následne obmedzený technikou nazývanou \textit{constrained decoding}. Po vygenerovaní každého tokenu inferenčný engine určí, ktoré tokeny sú validné ako nasledujúce. Masku aplikuje na výber z rozdelenia pravdepodobnosti, čím efektívne znižuje pravdepodobnosť nevalidných tokenov na nulu \cite{openaiStructuredOutputsBlog}. 
-
-Pri zapnutom parametri strict=True, OpenAI zaručuje 100\%-nú zhodu s požadovanou schémou\cite{openaiStructuredOutputsBlog,openaiStructuredOutput}.
+Prvý prístup, ktorý sa v kóde uplatňuje predovšetkým na modely od spoločnosti OpenAI, je stratégia poskytovateľa (ProviderStrategy). Tento prístup využívajú modely, ktoré natívne podporujú štruktúrovaný výstup (OpenAI, Anthropic, xAI, Gemini)\cite{langchainStructuredOutput}. Je to principiálny prístup pri komunikácií s modelom skrz agentovu vrstvu. Schéma očakavaného výstupu sa pri tomto prístupe odovzdáva ako parameter formátu odpovede (response\_format) priamo pri vytváraní agenta.
 
 Hlavnou výhodou tejto stratégie je deterministická záruka, že vrátený objekt bude validný voči zadanej schéme. Ďaľším významným prínosom je integrácia s agentovým ekosystémom, čo umožňuje rozšírenie o nástroje, kontextovú pamäť a iteratívne uvažovanie bez nutnosti meniť spôsob, akým sa štruktúrovaný výstup spracováva. V kóde projektu sa tento pristup uplatňuje pri kľúčových úlohach, akými sú detekcia v otvorenej doméne a schémou riadená extrakcia.
 
@@ -179,22 +181,49 @@ Hlavnou výhodou tejto stratégie je deterministická záruka, že vrátený obj
 
 Druhý prístup, použitý v projekte pri komunikácií s modelmy Gemini, je metóda priameho štruktúrovaného výstupu (with\_structured\_output). V kóde sa tento princíp kombinuje s metódou založenou na prevode schémy do formátu JSON Schema. Tento prístup pracuje na úrovni samotného modelu bez agentovej vrstvy. Metóda vracia nový Runnable, ktorý pri každom volaní vloží schému do natívneho parametra API (response\_format pre OpenAI a pre Gemini response\_mime\_type alebo response\_json\_schema) a automaticky parsuje odpoveď\cite{langchainGoogleResponseSchema,openaiStructuredOutput}. Ak je schéma Pydentic trieda, tak požiadavka vráti inštanciu tejto triedy, a pri JSON Schema zas vráti dict.
 
-Pri modeloch Gemini je tento prístup obvzlášť efektívny, pretože tieto modely natívne podporujú generovanie odpovedí podľa špecifikácie JSON Schema na úrovni modelu \cite{geminiStructuredOutput}. Nie je teda potrebné riešiť problém na úrovni promptu ani sa spoliehať na následnú validáciu.
-
 Výhodou tohto prístupu je jeho jednoduchosť volania a priamy návrat výsledku bez potreby extrahovania z vnoreného kontextového výstupu. V kóde sa tento prístup uplatňuje pri spracovávaní tabuliek do HTML, transformácií HTML tabuliek do grafovej reprezentácie a pri úprave schémy.
-
-Obmedzením štruktúrovaného výstupu pri Gemini je, že model podporuje len podmnožinu špecifikácie JSON Schema a veľmi zložené alebo prehĺbené schémy môžu byť odmietnuté \cite{geminiStructuredOutput}. V takýchto prípadoch je potrebné schému zjednodušiť (kratšie názvy, menšia hĺbka vnorenia). Pri OpenAI zase platí, že režim strict=True vyžaduje additionalProperties nastavenú na false a všetky vlastnosti musia byť v zozname required \cite{openaiStructuredOutputsBlog}.
-
-\ 
-
-\noindent\textbf{Normalizácia typov}
-
-\
-camelCase properties, UPPER\_SNAKE\_CASE relácie, default Entity type, ASCII bez diakritiky
 
 
 \subsection{Prompt engineering pre slovenčinu}
 Dôraz na ASCII v názvoch typov (ako constraint pre property graph labels), chain-of-thought pokyny, few-shot príklady, riešenie skloňovania.
+
+Kvalita spracovania zadania modelu závisí nielen od schopností zvoleného modelu, ale aj od formy, v akej je modelu zadaná inštrukcia. Prompty sa musia zamerať na tieto triedy:
+
+\begin{itemize}
+    \item Štruktúra promptu - modely reaguju výrazne presnejšie ak je vstup členený do sekcii. Prompt je písaný v Markdown formáte, kde nadpisy a podnapisy sú označené pomocou \# alebo \#\#. Typické sekcie promptu bývajú: ÚLOHA, KONTEXT, VSTUP, POKYNY a PRÍKLADY.
+    \item Konkrétnosť inštrukcie - inštrukcie musia byť presné a jazykovo presne definované. Ak model nemá explicitne napísané čo a ako má spraviť, výstup úlohy nemusí zodpovedať našim požiadavkam.
+    \item Pravidlá a priklády - model musí mať presne ohraničené čo môže. Ak model explicitne neohraničíme pravidlami, model nemusí dodržiavať inštrukcie. Taktiež pár príkladov ako ma úlohu vykonať dopomôže kvalite spracovania (few-shot learning). 
+    \item Špecifiká pre slovenčinu - modelom je vynútené ako dany typ vzťahu alebo entity majú spracovať. Entity alebo uzly v grafe sú označované ako Title Case, typy entít PascalCase a vzťahy UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE). Dané triedy musia byť spracované bez diakritiky. Keby nie sú normalizované na nediakritické slová mohlo by sa stať že by daný extrahovaný typ by bol s diakritikou, v neskoršom spracovaní ďaľšieho chunku bez diakritiky, a vznikli by duplicitné údaje.
+\end{itemize}
+
+\
+
+\noindent Príklad systémovej inštrukcie na úpravu schémy pre model Gemini 2.5 Pro:
+{\scriptsize
+\begin{verbatim}
+# ROLA
+Si expertný ontológ a dátový inžinier špecializujúci sa na znalostné grafy.
+Tvojou úlohou je vyčistiť, normalizovať a deduplikovať schému entít a vzťahov.
+
+# CIELE
+1. **Deduplikácia a sémantické zjednotenie**: Zlúč synonymá a sémanticky blízke typy do jedného kanonického typu.
+2. **Normalizácia formátu**: 
+    - Uzly: PascalCase (napr. DanovePriznanie).
+    - Vzťahy: UPPER_SNAKE_CASE (napr. MA_POVINNOST).
+    - **STRIKTNÉ PRAVIDLO**: Odstráň všetku diakritiku (á->a, č->c, atď.) zo všetkých názvov.
+3. **Ontologická integrita (KRITICKÉ)**:
+    - NIKDY nezlučuj entity z rôznych kategorií: Aktér (Osoba) vs. Proces/Dokument (Ziadost),
+      Miesto (Kraj) vs. Politický útvar (Stat).
+    - NIKDY nezlučuj protichodné vzťahy (VSTUPUJE_DO vs. VYSTUPUJE_Z).
+4. **Generalizácia**: Príliš špecifické uzly nahraď všeobecnejšími (napr. "Sluha" -> "Osoba"), ak
+    to neznižuje zrozumiteľnosť právneho/biznisového kontextu.
+
+# PRAVIDLÁ PRE ZÁKLADNÚ ONTOLÓGIU
+- Ak je poskytnutá Základná ontológia, má prednosť v pomenovaní.
+- Ak surový typ (Open Domain) zodpovedá typu v základnej ontológii, mapuj ho naň.
+- Ak je surový typ unikátny a dôležitý, pridaj ho ako nový typ.
+\end{verbatim}
+}
 
 
 \section{Experimenty a vyhodnotenie}

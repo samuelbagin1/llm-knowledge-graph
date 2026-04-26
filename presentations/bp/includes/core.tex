@@ -5,7 +5,24 @@ v uvode obsiahnut problematiku
 8 s. dokopy
 
 \subsection{Znalostné grafy}
-1.5 s. Definícia, trojica (head, rel, tail), property graph vs. RDF, prečo Neo4j pre tento prípad, porovnanie s vector store a relačnými DB.
+
+Znalostné grafy v poslednej dobe narástli na popularite v open-source komunite. Využívajú sa na ukladanie reálnych dát formulovaných ako enity a vzťahy. Hogan et al. definujú znalostný graf ako \emph{graf údajov, ktorého uzly reprezentujú entity reálneho sveta a~hrany reprezentujú vzťahy medzi týmito entitami}~\cite{hogan2021kg}. Generatívne veľké jazykové modely (LLM) trpia z veľkej miery halucináciou, nie sú schopné sa rozhodnúť alebo nemajú dostatočné znalosti pokiaľ nie sú natrénované v danej oblasti. V tom prichádza zmena s využitím znalostných grafov na využitie uchovania rozhodovaciej logiky, vedomostí, zdrojového kódu a mnoho ďalších. Najznámejšími verejne dostúpnými znalostnými grafmi sú DBpedia, Wikidata, YAGO.
+
+V~tejto práci modelujem údaje ako množinu trojíc (\emph{triples}) v tvare $(e_h, r, e_t)$, kde $e_h$ označuje začiatočnú entitu (\emph{head}), $e_t$ koncovú entitu (\emph{tail}) a~$r$~vzťah medzi nimi. Takáto trojica zodpovedá orientovanej hrane $e_h \xrightarrow{r} e_t$ v orientovanom grafe, ktorý je podľa Hogan et al.~\cite{hogan2021kg} základným modelom pre znalostné grafy a~je súčasne dátovým modelom štandardu RDF konzorcia W3C.
+
+V projetke je hlavnou databázou na ukladanie dát grafová databáza s vlastnosťami (Property graphs), akou je napríklad Neo4j. Formálna definícia grafovej databázy s vlastnosťami podľa Hogan et al., ktorá uchováva dáta v grafe v podobe usporiadanej n-tice $G = (V, E, L, P, U, e, l, p)$. Platí: $V$ je množina identifikátorov vrcholov (uzlov), $E$ je množina identifikátorov hrán, $L$ je množina typov, ktoré môžu niesť uzly aj hrany, $P$ je množina mien vlastností,  $U$ je množina hodnôt vlastností, $e : E \to V \times V$ každú hranu priradí dvojici vrcholov (jej začiatočnému a koncovému uzlu), $l : V \cup E \to 2^{L}$ priraďuje každému uzlu alebo hrane množinu typov, $p : V \cup E \to 2^{P \times U}$ priraďuje každému uzlu alebo hrane množinu dvojíc \emph{(vlastnosť, hodnota)}. Intuitívne: vrcholy a hrany sú len identifikátory z univerzálnej množiny databázy, funkcia $e$ špecifikuje štruktúru grafu (kto je s kým spojený), funkcie $l$ a $p$ nesú „sémantiku“, typy uzlov/hrán a ich atribúty.\cite{hogan2021kg}
+
+\
+
+V porovnaní s relačnými databázami sa dá jednoduchšie pristupovať k viac skokovým údajom alebo cestám, kde sa vyhýbajú relačným joinom. V relačnej databáze by sme každý typ uchovávali v jednotlivých tabuľkách, zaťiaľ čo v grafovej databáze je to oddelené typom entity alebo vzťahu. Taktiež relačné databázy sa nevedia dynamicky prispôsobiť novým typom a preto si vyžadujú vopred definovanú schému. Remodelovanie takejto databázy je veľmi nákladne a časovo náročné. K dátam môžme ľahko pristupovať pomocou dopytovacieho jazyka Cypher, ktorý je súčasťou rodiny grafových dopytovacích jazykov spolu s SPARQL. Tieto jazyky podporujú okrem štandardných relačných operátorov aj operátory, ktoré rekurzívne vyhľadávajú cestu medzi entitmi ľubovoľnej dĺžky, čo je v tradičnom SQL náročne vyjadriteľné.
+
+Alternatívou by mohla byť vektorová databáza, kde sa údaje ukladajú ako vektori v multidimenzionálnom priestore. Dáta sa dajú následne vyhľadávať pomocou sémantickej podobnosti a vrátia $k$ najbližších susedov na základe kosínusovej vzdialenosti. Ich slabinou je strata explicitného relačného kontextu, ak otázka vyžaduje následovať reťaz $A \to B \to C$, čisto sémanticky podobné údaje môžu relevantnú väzbu minúť, pretože kľúčové údaje sú roztrúsené v dokumente~\cite{mlmastery2026vecvsgraph}. Naopak znalostné grafy robia vzťahy explicitnými a umožňujú uvažovanie nad cestami, kde kľúčové uzly majú vzdialenosť $n$ hrán (skokov). 
+
+\
+
+Pri používaní LLM agentových riešení pri programovaní, agenti vedia z veľkej miery prečítať pri každej novej konverzácií nadbytočné množstvo súborov a tým rýchlo zaplniť kontextové okno konverzácie. Tento problém vieme neutralizovať využitím nástroja, akým je Graphify, kde kód projektu (funkcie, triedy, globálne premenné,~...) je štruktúrovaný v znalostnom grafe. Ďalším praktickým riešením využitím znalostných grafov je v prípade riešenia problémov opravy strojov. Súčiastky a stroje môžu predstavovať množinu uzlov a hrany vzťah medzi nimi. Ak sa naskytne nejaký problém so strojom, vieme daný problém označiť ako uzol a zoskupiť stroj a chybové súčiastky do komunity pomocou hrán. Pri prvom výskyte problému, opravár označí problém a kde bola chyba, a neskôr využitím LLM môžme rýchlo identifikovať zdroj chyby pomocou znalostného grafu. Taktiež veľké využitie znalostných grafov nadobúda v oblasti kybernetiky a bezpečnosti (identifikácia hrozieb a útokov, forenzná analýza, detekcia anomálií, ...), vo vojenskej a obrannej infraštruktúre, medicíne, finančníctve a vo viacero ďalších rôznych odvetviach.
+
+Znalostné grafy dokážu odhalovať vzory, uzemňujú fakty pre hľadaní odpovedí, znížiť kontextové okno pri používaní LLM, znížiť halucinácie a cenu spracovania odpovede.
 
 \subsection{Klasické metódy extrakcie/extrakcia informácií z textu}
 1.5 s. Klasické NER/RE, prechod na LLM-based extraction, structured output, problém halucinácií a schéma-drift.
@@ -94,9 +111,46 @@ Posledný krok extrakcie je extrakcia pomocou natvrdo nanútenej schémy, v tomt
 Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešponduju upravenej schéme $S^*$. Týmto krokom získame GraphDocument $G_i = (V_i,\, E_i,\, src_i)$. Následne ľahká kontrola a opracovanie, znormalizuje id uzlov do title case a pre vzťahy do UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE), a vynechá trojice ktorým chýba zdroj alebo cieľ. Extrahované uzly z chunku sú spojené s uzlom \textit{Chunk} pomocou vzťahu IN\_CHUNK. Neskôr vďaka tomuto vzťahu v kroku na získavanie dát, môžme získať originánlny text, ktorý podporuje dané trojice.
 
 
-
-
 \subsection{Vkladanie do databázy}
+Extrahované grafové dokumenty (GraphDocument) sú vo finálnom kroku vložené do Neo4j grafovej databázy. Uzly sú vytvorené pomocou MERGE nad ich normalizovaným ID (konkrétna inštancia entity napr. Colna Dan), tak že ich opakované zmienenia medzi chunkami sú zjednotené do jednotnej inštancie entity. Vzťahy u taktiež vytvárané pomocou MERGE logiky aby sa predišlo duplicitným hranám. Narozdiel od pridaných extrahovaných uzlov a Chunk uzlov, je v štruktúre databázy pridaný uzol typu \texttt{Document}, ktorý nesie ID názvu dokumentu. V právnych dokumentoch sú to ID ako ZZ\_2004\_222\_20260101, kde ZZ je zbierka zákona, 2004 rok, 222 číslo zákona a 20260101 dátum vygenerovania dokumentu. Všetky chunky z tohto dokumentu sú pospájané pomocou vzťahu IN\_DOCUMENT. Výslednú štruktúru a hierarchiu databázy môžme vidieť na obrázku \ref{fig:graph_structure}. Výhodou tejto architektúry je zachovanie vzťahu pôvodu odkiaľ je daná entita prevziatá. Taktiež je veľmi jednoduché zistiť pri spracovaní viacero dokumentoch, v akom dokumente/zákone sa vyskytuje.
+
+\begin{minipage}[h]{\textwidth}
+  \centering
+  \scalebox{0.9}{%
+  \begin{tikzpicture}[
+    node distance=26mm and 32mm,
+    doc/.style={circle, draw, fill=gray!20, minimum size=14mm, align=center},
+    chunk/.style={circle, draw, fill=gray!50, minimum size=14mm, align=center},
+    ent/.style={circle, draw, fill=gray!90, minimum size=14mm, align=center},
+    arr/.style={-Latex, thick}
+  ]
+    \node[doc] (doc) {Document};
+    \node[doc, right=of doc] (doc2) {Document $\beta$};
+
+    \node[chunk, below left=of doc] (c1) {Chunk 1};
+    \node[chunk, below=of doc] (c2) {Chunk 2};
+    \node[chunk, below right=of doc] (cn) {Chunk $n$};
+
+    \node[ent, below left=of c2] (ex) {Entity $x$};
+    \node[ent, below=of c2] (ey) {Entity $y$};
+    \node[ent, below right=of c2] (ez) {Entity $z$};
+
+    \draw[arr] (c1) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+    \draw[arr] (c2) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+    \draw[arr] (cn) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_DOCUMENT} (doc);
+
+    \draw[arr] (ex) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c1);
+    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c1);
+    \draw[arr] (ey) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c2);
+    \draw[arr] (ez) -- node[midway, above, fill=white, inner sep=1pt]{\scriptsize IN\_CHUNK} (c2);
+
+    \draw[arr] (ex) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ey);
+    \draw[arr] (ey) -- node[midway, below, fill=white, inner sep=1pt]{\scriptsize RELATES\_TO} (ez);
+  \end{tikzpicture}
+  }
+  \captionof{figure}{{Štruktúra znalostného grafu: dokument, chunk, entita and vzťah. Obrázok prevziaty z blogu Neo4j}~\cite{neo4jblog} a upravený na moje riešenie.}
+  \label{fig:graph_structure}
+\end{minipage}%
 
 
 \section{Implementácia}

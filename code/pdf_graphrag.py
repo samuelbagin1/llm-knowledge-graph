@@ -186,7 +186,6 @@ class PDFGraphRAG:
     def __init__(self,
                  neo4j_uri: str, neo4j_user: str, neo4j_password: str,
                  openai_api_key: str | None = None, google_api_key: str | None = None,
-                 claude_api_key: str | None = None,
                  database: str | None = None):
         
         
@@ -216,7 +215,7 @@ class PDFGraphRAG:
         # ChatOpenAI for question generation
         self.openai_client = ChatOpenAI(
             model="gpt-5.4-mini",
-            temperature=0,
+            temperature=0.1,
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=120
@@ -228,15 +227,6 @@ class PDFGraphRAG:
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=120
-        )
-
-        # use claude-sonnet-4-5
-        self.claude_client = ChatAnthropic(
-            model_name="claude-haiku-4-5",
-            temperature=0,
-            api_key=SecretStr(claude_api_key) if claude_api_key else SecretStr(""),
-            timeout=120,
-            stop=None
         )
 
         # Google Gemini for everything else
@@ -257,7 +247,7 @@ class PDFGraphRAG:
         
         self.gemini_client_flash = ChatGoogleGenerativeAI(
             model="gemini-2.5-flash",
-            temperature=0.0,
+            temperature=0.2,
             google_api_key=google_api_key,
             timeout=600,
         )
@@ -422,6 +412,8 @@ class PDFGraphRAG:
         nodes = []
         relationships = []
 
+        # TODO: add to chunk id a id of document for example chunk_1_222_2004
+        # chunk id has to consst of number of law and year
         chunk_id = f"chunk_{i}"
 
         chunk_node = Node(
@@ -842,7 +834,7 @@ class PDFGraphRAG:
         # HTML TABULKA:
         {html_content}"""
 
-        structured_model = self.gemini_client.with_structured_output(schema=TableGraphResponse)
+        structured_model = self.gemini_client_flash.with_structured_output(schema=TableGraphResponse)
 
         response = structured_model.invoke([
             SystemMessage(content=system_prompt),
@@ -883,6 +875,8 @@ class PDFGraphRAG:
         groups.append(current_group)
 
         return groups
+    
+    # TODO: functions OCR to latex and then to graphdocument
 
 
 
@@ -1025,6 +1019,12 @@ class PDFGraphRAG:
         Returns:
             SchemaRefinement with extracted node_types and relationship_types and merge_log
         """
+        
+        if existing_schema == None or existing_schema == [] or existing_schema.nodes == [] and existing_schema.relationships == []:
+            existing_schema = Schema(
+                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Miesto", "Urad", "Odsek", "Vozidlo"],
+                    relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI"]
+                )
         
         
         class SchemaRefinementResponse(BaseModel):
@@ -1224,7 +1224,7 @@ class PDFGraphRAG:
 
 
     # --------- PROCESS STRATEGY ----------
-    # 1. classification
+    # 1. tables
     # 2. open domain schema detection
     # 3. schema refinement
     # 4. schema guided extraction

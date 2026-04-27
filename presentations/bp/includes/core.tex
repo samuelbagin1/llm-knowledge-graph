@@ -24,14 +24,86 @@ Pri používaní LLM agentových riešení pri programovaní, agenti vedia z ve�
 
 Znalostné grafy dokážu odhalovať vzory, uzemňujú fakty pre hľadaní odpovedí, znížiť kontextové okno pri používaní LLM, znížiť halucinácie a cenu spracovania odpovede.
 
-\subsection{Klasické metódy extrakcie/extrakcia informácií z textu}
+\subsection{Klasické metódy extrakcie}
 1.5 s. Klasické NER/RE, prechod na LLM-based extraction, structured output, problém halucinácií a schéma-drift.
+
+Extrahovanie informácií (Information Extraction, IE) alebo taktiež extrahovanie znalostí (Knowledge Extraction, KE) je úloha transformovania neštruktúrovaného textu prirodzeného jazyka na štruktúrovaný, strojovo čítateľnú reprezentáciu akými sú trojice entita vzťah. Klasické IE princípy rozdelia úlohu do podúloch, detekcia entít a ich prepojovanie, riešenie koreferencie a extrahovanie vzťahov, ktoré sú spracované cielenou schémou. Prvotné systémy, ako TextRunner a KnowItAll, sa spoliehali na špeciálne navrhnuté pravidlá alebo na pevne stanovené lingvistické vzory na extrakciu faktov z textu~\cite{autKGconstruction2023}. Tento prístup bol veľmi nákladný na expertnú prácu a zle sa prispôsobovalo novým typom dokumentom~\cite{autKGconstruction2023}. Tieto limitácie motivovali posun k štatistickým a k neurónovým prístupom, kde vzory na extrahovanie informácií nie sú manuálne písané ale učené z označených príkladov~\cite{moncecchiRE2010}. Súčasným trendom je vykonávať rozpoznávanie pomenovaných entít a extrakciu vzťahov súčasne v jednom kroku, čím sa znižuje riziko prenosu chýb medzi jednotlivými fázami spracovania~\cite{hogan2021kg}.
+
+\
+
+\subsubsection{Rozpoznávanie pomenovaných entít}
+
+Rozpoznávanie pomenovaných entít (Named Entity Recognition, NER) je dôležitá úloha v rámci spracovania prirodzeného jazyka, ktorej cieľom je v texte nájsť a zaradiť konkrétne názvy do preddefinovaných typov akými sú Osoba, Miesto, Organizácia alebo Vozidlo. V praxi je NER kľúčovým prvotným krokom pri budovaní znalostných grafov, pretože umožňuje z neštruktúrovaného textu extrahovať prvky, ktoré sa stanú uzlami v grafe.
+
+Technológie NER prešli vývojom od jednoduchých pravidiel až po zložité neurónové siete:
+
+\begin{enumerate}
+  \item Strojové učenie (štatistické metódy): Tieto metódy vnímajú rozpoznávanie entít ako úlohu sekvenčného značovania. Model prechádza text slovo po slove a rozhoduje, či dané slovo je začiatkom, vnútrom alebo koncom nejakej entity (často používaná BIES schéma, Beginning, Intermedia, Ending, Single)~\cite{autKGconstruction2023}.
+  \begin{itemize}
+    \item Najčastejšie využívanými štatistickými modelmy sú Markovove modely (HMM) alebo podmienené náhodné polia (CRF). Tieto modely sa učia štatistické závislosti medzi susednými slovami (napríklad že po slove študent pravdepodobne nasleduje meno osoby)~\cite{autKGconstruction2023}. 
+    \item Supervised learning vyžaduje veľké množstvo manuálne označených textov, aby sa model naučil správne vzory~\cite{autKGconstruction2023}.
+  \end{itemize}
+
+  \item Hlboké učenie (neurónové siete): Moderné metódy využívajú hlboké neurónové siete, ktoré dokážu automaticky spracovať zložité súvislosti v texte bez nutnosti manuálneho navrhovania vzorov~\cite{autKGconstruction2023}.
+  \begin{itemize}
+    \item CNN (konvolučné neurónové siete) sa zamieravajú na lokálne vlastnosti v okolí slova na zachytávanie entít~\cite{autKGconstruction2023}.
+    \item RNN (rekurentné neurónové siete) sú navrhnuté tak, aby lepšie spracovali kontextové vlastnosti v dlhých vetách. Avšak RNN môžu trpieť kontextovou zaujatosťou v neskorších prichádzajúcih slovách. Preto mnohé modely využívajú obojsmerné varianty (Bi-LSTM-CRF, GRU), ktoré čítajú text zľava aj sprava~\cite{autKGconstruction2023}.
+  \end{itemize}
+\end{enumerate}
+
+Široko využívaným nástrojom štatistického modelu je spaCy, ktorý má možnosť implementácie modelu BERT hlbokého učenia.
+
+\subsubsection{Extrakcia vzťahov}
+
+Extrakcia vzťahov (Relation Extraction, RE) je proces ako aj NER, ktorého cieľom je identifikovať a klasifikovať sémantické prepojenia medzi entitami, ktoré boli v texte nájdene. Zaťiaľ čo NER nájde v texte jednotlivé inštancie entít, RE tieto entity spája do vzťahu, ktorý vysvetľuje ako spolu entity súvisia.
+
+RE premieňa neštruktúrovaný text na štruktúrované znalosti, vo forme trojíc $(e_h, r, e_t)$. Model zistí či medzi dvoma entitami nejaký vzťah existuje, a ak existuje priradí im konkrétny typ vzťahu z preddefinovanej schémy. Taktiež môže sa využívať otvorená extrakcia, kde model nie je obmedzený a snaží sa extrahovať akýkoľvek vzťah priamo z gramatickej štruktúry vety.
+
+\begin{enumerate}
+  \item Strojové učenie ako napríklad Kernelové metódy, merajú podobnosť medzi vetami pomocou matematických funkcií. Namiesto jednoduchých zoznamov slov analyzujú celé syntaktické stromy vety, aby pochopili, ako sú slová gramaticky prepojené~\cite{moncecchiRE2010}
+  \item Hlboké učenie:
+  \begin{itemize}
+    \item CNN sa zameriavajú na lokálny kontext v blízkosti entít~\cite{autKGconstruction2023}
+    \item LSTM dokážu zachytiť dlhé závislosti v dlhých vetách~\cite{autKGconstruction2023}
+    \item GCN (grafové neurónové siete) vnímajú vetu ako graf prepojených slov, čo im pomáha lepšie pochopiť zložité gramatické vzťahy~\cite{autKGconstruction2023}
+    \item Distant Supervised Relation Extraction model sa učí automaticky tak, že porovnáva text s existujúcou databázou. Avšak tento prístup zanáša šum, čo prekáža klasifikácií vzťahov v tradičných modeloch~\cite{autKGconstruction2023}.
+  \end{itemize}
+\end{enumerate}
+
+Extrakcia vzťahov je nevyhnutná z niekoľkých kľúčových dôvodov. Pre budovanie znalostných grafov automatizuje extrémne náročnú manuálnu prácu pri vytváraní veľkých databáz vedomostí. Umožnuje vyhľadávačom odpovedať na priame otázky namiesto toho, aby len zobrazili zoznam stránok. Špecializované odbory ako medicína kde RE pomáha vedcom identifikovať interakcie medzi liekmi alebo proteínmi v tisíckach odborných článkov, čo urýchľuje výskum chorôb, alevo právo kde sa používa na analýzu súdnych rozhodnutí, vyhľadávanie argumentov v spisoch alebo automatické spracovanie zmlúv.~\cite{autKGconstruction2023,nlpLegal2025,moncecchiRE2010}
+
+\subsubsection{Posun k využívaniu LLM}
+Posun v oblasti extrahovania informácií alebo znalosti smerom k využitiu veľkých jazykových modelov predstavuje zásadnú zmenu paradigmy od tradičných štatistických a pravidlových metód k generatej a jazykovo riadenej štruktúre. Ako bolo spomenuté, tradičné metódy sa spoliehali na fragmentáciu procesov, ktoré boli obmedzené potrebou expertného návrhu a veľkého množstva označených dát~\cite{autKGconstruction2023,llmEmpKGcons2025}.
+
+LLM transformujú proces extrakcie tým, že fungujú ako kognitívne motory, ktoré dokážu priamo syntetizovať štruktúrované reprezentácie z neštruktúrovaného textu. Na rozdiel od klasických metód, ktoré hľadali faktické vzory pomocou definovaných pravidiel alebo zhlukovania, LLM využívajú svoje schopnosti sémantického zjednotenia a generatívneho modelovania~\cite{autKGconstruction2023,llmEmpKGcons2025}.
+
+Hlavnými charakteristikami tohto prístupu sú:
+\begin{itemize}
+  \item Generatívne modelovanie znalostí, kde LLM dokážu vytvárať štruktúrované dáta priamo z prirodzeného jazyka~\cite{llmEmpKGcons2025}.
+  \item Sémantické zjednotenie, integrácia heterogénnych zdrojov vedomostí prostredníctvom uzemnenia v prirodzenom jazyku~\cite{llmEmpKGcons2025}.
+  \item Promptami riadená orchestrácia, koordinácia zložitých pracovných postupov budovania znalostných grafov pomocou interakcie založenej na promptoch~\cite{llmEmpKGcons2025}.
+\end{itemize}
+
+\
+
+Využitie LLM pre extrakciu prebieha v dvoch hlavných paradigmách. Prvou je metóda založená na schéme, kde tieto metódy sa spoliehajú na explicitnú schému znalosti, ktorá poskytuje štrukturálne vedenie a sémantické obmedzenia. LLM tu slúžia ako asistenti, ktorí dopĺňajú inštancie do vopred definovaných ontológií. Existujú aj adaptívne schémy, ktoré sa dynamicky vyvíjajú počas procesu extrakcie bez nutnosti opätovného trénovania modelu. Druhou metódou je metóda bez schémy. Cieľom je získavať znalosti priamo bez závislosti na vopred definovaných schémach. Tieto metódy uprednostňujú flexibilitu a otvorené objavovanie~\cite{llmEmpKGcons2025}.
+
+Kľúčové techniky pre LLM modely na funkciu extrakcie:
+\begin{itemize}
+  \item In-context learning (ICL) je schopnosť modelov riešiť extrakčné úlohy bez explicitného trénovania, len na základe abstraktného popisu (Zero-Shot learning) alebo niekolkých príkladov (Few-Shot learning) v rámci vstupu~\cite{IEtoSuppScien2025}.
+  \item Chain-of-Thought (CoT) prompting, inštruovanie LLM, aby pri extrakcií postupoval krok za krokom, čo zlepšuje logickú súvislosť a organizáciu znalostí~\cite{IEtoSuppScien2025}.
+  \item Multi-agentové systémy, ktoré nasádzajú špecializovaných agentov, ktorí spolupracujú na extrakcii, normalizácii entít a riešení konfliktov~\cite{llmEmpKGcons2025}.
+\end{itemize}
+
+Taktiež v dnešnej dobe sa systémy na extrahovanie informácií špecializujú na využitie veľkých jazykových modelov, kde automatizujú celý proces alebo sú v kombinácii s použitím strojového, hlbokého učenia.
 
 \subsection{Spracovanie dokumentov a layout analýza}
 OCR a parsovanie PDF, problém tabuliek v plain-text extrakcii, DocLayout-YOLO ako riešenie detekcie štruktúrnych prvkov, vision LLM pre prevod obrázok→štruktúrovaný výstup.
 
 \subsection{Existijúce prístupy pre tvorbu znalostných grafov z textu}
 3 s. najdôležitejšia sekcia
+
+ shift the focus from static schema construction toward continuous schema adaptation within evolving knowledge environments
 
 LangChain LLMGraphTransformer ako baseline
 ODKE+ pipeline (Open Domain Knowledge Extraction) — trojfázový návrh ODD → Schema Refinement → SDE

@@ -1,13 +1,16 @@
 # Fdb version 4
-["biber thesis"] 1777328176.65832 "thesis.bcf" "thesis.bbl" "thesis" 1777328246.33636 0
-  "includes/bibliography.bib" 1777326984.54832 9486 10c87b0b606db78959e1d6477b38cbf8 ""
-  "thesis.bcf" 1777328246.19201 111641 dcd83c8f49dd009febcc7ae294d5dc51 "pdflatex"
+["biber .build/thesis"] 1777283822.98924 ".build/thesis.bcf" ".build/thesis.bbl" ".build/thesis" 1777283824.8842 2
+  ".build/thesis.bcf" 1777283822.8165 109565 faeeecd2d2643ff2881f8e534b7853cb "pdflatex"
+  "includes/bibliography.bib" 1777282848.8521 8433 6dce600f7e36a78a9d2993fc94cc1dd4 ""
   (generated)
-  "thesis.bbl"
-  "thesis.blg"
+  ".build/thesis.bbl"
+  ".build/thesis.blg"
   (rewritten before read)
-["pdflatex"] 1777328243.73423 "/Users/samuelbagin/Desktop/code/llm-knowledge-graph/presentations/bp/thesis.tex" "thesis.pdf" "thesis" 1777328246.33674 0
-  "/Users/samuelbagin/Desktop/code/llm-knowledge-graph/presentations/bp/thesis.tex" 1776719023.36021 2992 1341072a5abd779814c541ddea1e961e ""
+["pdflatex"] 1777283821.08044 "thesis.tex" ".build/thesis.pdf" "thesis" 1777283824.88427 0
+  ".build/thesis.aux" 1777283822.81108 6539 6a0de8cae34e7ac24ecdf97f2c2d5fac "pdflatex"
+  ".build/thesis.bbl" 1777283824.87049 10643 bf2aca09a88a5e20ecfccbdacec0530d "biber .build/thesis"
+  ".build/thesis.out" 1777283822.81337 5506 8b4278226e2fa52229f5c26fd58d5979 "pdflatex"
+  ".build/thesis.toc" 1777283822.81738 2649 5a4960d48635455c8bf60af26ba04136 "pdflatex"
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -304,22 +307,18 @@
   "includes/abstractEN.tex" 1776714382.04081 0 d41d8cd98f00b204e9800998ecf8427e ""
   "includes/ai_declaration.tex" 1776714534.59372 0 d41d8cd98f00b204e9800998ecf8427e ""
   "includes/conclusion.tex" 1776714460.16397 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "includes/core.tex" 1777328243.46855 41023 aeebc03fb48f9ab2d0c5f27734a517d4 ""
+  "includes/core.tex" 1777283583.21376 32203 e29e81bd1456eb88098145aa14db7fec ""
   "includes/introduction.tex" 1776714487.85329 0 d41d8cd98f00b204e9800998ecf8427e ""
   "includes/manual_glossary.tex" 1776714546.28801 0 d41d8cd98f00b204e9800998ecf8427e ""
   "includes/thanks.tex" 1776714553.95938 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "thesis.aux" 1777328246.10798 11831 ecfe845ae7e4b165a9768538475ff061 "pdflatex"
-  "thesis.bbl" 1777328178.98409 19943 b0c6e77b82fa494afd55ec361a001820 "biber thesis"
-  "thesis.out" 1777328246.18911 5928 1ae38a96b5f0179c6ef43db7da930d28 "pdflatex"
-  "thesis.run.xml" 1777328246.19336 2468 c2c802bfcf9a6a5eec005c2b613fee7f "pdflatex"
   "thesis.tex" 1776719023.36021 2992 1341072a5abd779814c541ddea1e961e ""
-  "thesis.toc" 1777328246.19344 5183 fb21208dda3f86eb9e580cf34f5baa19 "pdflatex"
+  "thesis.toc" 0 -1 0 ""
   (generated)
-  "thesis.aux"
-  "thesis.bcf"
-  "thesis.log"
-  "thesis.out"
-  "thesis.pdf"
-  "thesis.run.xml"
-  "thesis.toc"
+  ".build/thesis.aux"
+  ".build/thesis.bcf"
+  ".build/thesis.log"
+  ".build/thesis.out"
+  ".build/thesis.pdf"
+  ".build/thesis.run.xml"
+  ".build/thesis.toc"
   (rewritten before read)

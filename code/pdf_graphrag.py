@@ -1022,7 +1022,7 @@ class PDFGraphRAG:
         
         if existing_schema == None or existing_schema == [] or existing_schema.nodes == [] and existing_schema.relationships == []:
             existing_schema = Schema(
-                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Miesto", "Urad", "Odsek", "Vozidlo"],
+                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo"],
                     relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI"]
                 )
         

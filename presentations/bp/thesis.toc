@@ -3,34 +3,34 @@
 \contentsline {section}{\'{U}vod}{8}{section*.1}%
 \contentsline {section}{\numberline {1}Súčasný stav}{10}{section.2}%
 \contentsline {subsection}{\numberline {1.1}Znalostné grafy}{10}{subsection.3}%
-\contentsline {subsection}{\numberline {1.2}Klasické metódy extrakcie}{11}{subsection.4}%
-\contentsline {subsubsection}{\numberline {1.2.1}Rozpoznávanie pomenovaných entít}{12}{subsubsection.5}%
-\contentsline {subsubsection}{\numberline {1.2.2}Extrakcia vzťahov}{13}{subsubsection.8}%
-\contentsline {subsubsection}{\numberline {1.2.3}Posun k využívaniu LLM}{14}{subsubsection.11}%
-\contentsline {subsection}{\numberline {1.3}Spracovanie dokumentov a layout analýza}{15}{subsection.12}%
-\contentsline {subsection}{\numberline {1.4}Existijúce prístupy pre tvorbu znalostných grafov z textu}{15}{subsection.13}%
-\contentsline {subsection}{\numberline {1.5}Medze}{15}{subsection.14}%
-\contentsline {section}{\numberline {2}Návrh riešenia}{16}{section.15}%
-\contentsline {subsection}{\numberline {2.1}Predspracovanie}{16}{subsection.17}%
-\contentsline {subsubsection}{\numberline {2.1.1}Detekcia rozloženia}{16}{subsubsection.18}%
-\contentsline {subsubsection}{\numberline {2.1.2}Extrakcia tabuliek}{16}{subsubsection.19}%
-\contentsline {subsection}{\numberline {2.2}Trojkroková extrakcia}{17}{subsection.20}%
-\contentsline {subsubsection}{\numberline {2.2.1}Detekcia v otvorenej doméne (ODD)}{17}{subsubsection.22}%
-\contentsline {subsubsection}{\numberline {2.2.2}Úprava a spresnenie schémy (SR)}{18}{subsubsection.23}%
-\contentsline {subsubsection}{\numberline {2.2.3}Schémou riadená extrakcia (SDE)}{18}{subsubsection.24}%
-\contentsline {subsection}{\numberline {2.3}Vkladanie do databázy}{18}{subsection.25}%
-\contentsline {section}{\numberline {3}Implementácia}{20}{section.27}%
-\contentsline {subsection}{\numberline {3.1}Technologický stack}{20}{subsection.28}%
-\contentsline {subsection}{\numberline {3.2}Kľúčové implementačné rozhodnutia}{21}{subsection.29}%
-\contentsline {subsection}{\numberline {3.3}Prompt engineering pre slovenčinu}{23}{subsection.30}%
-\contentsline {section}{\numberline {4}Experimenty a vyhodnotenie}{25}{section.31}%
-\contentsline {subsection}{\numberline {4.1}Testovanie dáta a experimentálne prostredie}{25}{subsection.32}%
-\contentsline {subsection}{\numberline {4.2}Priebeh extrakcie a kvantitatívne výsledky}{25}{subsection.33}%
-\contentsline {subsection}{\numberline {4.3}Vizualizácia znalostného grafu}{25}{subsection.34}%
-\contentsline {subsection}{\numberline {4.4}Porovnanie s baseline}{25}{subsection.35}%
-\contentsline {subsection}{\numberline {4.5}Diskusia a limitácie}{25}{subsection.36}%
-\contentsline {section}{Z\'{a}ver}{26}{section*.37}%
-\contentsline {section}{Literatúra}{27}{section*.38}%
+\contentsline {subsubsection}{\numberline {1.1.1}Typy grafových databáz}{11}{subsubsection.4}%
+\contentsline {subsection}{\numberline {1.2}Klasické metódy extrakcie}{13}{subsection.5}%
+\contentsline {subsubsection}{\numberline {1.2.1}Rozpoznávanie pomenovaných entít}{13}{subsubsection.6}%
+\contentsline {subsubsection}{\numberline {1.2.2}Extrakcia vzťahov}{14}{subsubsection.9}%
+\contentsline {subsubsection}{\numberline {1.2.3}Posun k využívaniu LLM}{15}{subsubsection.13}%
+\contentsline {subsection}{\numberline {1.3}Existijúce prístupy pre tvorbu znalostných grafov z textu}{17}{subsection.14}%
+\contentsline {subsection}{\numberline {1.4}Medze}{17}{subsection.15}%
+\contentsline {section}{\numberline {2}Návrh riešenia}{18}{section.16}%
+\contentsline {subsection}{\numberline {2.1}Predspracovanie}{18}{subsection.18}%
+\contentsline {subsubsection}{\numberline {2.1.1}Detekcia rozloženia}{18}{subsubsection.19}%
+\contentsline {subsubsection}{\numberline {2.1.2}Extrakcia tabuliek}{18}{subsubsection.20}%
+\contentsline {subsection}{\numberline {2.2}Trojkroková extrakcia}{19}{subsection.21}%
+\contentsline {subsubsection}{\numberline {2.2.1}Detekcia v otvorenej doméne (ODD)}{19}{subsubsection.23}%
+\contentsline {subsubsection}{\numberline {2.2.2}Úprava a spresnenie schémy (SR)}{20}{subsubsection.24}%
+\contentsline {subsubsection}{\numberline {2.2.3}Schémou riadená extrakcia (SDE)}{20}{subsubsection.25}%
+\contentsline {subsection}{\numberline {2.3}Vkladanie do databázy}{20}{subsection.26}%
+\contentsline {section}{\numberline {3}Implementácia}{22}{section.28}%
+\contentsline {subsection}{\numberline {3.1}Technologický stack}{22}{subsection.29}%
+\contentsline {subsection}{\numberline {3.2}Kľúčové implementačné rozhodnutia}{23}{subsection.30}%
+\contentsline {subsection}{\numberline {3.3}Prompt engineering pre slovenčinu}{25}{subsection.31}%
+\contentsline {section}{\numberline {4}Experimenty a vyhodnotenie}{27}{section.32}%
+\contentsline {subsection}{\numberline {4.1}Testovanie dáta a experimentálne prostredie}{27}{subsection.33}%
+\contentsline {subsection}{\numberline {4.2}Priebeh extrakcie a kvantitatívne výsledky}{27}{subsection.34}%
+\contentsline {subsection}{\numberline {4.3}Vizualizácia znalostného grafu}{27}{subsection.35}%
+\contentsline {subsection}{\numberline {4.4}Porovnanie s baseline}{27}{subsection.36}%
+\contentsline {subsection}{\numberline {4.5}Diskusia a limitácie}{27}{subsection.37}%
+\contentsline {section}{Z\'{a}ver}{28}{section*.38}%
+\contentsline {section}{Literatúra}{29}{section*.39}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
@@ -109,4 +109,94 @@
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
-\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{28}{section*.39}%
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\babel@toc {slovak}{}\relax 
+\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{31}{section*.40}%

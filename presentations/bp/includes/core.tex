@@ -2,34 +2,58 @@ v uvode obsiahnut problematiku
 
 
 \section{Súčasný stav}
-8 s. dokopy
 
 \subsection{Znalostné grafy}
 
-Znalostné grafy v poslednej dobe narástli na popularite v open-source komunite. Využívajú sa na ukladanie reálnych dát formulovaných ako enity a vzťahy. Hogan et al. definujú znalostný graf ako \emph{graf údajov, ktorého uzly reprezentujú entity reálneho sveta a~hrany reprezentujú vzťahy medzi týmito entitami}~\cite{hogan2021kg}. Generatívne veľké jazykové modely (LLM) trpia z veľkej miery halucináciou, nie sú schopné sa rozhodnúť alebo nemajú dostatočné znalosti pokiaľ nie sú natrénované v danej oblasti. V tom prichádza zmena s využitím znalostných grafov na využitie uchovania rozhodovaciej logiky, vedomostí, zdrojového kódu a mnoho ďalších. Najznámejšími verejne dostúpnými znalostnými grafmi sú DBpedia, Wikidata, YAGO.
+Znalostné grafy (Knowledge Graphs, KG) predstavujú moderný spôsob reprezentácie a prepájania údajov, ktorý umožňuje strojom chápať vzťahy medzi entitami podobne, ako to robia ľudia. 
 
-V~tejto práci modelujem údaje ako množinu trojíc (\emph{triples}) v tvare $(e_h, r, e_t)$, kde $e_h$ označuje začiatočnú entitu (\emph{head}), $e_t$ koncovú entitu (\emph{tail}) a~$r$~vzťah medzi nimi. Takáto trojica zodpovedá orientovanej hrane $e_h \xrightarrow{r} e_t$ v orientovanom grafe, ktorý je podľa Hogan et al.~\cite{hogan2021kg} základným modelom pre znalostné grafy a~je súčasne dátovým modelom štandardu RDF konzorcia W3C.
-
-V projetke je hlavnou databázou na ukladanie dát grafová databáza s vlastnosťami (Property graphs), akou je napríklad Neo4j. Formálna definícia grafovej databázy s vlastnosťami podľa Hogan et al., ktorá uchováva dáta v grafe v podobe usporiadanej n-tice $G = (V, E, L, P, U, e, l, p)$. Platí: $V$ je množina identifikátorov vrcholov (uzlov), $E$ je množina identifikátorov hrán, $L$ je množina typov, ktoré môžu niesť uzly aj hrany, $P$ je množina mien vlastností,  $U$ je množina hodnôt vlastností, $e : E \to V \times V$ každú hranu priradí dvojici vrcholov (jej začiatočnému a koncovému uzlu), $l : V \cup E \to 2^{L}$ priraďuje každému uzlu alebo hrane množinu typov, $p : V \cup E \to 2^{P \times U}$ priraďuje každému uzlu alebo hrane množinu dvojíc \emph{(vlastnosť, hodnota)}. Intuitívne: vrcholy a hrany sú len identifikátory z univerzálnej množiny databázy, funkcia $e$ špecifikuje štruktúru grafu (kto je s kým spojený), funkcie $l$ a $p$ nesú „sémantiku“, typy uzlov/hrán a ich atribúty.\cite{hogan2021kg}
+Znalostný graf je grafová reprezentácia dát určená na zhromažďovanie a odovzdávanie vedomostí o reálnom svete. Skladá sa z dvoch základných prvkov. Uzly, ktoré predstavujú objekty zájmu (entity) a hrany, ktoré definujú vzťahy medzi týmito entitami~\cite{hogan2021kg}.
 
 \
 
-V porovnaní s relačnými databázami sa dá jednoduchšie pristupovať k viac skokovým údajom alebo cestám, kde sa vyhýbajú relačným joinom. V relačnej databáze by sme každý typ uchovávali v jednotlivých tabuľkách, zaťiaľ čo v grafovej databáze je to oddelené typom entity alebo vzťahu. Taktiež relačné databázy sa nevedia dynamicky prispôsobiť novým typom a preto si vyžadujú vopred definovanú schému. Remodelovanie takejto databázy je veľmi nákladne a časovo náročné. K dátam môžme ľahko pristupovať pomocou dopytovacieho jazyka Cypher, ktorý je súčasťou rodiny grafových dopytovacích jazykov spolu s SPARQL. Tieto jazyky podporujú okrem štandardných relačných operátorov aj operátory, ktoré rekurzívne vyhľadávajú cestu medzi entitmi ľubovoľnej dĺžky, čo je v tradičnom SQL náročne vyjadriteľné.
-
-Alternatívou by mohla byť vektorová databáza, kde sa údaje ukladajú ako vektori v multidimenzionálnom priestore. Dáta sa dajú následne vyhľadávať pomocou sémantickej podobnosti a vrátia $k$ najbližších susedov na základe kosínusovej vzdialenosti. Ich slabinou je strata explicitného relačného kontextu, ak otázka vyžaduje následovať reťaz $A \to B \to C$, čisto sémanticky podobné údaje môžu relevantnú väzbu minúť, pretože kľúčové údaje sú roztrúsené v dokumente~\cite{mlmastery2026vecvsgraph}. Naopak znalostné grafy robia vzťahy explicitnými a umožňujú uvažovanie nad cestami, kde kľúčové uzly majú vzdialenosť $n$ hrán (skokov). 
+Vynikajú v integrácií rôznorodých dát, kde znalostné grafy sú ideálne na spájanie informácií z mnohých dynamických a rozsiahlych zdrojov. Na rozdiel od tradičných databáz, grafy sú flexibíľnejšie, kde schéma a dáta sa môžu voľnejšie rozvíjať. Podporujú navigačné operátory, ktoré dokážu rekurzívne vyhľadávať entity prepojené cestami ľubovoľnej dĺžky. Pomocou ontológií a pravidiel umožňujú strojom nielen ukladať fakty, ale o nich aj logicky uvažovať a odvodzovať znalosti. Najznámejšími verejne dostúpnými znalostnými grafmi sú DBpedia, Freebase Wikidata, YAGO~\cite{hogan2021kg}.
 
 \
 
-Pri používaní LLM agentových riešení pri programovaní, agenti vedia z veľkej miery prečítať pri každej novej konverzácií nadbytočné množstvo súborov a tým rýchlo zaplniť kontextové okno konverzácie. Tento problém vieme neutralizovať využitím nástroja, akým je Graphify, kde kód projektu (funkcie, triedy, globálne premenné,~...) je štruktúrovaný v znalostnom grafe. Ďalším praktickým riešením využitím znalostných grafov je v prípade riešenia problémov opravy strojov. Súčiastky a stroje môžu predstavovať množinu uzlov a hrany vzťah medzi nimi. Ak sa naskytne nejaký problém so strojom, vieme daný problém označiť ako uzol a zoskupiť stroj a chybové súčiastky do komunity pomocou hrán. Pri prvom výskyte problému, opravár označí problém a kde bola chyba, a neskôr využitím LLM môžme rýchlo identifikovať zdroj chyby pomocou znalostného grafu. Taktiež veľké využitie znalostných grafov nadobúda v oblasti kybernetiky a bezpečnosti (identifikácia hrozieb a útokov, forenzná analýza, detekcia anomálií, ...), vo vojenskej a obrannej infraštruktúre, medicíne, finančníctve a vo viacero ďalších rôznych odvetviach.
+Znalostné grafy v~poslednej dobe narástli na popularite ako štruktúrovaný spôsob reprezentácie faktov~\cite{sousa2024kgnlp}. Generatívne veľké jazykové modely (LLM) sú náchylné na produkovanie halucinácií, ktoré pramenia najmä z medzier vo vedomostiach modelu, čím model generuje informácie nepodporené faktickými dátami a vytvára výstup, ktorý znie vierohodne, no je nepresný alebo úplne nesprávny~\cite{agrawal2023kgsurvey,pusch2024llmkg}. Ako reakciu na toto obmedzenie výskumníci navrhli rôzne stratégie augmentácie LLM externými znalosťami, pričom využitie znalostných grafov ako zdroja takýchto informácií preukázalo sľubné výsledky pri znižovaní halucinácií a zlepšovaní presnosti uvažovania~\cite{agrawal2023kgsurvey,pusch2024llmkg,li2025linkq}.
+ 
+V~oblasti softvérového inžinierstva LLM excelujú v~generovaní kódu, no zápasia s úlohami na úrovni celého repozitára, pretože nemajú prehľad o globálnej štruktúre projektu a majú tendenciu sa úzko zameriavať na konkrétne súbory, čo vedie k lokálnym chybá~\cite{ouyang2024repograph}. Existujúce prístupy zaobchádzajú s kódom ako s plochými dokumentami, čo nedokáže zachytiť zložité medzisúborové závislosti~\cite{ouyang2024repograph}. Tento problém možno zmierniť modelovaním repozitára ako znalostného grafu, kde uzly predstavujú entity kódu (súbory, triedy, funkcie) a hrany ich štruktúrne závislosti a vzťahy~\cite{shrivastava2025kgcode,yang2025kgcompass}. Takáto reprezentácia umožňuje cielené získavanie relevantného kontextu namiesto čítania nadbytočných súborov~\cite{ouyang2024repograph,yang2025kgcompass}.
+ 
+Praktickým uplatnením znalostných grafov je aj diagnostika porúch priemyselných zariadení, kde súčiastky a stroje tvoria entity a hrany ich vzájomné vzťahy. Z textových opisov porúch zo senzorových sietí je možné postaviť doménovo špecifický znalostný graf zachytávajúci expertné znalosti o priemyselnom zariadení a následne pomocou LLM vykonávať kauzálnu analýzu na presnejšie určenie príčiny a lokalizácie poruchy~\cite{liu2024kgicl}.
+ 
+Výrazné využitie nachádzajú znalostné grafy aj v kybernetickej bezpečnosti. CTINexus automaticky konštruuje znalostné grafy z reportov o kybernetických hrozbách (Cyber Threat Intelligence, CTI) pomocou LLM extrakcie entít a vzťahov~\cite{cheng2024ctinexus}, zatiaľ čo KGV integruje LLM so štruktúrovanými znalostnými grafmi pre automatizované hodnotenie dôveryhodnosti CTI~\cite{wu2024kgv}. Systém LinkQ ukazuje, že nútením LLM dotazovať sa na znalostný graf pre fakty pri odpovedaní na otázky možno znížiť halucinácie aj v~kritických doménach ako kyberbezpečnosť~\cite{li2025linkq}. Podobné prínosy sú dokumentované v medicíne, kde integrácia medicínskych znalostných grafov do LLM zlepšuje diagnostické uvažovanie a znižuje riziko diagnostických chýb~\cite{gao2023drknows,duan2024medikal}, ako aj vo finančníctve, kde štruktúrovanie finančných dokumentov do znalostných grafov zlepšuje numerické uvažovanie a vysvetliteľnosť odpovedí LLM~\cite{srivastava2026structurefirst,lee2025kgstock}.
 
-Znalostné grafy dokážu odhalovať vzory, uzemňujú fakty pre hľadaní odpovedí, znížiť kontextové okno pri používaní LLM, znížiť halucinácie a cenu spracovania odpovede.
+\
+ 
+Znalostné grafy poskytujú LLM faktické uzemnenie a explicitné znalostné cesty, čím znižujú halucinácie a zvyšujú presnosť uvažovania~\cite{agrawal2023kgsurvey,sousa2024kgnlp}. Súčasne umožňujú získavať len relevantné podgrafy namiesto vkladania veľkých objemov textu do promptu, čo v aplikáciách ako finančné odporúčania preukázateľne znižuje veľkosť kontextového okna a zlepšuje cielenosť modelu na podstatné informácie~\cite{spadea2025ragflarko}.
+
+
+
+
+\subsubsection{Typy grafových databáz}
+Grafové databázy rozlišujeme na niekoľko typov, ktoré majú svoje špecifické určenia. Uvedené sú tri hlavné typy grafových databáz, ktoré sa najčastejšie vyskytujú pri znalostných grafoch:
+\begin{itemize}
+  \item Orientovaný graf s označenými hranami (Directed Edge-Labelled Graph), je množina uzlov a orientovaných hrán, kde jaždá hrana má priradený jeden štítok (napríklad model RDF)~\cite{hogan2021kg}.
+  \item Heterogénny graf (Heterogeneous Graph), kde každémy uzlu a hrane je priradený práve jeden typ~\cite{hogan2021kg}.
+  \item Graf s vlastnosťami (Property Graph) umožňuje priraďovať štítky a páry vlastnosť-hodnota k uzlom aj hranám~\cite{hogan2021kg}.
+  \item Málo používaný avšak veľmi záujimavý je hypergraf, ktorý umožňuje hranám spájať viac ako dve entity súčasne (komplexné hrany)~\cite{hogan2021kg}.
+\end{itemize}
+
+V projetke je využívanou databázou na ukladanie dát grafová databáza s vlastnosťami (Property graphs), akou je napríklad Neo4j. Formálna definícia grafovej databázy s vlastnosťami podľa Hogan et al., ktorá uchováva dáta v grafe v podobe usporiadanej n-tice $G = (V, E, L, P, U, e, l, p)$. Platí: $V$ je množina identifikátorov vrcholov (uzlov), $E$ je množina identifikátorov hrán, $L$ je množina typov, ktoré môžu niesť uzly aj hrany, $P$ je množina mien vlastností,  $U$ je množina hodnôt vlastností, $e : E \to V \times V$ každú hranu priradí dvojici vrcholov (jej začiatočnému a koncovému uzlu), $l : V \cup E \to 2^{L}$ priraďuje každému uzlu alebo hrane množinu typov, $p : V \cup E \to 2^{P \times U}$ priraďuje každému uzlu alebo hrane množinu dvojíc \emph{(vlastnosť, hodnota)}. Intuitívne: vrcholy a hrany sú len identifikátory z univerzálnej množiny databázy, funkcia $e$ špecifikuje štruktúru grafu (kto je s kým spojený), funkcie $l$ a $p$ nesú „sémantiku“, typy uzlov/hrán a ich atribúty.\cite{hogan2021kg}
+
+Tento typ vyniká, pretože ponúka vyššiu flexibilitu pri modelovaní komplexných vzťahov. Jeho hlavnou výhodou je, že umožňuje priamo anotovať hranu bez nutnosti vytvárania pomocných uzlov. Ak chceme napríklad k vzťahu medzi entitami priradiť rozšírujúcu vlastnosť (napríklad v medicíne k hrane NEZIADUCI\_UCINOK môžme priradiť dodatočnú vlastnosť, aké konkrétne nežiadúce účinky spôsobil liek). Naopak v jednoduchý modeloch by sme museli vytvoriť samostatný uzol pre danú hranu~\cite{hogan2021kg}.
+
+\
+
+V porovnaní s relačnými databázami sa dá jednoduchšie pristupovať k viac skokovým údajom alebo cestám, kde sa vyhýbajú relačným joinom. V relačnej databáze by sme každý typ uchovávali v jednotlivých tabuľkách, zaťiaľ čo v grafovej databáze je to oddelené typom entity alebo vzťahu. Taktiež relačné databázy sa nevedia dynamicky prispôsobiť novým typom a preto si vyžadujú vopred definovanú schému. Remodelovanie takejto databázy je veľmi nákladne a časovo náročné. K dátam v grafovej databáze môžme ľahko pristupovať pomocou dopytovacieho jazyka Cypher, ktorý je súčasťou rodiny grafových dopytovacích jazykov spolu s SPARQL. Tieto jazyky podporujú okrem štandardných relačných operátorov aj operátory, ktoré rekurzívne vyhľadávajú cestu medzi entitmi ľubovoľnej dĺžky, čo je v tradičnom SQL náročne vyjadriteľné~\cite{hogan2021kg}.
+
+Alternatívou by mohla byť vektorová databáza, kde sa údaje ukladajú ako vektori v multidimenzionálnom priestore. Dáta sa dajú následne vyhľadávať pomocou sémantickej podobnosti a vrátia $k$ najbližších susedov. Ich slabinou je strata explicitného relačného kontextu, ak otázka vyžaduje následovať reťaz $A \to B \to C$, čisto sémanticky podobné údaje môžu relevantnú väzbu minúť, pretože kľúčové údaje sú roztrúsené v dokumente~\cite{mlmastery2026vecvsgraph}. Naopak znalostné grafy robia vzťahy explicitnými a umožňujú uvažovanie nad cestami, kde kľúčové uzly majú vzdialenosť $n$ hrán (skokov). V moderných systémoch s využitím LLM sa technológie grafov a vektorov navzájom dopĺňajú~\cite{llmEmpKGcons2025}.
+
 
 \subsection{Klasické metódy extrakcie}
-1.5 s. Klasické NER/RE, prechod na LLM-based extraction, structured output, problém halucinácií a schéma-drift.
 
 Extrahovanie informácií (Information Extraction, IE) alebo taktiež extrahovanie znalostí (Knowledge Extraction, KE) je úloha transformovania neštruktúrovaného textu prirodzeného jazyka na štruktúrovaný, strojovo čítateľnú reprezentáciu akými sú trojice entita vzťah. Klasické IE princípy rozdelia úlohu do podúloch, detekcia entít a ich prepojovanie, riešenie koreferencie a extrahovanie vzťahov, ktoré sú spracované cielenou schémou. Prvotné systémy, ako TextRunner a KnowItAll, sa spoliehali na špeciálne navrhnuté pravidlá alebo na pevne stanovené lingvistické vzory na extrakciu faktov z textu~\cite{autKGconstruction2023}. Tento prístup bol veľmi nákladný na expertnú prácu a zle sa prispôsobovalo novým typom dokumentom~\cite{autKGconstruction2023}. Tieto limitácie motivovali posun k štatistickým a k neurónovým prístupom, kde vzory na extrahovanie informácií nie sú manuálne písané ale učené z označených príkladov~\cite{moncecchiRE2010}. Súčasným trendom je vykonávať rozpoznávanie pomenovaných entít a extrakciu vzťahov súčasne v jednom kroku, čím sa znižuje riziko prenosu chýb medzi jednotlivými fázami spracovania~\cite{hogan2021kg}.
 
-\
 
 \subsubsection{Rozpoznávanie pomenovaných entít}
 
@@ -51,26 +75,30 @@ Technológie NER prešli vývojom od jednoduchých pravidiel až po zložité ne
   \end{itemize}
 \end{enumerate}
 
-Široko využívaným nástrojom štatistického modelu je spaCy, ktorý má možnosť implementácie modelu BERT hlbokého učenia.
 
 \subsubsection{Extrakcia vzťahov}
 
 Extrakcia vzťahov (Relation Extraction, RE) je proces ako aj NER, ktorého cieľom je identifikovať a klasifikovať sémantické prepojenia medzi entitami, ktoré boli v texte nájdene. Zaťiaľ čo NER nájde v texte jednotlivé inštancie entít, RE tieto entity spája do vzťahu, ktorý vysvetľuje ako spolu entity súvisia.
 
-RE premieňa neštruktúrovaný text na štruktúrované znalosti, vo forme trojíc $(e_h, r, e_t)$. Model zistí či medzi dvoma entitami nejaký vzťah existuje, a ak existuje priradí im konkrétny typ vzťahu z preddefinovanej schémy. Taktiež môže sa využívať otvorená extrakcia, kde model nie je obmedzený a snaží sa extrahovať akýkoľvek vzťah priamo z gramatickej štruktúry vety.
+RE premieňa neštruktúrovaný text na štruktúrované znalosti, vo forme trojíc $(e_h, r, e_t)$. Model zistí či medzi dvoma entitami nejaký vzťah existuje, a ak existuje priradí im konkrétny typ vzťahu z preddefinovanej schémy. Taktiež môže sa využívať otvorená extrakcia, kde model nie je obmedzený a snaží sa extrahovať akýkoľvek vzťah priamo z gramatickej štruktúry vety~\cite{autKGconstruction2023}.
 
+Tieto prístupy podporujú otvorenú ale aj schématickú extrakciu:
 \begin{enumerate}
   \item Strojové učenie ako napríklad Kernelové metódy, merajú podobnosť medzi vetami pomocou matematických funkcií. Namiesto jednoduchých zoznamov slov analyzujú celé syntaktické stromy vety, aby pochopili, ako sú slová gramaticky prepojené~\cite{moncecchiRE2010}
   \item Hlboké učenie:
   \begin{itemize}
-    \item CNN sa zameriavajú na lokálny kontext v blízkosti entít~\cite{autKGconstruction2023}
-    \item LSTM dokážu zachytiť dlhé závislosti v dlhých vetách~\cite{autKGconstruction2023}
-    \item GCN (grafové neurónové siete) vnímajú vetu ako graf prepojených slov, čo im pomáha lepšie pochopiť zložité gramatické vzťahy~\cite{autKGconstruction2023}
-    \item Distant Supervised Relation Extraction model sa učí automaticky tak, že porovnáva text s existujúcou databázou. Avšak tento prístup zanáša šum, čo prekáža klasifikácií vzťahov v tradičných modeloch~\cite{autKGconstruction2023}.
+    \item CNN sa zameriavajú na lokálny kontext v blízkosti entít~\cite{autKGconstruction2023}.
+    \item LSTM dokážu zachytiť dlhé závislosti v dlhých vetách a súvetiach~\cite{autKGconstruction2023}.
+    \item GCN (grafové neurónové siete) vnímajú vetu ako graf prepojených slov, čo im pomáha lepšie pochopiť zložité gramatické vzťahy~\cite{autKGconstruction2023}.
   \end{itemize}
+  \item Distant Supervised Relation Extraction model sa učí automaticky tak, že porovnáva text s existujúcou databázou. Avšak tento prístup zanáša šum, čo prekáža klasifikácií vzťahov v tradičných modeloch~\cite{autKGconstruction2023}.
 \end{enumerate}
 
 Extrakcia vzťahov je nevyhnutná z niekoľkých kľúčových dôvodov. Pre budovanie znalostných grafov automatizuje extrémne náročnú manuálnu prácu pri vytváraní veľkých databáz vedomostí. Umožnuje vyhľadávačom odpovedať na priame otázky namiesto toho, aby len zobrazili zoznam stránok. Špecializované odbory ako medicína kde RE pomáha vedcom identifikovať interakcie medzi liekmi alebo proteínmi v tisíckach odborných článkov, čo urýchľuje výskum chorôb, alevo právo kde sa používa na analýzu súdnych rozhodnutí, vyhľadávanie argumentov v spisoch alebo automatické spracovanie zmlúv.~\cite{autKGconstruction2023,nlpLegal2025,moncecchiRE2010}
+
+\
+
+V~tejto práci modelujem vzťah medzi entitami v KG ako množinu trojíc (\emph{triples}) v tvare $(e_h, r, e_t)$, kde $e_h$ označuje začiatočnú entitu (\emph{head}), $e_t$ koncovú entitu (\emph{tail}) a~$r$~vzťah medzi nimi. Takáto trojica zodpovedá orientovanej hrane $e_h \xrightarrow{r} e_t$ v orientovanom grafe, ktorý je podľa Hogan et al.~\cite{hogan2021kg} základným modelom pre znalostné grafy a~je súčasne dátovým modelom štandardu RDF konzorcia W3C.
 
 \subsubsection{Posun k využívaniu LLM}
 Posun v oblasti extrahovania informácií alebo znalosti smerom k využitiu veľkých jazykových modelov predstavuje zásadnú zmenu paradigmy od tradičných štatistických a pravidlových metód k generatej a jazykovo riadenej štruktúre. Ako bolo spomenuté, tradičné metódy sa spoliehali na fragmentáciu procesov, ktoré boli obmedzené potrebou expertného návrhu a veľkého množstva označených dát~\cite{autKGconstruction2023,llmEmpKGcons2025}.
@@ -95,10 +123,19 @@ Kľúčové techniky pre LLM modely na funkciu extrakcie:
   \item Multi-agentové systémy, ktoré nasádzajú špecializovaných agentov, ktorí spolupracujú na extrakcii, normalizácii entít a riešení konfliktov~\cite{llmEmpKGcons2025}.
 \end{itemize}
 
-Taktiež v dnešnej dobe sa systémy na extrahovanie informácií špecializujú na využitie veľkých jazykových modelov, kde automatizujú celý proces alebo sú v kombinácii s použitím strojového, hlbokého učenia.
+\
 
-\subsection{Spracovanie dokumentov a layout analýza}
-OCR a parsovanie PDF, problém tabuliek v plain-text extrakcii, DocLayout-YOLO ako riešenie detekcie štruktúrnych prvkov, vision LLM pre prevod obrázok→štruktúrovaný výstup.
+V dnešnej dobe sa systémy na extrahovanie informácií špecializujú na využitie veľkých jazykových modelov, kde automatizujú celý proces alebo sú v kombinácii s použitím strojového, hlbokého učenia. Prečo sa prechádza k LLM riešeniam? Hlavné dôvody tohto posunu súvisia s prekonávaním obmedzení tradičných metód:
+
+\begin{itemize}
+  \item Škálovateľnosť a dátová riedkosť. Tradičné systémy založené na pravidlách často zlyhávajú pri prechode medzi doménami a vyžadujú obrovské množstvo tréningových dát~\cite{llmEmpKGcons2025}. LLM dokážu vďaka vedomostiam z predtrénovania definovať extrakčné ciele pre nové nové oblasti s minimálnym počtom príkladov~\cite{IEtoSuppScien2025}.
+  \item Rýchla adaptácia domény. LLM umožňujú výskumníkom ponúkať prispôsobiteľné služby špecifické pre danú doménu (právo, informatika, biológia, medicína, ...) bez nutnosti náročného manuálneho označovania dát~\cite{IEtoSuppScien2025}.
+  \item Riešenie fragmentácie procesu. Pri klasických postupoch viedlo oddelné spracovanie (napríklad najprv NER a potom RE) k postupnému prenosu a kumulácií chýb~\cite{autKGconstruction2023,llmEmpKGcons2025}. LLM umožňujú zjednotené generatívne rámce, ktoré tieto kroky integrujú do jedného procesu~\cite{llmEmpKGcons2025}.
+  \item Spracovanie zložitého kontextu. Tradičné modely na úrovni viet často nedokázali zachytiť vzťahy rozložené naprieč celými dokumentmi (príklad právo). LLM majú schopnosť spracovávať dlhé texty (napríklad dlhé vedecké články alebo právne zmluvy) a chápať zložité logické a sémantické súvisloti~\cite{IEtoSuppScien2025,nlpLegal2025,autKGconstruction2023}. LLM modely využívajú mechanizmus seba-pozornosti (self-attention), vďaka čomu presne vedia, že slovo "Tesla" v jednej vete znamená vedec a v inej auto~\cite{nlpLegal2025}.
+  \item Zníženie závisloti na expertoch. Hoci experti sú stále dôležití na overovanie, LLM dramaticky znižujú potrebu manuálneho navrhovania ontológií a pravidiel, čo urýchľuje budovanie vedomostných systémov~\cite{llmEmpKGcons2025}.
+\end{itemize} 
+
+
 
 \subsection{Existijúce prístupy pre tvorbu znalostných grafov z textu}
 3 s. najdôležitejšia sekcia

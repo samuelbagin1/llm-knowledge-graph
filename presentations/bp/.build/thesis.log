@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.13)  27 APR 2026 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.13)  29 APR 2026 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1309,6 +1309,7 @@ LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 Package hyperref Info: Link coloring ON on input line 54.
+(.build/thesis.out) (.build/thesis.out)
 \@outlinefile=\write5
 \openout5 = `thesis.out'.
 
@@ -1368,8 +1369,8 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `thesis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'thesis.bbl' not found.
-No file thesis.bbl.
+Package biblatex Info: ... file 'thesis.bbl' found.
+(.build/thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 54.
 Package biblatex Info: Reference segment=0 on input line 54.
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1582,8 +1583,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [4
 
-]
-No file thesis.toc.
+] (.build/thesis.toc)
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
@@ -1591,70 +1591,45 @@ No file thesis.toc.
 
 [5
 
-] (./includes/manual_glossary.tex)
+]
 
-[6] (./includes/introduction.tex)
+[6] (./includes/manual_glossary.tex)
 
-[7
+[7] (./includes/introduction.tex)
+
+[8
 
 
 
 
 ] (./includes/core.tex
 
-[8]
-
-LaTeX Warning: Citation 'hogan2021kg' on page 9 undefined on input line 9.
-
-
-LaTeX Warning: Citation 'hogan2021kg' on page 9 undefined on input line 11.
-
-
-LaTeX Warning: Citation 'hogan2021kg' on page 9 undefined on input line 13.
-
-
-
-[9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-
-LaTeX Warning: Citation 'mlmastery2026vecvsgraph' on page 10 undefined on input line 19.
-
-
-LaTeX Warning: Citation 'autKGconstruction2023' on page 10 undefined on input line 30.
-
-
+[9]
 
 [10]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 33.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 36.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [11{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 
-LaTeX Warning: Reference `fig:process' on page 12 undefined on input line 50.
+[12{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
+[13]
 
-LaTeX Warning: Citation 'SlovLex' on page 12 undefined on input line 72.
+[14]
 
+[15]
 
+[16]
 
-[12]
+[17]
 
-LaTeX Warning: Citation 'odkeplus2025' on page 13 undefined on input line 81.
+[18]
 
-
-LaTeX Warning: Reference `fig:extraction' on page 13 undefined on input line 81.
-
-
-LaTeX Warning: Citation 'odkeplus2025' on page 13 undefined on input line 98.
-
-
-LaTeX Warning: Citation 'odkeplus2025' on page 13 undefined on input line 98.
-
-
-
-[13{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 117.
+[19{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 222.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1663,77 +1638,57 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-LaTeX Warning: Reference `fig:graph_structure' on page 14 undefined on input line 117.
 
-
-
-[14]
+[20]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 153.
+(caption)                particular \caption on input line 258.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Citation 'neo4jblog' on page 15 undefined on input line 153.
-
-
-LaTeX Warning: Citation 'neo4jblog' on page 15 undefined on input line 153.
-
-
-Overfull \hbox (17.92537pt too wide) in paragraph at lines 119--156
+Overfull \hbox (17.92537pt too wide) in paragraph at lines 224--261
 []$[]$ 
  []
 
 
 
-[15]
+[21]
 
-[16]
+[22]
 
-[17]
+[23]
 
-LaTeX Warning: Citation 'langchainStructuredOutput' on page 18 undefined on input line 232.
+[24]
 
-
-
-[18]
-
-LaTeX Warning: Citation 'langchainGoogleResponseSchema' on page 19 undefined on input line 238.
-
-
-LaTeX Warning: Citation 'openaiStructuredOutput' on page 19 undefined on input line 238.
-
-
-Overfull \hbox (21.90096pt too wide) in paragraph at lines 238--239
-\T1/lmr/m/n/12 (-20) ticky par-suje odpove¤[[], []].
- []
-
-
-
-[19]
-Overfull \hbox (39.23227pt too wide) in paragraph at lines 281--281
+[25]
+Overfull \hbox (39.23227pt too wide) in paragraph at lines 386--386
 []\T1/lmtt/m/n/8 1. **Deduplikácia a sémantické zjednotenie**: Zlú£ synonymá a sémanticky blízke typy do jedného kanonického typu.[] 
  []
 
 
 
-[20])
+[26])
 
-[21] (./includes/conclusion.tex)
+[27] (./includes/conclusion.tex)
 
-[22
+[28
+
+
+]
+Overfull \hbox (3.70052pt too wide) in paragraph at lines 116--116
+[]\T1/lmr/m/n/12 (-20) OUYANG, S. et al. \T1/lmr/m/it/12 (-20) Re-poG-raph: En-han-cing AI Soft-ware En-gi-ne-e-ring with Repository-
+ []
+
+
+
+[29
 
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 114.
+[30] (./includes/ai_declaration.tex)
 
-(./includes/ai_declaration.tex)
-
-[23
-
-
-]
+[31]
 
 Package caption Warning: Unused \captionsetup[sub] on input line 11.
 See the caption package documentation for explanation.
@@ -1743,46 +1698,29 @@ See the caption package documentation for explanation.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  8B4278226E2FA52229F5C26FD58D5979;5506.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                thesis
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 94DD2388A152A3706E0AF0B24A3333E8;5845.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46941 strings out of 473190
- 895342 string characters out of 5715800
- 1823250 words of memory out of 5000000
- 69158 multiletter control sequences out of 15000+600000
- 684165 words of font info for 235 fonts, out of 8000000 for 9000
+ 47177 strings out of 473190
+ 902248 string characters out of 5715800
+ 1831605 words of memory out of 5000000
+ 69310 multiletter control sequences out of 15000+600000
+ 686170 words of font info for 251 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,12n,131p,2353b,1955s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,12n,131p,2353b,3125s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-
 dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-
 dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.p
 fb>
-Output written on .build/thesis.pdf (24 pages, 318662 bytes).
+Output written on .build/thesis.pdf (32 pages, 363978 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
- 72717 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 504 compressed objects within 6 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 72973 words of extra memory for PDF output out of 74296 (max. 10000000)
 

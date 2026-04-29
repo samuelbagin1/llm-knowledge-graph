@@ -2,8 +2,21 @@ import json
 import os
 from datetime import datetime
 from classes import Schema
-from typing import List
+from typing import List, Optional
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
+
+
+def _node_to_dict(node: Node) -> dict:
+    return {"id": node.id, "type": node.type, "properties": node.properties}
+
+
+def _relationship_to_dict(rel: Relationship) -> dict:
+    return {
+        "source": _node_to_dict(rel.source),
+        "target": _node_to_dict(rel.target),
+        "type": rel.type,
+        "properties": rel.properties,
+    }
 
 
 def odd_to_json(documents: List[Schema], output_dir: str = "./extracted_data", name: str = "", chunks: list = []):
@@ -89,6 +102,49 @@ def sde_to_json(data: List[GraphDocument], output_dir: str = "./extracted_data",
         output.append(entry)
 
     name = f"{name}_sde_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+
+    with open(os.path.join(output_dir, name), "w") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+
+
+
+def table_to_json(data: List[GraphDocument], output_dir: str = "./extracted_data", name: str = ""):
+    """Serialize per-table-group GraphDocuments produced by transform_html_to_graph_document."""
+    os.makedirs(output_dir, exist_ok=True)
+
+    output = []
+    for graph_doc in data:
+        meta = graph_doc.source.metadata if graph_doc.source else {}
+        entry = {
+            "page_range": meta.get("page_range"),
+            "source_html": graph_doc.source.page_content if graph_doc.source else None,
+            "nodes": [_node_to_dict(n) for n in graph_doc.nodes],
+            "relationships": [_relationship_to_dict(r) for r in graph_doc.relationships],
+        }
+        output.append(entry)
+
+    name = f"{name}_tables_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+
+    with open(os.path.join(output_dir, name), "w") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+
+
+
+def formula_to_json(data: Optional[GraphDocument], output_dir: str = "./extracted_data", name: str = ""):
+    """Serialize the single formulas GraphDocument produced by convert_formulas_to_graph."""
+    os.makedirs(output_dir, exist_ok=True)
+
+    if data is None:
+        output = {"document_id": None, "nodes": [], "relationships": []}
+    else:
+        meta = data.source.metadata if data.source else {}
+        output = {
+            "document_id": meta.get("id"),
+            "nodes": [_node_to_dict(n) for n in data.nodes],
+            "relationships": [_relationship_to_dict(r) for r in data.relationships],
+        }
+
+    name = f"{name}_formulas_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
 
     with open(os.path.join(output_dir, name), "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)

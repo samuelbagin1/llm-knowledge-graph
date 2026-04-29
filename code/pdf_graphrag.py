@@ -1,7 +1,9 @@
+from pathlib import Path
 import re
 import datetime
 import json
 import os
+import time
 from dataclasses import dataclass
 from typing import Dict, List, Any, Optional, Generic, TypeVar, cast
 from langchain_neo4j import Neo4jGraph, Neo4jVector, GraphCypherQAChain
@@ -38,6 +40,19 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 # Default node type when type is missing or empty
 DEFAULT_NODE_TYPE = "Entity"
+
+
+_HTML_HEADER = (
+    "<!DOCTYPE html>\n"
+    "<html><head><meta charset='utf-8'><style>"
+    "table {border-collapse: collapse; width: 100%;} "
+    "th, td {border: 1px solid #ddd; padding: 8px; text-align: left;} "
+    "th {background-color: #f2f2f2;}"
+    "</style></head><body>\n"
+)
+_HTML_FOOTER = "\n</body></html>"
+_PAGE_NUM_RE = re.compile(r"^page(\d+)_")
+
 
 _STRIP_COMMENTS_LINE = re.compile(r'//.*$', re.MULTILINE)
 _STRIP_COMMENTS_BLOCK = re.compile(r'/\*.*?\*/', re.DOTALL)
@@ -194,7 +209,7 @@ class PDFGraphRAG:
             username=neo4j_user,
             password=neo4j_password,
             database=database,
-            refresh_schema=False,
+            refresh_schema=True
         )
 
         # Initialize embeddings first - needed for vector stores
@@ -250,6 +265,7 @@ class PDFGraphRAG:
             temperature=0.2,
             google_api_key=google_api_key,
             timeout=600,
+            max_output_tokens=100000,
         )
 
 
@@ -399,7 +415,7 @@ class PDFGraphRAG:
     # ---------------- PDF to Graph and Vector Processing ---------------
         
     
-    def _convert_to_graph_document(self, data, i, document) -> GraphDocument:
+    def _convert_to_graph_document(self, data, i, document, document_id) -> GraphDocument:
         """
         Convert extracted data into a GraphDocument.
 
@@ -412,15 +428,14 @@ class PDFGraphRAG:
         nodes = []
         relationships = []
 
-        # TODO: add to chunk id a id of document for example chunk_1_222_2004
-        # chunk id has to consst of number of law and year
-        chunk_id = f"chunk_{i}"
+        chunk_id = f"chunk_{i}_{document_id}"
 
         chunk_node = Node(
             id=chunk_id,
             type="Chunk",
             properties={
                 "name": chunk_id,
+                "document_id": document_id,
                 "text": document.page_content,
                 "page": document.metadata.get("page", 0)
             }
@@ -479,9 +494,9 @@ class PDFGraphRAG:
                 # Format relationship properties
                 raw_rel_props = rel_data.get("properties", {})
                 formatted_rel_props = {
-                    format_property_key(k): v
-                    for k, v in raw_rel_props.items()
-                } if raw_rel_props else {}
+                    **{format_property_key(k): v for k, v in raw_rel_props.items()},
+                    "document_id": document_id
+                }
 
                 relationship = Relationship(
                     source=source_node,
@@ -511,14 +526,14 @@ class PDFGraphRAG:
         
         
         
-    def _add_document_chunk(self, count: int, path: str, properties: dict | None = None) -> GraphDocument:
-        chunk_ids = [f"chunk_{i}" for i in range(count)]
+    def _add_document_chunk(self, count: int, path: str, document_id, properties: dict | None = None) -> GraphDocument:
+        chunk_ids = [f"chunk_{i}_{document_id}" for i in range(count)]
         name = os.path.basename(path)
         
         if properties is None:
             properties = {}
 
-        document_node = Node(id=name, type="Document", properties=properties)
+        document_node = Node(id=document_id, type="Document", properties=properties)
         chunk_nodes = [Node(id=chunk_id, type="Chunk") for chunk_id in chunk_ids]
 
         relationships = [
@@ -529,7 +544,7 @@ class PDFGraphRAG:
         return GraphDocument(
             nodes=[document_node] + chunk_nodes,
             relationships=relationships,
-            source=Document(page_content="", metadata={"id": name}),
+            source=Document(page_content="", metadata={"id": document_id}),
         )
         
         
@@ -698,70 +713,159 @@ class PDFGraphRAG:
             column_count: int = Field(description="Number of columns in the table")
 
 
-        system_prompt = """You are a document analysis expert specializing in table extraction from images.
-        Your task is to convert table image(s) into a valid HTML table.
+        base_system_prompt = """
 
-        RULES:
-        - Output a complete HTML <table> element with <thead> and <tbody>.
-        - If multiple images are provided, they are consecutive pages of the SAME table — merge them into ONE HTML table.
-        - When merging multi-page tables: skip repeated headers, concatenate all data rows.
-        - Preserve all data exactly as shown in the images — do not omit, summarize, or modify any cell values.
-        - Use <th> for header cells, <td> for data cells.
-        - If a cell spans multiple columns or rows, use colspan/rowspan attributes.
-        - The text in the tables is in Slovak language — preserve the original text exactly."""
+        # Role
+        You are a document analysis expert specializing in high-fidelity table extraction and structural merging. Your goal is to convert document images into clean, valid HTML.
 
-        user_prompt = f"Convert the following {len(table_image_paths)} table image(s) into a single HTML <table>. These images are consecutive pages of the same table. Preserve all data exactly as shown."
+        # Task
+        Analyze the provided image(s) and convert them into a **single** HTML table.
+
+        # Rules for Multi-Page Merging
+        *   **Continuous Flow:** If multiple images are provided, treat them as a single continuous dataset.
+        *   **Heuristic for Splitting:** Only create separate `<table>` tags if the column structure (number of columns or alignment) changes significantly, or if the bold text represents a completely new section title rather than a continuation of the previous data (often all columns are filled with bold text).
+
+        # Formatting & Data Integrity
+        *   **Structure:** Output a complete `<table>` element with a single `<thead>` and one `<tbody>`.
+        *   **Tags:** Use `<th>` for header cells and `<td>` for data cells.
+        *   **Exactness:** Preserve all data exactly as shown. Do not omit, summarize, or modify any values.
+        *   **Language:** The text is in the Slovak language—preserve all original characters and diacritics (e.g., č, š, ž, ť, ľ) exactly as they appear.
+        *   **Clean Output:** Do not include CSS or markdown code blocks unless requested; provide the raw HTML structure.
         
+        # IMPORTANT
+        * Keep layout the same, if there is an empty cell in the image table, add in the html an empty cell `<td></td>`.
+        * If you spot that, there is a new table headers (in every column is bold text), close the table with `</table>` and start a new table
+        """
 
-        content_parts: list[dict[str, Any]] = [{"type": "text", "text": user_prompt}]
-        for path in table_image_paths:
-            with open(path, "rb") as f:
-                img_data = base64.b64encode(f.read()).decode()
-            content_parts.append({
-                "type": "image_url",
-                "image_url": {"url": f"data:image/png;base64,{img_data}"}
-            })
+        continuation_rules = """
 
-        structured_model = self.gemini_client.with_structured_output(
-            schema=TableHTMLResponse.model_json_schema(), method="json_schema"
+        # Continuation Mode
+        *   The user message contains the HTML extracted from PREVIOUS pages of this SAME table. The new images are continuation pages.
+        *   Output the COMPLETE merged HTML `<table>` containing ALL rows from the previous HTML PLUS new rows extracted from the new images, in order.
+        *   Do NOT drop, rephrase, summarize, or re-format any prior row.
+        *   If you spot that, there is a new table headers (in all columns is bold text), close the table with `</table>` and start a new table
+        """
+
+        CHUNK_SIZE = 2
+
+        structured_model = self.openai_client.with_structured_output(
+            schema=TableHTMLResponse.model_json_schema(),
+            method="json_schema",
+            include_raw=True,
         )
 
-        response = structured_model.invoke([
-            SystemMessage(content=system_prompt),
-            HumanMessage(content=cast(list[str | dict[Any, Any]], content_parts)),
-        ])
+        os.makedirs(output_dir, exist_ok=True)
 
-        print(response)
+        def invoke_chunk(chunk_paths: list[str], previous_html: str | None) -> dict[str, Any]:
+            system_prompt = base_system_prompt + (continuation_rules if previous_html else "")
 
-        # extract page numbers from filenames for naming the output
-        page_numbers = []
-        for path in table_image_paths:
-            filename = os.path.basename(path)
-            page_num = filename.split("_")[0].replace("page", "")
-            if page_num.isdigit():
-                page_numbers.append(int(page_num))
+            if previous_html:
+                user_text = (
+                    f"PREVIOUS HTML (from earlier pages):\n{previous_html}\n\n"
+                )
+            else:
+                user_text = (
+                    f"Convert the following {len(chunk_paths)} table image(s). Preserve all data exactly as shown."
+                )
 
+            content_parts: list[dict[str, Any]] = [{"type": "text", "text": user_text}]
+            for path in chunk_paths:
+                with open(path, "rb") as f:
+                    img_data = base64.b64encode(f.read()).decode()
+                content_parts.append({
+                    "type": "image_url",
+                    "image_url": {"url": f"data:image/png;base64,{img_data}"}
+                })
+
+            messages = [
+                SystemMessage(content=system_prompt),
+                HumanMessage(content=cast(list[str | dict[Any, Any]], content_parts)),
+            ]
+
+            for attempt in range(3):
+                try:
+                    result = cast(dict[str, Any], structured_model.invoke(messages))
+                    if result is None:
+                        raise RuntimeError("model returned null")
+                    parsed = result.get("parsed")
+                    if not parsed:
+                        raise RuntimeError("model returned no parsed output")
+                    if not parsed.get("html"):
+                        print(f"[invoke_chunk] empty html (attempt {attempt + 1}/3), retrying...")
+                        continue
+                    return result
+                except Exception as e:
+                    if attempt < 2:
+                        print(f"TPM limit reached (attempt {attempt + 1}/3, error: {e}), sleeping 60s...")
+                        time.sleep(60)
+                    else:
+                        print(f"[invoke_chunk] all 3 attempts failed: {e}")
+                        raise
+
+            raise RuntimeError("invoke_chunk: empty html after 3 attempts")
+
+
+
+        try:
+            if len(table_image_paths) <= CHUNK_SIZE:
+                result = invoke_chunk(table_image_paths, previous_html=None)
+                if result is None:
+                    return None
+            else:
+                chunks = [table_image_paths[i:i + CHUNK_SIZE] for i in range(0, len(table_image_paths), CHUNK_SIZE)]
+                print(f"[transform_table_to_html] {len(table_image_paths)} images > {CHUNK_SIZE}, splitting into {len(chunks)} chunks")
+                result = None
+                previous_html: str | None = None
+                for idx, chunk in enumerate(chunks):
+                    chunk_info = f"chunk {idx + 1}/{len(chunks)}"
+                    print(f"[transform_table_to_html] {chunk_info} ({len(chunk)} images)")
+                    result = invoke_chunk(chunk, previous_html=previous_html)
+                    if result is None:
+                        return None
+                    chunk_parsed = result.get("parsed")
+                    if not chunk_parsed:
+                        print(f"[transform_table_to_html] {chunk_info} produced no parsed output; aborting")
+                        return None
+                    previous_html = chunk_parsed.get("html", "")
+        except Exception as e:
+            print(f"[transform_table_to_html] SKIPPING table for {table_image_paths!r} — extraction failed: {type(e).__name__}: {e}")
+            return None
+
+        if result is None:
+            return None
+
+        if result.get("parsing_error"):
+            print(f"[transform_table_to_html] parsing error: {result['parsing_error']}")
+            return None
+
+        parsed = result.get("parsed")
+        if not parsed:
+            print(f"[transform_table_to_html] no parsed output for {table_image_paths!r}")
+            return None
+
+        page_numbers = sorted(
+            int(m.group(1))
+            for path in table_image_paths
+            if (m := _PAGE_NUM_RE.match(os.path.basename(path)))
+        )
         if page_numbers:
-            page_range_str = f"{min(page_numbers)}-{max(page_numbers)}" if len(page_numbers) > 1 else str(page_numbers[0])
+            page_range_str = f"{page_numbers[0]}-{page_numbers[-1]}" if len(page_numbers) > 1 else str(page_numbers[0])
         else:
             page_range_str = "unknown"
 
-        html_filename = f"table_pages{page_range_str}.html"
-        html_path = os.path.join(output_dir, html_filename)
-
-        html_content = response.get("html", "") if isinstance(response, dict) else getattr(response, "html", str(response))
+        html_path = os.path.join(output_dir, f"table_pages{page_range_str}.html")
 
         with open(html_path, "w", encoding="utf-8") as f:
-            f.write(f"<!DOCTYPE html>\n<html><head><meta charset='utf-8'><style>table {{border-collapse: collapse; width: 100%;}} th, td {{border: 1px solid #ddd; padding: 8px; text-align: left;}} th {{background-color: #f2f2f2;}}</style></head><body>\n")
-            f.write(html_content)
-            f.write("\n</body></html>")
+            f.write(_HTML_HEADER)
+            f.write(parsed.get("html", ""))
+            f.write(_HTML_FOOTER)
 
-        print(f"created and saved table")
+        print("created and saved table")
 
-        return {"html_path": html_path, "response": response}
+        return {"html_path": html_path, "response": parsed}
 
 
-    def transform_html_to_graph_document(self, html_content: str, page_range: str) -> GraphDocument:
+    def transform_html_to_graph_document(self, html_content: str, page_range: str, document_id: str) -> GraphDocument:
         """
         Transform an HTML table into a GraphDocument using LLM-based extraction.
 
@@ -801,12 +905,12 @@ class PDFGraphRAG:
         Tvoja uloha je analyzovat HTML tabulku a vytvorit hierarchicky strom uzlov a vztahov, ktory presne zachytava logicku strukturu tabulky.
 
         # PRAVIDLA
-        - Analyzuj stlpce, riadky, atributy rowspan/colspan a identifikuj hierarchiu dat.
+        - Analyzuj stlpce, riadky a identifikuj hierarchiu dat.
         - Vytvor KORENOVY uzol reprezentujuci celu tabulku (napr. 'Colny sadzobnik', 'Priloha', 'Zoznam').
         - Vytvor RODICOVSKE uzly pre kazdu hlavnu skupinu (napr. body/sekcie oznacene rowspan v prvom stlpci).
         - Vytvor DETSKE/LISTOVE uzly pre jednotlive polozky v kazdej skupine.
-        - Ak bunka obsahuje viacero hodnot oddelenych ciarkou (napr. 'ex 2, ex 4, ex 7'), vytvor SAMOSTATNY uzol pre kazdu hodnotu.
         - Popisny text z ostatnych stlpcov uloz ako 'description' vo vlastnostiach uzla.
+        - Ak su niektore bunky prazdne (je ich viacero za sebou) moze ist o colspan, v strukture tabulky je to najvyssia polozka
         - Kazdy uzol MUSI mat kluc 'name' vo svojich vlastnostiach.
         - Pre typy vztahov pouzivaj VELKE_PISMENA_S_PODTRZITKAMI (napr. MA_SEKCIU, MA_KAPITOLU, OBSAHUJE, MA_POLOZKU).
         - Zachovaj vsetok text PRESNE tak, ako sa nachadza v tabulke — neprekladaj, neskracuj, nemodifikuj hodnoty buniek.
@@ -834,20 +938,42 @@ class PDFGraphRAG:
         # HTML TABULKA:
         {html_content}"""
 
-        structured_model = self.gemini_client_flash.with_structured_output(schema=TableGraphResponse)
+        structured_model = self.openai_client.with_structured_output(schema=TableGraphResponse)
 
-        response = structured_model.invoke([
+        messages = [
             SystemMessage(content=system_prompt),
             HumanMessage(content=user_prompt),
-        ])
+        ]
 
-        typed_response = cast(TableGraphResponse, response)
+        typed_response: TableGraphResponse | None = None
+        for attempt in range(3):
+            try:
+                response = structured_model.invoke(messages)
+                if response is None:
+                    raise RuntimeError("model returned null")
+                candidate = cast(TableGraphResponse, response)
+                if not candidate.nodes or not candidate.relationships:
+                    print(f"[table_graph] empty nodes/relationships (attempt {attempt + 1}/3), retrying...")
+                    continue
+                typed_response = candidate
+                break
+            except Exception as e:
+                if attempt < 2:
+                    print(f"TPM limit reached (attempt {attempt + 1}/3, error: {e}), sleeping 60s...")
+                    time.sleep(60)
+                else:
+                    print(f"[table_graph] all 3 attempts failed: {e}")
+                    raise
+
+        if typed_response is None:
+            raise RuntimeError("table_graph: empty nodes/relationships after 3 attempts")
+
         print(f"Table graph extraction for pages {page_range}: {len(typed_response.nodes)} nodes, {len(typed_response.relationships)} relationships")
 
         data = typed_response.model_dump()
 
         source_doc = Document(page_content=html_content, metadata={"page_range": page_range, "source": "table"})
-        graph_document = self._convert_to_graph_document(data, f"table_{page_range}", source_doc)
+        graph_document = self._convert_to_graph_document(data, f"table_{page_range}", source_doc, document_id)
 
         return graph_document
 
@@ -876,7 +1002,117 @@ class PDFGraphRAG:
 
         return groups
     
-    # TODO: functions OCR to latex and then to graphdocument
+    
+    # OCR to LaTeX and then to GraphDocument
+
+    def get_formulas(self, assets_dir: str = "./code/assets/detected_tables_figures") -> list[dict]:
+        """
+        Load all detected formula PNGs from the assets directory.
+
+        Returns a list of dicts with image_path, page, index, and detection_confidence
+        parsed from the filename pattern: page{N}_isolate_formula_{i}_conf{score}.png
+        """
+        formulas: list[dict] = []
+        for path in sorted(Path(assets_dir).glob("*isolate_formula*.png")):
+            m = re.match(r"page(\d+)_isolate_formula_(\d+)_conf([0-9.]+)\.png$", path.name)
+            if not m:
+                continue
+            formulas.append({
+                "image_path": str(path),
+                "page": int(m.group(1)),
+                "index": int(m.group(2)),
+                "detection_confidence": float(m.group(3)),
+            })
+        return formulas
+
+
+    def transform_formula(self, formula: dict) -> dict:
+        """
+        Send one formula image to Gemini Flash and transcribe it to LaTeX.
+
+        Returns a dict with keys "latex" (str) and "confidence" (float).
+        """
+        
+        class FormulaLatexResponse(BaseModel):
+            """LaTeX transcription of a formula image, with the model's confidence."""
+            latex: str = Field(description="LaTeX representation of the formula, no surrounding $ delimiters")
+            confidence: float = Field(description="Confidence in the transcription, 0.0 to 1.0")
+    
+    
+        system_prompt = (
+            "You are a math/formula transcription expert. "
+            "Convert the formula in the image into valid LaTeX. "
+            "Output ONLY the LaTeX body — no surrounding $ delimiters, "
+            "no \\begin{equation} / \\end{equation} wrapper. "
+            "Also report your confidence in the transcription as a float in [0, 1]."
+        )
+
+        with open(formula["image_path"], "rb") as f:
+            img_data = base64.b64encode(f.read()).decode()
+
+        content_parts: list[dict[str, Any]] = [
+            {"type": "text", "text": "Transcribe the formula in this image to LaTeX."},
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img_data}"}},
+        ]
+
+        structured_model = self.openai_client.with_structured_output(FormulaLatexResponse)
+        response = structured_model.invoke([
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=cast(list[str | dict[Any, Any]], content_parts)),
+        ])
+
+        return cast(FormulaLatexResponse, response).model_dump()
+
+
+    def _convert_formula_to_node(
+        self,
+        formula: dict,
+        response: dict,
+        i: int,
+        document_id: str,
+    ) -> Node:
+        """Build a Vzorec Node from a formula detection + LLM transcription."""
+        node_id = f"formula_{i}_{document_id}"
+        return Node(
+            id=node_id,
+            type="Vzorec",
+            properties={
+                "name": node_id,
+                "document_id": document_id,
+                "latex": response["latex"],
+                "transcription_confidence": response["confidence"],
+                "detection_confidence": formula["detection_confidence"],
+                "page": formula["page"],
+            },
+        )
+
+
+    def convert_formulas_to_graph(
+        self,
+        formula_nodes: list[Node],
+        document_id: str
+    ) -> Optional[GraphDocument]:
+        """
+        Bundle formula Nodes into a single GraphDocument with each formula
+        connected to the Document node via :IN_DOCUMENT.
+
+        Returns None when there are no formula nodes.
+        """
+        if not formula_nodes:
+            return None
+
+        document_node = Node(id=document_id, type="Document")
+
+        relationships = [
+            Relationship(source=fn, target=document_node, type="IN_DOCUMENT")
+            for fn in formula_nodes
+        ]
+
+        return GraphDocument(
+            nodes=[document_node, *formula_nodes],
+            relationships=relationships,
+            source=Document(page_content="", metadata={"id": document_id}),
+        )
 
 
 
@@ -1022,7 +1258,7 @@ class PDFGraphRAG:
         
         if existing_schema == None or existing_schema == [] or existing_schema.nodes == [] and existing_schema.relationships == []:
             existing_schema = Schema(
-                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo"],
+                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum"],
                     relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI"]
                 )
         
@@ -1046,7 +1282,7 @@ class PDFGraphRAG:
         
         user_prompt = f"""
         # ÚLOHA
-        Spresni surovú schému detegovanú z otvorenej domény a integruj ju so základnou ontológiou (ak je dostupná).
+        Spresni surovú schému detekovanú z otvorenej domény a integruj ju so základnou ontológiou (ak je dostupná).
 
         # KONTEXTOVÉ PRÍDAVKY
         - Do zoznamu uzlov (node_types) POVINNE pridaj nový typ: **Paragraf**.
@@ -1104,7 +1340,8 @@ class PDFGraphRAG:
         self,
         i: int,
         document: Document,
-        schema: Schema
+        schema: Schema,
+        document_id: str
     ) -> GraphDocument:
         """
         Async function to extract named entities and relationships from a document
@@ -1156,7 +1393,7 @@ class PDFGraphRAG:
         print(data)
 
         # Convert to graph document with validation and formatting
-        graph_document = self._convert_to_graph_document(data, i, document)
+        graph_document = self._convert_to_graph_document(data, i, document, document_id)
 
         # Apply strict mode filtering if enabled
         # if strict_mode and (allowed_entities or allowed_relationships):
@@ -1174,6 +1411,7 @@ class PDFGraphRAG:
         self,
         documents: List[Document],
         schema: Schema,
+        document_id,
         max_concurrent = 5
     ) -> List[GraphDocument]:
         """
@@ -1199,7 +1437,7 @@ class PDFGraphRAG:
                 await pause_event.wait()
                 async with semaphore:
                     try:
-                        return await self.schema_driven_extraction(i, doc, schema)
+                        return await self.schema_driven_extraction(i, doc, schema, document_id)
                     except Exception as e:
                         if attempt < 2:
                             async with pause_lock:
@@ -1240,7 +1478,7 @@ class PDFGraphRAG:
         if max_pages:
             documents = documents[:max_pages]
             
-            
+        document_id = Path(pdf_path).stem  
             
             
         # detect tables in pdf
@@ -1256,6 +1494,10 @@ class PDFGraphRAG:
         for group in table_groups:
             image_paths = [d["image_path"] for d in group]
             result = self.transform_table_to_html(image_paths)
+            if result is None:
+                pages = sorted(d["page"] for d in group)
+                print(f"Skipping table on pages {pages} — extraction returned None")
+                continue
             print(f"Saved: {result['html_path']}")
 
             # access HTML from in-memory response
@@ -1267,7 +1509,7 @@ class PDFGraphRAG:
             page_range = f"{min(pages)}-{max(pages)}" if len(pages) > 1 else str(pages[0])
 
             # transform HTML table into GraphDocument via LLM
-            table_gd = self.transform_html_to_graph_document(html, page_range)
+            table_gd = self.transform_html_to_graph_document(html, page_range, document_id)
             table_graph_docs.append(table_gd)
 
             # collect interior table pages to exclude from text processing
@@ -1283,6 +1525,19 @@ class PDFGraphRAG:
                 if (doc.metadata.get("page", -1) + 1) not in table_pages_to_exclude
             ]
             print(f"Excluded {len(table_pages_to_exclude)} interior table pages from text processing: {sorted(table_pages_to_exclude)}")
+            
+            
+        formulas = self.get_formulas()
+
+        formula_nodes: list[Node] = []
+        for i, formula in enumerate(formulas):
+            response = self.transform_formula(formula)
+            formula_nodes.append(
+                self._convert_formula_to_node(formula, response, i, document_id)
+            )
+
+        formula_graph_doc = self.convert_formulas_to_graph(formula_nodes, document_id)
+        print(f"Processed {len(formulas)} formula(s) into {0 if formula_graph_doc is None else len(formula_nodes)} node(s).")
 
 
         # document_classification = self.classification()
@@ -1294,7 +1549,7 @@ class PDFGraphRAG:
 
         extracted_schema_list = asyncio.run(
             self.async_open_domain_detection(
-                chunked_documents,
+                chunked_documents
             )
         )
         print(f"\n\nAll chunks processed into schema.\n\n")
@@ -1320,7 +1575,8 @@ class PDFGraphRAG:
         graph_docs = asyncio.run(
             self.async_schema_driven_extraction(
                 chunked_documents,
-                schema=refined_schema
+                schema=refined_schema,
+                document_id=document_id
             )
         )
         
@@ -1329,10 +1585,14 @@ class PDFGraphRAG:
         
 
         # add document chunk into graph documents
-        graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path))
+        graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path, document_id))
 
         # add table-extracted graph documents
         graph_docs.extend(table_graph_docs)
+
+        # add formula-extracted graph document
+        if formula_graph_doc is not None:
+            graph_docs.append(formula_graph_doc)
 
 
         # Add graph documents to Neo4j

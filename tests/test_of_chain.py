@@ -17,8 +17,7 @@ graphrag = PDFGraphRAG(
     neo4j_user='neo4j',
     neo4j_password='fseijkfbsj48@',
     openai_api_key=os.getenv("OPENAI_API_KEY"),
-    google_api_key=os.getenv("GOOGLE_API_KEY"),
-    claude_api_key=os.getenv("ANTHROPIC_API_KEY")
+    google_api_key=os.getenv("GOOGLE_API_KEY")
 )
 
 name = "test-10"
@@ -88,7 +87,8 @@ refined_schema = Schema(
 graph_docs = asyncio.run(
     graphrag.async_schema_driven_extraction(
         chunked_documents,
-        schema=refined_schema
+        schema=refined_schema,
+        document_id="ZZ_222_2004"
     )
 )
 

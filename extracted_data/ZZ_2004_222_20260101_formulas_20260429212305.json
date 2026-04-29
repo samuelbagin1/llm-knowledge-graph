@@ -1,0 +1,47 @@
+{
+  "document_id": "ZZ_2004_222_20260101",
+  "nodes": [
+    {
+      "id": "ZZ_2004_222_20260101",
+      "type": "Document",
+      "properties": {}
+    },
+    {
+      "id": "formula_0_ZZ_2004_222_20260101",
+      "type": "Vzorec",
+      "properties": {
+        "name": "formula_0_ZZ_2004_222_20260101",
+        "document_id": "ZZ_2004_222_20260101",
+        "latex": "\\mathbf{DD} = \\frac{\\mathbf{DV} \\times (\\mathbf{A} - \\mathbf{B})}{\\mathbf{5 \\text{ alebo } 20}} \\times \\mathbf{R}",
+        "transcription_confidence": 1.0,
+        "detection_confidence": 0.94,
+        "page": 149,
+        "image_path": "code/assets/detected_tables_figures/page149_isolate_formula_5_conf0.94.png"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": {
+        "id": "formula_0_ZZ_2004_222_20260101",
+        "type": "Vzorec",
+        "properties": {
+          "name": "formula_0_ZZ_2004_222_20260101",
+          "document_id": "ZZ_2004_222_20260101",
+          "latex": "\\mathbf{DD} = \\frac{\\mathbf{DV} \\times (\\mathbf{A} - \\mathbf{B})}{\\mathbf{5 \\text{ alebo } 20}} \\times \\mathbf{R}",
+          "transcription_confidence": 1.0,
+          "detection_confidence": 0.94,
+          "page": 149,
+          "image_path": "code/assets/detected_tables_figures/page149_isolate_formula_5_conf0.94.png"
+        }
+      },
+      "target": {
+        "id": "ZZ_2004_222_20260101",
+        "type": "Document",
+        "properties": {}
+      },
+      "type": "IN_DOCUMENT",
+      "properties": {}
+    }
+  ]
+}

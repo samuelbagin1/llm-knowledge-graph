@@ -1056,12 +1056,36 @@ class PDFGraphRAG:
         ]
 
         structured_model = self.openai_client.with_structured_output(FormulaLatexResponse)
-        response = structured_model.invoke([
+
+        messages = [
             SystemMessage(content=system_prompt),
             HumanMessage(content=cast(list[str | dict[Any, Any]], content_parts)),
-        ])
+        ]
 
-        return cast(FormulaLatexResponse, response).model_dump()
+        typed_response: FormulaLatexResponse | None = None
+        for attempt in range(3):
+            try:
+                response = structured_model.invoke(messages)
+                if response is None:
+                    raise RuntimeError("model returned null")
+                candidate = cast(FormulaLatexResponse, response)
+                if not candidate.latex:
+                    print(f"[transform_formula] empty latex (attempt {attempt + 1}/3), retrying...")
+                    continue
+                typed_response = candidate
+                break
+            except Exception as e:
+                if attempt < 2:
+                    print(f"TPM limit reached (attempt {attempt + 1}/3, error: {e}), sleeping 60s...")
+                    time.sleep(60)
+                else:
+                    print(f"[transform_formula] all 3 attempts failed: {e}")
+                    raise
+
+        if typed_response is None:
+            raise RuntimeError("transform_formula: empty latex after 3 attempts")
+
+        return typed_response.model_dump()
 
 
     def _convert_formula_to_node(
@@ -1426,13 +1450,17 @@ class PDFGraphRAG:
         Returns:
             List of GraphDocuments
         """
+        
         print("creating tasks: SCHEMA-DRIVEN EXTRACTION")
         semaphore = asyncio.Semaphore(max_concurrent)
         pause_event = asyncio.Event()
         pause_event.set()
         pause_lock = asyncio.Lock()
 
-        async def limited(i, doc):
+        def is_failed(result):
+            return result is None or not getattr(result, "nodes", None)
+
+        async def limited(i, doc) -> Optional[GraphDocument]:
             for attempt in range(3):
                 await pause_event.wait()
                 async with semaphore:
@@ -1447,16 +1475,41 @@ class PDFGraphRAG:
                                     await asyncio.sleep(60)
                                     pause_event.set()
                         else:
-                            print(f"SDE chunk {i}: all 3 attempts failed")
-                            raise
+                            print(f"SDE chunk {i}: all 3 attempts failed ({e})")
+                            return None
+            return None
 
         tasks = [
-            asyncio.create_task(limited(i, doc))
-            for i, doc in enumerate(documents)
+            asyncio.create_task(limited(i, doc)) for i, doc in enumerate(documents)
         ]
+        pass1 = await asyncio.gather(*tasks)
 
-        res = await asyncio.gather(*tasks)
-        return [r for r in res if r is not None]
+        successful: list[GraphDocument] = []
+        failed: list[tuple[int, Document]] = []
+        for i, r in enumerate(pass1):
+            if is_failed(r):
+                failed.append((i, documents[i]))
+            else:
+                successful.append(cast(GraphDocument, r))
+
+        if failed:
+            print(f"SDE: retrying {len(failed)} failed chunks: {[i for i,_ in failed]}")
+            retry_tasks = [asyncio.create_task(limited(i, doc)) for i, doc in failed]
+            pass2 = await asyncio.gather(*retry_tasks)
+
+            still_failed: list[int] = []
+            for (i, _), r in zip(failed, pass2):
+                if is_failed(r):
+                    still_failed.append(i)
+                else:
+                    successful.append(cast(GraphDocument, r))
+
+            if still_failed:
+                print(f"SDE: {len(still_failed)} chunks still failed after retry: {still_failed}")
+            else:
+                print("SDE: all retried chunks recovered")
+
+        return successful
 
 
 

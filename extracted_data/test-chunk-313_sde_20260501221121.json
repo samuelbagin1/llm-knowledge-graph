@@ -1,0 +1,796 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "62aa",
+        "type": "Paragraf",
+        "properties": {
+          "name": "62aa"
+        }
+      },
+      {
+        "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+        }
+      },
+      {
+        "id": "Europska Komisia",
+        "type": "Organizacia",
+        "properties": {
+          "name": "Europska komisia"
+        }
+      },
+      {
+        "id": "Agentura",
+        "type": "Agentura",
+        "properties": {
+          "name": "agentura"
+        }
+      },
+      {
+        "id": "Organ Zriadeny Podla Prava Europskej Unie",
+        "type": "Organizacia",
+        "properties": {
+          "name": "organ zriadeny podla prava Europskej unie"
+        }
+      },
+      {
+        "id": "Pandemia Ochorenia Covid-19",
+        "type": "Dovod",
+        "properties": {
+          "name": "pandemia ochorenia COVID-19"
+        }
+      },
+      {
+        "id": "Zdanitelne Nakupy Tovarov Alebo Sluzieb",
+        "type": "Sluzba",
+        "properties": {
+          "name": "zdanitelne nakupy tovarov alebo sluzieb"
+        }
+      },
+      {
+        "id": "Plnenie Uloh Zverenych Pravom Europskej Unie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "plnenie uloh zverenych pravom Europskej unie"
+        }
+      },
+      {
+        "id": "Zistene Dodatocne Dodanie Za Protihodnotu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "zistene dodatocne dodanie za protihodnotu"
+        }
+      },
+      {
+        "id": "Ziadost O Vratenie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "Ziadost o vratenie dane"
+        }
+      },
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad Bratislava"
+        }
+      },
+      {
+        "id": "Doklady O Kupe Tovarov A Sluzieb",
+        "type": "Doklad",
+        "properties": {
+          "name": "Doklady o kupe tovarov a sluzieb"
+        }
+      },
+      {
+        "id": "Suma Dane V Eurach",
+        "type": "Suma",
+        "properties": {
+          "name": "Suma dane v eurach"
+        }
+      },
+      {
+        "id": "60 dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "60 dni"
+        }
+      },
+      {
+        "id": "15 dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "15 dni"
+        }
+      },
+      {
+        "id": "Podanie Ziadosti O Vratenie Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "podanie ziadosti o vratenie dane"
+        }
+      },
+      {
+        "id": "Nadobudnutie Pravoplatnosti Rozhodnutia",
+        "type": "Cinnost",
+        "properties": {
+          "name": "nadobudnutie pravoplatnosti rozhodnutia"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Dan",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+          "page": 78
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "62aa",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62aa"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "maNazov": "§ 62aa - Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "maNarokNaVratenieDaneZVnutrostatnychNakupovTovarovAleboSluziebNesuvisiacichSDalsimDodanimZaProtihodnotu.": "ma narok na vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Europska Komisia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Europska komisia"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "semPatriEuropskaKomisia": "ano",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Agentura",
+          "type": "Agentura",
+          "properties": {
+            "name": "agentura"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "semPatriAgentura": "ano",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Organ Zriadeny Podla Prava Europskej Unie",
+          "type": "Organizacia",
+          "properties": {
+            "name": "organ zriadeny podla prava Europskej unie"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "semPatriOrganZriadenyPodlaPravaEuropskejUnie": "ano",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Plnenie Uloh Zverenych Pravom Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "plnenie uloh zverenych pravom Europskej unie"
+          }
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "podmienka": "urcene na plnenie uloh",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Zistene Dodatocne Dodanie Za Protihodnotu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zistene dodatocne dodanie za protihodnotu"
+          }
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "vynimka": "neplati ak sa pouzije na dalsie dodanie za protihodnotu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "uplatnenieNarokuPodanimZiadosti": "ano",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Doklady O Kupe Tovarov A Sluzieb",
+          "type": "Doklad",
+          "properties": {
+            "name": "Doklady o kupe tovarov a sluzieb"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "musiaSaDolozit": "ano",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklady O Kupe Tovarov A Sluzieb",
+          "type": "Doklad",
+          "properties": {
+            "name": "Doklady o kupe tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane v eurach"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "obsahujeSumuDaneVEurach": "ano",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "60 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "rozhodnutieDo": "60 dni od podania ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "15 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "15 dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "vratenieDaneDo": "15 dni od nadobudnutia pravoplatnosti rozhodnutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Podanie Ziadosti O Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podanie ziadosti o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "uplatnenieNaroku": "podanim ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "62aa",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62aa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Europskej Komisii, Agenture Alebo Organu Zriadeneho Podla Prava Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratenie dane Europskej komisii, agenture alebo organu zriadeneho podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Europska Komisia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Europska komisia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Agentura",
+          "type": "Agentura",
+          "properties": {
+            "name": "agentura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Organ Zriadeny Podla Prava Europskej Unie",
+          "type": "Organizacia",
+          "properties": {
+            "name": "organ zriadeny podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pandemia Ochorenia Covid-19",
+          "type": "Dovod",
+          "properties": {
+            "name": "pandemia ochorenia COVID-19"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelne Nakupy Tovarov Alebo Sluzieb",
+          "type": "Sluzba",
+          "properties": {
+            "name": "zdanitelne nakupy tovarov alebo sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Plnenie Uloh Zverenych Pravom Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "plnenie uloh zverenych pravom Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zistene Dodatocne Dodanie Za Protihodnotu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zistene dodatocne dodanie za protihodnotu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklady O Kupe Tovarov A Sluzieb",
+          "type": "Doklad",
+          "properties": {
+            "name": "Doklady o kupe tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane v eurach"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "60 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "15 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "15 dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podanie Ziadosti O Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podanie ziadosti o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Pravoplatnosti Rozhodnutia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "nadobudnutie pravoplatnosti rozhodnutia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "§ 62aa\nVrátenie dane Európskej komisii, agentúre\nalebo orgánu zriadenému podľa práva Európskej únie\n(1) Európska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie majú nárok na\nvrátenie dane z vnútroštátnych nákupov tovarov alebo služieb určených na plnenie úloh, ktoré im\nboli zverené právom Európskej únie, súvisiacich s pandémiou ochorenia COVID-19; to neplatí, ak\nEurópska komisia, agentúra alebo orgán zriadený podľa práva Európskej únie použije tovar alebo\nslužby okamžite alebo neskôr na účely ďalšieho dodania za protihodnotu.\n(2) Nárok na vrátenie dane podľa odseku 1 sa uplatňuje podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava. K žiadosti o vrátenie dane sa musia doložiť doklady o kúpe tovarov\na služieb, v ktorých je uvedená suma dane v eurách.\n(3) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do 60 dní od podania žiadosti\no vrátenie dane a vráti daň do 15 dní odo dňa nadobudnutia právoplatnosti tohto rozhodnutia.",
+            "page": 78
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

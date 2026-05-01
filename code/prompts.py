@@ -179,6 +179,7 @@ Extract a knowledge graph strictly using the provided schema.
 - If type not available → use closest OR skip.
 - Prefer MOST SPECIFIC type.
 - Use only Slovak language.
+- no diacritics (remove all diacritics from nodes id)
 
 ### COVERAGE
 Extract ALL:
@@ -200,6 +201,7 @@ time (`CasoveObdobie`), rights, obligations, amounts.
 - only allowed types
 - correct direction
 - exact match required
+- add concise, explicit semantic clarification into relationship properties (`MA_NAROK_NA` → `add: vratenie dane`), use key `add`
 
 ### FORMAT
 - NO DIACRITICS

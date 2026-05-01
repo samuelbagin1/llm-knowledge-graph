@@ -1,0 +1,1105 @@
+{
+  "node_types": [
+    "Adresa",
+    "Agentura",
+    "Banka",
+    "BankovyUcet",
+    "Bod",
+    "CasovyUdaj",
+    "Cinnost",
+    "Cislo",
+    "ClenSkupiny",
+    "ClenskyStat",
+    "Dan",
+    "DanovePriznanie",
+    "Datum",
+    "Doklad",
+    "Dovod",
+    "ElektronickyProstriedok",
+    "Euro",
+    "FinancneRiaditelstvo",
+    "FyzickaOsoba",
+    "Hodnota",
+    "IdentifikacneCislo",
+    "InvesticnyMajetok",
+    "Konanie",
+    "Kurz",
+    "Lehota",
+    "Limit",
+    "Lokacia",
+    "Majetok",
+    "Mena",
+    "Ministerstvo",
+    "Mnozstvo",
+    "NadmernyOdpocet",
+    "Nariadenie",
+    "NarodnaBanka",
+    "Nehnutelnost",
+    "Obrat",
+    "Obdobie",
+    "Odsek",
+    "Oprava",
+    "Organizacia",
+    "OslobodenieOdDane",
+    "Osoba",
+    "Oznamenie",
+    "Paragraf",
+    "Pismeno",
+    "Pohladavka",
+    "Pokuta",
+    "Podmienka",
+    "Podnik",
+    "Poukaz",
+    "Povinnost",
+    "Pravo",
+    "PravnickaOsoba",
+    "PravnyNastupca",
+    "PravnyPredpis",
+    "Prevadzkaren",
+    "Priloha",
+    "Registracia",
+    "Rozhodnutie",
+    "SadzbaDane",
+    "Sankcia",
+    "Sidlo",
+    "Skupina",
+    "Sluzba",
+    "Smernica",
+    "SpotrebnaDan",
+    "SpravcaDane",
+    "Stat",
+    "StatnyOrgan",
+    "Status",
+    "Stavba",
+    "Subjekt",
+    "Sud",
+    "Suma",
+    "Tovar",
+    "TretiStat",
+    "Tuzemsko",
+    "Ucet",
+    "Urad",
+    "Urok",
+    "Uzemie",
+    "Vozidlo",
+    "Vyhlaska",
+    "Vypocet",
+    "Vyzva",
+    "ZabezpekaNaDan",
+    "Zakon",
+    "Zasielka",
+    "Zastupca",
+    "Zavazok",
+    "Zaznam",
+    "ZdanitelnaOsoba",
+    "ZdanovacieObdobie",
+    "Ziadost",
+    "Zlava",
+    "Zmluva",
+    "Zodpovednost"
+  ],
+  "relationship_types": [
+    "APLIKUJE_SA_NA",
+    "DEFINUJE",
+    "DODA",
+    "DODAVA",
+    "DOPLNA",
+    "DORUCUJE",
+    "JE_CASTOU",
+    "JE_CLENOM",
+    "JE_DRUHOM",
+    "JE_OSLOBODENE_OD",
+    "JE_PODLA",
+    "JE_POVINNY_PLATIT",
+    "JE_PREDMETOM",
+    "JE_SUCASTOU",
+    "JE_TYPOM",
+    "JE_ZASTUPENA",
+    "KONA_V_MENE",
+    "MA_ADRESU",
+    "MA_BYDLISKO",
+    "MA_CENU",
+    "MA_DATUM",
+    "MA_DOBU",
+    "MA_DOKLAD",
+    "MA_DOVOD",
+    "MA_HODNOTU",
+    "MA_IDENTIFIKACNE_CISLO",
+    "MA_LEHOTU",
+    "MA_MIESTO",
+    "MA_MIESTO_DODANIA",
+    "MA_MIESTO_PODNIKANIA",
+    "MA_MNOZSTVO",
+    "MA_NAROK_NA",
+    "MA_NAZOV",
+    "MA_OBDOBIE",
+    "MA_OBSAH",
+    "MA_ODKLADNY_UCINOK",
+    "MA_ODSEK",
+    "MA_PISMENO",
+    "MA_PODMIENKU",
+    "MA_POVINNOST",
+    "MA_PRAVO",
+    "MA_PREVADZKAREN",
+    "MA_SADZBU",
+    "MA_SIDLO",
+    "MA_STATUS",
+    "MA_SUMU",
+    "MA_UCEL",
+    "MA_UCINOK",
+    "MA_VLASTNOST",
+    "MA_VYNIMKU",
+    "MA_ZAKLAD_DANE",
+    "MA_ZASTUPCU",
+    "NADOBUDA",
+    "NACHADZA_SA_V",
+    "NAHRADZA",
+    "NASTAVA_PRI",
+    "NEMA_NAROK_NA",
+    "NEPLATI_PRE",
+    "NESPLNA_PODMIENKY",
+    "NEVZTAHUJE_SA_NA",
+    "OBSAHUJE",
+    "ODKAZUJE_NA",
+    "OPRAVUJE",
+    "OSLOBODZUJE_OD",
+    "OZNAMUJE",
+    "PATRI_DO",
+    "PLATI_DO",
+    "PLATI_OD",
+    "PLATI_PRE",
+    "PODAVA",
+    "PODLIEHA",
+    "PODMIENUJE",
+    "POSKYTUJE",
+    "POVAZUJE_SA_ZA",
+    "PRECHADZA_NA",
+    "PREDKLADA",
+    "PRESAHUJE",
+    "PREUKAZUJE",
+    "PRIJIMA",
+    "PRIDELUJE",
+    "REGISTRUJE",
+    "ROZHODUJE_O",
+    "ROZUMIE_SA",
+    "RUSI",
+    "SPADA_POD",
+    "SPLNA_PODMIENKY",
+    "STAVA_SA",
+    "SUVISI_S",
+    "TYKA_SA",
+    "UCHOVAVA",
+    "UPRAVUJE",
+    "URCUJE",
+    "USKUTOCNUJE",
+    "UVADZA",
+    "VIES_ZAZNAMY_O",
+    "VYDAVA",
+    "VYCHADZA_Z",
+    "VYKONAVA",
+    "VYMEDZUJE",
+    "VYPLNYVA_Z",
+    "VZTAHUJE_SA_NA",
+    "VZNIKA_PRI",
+    "ZAHRNUJE",
+    "ZANIKA",
+    "ZAPLATI",
+    "ZODPOVEDA_ZA",
+    "ZRUSUJE"
+  ],
+  "merge_log": {
+    "node_types": {
+      "Adresa": [
+        "Adresa"
+      ],
+      "Agentura": [
+        "Agentura"
+      ],
+      "Banka": [
+        "Banka"
+      ],
+      "BankovyUcet": [
+        "BankovyUcet"
+      ],
+      "Bod": [
+        "Bod"
+      ],
+      "CasovyUdaj": [
+        "CasovyUdaj",
+        "Den",
+        "KalendarnyDen",
+        "KalendarnyStvrtrok",
+        "PracovnyDen"
+      ],
+      "Cinnost": [
+        "Cinnost",
+        "EkonomickaCinnost",
+        "TazobnaCinnost",
+        "StavebnaCinnost",
+        "PolnohospodarskaCinnost",
+        "DusevnaTvorivaCinnost",
+        "SportovaCinnost",
+        "HlavnaCinnost",
+        "RealitnaCinnost",
+        "CinnostZnalcov",
+        "PripravaStavebnychPrac",
+        "KoordinaciaStavebnychPrac",
+        "ObchodnaCinnost",
+        "PriemyselnaCinnost",
+        "RybarskaCinnost",
+        "HumanitarnaCinnost",
+        "DobrocinnaCinnost",
+        "VzdelavaciaCinnost",
+        "ZmenarenskaCinnost",
+        "VykonavanieCinnosti",
+        "VykonavaniePodnikania",
+        "ObrannaCinnost",
+        "PodnikatelskaCinnost",
+        "ZacatieCinnosti",
+        "SkoncenieCinnosti"
+      ],
+      "Cislo": [
+        "Cislo"
+      ],
+      "ClenSkupiny": [
+        "ClenSkupiny",
+        "ZanikClenaSkupiny"
+      ],
+      "ClenskyStat": [
+        "ClenskyStat",
+        "ClenskyStát",
+        "ClenskyStaat",
+        "CudzinnyClenskyStat",
+        "ClenskyStati",
+        "InyClenskyStat",
+        "ClenSkyStat"
+      ],
+      "Dan": [
+        "Dan",
+        "Daň",
+        "Dane",
+        "SumaDane"
+      ],
+      "DanovePriznanie": [
+        "DanovePriznanie",
+        "DodatocneDanovePriznanie",
+        "DaňovePriznanie"
+      ],
+      "Datum": [
+        "Datum"
+      ],
+      "Doklad": [
+        "Doklad",
+        "Faktura",
+        "DokladOPredaji",
+        "ZjednodusenaFaktura",
+        "OpravnyDoklad",
+        "DokladORegistracii",
+        "DokladOKupe",
+        "DokladOVyk u pe",
+        "DovoznyDoklad",
+        "PredajnyDoklad",
+        "Potvrdenie",
+        "DokladOPreposaveTovaru",
+        "OsvedcenieORegistracii",
+        "Pisemnost",
+        "Tlacivo",
+        "ListinnaForma",
+        "ElektronickaForma"
+      ],
+      "Dovod": [
+        "Dovod"
+      ],
+      "ElektronickyProstriedok": [
+        "ElektronickyProstriedok",
+        "ElektronickeKomunikacneRozhranie",
+        "ElektronickeTrhovisko",
+        "ElektronickaPlatforma",
+        "ElektronickyPortal"
+      ],
+      "Euro": [
+        "Euro",
+        "Eur"
+      ],
+      "FinancneRiaditelstvo": [
+        "FinancneRiaditelstvo"
+      ],
+      "FyzickaOsoba": [
+        "FyzickaOsoba"
+      ],
+      "Hodnota": [
+        "Hodnota",
+        "Protihodnota",
+        "HodnotaBezDane",
+        "Cena",
+        "KupnaCena",
+        "TrhovaHodnota",
+        "PenaznaHodnota",
+        "Suma"
+      ],
+      "IdentifikacneCislo": [
+        "IdentifikacneCislo",
+        "IdentifikacneCisloPreDan",
+        "DanoveIdentifikacneCislo",
+        "OsobitneIdentifikacneCisloPreDan",
+        "EvidencneIdentifikacneCislo"
+      ],
+      "InvesticnyMajetok": [
+        "InvesticnyMajetok"
+      ],
+      "Konanie": [
+        "Konanie",
+        "RegistacneKonanie",
+        "RegistracneKonanie",
+        "SudneKonanie",
+        "ExekucneKonanie",
+        "KonkurzneKonanie",
+        "RestrukturalizacneKonanie",
+        "DedicskeKonanie"
+      ],
+      "Kurz": [
+        "Kurz",
+        "ReferencnyVymennyKurz",
+        "KonverznyKurz"
+      ],
+      "Lehota": [
+        "Lehota",
+        "Lhota",
+        "CasovaLehota"
+      ],
+      "Limit": [
+        "Limit",
+        "PenaznyLimit",
+        "CelorocnyLimit"
+      ],
+      "Lokacia": [
+        "Lokacia",
+        "Miesto",
+        "MiestoPodnikania",
+        "Bydlisko",
+        "MiestoPobytu",
+        "TrvalyPobyt"
+      ],
+      "Majetok": [
+        "Majetok",
+        "HmotnyMajetok",
+        "NehmotnyMajetok",
+        "InvesticnyZlato"
+      ],
+      "Mena": [
+        "Mena",
+        "CudziaMena"
+      ],
+      "Ministerstvo": [
+        "Ministerstvo",
+        "MinisterstvoFinancii",
+        "MinisterstvoObrany"
+      ],
+      "Mnozstvo": [
+        "Mnozstvo"
+      ],
+      "NadmernyOdpocet": [
+        "NadmernyOdpocet"
+      ],
+      "Nariadenie": [
+        "Nariadenie",
+        "NariadenieEU",
+        "VykonavacieNariadenie"
+      ],
+      "NarodnaBanka": [
+        "NarodnaBanka",
+        "NarodnaBankaSlovenska",
+        "EuropskaCentralnaBanka"
+      ],
+      "Nehnutelnost": [
+        "Nehnutelnost",
+        "StavebnyPozemok",
+        "Byt",
+        "NebytovyPriestor",
+        "RodinnyDom",
+        "BytovyDom"
+      ],
+      "Obrat": [
+        "Obrat",
+        "PresiahnutieObratu",
+        "RocnyObrat"
+      ],
+      "Obdobie": [
+        "Obdobie",
+        "CasoveObdobie",
+        "UctovneObdobie",
+        "HospodarskyRok"
+      ],
+      "Odsek": [
+        "Odsek",
+        "Odstavec"
+      ],
+      "Oprava": [
+        "Oprava",
+        "OpravaZakladuDane",
+        "OpravaOdpoctanejDane"
+      ],
+      "Organizacia": [
+        "Organizacia",
+        "RozpoctovaOrganizacia",
+        "PolitickaStrana",
+        "Cirkev",
+        "ObcianskeZdruzenie",
+        "OdborovaOrganizacia",
+        "MedzinarodnaOrganizacia",
+        "NeziskovaOrganizacia",
+        "CharitativnaOrganizacia"
+      ],
+      "OslobodenieOdDane": [
+        "OslobodenieOdDane",
+        "Oslobodenie",
+        "OslobodenieOdCla",
+        "OslodenieOdDane"
+      ],
+      "Osoba": [
+        "Osoba",
+        "Kupujuci",
+        "Dodavatel",
+        "Odberatel",
+        "Prijemca",
+        "Dlznik",
+        "Veritel",
+        "Zamestnanec",
+        "Manzel",
+        "Zakaznik",
+        "Dedic",
+        "Porucitel",
+        "Cestujuci",
+        "Student",
+        "Obcan",
+        "Splnomocnenec"
+      ],
+      "Oznamenie": [
+        "Oznamenie"
+      ],
+      "Paragraf": [
+        "Paragraf",
+        "§"
+      ],
+      "Pismeno": [
+        "Pismeno"
+      ],
+      "Pohladavka": [
+        "Pohladavka",
+        "NevymahatelnaPohladavka"
+      ],
+      "Pokuta": [
+        "Pokuta"
+      ],
+      "Podmienka": [
+        "Podmienka",
+        "PodmienkaRegistracie"
+      ],
+      "Podnik": [
+        "Podnik",
+        "MalyPodnik",
+        "SocialnyPodnik"
+      ],
+      "Poukaz": [
+        "Poukaz",
+        "JednoucelovyPoukaz",
+        "ViacucelovyPoukaz"
+      ],
+      "Povinnost": [
+        "Povinnost",
+        "RegistracnaPovinnost",
+        "DanovaPovinnost",
+        "OznamovaciaPovinnost"
+      ],
+      "Pravo": [
+        "Pravo",
+        "Narok",
+        "PravoNaOdpoctenieDane"
+      ],
+      "PravnickaOsoba": [
+        "PravnickaOsoba",
+        "ObchodnaSpolocnost",
+        "Druzstvo",
+        "CestovnaKancelaria"
+      ],
+      "PravnyNastupca": [
+        "PravnyNastupca"
+      ],
+      "PravnyPredpis": [
+        "PravnyPredpis",
+        "OsobitnyPredpis",
+        "ColnyPredpis",
+        "ZakonnaUprava",
+        "ZakonneUstanovenie",
+        "PravneUstanovenie",
+        "Zakonn",
+        "DoterajsiePredpisy"
+      ],
+      "Prevadzkaren": [
+        "Prevadzkaren"
+      ],
+      "Priloha": [
+        "Priloha"
+      ],
+      "Registracia": [
+        "Registracia",
+        "RegistraciaPreDan",
+        "DanovaRegistracia",
+        "ZrusenieRegistracie"
+      ],
+      "Rozhodnutie": [
+        "Rozhodnutie",
+        "Uznesenie"
+      ],
+      "SadzbaDane": [
+        "SadzbaDane",
+        "Sadzba"
+      ],
+      "Sankcia": [
+        "Sankcia"
+      ],
+      "Sidlo": [
+        "Sidlo",
+        "Sidlom",
+        "Sídlo"
+      ],
+      "Skupina": [
+        "Skupina"
+      ],
+      "Sluzba": [
+        "Sluzba",
+        "DodanieSluzby",
+        "FinancnaSluzba",
+        "PojistovaciaSluzba",
+        "SprostredkovatelskaSluzba",
+        "RestauracnaSluzba",
+        "StravovaciaSluzba",
+        "UbytovaciaSluzba",
+        "TelekomunikacnaSluzba",
+        "ElektronickaSluzba",
+        "ZdravotnaStarostlivost",
+        "SocialnaPomoc",
+        "VzdelavaciaSluzba",
+        "KulturnaSluzba",
+        "SluzbaCestovnehoRuchu",
+        "PostovaSluzba"
+      ],
+      "Smernica": [
+        "Smernica",
+        "SmernicaRadyEU",
+        "SmernicaEU"
+      ],
+      "SpotrebnaDan": [
+        "SpotrebnaDan"
+      ],
+      "SpravcaDane": [
+        "SpravcaDane"
+      ],
+      "Stat": [
+        "Stat"
+      ],
+      "StatnyOrgan": [
+        "StatnyOrgan",
+        "OrganVerejnejMoci",
+        "NarodnaRada"
+      ],
+      "Status": [
+        "Status",
+        "PravnyStatus"
+      ],
+      "Stavba": [
+        "Stavba",
+        "CastStavby"
+      ],
+      "Subjekt": [
+        "Subjekt",
+        "DanovySubjekt"
+      ],
+      "Sud": [
+        "Sud"
+      ],
+      "Suma": [
+        "DlznaSumaDane"
+      ],
+      "Tovar": [
+        "Tovar",
+        "DodanieTovaru",
+        "NadobudnutieTovaru",
+        "DovozTovaru",
+        "PredmetDane",
+        "NovyDopravnyProstriedok",
+        "Plyn",
+        "Elektrina",
+        "Voda",
+        "Teplo",
+        "Chlad",
+        "Zlato",
+        "UmeleckeDielo",
+        "ZberatelskyPredmet",
+        "Starozitnost",
+        "PouzityTovar",
+        "PohonnaLatka",
+        "Liek"
+      ],
+      "TretiStat": [
+        "TretiStat",
+        "Zahranicie",
+        "TretiaKrajina"
+      ],
+      "Tuzemsko": [
+        "Tuzemsko"
+      ],
+      "Ucet": [
+        "Ucet",
+        "PlatobnyUcet"
+      ],
+      "Urad": [
+        "Urad",
+        "DanovyUrad",
+        "ColnyUrad",
+        "ColnyOrgan",
+        "StavebnyUrad"
+      ],
+      "Urok": [
+        "Urok",
+        "UrokZOmeskania"
+      ],
+      "Uzemie": [
+        "Uzemie",
+        "UzemieEuropskejUnie",
+        "UzemieSpolocenstva"
+      ],
+      "Vozidlo": [
+        "Vozidlo",
+        "DopravnyProstriedok",
+        "Lietadlo",
+        "Lod",
+        "Vlak",
+        "Plavidlo",
+        "OsobnyAutomobil"
+      ],
+      "Vyhlaska": [
+        "Vyhlaska"
+      ],
+      "Vypocet": [
+        "Vypocet"
+      ],
+      "Vyzva": [
+        "Vyzva",
+        "Výzva"
+      ],
+      "ZabezpekaNaDan": [
+        "ZabezpekaNaDan"
+      ],
+      "Zakon": [
+        "Zakon",
+        "ZbierkaZakonov",
+        "ObcianskyZakonnik"
+      ],
+      "Zasielka": [
+        "Zasielka"
+      ],
+      "Zastupca": [
+        "Zastupca",
+        "ZastupcaSkupiny",
+        "DanovyZastupca"
+      ],
+      "Zavazok": [
+        "Zavazok",
+        "PeniaznyZavazok"
+      ],
+      "Zaznam": [
+        "Zaznam"
+      ],
+      "ZdanitelnaOsoba": [
+        "ZdanitelnaOsoba",
+        "PlatitelDane",
+        "Platitel",
+        "ZahranicnaOsoba",
+        "DanovaOsoba",
+        "Dovozca"
+      ],
+      "ZdanovacieObdobie": [
+        "ZdanovacieObdobie",
+        "KalendarnyRok",
+        "KalendarnyMesiac"
+      ],
+      "Ziadost": [
+        "Ziadost",
+        "ZiadostORegistraciuPreDan",
+        "ZiadostOVratenieDane"
+      ],
+      "Zlava": [
+        "Zlava"
+      ],
+      "Zmluva": [
+        "Zmluva",
+        "KupnaZmluva",
+        "NajomnaZmluva",
+        "ZmluvaODielo",
+        "KomisionarskaZmluva",
+        "Dohoda"
+      ],
+      "Zodpovednost": [
+        "Zodpovednost"
+      ]
+    },
+    "relationship_types": {
+      "APLIKUJE_SA_NA": [
+        "APLIKUJE_SA_NA",
+        "UPLATNUJE_SA_NA"
+      ],
+      "DEFINUJE": [
+        "DEFINUJE",
+        "VYMEDZUJE"
+      ],
+      "DODA": [
+        "DODA"
+      ],
+      "DODAVA": [
+        "DODAVA"
+      ],
+      "DOPLNA": [
+        "DOPLNA",
+        "DOPLNUJE"
+      ],
+      "DORUCUJE": [
+        "DORUCUJE"
+      ],
+      "JE_CASTOU": [
+        "JE_CASTOU"
+      ],
+      "JE_CLENOM": [
+        "JE_CLENOM"
+      ],
+      "JE_DRUHOM": [
+        "JE_DRUHOM"
+      ],
+      "JE_OSLOBODENE_OD": [
+        "JE_OSLOBODENE_OD",
+        "JE_OSLOBODENY_OD"
+      ],
+      "JE_PODLA": [
+        "JE_PODLA"
+      ],
+      "JE_POVINNY_PLATIT": [
+        "JE_POVINNY_PLATIT"
+      ],
+      "JE_PREDMETOM": [
+        "JE_PREDMETOM",
+        "JE_PREDMETOM_DANE"
+      ],
+      "JE_SUCASTOU": [
+        "JE_SUCASTOU",
+        "TVORI_CAST"
+      ],
+      "JE_TYPOM": [
+        "JE_TYPOM"
+      ],
+      "JE_ZASTUPENA": [
+        "JE_ZASTUPENA"
+      ],
+      "KONA_V_MENE": [
+        "KONA_V_MENE"
+      ],
+      "MA_ADRESU": [
+        "MA_ADRESU"
+      ],
+      "MA_BYDLISKO": [
+        "MA_BYDLISKO",
+        "MA_BYDLISKO_V"
+      ],
+      "MA_CENU": [
+        "MA_CENU"
+      ],
+      "MA_DATUM": [
+        "MA_DATUM"
+      ],
+      "MA_DOBU": [
+        "MA_DOBU"
+      ],
+      "MA_DOKLAD": [
+        "MA_DOKLAD"
+      ],
+      "MA_DOVOD": [
+        "MA_DOVOD"
+      ],
+      "MA_HODNOTU": [
+        "MA_HODNOTU"
+      ],
+      "MA_IDENTIFIKACNE_CISLO": [
+        "MA_IDENTIFIKACNE_CISLO",
+        "MA_IDENTIFIKACNE_CISLO_PRE_DAN"
+      ],
+      "MA_LEHOTU": [
+        "MA_LEHOTU"
+      ],
+      "MA_MIESTO": [
+        "MA_MIESTO"
+      ],
+      "MA_MIESTO_DODANIA": [
+        "MA_MIESTO_DODANIA"
+      ],
+      "MA_MIESTO_PODNIKANIA": [
+        "MA_MIESTO_PODNIKANIA",
+        "MA_MIESTO_PODNIKANIA_V"
+      ],
+      "MA_MNOZSTVO": [
+        "MA_MNOZSTVO"
+      ],
+      "MA_NAROK_NA": [
+        "MA_NAROK_NA"
+      ],
+      "MA_NAZOV": [
+        "MA_NAZOV"
+      ],
+      "MA_OBDOBIE": [
+        "MA_OBDOBIE"
+      ],
+      "MA_OBSAH": [
+        "MA_OBSAH"
+      ],
+      "MA_ODKLADNY_UCINOK": [
+        "MA_ODKLADNY_UCINOK"
+      ],
+      "MA_ODSEK": [
+        "MA_ODSEK"
+      ],
+      "MA_PISMENO": [
+        "MA_PISMENO"
+      ],
+      "MA_PODMIENKU": [
+        "MA_PODMIENKU"
+      ],
+      "MA_POVINNOST": [
+        "MA_POVINNOST",
+        "MA_POVINNOST_PLATIT_DAN",
+        "JE_POVINNA_PLATIT_DAN"
+      ],
+      "MA_PRAVO": [
+        "MA_PRAVO"
+      ],
+      "MA_PREVADZKAREN": [
+        "MA_PREVADZKAREN",
+        "MA_PREVADZKAREN_V"
+      ],
+      "MA_SADZBU": [
+        "MA_SADZBU"
+      ],
+      "MA_SIDLO": [
+        "MA_SIDLO",
+        "MA_SIDLO_V"
+      ],
+      "MA_STATUS": [
+        "MA_STATUS"
+      ],
+      "MA_SUMU": [
+        "MA_SUMU"
+      ],
+      "MA_UCEL": [
+        "MA_UCEL"
+      ],
+      "MA_UCINOK": [
+        "MA_UCINOK"
+      ],
+      "MA_VLASTNOST": [
+        "MA_VLASTNOST"
+      ],
+      "MA_VYNIMKU": [
+        "MA_VYNIMKU"
+      ],
+      "MA_ZAKLAD_DANE": [
+        "MA_ZAKLAD_DANE"
+      ],
+      "MA_ZASTUPCU": [
+        "MA_ZASTUPCU"
+      ],
+      "NADOBUDA": [
+        "NADOBUDA",
+        "NADOBUDA_VLASTNICKE_PRAVO"
+      ],
+      "NACHADZA_SA_V": [
+        "NACHADZA_SA_V",
+        "V_TUZEMSKU",
+        "Z_INEHO_CLENSKEHO_STATU"
+      ],
+      "NAHRADZA": [
+        "NAHRADZA"
+      ],
+      "NASTAVA_PRI": [
+        "NASTAVA_PRI"
+      ],
+      "NEMA_NAROK_NA": [
+        "NEMA_NAROK_NA"
+      ],
+      "NEPLATI_PRE": [
+        "NEPLATI_PRE"
+      ],
+      "NESPLNA_PODMIENKY": [
+        "NESPLNA_PODMIENKY",
+        "NESPLNIL_PODMIENKY"
+      ],
+      "NEVZTAHUJE_SA_NA": [
+        "NEVZTAHUJE_SA_NA"
+      ],
+      "OBSAHUJE": [
+        "OBSAHUJE"
+      ],
+      "ODKAZUJE_NA": [
+        "ODKAZUJE_NA",
+        "ODKAZUJE_NA_PARAGRAF",
+        "ODKAZUJE_NA_ODSEK",
+        "ODKAZUJE_NA_PISMENO"
+      ],
+      "OPRAVUJE": [
+        "OPRAVUJE"
+      ],
+      "OSLOBODZUJE_OD": [
+        "OSLOBODZUJE_OD",
+        "OSLOBODZUJE_OD_DANE"
+      ],
+      "OZNAMUJE": [
+        "OZNAMUJE",
+        "MA_POVINNOST_OZNAMIT"
+      ],
+      "PATRI_DO": [
+        "PATRI_DO"
+      ],
+      "PLATI_DO": [
+        "PLATI_DO"
+      ],
+      "PLATI_OD": [
+        "PLATI_OD"
+      ],
+      "PLATI_PRE": [
+        "PLATI_PRE"
+      ],
+      "PODAVA": [
+        "PODAVA",
+        "PODA"
+      ],
+      "PODLIEHA": [
+        "PODLIEHA"
+      ],
+      "PODMIENUJE": [
+        "PODMIENUJE",
+        "JE_PODMIENENE"
+      ],
+      "POSKYTUJE": [
+        "POSKYTUJE"
+      ],
+      "POVAZUJE_SA_ZA": [
+        "POVAZUJE_SA_ZA",
+        "POVAZUJE_ZA"
+      ],
+      "PRECHADZA_NA": [
+        "PRECHADZA_NA"
+      ],
+      "PREDKLADA": [
+        "PREDKLADA"
+      ],
+      "PRESAHUJE": [
+        "PRESAHUJE",
+        "PRESIAHNE"
+      ],
+      "PREUKAZUJE": [
+        "PREUKAZUJE"
+      ],
+      "PRIJIMA": [
+        "PRIJIMA"
+      ],
+      "PRIDELUJE": [
+        "PRIDELUJE"
+      ],
+      "REGISTRUJE": [
+        "REGISTRUJE",
+        "REGISTRUJE_PRE_DAN"
+      ],
+      "ROZHODUJE_O": [
+        "ROZHODUJE_O"
+      ],
+      "ROZUMIE_SA": [
+        "ROZUMIE_SA"
+      ],
+      "RUSI": [
+        "RUSI"
+      ],
+      "SPADA_POD": [
+        "SPADA_POD"
+      ],
+      "SPLNA_PODMIENKY": [
+        "SPLNA_PODMIENKY"
+      ],
+      "STAVA_SA": [
+        "STAVA_SA",
+        "STANE_SA"
+      ],
+      "SUVISI_S": [
+        "SUVISI_S",
+        "SPOJENA_S"
+      ],
+      "TYKA_SA": [
+        "TYKA_SA"
+      ],
+      "UCHOVAVA": [
+        "UCHOVAVA"
+      ],
+      "UPRAVUJE": [
+        "UPRAVUJE"
+      ],
+      "URCUJE": [
+        "URCUJE"
+      ],
+      "USKUTOCNUJE": [
+        "USKUTOCNUJE"
+      ],
+      "UVADZA": [
+        "UVADZA"
+      ],
+      "VIES_ZAZNAMY_O": [
+        "VIES_ZAZNAMY_O",
+        "VEDIE_ZAZNAMY_O"
+      ],
+      "VYDAVA": [
+        "VYDAVA",
+        "VYDA"
+      ],
+      "VYCHADZA_Z": [
+        "VYCHADZA_Z"
+      ],
+      "VYKONAVA": [
+        "VYKONAVA"
+      ],
+      "VYMEDZUJE": [],
+      "VYPLNYVA_Z": [
+        "VYPLNYVA_Z",
+        "VYPLIVA_Z"
+      ],
+      "VZTAHUJE_SA_NA": [
+        "VZTAHUJE_SA_NA",
+        "SA_VZTAHUJE_NA"
+      ],
+      "VZNIKA_PRI": [
+        "VZNIKA_PRI",
+        "VZNIKA_DNOM"
+      ],
+      "ZAHRNUJE": [
+        "ZAHRNUJE"
+      ],
+      "ZANIKA": [
+        "ZANIKA",
+        "ZANIKOL_BEZ_LIKVIDACIE"
+      ],
+      "ZAPLATI": [
+        "ZAPLATI"
+      ],
+      "ZODPOVEDA_ZA": [
+        "ZODPOVEDA_ZA",
+        "ZODPOVEDA_SPOLOCNE_A_NEROZDIELNE"
+      ],
+      "ZRUSUJE": [
+        "ZRUSUJE"
+      ]
+    }
+  }
+}

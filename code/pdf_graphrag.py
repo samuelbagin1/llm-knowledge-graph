@@ -17,6 +17,13 @@ from langchain.tools import tool
 from langchain.agents import create_agent
 from langchain.agents.structured_output import ProviderStrategy, ToolStrategy
 from openai import embeddings
+from openai import (
+    APIConnectionError,
+    APITimeoutError,
+    BadRequestError,
+    InternalServerError,
+    RateLimitError,
+)
 from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter, SpacyTextSplitter
 import spacy
 
@@ -109,6 +116,22 @@ def format_relationship_type(rel_type: str) -> str:
     if not rel_type:
         return "RELATED_TO"
     return rel_type.strip().replace(" ", "_").upper()
+
+
+def sanitize_property_keys(raw_properties: dict) -> dict:
+    """Format property keys; replace any that come out empty with col_<index>.
+
+    Neo4j rejects empty or whitespace-only property names with a TokenNameError.
+    LLM-extracted tables can produce empty keys when the source <th> is blank
+    (common in merged-header tables), so we substitute a positional placeholder.
+    """
+    sanitized: dict = {}
+    for i, (k, v) in enumerate(raw_properties.items()):
+        formatted = format_property_key(k) if isinstance(k, str) else str(k)
+        if not formatted or not formatted.strip():
+            formatted = f"col_{i}"
+        sanitized[formatted] = v
+    return sanitized
 
 
 def graph_document_to_json(graph_doc: "GraphDocument") -> dict:
@@ -324,16 +347,30 @@ class PDFGraphRAG:
                 
                 
     def get_graph_schema(self) -> Schema:
-        # Get node labels and relationship types
-        node_labels = self.graph.query("CALL db.labels()")
-        rel_types = self.graph.query("CALL db.relationshipTypes()")
-        
-        schema = Schema(
-            nodes=[node['label'] for node in node_labels],
-            relationships=[rel['relationshipType'] for rel in rel_types]
-        )
-        
-        return schema
+        """
+        Read existing node labels and relationship types from Neo4j.
+
+        Read-only auxiliary call: on any Neo4j failure, returns an empty
+        Schema rather than raising — empty existing-schema is a valid
+        first-run state, handled downstream by schema_refinement.
+        """
+        try:
+            node_labels = self.graph.query("CALL db.labels()")
+            rel_types = self.graph.query("CALL db.relationshipTypes()")
+        except Exception as e:
+            print(f"[get_graph_schema] Neo4j read failed: {e}; returning empty Schema")
+            return Schema(nodes=[], relationships=[])
+
+        nodes = [
+            n['label'] for n in (node_labels or [])
+            if isinstance(n, dict) and isinstance(n.get('label'), str)
+        ]
+        rels = [
+            r['relationshipType'] for r in (rel_types or [])
+            if isinstance(r, dict) and isinstance(r.get('relationshipType'), str)
+        ]
+
+        return Schema(nodes=nodes, relationships=rels)
                 
                 
                 
@@ -456,12 +493,9 @@ class PDFGraphRAG:
             # Format node type with fallback
             node_type = format_node_type(node_data.get("label") or node_data.get("type"))
 
-            # Format property keys to camelCase
+            # Format property keys to camelCase; rename empty keys to col_<i>
             raw_properties = node_data.get("properties", {})
-            formatted_properties = {
-                format_property_key(k): v
-                for k, v in raw_properties.items()
-            } if raw_properties else {}
+            formatted_properties = sanitize_property_keys(raw_properties) if raw_properties else {}
 
             # Normalize node ID (title case for consistency)
             normalized_id = str(node_id).strip()
@@ -499,7 +533,7 @@ class PDFGraphRAG:
                 # Format relationship properties
                 raw_rel_props = rel_data.get("properties", {})
                 formatted_rel_props = {
-                    **{format_property_key(k): v for k, v in raw_rel_props.items()},
+                    **sanitize_property_keys(raw_rel_props),
                     "document_id": document_id
                 }
 
@@ -531,9 +565,119 @@ class PDFGraphRAG:
         
         
         
+    def _convert_table_to_graph_document(self, data, i, document, document_id) -> GraphDocument:
+        """
+        Convert extracted data into a GraphDocument.
+
+        Includes:
+        - Property key formatting (camelCase)
+        - Validation for missing node IDs (skips invalid nodes)
+        - Node type fallback to DEFAULT_NODE_TYPE
+        - Relationship type normalization
+        """
+        nodes = []
+        relationships = []
+
+        # Process nodes with validation and formatting
+        for node_data in data.get("nodes", []):
+            # Skip nodes without valid IDs
+            node_id = node_data.get("id")
+            if not node_id or not str(node_id).strip():
+                continue
+
+            # Format node type with fallback
+            node_type = format_node_type(node_data.get("label") or node_data.get("type"))
+
+            # Format property keys to camelCase; rename empty keys to col_<i>
+            raw_properties = node_data.get("properties", {})
+            if node_type == "Tabulka":
+                formatted_properties = {
+                    **sanitize_property_keys(raw_properties),
+                    "document_id": document_id,
+                    "html": document.page_content,
+                    "page": document.metadata.get("page_range")
+                }
+            else:
+                formatted_properties = sanitize_property_keys(raw_properties) if raw_properties else {}
+
+            # Normalize node ID (title case for consistency)
+            normalized_id = str(node_id).strip()
+            if normalized_id and not normalized_id[0].isdigit():
+                normalized_id = normalized_id.title()
+
+            node = Node(
+                id=normalized_id,
+                type=node_type,
+                properties=formatted_properties
+            )
+            nodes.append(node)
+            
+            
+
+        # Process relationships with validation and formatting
+        for rel_data in data.get("relationships", []):
+            source_id = rel_data.get("source_node_id")
+            target_id = rel_data.get("target_node_id")
+            rel_type = rel_data.get("relation") or rel_data.get("type")
+
+            # Skip relationships with missing mandatory fields
+            if not source_id or not target_id or not rel_type:
+                continue
+
+            # Find matching nodes (case-insensitive)
+            source_node = next(
+                (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
+                None
+            )
+            target_node = next(
+                (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
+                None
+            )
+
+            if source_node and target_node:
+                # Format relationship properties
+                raw_rel_props = rel_data.get("properties", {})
+                formatted_rel_props = {
+                    **sanitize_property_keys(raw_rel_props),
+                    "document_id": document_id
+                }
+
+                relationship = Relationship(
+                    source=source_node,
+                    target=target_node,
+                    type=format_relationship_type(rel_type),
+                    properties=formatted_rel_props
+                )
+                relationships.append(relationship)
+                
+                
+        document_node = Node(id=document_id, type="Document", properties={})
+        nodes.append(document_node)
+
+        tabulka_nodes = [n for n in nodes if n.type == "Tabulka"]
+
+        for tabulka_node in tabulka_nodes:
+            relationships.append(
+                Relationship(
+                    source=tabulka_node,
+                    target=document_node,
+                    type="IN_DOCUMENT",
+                    properties={"document_id": document_id},
+                )
+            )
+
+
+
+        return GraphDocument(
+            nodes=nodes,
+            relationships=relationships,
+            source=Document(page_content="", metadata={"id": document_id})
+        )
+        
+        
+        
     def _add_document_chunk(self, count: int, path: str, document_id, properties: dict | None = None) -> GraphDocument:
         chunk_ids = [f"chunk_{i}_{document_id}" for i in range(count)]
-        name = os.path.basename(path)
         
         if properties is None:
             properties = {}
@@ -554,15 +698,49 @@ class PDFGraphRAG:
         
         
         
-    def _convert_to_schema(self, data) -> Schema:
+    def _convert_to_schema(self, data: Optional[Dict[str, Any]]) -> Schema:
         """
         Convert LLM response data (matching response_schema_for_odd or
         response_schema_for_schema_refinement) into a Schema instance.
+
+        Raises:
+            ValueError: if data is not a dict, or is missing both
+                node_types and relationship_types keys.
         """
-        return Schema(
-            nodes=data.get("node_types", []),
-            relationships=data.get("relationship_types", []),
-        )
+        if data is None:
+            raise ValueError("_convert_to_schema: data is None")
+        if not isinstance(data, dict):
+            raise ValueError(
+                f"_convert_to_schema: expected dict, got {type(data).__name__}"
+            )
+
+        if "node_types" not in data and "relationship_types" not in data:
+            raise ValueError(
+                "_convert_to_schema: schema payload missing node_types and relationship_types"
+            )
+
+        raw_nodes = data.get("node_types", []) or []
+        raw_rels = data.get("relationship_types", []) or []
+
+        if not isinstance(raw_nodes, list):
+            raise ValueError(
+                f"_convert_to_schema: node_types must be a list, got {type(raw_nodes).__name__}"
+            )
+        if not isinstance(raw_rels, list):
+            raise ValueError(
+                f"_convert_to_schema: relationship_types must be a list, got {type(raw_rels).__name__}"
+            )
+
+        nodes = [n for n in raw_nodes if isinstance(n, str) and n]
+        rels = [r for r in raw_rels if isinstance(r, str) and r]
+
+        if len(nodes) != len(raw_nodes) or len(rels) != len(raw_rels):
+            print(
+                f"[_convert_to_schema] dropped non-string entries: "
+                f"nodes {len(raw_nodes) - len(nodes)}, rels {len(raw_rels) - len(rels)}"
+            )
+
+        return Schema(nodes=nodes, relationships=rels)
 
 
 
@@ -755,11 +933,13 @@ class PDFGraphRAG:
 
         structured_model = self.openai_client.with_structured_output(
             schema=TableHTMLResponse.model_json_schema(),
-            method="json_schema",
+            method="function_calling",
             include_raw=True,
         )
 
         os.makedirs(output_dir, exist_ok=True)
+        
+        
 
         def invoke_chunk(chunk_paths: list[str], previous_html: str | None) -> dict[str, Any]:
             system_prompt = base_system_prompt + (continuation_rules if previous_html else "")
@@ -905,80 +1085,166 @@ class PDFGraphRAG:
             nodes: list[TableGraphNode] = Field(description="All nodes extracted from the table")
             relationships: list[TableGraphRelationship] = Field(description="All relationships between extracted nodes")
 
-        system_prompt = """Si expert na transformaciu HTML tabuliek do stromovych struktur znalostneho grafu.
+        system_prompt = """Si expert na transformaciu HTML tabuliek do struktury znalostneho grafu podla striktne definovaneho modelu.
 
-        Tvoja uloha je analyzovat HTML tabulku a vytvorit hierarchicky strom uzlov a vztahov, ktory presne zachytava logicku strukturu tabulky.
+Tvojim cielom je previesť HTML tabulku na jednoduchu stromovu strukturu:
 
-        # PRAVIDLA
-        - Analyzuj stlpce, riadky a identifikuj hierarchiu dat.
-        - Vytvor KORENOVY uzol reprezentujuci celu tabulku (napr. 'Colny sadzobnik', 'Priloha', 'Zoznam').
-        - Vytvor RODICOVSKE uzly pre kazdu hlavnu skupinu (napr. body/sekcie oznacene rowspan v prvom stlpci).
-        - Vytvor DETSKE/LISTOVE uzly pre jednotlive polozky v kazdej skupine.
-        - Popisny text z ostatnych stlpcov uloz ako 'description' vo vlastnostiach uzla.
-        - Ak su niektore bunky prazdne (je ich viacero za sebou) moze ist o colspan, v strukture tabulky je to najvyssia polozka
-        - Kazdy uzol MUSI mat kluc 'name' vo svojich vlastnostiach.
-        - Pre typy vztahov pouzivaj VELKE_PISMENA_S_PODTRZITKAMI (napr. MA_SEKCIU, MA_KAPITOLU, OBSAHUJE, MA_POLOZKU).
-        - Zachovaj vsetok text PRESNE tak, ako sa nachadza v tabulke — neprekladaj, neskracuj, nemodifikuj hodnoty buniek.
-        - ID uzlov musia byt unikatne a popisne (napr. 'sekcia_1', 'kapitola_ex_2', 'polozka_0504').
-        - Vsetky extrahovane hodnoty (ID uzlov, nazvy, vlastnosti, hodnoty vztahov) pis BEZ DIAKRITIKY (napr. c→c, s→s, z→z, a→a, e→e, i→i, o→o, u→u, y→y, n→n, t→t, d→d, l→l, o→o).
+- 1 rodicovsky uzol typu `Tabulka`
+- viacero potomkov typu `Riadok` (kazdy riadok tabulky = 1 uzol)
 
-        # STRATEGIA TRANSFORMACIE
-        1. Identifikuj hlavickove riadky (<thead>/<th>) — tie urcuju vyznam jednotlivych stlpcov.
-        2. Stlpec s rowspan typicky oznacuje nadradenu kategoriu (rodic) — pouzivaj ho na vytvorenie rodicovskych uzlov.
-        3. Ostatne stlpce su detske uzly alebo vlastnosti rodicovskych uzlov.
-        4. Ak ma tabulka iba 2 stlpce (kluc-hodnota), modeluj ich ako vlastnosti jedneho uzla alebo ako pary uzlov.
-        5. Pre pravne dokumenty: paragrafy, odseky, pismena, ciselne znaky a predpisy modeluj ako samostatne uzly s presnym odkazom.
+---
 
-        # KONTROLA PRED VYSTUPOM
-        Pred tym nez odpovies, over si:
-        1. Ma KAZDY uzol unikatne 'id' a kluc 'name' vo vlastnostiach?
-        2. Su VSETKY hodnoty napisane BEZ DIAKRITIKY?
-        3. Su viacnasobne hodnoty v jednej bunke rozdelene na samostatne uzly?
-        4. Zachytava stromova struktura skutocnu hierarchiu tabulky (rodic→dieta)?
-        5. Je zachovany VSETOK text z tabulky bez strat?"""
+# HLAVNY MODEL
 
-        user_prompt = f"""Transformuj nasledujucu HTML tabulku na znalostny graf s uzlami a vztahmi.
-        Vytvor hierarchicku stromovu strukturu, ktora odraža organizaciu dat v tabulke.
+## 1. RODICOVSKY UZOL
+- Typ: `Tabulka`
+- ID: poskytnute id v user prompte
+- Vlastnosti:
+  - `name`: nazov tabulky (ak nie je dostupny, pouzi genericky nazov napr. "tabulka")
 
-        # HTML TABULKA:
-        {html_content}"""
+## 2. RIADKOVE UZLY
+- Typ: `Riadok`
+- Kazdy riadok (<tr> v <tbody>) = jeden uzol
+- ID:
+  - musi byt odvodeny z NAJVYRAZNEJSEJ hodnoty v riadku (napr. kod, cislo, oznacenie)
+  - priklad: `kod_25`, `polozka_0504`
+- Vlastnosti:
+  - kazdy stlpec = 1 key-value par:
+    - key = hlavicka stlpca (z <th>)
+    - value = hodnota bunky (<td>) v danom riadku
 
-        structured_model = self.openai_client.with_structured_output(schema=TableGraphResponse)
+## 3. VZTAHY
+- Kazdy Riadok je spojeny s Tabulkou:
+  - `(:Tabulka)-[:MA_RIADOK]->(:Riadok)`
 
-        messages = [
-            SystemMessage(content=system_prompt),
-            HumanMessage(content=user_prompt),
-        ]
+---
 
-        typed_response: TableGraphResponse | None = None
+# PRAVIDLA
+
+- Pouzivaj PRESNE iba typy:
+  - `Tabulka`
+  - `Riadok`
+- Pouzivaj PRESNE iba vztah:
+  - `MA_RIADOK`
+
+- Zachovaj text PRESNE tak, ako je v tabulke (bez prekladu alebo uprav)
+- Vsetky vystupy (id, keys, values) pis BEZ DIAKRITIKY
+
+- Kazdy uzol MUSI mat:
+  - `id`
+  - `name`
+
+- `name`:
+  - pre Tabulka: nazov tabulky
+  - pre Riadok: pouzi rovnaku hodnotu ako ID alebo hlavny identifikator riadku
+
+---
+
+# MAPOVANIE STLPCOV
+
+- Najprv extrahuj hlavicky (<th>)
+- Potom pre kazdy riadok:
+  - prirad hodnoty buniek podla poradia hlaviciek
+  - vytvor properties:
+    - {hlavicka_1: hodnota_1, hlavicka_2: hodnota_2, ...}
+
+---
+
+# SPECIALNE PRIPADY
+
+- Ak bunka chyba (colspan/rowspan):
+  - pouzi najblizsiu relevantnu hodnotu z kontextu
+- Ak riadok nema jasny identifikator:
+  - pouzi kombinaciu viacerych stlpcov
+
+---
+
+# KONTROLA
+
+Pred vystupom over:
+
+1. Existuje PRESNE 1 uzol typu Tabulka?
+2. Kazdy riadok ma vlastny uzol typu Riadok?
+3. Kazdy Riadok ma vztah `MA_RIADOK` z Tabulka?
+4. Su vsetky stlpce mapovane ako properties?
+5. Su vsetky texty bez diakritiky?
+6. Ma kazdy uzol `id` a `name`?"""
+
+
+        user_prompt = f"""Transformuj nasledujucu HTML tabulku na znalostny graf podla definovaneho modelu:
+
+- 1 uzol typu `Tabulka`
+- viacero uzlov typu `Riadok` (kazdy riadok = 1 uzol)
+- kazdy Riadok obsahuje properties mapovane zo stlpcov
+- vsetky Riadky su spojene s Tabulkou cez `MA_RIADOK`
+
+---
+
+# POSTUP
+
+1. Extrahuj hlavicky stlpcov (<th>)
+2. Pre kazdy riadok (<tr>):
+   - vytvor uzol typu `Riadok`
+   - nastav ID podla najdolezitejsieho udaju (napr. kod)
+   - prirad properties: hlavicka → hodnota
+3. Vytvor vztahy:
+   - `Tabulka -> MA_RIADOK -> Riadok`
+
+---
+
+# ID RODICA
+- tento retazec pouzi ako id rodica (typ: Tabulka): table_{page_range}_{document_id}
+
+# HTML TABULKA:
+{html_content}"""
+        
+        # Create and run the agent
+        agent = create_agent(
+            model=self.openai_client,
+            response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
+            system_prompt=system_prompt
+        )
+        
+
+
+        
+
+        data = None
         for attempt in range(3):
             try:
-                response = structured_model.invoke(messages)
-                if response is None:
+                # LLM response is expected to be a plain dict with "nodes" and "relationships"
+                response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+                data = response["structured_response"]
+
+                if data is None:
                     raise RuntimeError("model returned null")
-                candidate = cast(TableGraphResponse, response)
-                if not candidate.nodes or not candidate.relationships:
-                    print(f"[table_graph] empty nodes/relationships (attempt {attempt + 1}/3), retrying...")
-                    continue
-                typed_response = candidate
+
+                # Optional sanity check on content
+                nodes = data.get("nodes") or []
+                relationships = data.get("relationships") or []
+                print(
+                    f"Table graph extraction attempt {attempt + 1}/3 for pages {page_range}: "
+                    f"{len(nodes)} nodes, {len(relationships)} relationships"
+                )
+
                 break
+
             except Exception as e:
                 if attempt < 2:
-                    print(f"TPM limit reached (attempt {attempt + 1}/3, error: {e}), sleeping 60s...")
+                    print(f"TPM limit or error (attempt {attempt + 1}/3, error: {e}), sleeping 60s...")
                     time.sleep(60)
                 else:
                     print(f"[table_graph] all 3 attempts failed: {e}")
                     raise
 
-        if typed_response is None:
+
+        if data is None:
             raise RuntimeError("table_graph: empty nodes/relationships after 3 attempts")
 
-        print(f"Table graph extraction for pages {page_range}: {len(typed_response.nodes)} nodes, {len(typed_response.relationships)} relationships")
-
-        data = typed_response.model_dump()
 
         source_doc = Document(page_content=html_content, metadata={"page_range": page_range, "source": "table"})
-        graph_document = self._convert_to_graph_document(data, f"table_{page_range}", source_doc, document_id)
+        graph_document = self._convert_table_to_graph_document(data, f"table_{page_range}", source_doc, document_id)
+        
 
         return graph_document
 
@@ -1231,20 +1497,28 @@ class PDFGraphRAG:
         """
         Asynchronously process documents to extract schemas.
 
+        Per-chunk failures are tolerated: chunks that exhaust their retries
+        return None and are filtered out, so a single bad chunk does not
+        abort the whole stage.
+
         Args:
             documents: List of documents to process
             max_concurrent: Maximum number of concurrent API calls
 
         Returns:
-            List of Schema
+            List of Schema (only successfully processed chunks).
         """
+        if not documents:
+            print("[async_open_domain_detection] empty document list; returning []")
+            return []
+
         print("creating tasks: OPEN-DOMAIN DETECTION")
         semaphore = asyncio.Semaphore(max_concurrent)
         pause_event = asyncio.Event()
         pause_event.set()
         pause_lock = asyncio.Lock()
 
-        async def limited(i, doc):
+        async def limited(i: int, doc: Document) -> Optional[Schema]:
             for attempt in range(3):
                 await pause_event.wait()
                 async with semaphore:
@@ -1259,33 +1533,72 @@ class PDFGraphRAG:
                                     await asyncio.sleep(60)
                                     pause_event.set()
                         else:
-                            print(f"ODD chunk {i}: all 3 attempts failed")
-                            raise
+                            print(f"ODD chunk {i}: all 3 attempts failed ({e}); skipping")
+                            return None
+            return None
 
         tasks = [
             asyncio.create_task(limited(i, doc))
             for i, doc in enumerate(documents)
         ]
 
-        res = await asyncio.gather(*tasks)
-        return [r for r in res if r is not None]
+        res = await asyncio.gather(*tasks, return_exceptions=True)
+
+        successes: List[Schema] = []
+        failures = 0
+        for i, r in enumerate(res):
+            if isinstance(r, BaseException):
+                failures += 1
+                print(f"ODD chunk {i}: unexpected exception leaked through gather: {r}")
+            elif r is None:
+                failures += 1
+            else:
+                successes.append(r)
+
+        if failures:
+            print(f"[async_open_domain_detection] {failures}/{len(res)} chunks failed; {len(successes)} succeeded")
+
+        return successes
 
 
 
 
 
-    def schema_refinement(self, odd_schema: Schema, existing_schema: Optional[Schema] = None):
+    def schema_refinement(
+        self,
+        odd_schema: Schema,
+        existing_schema: Optional[Schema] = None,
+    ) -> Dict[str, Any]:
         """
-        Function to refine and consolidate extracted schema information across documents, ensuring consistency and resolving conflicts.
+        Refine and consolidate extracted schema information across documents,
+        ensuring consistency and resolving conflicts.
 
         Args:
-            schema: The schema to refine
+            odd_schema: Raw schema detected from open-domain detection.
+            existing_schema: Existing graph schema (None or empty falls back
+                to the predefined Slovak legal ontology).
 
         Returns:
-            SchemaRefinement with extracted node_types and relationship_types and merge_log
+            Dict with keys:
+              - node_types: List[str]
+              - relationship_types: List[str]
+              - merge_log: {node_types: Dict[str, List[str]], relationship_types: Dict[str, List[str]]}
+
+        Raises:
+            ValueError: if odd_schema is missing or has no node types.
+            RuntimeError: if the LLM fails to produce a valid response after 3 attempts.
         """
-        
-        if existing_schema == None or existing_schema == [] or existing_schema.nodes == [] and existing_schema.relationships == []:
+
+        if odd_schema is None:
+            raise ValueError("schema_refinement: odd_schema is required")
+        if not isinstance(odd_schema, Schema):
+            raise ValueError(
+                f"schema_refinement: odd_schema must be Schema, got {type(odd_schema).__name__}"
+            )
+
+        if existing_schema is None or (
+            existing_schema.nodes == [] and existing_schema.relationships == []
+        ):
             existing_schema = Schema(
                     nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum"],
                     relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI"]
@@ -1352,15 +1665,30 @@ class PDFGraphRAG:
             ("human", user_prompt),
         ]
 
-        data = None
+        data: Optional[Dict[str, Any]] = None
         for attempt in range(3):
             try:
                 response = cast(dict[str, Any], structured_model.invoke(messages))
                 if response is None:
                     raise RuntimeError("model returned null")
+                if not isinstance(response, dict):
+                    raise RuntimeError(
+                        f"model returned {type(response).__name__}, expected dict"
+                    )
                 if not response.get("node_types") or not response.get("relationship_types"):
                     print(f"[schema_refinement] empty node_types or relationship_types (attempt {attempt + 1}/3), retrying...")
                     continue
+
+                merge_log = response.get("merge_log")
+                if not isinstance(merge_log, dict):
+                    print(f"[schema_refinement] merge_log missing or wrong type (attempt {attempt + 1}/3); patching with empty defaults")
+                    response["merge_log"] = {"node_types": {}, "relationship_types": {}}
+                else:
+                    if not isinstance(merge_log.get("node_types"), dict):
+                        merge_log["node_types"] = {}
+                    if not isinstance(merge_log.get("relationship_types"), dict):
+                        merge_log["relationship_types"] = {}
+
                 data = response
                 break
             except Exception as e:
@@ -1461,32 +1789,42 @@ class PDFGraphRAG:
         self,
         documents: List[Document],
         schema: Schema,
-        document_id,
-        max_concurrent = 5
+        document_id: str,
+        max_concurrent: int = 5,
     ) -> List[GraphDocument]:
         """
         Asynchronously process documents to extract graph documents.
 
+        Per-chunk failures are tolerated: chunks that exhaust their retries
+        are dropped, so a single bad chunk does not abort the whole stage.
+
         Args:
             documents: List of documents to process
-            allowed_entities: List of allowed node types
-            allowed_relationships: List of allowed relationship types
-            strict_mode: If True, applies post-extraction filtering
+            schema: Allowed node and relationship types (must be non-empty)
+            document_id: Identifier for the source document
+            max_concurrent: Maximum number of concurrent API calls
 
         Returns:
-            List of GraphDocuments
+            List of GraphDocuments (only successfully processed chunks).
         """
-        
+
+        if not documents:
+            print("[async_schema_driven_extraction] empty document list; returning []")
+            return []
+        if schema is None or not schema.nodes:
+            print("[async_schema_driven_extraction] schema has no node types; returning []")
+            return []
+
         print("creating tasks: SCHEMA-DRIVEN EXTRACTION")
         semaphore = asyncio.Semaphore(max_concurrent)
         pause_event = asyncio.Event()
         pause_event.set()
         pause_lock = asyncio.Lock()
 
-        def is_failed(result):
-            return result is None or not getattr(result, "nodes", None)
+        def is_failed(result) -> bool:
+            return result is None or isinstance(result, BaseException) or not getattr(result, "nodes", None)
 
-        async def limited(i, doc) -> Optional[GraphDocument]:
+        async def limited(i: int, doc: Document) -> Optional[GraphDocument]:
             for attempt in range(3):
                 await pause_event.wait()
                 async with semaphore:
@@ -1508,12 +1846,15 @@ class PDFGraphRAG:
         tasks = [
             asyncio.create_task(limited(i, doc)) for i, doc in enumerate(documents)
         ]
-        pass1 = await asyncio.gather(*tasks)
+        pass1 = await asyncio.gather(*tasks, return_exceptions=True)
 
         successful: list[GraphDocument] = []
         failed: list[tuple[int, Document]] = []
         for i, r in enumerate(pass1):
-            if is_failed(r):
+            if isinstance(r, BaseException):
+                print(f"SDE chunk {i}: unexpected exception leaked through gather: {r}")
+                failed.append((i, documents[i]))
+            elif is_failed(r):
                 failed.append((i, documents[i]))
             else:
                 successful.append(cast(GraphDocument, r))
@@ -1521,11 +1862,14 @@ class PDFGraphRAG:
         if failed:
             print(f"SDE: retrying {len(failed)} failed chunks: {[i for i,_ in failed]}")
             retry_tasks = [asyncio.create_task(limited(i, doc)) for i, doc in failed]
-            pass2 = await asyncio.gather(*retry_tasks)
+            pass2 = await asyncio.gather(*retry_tasks, return_exceptions=True)
 
             still_failed: list[int] = []
             for (i, _), r in zip(failed, pass2):
-                if is_failed(r):
+                if isinstance(r, BaseException):
+                    print(f"SDE chunk {i} (retry): unexpected exception: {r}")
+                    still_failed.append(i)
+                elif is_failed(r):
                     still_failed.append(i)
                 else:
                     successful.append(cast(GraphDocument, r))
@@ -1606,6 +1950,7 @@ class PDFGraphRAG:
             print(f"Excluded {len(table_pages_to_exclude)} interior table pages from text processing: {sorted(table_pages_to_exclude)}")
             
             
+        # ----- FORMULAS ----
         formulas = self.get_formulas()
 
         formula_nodes: list[Node] = []
@@ -1622,45 +1967,62 @@ class PDFGraphRAG:
         # document_classification = self.classification()
 
 
-        # odd
+        # ---- ODD ----
+        # Stage failures abort the document. Per-chunk failures are tolerated
+        # inside async_open_domain_detection (chunks dropped, others continue).
         splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
         chunked_documents = splitter.split_documents(documents)
+        if not chunked_documents:
+            raise ValueError(f"[process] no chunks produced for ODD from {pdf_path}")
 
         extracted_schema_list = asyncio.run(
-            self.async_open_domain_detection(
-                chunked_documents
-            )
+            self.async_open_domain_detection(chunked_documents)
         )
-        print(f"\n\nAll chunks processed into schema.\n\n")
-        odd_to_json(extracted_schema_list, name = name_of_chain)
-        
-        
-        # refinement
+        if not extracted_schema_list:
+            raise RuntimeError("[process] ODD produced no schemas (all chunks failed)")
+        print(f"\n\nAll chunks processed into schema. ({len(extracted_schema_list)} schemas)\n\n")
+        odd_to_json(extracted_schema_list, name=name_of_chain)  # save before next stage
+
+
+        # ---- Refinement ----
         extracted_schema = Schema(
             nodes=list(set(node for schema in extracted_schema_list for node in schema.nodes)),
             relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
         )
-        refined_schema = self.schema_refinement(odd_schema=extracted_schema, existing_schema=self.get_graph_schema())
-        
+        if not extracted_schema.nodes:
+            raise RuntimeError("[process] ODD union produced empty node set; aborting before refinement")
+
+        # get_graph_schema is internally guarded — returns empty Schema on Neo4j read failure
+        refined_schema = self.schema_refinement(
+            odd_schema=extracted_schema,
+            existing_schema=self.get_graph_schema(),
+        )
+        # schema_refinement raises on its own retry exhaustion — propagates to abort
         print(f"\n\nSchema refined.\n\n")
-        refinement_to_json(refined_schema, name = name_of_chain)
-        
-        
-        # sde
+        refinement_to_json(refined_schema, name=name_of_chain)  # save before next stage
+
+
+        # ---- SDE ----
         splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
         chunked_documents = splitter.split_documents(documents)
-        refined_schema = self._convert_to_schema(refined_schema)
-        
+        if not chunked_documents:
+            raise ValueError("[process] no chunks produced for SDE")
+
+        refined_schema_obj = self._convert_to_schema(refined_schema)  # raises ValueError on bad shape
+        if not refined_schema_obj.nodes:
+            raise RuntimeError("[process] refined schema has empty nodes; aborting before SDE")
+
         graph_docs = asyncio.run(
             self.async_schema_driven_extraction(
                 chunked_documents,
-                schema=refined_schema,
-                document_id=document_id
+                schema=refined_schema_obj,
+                document_id=document_id,
             )
         )
-        
-        print(f"\n\nAll chunks processed into graph documents.\n\n")
-        sde_to_json(graph_docs, name = name_of_chain)
+        if not graph_docs:
+            raise RuntimeError("[process] SDE produced no graph documents (all chunks failed)")
+        print(f"\n\nAll chunks processed into graph documents. ({len(graph_docs)})\n\n")
+        sde_to_json(graph_docs, name=name_of_chain)
         
 
         # add document chunk into graph documents

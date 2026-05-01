@@ -17,21 +17,22 @@ graphrag = PDFGraphRAG(
     neo4j_user='neo4j',
     neo4j_password='fseijkfbsj48@',
     openai_api_key=os.getenv("OPENAI_API_KEY"),
-    google_api_key=os.getenv("GOOGLE_API_KEY")
+    google_api_key=os.getenv("GOOGLE_API_KEY"),
+    database="colota"
 )
 
 name = "test-10"
 
 # Load PDF documents
 documents = graphrag.load_pdf(pdf_path)
-documents = documents[10:25]
+# documents = documents[10:25]
 
 # ------ open domain detection ------
 
 splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
 chunked_documents = splitter.split_documents(documents)
 
-chunked_documents = chunked_documents[3:4]
+# chunked_documents = chunked_documents[3:4]
 
 extracted_schema_list = asyncio.run(
     graphrag.async_open_domain_detection(

@@ -34,7 +34,7 @@ document_id = Path(pdf_path).stem
 
 
 # detect tables in pdf (cached on disk to avoid re-running YOLO each test)
-# detections = graphrag.detect_tables(pdf_path)
+detections = graphrag.detect_tables(pdf_path)
 
 
 def load_cached_detections(detections_dir: str) -> list[dict]:
@@ -67,7 +67,7 @@ def load_cached_detections(detections_dir: str) -> list[dict]:
     return detections
 
 
-detections = load_cached_detections('./code/assets/detected_tables_figures')
+# detections = load_cached_detections('./code/assets/detected_tables_figures')
 
 graph_docs = []
 
@@ -104,7 +104,7 @@ for group in table_groups:
     if len(pages) > 2:
         table_pages_to_exclude.update(pages[1:-1])
 
-graph_docs.append(table_graph_docs)
+graph_docs.extend(table_graph_docs)
 # persist intermediate results to JSON
 table_to_json(table_graph_docs, name=document_id)
     
@@ -119,7 +119,10 @@ for i, formula in enumerate(formulas):
     )
 
 formula_graph_doc = graphrag.convert_formulas_to_graph(formula_nodes, document_id)
-graph_docs.append(formula_graph_doc)
+if formula_graph_doc is not None:
+    graph_docs.append(formula_graph_doc)
+
+
 print(f"Processed {len(formulas)} formula(s) into {0 if formula_graph_doc is None else len(formula_nodes)} node(s).")
 
 

@@ -1,0 +1,80 @@
+[
+  {
+    "chunked": [
+      {
+        "nodes": [
+          "ZdanitelnaOsoba",
+          "PlatitelDane",
+          "ZahranicnaOsoba",
+          "DanovyUrad",
+          "Cinnost",
+          "PredmetDane",
+          "Tuzemsko",
+          "Registracia",
+          "Status",
+          "Oznamenie",
+          "Povinnost",
+          "Lehota",
+          "Den",
+          "Paragraf",
+          "Zakon"
+        ],
+        "relationships": [
+          "REGISTROVANY_PODLA",
+          "PRESTANE_SPLODAT_STATUS",
+          "POVAZUJE_SA_ZA",
+          "OD_OD",
+          "VYKONAVA",
+          "JE_PREDMETOM_DANE_V",
+          "MA_POVINNOST_OMENIT",
+          "OMENI",
+          "DO_LEHOTY",
+          "ODO_DNA",
+          "UVIEDIE_V_OZNAMENI"
+        ]
+      }
+    ]
+  },
+  {
+    "chunk_texts": [
+      {
+        "text": "(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "nested": {
+      "nodes": [
+        "Cinnost",
+        "Registracia",
+        "DanovyUrad",
+        "Povinnost",
+        "Lehota",
+        "Den",
+        "Oznamenie",
+        "Zakon",
+        "Paragraf",
+        "PredmetDane",
+        "Tuzemsko",
+        "PlatitelDane",
+        "Status",
+        "ZahranicnaOsoba",
+        "ZdanitelnaOsoba"
+      ],
+      "relationships": [
+        "OMENI",
+        "UVIEDIE_V_OZNAMENI",
+        "OD_OD",
+        "VYKONAVA",
+        "DO_LEHOTY",
+        "PRESTANE_SPLODAT_STATUS",
+        "ODO_DNA",
+        "REGISTROVANY_PODLA",
+        "POVAZUJE_SA_ZA",
+        "MA_POVINNOST_OMENIT",
+        "JE_PREDMETOM_DANE_V"
+      ]
+    }
+  }
+]

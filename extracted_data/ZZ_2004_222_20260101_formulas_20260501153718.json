@@ -1,0 +1,45 @@
+{
+  "document_id": "ZZ_2004_222_20260101",
+  "nodes": [
+    {
+      "id": "ZZ_2004_222_20260101",
+      "type": "Document",
+      "properties": {}
+    },
+    {
+      "id": "formula_0_ZZ_2004_222_20260101",
+      "type": "Vzorec",
+      "properties": {
+        "name": "formula_0_ZZ_2004_222_20260101",
+        "document_id": "ZZ_2004_222_20260101",
+        "latex": "DD = \\frac{DV \\times (A - B)}{5\\, alebo\\, 20} \\times R",
+        "transcription_confidence": 0.92,
+        "detection_confidence": 0.94,
+        "page": 149
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": {
+        "id": "formula_0_ZZ_2004_222_20260101",
+        "type": "Vzorec",
+        "properties": {
+          "name": "formula_0_ZZ_2004_222_20260101",
+          "document_id": "ZZ_2004_222_20260101",
+          "latex": "DD = \\frac{DV \\times (A - B)}{5\\, alebo\\, 20} \\times R",
+          "transcription_confidence": 0.92,
+          "detection_confidence": 0.94,
+          "page": 149
+        }
+      },
+      "target": {
+        "id": "ZZ_2004_222_20260101",
+        "type": "Document",
+        "properties": {}
+      },
+      "type": "IN_DOCUMENT",
+      "properties": {}
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "node_types": [
+    "Cinnost",
+    "Cislo",
+    "Datum",
+    "FyzickaOsoba",
+    "Lehota",
+    "Lokacia",
+    "Nariadenie",
+    "Odsek",
+    "Oznamenie",
+    "Paragraf",
+    "PlatitelDane",
+    "Povinnost",
+    "Pravo",
+    "PravnickaOsoba",
+    "PredmetDane",
+    "Registracia",
+    "Status",
+    "Sud",
+    "Urad",
+    "Vozidlo",
+    "Vyhlaska",
+    "ZahranicnaOsoba",
+    "Zakon",
+    "ZdanitelnaOsoba",
+    "Zmluva",
+    "Zodpovednost"
+  ],
+  "relationship_types": [
+    "DEFINUJE",
+    "DOPLNUJE",
+    "JE_POVAZOVANY_ZA",
+    "JE_PREDMETOM_DANE_V",
+    "MA_LEHOTU",
+    "MA_POVINNOST",
+    "ODKAZUJE_NA",
+    "OZNAMUJE",
+    "PLATI_OD",
+    "PODMIENUJE",
+    "REGISTROVANY_PODLA",
+    "RUSI",
+    "STRACA_STATUS",
+    "UPRAVUJE",
+    "UVADZA_V",
+    "VYKONAVA"
+  ],
+  "merge_log": {
+    "node_types": {
+      "Datum": [
+        "Den"
+      ],
+      "Lokacia": [
+        "Tuzemsko"
+      ],
+      "Paragraf": [
+        "Paragraf"
+      ],
+      "Povinnost": [
+        "Povinnost"
+      ],
+      "Urad": [
+        "DanovyUrad"
+      ],
+      "Zakon": [
+        "Zakon"
+      ]
+    },
+    "relationship_types": {
+      "JE_POVAZOVANY_ZA": [
+        "POVAZUJE_SA_ZA"
+      ],
+      "MA_LEHOTU": [
+        "DO_LEHOTY"
+      ],
+      "MA_POVINNOST": [
+        "MA_POVINNOST_OMENIT"
+      ],
+      "OZNAMUJE": [
+        "OMENI"
+      ],
+      "PLATI_OD": [
+        "OD_OD",
+        "ODO_DNA"
+      ],
+      "STRACA_STATUS": [
+        "PRESTANE_SPLODAT_STATUS"
+      ],
+      "UVADZA_V": [
+        "UVIEDIE_V_OZNAMENI"
+      ]
+    }
+  }
+}

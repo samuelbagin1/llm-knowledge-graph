@@ -69,6 +69,8 @@ def load_cached_detections(detections_dir: str) -> list[dict]:
 
 detections = load_cached_detections('./code/assets/detected_tables_figures')
 
+graph_docs = []
+
 # group consecutive table detections into multi-page groups
 table_groups = graphrag.group_table_detections(detections)
 
@@ -93,31 +95,43 @@ for group in table_groups:
     pages = sorted(d["page"] for d in group)
     page_range = f"{min(pages)}-{max(pages)}" if len(pages) > 1 else str(pages[0])
 
-#     # transform HTML table into GraphDocument via LLM
-#     table_gd = graphrag.transform_html_to_graph_document(html, page_range, document_id)
-#     table_graph_docs.append(table_gd)
+    # transform HTML table into GraphDocument via LLM
+    table_gd = graphrag.transform_html_to_graph_document(html, page_range, document_id)
+    table_graph_docs.append(table_gd)
 
-#     # collect interior table pages to exclude from text processing
-#     # keep first and last pages (may have text above/below the table)
-#     if len(pages) > 2:
-#         table_pages_to_exclude.update(pages[1:-1])
+    # collect interior table pages to exclude from text processing
+    # keep first and last pages (may have text above/below the table)
+    if len(pages) > 2:
+        table_pages_to_exclude.update(pages[1:-1])
 
-# # persist intermediate results to JSON
-# table_to_json(table_graph_docs, name=document_id)
+graph_docs.append(table_graph_docs)
+# persist intermediate results to JSON
+table_to_json(table_graph_docs, name=document_id)
     
     
-# formulas = graphrag.get_formulas()
+formulas = graphrag.get_formulas()
 
-# formula_nodes: list[Node] = []
-# for i, formula in enumerate(formulas):
-#     response = graphrag.transform_formula(formula)
-#     formula_nodes.append(
-#         graphrag._convert_formula_to_node(formula, response, i, document_id)
-#     )
+formula_nodes: list[Node] = []
+for i, formula in enumerate(formulas):
+    response = graphrag.transform_formula(formula)
+    formula_nodes.append(
+        graphrag._convert_formula_to_node(formula, response, i, document_id)
+    )
 
-# formula_graph_doc = graphrag.convert_formulas_to_graph(formula_nodes, document_id)
-# print(f"Processed {len(formulas)} formula(s) into {0 if formula_graph_doc is None else len(formula_nodes)} node(s).")
+formula_graph_doc = graphrag.convert_formulas_to_graph(formula_nodes, document_id)
+graph_docs.append(formula_graph_doc)
+print(f"Processed {len(formulas)} formula(s) into {0 if formula_graph_doc is None else len(formula_nodes)} node(s).")
 
 
 
-# formula_to_json(formula_graph_doc, name=document_id)
+formula_to_json(formula_graph_doc, name=document_id)
+
+
+
+# Add graph documents to Neo4j
+# dependency: APOC plugin in neo4j database
+graphrag.graph.add_graph_documents(
+    graph_documents=graph_docs,
+    include_source=False,
+    baseEntityLabel=True
+)

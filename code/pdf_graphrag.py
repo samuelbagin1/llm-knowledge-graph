@@ -388,6 +388,11 @@ class PDFGraphRAG:
             print(f"Error retrieve schema: {e}")
             return "Schema information unavailable"
         
+    def query_graph(self, query: str):
+        rows = self.graph.query(query)
+        
+        return rows
+        
         
         
         
@@ -1341,15 +1346,33 @@ class PDFGraphRAG:
         structured_model = self.gemini_client.with_structured_output(
             schema=SchemaRefinementResponse.model_json_schema(), method="json_schema"
         )
-        
-        response = structured_model.invoke([
+
+        messages = [
             ("system", system_prompt_for_schema_refinement),
             ("human", user_prompt),
-        ])
-        
+        ]
 
-        # structured_response is already a dict when using ProviderStrategy
-        data = response
+        data = None
+        for attempt in range(3):
+            try:
+                response = cast(dict[str, Any], structured_model.invoke(messages))
+                if response is None:
+                    raise RuntimeError("model returned null")
+                if not response.get("node_types") or not response.get("relationship_types"):
+                    print(f"[schema_refinement] empty node_types or relationship_types (attempt {attempt + 1}/3), retrying...")
+                    continue
+                data = response
+                break
+            except Exception as e:
+                if attempt < 2:
+                    print(f"TPM limit reached (attempt {attempt + 1}/3, error: {e}), sleeping 60s...")
+                    time.sleep(60)
+                else:
+                    print(f"[schema_refinement] all 3 attempts failed: {e}")
+                    raise
+
+        if data is None:
+            raise RuntimeError("schema_refinement: empty node_types or relationship_types after 3 attempts")
 
         print(data)
 
@@ -1383,24 +1406,27 @@ class PDFGraphRAG:
         
         text = document.page_content
         user_prompt = f"""
-        Identifikuj vsetky typy uzlov a typy vztahov v texte.
+        Extract entities and relationships from text.
 
-        # PRAVIDLA
-        - iba typy (nie instancie)
-        - bez diakritiky
-        - pouzi vseobecne, ale presne oznacenia
-        - odstran nezmyselne typy
-        - dopln chybajuce klucove koncepty
-        - pouzivaj iba Slovensky jazyk
+        ### RULES
+        - only schema types (exact)
+        - no modifications
+        - skip unsupported
+        - most specific types
+        - no diacritics
+        - only Slovak language
 
-        # ZAMERANIE
-        - zakon, paragraf, odsek
-        - pravne vztahy (povinnost, pravo)
-        - financne a vypoctove mechanizmy
-        - casove entity
+        ### SCHEMA
+        Entities: {", ".join(schema.nodes)}
+        Relationships: {", ".join(schema.relationships)}
 
-        # TEXT
+        ### TEXT
         {text}
+
+        ### CHECK
+        - valid types only
+        - most specific used
+        - includes legal + detailed data
         """
 
         # Create and run the agent

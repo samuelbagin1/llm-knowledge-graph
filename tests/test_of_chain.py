@@ -68,11 +68,26 @@ documents = graphrag.load_pdf(pdf_path)
 
 
 
+random_number_list = [165, 492, 77, 311, 529, 44, 586, 203, 9, 367,
+258, 114, 599, 421, 32, 188, 540, 73, 276, 5,
+
+394, 221, 337, 60, 483, 146, 517, 28, 602, 351,
+89, 270, 413, 7, 335, 568, 192, 124, 439, 82,
+
+299, 555, 48, 233, 14, 382, 175, 603, 267, 96,
+427, 320, 531, 63, 211, 501, 36, 143, 459, 19,
+
+372, 246, 585, 109, 298, 534, 56, 187, 448, 92,
+261, 516, 38, 226, 11, 365, 153, 578, 101, 327,
+
+69, 414, 23, 309, 552, 132, 473, 58, 205,
+341, 97, 520, 27, 286, 601, 119, 389, 45, 254]
+
 # ------ schema driven extraction ------
 splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
 chunked_documents = splitter.split_documents(documents)
 
-chunked_documents = chunked_documents[313:314]
+# chunked_documents = chunked_documents[313:314]
 
 with open('./extracted_data/test-10_ref_20260501185709.json') as f:
     data = json.load(f)
@@ -87,16 +102,28 @@ refined_schema = Schema(
 #     relationships=refined_schema_data['relationship_types']  # type: ignore[index]
 # )
 
-graph_docs = asyncio.run(
-    graphrag.async_schema_driven_extraction(
-        chunked_documents,
-        schema=refined_schema,
-        document_id="ZZ_222_2004"
+for i in random_number_list:
+    graph_docs = asyncio.run(
+        graphrag.async_schema_driven_extraction(
+            chunked_documents[i:i+1],
+            schema=refined_schema,
+            document_id="ZZ_222_2004"
+        )
     )
-)
+    
+    sde_to_json(graph_docs, './test_dataset/', name = str(i))
+
+
+# graph_docs = asyncio.run(
+#     graphrag.async_schema_driven_extraction(
+#         chunked_documents,
+#         schema=refined_schema,
+#         document_id="ZZ_222_2004"
+#     )
+# )
 
 print(f"\nAll chunks processed into graph documents.")
-sde_to_json(graph_docs, name = name)
+# sde_to_json(graph_docs, name = name)
 
 
 # graphrag.graph.add_graph_documents(

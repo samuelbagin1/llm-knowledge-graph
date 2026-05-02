@@ -39,11 +39,14 @@ Grafové databázy rozlišujeme na niekoľko typov, ktoré majú svoje špecific
   \item Málo používaný avšak veľmi záujimavý je hypergraf, ktorý umožňuje hranám spájať viac ako dve entity súčasne (komplexné hrany)~\cite{hogan2021kg}.
 \end{itemize}
 
+\
+
 V projetke je využívanou databázou na ukladanie dát grafová databáza s vlastnosťami (Property graphs), akou je napríklad Neo4j. Formálna definícia grafovej databázy s vlastnosťami podľa Hogan et al., ktorá uchováva dáta v grafe v podobe usporiadanej n-tice $G = (V, E, L, P, U, e, l, p)$. Platí: $V$ je množina identifikátorov vrcholov (uzlov), $E$ je množina identifikátorov hrán, $L$ je množina typov, ktoré môžu niesť uzly aj hrany, $P$ je množina mien vlastností,  $U$ je množina hodnôt vlastností, $e : E \to V \times V$ každú hranu priradí dvojici vrcholov (jej začiatočnému a koncovému uzlu), $l : V \cup E \to 2^{L}$ priraďuje každému uzlu alebo hrane množinu typov, $p : V \cup E \to 2^{P \times U}$ priraďuje každému uzlu alebo hrane množinu dvojíc \emph{(vlastnosť, hodnota)}. Intuitívne: vrcholy a hrany sú len identifikátory z univerzálnej množiny databázy, funkcia $e$ špecifikuje štruktúru grafu (kto je s kým spojený), funkcie $l$ a $p$ nesú „sémantiku“, typy uzlov/hrán a ich atribúty.\cite{hogan2021kg}
 
 Tento typ vyniká, pretože ponúka vyššiu flexibilitu pri modelovaní komplexných vzťahov. Jeho hlavnou výhodou je, že umožňuje priamo anotovať hranu bez nutnosti vytvárania pomocných uzlov. Ak chceme napríklad k vzťahu medzi entitami priradiť rozšírujúcu vlastnosť (napríklad v medicíne k hrane NEZIADUCI\_UCINOK môžme priradiť dodatočnú vlastnosť, aké konkrétne nežiadúce účinky spôsobil liek). Naopak v jednoduchý modeloch by sme museli vytvoriť samostatný uzol pre danú hranu~\cite{hogan2021kg}.
 
-\
+
+\subsubsection{Porovnanie s vektorovou a relačnou databázou}
 
 V porovnaní s relačnými databázami sa dá jednoduchšie pristupovať k viac skokovým údajom alebo cestám, kde sa vyhýbajú relačným joinom. V relačnej databáze by sme každý typ uchovávali v jednotlivých tabuľkách, zaťiaľ čo v grafovej databáze je to oddelené typom entity alebo vzťahu. Taktiež relačné databázy sa nevedia dynamicky prispôsobiť novým typom a preto si vyžadujú vopred definovanú schému. Remodelovanie takejto databázy je veľmi nákladne a časovo náročné. K dátam v grafovej databáze môžme ľahko pristupovať pomocou dopytovacieho jazyka Cypher, ktorý je súčasťou rodiny grafových dopytovacích jazykov spolu s SPARQL. Tieto jazyky podporujú okrem štandardných relačných operátorov aj operátory, ktoré rekurzívne vyhľadávajú cestu medzi entitmi ľubovoľnej dĺžky, čo je v tradičnom SQL náročne vyjadriteľné~\cite{hogan2021kg}.
 
@@ -100,10 +103,10 @@ Extrakcia vzťahov je nevyhnutná z niekoľkých kľúčových dôvodov. Pre bud
 
 V~tejto práci modelujem vzťah medzi entitami v KG ako množinu trojíc (\emph{triples}) v tvare $(e_h, r, e_t)$, kde $e_h$ označuje začiatočnú entitu (\emph{head}), $e_t$ koncovú entitu (\emph{tail}) a~$r$~vzťah medzi nimi. Takáto trojica zodpovedá orientovanej hrane $e_h \xrightarrow{r} e_t$ v orientovanom grafe, ktorý je podľa Hogan et al.~\cite{hogan2021kg} základným modelom pre znalostné grafy a~je súčasne dátovým modelom štandardu RDF konzorcia W3C.
 
-\subsubsection{Posun k využívaniu LLM}
+\subsection{Posun k využívaniu LLM}
 Posun v oblasti extrahovania informácií alebo znalosti smerom k využitiu veľkých jazykových modelov predstavuje zásadnú zmenu paradigmy od tradičných štatistických a pravidlových metód k generatej a jazykovo riadenej štruktúre. Ako bolo spomenuté, tradičné metódy sa spoliehali na fragmentáciu procesov, ktoré boli obmedzené potrebou expertného návrhu a veľkého množstva označených dát~\cite{autKGconstruction2023,llmEmpKGcons2025}.
 
-LLM transformujú proces extrakcie tým, že fungujú ako kognitívne motory, ktoré dokážu priamo syntetizovať štruktúrované reprezentácie z neštruktúrovaného textu. Na rozdiel od klasických metód, ktoré hľadali faktické vzory pomocou definovaných pravidiel alebo zhlukovania, LLM využívajú svoje schopnosti sémantického zjednotenia a generatívneho modelovania~\cite{autKGconstruction2023,llmEmpKGcons2025}.
+LLM transformujú proces extrakcie tým, že fungujú ako kognitívne mechanizmy, ktoré dokážu priamo syntetizovať štruktúrované reprezentácie z neštruktúrovaného textu. Na rozdiel od klasických metód, ktoré hľadali faktické vzory pomocou definovaných pravidiel alebo zhlukovania, LLM využívajú svoje schopnosti sémantického zjednotenia a generatívneho modelovania~\cite{autKGconstruction2023,llmEmpKGcons2025}.
 
 Hlavnými charakteristikami tohto prístupu sú:
 \begin{itemize}
@@ -138,17 +141,47 @@ V dnešnej dobe sa systémy na extrahovanie informácií špecializujú na využ
 
 
 \subsection{Existijúce prístupy pre tvorbu znalostných grafov z textu}
-3 s. najdôležitejšia sekcia
 
- shift the focus from static schema construction toward continuous schema adaptation within evolving knowledge environments
+V súčasnom výskume extrakcie informácií a konštrukcie znalostných grafov dominuje niekoľko kľúčových frameworkov a modelov, ktoré posúvajú hranice automatizácie, presnosti a škálovateľnosti.
 
-LangChain LLMGraphTransformer ako baseline
-ODKE+ pipeline (Open Domain Knowledge Extraction) — trojfázový návrh ODD → Schema Refinement → SDE
-GraphRAG (Microsoft)
-Špecifiká pre slovanské jazyky a právnu doménu (málo práce v tejto oblasti — tvoja medzera vo výskume)
+\
+
+V oblasti komplexných vedeckých a multimodálnych dát vyniká toolkit DeepKE, ktorý podporuje extrakciu na úrovni dokumentov, multimodálne scenáre akými sú text a obraz, a učenie s nízkym množstvom dát. DeepKE integruje rôzne architektúry ako CNN, GCN alebo trnasformery a pre multimodálne úlohy implementuje model IFAformer, ktorý prepája textové a vizuálne vlastnosti~\cite{deepke2023}.
+
+Pre globálnu optimálnu extrakciu grafu z jednej vety je určený framework OneIE, ktorý využíva spoločný neurónový model a beam dekodér na zachytenie vzájomných závislostí medzi entitami a udalosťami. Na druhej strane, model KG-BERT sa zameriava na dopĺňanie znalostných grafov tým, že s entitami a vzťahmi narába ako s textovými sekvenciami. To mu umožňuje využiť lingvistický kontext z predtrénovaných váh BERTi na predikciu chýbajúcich faktov~\cite{kgbert2019, oneie2020}
+
+\
+
+Pre autonómnu konštrukciu grafov v obrovskom meradle bol vyvinutý framework AutoSchemaKG, ktorý produkuje rodinu grafov ATLAS (Automated Triple Linking And Schema induction). Tento systém spracováva desiatky miliónov dokumentov z webových korpusov bez potreby vopred definovaných schém, pričom modeluje nielen entity, ale aj udalosti, ktoré sú nevyhnutnou reprezentáciu znalostného grafu. Výsledkom je graf s miliardami hrán, ktorý dosahuje 95\% sémantickej podobnosťi autonómne vytvorenej schémy s manuálne vytvorenou schémou človekom, a taktiež výrazne zlepšuje multi-hop vyhľadávanie a uvažovanie LLM~\cite{autoschemakg2025}.
+
+Ak je cieľom extrakcia s existujúcou schémou (napríklad Wikidata), framework EDC (Extract, Define, Canonicalize) ponúka trojfázové riešenie. EDC najsôr vykoná otvorenú extrakciu, následne vygeneruje definície pre extrahované prvky. Nakoniec využije Schema Retriever na identifikáciu a extrakciu relevantných častí cieľovej schémy~\cite{edc2024}.
+
+\
+
+Pre náročné produkčné prostredie spoločnosť Apple vyvinula systém ODKE+ (Open Domain Knowledge Extraction), ktorý sa špecializuje na udržiavanie čerstvosti znalostných grafov. Využíva modulárnu pipeline s modulmi akými sú Grounder na elimináciu halucinácií a Corroborator na obodovanie a normalizáciu faktov, vďaka čomu dosahuje precíznosť až 98,8\%~\cite{odkeplus2025}. 
+
+Pre špecifickú doménu e-commerce bol vytvorený multi-agentový framework AutoPKG. Automaticky indukuje typy produktov a extrahuje atribúty z multimodálneho obsahu ako text a obrázky. Kľúčovým prvkom je agent KGD (Knowledge Graph Decision), ktorý slúži ako jediné rozhranie pre zápis a robí rozhodnutia o zlúčení alebo nahradení uzlov na udržanie globálnej konzistencie~\cite{autopkg2026}. 
+
+Vedeckú akvizíciu znalostí rieši agentický framework KnoBuilder, ktorý strategicky plánuje dopyty na vyplnenie medzier v znalostiach a využíva vyvíjajúci sa graf ako svoju externú štruktúrovanú pamäť~\cite{knobuilder2025}.
+
+\
+
+Pre špecializované expertné domény, bol navrhnutý framework SAC-KG, ktorý využíva LLM ako doménových expertov v procese s tromi komponentami akými sú Generator, Verifier a Pruner. Verifikátor detekuje chyby pomocou repozitára RuleHub s viac ako 7000 pravidlami, zatiaľ čo Pruner určuje smer rastu grafu, čo umožňuje budovať grafy o veľkosti miliónov vrcholov s presnosťou cez 89\%~\cite{sackg2024}.
+
+Ďalším frameworkom, ktorý zavádza kontrolu úrovni kvality je GraphJudge. Využíva uzavretý LLM GPT-4o-mini na očistenie textu a generovanie kandidátnych trojíc, zatiaľ čo jemne doladený otvorený model LLaMA-2-7B funguje ako sudca grafu, ktorý tieto trojice verifikuje voči dokumentu~\cite{graphjudge2025}.
+
+
+Výskum v oblasti bezpečnostných domén tiež navrhuje Knowledge Routing Network (KRN) riadici hierarchické moduly LoRA pre prispôsobenie modelov k špecifickej terminológii pri zachovaní efektivity~\cite{peng2026construction}
+
+\
+
+Framework spoločnosti SAP nahrádza drahé LLM volania pri konštrukcii grafu priemyselnými knižnicami NLP (ako SpaCy) využívajúcimi závislostnú gramatiku, pričom si zachováva 94\% výkonu LLM riešení pri výrazne nižších nákladoch~\cite{sap2025}.
+
 
 \subsection{Medze}
-Čo existujúce prístupy neriešia: slovenčina, právna doména, hybridné spracovanie text + tabuľky v jednej pipeline → motivácia pre vlastný návrh.
+Čo existujúce prístupy neriešia: slovenčina, právna doména, hybridné spracovanie text + tabuľky v jednej pipeline → motivácia pre vlastný návrh. 
+
+shift the focus from static schema construction toward continuous schema adaptation within evolving knowledge environments
 
 
 

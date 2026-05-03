@@ -11,27 +11,27 @@
 \contentsline {subsection}{\numberline {1.3}Posun k využívaniu LLM}{15}{subsection.14}%
 \contentsline {subsection}{\numberline {1.4}Existijúce prístupy pre tvorbu znalostných grafov z textu}{17}{subsection.15}%
 \contentsline {subsection}{\numberline {1.5}Medze}{19}{subsection.16}%
-\contentsline {section}{\numberline {2}Návrh riešenia}{20}{section.17}%
-\contentsline {subsection}{\numberline {2.1}Predspracovanie}{20}{subsection.19}%
-\contentsline {subsubsection}{\numberline {2.1.1}Detekcia rozloženia}{20}{subsubsection.20}%
-\contentsline {subsubsection}{\numberline {2.1.2}Extrakcia tabuliek}{20}{subsubsection.21}%
-\contentsline {subsection}{\numberline {2.2}Trojkroková extrakcia}{21}{subsection.22}%
-\contentsline {subsubsection}{\numberline {2.2.1}Detekcia v otvorenej doméne (ODD)}{21}{subsubsection.24}%
-\contentsline {subsubsection}{\numberline {2.2.2}Úprava a spresnenie schémy (SR)}{22}{subsubsection.25}%
-\contentsline {subsubsection}{\numberline {2.2.3}Schémou riadená extrakcia (SDE)}{22}{subsubsection.26}%
-\contentsline {subsection}{\numberline {2.3}Vkladanie do databázy}{22}{subsection.27}%
-\contentsline {section}{\numberline {3}Implementácia}{24}{section.29}%
-\contentsline {subsection}{\numberline {3.1}Technologický stack}{24}{subsection.30}%
-\contentsline {subsection}{\numberline {3.2}Kľúčové implementačné rozhodnutia}{25}{subsection.31}%
-\contentsline {subsection}{\numberline {3.3}Prompt engineering pre slovenčinu}{27}{subsection.32}%
-\contentsline {section}{\numberline {4}Experimenty a vyhodnotenie}{29}{section.33}%
-\contentsline {subsection}{\numberline {4.1}Testovanie dáta a experimentálne prostredie}{29}{subsection.34}%
-\contentsline {subsection}{\numberline {4.2}Priebeh extrakcie a kvantitatívne výsledky}{29}{subsection.35}%
-\contentsline {subsection}{\numberline {4.3}Porovnanie s baseline}{29}{subsection.36}%
-\contentsline {subsection}{\numberline {4.4}Obmedzenia a vyzvy}{29}{subsection.37}%
-\contentsline {subsection}{\numberline {4.5}Diskusia a limitácie}{29}{subsection.38}%
-\contentsline {section}{Z\'{a}ver}{30}{section*.39}%
-\contentsline {section}{Literatúra}{31}{section*.40}%
+\contentsline {section}{\numberline {2}Návrh riešenia}{22}{section.17}%
+\contentsline {subsection}{\numberline {2.1}Predspracovanie}{22}{subsection.19}%
+\contentsline {subsubsection}{\numberline {2.1.1}Detekcia rozloženia}{22}{subsubsection.20}%
+\contentsline {subsubsection}{\numberline {2.1.2}Extrakcia tabuliek}{22}{subsubsection.21}%
+\contentsline {subsection}{\numberline {2.2}Trojkroková extrakcia}{23}{subsection.22}%
+\contentsline {subsubsection}{\numberline {2.2.1}Detekcia v otvorenej doméne (ODD)}{23}{subsubsection.24}%
+\contentsline {subsubsection}{\numberline {2.2.2}Úprava a spresnenie schémy (SR)}{24}{subsubsection.25}%
+\contentsline {subsubsection}{\numberline {2.2.3}Schémou riadená extrakcia (SDE)}{24}{subsubsection.26}%
+\contentsline {subsection}{\numberline {2.3}Vkladanie do databázy}{24}{subsection.27}%
+\contentsline {section}{\numberline {3}Implementácia}{26}{section.29}%
+\contentsline {subsection}{\numberline {3.1}Technologický stack}{26}{subsection.30}%
+\contentsline {subsection}{\numberline {3.2}Kľúčové implementačné rozhodnutia}{27}{subsection.31}%
+\contentsline {subsection}{\numberline {3.3}Prompt engineering pre slovenčinu}{29}{subsection.32}%
+\contentsline {section}{\numberline {4}Experimenty a vyhodnotenie}{31}{section.33}%
+\contentsline {subsection}{\numberline {4.1}Testovanie dáta a experimentálne prostredie}{31}{subsection.34}%
+\contentsline {subsection}{\numberline {4.2}Priebeh extrakcie a kvantitatívne výsledky}{31}{subsection.35}%
+\contentsline {subsection}{\numberline {4.3}Porovnanie s baseline}{31}{subsection.36}%
+\contentsline {subsection}{\numberline {4.4}Obmedzenia a vyzvy}{31}{subsection.37}%
+\contentsline {subsection}{\numberline {4.5}Diskusia a limitácie}{31}{subsection.38}%
+\contentsline {section}{Z\'{a}ver}{32}{section*.39}%
+\contentsline {section}{Literatúra}{33}{section*.40}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
@@ -156,76 +156,4 @@
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\babel@toc {slovak}{}\relax 
-\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{34}{section*.41}%
+\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{36}{section*.41}%

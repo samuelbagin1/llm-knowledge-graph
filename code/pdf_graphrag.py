@@ -4,6 +4,7 @@ import datetime
 import json
 import os
 import time
+import unicodedata
 from dataclasses import dataclass
 from typing import Dict, List, Any, Optional, Generic, TypeVar, cast
 from langchain_neo4j import Neo4jGraph, Neo4jVector, GraphCypherQAChain
@@ -96,6 +97,15 @@ def format_property_key(s: str) -> str:
     first_word = words[0].lower()
     capitalized_words = [word.capitalize() for word in words[1:]]
     return "".join([first_word] + capitalized_words)
+
+
+def strip_diacritics(s: str) -> str:
+    """Decompose Unicode and drop combining marks so Slovak diacritics map to ASCII.
+
+    Example: "Žilina" -> "Zilina", "Štefan" -> "Stefan", "rád" -> "rad".
+    """
+    decomposed = unicodedata.normalize("NFKD", s)
+    return "".join(c for c in decomposed if not unicodedata.combining(c))
 
 
 def format_node_type(node_type: Optional[str]) -> str:
@@ -497,8 +507,8 @@ class PDFGraphRAG:
             raw_properties = node_data.get("properties", {})
             formatted_properties = sanitize_property_keys(raw_properties) if raw_properties else {}
 
-            # Normalize node ID (title case for consistency)
-            normalized_id = str(node_id).strip()
+            # Normalize node ID (ASCII-fold + title case for consistency)
+            normalized_id = strip_diacritics(str(node_id).strip())
             if normalized_id and not normalized_id[0].isdigit():
                 normalized_id = normalized_id.title()
 
@@ -519,13 +529,15 @@ class PDFGraphRAG:
             if not source_id or not target_id or not rel_type:
                 continue
 
-            # Find matching nodes (case-insensitive)
+            # Find matching nodes (case- and diacritic-insensitive)
+            source_key = strip_diacritics(str(source_id).strip()).lower()
+            target_key = strip_diacritics(str(target_id).strip()).lower()
             source_node = next(
-                (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
+                (n for n in nodes if n.id.lower() == source_key),
                 None
             )
             target_node = next(
-                (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
+                (n for n in nodes if n.id.lower() == target_key),
                 None
             )
 
@@ -600,8 +612,8 @@ class PDFGraphRAG:
             else:
                 formatted_properties = sanitize_property_keys(raw_properties) if raw_properties else {}
 
-            # Normalize node ID (title case for consistency)
-            normalized_id = str(node_id).strip()
+            # Normalize node ID (ASCII-fold + title case for consistency)
+            normalized_id = strip_diacritics(str(node_id).strip())
             if normalized_id and not normalized_id[0].isdigit():
                 normalized_id = normalized_id.title()
 
@@ -611,8 +623,8 @@ class PDFGraphRAG:
                 properties=formatted_properties
             )
             nodes.append(node)
-            
-            
+
+
 
         # Process relationships with validation and formatting
         for rel_data in data.get("relationships", []):
@@ -624,13 +636,15 @@ class PDFGraphRAG:
             if not source_id or not target_id or not rel_type:
                 continue
 
-            # Find matching nodes (case-insensitive)
+            # Find matching nodes (case- and diacritic-insensitive)
+            source_key = strip_diacritics(str(source_id).strip()).lower()
+            target_key = strip_diacritics(str(target_id).strip()).lower()
             source_node = next(
-                (n for n in nodes if n.id.lower() == str(source_id).strip().lower()),
+                (n for n in nodes if n.id.lower() == source_key),
                 None
             )
             target_node = next(
-                (n for n in nodes if n.id.lower() == str(target_id).strip().lower()),
+                (n for n in nodes if n.id.lower() == target_key),
                 None
             )
 

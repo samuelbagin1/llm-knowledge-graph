@@ -304,9 +304,9 @@ User a system prompt explicitne nariaďuju modelu reťazové uvažovanie (Chain 
 \subsubsection{Schémou riadená extrakcia (SDE)}
 Posledný krok je extrakcia pomocou natvrdo nanútenej schémy (jednotný krok NER a RE), v tomto prípade je to upravená $S^*$ schéma. Text je v tomto kroku znovu rozdelený na menšie chunky s veľkosťou 1024 charakterov a prekryvom 128 charakterov. Tento menší chunk je podnietený odlišnou úlohou ako pri ODD. V tomto kroku GPT-5.4-mini model musí extrahovať konkrétne inštancie entít a vzťahov medzi nimi. Menšia veľkosť textu vynucuje model k extrahovaniu presnejších a lepšie uzemnených trojíc $(e_h, r, e_t)$, kde $e_h$ je začiatočná entita vzťahu, $e_t$ je koncová entita vzťahu a $r$ je vzťah medzi danými entitami. Menšie kontextové okno znižuje pravdepodobnosť, že sa dva nesúvisiace fakty zmiešajú do jedného vzťahu. Chunky sú posielané paralelne s limitovanou súbežnosťou a pause-and-retry mechanizmom, v prípade vyčerpania užívateľových tokenov za minútu.
 
-Aby striktné dodržanie schémy $S^*$ neviedlo k strate kontextu, system prompt zavádza špeciálnu konvenicu. Ak je typ vzťahu v $S^*$ príliš všeobecný (napr. MA\_NAROK\_NA), model uloží konkrétne spresnenie do vlstnosti vzťahu po kľúčom \texttt{add} (napr. add: vratenie dane). Týmto sa rieši napätie medzi striktnou schémou a expresivitou textu. Typ vzťahu zostáva normalizovaný a vyhľadateľný v grafe, ale doslovný význam sa zachováva ako stopa pre neskoršie vyhľadávanie.
+Prompt nariaďuje zopár kvalitatívnych pravidiel. Pravidlo najšpecifickejšieho typu, ak schéma obsahuje aj všeobecnejšie aj špecifickejšie pasujúce typy, použije sa špecifickejší. Pravidlo closest-or-skip, ak v schéme nie je presne pasujúci typ, model použije najbližší existujúci, alebo entitu úplne preskočí (radšej nič ako halucinovaný typ). Vlastnosti len ak sú explicitné, model nesmie vymýšľať vlastnosti uzlov ani vzťahov, môže uložiť iba to, čo je v texte priamo uvedené. A v neposlednom rade, id uzla musí byť označené v neurčitku, rieši sa tým koherentnosť ale aj jednoduchšie zjednocovanie v databáze. Taktiež modelu je ukázaný vzor jednym maximálne dvoma príkladmi, ako by mal výstup vyzerať.
 
-Prompt nariaďuje zopár kvalitatívnych pravidiel. Po prvé, pravidlo najšpecifickejšieho typu, ak schéma obsahuje aj všeobecnejšie aj špecifickejšie pasujúce typy, použije sa špecifickejší. Po druhé, pravidlo closest-or-skip, ak v schéme nie je presne pasujúci typ, model použije najbližší existujúci, alebo entitu úplne preskočí (radšej nič ako halucinovaný typ). Po tretie, vlastnosti len ak sú explicitné, model nesmie vymýšľať vlastnosti uzlov ani vzťahov, môže uložiť iba to, čo je v texte priamo uvedené. A v neposlednom rade, id uzla musí byť označené v neurčitku, rieši sa tým koherentnosť ale aj jednoduchšie zjednocovanie v databáze.
+Aby striktné dodržanie schémy $S^*$ neviedlo k strate kontextu, system prompt zavádza špeciálnu konvenicu. Ak je typ vzťahu v $S^*$ príliš všeobecný (napr. MA\_NAROK\_NA), model uloží konkrétne spresnenie do vlstnosti vzťahu po kľúčom \texttt{add} (napr. add: vratenie dane). Týmto sa rieši napätie medzi striktnou schémou a expresivitou textu. Typ vzťahu zostáva normalizovaný a vyhľadateľný v grafe, ale doslovný význam sa zachováva ako stopa pre neskoršie vyhľadávanie. Aby uzol nestratil význam slova normalizáciou ID, tak vo vlastnostiach je mu priradené meno aj s použitím diakritiky.
 
 Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešponduju upravenej schéme $S^*$. Týmto krokom získame GraphDocument $G_i = (V_i,\, E_i,\, src_i)$. Následne ľahká kontrola a opracovanie, znormalizuje id uzlov do title case a pre vzťahy do UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE), a vynechá trojice ktorým chýba zdroj alebo cieľ. Extrahované uzly z chunku sú spojené s uzlom Chunk pomocou vzťahu IN\_CHUNK. Neskôr vďaka tomuto vzťahu v kroku na získavanie dát, môžme získať originánlny text, ktorý podporuje dané trojice.
 
@@ -411,12 +411,11 @@ DocLayout-YOLO je špecializovaná neurónová sieť založená na architektúre
 
 \subsection{Kľúčové implementačné rozhodnutia}
 
-\noindent\textbf{Mechanizmus semfaru}
+\subsubsection{Mechanizmus semfaru}
 
-\
 Pri spracovávaní dokumento pomocou LLM modelu, ktoré sú rozdelené na desiatky či i stovky chunkov, nastávajú 2 problémy. Prvým problémom je, keď posielame veľa požiadaviek paralelne, tak prtažíme API a vyčerpáme limit tokenov za minútu (TPM - Tokens Per Minute). Druhým je, keď jedna požiadavka zlyhá kvôli týmto limitám, zvyšné požiadavky s istotou zlyhajú taktiež. Tieto problémy riešim pomocou koordinačného mechanizmu.
 
-Inicializácia začína vytvorením 3 kontrolných prvkov. Prvým je semafor, ktorý riadi konkurenčný limit, koľko úloh naraz môže byť obsluhovaných. V tomto implementovaní je to 5 konkurenčných úloh. Zabraňuje to systému aby neodoslal stovky požiadaviek naraz. Druhým prvkom je globálny prepínač \textit{pause switch}, ktorý začína v zapnutej pozícií. Pokiaľ tento prepínač je v zapnutej pozícií, systém môže voľne posielať API požiadavky. Akonáhle prepínač sa dostane do pozície vypnutej, každá pracovná úloha v systéme sa zastaví na rovnakom synchronizačnom bode a čaká. Posledným prvkom je zámok, ktorý povoľuje v prípade chyby alebo zlyhania pracovať iba na jednej úlohe.
+Inicializácia začína vytvorením 3 kontrolných prvkov. Prvým je semafor, ktorý riadi konkurenčný limit, koľko úloh naraz môže byť obsluhovaných. V tomto implementovaní je to 5 konkurenčných úloh. Zabraňuje to systému aby neodoslal stovky požiadaviek naraz. Druhým prvkom je globálny prepínač pause switch, ktorý začína v zapnutej pozícií. Pokiaľ tento prepínač je v zapnutej pozícií, systém môže voľne posielať API požiadavky. Akonáhle prepínač sa dostane do pozície vypnutej, každá pracovná úloha v systéme sa zastaví na rovnakom synchronizačnom bode a čaká. Posledným prvkom je zámok, ktorý povoľuje v prípade chyby alebo zlyhania pracovať iba na jednej úlohe.
 
 Po nastavení týchto riadiacich prvkov, je každému chunku pridelená asychrónna úloha. Každá úloha sa riadi rovnakou rutinou a má povolené až tri pokusy na dokončenie svojho procesu. Na začiatku každého pokusu úloha naprv overí stav globálneho prepínača. Ak je prepínač vypnutý, úloha čaká, kým sa znova nezapne. 
 
@@ -428,9 +427,8 @@ Precíznosť tohto návrhu spočíva v spôsobe, akým zaobchádza so zlyhaním 
 
 \
 
-\noindent\textbf{Štruktúrovaný výstup}
+\subsubsection{Štruktúrovaný výstup}
 
-\
 V kontexte spracovania prirodzeného jazyka prostredníctvom LLM predstavuje štruktúrovaný výstup (a. j. structured output) zásadnú techniku, ktorá zaručuje, že odpoveď volania modelu bude zodpovedať definovanej schéme. Vďaka tomu sa eliminuje chybovosť, ktorú zapričiňuje parsovanie výstupných dát z modelu, zaručí plynulosť spracovania a zdielania dát vo workflowe. Dáta môžme jednoducho deserializovať do Python objektov (dictionary, dataclass alebo Pydantic modelu). V prostredí knižnice LangChain existují dva odlišné spôsoby, ktoré majú svoje špecifické vlastnosti, výhody a obmedzenia v závislosti od použitého modelu.
 
 \
@@ -489,29 +487,47 @@ Tvojou úlohou je vyčistiť, normalizovať a deduplikovať schému entít a vz�
 
 
 \section{Experimenty a vyhodnotenie}
-9 s.
 
-\subsection{Testovanie dáta a experimentálne prostredie}
-1 s. Opis vybraných právnych textov (konkrétny zákon alebo colný sadzobník), štatistika vstupu (strany, tabuľky, odhadované entity), hardvér, použité verzie modelov.
+Prvotná fáza testovania systému na extrakciu pomenovaných entít a vzťahov bola vykonávaná nad datasetom PDF kníh, kde hlavným zdrojom bola beletria. Extrakcia prebiehala v otvorenej doméne bez vopred danej schémy, aby sa overilo, do akej miery LLM dokáže samostatne identifikovať relevantné typy uzlov a vzťahov priamo z textu. Najvýraznejším problémom bola duplicitnosť, kedy pre ten istý typ vzťahu alebo uzla vznikalo 2 až 6 sémanticky totožných variantov s drobne odlišnými názvami. Toto pozorovanie viedlo k vytvoreniu plne automatického systému zjednotenia schémy NER a RE, ktorý priebežne konsoliduje výstupy do koherentnej a bezduplicitnej podoby.
 
-\subsection{Priebeh extrakcie a kvantitatívne výsledky}
-3 s.
+V druhej fáze sa extrakcia presunula na vedecké publikácie, kde sa ukázalo, že LLM zápasí s úzko špecializovanou odbornou terminológiou a začína halucinovať priradenia, ktoré v texte nie sú podložené. Kontext vzťahov sa však darilo zachytiť pomerne presne, najmä vďaka rozšíreným vlastnostiam vzťahu, ktoré dopĺňajú samotný typ o ďalšie informácie z vety. Naopak, pri prechode z otvorenej domény na zúženú schému model začal extrahovať redšie, pretože časť entít, ktoré v otvorenom režime zachytával, už do predpísanej schémy nespadala a model ich radšej úplne vynechal.
 
-Metriky z tvojho pipeline:
-
-- Počet chunkov po oboch chunkovaniach
-- ODD: počet detegovaných typov uzlov a relácií per chunk, histogram
-- Refinement: kompresia schémy (napr. 150 surových typov → 45 kanonických), merge log s ukážkami ("Dan" + "Daň" + "dan" → "Dan")
-- SDE: počet extrahovaných inštancií uzlov a relácií
-- Tabuľková vetva: počet detegovaných tabuliek vs. manuálne spočítané, úspešnosť prevodu
-- Čas behu jednotlivých fáz, počet LLM volaní, odhad nákladov
+Tretia fáza preniesla systém na slovenskú legislatívu, ktorá obsahuje dlhé vzťahy rozložené naprieč viacerými vetami a odsekmi, teda závislosti, ktoré klasická vetne ohraničená extrakcia nedokáže pokryť, ale veľké jazykové modely vďaka dlhému kontextu áno. Systém a prompty boli prispôsobené na stavbu doménovo špecifického znalostného grafu vo finančnom práve, ktoré obsahuje hustú sieť krížových odkazov medzi paragrafmi a odsekmi, presne ten typ štruktúry, kde má GraphRAG nadobudnúť výhodu nad klasickým vektorovým RAG. Texty navyše kombinujú plynulú prózu, husté tabuľky (sadzby, výnimky, prílohy) a vzorce (výpočet základu dane, koeficientov), čím pokrývajú všetky tri prúdy predspracovania. Ako trénovaciu množinu som zvolil zákony finančného práva (zákon o cenných papieroch a investičných službách, o dani z príjmov, o poisťovníctve a ďalšie), v ktorých je široký výskyt tabuliek aj vzorcov. Na testovaciu množinu bol zvolený zákon o dani z pridanej hodnoty (222/2004 Z. z.), z ktorého bolo vytvorených 100 grafových dokumentov.
 
 
-\subsection{Porovnanie s baseline}
-1 s. Napr. LLMGraphTransformer bez schema refinement kroku — ukáže pridanú hodnotu tvojho trojfázového návrhu. Alebo porovnanie s ODD-only (bez refinementu).
 
-\subsection{Obmedzenia a vyzvy}
+\subsection{Voľba modelov}
 
-\subsection{Diskusia a limitácie}
-zaver
-1 s. Čo sa ukázalo ako silné stránky (konsolidácia schémy, hybridné spracovanie tabuliek), kde sú slabé miesta (náklady na LLM, závislosť na kvalite PDF, viacstránkové tabuľky s rozdielnou štruktúrou).
+benchmarky modelov
+
+\subsection{Kvalita spracovania}
+
+\subsubsection{Tabuľky a vzorce}
+Empirické pozorovania ukázali, že vízualne jazykové modely majú výrazné problémy spracovať dlhé tabuľky naraz. Pri zaslaní celej viac-stranovej tabuľky v jednej požiadavke model často vynecháva riadky v strednej časti alebo prehodí poradie buniek. Z tohto dôvodu je v predspracovaní zvolená stratégia spracovania po dvoch obrázkoch tabuliek v jednom volaní. Toto okno predstavuje empiricky najlepší kompromis medzi uzším kontextom (model vidí dosť na to, aby zachytil prepojenia medzi nadväzujúcimi stranami tabuľky) a presnosťou (model nestratí jednotlivé bunky). Z testovaných modelov má GPT-5.4-mini nižšiu latenciu ako Gemini 2.5 Flash pri porovnateľnej kvalite výstupu, takže je v tejto fáze uprednostnený.
+
+V rámci silných stránok modely spoľahlivo zvládajú dva netriviálne aspekty tabuliek. Po prvé, korektne rozpoznávajú a priraďujú prázdne bunky (colspan a rowspan sa vyjadruje ako prázdna bunka). Výsledné HTML zachováva pôvodnú štruktúru aj pri tabuľkách so zlúčenými hlavičkami a viacúrovňovým členením. Po druhé, OCR samotných buniek je v praxi bezchybné, preklepové chyby v doslovnom prepise textu sa v testovaných tabuľkách prakticky nevyskytli. Taktiež pri OCR vzorcoch je chybovosť rozlíšenia matematických vyjadrení veľmi nízka.
+
+Slabé stránky sa prejavujú v troch špecifických situáciách. Po prvé, ak detektor rozloženia zoskupí do jedného logického celku dve a viac samostatných tabuliek (typicky pri tabuľkách umiestnených pod sebou na rovnakej strane alebo hneď na ďalšej strane), model úspešne rozdelí výstup na dva oddelené HTML bloky iba približne v 60\% prípadov. V ostatných prípadoch buď tabuľky zlúči do jedného HTML bloku, alebo druhú tabuľku úplne ignoruje. Po druhé, v menšine spracovaní s viacerými tabuľkami model síce úspešne zachytí obsah druhej tabuľky, ale jej hlavičku vynechá, naznačuje to stratu kotviacej informácie pri prechode medzi obrázkami. Po tretie, model výrazne zlyháva pri tabuľkách otočených o 90$^\circ$ (typické pre široké tabuľky umiestnené na šírku strany v právnych predpisoch), kde sa orientačne stráca a generované HTML má prehádzané poradie stĺpcov a riadkov.
+
+\subsubsection{NER a RE}
+
+Pri extrakcii pomenovaných entít a vzťahov z textu právnych predpisov modely vykazujú zmiešané výsledky. Medzi silné stránky patrí pomerne presné priradenie sémanticky najbližšieho typu vzťahu zo schémy, spoľahlivé zachytávanie medzivetných vzťahov a schopnosť rozvinúť kontext vzťahu vo vlastnostiach, čo je dôležité, pretože samotný typ vzťahu často nezachytí celý zmysel vety. Modely tiež dokážu spracovať dlhé pomenované entity ako jeden celok (Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze), aj keď v iných prípadoch zachytia do jednej entity nadmerne rozsiahle frázy (Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu alebo dokonca celé súvetia ako Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 Percenta).
+
+Slabé stránky sa prejavujú vo viacerých rovinách. Po prvé, modely nedôsledne dodržiavajú výstupný formát pre identifikátory uzlov, kde namiesto požadovaného Title Case často vkladajú medzi slová podčiarkovník (Financne\_Riaditelstvo). Po druhé, vzniká nekoherentnosť pri pomenovaní tých istých entít naprieč chunkami, najmä pri odkazoch na zákony (Zakon 222/2004 Z. Z., 222/2004 Z. z., Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.), pričom konkrétna forma závisí od toho, ako je daná entita zmienená v zdrojovom texte. Po tretie, pri niektorých vzťahoch je smer hrany otočený oproti sémantike vety. Občas sa vo výstupe objavujú aj české slová, gramatické chyby a vynechané písmená (In Y Rovnocenny Doklad Vypisu Z Registra Trestov, Danie), pričom napriek explicitnej inštrukcii negenerovať diakritiku v identifikátoroch ju model stále vracia, čo je následne riešené v postprocesingu.
+
+Posledným pozorovaným problémom je, že pri niektorých chunkoch model úplne vynechá výstup vzťahov, v najhorších prípadoch aj entít, prípadne spracovanie celkom odmietne. Z tohto dôvodu je zavedený mechanizmus semaforu s troma opakovaniami, pričom prázdne vrátené dokumenty bez uzlov postupujú do druhého kola spracovania.
+
+\subsubsection{Pridanie validačného kroku}
+
+odstranenie duplicit typu Zakon 222/2004 Z. Z., 222/2004 Z. z., Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z., avsak velmi prisne filtrovanie aj na ostatne entity a vztahy, preto sa musi porovnavat aj s kontextom daneho chunku a s danou schemou, velmi nakladne (dvojnasobny vydavok 2x sde cena), mozne vyuzitie lokalneho modelu 
+
+avsak pri vyhladavani, llm modeli si dokazu poradit s tymito duplicitami ak je konzistentna schema typov uzlov
+
+\subsection{Kvalitatívne výsledky}
+
+\subsubsection{Extrakcia}
+F1 skore
+
+\subsubsection{Porovnanie RAG s GraphRAG}
+
+\subsection{Vylepšenia}

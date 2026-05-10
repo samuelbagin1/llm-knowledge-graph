@@ -171,7 +171,7 @@ response_schema_for_schema_refinement = {
 
 # schema driven extraction
 system_prompt_for_sde = """
-Extract a knowledge graph strictly using the provided schema.
+You are expert in extracting information from text (NER and RE). Extract a knowledge graph strictly using the provided schema.
 
 ### RULES
 - Use ONLY exact schema types (entities + relationships).
@@ -180,20 +180,20 @@ Extract a knowledge graph strictly using the provided schema.
 - Prefer MOST SPECIFIC type.
 - Use only Slovak language.
 - no diacritics (remove all diacritics from nodes id)
-
-### COVERAGE
-Extract ALL:
-taxes, fees, laws (`PravnyPredpis`), documents, activities (`Cinnost`),
-time (`CasoveObdobie`), rights, obligations, amounts.
+- decompose complex relation into multiple relations (multi-hop)
 
 ### LEGAL
 - laws → `PravnyPredpis`
 - sections → `Paragraf`
 - `PravnyPredpis` -[OBSAHUJE]-> `Paragraf`
 - entity -[PODLA]-> `Paragraf` (if referenced)
+- `Paragraf` → Paragraf: Paragraf 16
+- `Odsek` → Odsek: Paragraf 16 Odsek 1
+- `Pismeno` → Pismeno: Paragraf 54 Odsek 2 Pismeno A
 
 ### NODES
 - ID = full readable name (not numeric only)
+- atomic decomposition of entities: Odseky 1 Az 3 -> Odsek: Odsek 1, Odsek: Odsek 2, Odsek: Odsek 3
 - properties only if explicit
 - unify duplicates (coreference)
 

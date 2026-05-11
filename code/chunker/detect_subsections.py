@@ -19,8 +19,12 @@ the same shape — cross-references like `písm. a)` and footnote markers like
 
 import json
 import re
+import sys
 from pathlib import Path
-from time import sleep
+
+# See chunker.py for the rationale — needed when this file is run directly.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from chunker.detect_paragraphs import (
     detect_paragraphs,
@@ -28,7 +32,7 @@ from chunker.detect_paragraphs import (
 )
 
 
-PDF_PATH = Path(__file__).parent / "assets" / "ZZ_2004_222_20260101.pdf"
+PDF_PATH = Path(__file__).resolve().parent.parent / "assets" / "ZZ_2004_222_20260101.pdf"
 
 ODSEK_RE = re.compile(r"^\((\d+)\)\s", re.MULTILINE)
 LETTER_RE = re.compile(r"^([a-z])\)\s", re.MULTILINE)
@@ -184,6 +188,8 @@ def detect_subsections(text: str, page_offsets=None) -> list[dict]:
 
     if page_offsets is not None:
         _attach_pages(paragraphs, page_offsets)
+        
+    write_json(paragraphs, "./document_decompose.json")
     return paragraphs
 
 
@@ -193,7 +199,6 @@ if __name__ == "__main__":
     text, page_offsets = Chunker().load_pdf_text(PDF_PATH)
     paragraphs = detect_subsections(text, page_offsets)
     
-    write_json(paragraphs, "./chunked_document.json")
 
     # for p in paragraphs:
     #     headline = p["headline"] or "—"

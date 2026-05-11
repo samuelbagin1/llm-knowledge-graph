@@ -11,7 +11,7 @@ import json
 import re
 import sys
 from pathlib import Path
-
+from langchain_neo4j.graphs.graph_document import Node
 from langchain_community.document_loaders import PyPDFLoader
 
 # When run as a script (python chunker.py), sys.path[0] is this file's directory
@@ -76,12 +76,83 @@ class Chunker:
             offset += advance
 
         return "\n".join(cleaned), page_offsets
+    
 
-    def split_document(self, pdf_path: str | Path) -> list[Chunk]:
-        """Load a Slovak law PDF and return the flat list of chunks."""
+
+    def split_document(self, pdf_path: str | Path) -> dict:
+        """Load a Slovak law PDF and return {"chunks": [...], "last_page": int | None}.
+
+        `last_page` is the `page_start` of the final § paragraph (the page on
+        which the closing block of the law begins). `None` if no paragraphs.
+        """
         text, page_offsets = self.load_pdf_text(pdf_path)
         paragraphs = detect_subsections(text, page_offsets)
-        return self.linearize(paragraphs)
+        
+        all_nodes = self.get_nodes(paragraphs)
+        chunks = self.linearize(paragraphs)
+        
+        last_page = paragraphs[-1].get("page_start") if paragraphs else None
+        return {"chunks": chunks, "nodes": all_nodes, "last_page": last_page}
+
+
+
+    def _make_node(
+        self,
+        node_id: str,
+        node_type: str,
+        path: list[str],
+        text: str,
+        extras: dict | None = None,
+    ) -> Node:
+        """Build a single graph Node. `extras` lets the paragraph-level caller
+        attach `headline` / `page_start` / `page_end` (None values are dropped
+        so the graph isn't littered with nulls)."""
+        properties = {"path": path, "text": text}
+        if extras:
+            properties.update({k: v for k, v in extras.items() if v is not None})
+        return Node(id=node_id, type=node_type, properties=properties)
+
+
+    def get_nodes(self, paragraphs: list[dict]) -> list[Node]:
+        """Walk the 4-level tree depth-first and emit one Node at every level.
+
+        IDs are human-readable and accumulate ancestor labels:
+            "Paragraf §16a"
+            "Paragraf §16a Odsek 2"
+            "Paragraf §16a Odsek 2 Pismeno c"
+            "Paragraf §16a Odsek 2 Pismeno c Bod 3"
+        """
+        nodes: list[Node] = []
+
+        for para in paragraphs:
+            if "marker" not in para:
+                continue
+            p_id = f"Paragraf §{para['number']}"
+            p_path = [para["marker"]]
+            p_extras = {
+                "headline": para.get("headline"),
+                "page_start": para.get("page_start"),
+                "page_end": para.get("page_end"),
+            }
+            nodes.append(self._make_node(p_id, "Paragraf", p_path, para.get("text", ""), p_extras))
+
+            for odsek in para.get("odseky", []):
+                o_id = f"{p_id} Odsek {odsek['number']}"
+                o_path = p_path + [odsek["marker"]]
+                nodes.append(self._make_node(o_id, "Odsek", o_path, odsek["lead"]))
+
+                for letter in odsek.get("letters", []):
+                    l_id = f"{o_id} Pismeno {letter['letter']}"
+                    l_path = o_path + [letter["marker"]]
+                    nodes.append(self._make_node(l_id, "Pismeno", l_path, letter["lead"]))
+
+                    for bod in letter.get("bode", []):
+                        b_id = f"{l_id} Bod {bod['number']}"
+                        b_path = l_path + [bod["marker"]]
+                        nodes.append(self._make_node(b_id, "Bod", b_path, bod["lead"]))
+
+        return nodes
+
 
     def linearize(self, paragraphs: list[dict]) -> list[Chunk]:
         chunks: list[Chunk] = []
@@ -89,7 +160,11 @@ class Chunker:
             if "marker" not in para:
                 continue
             self._walk_paragraph(para, chunks)
+            
+        write_json(chunks, "./chunks.json")
         return chunks
+    
+    
 
     def _walk_paragraph(self, para: dict, out: list[Chunk]) -> None:
         p_marker = para["marker"]
@@ -135,8 +210,9 @@ class Chunker:
 
 if __name__ == "__main__":
     PDF_PATH = Path(__file__).resolve().parent.parent / "assets" / "ZZ_2004_222_20260101.pdf"
-    chunks = Chunker().split_document(PDF_PATH)
-    write_json(chunks, "./chunks.json")
+    result = Chunker().split_document(PDF_PATH)
+    chunks = result["chunks"]
     print(f"Total chunks: {len(chunks)}")
+    print(f"Last page: {result['last_page']}")
     for c in chunks[:5]:
         print(f"{' › '.join(c.path):30s}  {c.text[:80]}…")

@@ -13,7 +13,12 @@ Patterns (highest priority first):
 """
 
 import re
+import sys
 from pathlib import Path
+
+# See chunker.py for the rationale — needed when this file is run directly.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # Slovak uppercase letters (incl. diacritics) — used to spot heading starts.
 CAPITAL = "A-ZÁÄČĎÉÍĹĽŇÓÔŔŠŤÚÝŽ"
@@ -192,7 +197,7 @@ def detect_paragraphs(text: str) -> list[dict]:
 if __name__ == "__main__":
     from chunker.chunker import Chunker  # lazy: avoids module-level circular import
 
-    PDF_PATH = Path(__file__).parent / "assets" / "ZZ_2004_222_20260101.pdf"
+    PDF_PATH = Path(__file__).resolve().parent.parent / "assets" / "ZZ_2004_222_20260101.pdf"
     text, _page_offsets = Chunker().load_pdf_text(PDF_PATH)
     paragraphs = detect_paragraphs(text)
 

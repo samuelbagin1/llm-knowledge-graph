@@ -1,7 +1,7 @@
 """Detect §-paragraphs and their headlines in Slovak law PDFs.
 
-Loads a PDF with PyPDFLoader, strips the per-page running header, then walks
-every § marker and resolves its headline using three priority-ordered patterns.
+Walks every § marker in already-loaded text and resolves its headline using
+three priority-ordered patterns. PDF loading lives in `chunker.Chunker.load_pdf_text`.
 
 Patterns (highest priority first):
     1. AFTER § :  \\n§ N\\n{headline}\\n(1)
@@ -15,30 +15,30 @@ Patterns (highest priority first):
 import re
 from pathlib import Path
 
-from langchain_community.document_loaders import PyPDFLoader
-
-
-PDF_PATH = Path(__file__).parent / "assets" / "ZZ_2004_222_20260101.pdf"
-
 # Slovak uppercase letters (incl. diacritics) — used to spot heading starts.
 CAPITAL = "A-ZÁÄČĎÉÍĹĽŇÓÔŔŠŤÚÝŽ"
 # Slovak lowercase letters (incl. diacritics) — used to detect soft-wrap continuations.
 LOWERCASE = "a-záäčďéíľĺňóôŕšťúýž"
 
-# Per-page running header. Two layouts:
-#   even pages: "Strana N   Zbierka zákonov Slovenskej republiky   222/2004 Z. z."
-#   odd  pages: "222/2004 Z. z.   Zbierka zákonov Slovenskej republiky   Strana N"
-PAGE_HEADER_RE = re.compile(
-    r"(?:Strana\s+\d+\s+Zbierka\s+zákonov\s+Slovenskej\s+republiky\s+222/2004\s+Z\.\s*z\.)"
-    r"|(?:222/2004\s+Z\.\s*z\.\s+Zbierka\s+zákonov\s+Slovenskej\s+republiky\s+Strana\s+\d+)"
-)
-
 # Every §-block opens with "\n§ <number><0-2 letters>\n", e.g. "§ 4", "§ 16a", "§ 68cb".
 SECTION_RE = re.compile(r"\n§\s*(\d+[a-z]{0,2})\n")
 
+# First Odsek marker "(N) " at line start — used only to find the boundary
+# between a §'s own prose and its subsections. Full Odsek parsing lives in
+# detect_subsections.py.
+ODSEK_PROBE_RE = re.compile(r"^\(\d+\)\s", re.MULTILINE)
 
-def _glue_soft_wrap(body: str) -> str:
+
+def _glue_soft_wrap(body: str) -> tuple[str, int]:
     """Join soft-wrapped lines from the start of `body` into one logical line.
+
+    Returns (glued, end_offset) where:
+        glued      — the joined first paragraph (lines combined with ' ')
+        end_offset — char offset in `body` immediately after the last consumed
+                     line's trailing '\\n'; body[end_offset:] is whatever
+                     follows the glued headline. Needed because soft-wrap
+                     replaces '\\n' with ' ' ambiguously, so the cut point
+                     cannot be recovered from `glued` alone.
 
     Stops at terminal punctuation (.?!), blank lines, or structural markers
     that cannot be part of a headline:
@@ -52,9 +52,10 @@ def _glue_soft_wrap(body: str) -> str:
     lines = body.split("\n")
     i = next((k for k, line in enumerate(lines) if line.strip()), None)
     if i is None:
-        return ""
+        return "", 0
 
     glued = lines[i].strip()
+    last_j = i
     for j in range(i + 1, len(lines)):
         nxt = lines[j].strip()
         if not nxt:
@@ -68,7 +69,10 @@ def _glue_soft_wrap(body: str) -> str:
         if not re.match(rf"[{LOWERCASE}]", nxt):
             break
         glued = f"{glued} {nxt}"
-    return glued
+        last_j = j
+
+    end_offset = sum(len(lines[k]) + 1 for k in range(last_j + 1))
+    return glued, end_offset
 
 
 def _is_headline_valid(candidate: str) -> bool:
@@ -92,11 +96,13 @@ def _is_headline_valid(candidate: str) -> bool:
     return True
 
 
-def load_pdf_text(pdf_path: str | Path) -> str:
-    """Load PDF, strip running headers per page, return concatenated text."""
-    pages = PyPDFLoader(str(pdf_path)).load()
-    cleaned = [PAGE_HEADER_RE.sub("", page.page_content) for page in pages]
-    return "\n".join(cleaned)
+def page_for_offset(offset: int, page_offsets: list[tuple[int, int, int]]) -> int:
+    """Return the 1-indexed PDF page number containing `offset`. Falls back to
+    the last page if `offset` lies at or past EOF."""
+    for page_num, start, end in page_offsets:
+        if start <= offset < end:
+            return page_num
+    return page_offsets[-1][0]
 
 
 def detect_paragraphs(text: str) -> list[dict]:
@@ -110,6 +116,10 @@ def detect_paragraphs(text: str) -> list[dict]:
             "position":   "after" | "before" | "none",
             "body_start": int,   # char offset in `text` where body starts
             "body_end":   int,   # char offset where body ends (next § or EOF)
+            "text":       str,   # prose between headline and first "(N)"
+                                 # (or full prose if no subsections — this is
+                                 # what captures the body of §s like 85l/85m
+                                 # that have content but no odseky)
         }
     """
     results: list[dict] = []
@@ -124,6 +134,7 @@ def detect_paragraphs(text: str) -> list[dict]:
         headline: str | None = None
         position = "none"
         body_starts_with_1 = body.lstrip().startswith("(1)")
+        headline_end_in_body = 0  # where the prose body begins (post-headline)
 
         if not body_starts_with_1:
             # Priority 1 — headline AFTER § (between "§ N\n" and "\n(1)")
@@ -132,15 +143,17 @@ def detect_paragraphs(text: str) -> list[dict]:
             if after_m and after_m.group(1).strip():
                 headline = after_m.group(1).strip()
                 position = "after"
+                headline_end_in_body = after_m.end(1)
             else:
                 # Priority 4 — no "(1)" in body. Glue soft-wrapped lines into
                 # one logical line, then validate against tightened heuristics
                 # (rejects multi-comma enumerations, §-references, footnote
                 # markers, sentences ending in . : ; etc.).
-                candidate = _glue_soft_wrap(body)
+                candidate, candidate_end = _glue_soft_wrap(body)
                 if _is_headline_valid(candidate):
                     headline = candidate
                     position = "after"
+                    headline_end_in_body = candidate_end
 
         # Priority 2 (also as fallback) — headline BEFORE § (last line above
         # "§ N\n"). Runs when no AFTER headline was found, regardless of
@@ -155,6 +168,12 @@ def detect_paragraphs(text: str) -> list[dict]:
                     position = "before"
             # else: Priority 3 — no headline (position stays "none").
 
+        # Prose body: everything after the headline up to the first "(N)"
+        # subsection marker (or the entire remainder if no subsections).
+        prose = body[headline_end_in_body:]
+        first_odsek = ODSEK_PROBE_RE.search(prose)
+        prose_text = (prose[: first_odsek.start()] if first_odsek else prose).strip()
+
         results.append(
             {
                 "marker": f"§ {number}",
@@ -163,6 +182,7 @@ def detect_paragraphs(text: str) -> list[dict]:
                 "position": position,
                 "body_start": body_start,
                 "body_end": body_end,
+                "text": prose_text,
             }
         )
 
@@ -170,7 +190,10 @@ def detect_paragraphs(text: str) -> list[dict]:
 
 
 if __name__ == "__main__":
-    text = load_pdf_text(PDF_PATH)
+    from chunker.chunker import Chunker  # lazy: avoids module-level circular import
+
+    PDF_PATH = Path(__file__).parent / "assets" / "ZZ_2004_222_20260101.pdf"
+    text, _page_offsets = Chunker().load_pdf_text(PDF_PATH)
     paragraphs = detect_paragraphs(text)
 
     for p in paragraphs:

@@ -443,7 +443,6 @@ class PDFGraphRAG:
         
         
         
-    # TODO
     def get_help(self):
         help_text = """
         Help Instructions:
@@ -1940,6 +1939,8 @@ Pred vystupom over:
             # access HTML from in-memory response
             response = result['response']
             html = response.get("html", "") if isinstance(response, dict) else response.html if hasattr(response, "html") else str(response)
+            
+            # TODO: get the headline (\nTEXT IN CAPITAL\n) of table from the page content
 
             # compute page range for this group
             pages = sorted(d["page"] for d in group)
@@ -2017,6 +2018,9 @@ Pred vystupom over:
 
 
         # ---- SDE ----
+        # TODO: use chunker to chunk documents, pass down to the sde in which paragraph/odsek/letter/bod it is, edit of the function has to handle if it is not chunked (containing which para/odsek/.. it is)
+        # TODO: connect the nodes with its corresponding section, and sections (paragraph/odsek/letter/bod the id from get_nodes) with Document node
+        # TODO: for remaining pages (excluded pages with tables) use RecursiveCharacterTextSplitter for each page and then append it to SDE
         splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
         chunked_documents = splitter.split_documents(documents)
         if not chunked_documents:

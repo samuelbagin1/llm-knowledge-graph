@@ -6,13 +6,13 @@ Each chunk is emitted at the deepest available level of its path; parent
 A § with no odseky becomes a single chunk built from its `text` field.
 """
 
-from dataclasses import asdict, dataclass
 import json
 import re
 import sys
 from pathlib import Path
 from langchain_neo4j.graphs.graph_document import Node
 from langchain_community.document_loaders import PyPDFLoader
+from langchain_core.documents import Document
 
 # When run as a script (python chunker.py), sys.path[0] is this file's directory
 # and `import chunker` would resolve to *this file*, masking the package. Add
@@ -30,29 +30,34 @@ _PAGE_HEADER_RE = re.compile(
 )
 
 
-@dataclass
-class Chunk:
-    text: str
-    path: list[str]
-    headline: str | None = None
-
-
 def _join(*parts: str) -> str:
     """Strip each part, drop empties, join with a single space."""
     return " ".join(s for s in (p.strip() for p in parts) if s)
 
 
-def write_json(chunks: list[Chunk], path: str | Path) -> None:
-    """Serialize a list of `Chunk`s to `path` as UTF-8 JSON (no ASCII escapes,
+def _make_doc(text: str, path: list[str], headline: str | None) -> Document:
+    """Build a langchain `Document` with `path` + `headline` in metadata."""
+    metadata: dict = {"path": path}
+    if headline is not None:
+        metadata["headline"] = headline
+    return Document(page_content=text, metadata=metadata)
+
+
+def write_json(chunks: list[Document], path: str | Path) -> None:
+    """Serialize a list of `Document`s to `path` as UTF-8 JSON (no ASCII escapes,
     so Slovak diacritics stay readable)."""
     Path(path).write_text(
-        json.dumps([asdict(c) for c in chunks], ensure_ascii=False, indent=2),
+        json.dumps(
+            [{"text": d.page_content, **d.metadata} for d in chunks],
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
 
 
 class Chunker:
-    """Flattens the nested paragraph tree into a list of `Chunk`s."""
+    """Flattens the nested paragraph tree into a list of `Document`s."""
 
     def load_pdf_text(self, pdf_path: str | Path) -> tuple[str, list[tuple[int, int, int]]]:
         """Load PDF, strip running headers, return (text, page_offsets).
@@ -154,26 +159,26 @@ class Chunker:
         return nodes
 
 
-    def linearize(self, paragraphs: list[dict]) -> list[Chunk]:
-        chunks: list[Chunk] = []
+    def linearize(self, paragraphs: list[dict]) -> list[Document]:
+        chunks: list[Document] = []
         for para in paragraphs:
             if "marker" not in para:
                 continue
             self._walk_paragraph(para, chunks)
-            
+
         write_json(chunks, "./chunks.json")
         return chunks
-    
-    
 
-    def _walk_paragraph(self, para: dict, out: list[Chunk]) -> None:
+
+
+    def _walk_paragraph(self, para: dict, out: list[Document]) -> None:
         p_marker = para["marker"]
         p_text = para.get("text", "")
         headline = para.get("headline")
         odseky = para.get("odseky", [])
 
         if not odseky:
-            out.append(Chunk(text=_join(p_text), path=[p_marker], headline=headline))
+            out.append(_make_doc(_join(p_text), [p_marker], headline))
             return
 
         for odsek in odseky:
@@ -181,10 +186,10 @@ class Chunker:
             letters = odsek.get("letters", [])
 
             if not letters:
-                out.append(Chunk(
-                    text=_join(p_text, o_lead),
-                    path=[p_marker, o_marker],
-                    headline=headline,
+                out.append(_make_doc(
+                    _join(p_text, o_lead),
+                    [p_marker, o_marker],
+                    headline,
                 ))
                 continue
 
@@ -193,18 +198,18 @@ class Chunker:
                 bode = letter.get("bode", [])
 
                 if not bode:
-                    out.append(Chunk(
-                        text=_join(p_text, o_lead, l_lead),
-                        path=[p_marker, o_marker, l_marker],
-                        headline=headline,
+                    out.append(_make_doc(
+                        _join(p_text, o_lead, l_lead),
+                        [p_marker, o_marker, l_marker],
+                        headline,
                     ))
                     continue
 
                 for bod in bode:
-                    out.append(Chunk(
-                        text=_join(p_text, o_lead, l_lead, bod["lead"]),
-                        path=[p_marker, o_marker, l_marker, bod["marker"]],
-                        headline=headline,
+                    out.append(_make_doc(
+                        _join(p_text, o_lead, l_lead, bod["lead"]),
+                        [p_marker, o_marker, l_marker, bod["marker"]],
+                        headline,
                     ))
 
 
@@ -215,4 +220,4 @@ if __name__ == "__main__":
     print(f"Total chunks: {len(chunks)}")
     print(f"Last page: {result['last_page']}")
     for c in chunks[:5]:
-        print(f"{' › '.join(c.path):30s}  {c.text[:80]}…")
+        print(f"{' › '.join(c.metadata['path']):30s}  {c.page_content[:80]}…")

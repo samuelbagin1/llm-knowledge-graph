@@ -187,13 +187,14 @@ You are expert in extracting information from text (NER and RE). Extract a knowl
 - sections → `Paragraf`
 - `PravnyPredpis` -[OBSAHUJE]-> `Paragraf`
 - entity -[PODLA]-> `Paragraf` (if referenced)
-- `Paragraf` → Paragraf: Paragraf 16
-- `Odsek` → Odsek: Paragraf 16 Odsek 1
-- `Pismeno` → Pismeno: Paragraf 54 Odsek 2 Pismeno A
+- `Paragraf` → Paragraf: Paragraf § 16
+- `Odsek` → Odsek: Paragraf § 16 Odsek 1
+- `Pismeno` → Pismeno: Paragraf § 54 Odsek 2 Pismeno a)
 
 ### NODES
 - ID = full readable name (not numeric only)
-- atomic decomposition of entities: Odseky 1 Az 3 -> Odsek: Odsek 1, Odsek: Odsek 2, Odsek: Odsek 3
+- "podľa odseku 1" means odsek of this paragraph
+- atomic decomposition of entities: Odseky 1 Az 3 -> Odsek 1, Odsek 2, Odsek 3
 - properties only if explicit
 - unify duplicates (coreference)
 

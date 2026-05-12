@@ -30,6 +30,7 @@ import spacy
 
 from classification import classify
 from classes import Schema, ClassifiedDocument, Type, SubSentence, ReasoningStep
+from chunker.chunker import Chunker
 from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
@@ -466,7 +467,7 @@ class PDFGraphRAG:
     # ---------------- PDF to Graph and Vector Processing ---------------
         
     
-    def _convert_to_graph_document(self, data, i, document, document_id) -> GraphDocument:
+    def _convert_to_graph_document(self, data, i, document, document_id, section_id: str = "", section_label: str = "") -> GraphDocument:
         """
         Convert extracted data into a GraphDocument.
 
@@ -478,19 +479,26 @@ class PDFGraphRAG:
         """
         nodes = []
         relationships = []
+        
+        if section_id and section_label:
+            chunk_node = Node(
+                id=section_id,
+                type=section_label,
+                properties={}
+            )
+        else:
+            chunk_id = f"chunk_{i}_{document_id}"
 
-        chunk_id = f"chunk_{i}_{document_id}"
-
-        chunk_node = Node(
-            id=chunk_id,
-            type="Chunk",
-            properties={
-                "name": chunk_id,
-                "document_id": document_id,
-                "text": document.page_content,
-                "page": document.metadata.get("page", 0)
-            }
-        )
+            chunk_node = Node(
+                id=chunk_id,
+                type="Chunk",
+                properties={
+                    "name": chunk_id,
+                    "document_id": document_id,
+                    "text": document.page_content,
+                    "page": document.metadata.get("page", 0)
+                }
+            )
 
         # Process nodes with validation and formatting
         for node_data in data.get("nodes", []):
@@ -571,7 +579,7 @@ class PDFGraphRAG:
         return GraphDocument(
             nodes=nodes,
             relationships=relationships,
-            source=Document(page_content="", metadata={"id": chunk_id})
+            source=Document(page_content="", metadata={})
         )
         
         
@@ -1746,8 +1754,28 @@ Pred vystupom over:
         print(f"SDE: chunk {i}")
         
         text = document.page_content
+        metadata = document.metadata or {}
+
+        # `path` is only present on chunks emitted by Chunker (structured law body).
+        # Trailing chunks from RecursiveCharacterTextSplitter have just {page, source},
+        # so we gate on the key, not on metadata truthiness.
+        path_segments: list[str] = metadata.get("path") or []
+        path_str = ""
+        path_label = ""
+        if path_segments:
+            path_str = "Paragraf " + path_segments[0]
+            path_label = "Paragraf"
+            if len(path_segments) > 1:
+                path_str += " Odsek " + path_segments[1]
+                path_label = "Odsek"
+            if len(path_segments) > 2:
+                path_str += " Pismeno " + path_segments[2]
+                path_label = "Pismeno"
+
         user_prompt = f"""
         Extract entities and relationships from text.
+        {"You are in paragraph: " + path_segments[0] if path_segments else ""}
+        {"This text represents section: " + path_str if path_str else ""}
 
         ### RULES
         - only schema types (exact)
@@ -1784,7 +1812,7 @@ Pred vystupom over:
         print(data)
 
         # Convert to graph document with validation and formatting
-        graph_document = self._convert_to_graph_document(data, i, document, document_id)
+        graph_document = self._convert_to_graph_document(data, i, document, document_id, path_str, path_label)
 
         # Apply strict mode filtering if enabled
         # if strict_mode and (allowed_entities or allowed_relationships):
@@ -2018,11 +2046,26 @@ Pred vystupom over:
 
 
         # ---- SDE ----
-        # TODO: use chunker to chunk documents, pass down to the sde in which paragraph/odsek/letter/bod it is, edit of the function has to handle if it is not chunked (containing which para/odsek/.. it is)
-        # TODO: connect the nodes with its corresponding section, and sections (paragraph/odsek/letter/bod the id from get_nodes) with Document node
-        # TODO: for remaining pages (excluded pages with tables) use RecursiveCharacterTextSplitter for each page and then append it to SDE
-        splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=128)
-        chunked_documents = splitter.split_documents(documents)
+        chunker_result = Chunker().split_document(pdf_path)
+        structured_chunks: list[Document] = chunker_result["chunks"]
+        tree_graph = chunker_result["tree_graph"]
+        last_page = chunker_result["last_page"]
+
+        # Pages after `last_page` (1-indexed) hold post-paragraph content (annexes,
+        # appendices) that the structural chunker doesn't cover. PyPDFLoader returns
+        # pages in order, so slicing at `last_page` skips pages 1..last_page.
+        # separators=["\n"] keeps splits near chunk_size and only breaks on newlines.
+        if last_page is not None:
+            documents = documents[last_page:]
+
+        trailing_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=1500,
+            chunk_overlap=150,
+            separators=["\n"],
+        )
+        trailing_chunks = trailing_splitter.split_documents(documents) if documents else []
+
+        chunked_documents = structured_chunks + trailing_chunks
         if not chunked_documents:
             raise ValueError("[process] no chunks produced for SDE")
 
@@ -2045,6 +2088,9 @@ Pred vystupom over:
 
         # add document chunk into graph documents
         graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path, document_id))
+
+        # add structural tree (Document -> Paragraf -> Odsek -> Pismeno -> Bod)
+        graph_docs.append(tree_graph)
 
         # add table-extracted graph documents
         graph_docs.extend(table_graph_docs)

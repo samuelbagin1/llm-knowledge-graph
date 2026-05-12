@@ -10,7 +10,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from langchain_neo4j.graphs.graph_document import Node
+from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.documents import Document
 
@@ -85,19 +85,21 @@ class Chunker:
 
 
     def split_document(self, pdf_path: str | Path) -> dict:
-        """Load a Slovak law PDF and return {"chunks": [...], "last_page": int | None}.
+        """Load a Slovak law PDF and return {"chunks": [...], "tree_graph": GraphDocument, "last_page": int | None}.
 
+        `tree_graph` is a GraphDocument with a Document root node linked to
+        Paragraf/Odsek/Pismeno/Bod nodes via IN_DOCUMENT / IN_SECTION edges.
         `last_page` is the `page_start` of the final § paragraph (the page on
         which the closing block of the law begins). `None` if no paragraphs.
         """
         text, page_offsets = self.load_pdf_text(pdf_path)
         paragraphs = detect_subsections(text, page_offsets)
-        
-        all_nodes = self.get_nodes(paragraphs)
+
+        tree_graph = self.get_tree_graph(paragraphs, pdf_path)
         chunks = self.linearize(paragraphs)
-        
+
         last_page = paragraphs[-1].get("page_start") if paragraphs else None
-        return {"chunks": chunks, "nodes": all_nodes, "last_page": last_page}
+        return {"chunks": chunks, "tree_graph": tree_graph, "last_page": last_page}
 
 
 
@@ -118,45 +120,69 @@ class Chunker:
         return Node(id=node_id, type=node_type, properties=properties)
 
 
-    def get_nodes(self, paragraphs: list[dict]) -> list[Node]:
-        """Walk the 4-level tree depth-first and emit one Node at every level.
+    def get_tree_graph(self, paragraphs: list[dict], pdf_path: str | Path) -> GraphDocument:
+        """Walk the 4-level tree depth-first and emit a GraphDocument linking
+        Document -> Paragraf -> Odsek -> Pismeno -> Bod.
 
         IDs are human-readable and accumulate ancestor labels:
-            "Paragraf §16a"
-            "Paragraf §16a Odsek 2"
-            "Paragraf §16a Odsek 2 Pismeno c"
-            "Paragraf §16a Odsek 2 Pismeno c Bod 3"
+            "Paragraf § 16a"
+            "Paragraf § 16a Odsek 2"
+            "Paragraf § 16a Odsek 2 Pismeno c)"
+            "Paragraf § 16a Odsek 2 Pismeno c) Bod 3"
+
+        `path` stores the per-level token that follows each label, so joining
+        label + path[i] reproduces the id segment-by-segment.
         """
-        nodes: list[Node] = []
+        document_id = Path(pdf_path).stem
+        document_node = Node(id=document_id, type="Document", properties={})
+        nodes: list[Node] = [document_node]
+        relationships: list[Relationship] = []
 
         for para in paragraphs:
             if "marker" not in para:
                 continue
-            p_id = f"Paragraf §{para['number']}"
-            p_path = [para["marker"]]
+            p_token = para["marker"]               # "§ 16a"
+            p_id = f"Paragraf {p_token}"
+            p_path = [p_token]
             p_extras = {
                 "headline": para.get("headline"),
                 "page_start": para.get("page_start"),
                 "page_end": para.get("page_end"),
             }
-            nodes.append(self._make_node(p_id, "Paragraf", p_path, para.get("text", ""), p_extras))
+            p_node = self._make_node(p_id, "Paragraf", p_path, para.get("text", ""), p_extras)
+            nodes.append(p_node)
+            relationships.append(Relationship(source=p_node, target=document_node, type="IN_DOCUMENT"))
 
             for odsek in para.get("odseky", []):
-                o_id = f"{p_id} Odsek {odsek['number']}"
-                o_path = p_path + [odsek["marker"]]
-                nodes.append(self._make_node(o_id, "Odsek", o_path, odsek["lead"]))
+                o_token = odsek["number"]          # "1"
+                o_id = f"{p_id} Odsek {o_token}"
+                o_path = p_path + [o_token]
+                o_node = self._make_node(o_id, "Odsek", o_path, odsek["lead"])
+                nodes.append(o_node)
+                relationships.append(Relationship(source=o_node, target=p_node, type="IN_SECTION"))
 
                 for letter in odsek.get("letters", []):
-                    l_id = f"{o_id} Pismeno {letter['letter']}"
-                    l_path = o_path + [letter["marker"]]
-                    nodes.append(self._make_node(l_id, "Pismeno", l_path, letter["lead"]))
+                    l_token = letter["marker"]     # "a)"
+                    l_id = f"{o_id} Pismeno {l_token}"
+                    l_path = o_path + [l_token]
+                    l_node = self._make_node(l_id, "Pismeno", l_path, letter["lead"])
+                    nodes.append(l_node)
+                    relationships.append(Relationship(source=l_node, target=o_node, type="IN_SECTION"))
 
                     for bod in letter.get("bode", []):
-                        b_id = f"{l_id} Bod {bod['number']}"
-                        b_path = l_path + [bod["marker"]]
-                        nodes.append(self._make_node(b_id, "Bod", b_path, bod["lead"]))
+                        b_token = bod["number"]    # "3"
+                        b_id = f"{l_id} Bod {b_token}"
+                        b_path = l_path + [b_token]
+                        b_node = self._make_node(b_id, "Bod", b_path, bod["lead"])
+                        nodes.append(b_node)
+                        relationships.append(Relationship(source=b_node, target=l_node, type="IN_SECTION"))
 
-        return nodes
+        return GraphDocument(
+            nodes=nodes,
+            relationships=relationships,
+            source=Document(page_content="", metadata={"id": document_id}),
+        )
+
 
 
     def linearize(self, paragraphs: list[dict]) -> list[Document]:
@@ -172,45 +198,49 @@ class Chunker:
 
 
     def _walk_paragraph(self, para: dict, out: list[Document]) -> None:
-        p_marker = para["marker"]
+        # Path tokens match the per-level id segments built in `get_tree_graph`:
+        #   Paragraf → marker ("§ 16a"), Odsek → number ("1"),
+        #   Pismeno → marker ("a)"),     Bod   → number ("3").
+        # Prose ("o_part", "l_part") keeps using markers since "(1) ..." and
+        # "a) ..." are the natural reading form for an LLM.
+        p_token = para["marker"]
         p_text = para.get("text", "")
         headline = para.get("headline")
         odseky = para.get("odseky", [])
 
         if not odseky:
-            out.append(_make_doc(_join(p_text), [p_marker], headline))
+            out.append(_make_doc(_join(p_text), [p_token], headline))
             return
 
         for odsek in odseky:
-            o_marker, o_lead = odsek["marker"], odsek["lead"]
+            o_token = odsek["number"]
+            o_part = f"{odsek['marker']} {odsek['lead']}"
             letters = odsek.get("letters", [])
 
             if not letters:
                 out.append(_make_doc(
-                    _join(p_text, o_lead),
-                    [p_marker, o_marker],
+                    _join(p_text, o_part),
+                    [p_token, o_token],
                     headline,
                 ))
                 continue
 
             for letter in letters:
-                l_marker, l_lead = letter["marker"], letter["lead"]
+                l_token = letter["marker"]
+                l_part = f"{letter['marker']} {letter['lead']}"
                 bode = letter.get("bode", [])
 
-                if not bode:
-                    out.append(_make_doc(
-                        _join(p_text, o_lead, l_lead),
-                        [p_marker, o_marker, l_marker],
-                        headline,
-                    ))
-                    continue
+                if bode:
+                    bod_lines = "\n".join(
+                        f"{bod['marker']} {bod['lead'].strip()}" for bod in bode
+                    )
+                    l_part = f"{l_part}\n{bod_lines}"
 
-                for bod in bode:
-                    out.append(_make_doc(
-                        _join(p_text, o_lead, l_lead, bod["lead"]),
-                        [p_marker, o_marker, l_marker, bod["marker"]],
-                        headline,
-                    ))
+                out.append(_make_doc(
+                    _join(p_text, o_part, l_part),
+                    [p_token, o_token, l_token],
+                    headline,
+                ))
 
 
 if __name__ == "__main__":

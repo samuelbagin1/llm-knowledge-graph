@@ -907,7 +907,7 @@ class PDFGraphRAG:
 
 
 
-    def transform_table_to_html(self, table_image_paths: list[str], output_dir: str = "./code/assets/detected_tables_figures"):
+    def transform_table_to_html(self, table_image_paths: list[str], headline: Optional[str] = None, output_dir: str = "./code/assets/detected_tables_figures"):
 
         class TableHTMLResponse(BaseModel):
             """HTML table extracted from image(s)."""
@@ -1063,6 +1063,8 @@ class PDFGraphRAG:
 
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(_HTML_HEADER)
+            if headline:
+                f.write(f"<h2>{headline}</h2>\n")
             f.write(parsed.get("html", ""))
             f.write(_HTML_FOOTER)
 
@@ -1293,8 +1295,78 @@ Pred vystupom over:
         groups.append(current_group)
 
         return groups
-    
-    
+
+
+    def _extract_page_headline(self, page_text: str, max_lines: int = 15) -> Optional[str]:
+        """
+        Return the first ALL-CAPS headline line found near the top of the page,
+        or None if no such line exists in the first `max_lines` non-empty lines.
+
+        A headline line is defined as a standalone line (surrounded by \\n on
+        both sides) where:
+          - line is non-empty after .strip()
+          - has >= 2 whitespace-separated words
+          - has >= 10 characters
+          - has at least one alphabetic character
+          - every alphabetic character is uppercase (Slovak diacritics OK)
+
+        Page chrome ("Strana 159", "Príloha č. 7", "k zákonu č. ...",
+        "DynamicResources\\...") naturally fails these tests because it contains
+        lowercase letters, so no explicit blocklist is needed.
+        """
+        for raw in page_text.split("\n")[:max_lines]:
+            line = raw.strip()
+            if not line:
+                continue
+            alpha_chars = [c for c in line if c.isalpha()]
+            if not alpha_chars or not all(c.isupper() for c in alpha_chars):
+                continue
+            if len(line) < 10 or len(line.split()) < 2:
+                continue
+            return line
+        return None
+
+
+    def _split_group_by_headlines(
+        self,
+        group: list[dict],
+        page_text_map: dict[int, str],
+    ) -> list[tuple[list[dict], Optional[str]]]:
+        """
+        Split a table group into sub-groups at pages whose top region contains
+        an ALL-CAPS headline. Returns a list of (sub_group, headline_or_None).
+
+        Walk pages in order:
+          - first page's headline (if any) becomes the first sub-group's headline
+          - any subsequent page with a headline closes the current sub-group
+            and starts a new one anchored on that page
+          - pages without a headline append to the current sub-group
+        """
+        ordered = sorted(group, key=lambda d: d["page"])
+
+        sub_groups: list[tuple[list[dict], Optional[str]]] = []
+        current: list[dict] = []
+        current_headline: Optional[str] = None
+
+        for det in ordered:
+            page_text = page_text_map.get(det["page"], "")
+            headline = self._extract_page_headline(page_text)
+
+            if headline and current:
+                sub_groups.append((current, current_headline))
+                current = []
+                current_headline = headline
+            elif headline and not current:
+                current_headline = headline
+
+            current.append(det)
+
+        if current:
+            sub_groups.append((current, current_headline))
+
+        return sub_groups
+
+
     # OCR to LaTeX and then to GraphDocument
 
     def get_formulas(self, assets_dir: str = "./code/assets/detected_tables_figures") -> list[dict]:
@@ -1941,10 +2013,15 @@ Pred vystupom over:
         documents = self.load_pdf(pdf_path)
         if max_pages:
             documents = documents[:max_pages]
-            
-        document_id = Path(pdf_path).stem  
-            
-            
+
+        document_id = Path(pdf_path).stem
+
+        # map 1-based human page number -> PyPDFLoader text (matches detection page convention)
+        page_text_map = {
+            doc.metadata.get("page", -1) + 1: doc.page_content
+            for doc in documents
+        }
+
         # detect tables in pdf
         detections = self.detect_tables(pdf_path)
 
@@ -1956,32 +2033,33 @@ Pred vystupom over:
         table_pages_to_exclude = set()
 
         for group in table_groups:
-            image_paths = [d["image_path"] for d in group]
-            result = self.transform_table_to_html(image_paths)
-            if result is None:
-                pages = sorted(d["page"] for d in group)
-                print(f"Skipping table on pages {pages} — extraction returned None")
-                continue
-            print(f"Saved: {result['html_path']}")
+            # split a detection group at pages whose top contains a new ALL-CAPS headline
+            sub_groups = self._split_group_by_headlines(group, page_text_map)
 
-            # access HTML from in-memory response
-            response = result['response']
-            html = response.get("html", "") if isinstance(response, dict) else response.html if hasattr(response, "html") else str(response)
-            
-            # TODO: get the headline (\nTEXT IN CAPITAL\n) of table from the page content
+            for sub_group, headline in sub_groups:
+                image_paths = [d["image_path"] for d in sub_group]
+                pages = sorted(d["page"] for d in sub_group)
 
-            # compute page range for this group
-            pages = sorted(d["page"] for d in group)
-            page_range = f"{min(pages)}-{max(pages)}" if len(pages) > 1 else str(pages[0])
+                result = self.transform_table_to_html(table_image_paths=image_paths, headline=headline)
+                if result is None:
+                    print(f"Skipping table on pages {pages} — extraction returned None")
+                    continue
+                print(f"Saved: {result['html_path']}")
 
-            # transform HTML table into GraphDocument via LLM
-            table_gd = self.transform_html_to_graph_document(html, page_range, document_id)
-            table_graph_docs.append(table_gd)
+                # access HTML from in-memory response
+                response = result['response']
+                html = response.get("html", "") if isinstance(response, dict) else response.html if hasattr(response, "html") else str(response)
 
-            # collect interior table pages to exclude from text processing
-            # keep first and last pages (may have text above/below the table)
-            if len(pages) > 2:
-                table_pages_to_exclude.update(pages[1:-1])
+                page_range = f"{min(pages)}-{max(pages)}" if len(pages) > 1 else str(pages[0])
+
+                # transform HTML table into GraphDocument via LLM
+                table_gd = self.transform_html_to_graph_document(html, page_range, document_id)
+                table_graph_docs.append(table_gd)
+
+                # collect interior table pages of THIS sub-group to exclude from text processing
+                # keep first and last pages (may have text above/below the table)
+                if len(pages) > 2:
+                    table_pages_to_exclude.update(pages[1:-1])
 
         # remove interior table pages from documents before ODD/SDE
         # PyPDFLoader uses 0-based page numbers, detections use 1-based
@@ -2105,13 +2183,13 @@ Pred vystupom over:
         self.graph.add_graph_documents(
             graph_documents=graph_docs,
             include_source=False,
-            baseEntityLabel=True
+            baseEntityLabel=False
         )
         
         self.graph.refresh_schema()
         # Remove __Entity__ label from Chunk nodes so the node vector store excludes them
-        self.graph.query("MATCH (n:Chunk:__Entity__) REMOVE n:__Entity__")
-        self.graph.query("MATCH (n:Document:__Entity__) REMOVE n:__Entity__")
+        # self.graph.query("MATCH (n:Chunk:__Entity__) REMOVE n:__Entity__")
+        # self.graph.query("MATCH (n:Document:__Entity__) REMOVE n:__Entity__")
         
         print("\n\nAdded Graph Documents into Graph database.\n\n")
         

@@ -1,0 +1,406 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon C. 222/2004 Z. Z.",
+        "type": "Zakon",
+        "properties": {
+          "name": "Zakon c. 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Priloha C. 3",
+        "type": "Priloha",
+        "properties": {
+          "name": "Priloha c. 3"
+        }
+      },
+      {
+        "id": "Potvrdenie O Postaveni Danoveho Subjektu",
+        "type": "Doklad",
+        "properties": {
+          "name": "Potvrdenie o postaveni danoveho subjektu"
+        }
+      },
+      {
+        "id": "Dan Z Pridanej Hodnoty",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "Danovy Subjekt",
+        "type": "Subjekt",
+        "properties": {
+          "name": "Danovy subjekt"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan Z Pridanej Hodnoty",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "Identifikacne cislo pre dan z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "Kompetentny Organ",
+        "type": "Statnyorgan",
+        "properties": {
+          "name": "kompetentny organ"
+        }
+      },
+      {
+        "id": "Dovod Neexistencie Identifikacneho Cisla Pre Dan Z Pridanej Hodnoty",
+        "type": "Dovod",
+        "properties": {
+          "name": "dovod neexistencie identifikacneho cisla pre dan z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+          "page": 151
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon C. 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zakon c. 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Priloha C. 3",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 3"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Priloha C. 3",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 3"
+          }
+        },
+        "target": {
+          "id": "Zakon C. 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zakon c. 222/2004 Z. z."
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Priloha C. 3",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 3"
+          }
+        },
+        "target": {
+          "id": "Potvrdenie O Postaveni Danoveho Subjektu",
+          "type": "Doklad",
+          "properties": {
+            "name": "Potvrdenie o postaveni danoveho subjektu"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Potvrdenie O Postaveni Danoveho Subjektu",
+          "type": "Doklad",
+          "properties": {
+            "name": "Potvrdenie o postaveni danoveho subjektu"
+          }
+        },
+        "target": {
+          "id": "Danovy Subjekt",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Danovy subjekt"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Potvrdenie O Postaveni Danoveho Subjektu",
+          "type": "Doklad",
+          "properties": {
+            "name": "Potvrdenie o postaveni danoveho subjektu"
+          }
+        },
+        "target": {
+          "id": "Dan Z Pridanej Hodnoty",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan z pridanej hodnoty"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Subjekt",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Danovy subjekt"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan Z Pridanej Hodnoty",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "Identifikacne cislo pre dan z pridanej hodnoty"
+          }
+        },
+        "type": "MA_IDENTIFIKACNE_CISLO",
+        "properties": {
+          "add": "ak ma danovy subjekt",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kompetentny Organ",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "kompetentny organ"
+          }
+        },
+        "target": {
+          "id": "Dovod Neexistencie Identifikacneho Cisla Pre Dan Z Pridanej Hodnoty",
+          "type": "Dovod",
+          "properties": {
+            "name": "dovod neexistencie identifikacneho cisla pre dan z pridanej hodnoty"
+          }
+        },
+        "type": "MA_DOVOD",
+        "properties": {
+          "add": "ak danovy subjekt nema identifikacne cislo pre dan z pridanej hodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kompetentny Organ",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "kompetentny organ"
+          }
+        },
+        "target": {
+          "id": "Dovod Neexistencie Identifikacneho Cisla Pre Dan Z Pridanej Hodnoty",
+          "type": "Dovod",
+          "properties": {
+            "name": "dovod neexistencie identifikacneho cisla pre dan z pridanej hodnoty"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "zdovodnit tuto skutocnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon C. 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zakon c. 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priloha C. 3",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Potvrdenie O Postaveni Danoveho Subjektu",
+          "type": "Doklad",
+          "properties": {
+            "name": "Potvrdenie o postaveni danoveho subjektu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Z Pridanej Hodnoty",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Subjekt",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Danovy subjekt"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan Z Pridanej Hodnoty",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "Identifikacne cislo pre dan z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kompetentny Organ",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "kompetentny organ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovod Neexistencie Identifikacneho Cisla Pre Dan Z Pridanej Hodnoty",
+          "type": "Dovod",
+          "properties": {
+            "name": "dovod neexistencie identifikacneho cisla pre dan z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 152 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 3\nk zákonu č. 222/2004 Z. z.\nPOTVRDENIE O POSTAVENÍ DAŇOVÉHO SUBJEKTU\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_2.pdf\n1\ndoes not have a VAT iden ti fi ca tion num ber, the com pe tent aut ho ri ty shall sta te the re a son for this.\nPOTVRDENIE O POSTAVENÍ DAÒOVÉHO SUBJEKTU\nCERTIFICATE OF STATUS OF TAXABLE PERSON\n \n                   ò) Ak GD\u0003\u0003R\u0003YÞ\u0003VXEMHNW nemá identifikaèné èíslo pre daò z pridanej hodnoty, kompetentný orgán zdôvodní túto skutoènos/If the WD[DEOH\u0003SHUVRQ",
+            "page": 151
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

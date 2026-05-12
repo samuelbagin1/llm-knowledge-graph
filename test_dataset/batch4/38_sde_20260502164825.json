@@ -1,0 +1,915 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zahranicna Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "zahranicna osoba"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Spravcadane",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad Bratislava"
+        }
+      },
+      {
+        "id": "§ 7",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 7"
+        }
+      },
+      {
+        "id": "§ 68B Ods. 2",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68b ods. 2"
+        }
+      },
+      {
+        "id": "Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie"
+        }
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Konanie",
+        "properties": {
+          "name": "odvolanie"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Hmotny Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "hmotny majetok"
+        }
+      },
+      {
+        "id": "Nehmotny Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "nehmotny majetok"
+        }
+      },
+      {
+        "id": "Platitel Zanikol Bez Likvidacie",
+        "type": "Stav",
+        "properties": {
+          "name": "platitel zanikol bez likvidacie"
+        }
+      },
+      {
+        "id": "Pravno Nastupca Platitela",
+        "type": "Pravnynastupca",
+        "properties": {
+          "name": "pravno nastupca platitela"
+        }
+      },
+      {
+        "id": "Odstiepenie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "odstiepenie"
+        }
+      },
+      {
+        "id": "Cezhranicne Odstiepenie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "cezhranicne odstiepenie"
+        }
+      },
+      {
+        "id": "Zakon Platny V Inom Clenskom State Alebo Zmluvnom State Dohody O Europkom Hospodarskom Priestore",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "zakon platny v inom clenskom state alebo zmluvnom state Dohody o Europkom hospodarskom priestore"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Zmluvny Stat Dohody O Europskom Hospodarskom Priestore",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "zmluvny stat Dohody o Europskom hospodarskom priestore"
+        }
+      },
+      {
+        "id": "Dohoda O Europskom Hospodarskom Priestore",
+        "type": "Zmluva",
+        "properties": {
+          "name": "dohoda o Europskom hospodarskom priestore"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+          "page": 9
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "type": "STAVA_SA",
+        "properties": {
+          "add": "stal sa platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "MA_IDENTIFIKACNE_CISLO",
+        "properties": {
+          "add": "identifikacne cislo pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "PRIDELUJE",
+        "properties": {
+          "add": "to iste identifikacne cislo pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "rozhodnutie o neprideleni / nezaregistrovani zahranicnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "add": "nemoze sa podat odvolanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "type": "NEPLATI_PRE",
+        "properties": {
+          "add": "proti rozhodnutiu nemoze podat odvolanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "§ 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ma pridelenne identifikacne cislo pre dan podla § 7",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "§ 68B Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68b ods. 2"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "na uplatnovanie osobitnej upravy podla § 68b ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "type": "NEZARISTRUJE",
+        "properties": {
+          "add": "nezaregistruje z dovodu, ze sa nestala platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Hmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "hmotny majetok"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "prechod hmotneho majetku platitela v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Nehmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "nehmotny majetok"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "prechod nehmotneho majetku platitela v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel Zanikol Bez Likvidacie",
+          "type": "Stav",
+          "properties": {
+            "name": "platitel zanikol bez likvidacie"
+          }
+        },
+        "target": {
+          "id": "Pravno Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravno nastupca platitela"
+          }
+        },
+        "type": "NASTAVA_PRI",
+        "properties": {
+          "add": "dnom ked sa stala pravnym nastupcom platitela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odstiepenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odstiepenie"
+          }
+        },
+        "target": {
+          "id": "Zakon Platny V Inom Clenskom State Alebo Zmluvnom State Dohody O Europkom Hospodarskom Priestore",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon platny v inom clenskom state alebo zmluvnom state Dohody o Europkom hospodarskom priestore"
+          }
+        },
+        "type": "PLATI_OD",
+        "properties": {
+          "add": "podla zakona platneho v inom clenskom state alebo zmluvnom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon Platny V Inom Clenskom State Alebo Zmluvnom State Dohody O Europkom Hospodarskom Priestore",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon platny v inom clenskom state alebo zmluvnom state Dohody o Europkom hospodarskom priestore"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "type": "SPADA_POD",
+        "properties": {
+          "add": "inny clensky stat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon Platny V Inom Clenskom State Alebo Zmluvnom State Dohody O Europkom Hospodarskom Priestore",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon platny v inom clenskom state alebo zmluvnom state Dohody o Europkom hospodarskom priestore"
+          }
+        },
+        "target": {
+          "id": "Zmluvny Stat Dohody O Europskom Hospodarskom Priestore",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "zmluvny stat Dohody o Europskom hospodarskom priestore"
+          }
+        },
+        "type": "SPADA_POD",
+        "properties": {
+          "add": "zmluvny stat Dohody o Europskom hospodarskom priestore",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmluvny Stat Dohody O Europskom Hospodarskom Priestore",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "zmluvny stat Dohody o Europskom hospodarskom priestore"
+          }
+        },
+        "target": {
+          "id": "Dohoda O Europskom Hospodarskom Priestore",
+          "type": "Zmluva",
+          "properties": {
+            "name": "dohoda o Europskom hospodarskom priestore"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "Dohoda o Europskom hospodarskom priestore",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68B Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68b ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "hmotny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nehmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "nehmotny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel Zanikol Bez Likvidacie",
+          "type": "Stav",
+          "properties": {
+            "name": "platitel zanikol bez likvidacie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravno Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravno nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odstiepenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odstiepenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cezhranicne Odstiepenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cezhranicne odstiepenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon Platny V Inom Clenskom State Alebo Zmluvnom State Dohody O Europkom Hospodarskom Priestore",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon platny v inom clenskom state alebo zmluvnom state Dohody o Europkom hospodarskom priestore"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmluvny Stat Dohody O Europskom Hospodarskom Priestore",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "zmluvny stat Dohody o Europskom hospodarskom priestore"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dohoda O Europskom Hospodarskom Priestore",
+          "type": "Zmluva",
+          "properties": {
+            "name": "dohoda o Europskom hospodarskom priestore"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zahraničná osoba stala platiteľom; ak platiteľ má pridelené identifikačné číslo pre daň podľa § 7\nalebo na účely uplatňovania osobitnej úpravy podľa § 68b ods. 2, daňový úrad mu pridelí to isté\nidentifikačné číslo pre daň. Proti rozhodnutiu podľa druhej vety nemožno podať odvolanie. Ak\nDaňový úrad Bratislava zahraničnú osobu nezaregistruje z dôvodu, že sa nestala platiteľom, vydá\no tom rozhodnutie, proti ktorému nemožno podať odvolanie.\n(4) Platiteľom sa stáva aj zahraničná osoba, na ktorú v tuzemsku prechádza hmotný majetok\nalebo nehmotný majetok platiteľa, ktorý\na) zanikol bez likvidácie, a to dňom keď sa stala právnym nástupcom platiteľa, ak naďalej spĺňa\nstatus zahraničnej osoby,\nb) sa rozdelil odštiepením, a to dňom účinnosti premeny pri odštiepení podľa zákona platného\nv inom členskom štáte alebo zmluvnom štáte Dohody o Európskom hospodárskom priestore, ak\nnaďalej spĺňa status zahraničnej osoby, alebo\nc) sa rozdelil cezhraničným odštiepením, a to dňom účinnosti premeny pri cezhraničnom",
+            "page": 9
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

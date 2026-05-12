@@ -1,0 +1,478 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf 14",
+        "type": "Paragraf",
+        "properties": {
+          "name": "Paragraf 14"
+        }
+      },
+      {
+        "id": "Paragraf 16",
+        "type": "Paragraf",
+        "properties": {
+          "name": "Paragraf 16"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Odsek 14",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 14"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Dodavatel Tovaru Alebo Sluzby",
+        "type": "Subjekt",
+        "properties": {
+          "name": "Dodavatel tovaru alebo sluzby"
+        }
+      },
+      {
+        "id": "Miesto Dodania Tovaru",
+        "type": "Lokacia",
+        "properties": {
+          "name": "Miesto dodania tovaru"
+        }
+      },
+      {
+        "id": "Miesto Dodania Sluzby",
+        "type": "Lokacia",
+        "properties": {
+          "name": "Miesto dodania sluzby"
+        }
+      },
+      {
+        "id": "Dva Kalendarne Roky",
+        "type": "Obdobie",
+        "properties": {
+          "name": "dva kalendarne roky"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+          "page": 23
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 16",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 16"
+          }
+        },
+        "target": {
+          "id": "Odsek 14",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 14"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Paragraf 16",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 16"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 14",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "Miesto dodania tovaru"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uplatnovat podla § 14 ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Miesto Dodania Sluzby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "Miesto dodania sluzby"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uplatnovat podla § 16 ods. 14 najmenej po dobu dvoch kalendarnych rokov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "Miesto dodania tovaru"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "rozhodnut sa pre podla § 14 ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Miesto Dodania Sluzby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "Miesto dodania sluzby"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "rozhodnut sa pre podla § 16 ods. 14",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Dva Kalendarne Roky",
+          "type": "Obdobie",
+          "properties": {
+            "name": "dva kalendarne roky"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "najmenej",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 16",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 16"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 14",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 14"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "Miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Sluzby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "Miesto dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dva Kalendarne Roky",
+          "type": "Obdobie",
+          "properties": {
+            "name": "dva kalendarne roky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n(3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

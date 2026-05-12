@@ -1,0 +1,159 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Identifikacne Cislo Pre Dan Dodavatela",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikačné číslo pre daň dodávateľa"
+        }
+      },
+      {
+        "id": "Ciselna Identifikacia Opravneho Dokladu",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "číselná identifikácia opravného dokladu"
+        }
+      },
+      {
+        "id": "Poradove Cislo Faktury",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "poradové číslo faktúry o dodaní tovaru alebo služby"
+        }
+      },
+      {
+        "id": "Suma O Ktoru Sa Opravila Odpoctana Dan",
+        "type": "Suma",
+        "properties": {
+          "name": "suma, o ktorú sa opravila odpočítaná daň"
+        }
+      },
+      {
+        "id": "Sadzba Dane",
+        "type": "Sadzbadane",
+        "properties": {
+          "name": "sadzba dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "a) identifikačné číslo pre daň dodávateľa,\nb) číselná identifikácia opravného dokladu,\nc) poradové číslo faktúry o dodaní tovaru alebo služby, ktorého sa oprava základu dane týka,\nd) suma, o ktorú sa opravila odpočítaná daň,\ne) sadzba dane.",
+          "page": 121
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan Dodavatela",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikačné číslo pre daň dodávateľa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a) identifikačné číslo pre daň dodávateľa,\nb) číselná identifikácia opravného dokladu,\nc) poradové číslo faktúry o dodaní tovaru alebo služby, ktorého sa oprava základu dane týka,\nd) suma, o ktorú sa opravila odpočítaná daň,\ne) sadzba dane.",
+            "page": 121
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ciselna Identifikacia Opravneho Dokladu",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "číselná identifikácia opravného dokladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a) identifikačné číslo pre daň dodávateľa,\nb) číselná identifikácia opravného dokladu,\nc) poradové číslo faktúry o dodaní tovaru alebo služby, ktorého sa oprava základu dane týka,\nd) suma, o ktorú sa opravila odpočítaná daň,\ne) sadzba dane.",
+            "page": 121
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Poradove Cislo Faktury",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "poradové číslo faktúry o dodaní tovaru alebo služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a) identifikačné číslo pre daň dodávateľa,\nb) číselná identifikácia opravného dokladu,\nc) poradové číslo faktúry o dodaní tovaru alebo služby, ktorého sa oprava základu dane týka,\nd) suma, o ktorú sa opravila odpočítaná daň,\ne) sadzba dane.",
+            "page": 121
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma O Ktoru Sa Opravila Odpoctana Dan",
+          "type": "Suma",
+          "properties": {
+            "name": "suma, o ktorú sa opravila odpočítaná daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a) identifikačné číslo pre daň dodávateľa,\nb) číselná identifikácia opravného dokladu,\nc) poradové číslo faktúry o dodaní tovaru alebo služby, ktorého sa oprava základu dane týka,\nd) suma, o ktorú sa opravila odpočítaná daň,\ne) sadzba dane.",
+            "page": 121
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sadzba Dane",
+          "type": "Sadzbadane",
+          "properties": {
+            "name": "sadzba dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a) identifikačné číslo pre daň dodávateľa,\nb) číselná identifikácia opravného dokladu,\nc) poradové číslo faktúry o dodaní tovaru alebo služby, ktorého sa oprava základu dane týka,\nd) suma, o ktorú sa opravila odpočítaná daň,\ne) sadzba dane.",
+            "page": 121
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

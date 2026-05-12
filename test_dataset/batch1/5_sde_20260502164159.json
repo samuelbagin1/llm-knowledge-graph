@@ -1,0 +1,845 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Odsek 15",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 15"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "b"
+        }
+      },
+      {
+        "id": "Pismeno I",
+        "type": "Pismeno",
+        "properties": {
+          "name": "i"
+        }
+      },
+      {
+        "id": "Odsek 8",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 8"
+        }
+      },
+      {
+        "id": "Paragraf 48C",
+        "type": "Paragraf",
+        "properties": {
+          "name": "48c"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 5"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru Alebo Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru alebo sluzby"
+        }
+      },
+      {
+        "id": "Obratu",
+        "type": "Obrat",
+        "properties": {
+          "name": "obrat"
+        }
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "prebiehajuci kalendarny rok"
+        }
+      },
+      {
+        "id": "Dnom, V Ktorom Sa Tato Osoba Stala Pravnym Nastupcom Platitela",
+        "type": "Datum",
+        "properties": {
+          "name": "dnom, v ktorom sa tato osoba stala pravnym nastupcom platitela"
+        }
+      },
+      {
+        "id": "Pravny Nastupca Platitela",
+        "type": "Pravnynastupca",
+        "properties": {
+          "name": "pravny nastupca platitela"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Zanik Bez Likvidacie",
+        "type": "Zanika",
+        "properties": {
+          "name": "zanik bez likvidacie"
+        }
+      },
+      {
+        "id": "Den Nadobudnutia Podniku Alebo Jeho Casti",
+        "type": "Datum",
+        "properties": {
+          "name": "den nadobudnutia podniku alebo jeho casti"
+        }
+      },
+      {
+        "id": "Podnik",
+        "type": "Podnik",
+        "properties": {
+          "name": "podnik"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Hmotny Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "hmotny majetok"
+        }
+      },
+      {
+        "id": "Nehmotny Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "nehmotny majetok"
+        }
+      },
+      {
+        "id": "Samostatna Organizacna Zlozka",
+        "type": "Organizacia",
+        "properties": {
+          "name": "samostatna organizacna zlozka"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+          "page": 1
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 15",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 15"
+          }
+        },
+        "target": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "b"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "pismena b) az i)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 15",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 15"
+          }
+        },
+        "target": {
+          "id": "Pismeno I",
+          "type": "Pismeno",
+          "properties": {
+            "name": "i"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "pismena b) az i)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 15",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 15"
+          }
+        },
+        "target": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 8"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 8",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 15",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 15"
+          }
+        },
+        "target": {
+          "id": "Paragraf 48C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48c"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "§ 48c ods. 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 15",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 15"
+          }
+        },
+        "target": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "§ 48c ods. 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Obratu",
+          "type": "Obrat",
+          "properties": {
+            "name": "obrat"
+          }
+        },
+        "type": "MA_HODNOTU",
+        "properties": {
+          "add": "hodnota bez dane dodanych tovarov alebo sluzieb",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obratu",
+          "type": "Obrat",
+          "properties": {
+            "name": "obrat"
+          }
+        },
+        "target": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "v prebiehajucom kalendarnom roku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravny Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravny nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "type": "JE_PRAVNYM_NASTUPCOM",
+        "properties": {
+          "add": "platitela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravny Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravny nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "Zanik Bez Likvidacie",
+          "type": "Zanika",
+          "properties": {
+            "name": "zanik bez likvidacie"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "platitel zanikol bez likvidacie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravny Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravny nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "Podnik",
+          "type": "Podnik",
+          "properties": {
+            "name": "podnik"
+          }
+        },
+        "type": "NADOBUDA",
+        "properties": {
+          "add": "podnik alebo jeho cast",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravny Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravny nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "NADOBUDA",
+        "properties": {
+          "add": "v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravny Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravny nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "Hmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "hmotny majetok"
+          }
+        },
+        "type": "NADOBUDA",
+        "properties": {
+          "add": "hmotny majetok v ramci nadobudnuteho podniku alebo casti podniku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravny Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravny nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "Nehmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "nehmotny majetok"
+          }
+        },
+        "type": "NADOBUDA",
+        "properties": {
+          "add": "nehmotny majetok v ramci nadobudnuteho podniku alebo casti podniku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Podnik",
+          "type": "Podnik",
+          "properties": {
+            "name": "podnik"
+          }
+        },
+        "target": {
+          "id": "Samostatna Organizacna Zlozka",
+          "type": "Organizacia",
+          "properties": {
+            "name": "samostatna organizacna zlozka"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "tvori samostatnu organizacnu zlozku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 15",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 15"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno I",
+          "type": "Pismeno",
+          "properties": {
+            "name": "i"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 48C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obratu",
+          "type": "Obrat",
+          "properties": {
+            "name": "obrat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dnom, V Ktorom Sa Tato Osoba Stala Pravnym Nastupcom Platitela",
+          "type": "Datum",
+          "properties": {
+            "name": "dnom, v ktorom sa tato osoba stala pravnym nastupcom platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravny Nastupca Platitela",
+          "type": "Pravnynastupca",
+          "properties": {
+            "name": "pravny nastupca platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zanik Bez Likvidacie",
+          "type": "Zanika",
+          "properties": {
+            "name": "zanik bez likvidacie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Nadobudnutia Podniku Alebo Jeho Casti",
+          "type": "Datum",
+          "properties": {
+            "name": "den nadobudnutia podniku alebo jeho casti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podnik",
+          "type": "Podnik",
+          "properties": {
+            "name": "podnik"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "hmotny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nehmotny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "nehmotny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Samostatna Organizacna Zlozka",
+          "type": "Organizacia",
+          "properties": {
+            "name": "samostatna organizacna zlozka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "15, presiahla 50 000 eur, ak písmená b) až i), odsek 8 alebo § 48c ods. 5 neustanovujú inak,\nb) dodaním tovaru alebo služby, ktorým hodnota bez dane dodaných tovarov alebo služieb touto\nosobou, ktoré sa zahŕňajú do obratu podľa odseku 15, v prebiehajúcom kalendárnom roku\npresiahne 62 500 eur,\nc) dňom, v ktorom sa táto osoba stala právnym nástupcom platiteľa, ktorý zanikol bez likvidácie,\nd) dňom nadobudnutia podniku alebo jeho časti, ak táto osoba nadobudne v tuzemsku hmotný\nmajetok a nehmotný majetok v rámci nadobudnutého podniku platiteľa alebo časti podniku\nplatiteľa, ktorá tvorí samostatnú organizačnú zložku,",
+            "page": 1
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

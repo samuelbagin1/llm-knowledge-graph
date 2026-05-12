@@ -1,0 +1,271 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Maly Podnik Tuzemskej Osoby",
+        "type": "Podnik",
+        "properties": {
+          "name": "maly podnik tuzemskej osoby"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Cinnost",
+        "properties": {
+          "name": "osobitna uprava"
+        }
+      },
+      {
+        "id": "Oznamenie",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznamenie"
+        }
+      },
+      {
+        "id": "Clensky Stat Oznameny V Oznameni",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat oznameny v oznameni"
+        }
+      },
+      {
+        "id": "Prvy Den Nasledujuceho Kalendarneho Stvrtroka Po Doruceni Oznamenia",
+        "type": "Datum",
+        "properties": {
+          "name": "prvy den nasledujuceho kalendarneho stvrtroka po doruceni oznamenia"
+        }
+      },
+      {
+        "id": "Prvy Den Druheho Kalendarneho Mesiaca Nasledujuceho Kalendarneho Stvrtroka",
+        "type": "Datum",
+        "properties": {
+          "name": "prvy den druheho kalendarneho mesiaca nasledujuceho kalendarneho stvrtroka"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "v ktorom sa malý podnik tuzemskej osoby rozhodol neuplatňovať osobitnú úpravu, alebo\nvyznačenie skutočnosti, že sa malý podnik tuzemskej osoby rozhodol skončiť uplatňovanie\nosobitnej úpravy. Malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu v členskom\nštáte označenom v oznámení podľa prvej vety alebo v žiadnom členskom štáte, ak v tomto\noznámení vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, od prvého\ndňa nasledujúceho kalendárneho štvrťroka po doručení oznámenia alebo od prvého dňa druhého\nkalendárneho mesiaca nasledujúceho kalendárneho štvrťroka, ak bolo oznámenie doručené počas",
+          "page": 101
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Maly Podnik Tuzemskej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik tuzemskej osoby"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "nesmie uplatnovat osobitnu upravu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Tuzemskej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik tuzemskej osoby"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat Oznameny V Oznameni",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat oznameny v oznameni"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "nesmie uplatnovat osobitnu upravu v clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Tuzemskej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik tuzemskej osoby"
+          }
+        },
+        "target": {
+          "id": "Prvy Den Nasledujuceho Kalendarneho Stvrtroka Po Doruceni Oznamenia",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den nasledujuceho kalendarneho stvrtroka po doruceni oznamenia"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "od prveho dna po doruceni oznamenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Tuzemskej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik tuzemskej osoby"
+          }
+        },
+        "target": {
+          "id": "Prvy Den Druheho Kalendarneho Mesiaca Nasledujuceho Kalendarneho Stvrtroka",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den druheho kalendarneho mesiaca nasledujuceho kalendarneho stvrtroka"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "ak bolo oznamenie dorucene pocas kalendarneho stvrtroka",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Tuzemskej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik tuzemskej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa malý podnik tuzemskej osoby rozhodol neuplatňovať osobitnú úpravu, alebo\nvyznačenie skutočnosti, že sa malý podnik tuzemskej osoby rozhodol skončiť uplatňovanie\nosobitnej úpravy. Malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu v členskom\nštáte označenom v oznámení podľa prvej vety alebo v žiadnom členskom štáte, ak v tomto\noznámení vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, od prvého\ndňa nasledujúceho kalendárneho štvrťroka po doručení oznámenia alebo od prvého dňa druhého\nkalendárneho mesiaca nasledujúceho kalendárneho štvrťroka, ak bolo oznámenie doručené počas",
+            "page": 101
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa malý podnik tuzemskej osoby rozhodol neuplatňovať osobitnú úpravu, alebo\nvyznačenie skutočnosti, že sa malý podnik tuzemskej osoby rozhodol skončiť uplatňovanie\nosobitnej úpravy. Malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu v členskom\nštáte označenom v oznámení podľa prvej vety alebo v žiadnom členskom štáte, ak v tomto\noznámení vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, od prvého\ndňa nasledujúceho kalendárneho štvrťroka po doručení oznámenia alebo od prvého dňa druhého\nkalendárneho mesiaca nasledujúceho kalendárneho štvrťroka, ak bolo oznámenie doručené počas",
+            "page": 101
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa malý podnik tuzemskej osoby rozhodol neuplatňovať osobitnú úpravu, alebo\nvyznačenie skutočnosti, že sa malý podnik tuzemskej osoby rozhodol skončiť uplatňovanie\nosobitnej úpravy. Malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu v členskom\nštáte označenom v oznámení podľa prvej vety alebo v žiadnom členskom štáte, ak v tomto\noznámení vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, od prvého\ndňa nasledujúceho kalendárneho štvrťroka po doručení oznámenia alebo od prvého dňa druhého\nkalendárneho mesiaca nasledujúceho kalendárneho štvrťroka, ak bolo oznámenie doručené počas",
+            "page": 101
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat Oznameny V Oznameni",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat oznameny v oznameni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa malý podnik tuzemskej osoby rozhodol neuplatňovať osobitnú úpravu, alebo\nvyznačenie skutočnosti, že sa malý podnik tuzemskej osoby rozhodol skončiť uplatňovanie\nosobitnej úpravy. Malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu v členskom\nštáte označenom v oznámení podľa prvej vety alebo v žiadnom členskom štáte, ak v tomto\noznámení vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, od prvého\ndňa nasledujúceho kalendárneho štvrťroka po doručení oznámenia alebo od prvého dňa druhého\nkalendárneho mesiaca nasledujúceho kalendárneho štvrťroka, ak bolo oznámenie doručené počas",
+            "page": 101
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvy Den Nasledujuceho Kalendarneho Stvrtroka Po Doruceni Oznamenia",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den nasledujuceho kalendarneho stvrtroka po doruceni oznamenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa malý podnik tuzemskej osoby rozhodol neuplatňovať osobitnú úpravu, alebo\nvyznačenie skutočnosti, že sa malý podnik tuzemskej osoby rozhodol skončiť uplatňovanie\nosobitnej úpravy. Malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu v členskom\nštáte označenom v oznámení podľa prvej vety alebo v žiadnom členskom štáte, ak v tomto\noznámení vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, od prvého\ndňa nasledujúceho kalendárneho štvrťroka po doručení oznámenia alebo od prvého dňa druhého\nkalendárneho mesiaca nasledujúceho kalendárneho štvrťroka, ak bolo oznámenie doručené počas",
+            "page": 101
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvy Den Druheho Kalendarneho Mesiaca Nasledujuceho Kalendarneho Stvrtroka",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den druheho kalendarneho mesiaca nasledujuceho kalendarneho stvrtroka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa malý podnik tuzemskej osoby rozhodol neuplatňovať osobitnú úpravu, alebo\nvyznačenie skutočnosti, že sa malý podnik tuzemskej osoby rozhodol skončiť uplatňovanie\nosobitnej úpravy. Malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu v členskom\nštáte označenom v oznámení podľa prvej vety alebo v žiadnom členskom štáte, ak v tomto\noznámení vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, od prvého\ndňa nasledujúceho kalendárneho štvrťroka po doručení oznámenia alebo od prvého dňa druhého\nkalendárneho mesiaca nasledujúceho kalendárneho štvrťroka, ak bolo oznámenie doručené počas",
+            "page": 101
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

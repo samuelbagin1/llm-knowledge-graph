@@ -1,0 +1,733 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Zahranicna Osoba",
+        "type": "Fyzickaosoba",
+        "properties": {
+          "name": "zahranicna osoba"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "Zakon O Dani Z Pridanej Hodnoty",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon o dani z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "§ 55A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 55a"
+        }
+      },
+      {
+        "id": "§ 56",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 56"
+        }
+      },
+      {
+        "id": "§ 69 Ods. 1",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 69 ods. 1"
+        }
+      },
+      {
+        "id": "§ 68A Az 68C",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68a az 68c"
+        }
+      },
+      {
+        "id": "§ 68 Ods. 1",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68 ods. 1"
+        }
+      },
+      {
+        "id": "§ 5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 5"
+        }
+      },
+      {
+        "id": "§ 49A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 49a"
+        }
+      },
+      {
+        "id": "Odcitanie Dane",
+        "type": "Pravo",
+        "properties": {
+          "name": "odcitanie dane"
+        }
+      },
+      {
+        "id": "Odcitanie Dane Z Tovarov A Sluzieb",
+        "type": "Pravo",
+        "properties": {
+          "name": "odcitanie dane z tovarov a sluzieb"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Cinnost",
+        "properties": {
+          "name": "osobitna uprava"
+        }
+      },
+      {
+        "id": "Cinnosti V Tuzemsku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "cinnosti v tuzemsku"
+        }
+      },
+      {
+        "id": "Platitel Registrovany Podla § 5",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel registrovany podla § 5"
+        }
+      },
+      {
+        "id": "Investicny Majetok",
+        "type": "Investicnymajetok",
+        "properties": {
+          "name": "investicny majetok"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+          "page": 57
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Zahranicna Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "type": "JE_ZASTUPENA",
+        "properties": {
+          "add": "platitel je zahranicna osoba",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "add": "podmienky na vratenie dane podla § 55a alebo § 56",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Odcitanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "type": "NEMA_NAROK_NA",
+        "properties": {
+          "add": "odcitanie dane prostrednictvom danoveho priznania, okrem vynimiek",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "type": "APLIKUJE_SA_NA",
+        "properties": {
+          "add": "podla § 68a az 68c",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Cinnosti V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnosti v tuzemsku"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "cinnosti, na ktore sa osobitne upravy nevztahuju",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Cinnosti V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnosti v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "cinnosti, na ktore sa tieto osobitne upravy nevztahuju",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Odcitanie Dane Z Tovarov A Sluzieb",
+          "type": "Pravo",
+          "properties": {
+            "name": "odcitanie dane z tovarov a sluzieb"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "pri tovaroch a sluzbach suvisiacich s dodanim podla § 68 ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel Registrovany Podla § 5",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel registrovany podla § 5"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "type": "MA_STATUS",
+        "properties": {
+          "add": "registrovany ako platitel podla § 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "§ 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "registracia platitela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odcitanie Dane Z Tovarov A Sluzieb",
+          "type": "Pravo",
+          "properties": {
+            "name": "odcitanie dane z tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "uplatnena dan na investicny majetok podla § 49a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 55A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 55a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 56",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 56"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 69 Ods. 1",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69 ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68A Az 68C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68a az 68c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68 Ods. 1",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68 ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 49A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 49a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odcitanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odcitanie Dane Z Tovarov A Sluzieb",
+          "type": "Pravo",
+          "properties": {
+            "name": "odcitanie dane z tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cinnosti V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnosti v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel Registrovany Podla § 5",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel registrovany podla § 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrátenie dane podľa § 55a alebo\n§ 56, nemôže uplatňovať odpočítanie dane z tovarov a služieb prostredníctvom daňového priznania\nokrem odpočítania dane z tovarov a služieb, ktoré použije na dodávky tovarov a služieb, pri\nktorých je osobou povinnou platiť daň podľa § 69 ods. 1 a okrem odpočítania ním uplatnenej dane\nna tovary a služby, pri ktorých je osobou povinnou platiť daň.\n(10) Ak zahraničná osoba uplatňuje osobitnú úpravu podľa § 68a až 68c alebo osobitnú úpravu\npodľa ustanovení zákona platného v inom členskom štáte zodpovedajúcich § 68a až 68c a súčasne\nvykonáva v tuzemsku aj činnosti, na ktoré sa tieto osobitné úpravy nevzťahujú a v súvislosti\ns ktorými je registrovaná ako platiteľ podľa § 5, má právo na odpočítanie dane uplatnenej pri\ntovaroch a službách, ktoré súvisia s dodaním tovarov a služieb uvedených v § 68 ods. 1.\n§ 49a\n(1) Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý",
+            "page": 57
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

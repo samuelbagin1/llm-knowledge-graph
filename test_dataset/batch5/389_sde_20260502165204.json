@@ -1,0 +1,712 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Status",
+        "properties": {
+          "name": "osobitna uprava"
+        }
+      },
+      {
+        "id": "Skoncenie Uplatnovania Osobitnej Upravy",
+        "type": "Cinnost",
+        "properties": {
+          "name": "skoncenie uplatnovania osobitnej upravy"
+        }
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "prebiehajuci kalendarny rok"
+        }
+      },
+      {
+        "id": "100 000 eur",
+        "type": "Suma",
+        "properties": {
+          "name": "100 000 eur"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {
+          "name": "clen skupiny"
+        }
+      },
+      {
+        "id": "Konkurz",
+        "type": "Konanie",
+        "properties": {
+          "name": "konkurz"
+        }
+      },
+      {
+        "id": "Likvidacia",
+        "type": "Konanie",
+        "properties": {
+          "name": "likvidacia"
+        }
+      },
+      {
+        "id": "Zrusenie Bez Likvidacie",
+        "type": "Konanie",
+        "properties": {
+          "name": "zrusenie bez likvidacie"
+        }
+      },
+      {
+        "id": "Zanik",
+        "type": "Zaznam",
+        "properties": {
+          "name": "zanik"
+        }
+      },
+      {
+        "id": "Fyzicka Osoba Pokracujuca V Podnikani Po Umrti Platitela",
+        "type": "Fyzickaosoba",
+        "properties": {
+          "name": "fyzicka osoba pokracujuca v podnikani po umrti platitela"
+        }
+      },
+      {
+        "id": "Konanie O Dedicstve",
+        "type": "Konanie",
+        "properties": {
+          "name": "konanie o dedicstve"
+        }
+      },
+      {
+        "id": "Zmena Registracie Pre Dan Podla Paragrafu 6A Odsek 2",
+        "type": "Registracia",
+        "properties": {
+          "name": "zmena registracie pre dan podla paragrafu 6a odsek 2"
+        }
+      },
+      {
+        "id": "Dattum Skoncenia Uplatnovania Osobitnej Upravy",
+        "type": "Datum",
+        "properties": {
+          "name": "dattum skoncenia uplatnovania osobitnej upravy"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+          "page": 96
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Skoncenie Uplatnovania Osobitnej Upravy",
+          "type": "Cinnost",
+          "properties": {
+            "name": "skoncenie uplatnovania osobitnej upravy"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "skoncit uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "v prebiehajucom kalendarnom roku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "posledny den zdanovacieho obdobia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Konanie O Dedicstve",
+          "type": "Konanie",
+          "properties": {
+            "name": "konanie o dedicstve"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "posledne zdanovacie obdobie po skonceni konania o dedicstve",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "100 000 eur",
+          "type": "Suma",
+          "properties": {
+            "name": "100 000 eur"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "obrat 100 000 eur",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "type": "JE_CLENOM",
+        "properties": {
+          "add": "stane sa clenom skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Konkurz",
+          "type": "Konanie",
+          "properties": {
+            "name": "konkurz"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "je na neho vyhlaseny konkurz",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Likvidacia",
+          "type": "Konanie",
+          "properties": {
+            "name": "likvidacia"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "vstupil do likvidacie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Zrusenie Bez Likvidacie",
+          "type": "Konanie",
+          "properties": {
+            "name": "zrusenie bez likvidacie"
+          }
+        },
+        "type": "ZRUSUJE",
+        "properties": {
+          "add": "zrusuje sa bez likvidacie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Fyzicka Osoba Pokracujuca V Podnikani Po Umrti Platitela",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "fyzicka osoba pokracujuca v podnikani po umrti platitela"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "fyzicka osoba pokracujuca v podnikani po umrti platitela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Zmena Registracie Pre Dan Podla Paragrafu 6A Odsek 2",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie pre dan podla paragrafu 6a odsek 2"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "nastane skutocnost na zmenu registracie pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "uplatnovanie osobitnej upravy platitela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dattum Skoncenia Uplatnovania Osobitnej Upravy",
+          "type": "Datum",
+          "properties": {
+            "name": "dattum skoncenia uplatnovania osobitnej upravy"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "type": "MA_ODKLADNY_UCINOK",
+        "properties": {
+          "add": "datum skoncenia uplatnovania osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skoncenie Uplatnovania Osobitnej Upravy",
+          "type": "Cinnost",
+          "properties": {
+            "name": "skoncenie uplatnovania osobitnej upravy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "100 000 eur",
+          "type": "Suma",
+          "properties": {
+            "name": "100 000 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Konkurz",
+          "type": "Konanie",
+          "properties": {
+            "name": "konkurz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Likvidacia",
+          "type": "Konanie",
+          "properties": {
+            "name": "likvidacia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zrusenie Bez Likvidacie",
+          "type": "Konanie",
+          "properties": {
+            "name": "zrusenie bez likvidacie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zanik",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zanik"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Fyzicka Osoba Pokracujuca V Podnikani Po Umrti Platitela",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "fyzicka osoba pokracujuca v podnikani po umrti platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Konanie O Dedicstve",
+          "type": "Konanie",
+          "properties": {
+            "name": "konanie o dedicstve"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie Pre Dan Podla Paragrafu 6A Odsek 2",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie pre dan podla paragrafu 6a odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dattum Skoncenia Uplatnovania Osobitnej Upravy",
+          "type": "Datum",
+          "properties": {
+            "name": "dattum skoncenia uplatnovania osobitnej upravy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu.\n(11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak\na) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom\nzdaňovacieho obdobia, v ktorom dosiahol obrat,\nb) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny,\nc) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza\nvyhláseniu konkurzu alebo vstupu do likvidácie,\nd) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku,\ne) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným\ndňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve,\nf) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý\npredchádza dňu, keď táto skutočnosť nastala.\n(12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+            "page": 96
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

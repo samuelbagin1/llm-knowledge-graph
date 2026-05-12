@@ -1,0 +1,978 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf 30 Ods 2",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 30 ods. 2"
+        }
+      },
+      {
+        "id": "Paragraf 32",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 32"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "Oslobodenie od dane"
+        }
+      },
+      {
+        "id": "Odborny Vycvik A Rekvalifikacia",
+        "type": "Cinnost",
+        "properties": {
+          "name": "odborny vycvik a rekvalifikacia"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru"
+        }
+      },
+      {
+        "id": "Dodanie Sluzieb",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie sluzieb"
+        }
+      },
+      {
+        "id": "Vychovne Sluzby",
+        "type": "Sluzba",
+        "properties": {
+          "name": "vychovne sluzby"
+        }
+      },
+      {
+        "id": "Vzdelavacie Sluzby",
+        "type": "Sluzba",
+        "properties": {
+          "name": "vzdelavacie sluzby"
+        }
+      },
+      {
+        "id": "Sluzby Dodavane Clenom",
+        "type": "Cinnost",
+        "properties": {
+          "name": "sluzby dodavane clenom"
+        }
+      },
+      {
+        "id": "Clensky Prispevok",
+        "type": "Povinnost",
+        "properties": {
+          "name": "clensky prispevok"
+        }
+      },
+      {
+        "id": "Politicke Strany",
+        "type": "Organizacia",
+        "properties": {
+          "name": "politicke strany"
+        }
+      },
+      {
+        "id": "Hnutia",
+        "type": "Organizacia",
+        "properties": {
+          "name": "hnutia"
+        }
+      },
+      {
+        "id": "Cirkvi",
+        "type": "Organizacia",
+        "properties": {
+          "name": "cirkvi"
+        }
+      },
+      {
+        "id": "Nabozenske Spolocnosti",
+        "type": "Organizacia",
+        "properties": {
+          "name": "nabozenske spolocnosti"
+        }
+      },
+      {
+        "id": "Obcianske Zdruzenia",
+        "type": "Organizacia",
+        "properties": {
+          "name": "obcianske zdruzenia"
+        }
+      },
+      {
+        "id": "Odborove Organizacie",
+        "type": "Organizacia",
+        "properties": {
+          "name": "odborove organizacie"
+        }
+      },
+      {
+        "id": "Profesijne Komory",
+        "type": "Organizacia",
+        "properties": {
+          "name": "profesijne komory"
+        }
+      },
+      {
+        "id": "Hospodarska Sutaz",
+        "type": "Status",
+        "properties": {
+          "name": "hospodarska sutaz"
+        }
+      },
+      {
+        "id": "Pravnicka Osoba",
+        "type": "Pravnickaosoba",
+        "properties": {
+          "name": "pravnicka osoba"
+        }
+      },
+      {
+        "id": "Clenovia",
+        "type": "Clenskupiny",
+        "properties": {
+          "name": "clenovia"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+          "page": 36
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odborny Vycvik A Rekvalifikacia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odborny vycvik a rekvalifikacia"
+          }
+        },
+        "target": {
+          "id": "Paragraf 30 Ods 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 30 ods. 2"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla § 30 ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Odborny Vycvik A Rekvalifikacia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odborny vycvik a rekvalifikacia"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ako odborny vycvik a rekvalifikacia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dodanie tovaru a dodanie sluzieb uzko suvisiacich s vychovnymi a vzdelavacimi sluzbami",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzieb"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dodanie tovaru a dodanie sluzieb uzko suvisiacich s vychovnymi a vzdelavacimi sluzbami",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vychovne Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "vychovne sluzby"
+          }
+        },
+        "target": {
+          "id": "Paragraf 32",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 32"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla § 32",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vzdelavacie Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "vzdelavacie sluzby"
+          }
+        },
+        "target": {
+          "id": "Paragraf 32",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 32"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla § 32",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Paragraf 32",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 32"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla § 32",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clensky Prispevok",
+          "type": "Povinnost",
+          "properties": {
+            "name": "clensky prispevok"
+          }
+        },
+        "target": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "protihodnota clenskeho prispevku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Politicke Strany",
+          "type": "Organizacia",
+          "properties": {
+            "name": "politicke strany"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastni clenovia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Hnutia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "hnutia"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastni clenovia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Cirkvi",
+          "type": "Organizacia",
+          "properties": {
+            "name": "cirkvi"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastni clenovia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Nabozenske Spolocnosti",
+          "type": "Organizacia",
+          "properties": {
+            "name": "nabozenske spolocnosti"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastni clenovia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Obcianske Zdruzenia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "obcianske zdruzenia"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastni clenovia vratane odborovych organizacii",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Odborove Organizacie",
+          "type": "Organizacia",
+          "properties": {
+            "name": "odborove organizacie"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastni clenovia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Profesijne Komory",
+          "type": "Organizacia",
+          "properties": {
+            "name": "profesijne komory"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastni clenovia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Hospodarska Sutaz",
+          "type": "Status",
+          "properties": {
+            "name": "hospodarska sutaz"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "oslobodenie od dane nenarusa hospodarsku sutaz",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Pravnicka Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "pravnicka osoba"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "sluzby, ktore svojim clenom dodava pravnicka osoba",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "Clenovia",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clenovia"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "svojim clenom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "sluzby dodavane clenom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 30 Ods 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 30 ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 32",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 32"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odborny Vycvik A Rekvalifikacia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odborny vycvik a rekvalifikacia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vychovne Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "vychovne sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vzdelavacie Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "vzdelavacie sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzby Dodavane Clenom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzby dodavane clenom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Prispevok",
+          "type": "Povinnost",
+          "properties": {
+            "name": "clensky prispevok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Politicke Strany",
+          "type": "Organizacia",
+          "properties": {
+            "name": "politicke strany"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hnutia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "hnutia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cirkvi",
+          "type": "Organizacia",
+          "properties": {
+            "name": "cirkvi"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nabozenske Spolocnosti",
+          "type": "Organizacia",
+          "properties": {
+            "name": "nabozenske spolocnosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obcianske Zdruzenia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "obcianske zdruzenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odborove Organizacie",
+          "type": "Organizacia",
+          "properties": {
+            "name": "odborove organizacie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Profesijne Komory",
+          "type": "Organizacia",
+          "properties": {
+            "name": "profesijne komory"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hospodarska Sutaz",
+          "type": "Status",
+          "properties": {
+            "name": "hospodarska sutaz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnicka Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "pravnicka osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clenovia",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clenovia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienku alebo viac podmienok\npodľa § 30 ods. 2,\nc) ako odborný výcvik a rekvalifikácia poskytované podľa osobitného predpisu.13)\n(2) Oslobodené od dane je aj dodanie tovaru a dodanie služieb úzko súvisiacich s výchovnými\nslužbami a vzdelávacími službami podľa odseku 1 osobami, ktoré poskytujú výchovné služby\na vzdelávacie služby podľa odseku 1.\n§ 32\nSlužby dodávané členom\n(1) Oslobodené od dane sú služby dodávané ako protihodnota členského príspevku pre\nvlastných členov politických strán a hnutí, cirkví a náboženských spoločností, občianskych\nzdružení vrátane odborových organizácií a profesijných komôr, ak toto oslobodenie od dane\nnenarušuje hospodársku súťaž; oslobodený od dane je aj tovar dodaný týmito osobami v úzkej\nsúvislosti s dodanou službou.\n(2) Oslobodené od dane sú služby, ktoré svojim členom dodáva právnická osoba, ak",
+            "page": 36
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

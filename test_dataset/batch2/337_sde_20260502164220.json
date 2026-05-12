@@ -1,0 +1,845 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Urcite Domace Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "urcite domace dodanie tovaru"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru Na Uzemi Europskej Unie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru na uzemi europskej unie"
+        }
+      },
+      {
+        "id": "Osobitne Upravy",
+        "type": "Cinnost",
+        "properties": {
+          "name": "osobitne upravy"
+        }
+      },
+      {
+        "id": "Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke",
+        "type": "Cinnost",
+        "properties": {
+          "name": "predaj tovaru na dialku dovazany z uzemia tretich statov v zasielke"
+        }
+      },
+      {
+        "id": "Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "danove priznanie"
+        }
+      },
+      {
+        "id": "Podanie",
+        "type": "Doklad",
+        "properties": {
+          "name": "podanie"
+        }
+      },
+      {
+        "id": "Pisomnosti Tykajuce Sa Osobitnej Upravy",
+        "type": "Doklad",
+        "properties": {
+          "name": "pisomnosti tykajuce sa osobitnej upravy"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba neusadena na uzemi europskej unie"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Dovoz Z Uzemia Tretich Statov",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dovoz z uzemia tretich statov"
+        }
+      },
+      {
+        "id": "150 eur",
+        "type": "Euro",
+        "properties": {
+          "name": "150 eur"
+        }
+      },
+      {
+        "id": "Osobitny Predpis 28Aa",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "osobitny predpis 28aa"
+        }
+      },
+      {
+        "id": "§ 8 Ods. 7 Prva Veta",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 8 ods. 7 prva veta"
+        }
+      },
+      {
+        "id": "§ 68C",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68c"
+        }
+      },
+      {
+        "id": "§ 68A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68a"
+        }
+      },
+      {
+        "id": "§ 68B",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68b"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 3"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+          "page": 84
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Urcite Domace Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "urcite domace dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru Na Uzemi Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru na uzemi europskej unie"
+          }
+        },
+        "type": "ROZUMIE_SA",
+        "properties": {
+          "add": "definicia urcite domace dodanie tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Urcite Domace Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "urcite domace dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba neusadena na uzemi europskej unie"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "dodava tovar osobe inej ako zdanitelnej osobe prostrednictvom zdanitelnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Urcite Domace Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "urcite domace dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "§ 8 Ods. 7 Prva Veta",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8 ods. 7 prva veta"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "uľahcuje dodanie tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov v zasielke"
+          }
+        },
+        "target": {
+          "id": "§ 68C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68c"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "predaj tovaru na dialku dovazany z uzemia tretich statov v zasielke",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov v zasielke"
+          }
+        },
+        "target": {
+          "id": "150 eur",
+          "type": "Euro",
+          "properties": {
+            "name": "150 eur"
+          }
+        },
+        "type": "MA_VYNIMKU",
+        "properties": {
+          "add": "vlastna hodnota zasielky nepresahuje",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Podanie",
+          "type": "Doklad",
+          "properties": {
+            "name": "podanie"
+          }
+        },
+        "type": "ROZUMIE_SA",
+        "properties": {
+          "add": "podanie obsahujuce udaje podla osobitneho predpisu potrebne na urcenie vysky dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Osobitny Predpis 28Aa",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis 28aa"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "udaje potrebne na urcenie vysky dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitne Upravy",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitne upravy"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "uplatnovanie podla odseku 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "na ucely uplatnovania osobitnych uprav podla odseku 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ak sa rozhodne pre uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 68C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68c"
+          }
+        },
+        "target": {
+          "id": "Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov v zasielke"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "upravuje",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 68A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68a"
+          }
+        },
+        "target": {
+          "id": "Osobitne Upravy",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitne upravy"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "osobitna uprava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 68B",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68b"
+          }
+        },
+        "target": {
+          "id": "Osobitne Upravy",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitne upravy"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "osobitna uprava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 68C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68c"
+          }
+        },
+        "target": {
+          "id": "Osobitne Upravy",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitne upravy"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "osobitna uprava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Urcite Domace Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "urcite domace dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Na Uzemi Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru na uzemi europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitne Upravy",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitne upravy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov v zasielke"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podanie",
+          "type": "Doklad",
+          "properties": {
+            "name": "podanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pisomnosti Tykajuce Sa Osobitnej Upravy",
+          "type": "Doklad",
+          "properties": {
+            "name": "pisomnosti tykajuce sa osobitnej upravy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba neusadena na uzemi europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovoz Z Uzemia Tretich Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dovoz z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "150 eur",
+          "type": "Euro",
+          "properties": {
+            "name": "150 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis 28Aa",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis 28aa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 8 Ods. 7 Prva Veta",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8 ods. 7 prva veta"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68B",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. určité domáce dodanie tovaru, ktorým sa rozumie dodanie tovaru na území Európskej únie\nzdaniteľnou osobou neusadenou na území Európskej únie osobe inej ako zdaniteľnej osobe\nprostredníctvom zdaniteľnej osoby, ktorá uľahčuje dodanie tovaru podľa § 8 ods. 7 prvej vety,\nak sa odoslanie alebo preprava tovaru začína a skončí v tom istom členskom štáte,\nc) § 68c sa vzťahuje na predaj tovaru na diaľku dovážaného z územia tretích štátov v zásielke, ak\nvlastná hodnota zásielky nepresahuje 150 eur a tovar nie je predmetom spotrebnej dane.\n(2) Na účely uplatňovania osobitných úprav podľa odseku 1 sa daňovým priznaním rozumie\npodanie, ktoré obsahuje údaje podľa osobitného predpisu28aa) potrebné na určenie výšky dane,\nktorá sa stala splatnou v každom členskom štáte.\n(3) Zdaniteľná osoba, ktorá sa rozhodne pre uplatňovanie osobitnej úpravy podľa § 68a, § 68b\nalebo § 68c, je povinná doručovať písomnosti týkajúce sa osobitnej úpravy daňovému úradu",
+            "page": 84
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

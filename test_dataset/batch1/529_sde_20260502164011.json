@@ -1,0 +1,1058 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Centralizovane Colne Konanie",
+        "type": "Konanie",
+        "properties": {
+          "name": "centralizovane colne konanie"
+        }
+      },
+      {
+        "id": "Colny Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "colny urad"
+        }
+      },
+      {
+        "id": "Osoba Povinna Platit Dan",
+        "type": "Subjekt",
+        "properties": {
+          "name": "osoba povinna platit dan"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Sumu Dane",
+        "type": "Suma",
+        "properties": {
+          "name": "sumu dane"
+        }
+      },
+      {
+        "id": "Colny Dlh",
+        "type": "Zavazok",
+        "properties": {
+          "name": "colny dlh"
+        }
+      },
+      {
+        "id": "Zahranicna Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "zahranicna osoba"
+        }
+      },
+      {
+        "id": "Elektronicka Schranka",
+        "type": "Elektronickyprostriedok",
+        "properties": {
+          "name": "elektronicka schranka"
+        }
+      },
+      {
+        "id": "Zastupca Na Dorucovanie",
+        "type": "Zastupca",
+        "properties": {
+          "name": "zastupca na dorucovanie"
+        }
+      },
+      {
+        "id": "Osobitny Predpis",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "osobitny predpis"
+        }
+      },
+      {
+        "id": "Zakon",
+        "type": "Zakon",
+        "properties": {
+          "name": "tento zakon"
+        }
+      },
+      {
+        "id": "§ 84A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 84a"
+        }
+      },
+      {
+        "id": "Ods. 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 2"
+        }
+      },
+      {
+        "id": "Pism. B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pism. b"
+        }
+      },
+      {
+        "id": "§ 69",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 69"
+        }
+      },
+      {
+        "id": "Ods. 8",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 8"
+        }
+      },
+      {
+        "id": "§ 85",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 85"
+        }
+      },
+      {
+        "id": "Prva Veta",
+        "type": "Bod",
+        "properties": {
+          "name": "prva veta"
+        }
+      },
+      {
+        "id": "Desat Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "desat dni"
+        }
+      },
+      {
+        "id": "Datum Oznamenia Sumy Dane",
+        "type": "Datum",
+        "properties": {
+          "name": "datum oznamenia sumy dane"
+        }
+      },
+      {
+        "id": "Uplynutie",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "uplynutie"
+        }
+      },
+      {
+        "id": "Lehoty",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehoty"
+        }
+      },
+      {
+        "id": "Registracia Platitelov",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia platitelov"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+          "page": 130
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Centralizovane Colne Konanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "centralizovane colne konanie"
+          }
+        },
+        "target": {
+          "id": "§ 84A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 84a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 2 pism. b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "colny urad"
+          }
+        },
+        "target": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Subjekt",
+          "properties": {
+            "name": "osoba povinna platit dan"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "sumu vypocitanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Sumu Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "sumu dane"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "vypocitana dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Subjekt",
+          "properties": {
+            "name": "osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "podla § 69 ods. 8",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desat dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "splatnost odo dna oznamenia sumy dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "podla § 69 ods. 8",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "Zastupca Na Dorucovanie",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zastupca na dorucovanie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "zvolit si pred prvym podanim colneho vyhlasenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zastupca Na Dorucovanie",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zastupca na dorucovanie"
+          }
+        },
+        "target": {
+          "id": "Elektronicka Schranka",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronicka schranka"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "aktivovana podla osobitneho predpisu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis"
+          }
+        },
+        "target": {
+          "id": "Elektronicka Schranka",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronicka schranka"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "aktivovana elektronicka schranka",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Lehoty",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehoty"
+          }
+        },
+        "target": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "doterajsie predpisy do uplynutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Registracia Platitelov",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia platitelov"
+          }
+        },
+        "target": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "vykonana podla doterajsich predpisov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "target": {
+          "id": "§ 84A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 84a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "target": {
+          "id": "§ 85",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 84A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 84a"
+          }
+        },
+        "target": {
+          "id": "Ods. 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "pism. b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 69",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69"
+          }
+        },
+        "target": {
+          "id": "Ods. 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 8"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 85",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85"
+          }
+        },
+        "target": {
+          "id": "Lehoty",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehoty"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "vsetky lehoty zacate pred ucinnostou tohto zakona",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 84A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 84a"
+          }
+        },
+        "target": {
+          "id": "Ods. 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "pism. b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 69",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69"
+          }
+        },
+        "target": {
+          "id": "Ods. 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 8"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 85",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85"
+          }
+        },
+        "target": {
+          "id": "Uplynutie",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "uplynutie"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "do uplynutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Centralizovane Colne Konanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "centralizovane colne konanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "colny urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Subjekt",
+          "properties": {
+            "name": "osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sumu Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "sumu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Dlh",
+          "type": "Zavazok",
+          "properties": {
+            "name": "colny dlh"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicka Schranka",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronicka schranka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zastupca Na Dorucovanie",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zastupca na dorucovanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 84A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 84a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ods. 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pism. B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 69",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ods. 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 85",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prva Veta",
+          "type": "Bod",
+          "properties": {
+            "name": "prva veta"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desat dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Datum Oznamenia Sumy Dane",
+          "type": "Datum",
+          "properties": {
+            "name": "datum oznamenia sumy dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uplynutie",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "uplynutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehoty",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Platitelov",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia platitelov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v rámci centralizovaného colného konania podané na účet osoby, ktorá nespĺňa podmienky podľa\n§ 84a ods. 2 písm. b), colný úrad bezodkladne po prepustení tovaru do navrhovaného colného\nrežimu vypočíta sumu dane a oznámi ju osobe povinnej platiť daň (§ 69 ods. 8). Na oznámenie\nsumy vypočítanej dane sa primerane použijú ustanovenia colných predpisov o oznámení colného\ndlhu. Daň podľa prvej vety je splatná do desiatich dní odo dňa oznámenia sumy dane.\n(2) Ak je osoba povinná platiť daň (§ 69 ods. 8) zahraničnou osobou a nemá aktivovanú\nelektronickú schránku podľa osobitného predpisu,33a) je povinná zvoliť si pred prvým podaním\ncolného vyhlásenia podľa odseku 1 zástupcu na doručovanie, ktorý má aktivovanú elektronickú\nschránku podľa osobitného predpisu.\nPrechodné a záverečné ustanovenia\n§ 85\n(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť\npred účinnosťou tohto zákona.\n(2) Registrácia platiteľov vykonaná podľa doterajších predpisov sa považuje za registráciu pre",
+            "page": 130
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,719 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Priloha C. 7",
+        "type": "Priloha",
+        "properties": {
+          "name": "Priloha c. 7"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan"
+        }
+      },
+      {
+        "id": "Sadzba Dane",
+        "type": "Sadzbadane",
+        "properties": {
+          "name": "Sadzba dane"
+        }
+      },
+      {
+        "id": "Osobitny Predpis",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Osobitny predpis"
+        }
+      },
+      {
+        "id": "Zavazna Informacia O Nomenklaturnom Zatriedeni Tovaru",
+        "type": "Doklad",
+        "properties": {
+          "name": "Zavazna informacia o nomenklaturnom zatriedeni tovaru"
+        }
+      },
+      {
+        "id": "Colny Organ",
+        "type": "Statnyorgan",
+        "properties": {
+          "name": "Colny organ"
+        }
+      },
+      {
+        "id": "Univerzalne Postove Sluzby",
+        "type": "Sluzba",
+        "properties": {
+          "name": "Univerzalne postove sluzby"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru Suvisiace S Poskytovanou Univerzalnou Postovou Sluzbou",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dodanie tovaru suvisiace s poskytovanou univerzalnou postovou sluzbou"
+        }
+      },
+      {
+        "id": "Zdravotna Starostlivost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Zdravotna starostlivost"
+        }
+      },
+      {
+        "id": "Statne Zdravotnicke Zariadenia",
+        "type": "Organizacia",
+        "properties": {
+          "name": "Statne zdravotnicke zariadenia"
+        }
+      },
+      {
+        "id": "Nestatne Zdravotnicke Zariadenia",
+        "type": "Organizacia",
+        "properties": {
+          "name": "Nestatne zdravotnicke zariadenia"
+        }
+      },
+      {
+        "id": "Leky",
+        "type": "Tovar",
+        "properties": {
+          "name": "Leky"
+        }
+      },
+      {
+        "id": "Zdravotnicke Pomocky",
+        "type": "Tovar",
+        "properties": {
+          "name": "Zdravotnicke pomocky"
+        }
+      },
+      {
+        "id": "Osetrovatelska Starostlivost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Osetrovatelska starostlivost"
+        }
+      },
+      {
+        "id": "Porodna Asistencia",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Porodna asistencia"
+        }
+      },
+      {
+        "id": "Univerzalna Postova Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "Univerzalna postova sluzba"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+          "page": 35
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Priloha C. 7",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 7"
+          }
+        },
+        "target": {
+          "id": "Zavazna Informacia O Nomenklaturnom Zatriedeni Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Zavazna informacia o nomenklaturnom zatriedeni tovaru"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "ciselny kod tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zavazna Informacia O Nomenklaturnom Zatriedeni Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Zavazna informacia o nomenklaturnom zatriedeni tovaru"
+          }
+        },
+        "target": {
+          "id": "Colny Organ",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "Colny organ"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "zatriedenie tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zavazna Informacia O Nomenklaturnom Zatriedeni Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Zavazna informacia o nomenklaturnom zatriedeni tovaru"
+          }
+        },
+        "target": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Osobitny predpis"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "osobitny predpis",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Univerzalne Postove Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "Univerzalne postove sluzby"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "add": "dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Suvisiace S Poskytovanou Univerzalnou Postovou Sluzbou",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie tovaru suvisiace s poskytovanou univerzalnou postovou sluzbou"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "add": "dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "add": "dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "Statne Zdravotnicke Zariadenia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Statne zdravotnicke zariadenia"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "poskytovanie zdravotnej starostlivosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "Nestatne Zdravotnicke Zariadenia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Nestatne zdravotnicke zariadenia"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "poskytovanie zdravotnej starostlivosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "Leky",
+          "type": "Tovar",
+          "properties": {
+            "name": "Leky"
+          }
+        },
+        "type": "MA_VYNIMKU",
+        "properties": {
+          "add": "dodanie liekov a zdravotnickych pomôcok nie je oslobodene od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "Zdravotnicke Pomocky",
+          "type": "Tovar",
+          "properties": {
+            "name": "Zdravotnicke pomocky"
+          }
+        },
+        "type": "MA_VYNIMKU",
+        "properties": {
+          "add": "dodanie liekov a zdravotnickych pomôcok nie je oslobodene od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "Osetrovatelska Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Osetrovatelska starostlivost"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "oslobodena od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "Porodna Asistencia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Porodna asistencia"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "oslobodena od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Priloha C. 7",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sadzba Dane",
+          "type": "Sadzbadane",
+          "properties": {
+            "name": "Sadzba dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Osobitny predpis"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zavazna Informacia O Nomenklaturnom Zatriedeni Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Zavazna informacia o nomenklaturnom zatriedeni tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Organ",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "Colny organ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Univerzalne Postove Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "Univerzalne postove sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Suvisiace S Poskytovanou Univerzalnou Postovou Sluzbou",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie tovaru suvisiace s poskytovanou univerzalnou postovou sluzbou"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdravotna Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zdravotna starostlivost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Statne Zdravotnicke Zariadenia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Statne zdravotnicke zariadenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nestatne Zdravotnicke Zariadenia",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Nestatne zdravotnicke zariadenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Leky",
+          "type": "Tovar",
+          "properties": {
+            "name": "Leky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdravotnicke Pomocky",
+          "type": "Tovar",
+          "properties": {
+            "name": "Zdravotnicke pomocky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osetrovatelska Starostlivost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Osetrovatelska starostlivost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Porodna Asistencia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Porodna asistencia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Univerzalna Postova Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "Univerzalna postova sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účel ako je bývanie alebo ubytovanie.\n(4) Na účely správneho zatriedenia tovaru do číselného kódu podľa prílohy č. 7 sa použije\nzáväzná informácia o nomenklatúrnom zatriedení tovaru vydaná colným orgánom podľa\nosobitného predpisu.6b)\n(5) Pri zmene sadzby dane sa použije pri každom vzniku daňovej povinnosti sadzba dane platná\nv deň vzniku daňovej povinnosti.\nOslobodenie od dane\n§ 28\nPoštové služby\nOslobodené od dane sú univerzálne poštové služby.7) Oslobodené od dane je aj dodanie tovaru,\nktorý súvisí s poskytovanou univerzálnou poštovou službou.\n§ 29\nZdravotná starostlivosť\n(1) Oslobodené od dane je poskytovanie zdravotnej starostlivosti štátnymi a neštátnymi\nzdravotníckymi zariadeniami podľa osobitného predpisu8) a tovary a služby s ňou priamo súvisiace\nposkytované týmito štátnymi a neštátnymi zdravotníckymi zariadeniami. Oslobodené od dane nie\nje dodanie liekov a zdravotníckych pomôcok.\n(2) Oslobodená od dane je aj\na) ošetrovateľská starostlivosť a pôrodná asistencia,",
+            "page": 35
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

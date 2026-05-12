@@ -1,0 +1,397 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Povinna",
+        "type": "Pravnickaosoba",
+        "properties": {
+          "name": "povinna"
+        }
+      },
+      {
+        "id": "Nasledujuce Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "nasledujuce danove priznanie"
+        }
+      },
+      {
+        "id": "Lehoty Na Podanie Povodneho Danoveho Priznania",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehoty na podanie povodneho danoveho priznania"
+        }
+      },
+      {
+        "id": "Tri Roky",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "tri roky"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Prislusny Clensky Stat Spotreby",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "prislusny clensky stat spotreby"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Suma",
+        "type": "Suma",
+        "properties": {
+          "name": "suma"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+          "page": 88
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Povinna",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "povinna"
+          }
+        },
+        "target": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uviest v nasledujucom danovom priznani do troch rokov odo dna uplynutia lehoty na podanie povodneho danoveho priznania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Tri Roky",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri roky"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "najneskorsie do",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tri Roky",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri roky"
+          }
+        },
+        "target": {
+          "id": "Lehoty Na Podanie Povodneho Danoveho Priznania",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehoty na podanie povodneho danoveho priznania"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "od uplynutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Prislusny Clensky Stat Spotreby",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "prislusny clensky stat spotreby"
+          }
+        },
+        "type": "UVADZA",
+        "properties": {
+          "add": "v nasledujucom danovom priznani",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "type": "UVADZA",
+        "properties": {
+          "add": "v nasledujucom danovom priznani",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Suma",
+          "type": "Suma",
+          "properties": {
+            "name": "suma"
+          }
+        },
+        "type": "UVADZA",
+        "properties": {
+          "add": "v nasledujucom danovom priznani",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinna",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "povinna"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehoty Na Podanie Povodneho Danoveho Priznania",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehoty na podanie povodneho danoveho priznania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tri Roky",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri roky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Clensky Stat Spotreby",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "prislusny clensky stat spotreby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma",
+          "type": "Suma",
+          "properties": {
+            "name": "suma"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v odseku 2 povinná uviesť v nasledujúcom daňovom priznaní najneskôr do troch rokov odo dňa\nuplynutia lehoty na podanie pôvodného daňového priznania. V tomto nasledujúcom daňovom\npriznaní zdaniteľná osoba uvedie príslušný členský štát spotreby, zdaňovacie obdobie a sumu",
+            "page": 88
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

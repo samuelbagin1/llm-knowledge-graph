@@ -1,0 +1,338 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Odsek 10",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 10"
+        }
+      },
+      {
+        "id": "Viacucelovy Poukaz",
+        "type": "Poukaz",
+        "properties": {
+          "name": "viacucelovy poukaz"
+        }
+      },
+      {
+        "id": "Zdanenie Dodania Tovaru Alebo Dodania Sluzby Pri Pouziti Viacuceloveho Poukazu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "zdanenie dodania tovaru alebo dodania sluzby pri pouziti viacuceloveho poukazu"
+        }
+      },
+      {
+        "id": "Protihodnota Zaplatena Za Poukaz Znizena O Dan",
+        "type": "Suma",
+        "properties": {
+          "name": "protihodnota zaplatena za poukaz znizena o dan"
+        }
+      },
+      {
+        "id": "Penazna Hodnota Uvedena Na Viacucelovom Poukaze",
+        "type": "Hodnota",
+        "properties": {
+          "name": "penazna hodnota uvedena na viacucelovom poukaze"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+          "page": 29
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "target": {
+          "id": "Zdanenie Dodania Tovaru Alebo Dodania Sluzby Pri Pouziti Viacuceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zdanenie dodania tovaru alebo dodania sluzby pri pouziti viacuceloveho poukazu"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanenie Dodania Tovaru Alebo Dodania Sluzby Pri Pouziti Viacuceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zdanenie dodania tovaru alebo dodania sluzby pri pouziti viacuceloveho poukazu"
+          }
+        },
+        "target": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanenie Dodania Tovaru Alebo Dodania Sluzby Pri Pouziti Viacuceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zdanenie dodania tovaru alebo dodania sluzby pri pouziti viacuceloveho poukazu"
+          }
+        },
+        "target": {
+          "id": "Protihodnota Zaplatena Za Poukaz Znizena O Dan",
+          "type": "Suma",
+          "properties": {
+            "name": "protihodnota zaplatena za poukaz znizena o dan"
+          }
+        },
+        "type": "MA_ZAKLAD_DANE",
+        "properties": {
+          "add": "zaplatena za poukaz znizena o dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanenie Dodania Tovaru Alebo Dodania Sluzby Pri Pouziti Viacuceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zdanenie dodania tovaru alebo dodania sluzby pri pouziti viacuceloveho poukazu"
+          }
+        },
+        "target": {
+          "id": "Penazna Hodnota Uvedena Na Viacucelovom Poukaze",
+          "type": "Hodnota",
+          "properties": {
+            "name": "penazna hodnota uvedena na viacucelovom poukaze"
+          }
+        },
+        "type": "MA_ZAKLAD_DANE",
+        "properties": {
+          "add": "ak dodavatel nema informaciu o tejto protihodnote",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Viacucelovy Poukaz",
+          "type": "Poukaz",
+          "properties": {
+            "name": "viacucelovy poukaz"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "protihodnota zaplatena za poukaz znizena o dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+            "page": 29
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+            "page": 29
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Viacucelovy Poukaz",
+          "type": "Poukaz",
+          "properties": {
+            "name": "viacucelovy poukaz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+            "page": 29
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanenie Dodania Tovaru Alebo Dodania Sluzby Pri Pouziti Viacuceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zdanenie dodania tovaru alebo dodania sluzby pri pouziti viacuceloveho poukazu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+            "page": 29
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Protihodnota Zaplatena Za Poukaz Znizena O Dan",
+          "type": "Suma",
+          "properties": {
+            "name": "protihodnota zaplatena za poukaz znizena o dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+            "page": 29
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Penazna Hodnota Uvedena Na Viacucelovom Poukaze",
+          "type": "Hodnota",
+          "properties": {
+            "name": "penazna hodnota uvedena na viacucelovom poukaze"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+            "page": 29
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 30 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\norgánom alebo členom ich štatutárneho orgánu,\ne) osoby, ktoré sú členom platiteľa, ktorý dodáva tovar alebo službu,\nf) fyzické osoby, ktoré sú v pracovnoprávnom vzťahu voči platiteľovi, ktorý dodáva tovar alebo\nslužbu,\ng) fyzické osoby, ktoré sú osobou blízkou6ac) fyzickej osobe uvedenej v písmene a), b), c), d) alebo f),\nh) právnické osoby, ktorých štatutárny orgán, spoločník alebo člen je aj štatutárnym orgánom\nalebo spoločníkom platiteľa, ktorý dodáva tovar alebo službu,\ni) fyzické osoby, ktoré žijú s platiteľom, ktorý dodáva tovar alebo službu, v domácnosti,24a)\nj) osoby blízke6ac) platiteľovi, ktorý je fyzickou osobou a ktorý dodáva tovar alebo službu.\n(10) Základom dane pri dodaní tovaru alebo dodaní služby pri použití viacúčelového poukazu je\nprotihodnota zaplatená za poukaz znížená o daň; ak dodávateľ nemá informáciu o tejto\nprotihodnote, základom dane je peňažná hodnota, ktorá je uvedená na viacúčelovom poukaze",
+            "page": 29
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,606 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Pohladavka Majetok Podniku Alebo Casti Podniku Nadobudnuty Po 1. Januari 2014",
+        "type": "Majetok",
+        "properties": {
+          "name": "majetok podniku alebo casti podniku nadobudnuty po 1. januari 2014"
+        }
+      },
+      {
+        "id": "Paragraf 85Kc",
+        "type": "Paragraf",
+        "properties": {
+          "name": "85kc"
+        }
+      },
+      {
+        "id": "Prechodne Ustanovenia K Upravam Ucinnym Od 1. Januara 2015",
+        "type": "Zaznam",
+        "properties": {
+          "name": "Prechodne ustanovenia k upravam ucinnym od 1. januara 2015"
+        }
+      },
+      {
+        "id": "1. januari 2014",
+        "type": "Datum",
+        "properties": {
+          "name": "1. januari 2014"
+        }
+      },
+      {
+        "id": "1. januari 2015",
+        "type": "Datum",
+        "properties": {
+          "name": "1. januari 2015"
+        }
+      },
+      {
+        "id": "31. december 2014",
+        "type": "Datum",
+        "properties": {
+          "name": "31. december 2014"
+        }
+      },
+      {
+        "id": "Ziadosti O Registraciu Pre Dan",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadosti o registraciu pre dan"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia pre dan"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba Identifikovana Pre Dan Podla Paragraf 68",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba identifikovana pre dan podla § 68"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba neusadena na uzemi Europskej unie"
+        }
+      },
+      {
+        "id": "Osobitna Uprava Podla Paragraf 68A",
+        "type": "Zaznam",
+        "properties": {
+          "name": "osobitna uprava podla § 68a"
+        }
+      },
+      {
+        "id": "Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "cinnost"
+        }
+      },
+      {
+        "id": "Elektronicke Prostriedky",
+        "type": "Elektronickyprostriedok",
+        "properties": {
+          "name": "elektronicke prostriedky"
+        }
+      },
+      {
+        "id": "Daňovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňovy urad Bratislava"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+          "page": 137
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Prechodne Ustanovenia K Upravam Ucinnym Od 1. Januara 2015",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Prechodne ustanovenia k upravam ucinnym od 1. januara 2015"
+          }
+        },
+        "target": {
+          "id": "Paragraf 85Kc",
+          "type": "Paragraf",
+          "properties": {
+            "name": "85kc"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "1. januari 2014",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januari 2014"
+          }
+        },
+        "target": {
+          "id": "Pohladavka Majetok Podniku Alebo Casti Podniku Nadobudnuty Po 1. Januari 2014",
+          "type": "Majetok",
+          "properties": {
+            "name": "majetok podniku alebo casti podniku nadobudnuty po 1. januari 2014"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "nadobudnutie po tomto datume",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "31. december 2014",
+          "type": "Datum",
+          "properties": {
+            "name": "31. december 2014"
+          }
+        },
+        "target": {
+          "id": "Ziadosti O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadosti o registraciu pre dan"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "podanie do tohto datumu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "31. december 2014",
+          "type": "Datum",
+          "properties": {
+            "name": "31. december 2014"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba Identifikovana Pre Dan Podla Paragraf 68",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba identifikovana pre dan podla § 68"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "stav ku koncu roka 2014",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba neusadena na uzemi Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnost"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uplatnovat osobitnu upravu od 1. januara 2015",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba neusadena na uzemi Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Bratislava"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "zaciatok cinnosti a udaje podla § 68a ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba neusadena na uzemi Europskej unie"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "povolenie uplatnovania osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "PRIDELUJE",
+        "properties": {
+          "add": "pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pohladavka Majetok Podniku Alebo Casti Podniku Nadobudnuty Po 1. Januari 2014",
+          "type": "Majetok",
+          "properties": {
+            "name": "majetok podniku alebo casti podniku nadobudnuty po 1. januari 2014"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 85Kc",
+          "type": "Paragraf",
+          "properties": {
+            "name": "85kc"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prechodne Ustanovenia K Upravam Ucinnym Od 1. Januara 2015",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Prechodne ustanovenia k upravam ucinnym od 1. januara 2015"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1. januari 2014",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januari 2014"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1. januari 2015",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januari 2015"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "31. december 2014",
+          "type": "Datum",
+          "properties": {
+            "name": "31. december 2014"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadosti O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadosti o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Identifikovana Pre Dan Podla Paragraf 68",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba identifikovana pre dan podla § 68"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba neusadena na uzemi Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava Podla Paragraf 68A",
+          "type": "Zaznam",
+          "properties": {
+            "name": "osobitna uprava podla § 68a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicke Prostriedky",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronicke prostriedky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "majetok podniku alebo časti podniku nadobudnutý po 1. januári 2014.\n§ 85kc\nPrechodné ustanovenia k úpravám účinným od 1. januára 2015\n(1) Ustanovenie § 4 ods. 3 druhej vety v znení účinnom do 31. decembra 2014 sa použije na\nžiadosti o registráciu pre daň podané do 31. decembra 2014.\n(2) Zdaniteľná osoba identifikovaná pre daň podľa § 68 v znení účinnom do 31. decembra 2014\nsa považuje za zdaniteľnú osobu identifikovanú pre daň podľa § 68a.\n(3) Ak chce zdaniteľná osoba neusadená na území Európskej únie uplatňovať od 1. januára\n2015 osobitnú úpravu podľa § 68a v znení účinnom od 1. januára 2015, oznámi elektronickými\nprostriedkami začatie činnosti a údaje podľa § 68a ods. 2 v znení účinnom od 1. januára 2015\nDaňovému úradu Bratislava do konca kalendárneho roka 2014. Daňový úrad Bratislava oznámi\nelektronickými prostriedkami tejto zdaniteľnej osobe, že jej povoľuje uplatňovanie osobitnej\núpravy, a súčasne jej pridelí identifikačné číslo pre daň.",
+            "page": 137
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

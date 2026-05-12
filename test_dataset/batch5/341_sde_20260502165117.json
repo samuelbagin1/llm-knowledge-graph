@@ -1,0 +1,810 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňový úrad Bratislava"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdaniteľná osoba neusadená na území Európskej únie"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Status",
+        "properties": {
+          "name": "osobitná úprava"
+        }
+      },
+      {
+        "id": "Oznamenie O Zacati Cinnosti",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznámenie o začatí činnosti"
+        }
+      },
+      {
+        "id": "Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "činnosť"
+        }
+      },
+      {
+        "id": "Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie"
+        }
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Konanie",
+        "properties": {
+          "name": "odvolanie"
+        }
+      },
+      {
+        "id": "Sluzby Podla Paragrafu 68 Odseku 1 Pismena A",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzby podľa § 68 ods. 1 písm. a"
+        }
+      },
+      {
+        "id": "Paragraf 68",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 1"
+        }
+      },
+      {
+        "id": "Pismeno A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "písm. a"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 2"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 3"
+        }
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 4"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 5"
+        }
+      },
+      {
+        "id": "Odsek 6",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 6"
+        }
+      },
+      {
+        "id": "Odsek 7",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 7"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+          "page": 85
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Sluzby Podla Paragrafu 68 Odseku 1 Pismena A",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzby podľa § 68 ods. 1 písm. a"
+          }
+        },
+        "target": {
+          "id": "Paragraf 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "§ 68 ods. 1 písm. a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "Paragraf 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "písm. a"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "písm. a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "add": "na uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "o nepovoleni uplatnovania osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "type": "T_Y_K_A_SA",
+        "properties": {
+          "add": "nepovolenie uplatnovania osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "proti rozhodnutiu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "proti tomuto rozhodnutiu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uplatnovat osobitnu upravu na vsetky sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "zmenu udajov uvedenych v oznameni o zacati cinnosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oznamenie O Zacati Cinnosti",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie o začatí činnosti"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla odseku 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "skoncenie cinnosti alebo zmenu cinnosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "target": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "činnosť"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "oznamiť skoncenie cinnosti alebo zmenu cinnosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "type": "ZRUSUJE",
+        "properties": {
+          "add": "povolenie uplatnovat osobitnu upravu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "type": "ODNEMA",
+        "properties": {
+          "add": "osobitne identifikacne cislo pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba neusadená na území Európskej únie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie O Zacati Cinnosti",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie o začatí činnosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "činnosť"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzby Podla Paragrafu 68 Odseku 1 Pismena A",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzby podľa § 68 ods. 1 písm. a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "písm. a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 6",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad\nBratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto\nrozhodnutiu môže zdaniteľná osoba podať odvolanie.\n(4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2,\nje povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a).\n(5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná\nosoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava.\n(6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu\nBratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať\npodmienky na uplatňovanie osobitnej úpravy.\n(7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie\npovolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+            "page": 85
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

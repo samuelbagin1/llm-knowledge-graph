@@ -1,0 +1,866 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 3"
+        }
+      },
+      {
+        "id": "Odsek 8",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 8"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno b"
+        }
+      },
+      {
+        "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+        "type": "Subjekt",
+        "properties": {
+          "name": "tuzemsky poskytovatel platobnych sluzieb"
+        }
+      },
+      {
+        "id": "Poskytovatel Platby",
+        "type": "Subjekt",
+        "properties": {
+          "name": "poskytovatel platby"
+        }
+      },
+      {
+        "id": "Platobne Sluzby",
+        "type": "Sluzba",
+        "properties": {
+          "name": "platobne sluzby"
+        }
+      },
+      {
+        "id": "Cezhranicne Platby",
+        "type": "Zaznam",
+        "properties": {
+          "name": "cezhranicne platby"
+        }
+      },
+      {
+        "id": "Financne Riaditelstvo",
+        "type": "Financneriaditelstvo",
+        "properties": {
+          "name": "financne riaditelstvo"
+        }
+      },
+      {
+        "id": "Elektronicke Prostriedky",
+        "type": "Elektronickyprostriedok",
+        "properties": {
+          "name": "elektronicke prostriedky"
+        }
+      },
+      {
+        "id": "Elektronicky Formular",
+        "type": "Doklad",
+        "properties": {
+          "name": "elektronicky formular"
+        }
+      },
+      {
+        "id": "Tri Kalendarne Roky",
+        "type": "Obdobie",
+        "properties": {
+          "name": "tri kalendarne roky"
+        }
+      },
+      {
+        "id": "Koniec Kalendarneho Roka",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "koniec kalendarneho roka"
+        }
+      },
+      {
+        "id": "Koniec Kalendarneho Mesiaca",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "koniec kalendarneho mesiaca"
+        }
+      },
+      {
+        "id": "Kalendarny Stvrtrok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "kalendarny stvrtrok"
+        }
+      },
+      {
+        "id": "Osobitny Predpis",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "osobitny predpis"
+        }
+      },
+      {
+        "id": "Iban Platobneho Uctu Poskytovatela Platby",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "IBAN platobneho uctu poskytovatela platby"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Miesto Poskytovatela Platby",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto poskytovatela platby"
+        }
+      },
+      {
+        "id": "Platba",
+        "type": "Zaznam",
+        "properties": {
+          "name": "platba"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+          "page": 110
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Platobne Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "platobne sluzby"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "zahrnut vsetky platobne sluzby poskytnute poskytovatelovi platby zodpovedajuce cezhranicnym platbam rovnakemu prijemcovi platby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 8"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "viest zaznamy v elektronickom formate",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Tri Kalendarne Roky",
+          "type": "Obdobie",
+          "properties": {
+            "name": "tri kalendarne roky"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "uchovavanie zaznamov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tri Kalendarne Roky",
+          "type": "Obdobie",
+          "properties": {
+            "name": "tri kalendarne roky"
+          }
+        },
+        "target": {
+          "id": "Koniec Kalendarneho Roka",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "koniec kalendarneho roka"
+          }
+        },
+        "type": "PLATI_OD",
+        "properties": {
+          "add": "od konca kalendarneho roka, v ktorom bola platba vykonana",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Financne Riaditelstvo",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "spristupnit zaznamy elektronickymi prostriedkami prostrednictvom elektronickeho formulara",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Elektronicke Prostriedky",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronicke prostriedky"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "spristupnenie zaznamov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Elektronicky Formular",
+          "type": "Doklad",
+          "properties": {
+            "name": "elektronicky formular"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "pouzit prostrednictvom elektronickeho formulara",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Koniec Kalendarneho Mesiaca",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "koniec kalendarneho mesiaca"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "najneskor do konca kalendarneho mesiaca nasledujuceho po kalendarnom stvrtroku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Koniec Kalendarneho Mesiaca",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "koniec kalendarneho mesiaca"
+          }
+        },
+        "target": {
+          "id": "Kalendarny Stvrtrok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarny stvrtrok"
+          }
+        },
+        "type": "PLATI_OD",
+        "properties": {
+          "add": "nasledujuci po kalendarnom stvrtroku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Koniec Kalendarneho Mesiaca",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "koniec kalendarneho mesiaca"
+          }
+        },
+        "target": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "podla osobitneho predpisu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Poskytovatela Platby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto poskytovatela platby"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "identifikovany podla IBAN platobneho uctu poskytovatela platby alebo ineho identifikatora",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Poskytovatela Platby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto poskytovatela platby"
+          }
+        },
+        "target": {
+          "id": "Iban Platobneho Uctu Poskytovatela Platby",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "IBAN platobneho uctu poskytovatela platby"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "identifikator miesta poskytovatela platby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platba",
+          "type": "Zaznam",
+          "properties": {
+            "name": "platba"
+          }
+        },
+        "target": {
+          "id": "Cezhranicne Platby",
+          "type": "Zaznam",
+          "properties": {
+            "name": "cezhranicne platby"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "platba vykonana",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Poskytovatel Platby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poskytovatel platby"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla odseku 3 pism. b)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla odseku 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsky Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "tuzemsky poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Poskytovatel Platby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poskytovatel platby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platobne Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "platobne sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cezhranicne Platby",
+          "type": "Zaznam",
+          "properties": {
+            "name": "cezhranicne platby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financne Riaditelstvo",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicke Prostriedky",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronicke prostriedky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicky Formular",
+          "type": "Doklad",
+          "properties": {
+            "name": "elektronicky formular"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tri Kalendarne Roky",
+          "type": "Obdobie",
+          "properties": {
+            "name": "tri kalendarne roky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koniec Kalendarneho Roka",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "koniec kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koniec Kalendarneho Mesiaca",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "koniec kalendarneho mesiaca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Stvrtrok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarny stvrtrok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Iban Platobneho Uctu Poskytovatela Platby",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "IBAN platobneho uctu poskytovatela platby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Poskytovatela Platby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto poskytovatela platby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platba",
+          "type": "Zaznam",
+          "properties": {
+            "name": "platba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n(5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\na) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\nb) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n(6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto\nustanovenia považuje členský štát identifikovaný podľa\na) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý\nurčuje poskytovateľa platby a jeho miesto, alebo",
+            "page": 110
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,663 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Tu-Zemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsku"
+        }
+      },
+      {
+        "id": "Europska Unia",
+        "type": "Uzemie",
+        "properties": {
+          "name": "Európskej únie"
+        }
+      },
+      {
+        "id": "Predaj Tovaru Na Dialku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "predaj tovaru na dialku"
+        }
+      },
+      {
+        "id": "Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "danovom priznani"
+        }
+      },
+      {
+        "id": "Zaklad Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "Zakladom dane"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Zalohovany Obal",
+        "type": "Majetok",
+        "properties": {
+          "name": "zalohovany obal"
+        }
+      },
+      {
+        "id": "Vyska Zalohy",
+        "type": "Suma",
+        "properties": {
+          "name": "vyska zalohy"
+        }
+      },
+      {
+        "id": "Osobitny Predpis",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "osobitnym predpisom"
+        }
+      },
+      {
+        "id": "Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "prislusneho kalendarneho roka"
+        }
+      },
+      {
+        "id": "Den Prijatia Platby",
+        "type": "Datum",
+        "properties": {
+          "name": "den prijatia platby"
+        }
+      },
+      {
+        "id": "§ 20",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 20"
+        }
+      },
+      {
+        "id": "Danova Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "Danova povinnost"
+        }
+      },
+      {
+        "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "nadobudnutiu tovaru v tuzemsku z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "15. den kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci",
+        "type": "Datum",
+        "properties": {
+          "name": "15. den kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+          "page": 26
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Predaj Tovaru Na Dialku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku"
+          }
+        },
+        "target": {
+          "id": "§ 20",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 20"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "§ 8 ods. 7",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitnym predpisom"
+          }
+        },
+        "target": {
+          "id": "Vyska Zalohy",
+          "type": "Suma",
+          "properties": {
+            "name": "vyska zalohy"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "zaloha za zalohovany obal",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Danova povinnost"
+          }
+        },
+        "target": {
+          "id": "Den Prijatia Platby",
+          "type": "Datum",
+          "properties": {
+            "name": "den prijatia platby"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "pri dodani tovaru zdanitelnou osobou ulehcujuce dodanie tovaru na uzemi EU a predaj tovaru na dialku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Danova povinnost"
+          }
+        },
+        "target": {
+          "id": "15. den kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci",
+          "type": "Datum",
+          "properties": {
+            "name": "15. den kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danovom priznani"
+          }
+        },
+        "target": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "Zakladom dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "zapisanie zaporneho rozdielu; zmysel: nemoze uplatnit",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "Zakladom dane"
+          }
+        },
+        "target": {
+          "id": "Vyska Zalohy",
+          "type": "Suma",
+          "properties": {
+            "name": "vyska zalohy"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "sucin zisteny rozdiel a vyska zalohy, znizeny o dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "Zakladom dane"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "znizeny o dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 20",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 20"
+          }
+        },
+        "target": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Danova povinnost"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tu-Zemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Europska Unia",
+          "type": "Uzemie",
+          "properties": {
+            "name": "Európskej únie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predaj Tovaru Na Dialku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danovom priznani"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "Zakladom dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zalohovany Obal",
+          "type": "Majetok",
+          "properties": {
+            "name": "zalohovany obal"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyska Zalohy",
+          "type": "Suma",
+          "properties": {
+            "name": "vyska zalohy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitnym predpisom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prislusneho kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Prijatia Platby",
+          "type": "Datum",
+          "properties": {
+            "name": "den prijatia platby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 20",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 20"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Danova povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "nadobudnutiu tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "15. den kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci",
+          "type": "Datum",
+          "properties": {
+            "name": "15. den kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvádza na trh v tuzemsku ako prvý, a ktorý dodáva aj zálohované obaly spolu s tovarom, ktoré\nneuvádza na trh v tuzemsku ako prvý, nemôže uplatniť záporný rozdiel v daňovom priznaní.\nZákladom dane je súčin zisteného rozdielu podľa prvej vety a výšky zálohy za zálohovaný obal\nurčenej osobitným predpisom,6ab) ktorá je platná posledný deň príslušného kalendárneho roka,\nznížený o daň.\n(11) Pri dodaní tovaru zdaniteľnou osobou, ktorá uľahčuje dodanie tovaru na území Európskej\núnie a predaj tovaru na diaľku podľa § 8 ods. 7, a pri dodaní tohto tovaru tejto zdaniteľnej osobe\nsa za deň dodania tovaru a deň vzniku daňovej povinnosti považuje deň prijatia platby.6abc)\n§ 20\nDaňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu vzniká\na) 15. deň kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, keď sa uskutočnilo\nnadobudnutie tovaru, alebo",
+            "page": 26
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

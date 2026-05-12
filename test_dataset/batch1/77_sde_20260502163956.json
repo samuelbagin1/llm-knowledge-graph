@@ -1,0 +1,418 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Dodaní Tepla Alebo Chladu Prostrednictvom Teplarenskych Sieti Alebo Chladiarenskych Sieti",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodaní tepla alebo chladu prostrednictvom teplarenských sietí alebo chladiarenských sietí"
+        }
+      },
+      {
+        "id": "Obchodnik",
+        "type": "Osoba",
+        "properties": {
+          "name": "obchodník"
+        }
+      },
+      {
+        "id": "Miesto Dodania Tovaru",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto dodania tovaru"
+        }
+      },
+      {
+        "id": "Sidlo",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sídlo"
+        }
+      },
+      {
+        "id": "Miesto Podnikania",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "miesto podnikania"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevádzkareň"
+        }
+      },
+      {
+        "id": "Bydlisko",
+        "type": "Adresa",
+        "properties": {
+          "name": "bydlisko"
+        }
+      },
+      {
+        "id": "Miesto Kde Sa Obvykle Zdrziava",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto, kde sa obvykle zdržiava"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+          "page": 18
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Dodaní Tepla Alebo Chladu Prostrednictvom Teplarenskych Sieti Alebo Chladiarenskych Sieti",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaní tepla alebo chladu prostrednictvom teplarenských sietí alebo chladiarenských sietí"
+          }
+        },
+        "target": {
+          "id": "Obchodnik",
+          "type": "Osoba",
+          "properties": {
+            "name": "obchodník"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "obchodnik na uceli dodania tepla alebo chladu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídlo"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ak obchodnik ma sidlo",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "Miesto Podnikania",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ak obchodnik ma miesto podnikania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevádzkareň"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ak obchodnik ma prevadzkaren pre ktoru sa tovar doda",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "Bydlisko",
+          "type": "Adresa",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ak obchodnik nema take miesto",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "Miesto Kde Sa Obvykle Zdrziava",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto, kde sa obvykle zdržiava"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ak obchodnik nema take miesto",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "tovar sa dodava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodaní Tepla Alebo Chladu Prostrednictvom Teplarenskych Sieti Alebo Chladiarenskych Sieti",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaní tepla alebo chladu prostrednictvom teplarenských sietí alebo chladiarenských sietí"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obchodnik",
+          "type": "Osoba",
+          "properties": {
+            "name": "obchodník"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevádzkareň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bydlisko",
+          "type": "Adresa",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Kde Sa Obvykle Zdrziava",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto, kde sa obvykle zdržiava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodaní tepla alebo chladu prostredníctvom teplárenských sietí alebo chladiarenských sietí\nobchodníkovi je miesto, kde obchodník má sídlo, miesto podnikania alebo prevádzkareň, pre\nktorú sa uvedený tovar dodáva, alebo ak obchodník nemá takéto miesto, je miestom dodania\ntovaru jeho bydlisko alebo miesto, kde sa obvykle zdržiava; obchodníkom na účely tohto",
+            "page": 18
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

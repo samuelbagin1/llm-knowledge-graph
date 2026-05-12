@@ -1,0 +1,894 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Zjednodusena Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "zjednodusena faktura"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 3"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno b"
+        }
+      },
+      {
+        "id": "Danove Identifikacne Cislo",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "danove identifikacne cislo"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Osobitny Predpis",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "osobitny predpis"
+        }
+      },
+      {
+        "id": "Registacna Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "registacna povinnost"
+        }
+      },
+      {
+        "id": "§ 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4"
+        }
+      },
+      {
+        "id": "§ 5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 5"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzba"
+        }
+      },
+      {
+        "id": "Skupina",
+        "type": "Skupina",
+        "properties": {
+          "name": "skupina"
+        }
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {
+          "name": "clen skupiny"
+        }
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktura"
+        }
+      },
+      {
+        "id": "Elektronicke Faktury",
+        "type": "Doklad",
+        "properties": {
+          "name": "elektronicke faktury"
+        }
+      },
+      {
+        "id": "Prijemca",
+        "type": "Subjekt",
+        "properties": {
+          "name": "prijemca"
+        }
+      },
+      {
+        "id": "Jeden Subor",
+        "type": "Doklad",
+        "properties": {
+          "name": "jeden subor"
+        }
+      },
+      {
+        "id": "§ 75",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 75"
+        }
+      },
+      {
+        "id": "Suhrrna Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "suhrrna faktura"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+          "page": 115
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zjednodusena Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "zjednodusena faktura"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "vyhotovenie zjednodusenej faktury",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zjednodusena Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "zjednodusena faktura"
+          }
+        },
+        "target": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno b"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "odsek 3 pismeno b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zjednodusena Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "zjednodusena faktura"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "povazuje sa za identifikacne cislo pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danove Identifikacne Cislo",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "danove identifikacne cislo"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "JE_TYPOM",
+        "properties": {
+          "add": "pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danove Identifikacne Cislo",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "danove identifikacne cislo"
+          }
+        },
+        "target": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "pridelenie platitelovi",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "§ 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "pridelenie identifikacneho cisla pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "§ 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "pridelenie identifikacneho cisla pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Registacna Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "registacna povinnost"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "splnil registracnu povinnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "type": "DODA",
+        "properties": {
+          "add": "ak tovar dodava skupina",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "type": "DODA",
+        "properties": {
+          "add": "ak sluzbu dodava skupina",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "type": "MA_ZASTUPCU",
+        "properties": {
+          "add": "clen skupiny, ktory dodava tovar alebo sluzbu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "MA_IDENTIFIKACNE_CISLO",
+        "properties": {
+          "add": "identifikacne cislo pre dan skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Elektronicke Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "elektronicke faktury"
+          }
+        },
+        "target": {
+          "id": "Jeden Subor",
+          "type": "Doklad",
+          "properties": {
+            "name": "jeden subor"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "poslane alebo spristupnene rovnakemu prijemcovi v jednom subore",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Elektronicke Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "elektronicke faktury"
+          }
+        },
+        "target": {
+          "id": "Prijemca",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prijemca"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "rovnaky prijemca",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 75",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 75"
+          }
+        },
+        "target": {
+          "id": "Suhrrna Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "suhrrna faktura"
+          }
+        },
+        "type": "MA_NAZOV",
+        "properties": {
+          "add": "suhrrna faktura",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zjednodusena Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "zjednodusena faktura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Identifikacne Cislo",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "danove identifikacne cislo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitny predpis"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registacna Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "registacna povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicke Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "elektronicke faktury"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijemca",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prijemca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Jeden Subor",
+          "type": "Doklad",
+          "properties": {
+            "name": "jeden subor"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 75",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 75"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suhrrna Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "suhrrna faktura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Za identifikačné číslo pre daň sa na účely vyhotovenia zjednodušenej faktúry podľa odseku 3\npísm. b) považuje aj daňové identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aaa) alebo identifikačné číslo, ktoré bolo platiteľovi pridelené podľa osobitného\npredpisu,29aab) ak ku dňu vyhotovenia tejto zjednodušenej faktúry platiteľ, ktorý splnil registračnú\npovinnosť, nemá pridelené identifikačné číslo pre daň podľa § 4 alebo § 5.\n(6) Ak tovar alebo službu dodáva skupina, uvedie sa vo faktúre ako údaj podľa odseku 1 písm. a)\nmeno a adresa sídla, miesta podnikania, prípadne prevádzkarne člena skupiny, ktorý dodáva tovar\nalebo službu, a identifikačné číslo pre daň skupiny.\n(7) Ak elektronické faktúry sú poslané alebo sprístupnené rovnakému príjemcovi v jednom\nsúbore, môžu sa údaje, ktoré sú spoločné pre jednotlivé faktúry, uviesť len raz, ak sú pre každú\nfaktúru prístupné všetky informácie.\n§ 75\nSúhrnná faktúra",
+            "page": 115
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

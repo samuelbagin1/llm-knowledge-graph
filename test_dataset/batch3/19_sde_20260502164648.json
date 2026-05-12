@@ -1,0 +1,914 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z."
+        }
+      },
+      {
+        "id": "4a",
+        "type": "Paragraf",
+        "properties": {
+          "name": "4a"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {
+          "name": "clen skupiny"
+        }
+      },
+      {
+        "id": "Skupina",
+        "type": "Skupina",
+        "properties": {
+          "name": "skupina"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Sidlo",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sidlo"
+        }
+      },
+      {
+        "id": "Miesto Podnikania",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto podnikania"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevadzkaren"
+        }
+      },
+      {
+        "id": "Financne Spojenie",
+        "type": "Podmienka",
+        "properties": {
+          "name": "financne spojenie"
+        }
+      },
+      {
+        "id": "Ekonomicke Spojenie",
+        "type": "Podmienka",
+        "properties": {
+          "name": "ekonomicke spojenie"
+        }
+      },
+      {
+        "id": "Organizacne Spojenie",
+        "type": "Podmienka",
+        "properties": {
+          "name": "organizacne spojenie"
+        }
+      },
+      {
+        "id": "Jedna Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "jedna zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Ovladajuca Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "ovladajuca osoba"
+        }
+      },
+      {
+        "id": "Hlavna Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "hlavna cinnost"
+        }
+      },
+      {
+        "id": "Cinnosti V Prospech Clena Skupiny",
+        "type": "Cinnost",
+        "properties": {
+          "name": "cinnosti v prospech clena skupiny"
+        }
+      },
+      {
+        "id": "Riadenie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "riadenie"
+        }
+      },
+      {
+        "id": "Kontrola",
+        "type": "Cinnost",
+        "properties": {
+          "name": "kontrola"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+          "page": 5
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "4a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "4a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "4a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "4a"
+          }
+        },
+        "target": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidlo"
+          }
+        },
+        "type": "MA_SIDLO",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Miesto Podnikania",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "type": "MA_MIESTO_PODNIKANIA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "type": "MA_PREVADZKAREN",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidlo"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Financne Spojenie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "financne spojenie"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "je spojena financne",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Ekonomicke Spojenie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "ekonomicke spojenie"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "je spojena ekonomicky",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Organizacne Spojenie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "organizacne spojenie"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "je spojena organizacne",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "musi byt len v jednej skupine",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "clen skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Ovladajuca Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "ovladajuca osoba"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "ak je ovladana ovladajucou osobou",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ovladajuca Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "ovladajuca osoba"
+          }
+        },
+        "target": {
+          "id": "Kontrola",
+          "type": "Cinnost",
+          "properties": {
+            "name": "kontrola"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "ovladanie a kontrola",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ovladajuca Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "ovladajuca osoba"
+          }
+        },
+        "target": {
+          "id": "Riadenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "riadenie"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "ovladanie a riadenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "Jedna Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "jedna zdanitelna osoba"
+          }
+        },
+        "type": "JE_TYPOM",
+        "properties": {
+          "add": "jedna zdanitelna osoba",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Hlavna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "hlavna cinnost"
+          }
+        },
+        "target": {
+          "id": "Ekonomicke Spojenie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "ekonomicke spojenie"
+          }
+        },
+        "type": "SUVISI_S",
+        "properties": {
+          "add": "hlavne cinnosti su vzajomne zavisle alebo maju spolocny ekonomicky ciel",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Cinnosti V Prospech Clena Skupiny",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnosti v prospech clena skupiny"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "cinnosti v prospech jedneho alebo viacerych clenov skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "4a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "4a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financne Spojenie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "financne spojenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ekonomicke Spojenie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "ekonomicke spojenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Organizacne Spojenie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "organizacne spojenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Jedna Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "jedna zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ovladajuca Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "ovladajuca osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hlavna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "hlavna cinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cinnosti V Prospech Clena Skupiny",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnosti v prospech clena skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Riadenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "riadenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kontrola",
+          "type": "Cinnost",
+          "properties": {
+            "name": "kontrola"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 6 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 4a\n(1) Viac zdaniteľných osôb so sídlom, miestom podnikania alebo prevádzkarňou v tuzemsku,\nktoré sú spojené finančne, ekonomicky a organizačne (ďalej len „člen skupiny“), sa môže považovať\nza jednu zdaniteľnú osobu (ďalej len „skupina“).\n(2) Finančne spojenými zdaniteľnými osobami sú osoby, z ktorých jedna alebo viac osôb je\novládaných ovládajúcou osobou.4e)\n(3) Ekonomicky spojenými zdaniteľnými osobami sú osoby, ktorých hlavné činnosti sú vzájomne\nzávislé alebo majú spoločný ekonomický cieľ alebo z ktorých jedna osoba uskutočňuje celkom\nalebo sčasti činnosti v prospech jedného alebo viacerých členov skupiny.\n(4) Organizačne spojenými zdaniteľnými osobami sú osoby, na ktorých riadení alebo kontrole sa\npodieľa aspoň jedna zhodná osoba.\n(5) Zdaniteľná osoba môže byť členom len jednej skupiny. Ak má zdaniteľná osoba, ktorá je\nčlenom skupiny, sídlo, miesto podnikania alebo prevádzkareň mimo tuzemska, nemôžu byť tieto",
+            "page": 5
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,824 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Colny Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Colny urad"
+        }
+      },
+      {
+        "id": "Zabezpecenie Dane Pri Dovoze Tovaru",
+        "type": "Zaznam",
+        "properties": {
+          "name": "Zabezpecenie dane pri dovoze tovaru"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane Podla Paragraf 48 Odsek 3",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "Oslobodenie od dane podla paragraf 48 odsek 3"
+        }
+      },
+      {
+        "id": "Osoba Povinna Platit Dan",
+        "type": "Osoba",
+        "properties": {
+          "name": "Osoba povinna platit dan"
+        }
+      },
+      {
+        "id": "Rozhodnutie O Zabezpeceni Dane",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "Rozhodnutie o zabezpeceni dane"
+        }
+      },
+      {
+        "id": "Lehota Na Zaplatenie Zabezpecenia Dane",
+        "type": "Lehota",
+        "properties": {
+          "name": "Lehota na zaplatenie zabezpecenia dane"
+        }
+      },
+      {
+        "id": "Lehota Do Desiatich Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "Lehota do desiatich dni"
+        }
+      },
+      {
+        "id": "Suma Dane",
+        "type": "Suma",
+        "properties": {
+          "name": "Suma dane"
+        }
+      },
+      {
+        "id": "Predlozenie Dokazu O Skonceni Odoslania Alebo Prepravy Tovaru V Inom Clenskom State",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Predlozenie dokazu o skonceni odoslania alebo prepravy tovaru v inom clenskom state"
+        }
+      },
+      {
+        "id": "Odoslanie Alebo Preprava Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Odoslanie alebo preprava tovaru"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "Tovar"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "Clensky stat"
+        }
+      },
+      {
+        "id": "Zakon O Dovoze Tovaru",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zakon o dovoze tovaru"
+        }
+      },
+      {
+        "id": "Paragraf 48",
+        "type": "Paragraf",
+        "properties": {
+          "name": "Paragraf 48"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "Odsek 3"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+          "page": 49
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "Zabezpecenie Dane Pri Dovoze Tovaru",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Zabezpecenie dane pri dovoze tovaru"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "ziadat zabezpecenie dane pri dovoze tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpecenie Dane Pri Dovoze Tovaru",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Zabezpecenie dane pri dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "Tovar"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dovoz tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpecenie Dane Pri Dovoze Tovaru",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Zabezpecenie dane pri dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "zabezpecenie dane pri dovoze tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpecenie Dane Pri Dovoze Tovaru",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Zabezpecenie dane pri dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane Podla Paragraf 48 Odsek 3",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane podla paragraf 48 odsek 3"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "podmienka neuplatnenia oslobodenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "ak by sa neuplatnilo oslobodenie od dane podla paragraf 48 odsek 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "Zabezpecenie Dane Pri Dovoze Tovaru",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Zabezpecenie dane pri dovoze tovaru"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "zlozit zabezpecenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "vo vyske dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie O Zabezpeceni Dane",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "Rozhodnutie o zabezpeceni dane"
+          }
+        },
+        "type": "ROZHODUJE_O",
+        "properties": {
+          "add": "urcenie vysky zabezpecenia dane a lehoty na zaplatenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zabezpeceni Dane",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "Rozhodnutie o zabezpeceni dane"
+          }
+        },
+        "target": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "vyska zabezpecenia dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zabezpeceni Dane",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "Rozhodnutie o zabezpeceni dane"
+          }
+        },
+        "target": {
+          "id": "Lehota Na Zaplatenie Zabezpecenia Dane",
+          "type": "Lehota",
+          "properties": {
+            "name": "Lehota na zaplatenie zabezpecenia dane"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "lehota na jej zaplatenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane Podla Paragraf 48 Odsek 3",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane podla paragraf 48 odsek 3"
+          }
+        },
+        "type": "OSLOBODZUJE_OD",
+        "properties": {
+          "add": "neuplatni ak zabezpecenie dane nebolo zaplatene",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predlozenie Dokazu O Skonceni Odoslania Alebo Prepravy Tovaru V Inom Clenskom State",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Predlozenie dokazu o skonceni odoslania alebo prepravy tovaru v inom clenskom state"
+          }
+        },
+        "target": {
+          "id": "Lehota Do Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "Lehota do desiatich dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "do desiatich dni od predlozenia dokazu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predlozenie Dokazu O Skonceni Odoslania Alebo Prepravy Tovaru V Inom Clenskom State",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Predlozenie dokazu o skonceni odoslania alebo prepravy tovaru v inom clenskom state"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "Tovar"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "odoslanie alebo preprava tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predlozenie Dokazu O Skonceni Odoslania Alebo Prepravy Tovaru V Inom Clenskom State",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Predlozenie dokazu o skonceni odoslania alebo prepravy tovaru v inom clenskom state"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "Clensky stat"
+          }
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "add": "iny clensky stat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon O Dovoze Tovaru",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zakon o dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "Paragraf 48",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 48"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "ustanovenie o zabezpeceni dane pri dovoze tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 48",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 48"
+          }
+        },
+        "target": {
+          "id": "Zakon O Dovoze Tovaru",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zakon o dovoze tovaru"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "odsek 3 a zabezpecenie dane pri dovoze tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 48",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 48"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 3"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "oslobodenie od dane podla odseku 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zabezpecenie Dane Pri Dovoze Tovaru",
+          "type": "Zaznam",
+          "properties": {
+            "name": "Zabezpecenie dane pri dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane Podla Paragraf 48 Odsek 3",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane podla paragraf 48 odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zabezpeceni Dane",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "Rozhodnutie o zabezpeceni dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehota Na Zaplatenie Zabezpecenia Dane",
+          "type": "Lehota",
+          "properties": {
+            "name": "Lehota na zaplatenie zabezpecenia dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehota Do Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "Lehota do desiatich dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predlozenie Dokazu O Skonceni Odoslania Alebo Prepravy Tovaru V Inom Clenskom State",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Predlozenie dokazu o skonceni odoslania alebo prepravy tovaru v inom clenskom state"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odoslanie Alebo Preprava Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odoslanie alebo preprava tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "Tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "Clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon O Dovoze Tovaru",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zakon o dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 48",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 48"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Zabezpečenie dane pri dovoze tovaru\n(1) Colný úrad môže žiadať zabezpečenie dane pri dovoze tovaru, pri ktorom sa uplatňuje\noslobodenie od dane podľa § 48 ods. 3, pred prepustením tovaru do colného režimu voľný obeh.\nZabezpečenie dane je povinná zložiť osoba, ktorá by bola povinná platiť daň, keby sa neuplatnilo\noslobodenie od dane podľa § 48 ods. 3, vo výške dane, ktorú by bola povinná platiť, keby sa\nneuplatnilo oslobodenie od dane podľa § 48 ods. 3. Zabezpečenie dane sa poskytne formou podľa\nosobitného predpisu.24aa)\n(2) Colný úrad rozhodnutím určí výšku zabezpečenia dane a lehotu na jej zaplatenie. Proti\nrozhodnutiu o zabezpečení dane nie je možné podať odvolanie. Ak osoba podľa odseku 1\nzabezpečenie dane nezaplatí v lehote a vo výške určenej v rozhodnutí, colný úrad oslobodenie od\ndane podľa § 48 ods. 3 neuplatní.\n(3) Colný úrad uvoľní zabezpečenie dane do desiatich dní od predloženia dôkazu o tom, že\nodoslanie alebo preprava tovaru sa skončila v inom členskom štáte okrem odseku 4. Dôkazom, že",
+            "page": 49
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

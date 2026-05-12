@@ -1,0 +1,651 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "25a",
+        "type": "Paragraf",
+        "properties": {
+          "name": "25a"
+        }
+      },
+      {
+        "id": "54",
+        "type": "Paragraf",
+        "properties": {
+          "name": "54"
+        }
+      },
+      {
+        "id": "54a",
+        "type": "Paragraf",
+        "properties": {
+          "name": "54a"
+        }
+      },
+      {
+        "id": "54d",
+        "type": "Paragraf",
+        "properties": {
+          "name": "54d"
+        }
+      },
+      {
+        "id": "70",
+        "type": "Paragraf",
+        "properties": {
+          "name": "70"
+        }
+      },
+      {
+        "id": "Oprava Odpočítanej Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "oprava odpočítanej dane"
+        }
+      },
+      {
+        "id": "Oprava Opravenej Odpočítanej Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "oprava opravenej odpočítanej dane"
+        }
+      },
+      {
+        "id": "Pomerné Odpočítanie Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "pomerné odpočítanie dane"
+        }
+      },
+      {
+        "id": "Úpravy Odpočítanej Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "úpravy odpočítanej dane"
+        }
+      },
+      {
+        "id": "Platiteľ",
+        "type": "Subjekt",
+        "properties": {
+          "name": "platiteľ"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru Alebo Služby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru alebo služby"
+        }
+      },
+      {
+        "id": "Zaznamy Podla § 70 Ods. 2 Písm. J)",
+        "type": "Zaznam",
+        "properties": {
+          "name": "zaznamy podla § 70 ods. 2 písm. j)"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+          "page": 62
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "25a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "25a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "54",
+          "type": "Paragraf",
+          "properties": {
+            "name": "54"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "54a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "54a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "54d",
+          "type": "Paragraf",
+          "properties": {
+            "name": "54d"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "70",
+          "type": "Paragraf",
+          "properties": {
+            "name": "70"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "25a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "25a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 6",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Opravenej Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava opravenej odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "25a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "25a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 6",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platiteľ",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava odpočítanej dane"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uviest opravu v zaznamoch podla § 70 ods. 2 písm. j)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platiteľ",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "target": {
+          "id": "Oprava Opravenej Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava opravenej odpočítanej dane"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uviest opravu v zaznamoch podla § 70 ods. 2 písm. j)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "Pomerné Odpočítanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "pomerné odpočítanie dane"
+          }
+        },
+        "type": "SUVISI_S",
+        "properties": {
+          "add": "pri oprave podla odseku 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "Úpravy Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "úpravy odpočítanej dane"
+          }
+        },
+        "type": "SUVISI_S",
+        "properties": {
+          "add": "zohladnenie úprav",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Opravenej Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava opravenej odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "Úpravy Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "úpravy odpočítanej dane"
+          }
+        },
+        "type": "SUVISI_S",
+        "properties": {
+          "add": "zohladnenie úprav",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaznamy Podla § 70 Ods. 2 Písm. J)",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy podla § 70 ods. 2 písm. j)"
+          }
+        },
+        "target": {
+          "id": "70",
+          "type": "Paragraf",
+          "properties": {
+            "name": "70"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 2 pism. j)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "25a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "25a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "54",
+          "type": "Paragraf",
+          "properties": {
+            "name": "54"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "54a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "54a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "54d",
+          "type": "Paragraf",
+          "properties": {
+            "name": "54d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "70",
+          "type": "Paragraf",
+          "properties": {
+            "name": "70"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Opravenej Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava opravenej odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pomerné Odpočítanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "pomerné odpočítanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Úpravy Odpočítanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "úpravy odpočítanej dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platiteľ",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Alebo Služby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru alebo služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaznamy Podla § 70 Ods. 2 Písm. J)",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy podla § 70 ods. 2 písm. j)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63\npodľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za\ndodanie tovaru alebo služby.\n(5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie\ndane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo\nodseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy\nodpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1\nalebo odseku 2.\n(6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú\nodpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54,\n§ 54a alebo § 54d.\n(7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).",
+            "page": 62
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

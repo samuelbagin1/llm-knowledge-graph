@@ -1,0 +1,348 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Zdanitelná osoba"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Pravo",
+        "properties": {
+          "name": "osobitna uprava"
+        }
+      },
+      {
+        "id": "Predaje Tovaru Na Dialku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "predaje tovaru na dialku"
+        }
+      },
+      {
+        "id": "Zakon",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon"
+        }
+      },
+      {
+        "id": "§ 68",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68"
+        }
+      },
+      {
+        "id": "Odseky 4 Az 25",
+        "type": "Odsek",
+        "properties": {
+          "name": "odseky 4 az 25"
+        }
+      },
+      {
+        "id": "Odsek 9",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 9"
+        }
+      },
+      {
+        "id": "Pism C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pism. c"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+          "page": 90
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Pravo",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uplatnovat osobitnu upravu na vsetky predaje tovaru na dialku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "Odseky 4 Az 25",
+          "type": "Odsek",
+          "properties": {
+            "name": "odseky 4 az 25"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "povolenie na uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Pravo",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "Predaje Tovaru Na Dialku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaje tovaru na dialku"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "vsetky predaje tovaru na dialku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaje Tovaru Na Dialku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaje tovaru na dialku"
+          }
+        },
+        "target": {
+          "id": "§ 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 1 pis. c",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "target": {
+          "id": "Odsek 9",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 9"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "ustanovenie v odseku 9",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Pravo",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predaje Tovaru Na Dialku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaje tovaru na dialku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odseky 4 Az 25",
+          "type": "Odsek",
+          "properties": {
+            "name": "odseky 4 az 25"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 9",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 9"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pism C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej úpravy podľa odsekov 4 až\n25, je povinná uplatňovať osobitnú úpravu na všetky predaje tovaru na diaľku podľa § 68 ods. 1\npísm. c).",
+            "page": 90
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,782 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Pravnicka Osoba",
+        "type": "Pravnickaosoba",
+        "properties": {
+          "name": "pravnicka osoba"
+        }
+      },
+      {
+        "id": "Zahranicna Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "zahranicna osoba"
+        }
+      },
+      {
+        "id": "Dodavatel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "dodavatel"
+        }
+      },
+      {
+        "id": "Ina Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsku"
+        }
+      },
+      {
+        "id": "Predmet Dane",
+        "type": "Dan",
+        "properties": {
+          "name": "predmet dane"
+        }
+      },
+      {
+        "id": "Novy Dopravny Prostriedok",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "novy dopravny prostriedok"
+        }
+      },
+      {
+        "id": "Protihodnota",
+        "type": "Hodnota",
+        "properties": {
+          "name": "protihodnota"
+        }
+      },
+      {
+        "id": "Zakon",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "zakon"
+        }
+      },
+      {
+        "id": "4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4"
+        }
+      },
+      {
+        "id": "4b",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4b"
+        }
+      },
+      {
+        "id": "4c",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4c"
+        }
+      },
+      {
+        "id": "5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 5"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clenskom state"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+          "page": 16
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Predmet Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "predmet dane"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "nadobudnutie tovaru v tuzemsku z ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsku"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "podla ustanovenia zakona",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "4b",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4b"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 4b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "4c",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4c"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 4c",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "nadobudatel je zdanitelna osoba kona v postaveni zdanitelnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Pravnicka Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "pravnicka osoba"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "nadobudatel je pravnicka osoba ktora nie je zdanitelnou osobou",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "nadobudatel je zahranicna osoba identifikovana pre dan v inom clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Dodavatel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "dodavatel"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "dodavatel je zdanitelna osoba v inom clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "dodavatel"
+          }
+        },
+        "target": {
+          "id": "Ina Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "ineho clenskeho statu"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "identifikacia pre dan alebo sa vyzaduje v inom clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Novy Dopravny Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "novy dopravny prostriedok"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "nadobudnutie noveho dopravneho prostriedku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Protihodnota",
+          "type": "Hodnota",
+          "properties": {
+            "name": "protihodnota"
+          }
+        },
+        "type": "MA_HODNOTU",
+        "properties": {
+          "add": "za protihodnotu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Ina Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "ineho clenskeho statu"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "z ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnicka Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "pravnicka osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodavatel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "dodavatel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ina Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predmet Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "predmet dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Novy Dopravny Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "novy dopravny prostriedok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Protihodnota",
+          "type": "Hodnota",
+          "properties": {
+            "name": "protihodnota"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "4b",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "4c",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clenskom state"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "z iného členského štátu.\n(2) Nadobudnutie tovaru v tuzemsku z iného členského štátu je predmetom dane, ak\na) nadobúdateľom je zdaniteľná osoba konajúca v postavení zdaniteľnej osoby, právnická osoba,\nktorá nie je zdaniteľnou osobou, alebo zahraničná osoba, ktorá je identifikovaná pre daň v inom\nčlenskom štáte, a \nb) dodávateľom je zdaniteľná osoba, ktorá je v inom členskom štáte, v ktorom sa začalo odoslanie\nalebo preprava tovaru dodaného za protihodnotu osobe podľa písmena a), identifikovaná pre\ndaň podľa ustanovenia zákona platného v tomto inom členskom štáte zodpovedajúceho § 4,\n§ 4b, § 4c alebo § 5 alebo sa od nej táto identifikácia vyžaduje, okrem dodania tovaru\ns inštaláciou alebo montážou dodávateľom alebo na jeho účet a okrem predaja tovaru na diaľku\nna území Európskej únie.\n(3) Predmetom dane je aj nadobudnutie nového dopravného prostriedku za protihodnotu\nv tuzemsku z iného členského štátu každou osobou.\n(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

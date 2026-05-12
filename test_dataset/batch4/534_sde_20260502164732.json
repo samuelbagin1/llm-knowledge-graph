@@ -1,0 +1,684 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Toavar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "30. april 2004",
+        "type": "Datum",
+        "properties": {
+          "name": "30. april 2004"
+        }
+      },
+      {
+        "id": "1. maj 2004",
+        "type": "Datum",
+        "properties": {
+          "name": "1. maj 2004"
+        }
+      },
+      {
+        "id": "Colny Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "colny urad"
+        }
+      },
+      {
+        "id": "Doterajsie Predpisy",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "doterajsie predpisy"
+        }
+      },
+      {
+        "id": "Do Docasneho Uskladnenia Alebo Colne Schvalene Urcenie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "do docasneho uskladnenia alebo colne schvalene urcenie"
+        }
+      },
+      {
+        "id": "Uskladnovanie V Colnom Sklade",
+        "type": "Cinnost",
+        "properties": {
+          "name": "uskladnovanie v colnom sklade"
+        }
+      },
+      {
+        "id": "Aktivny Zuslachcovaci Styk",
+        "type": "Cinnost",
+        "properties": {
+          "name": "aktivny zuslachcovaci styk"
+        }
+      },
+      {
+        "id": "Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+        "type": "Cinnost",
+        "properties": {
+          "name": "docasne pouzitie s uplnym oslobodenim od dovozneho cla"
+        }
+      },
+      {
+        "id": "Spolocny Tranzitny Rezim",
+        "type": "Cinnost",
+        "properties": {
+          "name": "spolocny tranzitny rezim"
+        }
+      },
+      {
+        "id": "Iny Colny Rezim Tranzit",
+        "type": "Cinnost",
+        "properties": {
+          "name": "iny colny rezim tranzit"
+        }
+      },
+      {
+        "id": "Docasne Uskladnenie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "docasne uskladnenie"
+        }
+      },
+      {
+        "id": "Colne Schvalene Urcenie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "colne schvalene urcenie"
+        }
+      },
+      {
+        "id": "Colny Rezim Uskladnovanie V Colnom Sklade",
+        "type": "Cinnost",
+        "properties": {
+          "name": "colny rezim uskladnovanie v colnom sklade"
+        }
+      },
+      {
+        "id": "Colny Rezim Aktivny Zuslachcovaci Styk",
+        "type": "Cinnost",
+        "properties": {
+          "name": "colny rezim aktivny zuslachcovaci styk"
+        }
+      },
+      {
+        "id": "Colny Rezim Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+        "type": "Cinnost",
+        "properties": {
+          "name": "colny rezim docasne pouzitie s uplnym oslobodenim od dovozneho cla"
+        }
+      },
+      {
+        "id": "Clensky Stav K 1. Maju 2004",
+        "type": "Stav",
+        "properties": {
+          "name": "stav k 1. maju 2004"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+          "page": 131
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Do Docasneho Uskladnenia Alebo Colne Schvalene Urcenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "do docasneho uskladnenia alebo colne schvalene urcenie"
+          }
+        },
+        "target": {
+          "id": "Docasne Uskladnenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "docasne uskladnenie"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "alebo",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Do Docasneho Uskladnenia Alebo Colne Schvalene Urcenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "do docasneho uskladnenia alebo colne schvalene urcenie"
+          }
+        },
+        "target": {
+          "id": "Colne Schvalene Urcenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colne schvalene urcenie"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "alebo",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Rezim Uskladnovanie V Colnom Sklade",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colny rezim uskladnovanie v colnom sklade"
+          }
+        },
+        "target": {
+          "id": "Uskladnovanie V Colnom Sklade",
+          "type": "Cinnost",
+          "properties": {
+            "name": "uskladnovanie v colnom sklade"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "colny rezim",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Rezim Aktivny Zuslachcovaci Styk",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colny rezim aktivny zuslachcovaci styk"
+          }
+        },
+        "target": {
+          "id": "Aktivny Zuslachcovaci Styk",
+          "type": "Cinnost",
+          "properties": {
+            "name": "aktivny zuslachcovaci styk"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "colny rezim",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Rezim Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colny rezim docasne pouzitie s uplnym oslobodenim od dovozneho cla"
+          }
+        },
+        "target": {
+          "id": "Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "docasne pouzitie s uplnym oslobodenim od dovozneho cla"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "colny rezim",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "target": {
+          "id": "Docasne Uskladnenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "docasne uskladnenie"
+          }
+        },
+        "type": "PLATI_DO",
+        "properties": {
+          "add": "az do casu kym sa neskonci",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "target": {
+          "id": "Colne Schvalene Urcenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colne schvalene urcenie"
+          }
+        },
+        "type": "PLATI_DO",
+        "properties": {
+          "add": "az do casu kym sa neskonci",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "target": {
+          "id": "Spolocny Tranzitny Rezim",
+          "type": "Cinnost",
+          "properties": {
+            "name": "spolocny tranzitny rezim"
+          }
+        },
+        "type": "PLATI_DO",
+        "properties": {
+          "add": "az do casu kym sa neskonci",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "target": {
+          "id": "Iny Colny Rezim Tranzit",
+          "type": "Cinnost",
+          "properties": {
+            "name": "iny colny rezim tranzit"
+          }
+        },
+        "type": "PLATI_DO",
+        "properties": {
+          "add": "az do casu kym sa neskonci",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Toavar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "30. april 2004",
+          "type": "Datum",
+          "properties": {
+            "name": "30. april 2004"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1. maj 2004",
+          "type": "Datum",
+          "properties": {
+            "name": "1. maj 2004"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "colny urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Do Docasneho Uskladnenia Alebo Colne Schvalene Urcenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "do docasneho uskladnenia alebo colne schvalene urcenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uskladnovanie V Colnom Sklade",
+          "type": "Cinnost",
+          "properties": {
+            "name": "uskladnovanie v colnom sklade"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Aktivny Zuslachcovaci Styk",
+          "type": "Cinnost",
+          "properties": {
+            "name": "aktivny zuslachcovaci styk"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "docasne pouzitie s uplnym oslobodenim od dovozneho cla"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Spolocny Tranzitny Rezim",
+          "type": "Cinnost",
+          "properties": {
+            "name": "spolocny tranzitny rezim"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Iny Colny Rezim Tranzit",
+          "type": "Cinnost",
+          "properties": {
+            "name": "iny colny rezim tranzit"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Docasne Uskladnenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "docasne uskladnenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colne Schvalene Urcenie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colne schvalene urcenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Rezim Uskladnovanie V Colnom Sklade",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colny rezim uskladnovanie v colnom sklade"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Rezim Aktivny Zuslachcovaci Styk",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colny rezim aktivny zuslachcovaci styk"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Rezim Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "colny rezim docasne pouzitie s uplnym oslobodenim od dovozneho cla"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stav K 1. Maju 2004",
+          "type": "Stav",
+          "properties": {
+            "name": "stav k 1. maju 2004"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(15) Pri tovare, ktorý je k 30. aprílu 2004 v tuzemsku a pri vstupe do tuzemska bol predložený\ncolnému úradu a má postavenie dočasne uskladneného tovaru alebo je umiestnený do slobodného\ncolného pásma alebo do slobodného colného skladu alebo prepustený do colného režimu\nuskladňovanie v colnom sklade, do colného režimu aktívny zušľachťovací styk, do colného režimu\ndočasné použitie s úplným oslobodením od dovozného cla a tento stav trvá k 1. máju 2004, platia\ndoterajšie predpisy až do času, kým sa pre tovar dočasné uskladnenie alebo colne schválené\nurčenie neskončí.\n(16) Pri tovare, ktorý bol do 30. apríla 2004 vrátane prepustený do spoločného tranzitného\nrežimu34) alebo iného colného režimu tranzit a tento režim trvá k 1. máju 2004, platia doterajšie\npredpisy až do času, kým sa tento colný režim neskončí.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

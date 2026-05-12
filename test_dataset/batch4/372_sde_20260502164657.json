@@ -1,0 +1,929 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Dan Sa Plati V Eurach",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan"
+        }
+      },
+      {
+        "id": "Prislusny Ucet Danoveho Uradu",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "prislusny ucet danoveho uradu"
+        }
+      },
+      {
+        "id": "Lehota Na Podanie Danoveho Priznania",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehota na podanie danoveho priznania"
+        }
+      },
+      {
+        "id": "Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "danove priznanie"
+        }
+      },
+      {
+        "id": "Nasledujuce Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "nasledujuce danove priznanie"
+        }
+      },
+      {
+        "id": "Prislusne Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "prislusne danove priznanie"
+        }
+      },
+      {
+        "id": "Povodne Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "povodne danove priznanie"
+        }
+      },
+      {
+        "id": "Tri Roky",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "tri roky"
+        }
+      },
+      {
+        "id": "Odsek 22",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 22"
+        }
+      },
+      {
+        "id": "Odsek 23",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 23"
+        }
+      },
+      {
+        "id": "Odsek 24",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 24"
+        }
+      },
+      {
+        "id": "§ 68 Ods. 1 Pism. C)",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68 ods. 1 pism. c)"
+        }
+      },
+      {
+        "id": "Kurz",
+        "type": "Kurz",
+        "properties": {
+          "name": "kurz"
+        }
+      },
+      {
+        "id": "Suma Dane",
+        "type": "Suma",
+        "properties": {
+          "name": "suma dane"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Clensky Stat Spotreby",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat spotreby"
+        }
+      },
+      {
+        "id": "Sobota",
+        "type": "Datum",
+        "properties": {
+          "name": "sobota"
+        }
+      },
+      {
+        "id": "Nedela",
+        "type": "Datum",
+        "properties": {
+          "name": "nedela"
+        }
+      },
+      {
+        "id": "Den Pracovneho Pokoja",
+        "type": "Datum",
+        "properties": {
+          "name": "den pracovneho pokoja"
+        }
+      },
+      {
+        "id": "Prepoctu Uhrady",
+        "type": "Vypocet",
+        "properties": {
+          "name": "prepoctu uhrady"
+        }
+      },
+      {
+        "id": "Uhrada",
+        "type": "Suma",
+        "properties": {
+          "name": "uhrada"
+        }
+      },
+      {
+        "id": "Dodany Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "dodany tovar"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+          "page": 92
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Dan Sa Plati V Eurach",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "Prislusny Ucet Danoveho Uradu",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "prislusny ucet danoveho uradu"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "uhrada dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Sa Plati V Eurach",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "Lehota Na Podanie Danoveho Priznania",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na podanie danoveho priznania"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "zaplatenie dane do konca lehoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Sa Plati V Eurach",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "add": "odkaz na prislusne danove priznanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Povodne Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "povodne danove priznanie"
+          }
+        },
+        "type": "NAHRADZA",
+        "properties": {
+          "add": "zmena udajov z povodneho danoveho priznania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Tri Roky",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri roky"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "najneskor do troch rokov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "uvedie sa v nasledujucom danovom priznani",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "suma dane"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "suma dane z opravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat Spotreby",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat spotreby"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "uvedenie prislusneho clenskeho statu spotreby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 23",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 23"
+          }
+        },
+        "target": {
+          "id": "Odsek 22",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 22"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "kurz pri prepocte",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 24",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 24"
+          }
+        },
+        "target": {
+          "id": "§ 68 Ods. 1 Pism. C)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68 ods. 1 pism. c)"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "predaj tovaru na dialku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 24",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 24"
+          }
+        },
+        "target": {
+          "id": "Odsek 22",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 22"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "kurz pri oprave sumy dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 68 Ods. 1 Pism. C)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68 ods. 1 pism. c)"
+          }
+        },
+        "target": {
+          "id": "Odsek 24",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 24"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "predaj tovaru na dialku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Uhrada",
+          "type": "Suma",
+          "properties": {
+            "name": "uhrada"
+          }
+        },
+        "target": {
+          "id": "Prepoctu Uhrady",
+          "type": "Vypocet",
+          "properties": {
+            "name": "prepoctu uhrady"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "prepočet úhrady za dodaný tovar",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodany Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "dodany tovar"
+          }
+        },
+        "target": {
+          "id": "Uhrada",
+          "type": "Suma",
+          "properties": {
+            "name": "uhrada"
+          }
+        },
+        "type": "MA_MNOZSTVO",
+        "properties": {
+          "add": "uhrada za dodany tovar",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Sa Plati V Eurach",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Ucet Danoveho Uradu",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "prislusny ucet danoveho uradu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehota Na Podanie Danoveho Priznania",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na podanie danoveho priznania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nasledujuce Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "nasledujuce danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusne Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "prislusne danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povodne Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "povodne danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tri Roky",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri roky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 22",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 22"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 23",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 23"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 24",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 24"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68 Ods. 1 Pism. C)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68 ods. 1 pism. c)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kurz",
+          "type": "Kurz",
+          "properties": {
+            "name": "kurz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "suma dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat Spotreby",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat spotreby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sobota",
+          "type": "Datum",
+          "properties": {
+            "name": "sobota"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nedela",
+          "type": "Datum",
+          "properties": {
+            "name": "nedela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Pracovneho Pokoja",
+          "type": "Datum",
+          "properties": {
+            "name": "den pracovneho pokoja"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prepoctu Uhrady",
+          "type": "Vypocet",
+          "properties": {
+            "name": "prepoctu uhrady"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uhrada",
+          "type": "Suma",
+          "properties": {
+            "name": "uhrada"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodany Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "dodany tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nasledujúci deň, ak nebol v posledný deň zdaňovacieho obdobia kurz určený a vyhlásený.\n(23) Daň sa platí v eurách na príslušný účet daňového úradu najneskôr do konca lehoty na\npodanie daňového priznania s uvedením odkazu na príslušné daňové priznanie. Ak koniec lehoty\nna zaplatenie dane pripadne na sobotu, nedeľu alebo deň pracovného pokoja, posledným dňom\nlehoty je tento deň. Za deň platby sa považuje deň, keď platba bola pripísaná na účet daňového\núradu.\n(24) Každá zmena údajov z pôvodného daňového priznania sa uvedie v nasledujúcom daňovom\npriznaní najneskôr do troch rokov odo dňa uplynutia lehoty na podanie pôvodného daňového\npriznania. V tomto nasledujúcom daňovom priznaní sa uvedie príslušný členský štát spotreby,\nzdaňovacie obdobie a suma dane, ktorá vyplýva z opravy. Ak sa pri predaji tovaru na diaľku podľa\n§ 68 ods. 1 písm. c) úhrada uskutočnila v inej mene ako v eurách, použije sa pri oprave sumy\ndane kurz, ktorý sa mal použiť pri prepočte úhrady za dodaný tovar podľa odseku 22.",
+            "page": 92
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

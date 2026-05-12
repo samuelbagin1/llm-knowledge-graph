@@ -1,0 +1,817 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Ziadost O Vratenie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o vratenie dane"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Doklad O Oprave Zakladu Dane A Dane",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklad o oprave zakladu dane a dane"
+        }
+      },
+      {
+        "id": "Obdobie Kalendarneho Roka",
+        "type": "Obdobie",
+        "properties": {
+          "name": "obdobie kalendarneho roka"
+        }
+      },
+      {
+        "id": "30. septembra kalendarneho roka",
+        "type": "Datum",
+        "properties": {
+          "name": "30. septembra kalendarneho roka"
+        }
+      },
+      {
+        "id": "Dakovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňový úrad Bratislava"
+        }
+      },
+      {
+        "id": "Elektronicke Prostriedky",
+        "type": "Elektronickyprostriedok",
+        "properties": {
+          "name": "elektronickymi prostriedkami"
+        }
+      },
+      {
+        "id": "Samostatne Vyhlasenie",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "samostatnom vyhlásení"
+        }
+      },
+      {
+        "id": "Elektronicky Portal",
+        "type": "Elektronickyprostriedok",
+        "properties": {
+          "name": "elektronického portálu"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "členskom štáte"
+        }
+      },
+      {
+        "id": "Sídlo",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sídlo"
+        }
+      },
+      {
+        "id": "Miesto Podnikania",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "miesto podnikania"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevádzkareň"
+        }
+      },
+      {
+        "id": "Bydlisko",
+        "type": "Adresa",
+        "properties": {
+          "name": "bydlisko"
+        }
+      },
+      {
+        "id": "Obvykle Zdrziava",
+        "type": "Lokacia",
+        "properties": {
+          "name": "obvykle zdržiava"
+        }
+      },
+      {
+        "id": "Zaplatiť Sumu Dane",
+        "type": "Povinnost",
+        "properties": {
+          "name": "vratiť sumu dane"
+        }
+      },
+      {
+        "id": "Suma Dane",
+        "type": "Suma",
+        "properties": {
+          "name": "sumu dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+          "page": 69
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Samostatne Vyhlasenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "samostatnom vyhlásení"
+          }
+        },
+        "target": {
+          "id": "Elektronicky Portal",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronického portálu"
+          }
+        },
+        "type": "USKUTOCNUJE",
+        "properties": {
+          "add": "podanie vyhlasenia prostrednictvom portalu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Samostatne Vyhlasenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "samostatnom vyhlásení"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "podanie v clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "target": {
+          "id": "Sídlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídlo"
+          }
+        },
+        "type": "MA_SIDLO",
+        "properties": {
+          "add": "miesto kde ma sidlo",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "target": {
+          "id": "Miesto Podnikania",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "type": "MA_MIESTO_PODNIKANIA",
+        "properties": {
+          "add": "miesto podnikania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "target": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevádzkareň"
+          }
+        },
+        "type": "MA_PREVADZKAREN",
+        "properties": {
+          "add": "prevadzka",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "target": {
+          "id": "Bydlisko",
+          "type": "Adresa",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "type": "MA_BYDLISKO",
+        "properties": {
+          "add": "bydlisko",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "target": {
+          "id": "Obvykle Zdrziava",
+          "type": "Lokacia",
+          "properties": {
+            "name": "obvykle zdržiava"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "miesto obvykleho zdrziavania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "ziadost o vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Doklad O Oprave Zakladu Dane A Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o oprave zakladu dane a dane"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "doklad o oprave zakladu dane a dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Obdobie Kalendarneho Roka",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie kalendarneho roka"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "obdobie kalendarneho roka",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "30. septembra kalendarneho roka",
+          "type": "Datum",
+          "properties": {
+            "name": "30. septembra kalendarneho roka"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "lehota do 30 septembra kalendarneho roka",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "sumu dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaplatiť Sumu Dane",
+          "type": "Povinnost",
+          "properties": {
+            "name": "vratiť sumu dane"
+          }
+        },
+        "target": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "sumu dane"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "vratit sumu dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad O Oprave Zakladu Dane A Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o oprave zakladu dane a dane"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "doklad o oprave zakladu dane a dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad O Oprave Zakladu Dane A Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o oprave zakladu dane a dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obdobie Kalendarneho Roka",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "30. septembra kalendarneho roka",
+          "type": "Datum",
+          "properties": {
+            "name": "30. septembra kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dakovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicke Prostriedky",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronickymi prostriedkami"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Samostatne Vyhlasenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "samostatnom vyhlásení"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicky Portal",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronického portálu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sídlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevádzkareň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bydlisko",
+          "type": "Adresa",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obvykle Zdrziava",
+          "type": "Lokacia",
+          "properties": {
+            "name": "obvykle zdržiava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaplatiť Sumu Dane",
+          "type": "Povinnost",
+          "properties": {
+            "name": "vratiť sumu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "sumu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v samostatnom vyhlásení podanom prostredníctvom elektronického portálu v členskom štáte,\nv ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava.\n(6) Ak sa po podaní žiadosti o vrátenie dane zníži základ dane a daň za dodanie tovaru alebo\nslužby, je žiadateľ povinný vrátiť sumu dane, o vrátenie ktorej žiadal. Vrátenie dane žiadateľ\nvykoná v žiadosti o vrátenie dane za obdobie kalendárneho roka, v ktorom bol vyhotovený doklad\no oprave základu dane a dane. Ak žiadateľ za obdobie kalendárneho roka, v ktorom bol vyhotovený\ndoklad o oprave základu dane a dane, nepodáva žiadosť o vrátenie dane, je povinný oznámiť\nelektronickými prostriedkami Daňovému úradu Bratislava najneskôr do 30. septembra\nkalendárneho roka, ktorý nasleduje po kalendárnom roku, v ktorom bol vyhotovený doklad\no oprave základu dane a dane, že dostal doklad o oprave základu dane a dane. Spolu s oznámením\nžiadateľ predloží elektronickými prostriedkami doklad o oprave základu dane a dane. Daňový úrad",
+            "page": 69
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

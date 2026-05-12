@@ -1,0 +1,902 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Paragraf 5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "5"
+        }
+      },
+      {
+        "id": "Paragraf 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "4"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "2"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "3"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "daňový úrad"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelná osoba"
+        }
+      },
+      {
+        "id": "Platitel Registrovany Podla Paragrafu 5",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platiteľ registrovaný podľa § 5"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan",
+        "type": "Registracia",
+        "properties": {
+          "name": "registrácia pre daň"
+        }
+      },
+      {
+        "id": "Oznamenie",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznámenie"
+        }
+      },
+      {
+        "id": "Rozhodnutie O Registracii Pre Dan",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie o registrácii pre daň"
+        }
+      },
+      {
+        "id": "Desat Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "do desiatich dní"
+        }
+      },
+      {
+        "id": "30 dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "30 dní"
+        }
+      },
+      {
+        "id": "Status Zahranicnej Osoby",
+        "type": "Status",
+        "properties": {
+          "name": "status zahraničnej osoby"
+        }
+      },
+      {
+        "id": "Sidlo",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sídlo"
+        }
+      },
+      {
+        "id": "Miesto Podnikania",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto podnikania"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevádzkareň"
+        }
+      },
+      {
+        "id": "Bydlisko",
+        "type": "Sidlo",
+        "properties": {
+          "name": "bydlisko"
+        }
+      },
+      {
+        "id": "Miesto Kde Sa Obvykle Zdrziava",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto, kde sa obvykle zdržiava"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsku"
+        }
+      },
+      {
+        "id": "Zmena Registracie",
+        "type": "Registracia",
+        "properties": {
+          "name": "zmena registrácie"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+          "page": 11
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "5"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "4"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "1"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "5"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "2"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "5"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "3"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "5"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "5"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "oznamit daňovemu uradu stratu sidla, miesta podnikania, prevadzkarne, bydliska alebo miesta obvykleho zdrziavania v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "do desiatich dní"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "na oznamenie skutocnosti daňovemu uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registrácii pre daň"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "ku dnu vzniku skutocnosti podla odseku 1 alebo 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registrácii pre daň"
+          }
+        },
+        "target": {
+          "id": "30 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "30 dní"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "od dorucenia oznamenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registrácii pre daň"
+          }
+        },
+        "target": {
+          "id": "Zmena Registracie",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registrácie"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "zmena registracie podla odseku 1 alebo 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel Registrovany Podla Paragrafu 5",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ registrovaný podľa § 5"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelná osoba"
+          }
+        },
+        "type": "STAVA_SA",
+        "properties": {
+          "add": "odo dna ked prestala mat v tuzemsku sidlo, miesto podnikania, prevadzkaren, bydlisko alebo miesto kde sa obvykle zdrziava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel Registrovany Podla Paragrafu 5",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ registrovaný podľa § 5"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "5"
+          }
+        },
+        "type": "VYPLNYVA_Z",
+        "properties": {
+          "add": "spnenie podmienok na registraciu a registracia podla paragrafu 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel Registrovany Podla Paragrafu 5",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ registrovaný podľa § 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registrácia pre daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registrácii pre daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "do desiatich dní"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "30 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "30 dní"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Status Zahranicnej Osoby",
+          "type": "Status",
+          "properties": {
+            "name": "status zahraničnej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevádzkareň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bydlisko",
+          "type": "Sidlo",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Kde Sa Obvykle Zdrziava",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto, kde sa obvykle zdržiava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registrácie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 12 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ndeň, keď prestala spĺňať status zahraničnej osoby, a adresu sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava, v tuzemsku.\n(2) Ak zdaniteľná osoba spĺňa podmienky na registráciu podľa § 5 a je registrovaná podľa § 4,\npovažuje sa za platiteľa registrovaného podľa § 5 odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava; túto skutočnosť\nje povinná oznámiť daňovému úradu do desiatich dní odo dňa, keď prestala mať v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň, bydlisko alebo miesto, kde sa obvykle zdržiava.\n(3) Daňový úrad vydá nové rozhodnutie o registrácii pre daň ku dňu, keď nastala skutočnosť, na\nzáklade ktorej došlo k zmene registrácie podľa odseku 1 alebo podľa odseku 2, a to do 30 dní odo\ndňa doručenia oznámenia podľa odseku 1 alebo podľa odseku 2; proti tomuto rozhodnutiu\nnemožno podať odvolanie.",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

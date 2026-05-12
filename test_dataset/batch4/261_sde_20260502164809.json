@@ -1,0 +1,711 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon O Dani Z Pridanej Hodnoty",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zakon o dani z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "55",
+        "type": "Paragraf",
+        "properties": {
+          "name": "55"
+        }
+      },
+      {
+        "id": "Odpoctanie Dane Pri Registracii Platitela A Pri Oneskorenej Registracii Platitela",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Odpoctanie dane pri registracii platitela a pri oneskorenej registracii platitela"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Osoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Pravo Na Odpoctanie Dane",
+        "type": "Pravo",
+        "properties": {
+          "name": "Pravo na odpoctanie dane"
+        }
+      },
+      {
+        "id": "Prijate Plnenia",
+        "type": "Doklad",
+        "properties": {
+          "name": "Prijate plnenia"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "Tovar"
+        }
+      },
+      {
+        "id": "Sluzby",
+        "type": "Sluzba",
+        "properties": {
+          "name": "Sluzby"
+        }
+      },
+      {
+        "id": "Dazova Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "Dazova povinnost"
+        }
+      },
+      {
+        "id": "Odpisovany Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "Odpisovany majetok"
+        }
+      },
+      {
+        "id": "Pomerna Cast Dane",
+        "type": "Suma",
+        "properties": {
+          "name": "Pomerna cast dane"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan"
+        }
+      },
+      {
+        "id": "Prve Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "Prve zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Kalendarne Roky Predchadzajuce Kalendarnemu Roku",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "Kalendarne roky predchadzajuce kalendarnemu roku"
+        }
+      },
+      {
+        "id": "Odpisy",
+        "type": "Vypocet",
+        "properties": {
+          "name": "Odpisy"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+          "page": 65
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon O Dani Z Pridanej Hodnoty",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zakon o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "55",
+          "type": "Paragraf",
+          "properties": {
+            "name": "55"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "odpoctanie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "Tovar"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "tovary a sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "Sluzby"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "tovary a sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Prijate Plnenia",
+          "type": "Doklad",
+          "properties": {
+            "name": "Prijate plnenia"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "prijate plnenia pred dnom, ked sa stal platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Prve Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "Prve zdanovacie obdobie"
+          }
+        },
+        "type": "PLATI_OD",
+        "properties": {
+          "add": "len v prvom zdanovacom obdobi",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dazova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Dazova povinnost"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "pri registracii platitela alebo pri oneskorenej registracii platitela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dazova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Dazova povinnost"
+          }
+        },
+        "target": {
+          "id": "55",
+          "type": "Paragraf",
+          "properties": {
+            "name": "55"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "§ 19 ods. 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Kalendarne Roky Predchadzajuce Kalendarnemu Roku",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "Kalendarne roky predchadzajuce kalendarnemu roku"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ak prijate plnenia neboli zahrnute do danovych vydavkov v predchadzajucich rokoch",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "Odpisovany Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "Odpisovany majetok"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "majetok, ktory je odpisovany majetok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Pomerna Cast Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "Pomerna cast dane"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "zodpovedajuca odpisom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pomerna Cast Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "Pomerna cast dane"
+          }
+        },
+        "target": {
+          "id": "Odpisy",
+          "type": "Vypocet",
+          "properties": {
+            "name": "Odpisy"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "zodpovedajuca odpisom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "Pomerna Cast Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "Pomerna cast dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "znizenie dane o pomernu cast",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon O Dani Z Pridanej Hodnoty",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zakon o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "55",
+          "type": "Paragraf",
+          "properties": {
+            "name": "55"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane Pri Registracii Platitela A Pri Oneskorenej Registracii Platitela",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odpoctanie dane pri registracii platitela a pri oneskorenej registracii platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Na Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo na odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijate Plnenia",
+          "type": "Doklad",
+          "properties": {
+            "name": "Prijate plnenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "Tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzby",
+          "type": "Sluzba",
+          "properties": {
+            "name": "Sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dazova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Dazova povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpisovany Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "Odpisovany majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pomerna Cast Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "Pomerna cast dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prve Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "Prve zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarne Roky Predchadzajuce Kalendarnemu Roku",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "Kalendarne roky predchadzajuce kalendarnemu roku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpisy",
+          "type": "Vypocet",
+          "properties": {
+            "name": "Odpisy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane, akoby bol používaný len na podnikanie.\n§ 55\nOdpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa\n(1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane\nviažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred\ndňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová\npovinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia\nokrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych\nrokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý\nje podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane\nzodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení\nodpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.",
+            "page": 65
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

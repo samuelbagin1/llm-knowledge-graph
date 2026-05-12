@@ -1,0 +1,919 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon C 222 2004 Z Z O Dani Z Pridanej Hodnoty",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon c 222/2004 z. z. o dani z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "Paragraf 25",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 25"
+        }
+      },
+      {
+        "id": "Paragraf 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4"
+        }
+      },
+      {
+        "id": "Paragraf 5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 5"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 2"
+        }
+      },
+      {
+        "id": "Pismeno A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pism. a"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pism. b"
+        }
+      },
+      {
+        "id": "Pismeno E",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pism. e"
+        }
+      },
+      {
+        "id": "Registracna Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "registracna povinnost"
+        }
+      },
+      {
+        "id": "Oznamovacia Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "oznamovacia povinnost"
+        }
+      },
+      {
+        "id": "Vyhotovenie Faktury",
+        "type": "Cinnost",
+        "properties": {
+          "name": "vyhotovenie faktury"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia pre dan"
+        }
+      },
+      {
+        "id": "Rozhodnutie O Registracii Pre Dan",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie o registracii pre dan"
+        }
+      },
+      {
+        "id": "Lehoty Na Vyhotovenie Faktury",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehota na vyhotovenie faktury"
+        }
+      },
+      {
+        "id": "Piat Pracovnych Dni",
+        "type": "Obdobie",
+        "properties": {
+          "name": "piat pracovnych dni"
+        }
+      },
+      {
+        "id": "Koniec Kalendarneho Mesiaca",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "od konca kalendarneho mesiaca"
+        }
+      },
+      {
+        "id": "Skutocnost Rozhodna Pre Vykonanie Opravy Zakladu Dane",
+        "type": "Dovod",
+        "properties": {
+          "name": "skutocnost rozhodna pre vykonanie opravy zakladu dane"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+          "page": 113
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon C 222 2004 Z Z O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c 222/2004 z. z. o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "Paragraf 25",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon C 222 2004 Z Z O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c 222/2004 z. z. o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon C 222 2004 Z Z O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c 222/2004 z. z. o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "Paragraf 25",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "target": {
+          "id": "Paragraf 25",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno E",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. e"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. a"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. b"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Registracna Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "registracna povinnost"
+          }
+        },
+        "target": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Registracna Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "registracna povinnost"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 3 alebo ods. 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oznamovacia Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "oznamovacia povinnost"
+          }
+        },
+        "target": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyhotovenie Faktury",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "Lehoty Na Vyhotovenie Faktury",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na vyhotovenie faktury"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "do piat pracovnych dni odo dna dorucenia rozhodnutia o registracii pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyhotovenie Faktury",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "dorucenie rozhodnutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyhotovenie Faktury",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ak nema pridelené do uplynutia lehoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Lehoty Na Vyhotovenie Faktury",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "Piat Pracovnych Dni",
+          "type": "Obdobie",
+          "properties": {
+            "name": "piat pracovnych dni"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Lehoty Na Vyhotovenie Faktury",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "Koniec Kalendarneho Mesiaca",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "od konca kalendarneho mesiaca"
+          }
+        },
+        "type": "PLATI_OD",
+        "properties": {
+          "add": "od konca kalendarneho mesiaca",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Lehoty Na Vyhotovenie Faktury",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "Skutocnost Rozhodna Pre Vykonanie Opravy Zakladu Dane",
+          "type": "Dovod",
+          "properties": {
+            "name": "skutocnost rozhodna pre vykonanie opravy zakladu dane"
+          }
+        },
+        "type": "MA_DOVOD",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "registracia pre dan podla § 4 alebo § 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon C 222 2004 Z Z O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c 222/2004 z. z. o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 25",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno E",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. e"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracna Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "registracna povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamovacia Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "oznamovacia povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyhotovenie Faktury",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehoty Na Vyhotovenie Faktury",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Piat Pracovnych Dni",
+          "type": "Obdobie",
+          "properties": {
+            "name": "piat pracovnych dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koniec Kalendarneho Mesiaca",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "od konca kalendarneho mesiaca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost Rozhodna Pre Vykonanie Opravy Zakladu Dane",
+          "type": "Dovod",
+          "properties": {
+            "name": "skutocnost rozhodna pre vykonanie opravy zakladu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "e) od konca kalendárneho mesiaca, v ktorom nastala skutočnosť rozhodná pre vykonanie opravy\nzákladu dane podľa § 25 ods. 1.\n(2) Ak platiteľ, ktorý v ustanovenej lehote splnil registračnú povinnosť podľa § 4 ods. 2 alebo\npodľa § 5 ods. 3 alebo ods. 5 alebo v ustanovenej lehote splnil oznamovaciu povinnosť podľa § 4\nods. 5 (ďalej len „platiteľ, ktorý splnil registračnú povinnosť“), nemá do uplynutia lehoty na\nvyhotovenie faktúry podľa odseku 1 písm. a) alebo písm. b) pridelené identifikačné číslo pre daň\npodľa § 4 alebo § 5, je povinný faktúru vyhotoviť do piatich pracovných dní odo dňa doručenia\nrozhodnutia o registrácii pre daň podľa § 4 ods. 4 alebo podľa § 5 ods. 3 alebo ods. 5.",
+            "page": 113
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

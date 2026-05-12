@@ -1,0 +1,376 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Nebytoveho Priestoru",
+        "type": "Nehnutelnost",
+        "properties": {
+          "name": "nebytoveho priestoru"
+        }
+      },
+      {
+        "id": "Peti Rokoch Odo Dna Zacatia Prveho Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "po piatich rokoch odo dna zacatia prveho uzivania bytu, apartmanu alebo nebytoveho priestoru"
+        }
+      },
+      {
+        "id": "Kolaudacie",
+        "type": "Doklad",
+        "properties": {
+          "name": "kolaudacie"
+        }
+      },
+      {
+        "id": "Zmena Ucelu Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "zmena ucelu uzivania bytu, apartmanu alebo nebytoveho priestoru"
+        }
+      },
+      {
+        "id": "Vykonanych Stavebnych Prac",
+        "type": "Cinnost",
+        "properties": {
+          "name": "vykonanych stavebnych prac"
+        }
+      },
+      {
+        "id": "40 %",
+        "type": "Hodnota",
+        "properties": {
+          "name": "40 %"
+        }
+      },
+      {
+        "id": "Hodnota Bytu Apartmanu Alebo Nebytoveho Priestoru Pred Zacatim Stavebnych Prac",
+        "type": "Hodnota",
+        "properties": {
+          "name": "hodnota bytu, apartmanu alebo nebytoveho priestoru pred zacatim stavebnych prac"
+        }
+      },
+      {
+        "id": "Cena Porovnatelneho Bytu Apartmanu Alebo Nebytoveho Priestoru Na Volnom Trhu V Case Pred Zacatim Stavebnych Prac",
+        "type": "Hodnota",
+        "properties": {
+          "name": "cena porovnatelneho bytu, apartmanu alebo nebytoveho priestoru na volnom trhu v case pred zacatim stavebnych prac"
+        }
+      },
+      {
+        "id": "Odsek",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+          "page": 38
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Kolaudacie",
+          "type": "Doklad",
+          "properties": {
+            "name": "kolaudacie"
+          }
+        },
+        "target": {
+          "id": "Odsek",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "kolaudacia pri zmene ucelu uzivania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmena Ucelu Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmena ucelu uzivania bytu, apartmanu alebo nebytoveho priestoru"
+          }
+        },
+        "target": {
+          "id": "40 %",
+          "type": "Hodnota",
+          "properties": {
+            "name": "40 %"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "naklady na stavebne prace najmenej 40 % z hodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmena Ucelu Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmena ucelu uzivania bytu, apartmanu alebo nebytoveho priestoru"
+          }
+        },
+        "target": {
+          "id": "Hodnota Bytu Apartmanu Alebo Nebytoveho Priestoru Pred Zacatim Stavebnych Prac",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota bytu, apartmanu alebo nebytoveho priestoru pred zacatim stavebnych prac"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "zaklad pre vypocet 40 %",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Hodnota Bytu Apartmanu Alebo Nebytoveho Priestoru Pred Zacatim Stavebnych Prac",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota bytu, apartmanu alebo nebytoveho priestoru pred zacatim stavebnych prac"
+          }
+        },
+        "target": {
+          "id": "Cena Porovnatelneho Bytu Apartmanu Alebo Nebytoveho Priestoru Na Volnom Trhu V Case Pred Zacatim Stavebnych Prac",
+          "type": "Hodnota",
+          "properties": {
+            "name": "cena porovnatelneho bytu, apartmanu alebo nebytoveho priestoru na volnom trhu v case pred zacatim stavebnych prac"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "nesmie byt nizsia ako porovnatelna cena na volnom trhu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Peti Rokoch Odo Dna Zacatia Prveho Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "po piatich rokoch odo dna zacatia prveho uzivania bytu, apartmanu alebo nebytoveho priestoru"
+          }
+        },
+        "target": {
+          "id": "Zmena Ucelu Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmena ucelu uzivania bytu, apartmanu alebo nebytoveho priestoru"
+          }
+        },
+        "type": "SUVISI_S",
+        "properties": {
+          "add": "nastane skor ako alternativa ku kolaudacii",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nebytoveho Priestoru",
+          "type": "Nehnutelnost",
+          "properties": {
+            "name": "nebytoveho priestoru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Peti Rokoch Odo Dna Zacatia Prveho Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "po piatich rokoch odo dna zacatia prveho uzivania bytu, apartmanu alebo nebytoveho priestoru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kolaudacie",
+          "type": "Doklad",
+          "properties": {
+            "name": "kolaudacie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Ucelu Uzivania Bytu Apartmanu Alebo Nebytoveho Priestoru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmena ucelu uzivania bytu, apartmanu alebo nebytoveho priestoru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vykonanych Stavebnych Prac",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vykonanych stavebnych prac"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "40 %",
+          "type": "Hodnota",
+          "properties": {
+            "name": "40 %"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hodnota Bytu Apartmanu Alebo Nebytoveho Priestoru Pred Zacatim Stavebnych Prac",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota bytu, apartmanu alebo nebytoveho priestoru pred zacatim stavebnych prac"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cena Porovnatelneho Bytu Apartmanu Alebo Nebytoveho Priestoru Na Volnom Trhu V Case Pred Zacatim Stavebnych Prac",
+          "type": "Hodnota",
+          "properties": {
+            "name": "cena porovnatelneho bytu, apartmanu alebo nebytoveho priestoru na volnom trhu v case pred zacatim stavebnych prac"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "nebytového priestoru, alebo po piatich rokoch odo dňa začatia prvého užívania bytu,\napartmánu alebo nebytového priestoru, a to podľa toho, čo nastane skôr,\nb) kolaudácie, ktorou sa povolila zmena účelu užívania bytu, apartmánu alebo nebytového\npriestoru, ku ktorej došlo v dôsledku vykonaných stavebných prác, ak náklady na tieto\nstavebné práce sú vo výške najmenej 40 % z hodnoty bytu, apartmánu alebo nebytového\npriestoru pred začatím stavebných prác; hodnotou bytu, apartmánu alebo nebytového priestoru\npred začatím stavebných prác sa na účely tohto odseku rozumie hodnota, ktorá nie je nižšia\nako cena porovnateľného bytu, apartmánu alebo nebytového priestoru na voľnom trhu v čase\npred začatím stavebných prác,",
+            "page": 38
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

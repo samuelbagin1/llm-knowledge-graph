@@ -1,0 +1,345 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Osoby",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoby"
+        }
+      },
+      {
+        "id": "Sidlo",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sídlo"
+        }
+      },
+      {
+        "id": "Miesto Podnikania",
+        "type": "Uzemie",
+        "properties": {
+          "name": "miesto podnikania"
+        }
+      },
+      {
+        "id": "Bydlisko",
+        "type": "Bydlisko",
+        "properties": {
+          "name": "bydlisko"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsku"
+        }
+      },
+      {
+        "id": "Maly Podnik Zahranicnej Osoby",
+        "type": "Podnik",
+        "properties": {
+          "name": "malý podnik zahraničnej osoby"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodené od dane"
+        }
+      },
+      {
+        "id": "Clensky Stat Usadenia",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "členskom štáte usadenia"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+          "page": 97
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoby"
+          }
+        },
+        "target": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídlo"
+          }
+        },
+        "type": "MA_SIDLO",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoby"
+          }
+        },
+        "target": {
+          "id": "Miesto Podnikania",
+          "type": "Uzemie",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "type": "MA_MIESTO_PODNIKANIA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoby"
+          }
+        },
+        "target": {
+          "id": "Bydlisko",
+          "type": "Bydlisko",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "type": "MA_BYDLISKO",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoby"
+          }
+        },
+        "target": {
+          "id": "Bydlisko",
+          "type": "Bydlisko",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "obvykle zdrziava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Zahranicnej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "malý podnik zahraničnej osoby"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat Usadenia",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte usadenia"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "identifikacia pre osobitnu upravu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Uzemie",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bydlisko",
+          "type": "Bydlisko",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Zahranicnej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "malý podnik zahraničnej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodené od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat Usadenia",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte usadenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "osoby sídlo, miesto podnikania, bydlisko alebo v ktorom sa obvykle zdržiava.\n(2) Dodanie tovaru a služby uskutočnené v tuzemsku malým podnikom zahraničnej osoby je\noslobodené od dane, ak je malý podnik zahraničnej osoby v členskom štáte usadenia\nidentifikovaný pre túto osobitnú úpravu, a to odo dňa, kedy mu bolo príslušným orgánom",
+            "page": 97
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

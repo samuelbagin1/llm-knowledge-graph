@@ -1,0 +1,824 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danova Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "danova povinnost"
+        }
+      },
+      {
+        "id": "Platba",
+        "type": "Zaznam",
+        "properties": {
+          "name": "platba"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzba"
+        }
+      },
+      {
+        "id": "Komisionarska Zmluva",
+        "type": "Zmluva",
+        "properties": {
+          "name": "komisionarska zmluva"
+        }
+      },
+      {
+        "id": "Komitent",
+        "type": "Subjekt",
+        "properties": {
+          "name": "komitent"
+        }
+      },
+      {
+        "id": "Komisionar",
+        "type": "Subjekt",
+        "properties": {
+          "name": "komisionar"
+        }
+      },
+      {
+        "id": "Osoba, Ktora Kona Vo Svojom Mene",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba, ktora kona vo svojom mene"
+        }
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktura"
+        }
+      },
+      {
+        "id": "Obstaravatel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "obstaravatel"
+        }
+      },
+      {
+        "id": "Nositel Autorskych",
+        "type": "Subjekt",
+        "properties": {
+          "name": "nositel autorskych"
+        }
+      },
+      {
+        "id": "§ 9 Ods. 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 9 ods. 4"
+        }
+      },
+      {
+        "id": "§ 15 Ods. 1",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 15 ods. 1"
+        }
+      },
+      {
+        "id": "Prijatie Platby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prijatie platby"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru"
+        }
+      },
+      {
+        "id": "Dodanie Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie sluzby"
+        }
+      },
+      {
+        "id": "Obstaranie Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "obstaranie sluzby"
+        }
+      },
+      {
+        "id": "Vyhotovenie Faktury",
+        "type": "Cinnost",
+        "properties": {
+          "name": "vyhotovenie faktury"
+        }
+      },
+      {
+        "id": "Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana",
+        "type": "Datum",
+        "properties": {
+          "name": "posledny den tretieho kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci, v ktorom bola sluzba dodana"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+          "page": 25
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "danova povinnost"
+          }
+        },
+        "target": {
+          "id": "Prijatie Platby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prijatie platby"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "z prijatej platby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prijatie Platby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prijatie platby"
+          }
+        },
+        "target": {
+          "id": "Platba",
+          "type": "Zaznam",
+          "properties": {
+            "name": "platba"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "pred dodanim tovaru alebo sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "danova povinnost"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "pri dodani tovaru na zaklade komisionarskej zmluvy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Komitent",
+          "type": "Subjekt",
+          "properties": {
+            "name": "komitent"
+          }
+        },
+        "target": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "danova povinnost"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "pri dodani tovaru na zaklade komisionarskej zmluvy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Komitent",
+          "type": "Subjekt",
+          "properties": {
+            "name": "komitent"
+          }
+        },
+        "target": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "danova povinnost"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "daň",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie sluzby"
+          }
+        },
+        "target": {
+          "id": "§ 9 Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 4"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "podla § 9 ods. 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "§ 9 Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 4"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "obstarana sluzba",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba, Ktora Kona Vo Svojom Mene",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba, ktora kona vo svojom mene"
+          }
+        },
+        "target": {
+          "id": "Obstaranie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie sluzby"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "konanie vo svojom mene",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "add": "sluzba sa povazuje za dodanu dnom vyhotovenia faktury",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "target": {
+          "id": "Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana",
+          "type": "Datum",
+          "properties": {
+            "name": "posledny den tretieho kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci, v ktorom bola sluzba dodana"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "ak nie je vyhotovena do konca tretieho kalendarneho mesiaca",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "danova povinnost"
+          }
+        },
+        "target": {
+          "id": "Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana",
+          "type": "Datum",
+          "properties": {
+            "name": "posledny den tretieho kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci, v ktorom bola sluzba dodana"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "ak faktura nie je vyhotovena do konca lehoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "§ 15 Ods. 1",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 15 ods. 1"
+          }
+        },
+        "type": "MA_MIESTO_DODANIA",
+        "properties": {
+          "add": "miesto dodania podla § 15 ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "danova povinnost"
+          }
+        },
+        "target": {
+          "id": "Nositel Autorskych",
+          "type": "Subjekt",
+          "properties": {
+            "name": "nositel autorskych"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "nositel autorskych prav",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "danova povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platba",
+          "type": "Zaznam",
+          "properties": {
+            "name": "platba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Komisionarska Zmluva",
+          "type": "Zmluva",
+          "properties": {
+            "name": "komisionarska zmluva"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Komitent",
+          "type": "Subjekt",
+          "properties": {
+            "name": "komitent"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Komisionar",
+          "type": "Subjekt",
+          "properties": {
+            "name": "komisionar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba, Ktora Kona Vo Svojom Mene",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba, ktora kona vo svojom mene"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaravatel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "obstaravatel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nositel Autorskych",
+          "type": "Subjekt",
+          "properties": {
+            "name": "nositel autorskych"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 9 Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 15 Ods. 1",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 15 ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijatie Platby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prijatie platby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaranie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyhotovenie Faktury",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyhotovenie faktury"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana",
+          "type": "Datum",
+          "properties": {
+            "name": "posledny den tretieho kalendarneho mesiaca nasledujuceho po kalendarnom mesiaci, v ktorom bola sluzba dodana"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n(5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť\nv ten istý deň, keď vzniká daňová povinnosť komisionárovi.\n(6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo\ndodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú\ndňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je\nvyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci,\nv ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania\nslužby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1,\npri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+            "page": 25
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

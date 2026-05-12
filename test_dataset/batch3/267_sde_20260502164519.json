@@ -1,0 +1,688 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Paragraf 49",
+        "type": "Paragraf",
+        "properties": {
+          "name": "49"
+        }
+      },
+      {
+        "id": "Paragraf 43",
+        "type": "Paragraf",
+        "properties": {
+          "name": "43"
+        }
+      },
+      {
+        "id": "Paragraf 47 Ods. 2",
+        "type": "Paragraf",
+        "properties": {
+          "name": "47 ods. 2"
+        }
+      },
+      {
+        "id": "Ziadatel",
+        "type": "Osoba",
+        "properties": {
+          "name": "ziadatel"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "Odpoctanie Dane",
+        "type": "Pravo",
+        "properties": {
+          "name": "odpoctanie dane"
+        }
+      },
+      {
+        "id": "Sidlom",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sidlom"
+        }
+      },
+      {
+        "id": "Miesto Podnikania",
+        "type": "Sidlo",
+        "properties": {
+          "name": "miesto podnikania"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevadzkaren"
+        }
+      },
+      {
+        "id": "Bydlisko",
+        "type": "Sidlo",
+        "properties": {
+          "name": "bydlisko"
+        }
+      },
+      {
+        "id": "Obvykle Zdrziava",
+        "type": "Obdobie",
+        "properties": {
+          "name": "obvykle zdrziava"
+        }
+      },
+      {
+        "id": "Pomerna Vyska Dane",
+        "type": "Suma",
+        "properties": {
+          "name": "pomerna vyska dane"
+        }
+      },
+      {
+        "id": "Pravidla Platne V Clenskom State",
+        "type": "Podmienka",
+        "properties": {
+          "name": "pravidla platne v clenskom state"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Podmienka",
+        "properties": {
+          "name": "osobitna uprava"
+        }
+      },
+      {
+        "id": "Odpoctatelna Podla Paragraf 49",
+        "type": "Podmienka",
+        "properties": {
+          "name": "odpoctatelna podla paragraf 49"
+        }
+      },
+      {
+        "id": "Oslobodeny Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodeny od dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+          "page": 67
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 49",
+          "type": "Paragraf",
+          "properties": {
+            "name": "49"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 43",
+          "type": "Paragraf",
+          "properties": {
+            "name": "43"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 47 Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "47 ods. 2"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadatel",
+          "type": "Osoba",
+          "properties": {
+            "name": "ziadatel"
+          }
+        },
+        "target": {
+          "id": "Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "odpoctanie dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "v clenskom state, v ktorom ma sidlo, miesto podnikania, prevadzkaren, bydlisko alebo kde sa obvykle zdrziava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadatel",
+          "type": "Osoba",
+          "properties": {
+            "name": "ziadatel"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "pomerna vyska dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Paragraf 49",
+          "type": "Paragraf",
+          "properties": {
+            "name": "49"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ak by dan bola odpoctatelna",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadatel",
+          "type": "Osoba",
+          "properties": {
+            "name": "ziadatel"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "NEMA_NAROK_NA",
+        "properties": {
+          "add": "dana neuplatnena v sulade so zakonom a dan pri tovare oslobodenom podla paragraf 43 alebo paragraf 47 ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Pomerna Vyska Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "pomerna vyska dane"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "vypocitana podla pravidiel platnych v clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 49",
+          "type": "Paragraf",
+          "properties": {
+            "name": "49"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 43",
+          "type": "Paragraf",
+          "properties": {
+            "name": "43"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 47 Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "47 ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadatel",
+          "type": "Osoba",
+          "properties": {
+            "name": "ziadatel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctanie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "odpoctanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlom",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidlom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Sidlo",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bydlisko",
+          "type": "Sidlo",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obvykle Zdrziava",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obvykle zdrziava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pomerna Vyska Dane",
+          "type": "Suma",
+          "properties": {
+            "name": "pomerna vyska dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravidla Platne V Clenskom State",
+          "type": "Podmienka",
+          "properties": {
+            "name": "pravidla platne v clenskom state"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Podmienka",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctatelna Podla Paragraf 49",
+          "type": "Podmienka",
+          "properties": {
+            "name": "odpoctatelna podla paragraf 49"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodeny Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodeny od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 68 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nprávo na odpočítanie dane v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň,\nbydlisko alebo v ktorom sa obvykle zdržiava. Ak žiadateľ uskutočňuje v členskom štáte, v ktorom\nmá sídlo, miesto podnikania, prevádzkareň, bydlisko alebo v ktorom sa obvykle zdržiava,\nzdaniteľné obchody, pri ktorých môže odpočítať daň, a súčasne zdaniteľné obchody, pri ktorých\nnemôže odpočítať daň, má nárok na vrátenie pomernej výšky dane, ktorú vypočíta podľa pravidiel\nplatných v členskom štáte, v ktorom má sídlo, miesto podnikania, prevádzkareň, bydlisko alebo\nv ktorom sa obvykle zdržiava.\n(4) Žiadateľ má nárok na vrátenie dane, ak by takáto daň bola odpočítateľná podľa § 49.\n(5) Žiadateľ nemá nárok na vrátenie dane, ktorú dodávateľ neuplatnil v súlade s týmto zákonom,\na dane uplatnenej pri tovare, ktorý je alebo môže byť oslobodený od dane podľa § 43 alebo § 47\nods. 2. Ak žiadateľ podľa zákona platného v inom členskom štáte uplatňuje osobitnú úpravu",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

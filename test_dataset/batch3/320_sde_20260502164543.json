@@ -1,0 +1,603 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "65",
+        "type": "Paragraf",
+        "properties": {
+          "name": "65"
+        }
+      },
+      {
+        "id": "Osobitna Uprava Uplatnovania Dane Pre Cestovne Kancelarie A Cestovne Agentury",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Osobitna uprava uplatnovania dane pre cestovne kancelarie a cestovne agentury"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Cestovna Kancelaria",
+        "type": "Cinnost",
+        "properties": {
+          "name": "cestovna kancelaria"
+        }
+      },
+      {
+        "id": "Sluzby Cestovneho Ruchu",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzby cestovneho ruchu"
+        }
+      },
+      {
+        "id": "Sluzby Cestovneho Ruchu Obstarané Od Inych Osob",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzby cestovneho ruchu obstarané od inych osob"
+        }
+      },
+      {
+        "id": "Zakaznik",
+        "type": "Osoba",
+        "properties": {
+          "name": "zakaznik"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Sidlo",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sidlo"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevadzkaren"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Zaklad Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "zaklad dane"
+        }
+      },
+      {
+        "id": "Kladny Rozdiel Medzi Celkovou Predajnou Cenou A Skutocnymi Nakladmi",
+        "type": "Vypocet",
+        "properties": {
+          "name": "kladny rozdiel medzi celkovou predajnou cenou a skutocnymi nakladmi"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+          "page": 80
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "65",
+          "type": "Paragraf",
+          "properties": {
+            "name": "65"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava Uplatnovania Dane Pre Cestovne Kancelarie A Cestovne Agentury",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Osobitna uprava uplatnovania dane pre cestovne kancelarie a cestovne agentury"
+          }
+        },
+        "target": {
+          "id": "65",
+          "type": "Paragraf",
+          "properties": {
+            "name": "65"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Cestovna Kancelaria",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cestovna kancelaria"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uplatnovat osobitnu upravu podla odsekov 2 az 8",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzby Cestovneho Ruchu",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzby cestovneho ruchu"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "sluzby cestovneho ruchu obstarané zdanitelnou osobou od inych zdanitelnych osob",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidlo"
+          }
+        },
+        "type": "MA_SIDLO",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "type": "MA_PREVADZKAREN",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Cestovna Kancelaria",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cestovna kancelaria"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "NEMA_NAROK_NA",
+        "properties": {
+          "add": "odpocitanie dane pri sluzbach cestovneho ruchu obstaraných od inych osob",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "Kladny Rozdiel Medzi Celkovou Predajnou Cenou A Skutocnymi Nakladmi",
+          "type": "Vypocet",
+          "properties": {
+            "name": "kladny rozdiel medzi celkovou predajnou cenou a skutocnymi nakladmi"
+          }
+        },
+        "type": "DEFINUJE",
+        "properties": {
+          "add": "pri predaji sluzieb cestovneho ruchu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "65",
+          "type": "Paragraf",
+          "properties": {
+            "name": "65"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava Uplatnovania Dane Pre Cestovne Kancelarie A Cestovne Agentury",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Osobitna uprava uplatnovania dane pre cestovne kancelarie a cestovne agentury"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cestovna Kancelaria",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cestovna kancelaria"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzby Cestovneho Ruchu",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzby cestovneho ruchu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzby Cestovneho Ruchu Obstarané Od Inych Osob",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzby cestovneho ruchu obstarané od inych osob"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakaznik",
+          "type": "Osoba",
+          "properties": {
+            "name": "zakaznik"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlo",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kladny Rozdiel Medzi Celkovou Predajnou Cenou A Skutocnymi Nakladmi",
+          "type": "Vypocet",
+          "properties": {
+            "name": "kladny rozdiel medzi celkovou predajnou cenou a skutocnymi nakladmi"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 81\n§ 65\nOsobitná úprava uplatňovania dane pre cestovné kancelárie a cestovné agentúry\n(1) Platiteľ, ktorý obstaráva od iných zdaniteľných osôb tovary a služby na účel uskutočnenia\ncesty (ďalej len „služby cestovného ruchu“) a pri predaji vystupuje voči zákazníkom vo vlastnom\nmene (ďalej len „cestovná kancelária“), je povinný uplatňovať osobitnú úpravu podľa odsekov 2 až\n8. Služby cestovného ruchu obstarané zdaniteľnou osobou od iných zdaniteľných osôb sa považujú\nza dodanie jednej služby zákazníkovi a táto služba je predmetom dane v členskom štáte, v ktorom\nmá zdaniteľná osoba sídlo alebo prevádzkareň, z ktorej službu dodala.\n(2) Cestovná kancelária nemôže odpočítať daň pri službách cestovného ruchu obstaraných od\niných osôb.\n(3) Základom dane pri predaji služieb cestovného ruchu je kladný rozdiel medzi celkovou\npredajnou cenou požadovanou od zákazníka a skutočnými nákladmi cestovnej kancelárie za",
+            "page": 80
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

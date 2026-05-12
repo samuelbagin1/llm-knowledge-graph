@@ -1,0 +1,368 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Rozhodnutie O Registracii Pre Dan",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie o registracii pre dan"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 4"
+        }
+      },
+      {
+        "id": "Pism A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pism. a"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Status",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Den Nasledujuci Po Dni Oznamenia",
+        "type": "Datum",
+        "properties": {
+          "name": "den nasledujuci po dni, v ktorom tuto skutocnost oznamila"
+        }
+      },
+      {
+        "id": "Oznamenie Skutocnosti",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznamil tuto skutocnost"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+          "page": 3
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "registracia pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 4"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "Pism A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "pism. a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Status",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "type": "STAVA_SA",
+        "properties": {
+          "add": "platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Den Nasledujuci Po Dni Oznamenia",
+          "type": "Datum",
+          "properties": {
+            "name": "den nasledujuci po dni, v ktorom tuto skutocnost oznamila"
+          }
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "add": "dnom nasledujucim po dni oznamenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Oznamenie Skutocnosti",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamil tuto skutocnost"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "tuto skutocnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pism A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pism. a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Status",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Nasledujuci Po Dni Oznamenia",
+          "type": "Datum",
+          "properties": {
+            "name": "den nasledujuci po dni, v ktorom tuto skutocnost oznamila"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie Skutocnosti",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamil tuto skutocnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "najskôr po doručení rozhodnutia o registrácii pre daň podľa odseku 4 písm. a) a zdaniteľná\nosoba sa stáva platiteľom dňom nasledujúcom po dni, v ktorom túto skutočnosť oznámila.",
+            "page": 3
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

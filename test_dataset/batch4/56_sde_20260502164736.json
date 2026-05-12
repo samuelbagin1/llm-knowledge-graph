@@ -1,0 +1,621 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Premiestnenie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "premiestnenie tovaru"
+        }
+      },
+      {
+        "id": "Suhorny Vykaz",
+        "type": "Zaznam",
+        "properties": {
+          "name": "suhorny vykaz"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 3"
+        }
+      },
+      {
+        "id": "Pismeno C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno c"
+        }
+      },
+      {
+        "id": "Pismeno D",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno d"
+        }
+      },
+      {
+        "id": "Pismeno E",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno e"
+        }
+      },
+      {
+        "id": "Paragraf 70",
+        "type": "Paragraf",
+        "properties": {
+          "name": "paragraf 70"
+        }
+      },
+      {
+        "id": "Paragraf 80",
+        "type": "Paragraf",
+        "properties": {
+          "name": "paragraf 80"
+        }
+      },
+      {
+        "id": "Paragraf 43",
+        "type": "Paragraf",
+        "properties": {
+          "name": "paragraf 43"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru Oslobodene Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "dodanie tovaru oslobodene od dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+          "page": 13
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Premiestnenie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "premiestnenie tovaru"
+          }
+        },
+        "type": "UVADZA",
+        "properties": {
+          "add": "v zaznamoch",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Premiestnenie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "premiestnenie tovaru"
+          }
+        },
+        "target": {
+          "id": "Paragraf 70",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 70"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "ods. 2 pism. g",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "UVADZA",
+        "properties": {
+          "add": "v suhrnnom vykaze",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "Paragraf 80",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 80"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "ods. 1 pism. e",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "Paragraf 43",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 43"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Oslobodene Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "dodanie tovaru oslobodene od dane"
+          }
+        },
+        "target": {
+          "id": "Paragraf 43",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 43"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Premiestnenie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "premiestnenie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suhorny Vykaz",
+          "type": "Zaznam",
+          "properties": {
+            "name": "suhorny vykaz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno D",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno E",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno e"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 70",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 70"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 80",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 80"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 43",
+          "type": "Paragraf",
+          "properties": {
+            "name": "paragraf 43"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Oslobodene Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "dodanie tovaru oslobodene od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) zdaniteľná osoba, ktorej má byť tovar dodaný, je identifikovaná pre daň v členskom štáte, do\nktorého je tovar odoslaný alebo prepravený, a platiteľ podľa písmena a) pozná v čase začatia\nodoslania alebo prepravy tovaru jej obchodné meno a identifikačné číslo pre daň pridelené\ntýmto členským štátom,\nd) platiteľ uviedol premiestnenie tovaru v záznamoch podľa § 70 ods. 2 písm. g),\ne) platiteľ uviedol v súhrnnom výkaze podľa § 80 ods. 1 písm. e) identifikačné číslo pre daň\npridelené zdaniteľnej osobe, ktorá nadobudne tovar, členským štátom, do ktorého je tovar\nodoslaný alebo prepravený.\n(2) Ak sú splnené podmienky podľa odseku 1 a prevod práva nakladať s tovarom ako vlastník sa\nuskutoční v lehote podľa odseku 3, v čase prevodu práva nakladať s tovarom ako vlastník na\nzdaniteľnú osobu podľa odseku 1 písm. c) alebo odseku 5 platí, že dodanie tovaru oslobodené od\ndane podľa § 43 ods. 1 sa považuje za uskutočnené platiteľom, ktorý tovar odoslal alebo prepravil",
+            "page": 13
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

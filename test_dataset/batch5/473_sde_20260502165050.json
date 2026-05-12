@@ -1,0 +1,593 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zavislost Odseku 8 Pism A C D",
+        "type": "Podmienka",
+        "properties": {
+          "name": "zavislost odseku 8 pism a c d"
+        }
+      },
+      {
+        "id": "Sidl O Alebo Miesto Podnikania Na Uzemi Europskej Unie",
+        "type": "Podmienka",
+        "properties": {
+          "name": "sidl o alebo miesto podnikania na uzemi europskej unie"
+        }
+      },
+      {
+        "id": "Bezuhonnost Osoby A Jej Statutarneho Organu Alebo Clena Statutarneho Organu",
+        "type": "Podmienka",
+        "properties": {
+          "name": "bezuhonnost osoby a jej statutarneho organu alebo clena statutarneho organu"
+        }
+      },
+      {
+        "id": "Pravoplatne Odsudenie Za Umyselny Trestny Cin",
+        "type": "Dovod",
+        "properties": {
+          "name": "pravoplatne odsudenie za umyselny trestny cin"
+        }
+      },
+      {
+        "id": "Splnenie Podmienok Podla Odseku 2",
+        "type": "Podmienka",
+        "properties": {
+          "name": "splnenie podmienok podla odseku 2"
+        }
+      },
+      {
+        "id": "Opravnenie Poskytovat Dorucovaciu Sluzbu V Sulade S Podmienkami Europskeho Dorucovacieho Standardu",
+        "type": "Pravo",
+        "properties": {
+          "name": "opravnenie poskytovat dorucovaciu sluzbu v sulade s podmienkami europskeho dorucovacieho standardu"
+        }
+      },
+      {
+        "id": "Ziadost Podla Odseku 8",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost podla odseku 8"
+        }
+      },
+      {
+        "id": "Doklady Preukazujuce Splnenie Podmienok Podla Odseku 8 Pism A C A D",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklady preukazujuce splnenie podmienok podla odseku 8 pism a c a d"
+        }
+      },
+      {
+        "id": "Vypis Z Registra Trestov",
+        "type": "Doklad",
+        "properties": {
+          "name": "vypis z registra trestov"
+        }
+      },
+      {
+        "id": "In Y Rovnocenny Doklad Vypisu Z Registra Trestov",
+        "type": "Doklad",
+        "properties": {
+          "name": "in y rovnocenny doklad vypisu z registra trestov"
+        }
+      },
+      {
+        "id": "Prislusny Organ Clenskeho Statu",
+        "type": "Statnyorgan",
+        "properties": {
+          "name": "prislusny organ clenskeho statu"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Tri Mesiace",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "tri mesiace"
+        }
+      },
+      {
+        "id": "Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+          "page": 117
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zavislost Odseku 8 Pism A C D",
+          "type": "Podmienka",
+          "properties": {
+            "name": "zavislost odseku 8 pism a c d"
+          }
+        },
+        "target": {
+          "id": "Sidl O Alebo Miesto Podnikania Na Uzemi Europskej Unie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "sidl o alebo miesto podnikania na uzemi europskej unie"
+          }
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zavislost Odseku 8 Pism A C D",
+          "type": "Podmienka",
+          "properties": {
+            "name": "zavislost odseku 8 pism a c d"
+          }
+        },
+        "target": {
+          "id": "Bezuhonnost Osoby A Jej Statutarneho Organu Alebo Clena Statutarneho Organu",
+          "type": "Podmienka",
+          "properties": {
+            "name": "bezuhonnost osoby a jej statutarneho organu alebo clena statutarneho organu"
+          }
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zavislost Odseku 8 Pism A C D",
+          "type": "Podmienka",
+          "properties": {
+            "name": "zavislost odseku 8 pism a c d"
+          }
+        },
+        "target": {
+          "id": "Splnenie Podmienok Podla Odseku 2",
+          "type": "Podmienka",
+          "properties": {
+            "name": "splnenie podmienok podla odseku 2"
+          }
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Bezuhonnost Osoby A Jej Statutarneho Organu Alebo Clena Statutarneho Organu",
+          "type": "Podmienka",
+          "properties": {
+            "name": "bezuhonnost osoby a jej statutarneho organu alebo clena statutarneho organu"
+          }
+        },
+        "target": {
+          "id": "Pravoplatne Odsudenie Za Umyselny Trestny Cin",
+          "type": "Dovod",
+          "properties": {
+            "name": "pravoplatne odsudenie za umyselny trestny cin"
+          }
+        },
+        "type": "NEPLATI_PRE",
+        "properties": {
+          "add": "za bezuhonneho sa nepovazuje",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklady Preukazujuce Splnenie Podmienok Podla Odseku 8 Pism A C A D",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklady preukazujuce splnenie podmienok podla odseku 8 pism a c a d"
+          }
+        },
+        "target": {
+          "id": "Ziadost Podla Odseku 8",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost podla odseku 8"
+          }
+        },
+        "type": "PREDKLADA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vypis Z Registra Trestov",
+          "type": "Doklad",
+          "properties": {
+            "name": "vypis z registra trestov"
+          }
+        },
+        "target": {
+          "id": "Tri Mesiace",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri mesiace"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "nie starsi ako",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "In Y Rovnocenny Doklad Vypisu Z Registra Trestov",
+          "type": "Doklad",
+          "properties": {
+            "name": "in y rovnocenny doklad vypisu z registra trestov"
+          }
+        },
+        "target": {
+          "id": "Prislusny Organ Clenskeho Statu",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "prislusny organ clenskeho statu"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prislusny Organ Clenskeho Statu",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "prislusny organ clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "type": "SPADA_POD",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Ziadost Podla Odseku 8",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost podla odseku 8"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zavislost Odseku 8 Pism A C D",
+          "type": "Podmienka",
+          "properties": {
+            "name": "zavislost odseku 8 pism a c d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidl O Alebo Miesto Podnikania Na Uzemi Europskej Unie",
+          "type": "Podmienka",
+          "properties": {
+            "name": "sidl o alebo miesto podnikania na uzemi europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bezuhonnost Osoby A Jej Statutarneho Organu Alebo Clena Statutarneho Organu",
+          "type": "Podmienka",
+          "properties": {
+            "name": "bezuhonnost osoby a jej statutarneho organu alebo clena statutarneho organu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravoplatne Odsudenie Za Umyselny Trestny Cin",
+          "type": "Dovod",
+          "properties": {
+            "name": "pravoplatne odsudenie za umyselny trestny cin"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Splnenie Podmienok Podla Odseku 2",
+          "type": "Podmienka",
+          "properties": {
+            "name": "splnenie podmienok podla odseku 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Opravnenie Poskytovat Dorucovaciu Sluzbu V Sulade S Podmienkami Europskeho Dorucovacieho Standardu",
+          "type": "Pravo",
+          "properties": {
+            "name": "opravnenie poskytovat dorucovaciu sluzbu v sulade s podmienkami europskeho dorucovacieho standardu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost Podla Odseku 8",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost podla odseku 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklady Preukazujuce Splnenie Podmienok Podla Odseku 8 Pism A C A D",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklady preukazujuce splnenie podmienok podla odseku 8 pism a c a d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vypis Z Registra Trestov",
+          "type": "Doklad",
+          "properties": {
+            "name": "vypis z registra trestov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "In Y Rovnocenny Doklad Vypisu Z Registra Trestov",
+          "type": "Doklad",
+          "properties": {
+            "name": "in y rovnocenny doklad vypisu z registra trestov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Organ Clenskeho Statu",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "prislusny organ clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tri Mesiace",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri mesiace"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ak\na) má sídlo alebo miesto podnikania na území Európskej únie,\nb) je bezúhonná a jej štatutárny orgán alebo člen štatutárneho orgánu je bezúhonný; za\nbezúhonného sa na účely tohto zákona nepovažuje ten, kto bol právoplatne odsúdený za\númyselný trestný čin,\nc) preukáže splnenie podmienok podľa odseku 2,\nd) preukáže oprávnenie poskytovať doručovaciu službu v súlade s podmienkami európskeho\ndoručovacieho štandardu a s použitím nástrojov a postupov podľa tohto štandardu.\n(9) Súčasťou žiadosti podľa odseku 8 sú doklady preukazujúce splnenie podmienok podľa\nodseku 8 písm. a), c) a d). Na účel preukázania bezúhonnosti podľa odseku 8 písm. b) poskytne\nosoba\na) výpis z registra trestov29aad) nie starší ako tri mesiace,\nb) iný rovnocenný doklad výpisu z registra trestov vydaný príslušným orgánom členského štátu,\nv ktorom má táto osoba sídlo alebo miesto podnikania, ak ide o zahraničnú osobu.\n(10) Ak osoba, ktorá podala žiadosť podľa odseku 8, nespĺňa podmienky podľa odseku 8,",
+            "page": 117
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

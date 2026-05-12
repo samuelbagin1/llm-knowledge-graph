@@ -1,0 +1,397 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "§ 4A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4a"
+        }
+      },
+      {
+        "id": "Zmena Registracie Skupiny",
+        "type": "Registracia",
+        "properties": {
+          "name": "zmena registracie skupiny"
+        }
+      },
+      {
+        "id": "Zastupca Skupiny",
+        "type": "Zastupca",
+        "properties": {
+          "name": "zastupca skupiny"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "daňový úrad"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdaniteľná osoba"
+        }
+      },
+      {
+        "id": "Skupina",
+        "type": "Skupina",
+        "properties": {
+          "name": "skupiny"
+        }
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {
+          "name": "člen skupiny"
+        }
+      },
+      {
+        "id": "Prislusny Kalendarny Mesiac",
+        "type": "Obdobie",
+        "properties": {
+          "name": "príslušný kalendárny mesiac"
+        }
+      },
+      {
+        "id": "Prvy Den Tretieho Kalendarneho Mesiaca",
+        "type": "Datum",
+        "properties": {
+          "name": "prvý deň tretieho kalendárneho mesiaca"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+          "page": 6
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "§ 4A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4a"
+          }
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "add": "podmienky pre vstup do skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zastupca Skupiny",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zastupca skupiny"
+          }
+        },
+        "target": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie skupiny"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "ziadost o zmenu registracie skupiny z dovodu pristupenia dalsieho clena",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie skupiny"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "vydanie rozhodnutia o zmene registracie skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie skupiny"
+          }
+        },
+        "target": {
+          "id": "Prvy Den Tretieho Kalendarneho Mesiaca",
+          "type": "Datum",
+          "properties": {
+            "name": "prvý deň tretieho kalendárneho mesiaca"
+          }
+        },
+        "type": "NASTAVA_PRI",
+        "properties": {
+          "add": "po kalendarnom mesiaci, v ktorom bola ziadost podana",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupiny"
+          }
+        },
+        "type": "PRECHADZA_NA",
+        "properties": {
+          "add": "prava a povinnosti vyplivajuce z tohto zakona",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "člen skupiny"
+          }
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupiny"
+          }
+        },
+        "type": "JE_CLENOM",
+        "properties": {
+          "add": "clen skupiny ktory pristupil do skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 4A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zastupca Skupiny",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zastupca skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "člen skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Kalendarny Mesiac",
+          "type": "Obdobie",
+          "properties": {
+            "name": "príslušný kalendárny mesiac"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvy Den Tretieho Kalendarneho Mesiaca",
+          "type": "Datum",
+          "properties": {
+            "name": "prvý deň tretieho kalendárneho mesiaca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 7\npredpisu33) od ktoréhokoľvek člena skupiny.\n(5) Členom skupiny sa môže stať aj ďalšia zdaniteľná osoba, ak spĺňa podmienky podľa § 4a.\nŽiadosť o zmenu registrácie skupiny z dôvodu pristúpenia ďalšieho člena do skupiny podáva\nzástupca skupiny. Ak zdaniteľná osoba spĺňa podmienky podľa § 4a, daňový úrad vydá\nbezodkladne rozhodnutie o zmene registrácie skupiny, proti ktorému nemožno podať odvolanie;\núčinky zmeny registrácie skupiny nastávajú k prvému dňu tretieho kalendárneho mesiaca\nnasledujúceho po kalendárnom mesiaci, v ktorom bola žiadosť o zmenu registrácie skupiny\npodaná. Platnosť identifikačného čísla pre daň člena skupiny, ktorý pristúpil do skupiny, zaniká\ndňom, ktorý predchádza dňu, keď nastali účinky zmeny registrácie skupiny. Práva a povinnosti\nzdaniteľnej osoby, ktorá pristúpila do skupiny, vyplývajúce z tohto zákona prechádzajú na\nskupinu dňom, keď nastali účinky zmeny registrácie skupiny.",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

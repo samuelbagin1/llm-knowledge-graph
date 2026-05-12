@@ -1,0 +1,684 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Pismeno C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "c"
+        }
+      },
+      {
+        "id": "Pismeno H",
+        "type": "Pismeno",
+        "properties": {
+          "name": "h"
+        }
+      },
+      {
+        "id": "Pismeno A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "a"
+        }
+      },
+      {
+        "id": "Pismeno E",
+        "type": "Pismeno",
+        "properties": {
+          "name": "e"
+        }
+      },
+      {
+        "id": "Odsek 10",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 10"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Ziadost O Registraciu Pre Dan",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o registraciu pre dan"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia pre dan"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Rozhodnutie O Registracii Pre Dan",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie o registracii pre dan"
+        }
+      },
+      {
+        "id": "Desaet Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "desat dni"
+        }
+      },
+      {
+        "id": "Den Dorucenia Ziadosti O Registraciu Pre Dan",
+        "type": "Datum",
+        "properties": {
+          "name": "den dorucenia ziadosti o registraciu pre dan"
+        }
+      },
+      {
+        "id": "Prvy Den Kalendarneho Roka Nasledujuceho Po Kalendarnom Roku",
+        "type": "Datum",
+        "properties": {
+          "name": "prvy den kalendarneho roka nasledujuceho po kalendarnom roku"
+        }
+      },
+      {
+        "id": "Obrat",
+        "type": "Obrat",
+        "properties": {
+          "name": "obrat"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Sidlom V Tuzemsku",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sidlom v tuzemsku"
+        }
+      },
+      {
+        "id": "Doklady Osvedcujuce Tuto Skutocnost",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklady osvedcujuce tuto skutocnost"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+          "page": 2
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "Desaet Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desat dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "najneskor do desiatich dni odo dna dorucenia ziadosti o registraciu pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "Den Dorucenia Ziadosti O Registraciu Pre Dan",
+          "type": "Datum",
+          "properties": {
+            "name": "den dorucenia ziadosti o registraciu pre dan"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "odo dna dorucenia ziadosti o registraciu pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "Prvy Den Kalendarneho Roka Nasledujuceho Po Kalendarnom Roku",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den kalendarneho roka nasledujuceho po kalendarnom roku"
+          }
+        },
+        "type": "NADOBUDA",
+        "properties": {
+          "add": "platnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prvy Den Kalendarneho Roka Nasledujuceho Po Kalendarnom Roku",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den kalendarneho roka nasledujuceho po kalendarnom roku"
+          }
+        },
+        "target": {
+          "id": "Obrat",
+          "type": "Obrat",
+          "properties": {
+            "name": "obrat"
+          }
+        },
+        "type": "NASTAVA_PRI",
+        "properties": {
+          "add": "ak bol presiahnuty obrat podla odseku 1 pism. a)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obrat",
+          "type": "Obrat",
+          "properties": {
+            "name": "obrat"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "pism. a)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno H",
+          "type": "Pismeno",
+          "properties": {
+            "name": "h"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno E",
+          "type": "Pismeno",
+          "properties": {
+            "name": "e"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desaet Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desat dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Dorucenia Ziadosti O Registraciu Pre Dan",
+          "type": "Datum",
+          "properties": {
+            "name": "den dorucenia ziadosti o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvy Den Kalendarneho Roka Nasledujuceho Po Kalendarnom Roku",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den kalendarneho roka nasledujuceho po kalendarnom roku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obrat",
+          "type": "Obrat",
+          "properties": {
+            "name": "obrat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlom V Tuzemsku",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidlom v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklady Osvedcujuce Tuto Skutocnost",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklady osvedcujuce tuto skutocnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "platiteľom podľa odseku 1 písm. c) až h), je platiteľ povinný predložiť doklady osvedčujúce túto\nskutočnosť; ak sa táto skutočnosť nezapisuje do obchodného registra a platiteľ podľa odseku 1\npísm. c) až e) nemá v tuzemsku sídlo, doklady musia byť úradne overené.\n(4) Ak nie je v odseku 10 písm. a) ustanovené inak, daňový úrad zaregistruje\na) zdaniteľnú osobu, ktorá bola povinná podať žiadosť o registráciu pre daň podľa odseku 2 písm.\na), pridelí jej identifikačné číslo pre daň a vydá rozhodnutie o registrácii pre daň najneskôr do\ndesiatich dní odo dňa doručenia žiadosti o registráciu pre daň, pričom identifikačné číslo pre\ndaň nadobúda platnosť\n1. prvým dňom kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom bol\npresiahnutý obrat podľa odseku 1 písm. a), ak nie je v druhom až štvrtom bode alebo\nv odseku 11 ustanovené inak,",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

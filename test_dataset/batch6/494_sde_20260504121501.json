@@ -1,0 +1,439 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Kontrolny Vykaz",
+        "type": "Doklad",
+        "properties": {
+          "name": "kontrolny vykaz"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Lehota Podla Odseku 1",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehota podla odseku 1"
+        }
+      },
+      {
+        "id": "Piatich Pracovnych Dni Od Dorucenia Vyzvy",
+        "type": "Lehota",
+        "properties": {
+          "name": "piatich pracovnych dni od dorucenia vyzvy"
+        }
+      },
+      {
+        "id": "Registračna Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "registračna povinnost"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Vyzva",
+        "type": "Vyzva",
+        "properties": {
+          "name": "vyzva"
+        }
+      },
+      {
+        "id": "Pochybnosti O Spravnosti, Pravdivosti Alebo Uplnosti Podaneho Kontrolneho Vykazu Alebo O Pravdivosti Udajov V Nom Uvedenych",
+        "type": "Dovod",
+        "properties": {
+          "name": "pochybnosti o spravnosti, pravdivosti alebo uplnosti podaneho kontrolneho vykazu alebo o pravdivosti udajov v nom uvedenych"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+          "page": 122
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "type": "VYZIVA",
+        "properties": {
+          "add": "podanie kontrolneho vykazu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "pochybnosti o spravnosti, pravdivosti alebo uplnosti podaneho kontrolneho vykazu alebo o pravdivosti udajov v nom uvedenych",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Vyzva",
+          "type": "Vyzva",
+          "properties": {
+            "name": "vyzva"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "vyjadrit sa, doplnit neuplne udaje, vysvetlit nejasnosti, opravit nepravdive udaje alebo preukazat pravdivost udajov riadne",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Lehota Podla Odseku 1",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota podla odseku 1"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "podat kontrolny vykaz v lehote",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Piatich Pracovnych Dni Od Dorucenia Vyzvy",
+          "type": "Lehota",
+          "properties": {
+            "name": "piatich pracovnych dni od dorucenia vyzvy"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "odstranit nedostatky podaneho kontrolneho vykazu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "podat kontrolny vykaz za kazde obdobie po nesplneni registracnej povinnosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kontrolny Vykaz",
+          "type": "Doklad",
+          "properties": {
+            "name": "kontrolny vykaz"
+          }
+        },
+        "target": {
+          "id": "Lehota Podla Odseku 1",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota podla odseku 1"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "podanie kontrolneho vykazu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kontrolny Vykaz",
+          "type": "Doklad",
+          "properties": {
+            "name": "kontrolny vykaz"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "type": "DORUCUJE",
+        "properties": {
+          "add": "doručenie kontrolneho vykazu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kontrolny Vykaz",
+          "type": "Doklad",
+          "properties": {
+            "name": "kontrolny vykaz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehota Podla Odseku 1",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota podla odseku 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Piatich Pracovnych Dni Od Dorucenia Vyzvy",
+          "type": "Lehota",
+          "properties": {
+            "name": "piatich pracovnych dni od dorucenia vyzvy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registračna Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "registračna povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyzva",
+          "type": "Vyzva",
+          "properties": {
+            "name": "vyzva"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pochybnosti O Spravnosti, Pravdivosti Alebo Uplnosti Podaneho Kontrolneho Vykazu Alebo O Pravdivosti Udajov V Nom Uvedenych",
+          "type": "Dovod",
+          "properties": {
+            "name": "pochybnosti o spravnosti, pravdivosti alebo uplnosti podaneho kontrolneho vykazu alebo o pravdivosti udajov v nom uvedenych"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(13) Ak nebol kontrolný výkaz podaný v lehote podľa odseku 1, daňový úrad vyzve platiteľa na\njeho podanie. Ak vzniknú pochybnosti o správnosti, pravdivosti alebo úplnosti podaného\nkontrolného výkazu alebo o pravdivosti údajov v ňom uvedených, oznámi daňový úrad tieto\npochybnosti platiteľovi, ktorý kontrolný výkaz podal, a vyzve ho, aby sa k nim vyjadril, neúplné\núdaje doplnil, nejasnosti vysvetlil a nepravdivé údaje opravil alebo pravdivosť údajov riadne\npreukázal. Na základe tejto výzvy je platiteľ povinný do piatich pracovných dní od doručenia výzvy\nnedostatky podaného kontrolného výkazu odstrániť.\n(14) Platiteľ, ktorý nesplnil registračnú povinnosť, je povinný podať kontrolný výkaz za každé\nzdaňovacie obdobie, za ktoré v dôsledku nesplnenia tejto povinnosti nepodal kontrolný výkaz\nv lehote podľa odseku 1, v chronologickom poradí počnúc prvým zdaňovacím obdobím.\n(15) Ak platiteľ nedoručí kontrolný výkaz daňovému úradu, doručí kontrolný výkaz oneskorene,",
+            "page": 122
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

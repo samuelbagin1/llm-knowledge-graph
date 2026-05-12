@@ -1,0 +1,544 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Daneovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "daňový úrad"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdaniteľná osoba"
+        }
+      },
+      {
+        "id": "Sprostredkovatel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "sprostredkovateľ"
+        }
+      },
+      {
+        "id": "Oznamenie",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznámenie"
+        }
+      },
+      {
+        "id": "Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "činnosť"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Status",
+        "properties": {
+          "name": "osobitná úprava"
+        }
+      },
+      {
+        "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+        "type": "Podmienka",
+        "properties": {
+          "name": "podmienky na uplatňovanie osobitnej úpravy"
+        }
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 4"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 5"
+        }
+      },
+      {
+        "id": "Odsek 6",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 6"
+        }
+      },
+      {
+        "id": "Odsek 7 Pism A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "odsek 7 písm. a)"
+        }
+      },
+      {
+        "id": "Paragraf 68 Ods 1 Pism C",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68 ods. 1 písm. c)"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+          "page": 91
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "kazdu zmenu udajov v oznameni podla odseku 4, 5 alebo 6 oznamit danovemu uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "skoncenie cinnosti alebo zmenu cinnosti oznamit danovemu uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sprostredkovatel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "sprostredkovateľ"
+          }
+        },
+        "target": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "kazdu zmenu udajov v oznameni podla odseku 4, 5 alebo 6 oznamit danovemu uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sprostredkovatel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "sprostredkovateľ"
+          }
+        },
+        "target": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "skoncenie cinnosti alebo zmenu cinnosti oznamit danovemu uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daneovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "type": "ZRUSUJE",
+        "properties": {
+          "add": "zdanitelnej osobe bez zastupenia sprostredkovatelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daneovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Odsek 7 Pism A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "odsek 7 písm. a)"
+          }
+        },
+        "type": "ODNIMA",
+        "properties": {
+          "add": "identifikacne cislo pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienky na uplatňovanie osobitnej úpravy"
+          }
+        },
+        "target": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "činnosť"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "splynat podmienky na uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Paragraf 68 Ods 1 Pism C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68 ods. 1 písm. c)"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "cinnost podla § 68 ods. 1 písm. c)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daneovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sprostredkovatel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "sprostredkovateľ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznámenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "činnosť"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienky na uplatňovanie osobitnej úpravy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 6",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 7 Pism A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "odsek 7 písm. a)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 68 Ods 1 Pism C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68 ods. 1 písm. c)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "druhého kalendárneho roka nasledujúceho po kalendárnom roku, v ktorom začali uplatňovať\nosobitnú úpravu.\n(13) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu každú zmenu údajov v oznámení podľa odseku 4, 5 alebo odseku 6.\n(14) Zdaniteľná osoba podľa odseku 4 alebo sprostredkovateľ podľa odseku 5 sú povinní oznámiť\ndaňovému úradu skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebudú\nspĺňať podmienky na uplatňovanie osobitnej úpravy.\n(15) Daňový úrad zruší zdaniteľnej osobe, ktorá nie je zastúpená sprostredkovateľom, povolenie\nuplatňovať osobitnú úpravu a odníme identifikačné číslo pre daň podľa odseku 7 písm. a), ak\na) táto zdaniteľná osoba oznámi daňovému úradu, že prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. c),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo",
+            "page": 91
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

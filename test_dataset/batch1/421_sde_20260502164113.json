@@ -1,0 +1,712 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Sprostredkovatel",
+        "type": "Osoba",
+        "properties": {
+          "name": "sprostredkovatel"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Ina Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "ina osoba"
+        }
+      },
+      {
+        "id": "Ineho Platitela",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "ineho platitela"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "§ 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4"
+        }
+      },
+      {
+        "id": "§ 4B",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4b"
+        }
+      },
+      {
+        "id": "§ 4C",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4c"
+        }
+      },
+      {
+        "id": "§ 5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 5"
+        }
+      },
+      {
+        "id": "Sprostredkovatelska Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sprostredkovatelska sluzba"
+        }
+      },
+      {
+        "id": "Kovovy Odpad A Kovovy Skrot",
+        "type": "Tovar",
+        "properties": {
+          "name": "kovovy odpad a kovovy skrot"
+        }
+      },
+      {
+        "id": "Kovovy Odpad",
+        "type": "Tovar",
+        "properties": {
+          "name": "kovovy odpad"
+        }
+      },
+      {
+        "id": "Kovovy Skrot",
+        "type": "Tovar",
+        "properties": {
+          "name": "kovovy skrot"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+          "page": 103
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Sprostredkovatel",
+          "type": "Osoba",
+          "properties": {
+            "name": "sprostredkovatel"
+          }
+        },
+        "target": {
+          "id": "Ina Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "ina osoba"
+          }
+        },
+        "type": "KONA_V_MENE",
+        "properties": {
+          "add": "na ucet inej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "pri splneni podmienok v texte",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "MA_IDENTIFIKACNE_CISLO",
+        "properties": {
+          "add": "pre dan podla § 4, § 4b, § 4c alebo § 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "§ 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "alternativne ustanovenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "§ 4B",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4b"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "alternativne ustanovenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "§ 4C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4c"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "alternativne ustanovenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "§ 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "alternativne ustanovenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Sprostredkovatelska Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sprostredkovatelska sluzba"
+          }
+        },
+        "type": "JE_PRIJEMCOM",
+        "properties": {
+          "add": "sprostredkovatelskej sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "na dodanie kovoveho odpadu a kovoveho skrotu v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Kovovy Odpad A Kovovy Skrot",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy odpad a kovovy skrot"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dodanie v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kovovy Odpad A Kovovy Skrot",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy odpad a kovovy skrot"
+          }
+        },
+        "target": {
+          "id": "Kovovy Odpad",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy odpad"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "z vyroby alebo z mechanickeho opracovania kovov a kovove predmety dalej nepouzitelne",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kovovy Odpad A Kovovy Skrot",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy odpad a kovovy skrot"
+          }
+        },
+        "target": {
+          "id": "Kovovy Skrot",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy skrot"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "z vyroby alebo z mechanickeho opracovania kovov a kovove predmety dalej nepouzitelne",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kovovy Odpad A Kovovy Skrot",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy odpad a kovovy skrot"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "add": "dodanie v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sprostredkovatel",
+          "type": "Osoba",
+          "properties": {
+            "name": "sprostredkovatel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ina Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "ina osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ineho Platitela",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "ineho platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 4B",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 4C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sprostredkovatelska Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sprostredkovatelska sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kovovy Odpad A Kovovy Skrot",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy odpad a kovovy skrot"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kovovy Odpad",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy odpad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kovovy Skrot",
+          "type": "Tovar",
+          "properties": {
+            "name": "kovovy skrot"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "sprostredkuje sprostredkovateľ, ktorý koná v mene a na účet inej osoby, osobou povinnou platiť\ndaň je platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom sprostredkovateľskej služby.\n(12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\na) dodanie kovového odpadu a kovového šrotu v tuzemsku; kovovým odpadom a kovovým šrotom\nsa rozumie kovový odpad a kovový šrot z výroby alebo z mechanického opracovania kovov\na kovové predmety ďalej už nepoužiteľné vzhľadom na ich zlomenie, rozrezanie, opotrebenie\nalebo z podobných dôvodov,",
+            "page": 103
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

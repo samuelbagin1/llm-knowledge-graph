@@ -1,0 +1,944 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Odsek 16",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 16"
+        }
+      },
+      {
+        "id": "Odsek 17",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 17"
+        }
+      },
+      {
+        "id": "Odsek 18",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 18"
+        }
+      },
+      {
+        "id": "Odsek 19",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 19"
+        }
+      },
+      {
+        "id": "Prevadzkovatel Osobitneho Skladu",
+        "type": "Subjekt",
+        "properties": {
+          "name": "prevadzkovatel osobitneho skladu"
+        }
+      },
+      {
+        "id": "Zaznamy",
+        "type": "Zaznam",
+        "properties": {
+          "name": "zaznamy"
+        }
+      },
+      {
+        "id": "Desat Rokov",
+        "type": "Obdobie",
+        "properties": {
+          "name": "desat rokov"
+        }
+      },
+      {
+        "id": "Koniec Kalendarneho Roka",
+        "type": "Obdobie",
+        "properties": {
+          "name": "koniec kalendarneho roka"
+        }
+      },
+      {
+        "id": "Daňovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "daňovy urad"
+        }
+      },
+      {
+        "id": "Vyňatie Tovaru Z Osobitneho Skladu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "vyňatie tovaru z osobitneho skladu"
+        }
+      },
+      {
+        "id": "Osobitny Sklad",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "osobitny sklad"
+        }
+      },
+      {
+        "id": "Osoba Ktora Nesplnila Povinnosti Podla Odseku 16",
+        "type": "Subjekt",
+        "properties": {
+          "name": "osoba ktora nesplnila povinnosti podla odseku 16"
+        }
+      },
+      {
+        "id": "Povinnosti Podla Odseku 16",
+        "type": "Povinnost",
+        "properties": {
+          "name": "povinnosti podla odseku 16"
+        }
+      },
+      {
+        "id": "Daň Nezaplatená Osobou Ktora Sposobila Ze Sa Tovar Vyňal Z Osobitneho Skladu",
+        "type": "Dan",
+        "properties": {
+          "name": "daň nezaplatená osobou ktora sposobila ze sa tovar vyňal z osobitneho skladu"
+        }
+      },
+      {
+        "id": "Zabezpeka Na Daň",
+        "type": "Zabezpekanadan",
+        "properties": {
+          "name": "zabezpeka na daň"
+        }
+      },
+      {
+        "id": "Odsek 7",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 7"
+        }
+      },
+      {
+        "id": "Suma",
+        "type": "Suma",
+        "properties": {
+          "name": "suma"
+        }
+      },
+      {
+        "id": "Hodnota Vyňateho Tovaru",
+        "type": "Hodnota",
+        "properties": {
+          "name": "hodnota vyňateho tovaru"
+        }
+      },
+      {
+        "id": "Daň",
+        "type": "Dan",
+        "properties": {
+          "name": "daň"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+          "page": 54
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Odsek 16",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 16"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Odsek 17",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 17"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Odsek 18",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 18"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Odsek 19",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 19"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaznamy",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy"
+          }
+        },
+        "target": {
+          "id": "Odsek 17",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 17"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaznamy",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy"
+          }
+        },
+        "target": {
+          "id": "Desat Rokov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "desat rokov"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaznamy",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy"
+          }
+        },
+        "target": {
+          "id": "Koniec Kalendarneho Roka",
+          "type": "Obdobie",
+          "properties": {
+            "name": "koniec kalendarneho roka"
+          }
+        },
+        "type": "PLATI_OD",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaznamy",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy"
+          }
+        },
+        "target": {
+          "id": "Daňovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňovy urad"
+          }
+        },
+        "type": "PREDKLADA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevadzkovatel Osobitneho Skladu",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prevadzkovatel osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Zaznamy",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uchovavat a predlozit na poziadanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevadzkovatel Osobitneho Skladu",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prevadzkovatel osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Povinnosti Podla Odseku 16",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnosti podla odseku 16"
+          }
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevadzkovatel Osobitneho Skladu",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prevadzkovatel osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Vyňatie Tovaru Z Osobitneho Skladu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyňatie tovaru z osobitneho skladu"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyňatie Tovaru Z Osobitneho Skladu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyňatie tovaru z osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Osobitny Sklad",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyňatie Tovaru Z Osobitneho Skladu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyňatie tovaru z osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Osoba Ktora Nesplnila Povinnosti Podla Odseku 16",
+          "type": "Subjekt",
+          "properties": {
+            "name": "osoba ktora nesplnila povinnosti podla odseku 16"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevadzkovatel Osobitneho Skladu",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prevadzkovatel osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Daň Nezaplatená Osobou Ktora Sposobila Ze Sa Tovar Vyňal Z Osobitneho Skladu",
+          "type": "Dan",
+          "properties": {
+            "name": "daň nezaplatená osobou ktora sposobila ze sa tovar vyňal z osobitneho skladu"
+          }
+        },
+        "type": "ZODPOVEDA_ZA",
+        "properties": {
+          "add": "spolocne a nerozdielne",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpeka Na Daň",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na daň"
+          }
+        },
+        "target": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpeka Na Daň",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na daň"
+          }
+        },
+        "target": {
+          "id": "Suma",
+          "type": "Suma",
+          "properties": {
+            "name": "suma"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "uhrada nezaplatenej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Suma",
+          "type": "Suma",
+          "properties": {
+            "name": "suma"
+          }
+        },
+        "target": {
+          "id": "Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "daň"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "nezaplatená",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "daň"
+          }
+        },
+        "target": {
+          "id": "Hodnota Vyňateho Tovaru",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota vyňateho tovaru"
+          }
+        },
+        "type": "MA_ZAKLAD_DANE",
+        "properties": {
+          "add": "ak nie je informacia o skutocnej predajnej cene",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 16",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 16"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 17",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 17"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 18",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 18"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 19",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 19"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkovatel Osobitneho Skladu",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prevadzkovatel osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaznamy",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zaznamy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desat Rokov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "desat rokov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Koniec Kalendarneho Roka",
+          "type": "Obdobie",
+          "properties": {
+            "name": "koniec kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "daňovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyňatie Tovaru Z Osobitneho Skladu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vyňatie tovaru z osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Sklad",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Ktora Nesplnila Povinnosti Podla Odseku 16",
+          "type": "Subjekt",
+          "properties": {
+            "name": "osoba ktora nesplnila povinnosti podla odseku 16"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnosti Podla Odseku 16",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnosti podla odseku 16"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daň Nezaplatená Osobou Ktora Sposobila Ze Sa Tovar Vyňal Z Osobitneho Skladu",
+          "type": "Dan",
+          "properties": {
+            "name": "daň nezaplatená osobou ktora sposobila ze sa tovar vyňal z osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zabezpeka Na Daň",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma",
+          "type": "Suma",
+          "properties": {
+            "name": "suma"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hodnota Vyňateho Tovaru",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota vyňateho tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 55\nodseku 16.\n(18) Záznamy podľa odseku 17 je prevádzkovateľ osobitného skladu povinný uchovávať desať\nrokov od konca kalendárneho roka, ktorého sa týkajú, a tieto na požiadanie predložiť daňovému\núradu.\n(19) Prevádzkovateľ osobitného skladu nesmie umožniť vyňatie tovaru z osobitného skladu\nosobe, ktorá nesplnila povinnosti podľa odseku 16. Ak prevádzkovateľ osobitného skladu umožní\nvyňatie tovaru z osobitného skladu osobe, ktorá nesplnila povinnosti podľa odseku 16, je spoločne\na nerozdielne zodpovedný za daň nezaplatenú osobou, ktorá spôsobila, že sa tovar vyňal\nz osobitného skladu. Zábezpeka na daň zložená podľa odseku 7 sa použije na úhradu nezaplatenej\ndane; použitie zábezpeky na daň daňový úrad písomne oznámi prevádzkovateľovi osobitného\nskladu. Ak prevádzkovateľ osobitného skladu nemá informáciu o sume, za ktorú bol tovar\nskutočne predaný, daň sa vypočíta zo základu dane, ktorým je hodnota vyňatého tovaru určená na",
+            "page": 54
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

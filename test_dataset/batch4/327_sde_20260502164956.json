@@ -1,0 +1,390 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Obchodnik",
+        "type": "Subjekt",
+        "properties": {
+          "name": "obchodnik"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Zakon",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Zaklad Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "zaklad dane"
+        }
+      },
+      {
+        "id": "Predajna Cena",
+        "type": "Suma",
+        "properties": {
+          "name": "predajna cena"
+        }
+      },
+      {
+        "id": "Kupna Cena",
+        "type": "Suma",
+        "properties": {
+          "name": "kupna cena"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+          "page": 81
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Obchodnik",
+          "type": "Subjekt",
+          "properties": {
+            "name": "obchodnik"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "APLIKUJE_SA_NA",
+        "properties": {
+          "add": "uplatnuje dan podla osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "osobitna uprava tohto zakona alebo zakona platneho v inom clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "iny clensky stat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "Predajna Cena",
+          "type": "Suma",
+          "properties": {
+            "name": "predajna cena"
+          }
+        },
+        "type": "VYPLNYVA_Z",
+        "properties": {
+          "add": "kladny rozdiel medzi predajnou cenou a kupnou cenou znízeny o dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "Kupna Cena",
+          "type": "Suma",
+          "properties": {
+            "name": "kupna cena"
+          }
+        },
+        "type": "VYPLNYVA_Z",
+        "properties": {
+          "add": "kladny rozdiel medzi predajnou cenou a kupnou cenou znízeny o dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "VYPLNYVA_Z",
+        "properties": {
+          "add": "znízeny o dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "predaj tovaru podla odseku 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obchodnik",
+          "type": "Subjekt",
+          "properties": {
+            "name": "obchodnik"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predajna Cena",
+          "type": "Suma",
+          "properties": {
+            "name": "predajna cena"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kupna Cena",
+          "type": "Suma",
+          "properties": {
+            "name": "kupna cena"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) iným obchodníkom, ktorý uplatňuje daň podľa osobitnej úpravy tohto zákona alebo zákona\nplatného v inom členskom štáte.\n(3) Základom dane pri predaji tovaru podľa odseku 2 je kladný rozdiel medzi predajnou cenou\na kúpnou cenou znížený o daň.",
+            "page": 81
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

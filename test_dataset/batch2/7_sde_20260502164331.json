@@ -1,0 +1,767 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "§ 2",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 2"
+        }
+      },
+      {
+        "id": "§ 68F",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68f"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Pismeno A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno a"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno b"
+        }
+      },
+      {
+        "id": "Pismeno C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno c"
+        }
+      },
+      {
+        "id": "Pismeno D",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno d"
+        }
+      },
+      {
+        "id": "Pismeno E",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno e"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevadzkaren"
+        }
+      },
+      {
+        "id": "Maly Podnik Zahranicnej Osoby",
+        "type": "Podnik",
+        "properties": {
+          "name": "maly podnik zahranicnej osoby"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodenie od dane"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Ziadost O Registraciu Pre Dan",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o registraciu pre dan"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia pre dan"
+        }
+      },
+      {
+        "id": "Lehoty Na Podanie Ziadosti O Registraciu Pre Dan",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehoty na podanie ziadosti o registraciu pre dan"
+        }
+      },
+      {
+        "id": "Obrat",
+        "type": "Obrat",
+        "properties": {
+          "name": "obrat"
+        }
+      },
+      {
+        "id": "Piatich Pracovnych Dni",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "piatich pracovnych dni"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+          "page": 2
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "§ 68F",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68f"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "type": "JE_CASTOU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "§ 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 2"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "predmet dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "type": "MA_PREVADZKAREN",
+        "properties": {
+          "add": "vyhradne v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "add": "podla § 68f ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "podat danovemu uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "Piatich Pracovnych Dni",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "piatich pracovnych dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "na podanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "danovemu uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "ak nejde o maly podnik zahranicnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68F",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68f"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno D",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno E",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno e"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Zahranicnej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik zahranicnej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehoty Na Podanie Ziadosti O Registraciu Pre Dan",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehoty na podanie ziadosti o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obrat",
+          "type": "Obrat",
+          "properties": {
+            "name": "obrat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Piatich Pracovnych Dni",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "piatich pracovnych dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku\nvýlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie\nod dane podľa § 68f ods. 2.\n(2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre\ndaň do piatich pracovných dní\na) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a),\nb) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať\nžiadosť o registráciu pre daň podľa písmena a),\nc) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat\npresiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie\nžiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a)\nnebola ešte podaná,\nd) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo\ne) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po",
+            "page": 2
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

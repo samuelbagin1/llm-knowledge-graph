@@ -1,0 +1,488 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "9",
+        "type": "Paragraf",
+        "properties": {
+          "name": "9"
+        }
+      },
+      {
+        "id": "Dodanie Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dodanie sluzby"
+        }
+      },
+      {
+        "id": "Prevod Prava K Nehmotnemu Majetku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prevod prava k nehmotnemu majetku"
+        }
+      },
+      {
+        "id": "Poskytnutie Prava K Priemyselnemu Vlastnictvu Alebo Inemu Dusevnemu Vlastnictvu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "poskytnutie prava k priemyselnemu vlastnictvu alebo inemu dusevnemu vlastnictvu"
+        }
+      },
+      {
+        "id": "Poskytnutie Prava Uzivat Hmotny Majetok",
+        "type": "Cinnost",
+        "properties": {
+          "name": "poskytnutie prava uzivat hmotny majetok"
+        }
+      },
+      {
+        "id": "Prijatie Zavazku Zdrzat Sa Konania Alebo Strpiet Konanie Alebo Stav",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prijatie zavazku zdrzat sa konania alebo strpiet konanie alebo stav"
+        }
+      },
+      {
+        "id": "Sluzba Dodana Na Zaklade Poverenia Alebo Rozhodnutia Vydaneho Statnym Organom Alebo Na Zaklade Zakona",
+        "type": "Cinnost",
+        "properties": {
+          "name": "sluzba dodana na zaklade poverenia alebo rozhodnutia vydaneho statnym organom alebo na zaklade zakona"
+        }
+      },
+      {
+        "id": "Užívanie Hmotného Majetku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Užívanie hmotného majetku"
+        }
+      },
+      {
+        "id": "§ 8",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 8"
+        }
+      },
+      {
+        "id": "Dodaním Služby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodaním služby"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+          "page": 14
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "9",
+          "type": "Paragraf",
+          "properties": {
+            "name": "9"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "upravuje dodanie sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Prevod Prava K Nehmotnemu Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod prava k nehmotnemu majetku"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "vratane poskytnutia prava k priemyselnemu vlastnictvu alebo inemu dusevnemu vlastnictvu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Poskytnutie Prava K Priemyselnemu Vlastnictvu Alebo Inemu Dusevnemu Vlastnictvu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "poskytnutie prava k priemyselnemu vlastnictvu alebo inemu dusevnemu vlastnictvu"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "vratane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Poskytnutie Prava Uzivat Hmotny Majetok",
+          "type": "Cinnost",
+          "properties": {
+            "name": "poskytnutie prava uzivat hmotny majetok"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "pismeno b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Prijatie Zavazku Zdrzat Sa Konania Alebo Strpiet Konanie Alebo Stav",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prijatie zavazku zdrzat sa konania alebo strpiet konanie alebo stav"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "pismeno c",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Sluzba Dodana Na Zaklade Poverenia Alebo Rozhodnutia Vydaneho Statnym Organom Alebo Na Zaklade Zakona",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzba dodana na zaklade poverenia alebo rozhodnutia vydaneho statnym organom alebo na zaklade zakona"
+          }
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "add": "pismeno d",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "Dodaním Služby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaním služby"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "podla § 8",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Dodaním Služby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaním služby"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "definicia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Užívanie Hmotného Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Užívanie hmotného majetku"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "odsek 2 nadvazuje na dodanie sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "9",
+          "type": "Paragraf",
+          "properties": {
+            "name": "9"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevod Prava K Nehmotnemu Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod prava k nehmotnemu majetku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Poskytnutie Prava K Priemyselnemu Vlastnictvu Alebo Inemu Dusevnemu Vlastnictvu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "poskytnutie prava k priemyselnemu vlastnictvu alebo inemu dusevnemu vlastnictvu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Poskytnutie Prava Uzivat Hmotny Majetok",
+          "type": "Cinnost",
+          "properties": {
+            "name": "poskytnutie prava uzivat hmotny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijatie Zavazku Zdrzat Sa Konania Alebo Strpiet Konanie Alebo Stav",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prijatie zavazku zdrzat sa konania alebo strpiet konanie alebo stav"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba Dodana Na Zaklade Poverenia Alebo Rozhodnutia Vydaneho Statnym Organom Alebo Na Zaklade Zakona",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzba dodana na zaklade poverenia alebo rozhodnutia vydaneho statnym organom alebo na zaklade zakona"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Užívanie Hmotného Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Užívanie hmotného majetku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodaním Služby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaním služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť\nbezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde\nk zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa\nprestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné\nurčiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba.\n§ 9\nDodanie služby\n(1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane\na) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu\nalebo inému duševnému vlastníctvu,\nb) poskytnutia práva užívať hmotný majetok,\nc) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav,\nd) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na\nzáklade zákona.\n(2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo",
+            "page": 14
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

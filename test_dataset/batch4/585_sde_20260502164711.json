@@ -1,0 +1,838 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Podnikanie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "podnikanie"
+        }
+      },
+      {
+        "id": "Dodanie Sluzby Za Protihodnotu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie sluzby za protihodnotu"
+        }
+      },
+      {
+        "id": "Ustanovenie Paragraf 49 Ods. 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 49 ods. 4"
+        }
+      },
+      {
+        "id": "Ustanovenie Paragraf 9 Ods. 3",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 9 ods. 3"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Osobne Motorove Vozidlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "osobne motorove vozidlo"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Cinnost",
+        "properties": {
+          "name": "sluzba"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Investicny Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "investicny majetok"
+        }
+      },
+      {
+        "id": "Ustanovenie Paragraf 54 Ods. 2 Pism. A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 54 ods. 2 pism. a"
+        }
+      },
+      {
+        "id": "Od 1. Januara 2026 Do 30. Juna 2028 Vratane",
+        "type": "Obdobie",
+        "properties": {
+          "name": "od 1. januara 2026 do 30. juna 2028 vratane"
+        }
+      },
+      {
+        "id": "50 percent",
+        "type": "Hodnota",
+        "properties": {
+          "name": "50 %"
+        }
+      },
+      {
+        "id": "Kratkodoby Najom Osobneho Motoroveho Vozidla",
+        "type": "Cinnost",
+        "properties": {
+          "name": "kratkodoby najom osobneho motoroveho vozidla"
+        }
+      },
+      {
+        "id": "Iný Ako Kratkodoby Najom Osobneho Motoroveho Vozidla",
+        "type": "Cinnost",
+        "properties": {
+          "name": "iný ako kratkodoby najom osobneho motoroveho vozidla"
+        }
+      },
+      {
+        "id": "Doprava Osob A Ich Batoziny Za Protihodnotu Vratane Taxisluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "doprava osob a ich batoziny za protihodnotu vratane taxisluzby"
+        }
+      },
+      {
+        "id": "Prevadzkovanie Autoskoly",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prevadzkovanie autoskoly"
+        }
+      },
+      {
+        "id": "Vykcvikove Vozidlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "vykcvikove vozidlo"
+        }
+      },
+      {
+        "id": "Ustanovenie Paragraf 54",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 54"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+          "page": 144
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzby Za Protihodnotu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby za protihodnotu"
+          }
+        },
+        "type": "NEPOVAZUJE_SA_ZA",
+        "properties": {
+          "add": "podnikanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "target": {
+          "id": "Ustanovenie Paragraf 9 Ods. 3",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 3"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "podnikanie sa nepovazuje za dodanie sluzby za protihodnotu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Od 1. Januara 2026 Do 30. Juna 2028 Vratane",
+          "type": "Obdobie",
+          "properties": {
+            "name": "od 1. januara 2026 do 30. juna 2028 vratane"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "odpoctat dan v rozsahu 50 % pri sluzbe alebo tovare suvisiacom s osobnym motorovym vozidlom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "50 percent",
+          "type": "Hodnota",
+          "properties": {
+            "name": "50 %"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "odpoctat dan v rozsahu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Sluzba",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "prijata v suvislosti s osobnym motorovym vozidlom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "nadobudnuty v suvislosti s osobnym motorovym vozidlom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "suvislost s osobnym motorovym vozidlom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "suvislost s osobnym motorovym vozidlom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "Investicny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "nie je investicnym majetkom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "target": {
+          "id": "Ustanovenie Paragraf 54 Ods. 2 Pism. A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 2 pism. a"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "definicia investicneho majetku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Kratkodoby Najom Osobneho Motoroveho Vozidla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "kratkodoby najom osobneho motoroveho vozidla"
+          }
+        },
+        "type": "NEPLATI_PRE",
+        "properties": {
+          "add": "odseky 1 az 3 sa neuplatnia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Iný Ako Kratkodoby Najom Osobneho Motoroveho Vozidla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "iný ako kratkodoby najom osobneho motoroveho vozidla"
+          }
+        },
+        "type": "NEPLATI_PRE",
+        "properties": {
+          "add": "odseky 1 az 3 sa neuplatnia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Doprava Osob A Ich Batoziny Za Protihodnotu Vratane Taxisluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "doprava osob a ich batoziny za protihodnotu vratane taxisluzby"
+          }
+        },
+        "type": "NEPLATI_PRE",
+        "properties": {
+          "add": "odseky 1 az 3 sa neuplatnia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Prevadzkovanie Autoskoly",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevadzkovanie autoskoly"
+          }
+        },
+        "type": "NEPLATI_PRE",
+        "properties": {
+          "add": "odseky 1 az 3 sa neuplatnia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevadzkovanie Autoskoly",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevadzkovanie autoskoly"
+          }
+        },
+        "target": {
+          "id": "Vykcvikove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "vykcvikove vozidlo"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "osobne motorove vozidlo je vykcvikovym vozidlom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby Za Protihodnotu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby za protihodnotu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ustanovenie Paragraf 49 Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 49 ods. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ustanovenie Paragraf 9 Ods. 3",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Cinnost",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ustanovenie Paragraf 54 Ods. 2 Pism. A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 2 pism. a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Od 1. Januara 2026 Do 30. Juna 2028 Vratane",
+          "type": "Obdobie",
+          "properties": {
+            "name": "od 1. januara 2026 do 30. juna 2028 vratane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "50 percent",
+          "type": "Hodnota",
+          "properties": {
+            "name": "50 %"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kratkodoby Najom Osobneho Motoroveho Vozidla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "kratkodoby najom osobneho motoroveho vozidla"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Iný Ako Kratkodoby Najom Osobneho Motoroveho Vozidla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "iný ako kratkodoby najom osobneho motoroveho vozidla"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doprava Osob A Ich Batoziny Za Protihodnotu Vratane Taxisluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "doprava osob a ich batoziny za protihodnotu vratane taxisluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkovanie Autoskoly",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevadzkovanie autoskoly"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vykcvikove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "vykcvikove vozidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ustanovenie Paragraf 54",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho\npodnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane\nprijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm.\na), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4\ntýmto nie je dotknuté.\n(4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na\nosobné motorové vozidlo, ktoré platiteľ\na) nadobudol alebo používa výlučne na podnikanie, ktorým je\n1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla,\n2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby,\n3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

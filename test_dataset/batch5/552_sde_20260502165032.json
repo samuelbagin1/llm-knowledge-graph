@@ -1,0 +1,582 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 Percenta",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "obdobie od 1 januara 2011 do posledneho dna kalendarneho roka v ktorom europska komisia eurostat uverejni udaje o tom ze aktualny schodok verejnej spravy slovenskej republiky je menej ako 3 percenta"
+        }
+      },
+      {
+        "id": "Zakladna Sadzba Dane Na Tovary A Sluzby 20 Percent",
+        "type": "Sadzbadane",
+        "properties": {
+          "name": "zakladna sadzba dane na tovary a sluzby 20 percent"
+        }
+      },
+      {
+        "id": "Ministerstvo Financii Slovenskej Republiky",
+        "type": "Ministerstvo",
+        "properties": {
+          "name": "ministerstvo financii slovenskej republiky"
+        }
+      },
+      {
+        "id": "Vseobecne Zavaznym Pravnym Predpisom",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "vseobecne zavaznym pravnym predpisom"
+        }
+      },
+      {
+        "id": "§ 54 Ods. 2 Písm. B) A C)",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 54 ods. 2 písm. b) a c)"
+        }
+      },
+      {
+        "id": "§ 9 Ods. 2",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 9 ods. 2"
+        }
+      },
+      {
+        "id": "Predpis Ucinny Do 31 Decembra 2010",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "predpis ucinny do 31 decembra 2010"
+        }
+      },
+      {
+        "id": "Investicny Majetok Uvedeny V § 54 Ods. 2 Pism. B) A C)",
+        "type": "Investicnymajetok",
+        "properties": {
+          "name": "investicny majetok uvedeny v § 54 ods. 2 pism. b) a c)"
+        }
+      },
+      {
+        "id": "Obdobie Rokov 2004 Az 2010",
+        "type": "Obdobie",
+        "properties": {
+          "name": "obdobie rokov 2004 az 2010"
+        }
+      },
+      {
+        "id": "Obdobie Na Upravu Dane Odpoctenej Pri Tomto Majetku Desat Rokov",
+        "type": "Obdobie",
+        "properties": {
+          "name": "obdobie na upravu dane odpoctenej pri tomto majetku desat rokov"
+        }
+      },
+      {
+        "id": "§ 54 Ods. 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 54 ods. 4"
+        }
+      },
+      {
+        "id": "Priloha C. 1",
+        "type": "Priloha",
+        "properties": {
+          "name": "priloha c. 1"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+          "page": 136
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 Percenta",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "obdobie od 1 januara 2011 do posledneho dna kalendarneho roka v ktorom europska komisia eurostat uverejni udaje o tom ze aktualny schodok verejnej spravy slovenskej republiky je menej ako 3 percenta"
+          }
+        },
+        "target": {
+          "id": "Zakladna Sadzba Dane Na Tovary A Sluzby 20 Percent",
+          "type": "Sadzbadane",
+          "properties": {
+            "name": "zakladna sadzba dane na tovary a sluzby 20 percent"
+          }
+        },
+        "type": "MA_SADZBU",
+        "properties": {
+          "add": "20 percent zo zakladu dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakladna Sadzba Dane Na Tovary A Sluzby 20 Percent",
+          "type": "Sadzbadane",
+          "properties": {
+            "name": "zakladna sadzba dane na tovary a sluzby 20 percent"
+          }
+        },
+        "target": {
+          "id": "Ministerstvo Financii Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "ministerstvo financii slovenskej republiky"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "skoncenie obdobia uplatnovania vyhlasi vseobecne zavaznym pravnym predpisom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Financii Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "ministerstvo financii slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Vseobecne Zavaznym Pravnym Predpisom",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "vseobecne zavaznym pravnym predpisom"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "vyhlasenie skoncenia obdobia uplatnovania zakladnej sadzby dane 20 percent",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predpis Ucinny Do 31 Decembra 2010",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "predpis ucinny do 31 decembra 2010"
+          }
+        },
+        "target": {
+          "id": "§ 54 Ods. 2 Písm. B) A C)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 2 písm. b) a c)"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predpis Ucinny Do 31 Decembra 2010",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "predpis ucinny do 31 decembra 2010"
+          }
+        },
+        "target": {
+          "id": "§ 9 Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 2"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok Uvedeny V § 54 Ods. 2 Pism. B) A C)",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok uvedeny v § 54 ods. 2 pism. b) a c)"
+          }
+        },
+        "target": {
+          "id": "§ 54 Ods. 2 Písm. B) A C)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 2 písm. b) a c)"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok Uvedeny V § 54 Ods. 2 Pism. B) A C)",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok uvedeny v § 54 ods. 2 pism. b) a c)"
+          }
+        },
+        "target": {
+          "id": "§ 9 Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 2"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ak bol platitel investicny majetok nadobudol alebo vytvoril do 31 decembra 2010",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok Uvedeny V § 54 Ods. 2 Pism. B) A C)",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok uvedeny v § 54 ods. 2 pism. b) a c)"
+          }
+        },
+        "target": {
+          "id": "Obdobie Rokov 2004 Az 2010",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie rokov 2004 az 2010"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "upravy odpoctanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Na Upravu Dane Odpoctenej Pri Tomto Majetku Desat Rokov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie na upravu dane odpoctenej pri tomto majetku desat rokov"
+          }
+        },
+        "target": {
+          "id": "§ 54 Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 4"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Na Upravu Dane Odpoctenej Pri Tomto Majetku Desat Rokov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie na upravu dane odpoctenej pri tomto majetku desat rokov"
+          }
+        },
+        "target": {
+          "id": "Predpis Ucinny Do 31 Decembra 2010",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "predpis ucinny do 31 decembra 2010"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "postup podla prilohy c. 1 pri kazdej zmene ucelu pouzitia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Na Upravu Dane Odpoctenej Pri Tomto Majetku Desat Rokov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie na upravu dane odpoctenej pri tomto majetku desat rokov"
+          }
+        },
+        "target": {
+          "id": "§ 54 Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 4"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "desat rokov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 Percenta",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "obdobie od 1 januara 2011 do posledneho dna kalendarneho roka v ktorom europska komisia eurostat uverejni udaje o tom ze aktualny schodok verejnej spravy slovenskej republiky je menej ako 3 percenta"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakladna Sadzba Dane Na Tovary A Sluzby 20 Percent",
+          "type": "Sadzbadane",
+          "properties": {
+            "name": "zakladna sadzba dane na tovary a sluzby 20 percent"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Financii Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "ministerstvo financii slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vseobecne Zavaznym Pravnym Predpisom",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "vseobecne zavaznym pravnym predpisom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 54 Ods. 2 Písm. B) A C)",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 2 písm. b) a c)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 9 Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 9 ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predpis Ucinny Do 31 Decembra 2010",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "predpis ucinny do 31 decembra 2010"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok Uvedeny V § 54 Ods. 2 Pism. B) A C)",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok uvedeny v § 54 ods. 2 pism. b) a c)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obdobie Rokov 2004 Az 2010",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie rokov 2004 az 2010"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obdobie Na Upravu Dane Odpoctenej Pri Tomto Majetku Desat Rokov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie na upravu dane odpoctenej pri tomto majetku desat rokov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 54 Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54 ods. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priloha C. 1",
+          "type": "Priloha",
+          "properties": {
+            "name": "priloha c. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska\nkomisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej\nrepubliky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane.\nSkončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo\nfinancií Slovenskej republiky všeobecne záväzným právnym predpisom.\n(2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do\n31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010.\n(3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom\nmajetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na\núpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do\n31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1\npredpisu účinného do 31. decembra 2010.",
+            "page": 136
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

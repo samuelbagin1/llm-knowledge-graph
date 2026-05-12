@@ -1,0 +1,852 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Kalendarnom Roku",
+        "type": "Obdobie",
+        "properties": {
+          "name": "kalendarnom roku"
+        }
+      },
+      {
+        "id": "Daňové Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "daňové priznanie"
+        }
+      },
+      {
+        "id": "Kontrolný Výkaz",
+        "type": "Doklad",
+        "properties": {
+          "name": "kontrolný výkaz"
+        }
+      },
+      {
+        "id": "Vlastná Daňová Povinnosť",
+        "type": "Povinnost",
+        "properties": {
+          "name": "vlastná daňová povinnosť"
+        }
+      },
+      {
+        "id": "Adresa Sídla",
+        "type": "Sidlo",
+        "properties": {
+          "name": "adresa sídla"
+        }
+      },
+      {
+        "id": "Miesta Podnikania",
+        "type": "Majetok",
+        "properties": {
+          "name": "miesta podnikania"
+        }
+      },
+      {
+        "id": "Adresa Prevádzkarne",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "adresa prevádzkarne"
+        }
+      },
+      {
+        "id": "Daňová Kontrola",
+        "type": "Konanie",
+        "properties": {
+          "name": "daňová kontrola"
+        }
+      },
+      {
+        "id": "Daňový Úrad",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňový úrad"
+        }
+      },
+      {
+        "id": "Zrušenie Registrácie Pre Daň",
+        "type": "Registracia",
+        "properties": {
+          "name": "zrušenie registrácie pre daň"
+        }
+      },
+      {
+        "id": "Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie"
+        }
+      },
+      {
+        "id": "Právnická Osoba",
+        "type": "Pravnickaosoba",
+        "properties": {
+          "name": "právnická osoba"
+        }
+      },
+      {
+        "id": "Fyzická Osoba",
+        "type": "Fyzickaosoba",
+        "properties": {
+          "name": "fyzická osoba"
+        }
+      },
+      {
+        "id": "Platiteľ",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platiteľ"
+        }
+      },
+      {
+        "id": "Deň",
+        "type": "Datum",
+        "properties": {
+          "name": "deň"
+        }
+      },
+      {
+        "id": "Zánik",
+        "type": "Zaznam",
+        "properties": {
+          "name": "zánik"
+        }
+      },
+      {
+        "id": "Prebiehajúce Zdaňovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "prebiehajúce zdaňovacie obdobie"
+        }
+      },
+      {
+        "id": "Identifikačné Číslo Pre Daň",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikačné číslo pre daň"
+        }
+      },
+      {
+        "id": "Osobitná Úprava Podľa § 68B",
+        "type": "Pravo",
+        "properties": {
+          "name": "osobitná úprava podľa § 68b"
+        }
+      },
+      {
+        "id": "§ 68B",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68b"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+          "page": 127
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Kalendarnom Roku",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarnom roku"
+          }
+        },
+        "target": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "nesplni povinnost podat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kalendarnom Roku",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarnom roku"
+          }
+        },
+        "target": {
+          "id": "Kontrolný Výkaz",
+          "type": "Doklad",
+          "properties": {
+            "name": "kontrolný výkaz"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "nesplni povinnost podat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kalendarnom Roku",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarnom roku"
+          }
+        },
+        "target": {
+          "id": "Vlastná Daňová Povinnosť",
+          "type": "Povinnost",
+          "properties": {
+            "name": "vlastná daňová povinnosť"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "nezaplati",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňový Úrad",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "o zruseni registracie pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "Deň",
+          "type": "Datum",
+          "properties": {
+            "name": "deň"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "uplynutim ktoreho pravnicka osoba alebo fyzicka osoba prestava byt platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Právnická Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "právnická osoba"
+          }
+        },
+        "target": {
+          "id": "Platiteľ",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "type": "STAVA_SA",
+        "properties": {
+          "add": "prestava byt platitelom uplynutim dna",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Fyzická Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "fyzická osoba"
+          }
+        },
+        "target": {
+          "id": "Platiteľ",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "type": "STAVA_SA",
+        "properties": {
+          "add": "prestava byt platitelom uplynutim dna",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Právnická Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "právnická osoba"
+          }
+        },
+        "target": {
+          "id": "Platiteľ",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "ak sa zrusuje bez likvidacie, dnom zániku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Deň",
+          "type": "Datum",
+          "properties": {
+            "name": "deň"
+          }
+        },
+        "target": {
+          "id": "Prebiehajúce Zdaňovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "prebiehajúce zdaňovacie obdobie"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "konci uplynutim dna ked prestava byt platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Deň",
+          "type": "Datum",
+          "properties": {
+            "name": "deň"
+          }
+        },
+        "target": {
+          "id": "Identifikačné Číslo Pre Daň",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikačné číslo pre daň"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "zanik platnosti uplynutim dna ked prestava byt platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitná Úprava Podľa § 68B",
+          "type": "Pravo",
+          "properties": {
+            "name": "osobitná úprava podľa § 68b"
+          }
+        },
+        "target": {
+          "id": "§ 68B",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68b"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Právnická Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "právnická osoba"
+          }
+        },
+        "target": {
+          "id": "Osobitná Úprava Podľa § 68B",
+          "type": "Pravo",
+          "properties": {
+            "name": "osobitná úprava podľa § 68b"
+          }
+        },
+        "type": "APLIKUJE_SA_NA",
+        "properties": {
+          "add": "platnost identifikacneho cisla pre dan na ucely uplatnovania tejto osobitnej upravy nezanika",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Fyzická Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "fyzická osoba"
+          }
+        },
+        "target": {
+          "id": "Osobitná Úprava Podľa § 68B",
+          "type": "Pravo",
+          "properties": {
+            "name": "osobitná úprava podľa § 68b"
+          }
+        },
+        "type": "APLIKUJE_SA_NA",
+        "properties": {
+          "add": "platnost identifikacneho cisla pre dan na ucely uplatnovania tejto osobitnej upravy nezanika",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kalendarnom Roku",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarnom roku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kontrolný Výkaz",
+          "type": "Doklad",
+          "properties": {
+            "name": "kontrolný výkaz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vlastná Daňová Povinnosť",
+          "type": "Povinnost",
+          "properties": {
+            "name": "vlastná daňová povinnosť"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Adresa Sídla",
+          "type": "Sidlo",
+          "properties": {
+            "name": "adresa sídla"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesta Podnikania",
+          "type": "Majetok",
+          "properties": {
+            "name": "miesta podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Adresa Prevádzkarne",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "adresa prevádzkarne"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňová Kontrola",
+          "type": "Konanie",
+          "properties": {
+            "name": "daňová kontrola"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňový Úrad",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zrušenie Registrácie Pre Daň",
+          "type": "Registracia",
+          "properties": {
+            "name": "zrušenie registrácie pre daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Právnická Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "právnická osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Fyzická Osoba",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "fyzická osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platiteľ",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Deň",
+          "type": "Datum",
+          "properties": {
+            "name": "deň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zánik",
+          "type": "Zaznam",
+          "properties": {
+            "name": "zánik"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prebiehajúce Zdaňovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "prebiehajúce zdaňovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikačné Číslo Pre Daň",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikačné číslo pre daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitná Úprava Podľa § 68B",
+          "type": "Pravo",
+          "properties": {
+            "name": "osobitná úprava podľa § 68b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 68B",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "2. opakovane v kalendárnom roku nesplní povinnosť podať daňové priznanie alebo kontrolný\nvýkaz, opakovane v kalendárnom roku nezaplatí vlastnú daňovú povinnosť, opakovane nie je\nzastihnuteľný na adrese sídla, miesta podnikania a ani na adrese prevádzkarne alebo\nopakovane porušuje povinnosti pri daňovej kontrole.\n(4) Daňový úrad o zrušení registrácie pre daň vydá rozhodnutie, v ktorom určí deň, uplynutím\nktorého právnická osoba alebo fyzická osoba prestáva byť platiteľom; proti tomuto rozhodnutiu nie\nje možné podať odvolanie. Ak sa právnická osoba zrušuje bez likvidácie, daňový úrad rozhodnutie\nnevydá a právnická osoba prestáva byť platiteľom dňom jej zániku. Uplynutím dňa, kedy\nprávnická osoba alebo fyzická osoba prestáva byť platiteľom, končí prebiehajúce zdaňovacie\nobdobie a zaniká platnosť identifikačného čísla pre daň; ak právnická osoba alebo fyzická osoba\nuplatňuje osobitnú úpravu podľa § 68b, platnosť identifikačného čísla pre daň na účely\nuplatňovania tejto osobitnej úpravy nezaniká.",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,1011 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon"
+        }
+      },
+      {
+        "id": "Odsek 11",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 11"
+        }
+      },
+      {
+        "id": "Odsek 12",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 12"
+        }
+      },
+      {
+        "id": "Pismeno A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "a"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "b"
+        }
+      },
+      {
+        "id": "Pismeno C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "c"
+        }
+      },
+      {
+        "id": "Pismeno A Odsek 12",
+        "type": "Pismeno",
+        "properties": {
+          "name": "a"
+        }
+      },
+      {
+        "id": "Plavidlo",
+        "type": "Tovar",
+        "properties": {
+          "name": "plavidlo"
+        }
+      },
+      {
+        "id": "Lietadlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "lietadlo"
+        }
+      },
+      {
+        "id": "Pozemne Motorove Vozidlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "pozemne motorove vozidlo"
+        }
+      },
+      {
+        "id": "Namerna Lod",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "namorna lod"
+        }
+      },
+      {
+        "id": "Dane Oslobodenie Podla Paragrafu 47 Odseku 8",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodenie od dane"
+        }
+      },
+      {
+        "id": "Dane Oslobodenie Podla Paragrafu 47 Odseku 10",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodenie od dane"
+        }
+      },
+      {
+        "id": "7,2 kW",
+        "type": "Hodnota",
+        "properties": {
+          "name": "7,2 kW"
+        }
+      },
+      {
+        "id": "7,5 m",
+        "type": "Hodnota",
+        "properties": {
+          "name": "7,5 m"
+        }
+      },
+      {
+        "id": "1 550 kg",
+        "type": "Hodnota",
+        "properties": {
+          "name": "1 550 kg"
+        }
+      },
+      {
+        "id": "6 000 km",
+        "type": "Hodnota",
+        "properties": {
+          "name": "6 000 km"
+        }
+      },
+      {
+        "id": "100 hodin",
+        "type": "Hodnota",
+        "properties": {
+          "name": "100 hodin"
+        }
+      },
+      {
+        "id": "Sest Mesiacov",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "sest mesiacov"
+        }
+      },
+      {
+        "id": "Tri Mesiace",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "tri mesiace"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+          "page": 17
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "Odsek 12",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 12"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "target": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "target": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "b"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "target": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "c"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 12",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 12"
+          }
+        },
+        "target": {
+          "id": "Pismeno A Odsek 12",
+          "type": "Pismeno",
+          "properties": {
+            "name": "a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 12",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 12"
+          }
+        },
+        "target": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "b"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "a"
+          }
+        },
+        "target": {
+          "id": "Pozemne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "pozemne motorove vozidlo"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "urcene na prepravu osob a nakladov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "b"
+          }
+        },
+        "target": {
+          "id": "Plavidlo",
+          "type": "Tovar",
+          "properties": {
+            "name": "plavidlo"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "urcene na prepravu osob a nakladov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "c"
+          }
+        },
+        "target": {
+          "id": "Lietadlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "lietadlo"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "urcene na prepravu osob a nakladov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno A Odsek 12",
+          "type": "Pismeno",
+          "properties": {
+            "name": "a"
+          }
+        },
+        "target": {
+          "id": "Pozemne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "pozemne motorove vozidlo"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "novy dopravny prostriedok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "b"
+          }
+        },
+        "target": {
+          "id": "Plavidlo",
+          "type": "Tovar",
+          "properties": {
+            "name": "plavidlo"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "novy dopravny prostriedok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Plavidlo",
+          "type": "Tovar",
+          "properties": {
+            "name": "plavidlo"
+          }
+        },
+        "target": {
+          "id": "Dane Oslobodenie Podla Paragrafu 47 Odseku 8",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Lietadlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "lietadlo"
+          }
+        },
+        "target": {
+          "id": "Dane Oslobodenie Podla Paragrafu 47 Odseku 10",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pozemne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "pozemne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "7,2 kW",
+          "type": "Hodnota",
+          "properties": {
+            "name": "7,2 kW"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "vykon vacsi ako",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Plavidlo",
+          "type": "Tovar",
+          "properties": {
+            "name": "plavidlo"
+          }
+        },
+        "target": {
+          "id": "7,5 m",
+          "type": "Hodnota",
+          "properties": {
+            "name": "7,5 m"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "dlhsie ako",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Lietadlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "lietadlo"
+          }
+        },
+        "target": {
+          "id": "1 550 kg",
+          "type": "Hodnota",
+          "properties": {
+            "name": "1 550 kg"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "startovacia hmotnost vacsia ako",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pozemne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "pozemne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "6 000 km",
+          "type": "Hodnota",
+          "properties": {
+            "name": "6 000 km"
+          }
+        },
+        "type": "MA_MNOZSTVO",
+        "properties": {
+          "add": "najazdenych najviac",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Plavidlo",
+          "type": "Tovar",
+          "properties": {
+            "name": "plavidlo"
+          }
+        },
+        "target": {
+          "id": "100 hodin",
+          "type": "Hodnota",
+          "properties": {
+            "name": "100 hodin"
+          }
+        },
+        "type": "MA_MNOZSTVO",
+        "properties": {
+          "add": "prevadzkovane na vode najviac",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pozemne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "pozemne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "Sest Mesiacov",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "sest mesiacov"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "od prveho uvedenia do prevadzky",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Plavidlo",
+          "type": "Tovar",
+          "properties": {
+            "name": "plavidlo"
+          }
+        },
+        "target": {
+          "id": "Tri Mesiace",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri mesiace"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "od prveho uvedenia do prevadzky",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 12",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 12"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A Odsek 12",
+          "type": "Pismeno",
+          "properties": {
+            "name": "a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Plavidlo",
+          "type": "Tovar",
+          "properties": {
+            "name": "plavidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lietadlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "lietadlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pozemne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "pozemne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Namerna Lod",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "namorna lod"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dane Oslobodenie Podla Paragrafu 47 Odseku 8",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dane Oslobodenie Podla Paragrafu 47 Odseku 10",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "7,2 kW",
+          "type": "Hodnota",
+          "properties": {
+            "name": "7,2 kW"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "7,5 m",
+          "type": "Hodnota",
+          "properties": {
+            "name": "7,5 m"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1 550 kg",
+          "type": "Hodnota",
+          "properties": {
+            "name": "1 550 kg"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "6 000 km",
+          "type": "Hodnota",
+          "properties": {
+            "name": "6 000 km"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "100 hodin",
+          "type": "Hodnota",
+          "properties": {
+            "name": "100 hodin"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sest Mesiacov",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "sest mesiacov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tri Mesiace",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "tri mesiace"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "väčším ako 7,2 kW určené na prepravu osôb a nákladov,\nb) plavidlo dlhšie ako 7,5 m určené na prepravu osôb a nákladov s výnimkou námornej lode\noslobodenej od dane podľa § 47 ods. 8,\nc) lietadlo, ktorého štartovacia hmotnosť je väčšia ako 1 550 kg, určené na prepravu osôb\na nákladov s výnimkou lietadla oslobodeného od dane podľa § 47 ods. 10.\n(12) Novým dopravným prostriedkom na účely tohto zákona je\na) pozemné motorové vozidlo podľa odseku 11 písm. a), ak nemá najazdených viac ako 6 000 km\nalebo v čase jeho dodania neuplynulo šesť mesiacov od jeho prvého uvedenia do prevádzky,\nb) plavidlo podľa odseku 11 písm. b), ak nebolo prevádzkované na vode viac ako 100 hodín alebo\nv čase jeho dodania neuplynuli tri mesiace od jeho prvého uvedenia do prevádzky,",
+            "page": 17
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

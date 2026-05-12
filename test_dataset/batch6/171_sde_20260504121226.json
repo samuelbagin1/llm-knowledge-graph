@@ -1,0 +1,761 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Oslobodenie Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodenie od dane"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Doklad O Odoslani Alebo O Preprave Tovaru",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklad o odoslani alebo o preprave tovaru"
+        }
+      },
+      {
+        "id": "Colne Vyhlasenie",
+        "type": "Doklad",
+        "properties": {
+          "name": "colne vyhlasenie"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 3"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Treti Stat",
+        "type": "Tretistat",
+        "properties": {
+          "name": "treti stat"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Kupujuci",
+        "type": "Subjekt",
+        "properties": {
+          "name": "kupujuci"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Eurpska Unia",
+        "type": "Uzemie",
+        "properties": {
+          "name": "Eurpska unia"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+          "page": 43
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dodanie tovaru do miesta urcenia na uzemi tretieho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Kupujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "kupujuci"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "kupujuci nema v tuzemsku sidlo, miesto podnikania, prevadzkaren ani bydlisko",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "type": "JE_VYNIMKOU",
+        "properties": {
+          "add": "dodanie tovaru, ktory prepravil kupujuci na ucely vybavenia, zasobenia pohonnymi latkami a potravinami vyletnych lodi, sukromnych lietadiel alebo dopravnych prostriedkov na sukromne pouzitie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Doklad O Odoslani Alebo O Preprave Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o odoslani alebo o preprave tovaru"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "preukazat odoslanie alebo prepravu tovaru do miesta urcenia na uzemi tretieho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Colne Vyhlasenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "colne vyhlasenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "preukazat odoslanie alebo prepravu tovaru colnym vyhlasenim s potvrdenym vystupom tovaru z uzemia Europskej unie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "Doklad O Odoslani Alebo O Preprave Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o odoslani alebo o preprave tovaru"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "Colne Vyhlasenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "colne vyhlasenie"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad O Odoslani Alebo O Preprave Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o odoslani alebo o preprave tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "odoslanie alebo preprava tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colne Vyhlasenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "colne vyhlasenie"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "potvrdeny vystup tovaru z uzemia Europskej unie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dodanie tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Treti Stat",
+          "type": "Tretistat",
+          "properties": {
+            "name": "treti stat"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "miesto urcenia na uzemi tretieho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kupujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "kupujuci"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_SIDLO",
+        "properties": {
+          "add": "nemá sidlo v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kupujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "kupujuci"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_MIESTO_PODNIKANIA",
+        "properties": {
+          "add": "nemá miesto podnikania v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kupujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "kupujuci"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_PREVADZKAREN",
+        "properties": {
+          "add": "nemá prevadzkaren v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Kupujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "kupujuci"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_BYDLISKO",
+        "properties": {
+          "add": "nemá bydlisko v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colne Vyhlasenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "colne vyhlasenie"
+          }
+        },
+        "target": {
+          "id": "Eurpska Unia",
+          "type": "Uzemie",
+          "properties": {
+            "name": "Eurpska unia"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "uzemie Europskej unie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad O Odoslani Alebo O Preprave Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o odoslani alebo o preprave tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colne Vyhlasenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "colne vyhlasenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Treti Stat",
+          "type": "Tretistat",
+          "properties": {
+            "name": "treti stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kupujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "kupujuci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Eurpska Unia",
+          "type": "Uzemie",
+          "properties": {
+            "name": "Eurpska unia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "alebo na jeho účet do miesta určenia na území tretieho štátu.\n(2) Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zásobenia pohonnými látkami a potravinami výletných lodí,\nsúkromných lietadiel alebo akýchkoľvek dopravných prostriedkov na súkromné použitie.\n(3) Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \na) colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo",
+            "page": 43
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 154 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.",
+          "page": 153
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 154 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.",
+            "page": 153
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

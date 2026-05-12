@@ -1,0 +1,522 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Danie",
+        "type": "Dan",
+        "properties": {
+          "name": "dane"
+        }
+      },
+      {
+        "id": "Dodanie Takého Tovaru V Tuzemsku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie takého tovaru v tuzemsku"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodené od dane"
+        }
+      },
+      {
+        "id": "§ 47",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 47"
+        }
+      },
+      {
+        "id": "Ods. 7 Az 10",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 7 až 10"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelná osoba"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "platiteľ"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan Podla § 7",
+        "type": "Registracia",
+        "properties": {
+          "name": "registrovaná pre daň podľa § 7"
+        }
+      },
+      {
+        "id": "Pravnicka Osoba",
+        "type": "Pravnickaosoba",
+        "properties": {
+          "name": "právnická osoba"
+        }
+      },
+      {
+        "id": "Nadobudnuty Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "nadobudnutého tovaru"
+        }
+      },
+      {
+        "id": "Hodnota 14 000 Eur",
+        "type": "Suma",
+        "properties": {
+          "name": "14 000 eur"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+          "page": 16
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Danie",
+          "type": "Dan",
+          "properties": {
+            "name": "dane"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "nie je predmetom dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Takého Tovaru V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie takého tovaru v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "Danie",
+          "type": "Dan",
+          "properties": {
+            "name": "dane"
+          }
+        },
+        "type": "OSLOBODZUJE_OD",
+        "properties": {
+          "add": "oslobodené od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Takého Tovaru V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie takého tovaru v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "§ 47",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 47"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "ods. 7 až 10",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 47",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 47"
+          }
+        },
+        "target": {
+          "id": "Ods. 7 Az 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 7 až 10"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodené od dane"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "ak podmienky b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "Registracia Pre Dan Podla § 7",
+          "type": "Registracia",
+          "properties": {
+            "name": "registrovaná pre daň podľa § 7"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "ak nie je registrovana pre dan podla § 7",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravnicka Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "právnická osoba"
+          }
+        },
+        "target": {
+          "id": "Registracia Pre Dan Podla § 7",
+          "type": "Registracia",
+          "properties": {
+            "name": "registrovaná pre daň podľa § 7"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "ak nie je registrovana pre dan podla § 7",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnuty Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "nadobudnutého tovaru"
+          }
+        },
+        "target": {
+          "id": "Hodnota 14 000 Eur",
+          "type": "Suma",
+          "properties": {
+            "name": "14 000 eur"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "celkova hodnota nedosiahla 14 000 eur",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danie",
+          "type": "Dan",
+          "properties": {
+            "name": "dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Takého Tovaru V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie takého tovaru v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodené od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 47",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 47"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ods. 7 Az 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 7 až 10"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelná osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan Podla § 7",
+          "type": "Registracia",
+          "properties": {
+            "name": "registrovaná pre daň podľa § 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnicka Osoba",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "právnická osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadobudnuty Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "nadobudnutého tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hodnota 14 000 Eur",
+          "type": "Suma",
+          "properties": {
+            "name": "14 000 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak\na) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10,\nb) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň\npodľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná\npre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za\npredchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu\nnedosiahne,",
+            "page": 16
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

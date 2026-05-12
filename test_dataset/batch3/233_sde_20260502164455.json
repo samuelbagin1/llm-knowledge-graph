@@ -1,0 +1,558 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon 222/2004 Z. Z.",
+        "type": "Zakon",
+        "properties": {
+          "name": "222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Paragraf 52",
+        "type": "Paragraf",
+        "properties": {
+          "name": "52"
+        }
+      },
+      {
+        "id": "Paragraf 52A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "52a"
+        }
+      },
+      {
+        "id": "Odpocitanie Dane Pri Dodani Noveho Dopravneho Prostriedku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Odpočítanie dane pri dodaní nového dopravného prostriedku"
+        }
+      },
+      {
+        "id": "Odpoctenie Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Odpočítanie dane"
+        }
+      },
+      {
+        "id": "Novy Dopravny Prostriedok",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "novy dopravny prostriedok"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "daň"
+        }
+      },
+      {
+        "id": "Zdaovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdaňovacie obdobie"
+        }
+      },
+      {
+        "id": "Mesiac",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "mesiac"
+        }
+      },
+      {
+        "id": "Pravo Odpoctat Dan",
+        "type": "Pravo",
+        "properties": {
+          "name": "právo odpočítať daň"
+        }
+      },
+      {
+        "id": "Povinnost Uhradit Dan",
+        "type": "Povinnost",
+        "properties": {
+          "name": "povinná uhradiť daň"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+          "page": 59
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 52 Odpocitanie dane pri dodani noveho dopravneho prostriedku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 52a Oprava a uprava odpocitanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odpocitanie Dane Pri Dodani Noveho Dopravneho Prostriedku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odpočítanie dane pri dodaní nového dopravného prostriedku"
+          }
+        },
+        "target": {
+          "id": "Paragraf 52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "predmet upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Odpoctat Dan",
+          "type": "Pravo",
+          "properties": {
+            "name": "právo odpočítať daň"
+          }
+        },
+        "target": {
+          "id": "Odpocitanie Dane Pri Dodani Noveho Dopravneho Prostriedku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odpočítanie dane pri dodaní nového dopravného prostriedku"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "pri dodani noveho dopravneho prostriedku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Odpoctat Dan",
+          "type": "Pravo",
+          "properties": {
+            "name": "právo odpočítať daň"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "daň"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "odpoctanie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravo Odpoctat Dan",
+          "type": "Pravo",
+          "properties": {
+            "name": "právo odpočítať daň"
+          }
+        },
+        "target": {
+          "id": "Paragraf 52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "§ 52",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odpocitanie Dane Pri Dodani Noveho Dopravneho Prostriedku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odpočítanie dane pri dodaní nového dopravného prostriedku"
+          }
+        },
+        "target": {
+          "id": "Mesiac",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "mesiac"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "len za mesiac, v ktorom bol novy dopravny prostriedok dodany",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnost Uhradit Dan",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinná uhradiť daň"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "daň"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "uhrada dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnost Uhradit Dan",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinná uhradiť daň"
+          }
+        },
+        "target": {
+          "id": "Paragraf 52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla textu paragrafu 52",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Novy Dopravny Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "novy dopravny prostriedok"
+          }
+        },
+        "target": {
+          "id": "Odpocitanie Dane Pri Dodani Noveho Dopravneho Prostriedku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odpočítanie dane pri dodaní nového dopravného prostriedku"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "novy dopravny prostriedok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Novy Dopravny Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "novy dopravny prostriedok"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "daň"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "daň zahrnuta do kupnej ceny alebo zaplatena pri dovoze",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 52",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 52A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "52a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpocitanie Dane Pri Dodani Noveho Dopravneho Prostriedku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odpočítanie dane pri dodaní nového dopravného prostriedku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctenie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odpočítanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Novy Dopravny Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "novy dopravny prostriedok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdaovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdaňovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mesiac",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "mesiac"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Odpoctat Dan",
+          "type": "Pravo",
+          "properties": {
+            "name": "právo odpočítať daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Uhradit Dan",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinná uhradiť daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 60 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nrokom rozumie hospodársky rok.\n(5) Odpočítanie dane platiteľ vykoná tak, že od celkovej výšky dane za príslušné zdaňovacie\nobdobie odpočíta celkovú výšku odpočítateľnej dane za príslušné zdaňovacie obdobie.\n§ 52\nOdpočítanie dane pri dodaní nového dopravného prostriedku\nOsobe, ktorá príležitostne dodá nový dopravný prostriedok z tuzemska do iného členského\nštátu, vzniká v čase dodania nového dopravného prostriedku právo odpočítať daň zahrnutú do\nkúpnej ceny alebo zaplatenú pri dovoze alebo ním uplatnenú pri dovoze, alebo pri nadobudnutí\nnového dopravného prostriedku v tuzemsku z iného členského štátu, a to do výšky, ktorá\nneprekročí daň, ktorú by bola povinná táto osoba uhradiť, ak by pri dodaní nového dopravného\nprostriedku z tuzemska do iného členského štátu bola povinná platiť daň. Právo odpočítania dane\nmôže byť uplatnené len za mesiac, v ktorom bol nový dopravný prostriedok dodaný.\nOprava a úprava odpočítanej dane\n§ 52a",
+            "page": 59
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

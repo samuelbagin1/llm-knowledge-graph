@@ -1,0 +1,656 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Dan Dv",
+        "type": "Dan",
+        "properties": {
+          "name": "DV"
+        }
+      },
+      {
+        "id": "Pravnypredpis § 54D",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 54d"
+        }
+      },
+      {
+        "id": "Pravnypredpis § 68D Ods. 2",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68d ods. 2"
+        }
+      },
+      {
+        "id": "Priloha C. 1",
+        "type": "Priloha",
+        "properties": {
+          "name": "prilohe c. 1"
+        }
+      },
+      {
+        "id": "Obdobie Nasledujuce Po Zdanovacom Obdobi",
+        "type": "Obdobie",
+        "properties": {
+          "name": "obdobi nasledujucom po zdanovacom obdobi"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Prvotne Pouzitie Investicneho Majetku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prvotne pouzitie investicneho majetku"
+        }
+      },
+      {
+        "id": "Zmena Rozsahu Pouzitia Investicneho Majetku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "zmeni rozsah pouzitia tohto investicneho majetku"
+        }
+      },
+      {
+        "id": "Uprava Odpocitanej Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "upravit odpocitanu dan"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Investicny Majetok",
+        "type": "Investicnymajetok",
+        "properties": {
+          "name": "investicny majetok"
+        }
+      },
+      {
+        "id": "Dan Vztaahujuca Sa Na Obstaravaciu Cenu Alebo Vlastne Naklady",
+        "type": "Dan",
+        "properties": {
+          "name": "dan vztahujuca sa na obstaravaciu cenu investicneho majetku alebo vlastne naklady investicneho majetku"
+        }
+      },
+      {
+        "id": "Suma Zaplatena Platitelom",
+        "type": "Suma",
+        "properties": {
+          "name": "sumu, ktoru tento platitel zaplatil"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+          "page": 64
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Dan Dv",
+          "type": "Dan",
+          "properties": {
+            "name": "DV"
+          }
+        },
+        "target": {
+          "id": "Dan Vztaahujuca Sa Na Obstaravaciu Cenu Alebo Vlastne Naklady",
+          "type": "Dan",
+          "properties": {
+            "name": "dan vztahujuca sa na obstaravaciu cenu investicneho majetku alebo vlastne naklady investicneho majetku"
+          }
+        },
+        "type": "ROZUMIE_SA",
+        "properties": {
+          "add": "v skratke DV",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Dv",
+          "type": "Dan",
+          "properties": {
+            "name": "DV"
+          }
+        },
+        "target": {
+          "id": "Pravnypredpis § 68D Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68d ods. 2"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "odkaz na § 68d ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Dv",
+          "type": "Dan",
+          "properties": {
+            "name": "DV"
+          }
+        },
+        "target": {
+          "id": "Priloha C. 1",
+          "type": "Priloha",
+          "properties": {
+            "name": "prilohe c. 1"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "vzorec v prilohe c. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Dv",
+          "type": "Dan",
+          "properties": {
+            "name": "DV"
+          }
+        },
+        "target": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "obstaravacia cena alebo vlastne naklady investicneho majetku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Vztaahujuca Sa Na Obstaravaciu Cenu Alebo Vlastne Naklady",
+          "type": "Dan",
+          "properties": {
+            "name": "dan vztahujuca sa na obstaravaciu cenu investicneho majetku alebo vlastne naklady investicneho majetku"
+          }
+        },
+        "target": {
+          "id": "Suma Zaplatena Platitelom",
+          "type": "Suma",
+          "properties": {
+            "name": "sumu, ktoru tento platitel zaplatil"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "vo vyske zodpovedajucej sume, ktoru platitel zaplatil",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis § 54D",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54d"
+          }
+        },
+        "target": {
+          "id": "Obdobie Nasledujuce Po Zdanovacom Obdobi",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobi nasledujucom po zdanovacom obdobi"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "po zdanovacom obdobi",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Nasledujuce Po Zdanovacom Obdobi",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobi nasledujucom po zdanovacom obdobi"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "v ktorom doslo k prvotnemu pouzitiu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Nasledujuce Po Zdanovacom Obdobi",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobi nasledujucom po zdanovacom obdobi"
+          }
+        },
+        "target": {
+          "id": "Prvotne Pouzitie Investicneho Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prvotne pouzitie investicneho majetku"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "prvotne pouzitie investicneho majetku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prvotne Pouzitie Investicneho Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prvotne pouzitie investicneho majetku"
+          }
+        },
+        "target": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "uvedeny v § 54 ods. 2 pism. a) alebo d)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prvotne Pouzitie Investicneho Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prvotne pouzitie investicneho majetku"
+          }
+        },
+        "target": {
+          "id": "Uprava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "upravit odpocitanu dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "ak bola daň odpočítaná vo vyššej výške",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmena Rozsahu Pouzitia Investicneho Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmeni rozsah pouzitia tohto investicneho majetku"
+          }
+        },
+        "target": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "na ucely podnikania aj na iny ucel",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Uprava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "upravit odpocitanu dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "upravit odpocitanu dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Pravnypredpis § 54D",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54d"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "§ 54d",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Dv",
+          "type": "Dan",
+          "properties": {
+            "name": "DV"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis § 54D",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 54d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnypredpis § 68D Ods. 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68d ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priloha C. 1",
+          "type": "Priloha",
+          "properties": {
+            "name": "prilohe c. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obdobie Nasledujuce Po Zdanovacom Obdobi",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobi nasledujucom po zdanovacom obdobi"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvotne Pouzitie Investicneho Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prvotne pouzitie investicneho majetku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Rozsahu Pouzitia Investicneho Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmeni rozsah pouzitia tohto investicneho majetku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uprava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "upravit odpocitanu dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Vztaahujuca Sa Na Obstaravaciu Cenu Alebo Vlastne Naklady",
+          "type": "Dan",
+          "properties": {
+            "name": "dan vztahujuca sa na obstaravaciu cenu investicneho majetku alebo vlastne naklady investicneho majetku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Zaplatena Platitelom",
+          "type": "Suma",
+          "properties": {
+            "name": "sumu, ktoru tento platitel zaplatil"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a vykonávanej platiteľom podľa § 68d ods. 2 sa skratkou DV vo vzorci uvedenom v prílohe č. 1\nrozumie daň vzťahujúca sa na obstarávaciu cenu investičného majetku alebo vlastné náklady\ninvestičného majetku vo výške zodpovedajúcej sume, ktorú tento platiteľ zaplatil.\n§ 54d\n(1) Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. a) alebo písm. d), pri ktorom bola odpočítaná\nčasť dane podľa § 49 ods. 5 prvej vety alebo pri ktorom nebola odpočítaná daň, platiteľ zmení\nrozsah použitia tohto investičného majetku na účely podnikania, ako aj na iný účel ako na\npodnikanie,\na) je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná",
+            "page": 64
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

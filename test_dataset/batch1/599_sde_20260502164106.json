@@ -1,0 +1,241 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Zakon C. 222/2004 Z. Z.",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon c. 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Priloha C. 2",
+        "type": "Priloha",
+        "properties": {
+          "name": "Priloha c. 2"
+        }
+      },
+      {
+        "id": "Ziadost O Vratenie Dane Z Pridanej Hodnoty Zahranicnej Osobe",
+        "type": "Ziadost",
+        "properties": {
+          "name": "Ziadost o vratenie dane z pridanej hodnoty zahranicnej osobe"
+        }
+      },
+      {
+        "id": "Vratenie Dane Z Pridanej Hodnoty",
+        "type": "Dan",
+        "properties": {
+          "name": "vratenie dane z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 150 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 2\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnej osobe\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_1.pdf",
+          "page": 149
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Priloha C. 2",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 2"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Priloha C. 2",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 2"
+          }
+        },
+        "target": {
+          "id": "Zakon C. 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c. 222/2004 Z. z."
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane Z Pridanej Hodnoty Zahranicnej Osobe",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane z pridanej hodnoty zahranicnej osobe"
+          }
+        },
+        "target": {
+          "id": "Zakon C. 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c. 222/2004 Z. z."
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "priloha c. 2 k zakonu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane Z Pridanej Hodnoty Zahranicnej Osobe",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane z pridanej hodnoty zahranicnej osobe"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane Z Pridanej Hodnoty",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane z pridanej hodnoty"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 150 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 2\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnej osobe\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_1.pdf",
+            "page": 149
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon C. 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c. 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 150 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 2\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnej osobe\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_1.pdf",
+            "page": 149
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priloha C. 2",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 150 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 2\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnej osobe\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_1.pdf",
+            "page": 149
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane Z Pridanej Hodnoty Zahranicnej Osobe",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane z pridanej hodnoty zahranicnej osobe"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 150 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 2\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnej osobe\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_1.pdf",
+            "page": 149
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Z Pridanej Hodnoty",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 150 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 2\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnej osobe\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_1.pdf",
+            "page": 149
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

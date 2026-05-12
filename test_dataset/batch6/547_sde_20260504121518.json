@@ -1,0 +1,710 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon_222_2004_Z_Z",
+        "type": "Zakon",
+        "properties": {
+          "name": "222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Paragraf_85G",
+        "type": "Paragraf",
+        "properties": {
+          "name": "85g"
+        }
+      },
+      {
+        "id": "Prechodne_Ustanovenia_K_Upravam_Ucinnym_Od_1_Jula_2009",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Prechodne ustanovenia k upravam ucinnym od 1. jula 2009"
+        }
+      },
+      {
+        "id": "Zdanitelna_Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Obrat_35_000_Eur",
+        "type": "Obrat",
+        "properties": {
+          "name": "35 000 eur"
+        }
+      },
+      {
+        "id": "Obrat_49_790_Eur",
+        "type": "Obrat",
+        "properties": {
+          "name": "49 790 eur"
+        }
+      },
+      {
+        "id": "Ziadost_O_Zrusenie_Registracie_Pre_Dan",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o zrusenie registracie pre dan"
+        }
+      },
+      {
+        "id": "Danovy_Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Den_Prestatia_Byt_Platitelom",
+        "type": "Datum",
+        "properties": {
+          "name": "den, ktorym platitel prestava byt platitelom"
+        }
+      },
+      {
+        "id": "Osvedcenie_O_Registracii_Pre_Dan",
+        "type": "Doklad",
+        "properties": {
+          "name": "osvedcenie o registracii pre dan"
+        }
+      },
+      {
+        "id": "Identifikacne_Cislo_Pre_Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Desat_Dni",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "desat dni"
+        }
+      },
+      {
+        "id": "Dvanast_Predchadzajucich_Po_Sebe_Nasledujucich_Kalendarnych_Mesiacov",
+        "type": "Obdobie",
+        "properties": {
+          "name": "najviac 12 predchadzajucich po sebe nasledujucich kalendarnych mesiacov"
+        }
+      },
+      {
+        "id": "Konec_Mesiaca_Predchadzajuceho_Mesiacu_Podania_Ziadosti",
+        "type": "Datum",
+        "properties": {
+          "name": "k poslednemu dnu kalendarneho mesiaca, ktory predchadza kalendarnemu mesiacu podania ziadosti"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+          "page": 135
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon_222_2004_Z_Z",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf_85G",
+          "type": "Paragraf",
+          "properties": {
+            "name": "85g"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf_85G",
+          "type": "Paragraf",
+          "properties": {
+            "name": "85g"
+          }
+        },
+        "target": {
+          "id": "Prechodne_Ustanovenia_K_Upravam_Ucinnym_Od_1_Jula_2009",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Prechodne ustanovenia k upravam ucinnym od 1. jula 2009"
+          }
+        },
+        "type": "MA_NAZOV",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Obrat_35_000_Eur",
+          "type": "Obrat",
+          "properties": {
+            "name": "35 000 eur"
+          }
+        },
+        "type": "MA_HODNOTU",
+        "properties": {
+          "add": "dosiahla obrat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Ziadost_O_Zrusenie_Registracie_Pre_Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o zrusenie registracie pre dan"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "poziadat o zrusenie registracie pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Obrat_49_790_Eur",
+          "type": "Obrat",
+          "properties": {
+            "name": "49 790 eur"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "nedosiahla obrat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Dvanast_Predchadzajucich_Po_Sebe_Nasledujucich_Kalendarnych_Mesiacov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "najviac 12 predchadzajucich po sebe nasledujucich kalendarnych mesiacov"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "za najviac 12 predchadzajucich po sebe nasledujucich kalendarnych mesiacov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost_O_Zrusenie_Registracie_Pre_Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o zrusenie registracie pre dan"
+          }
+        },
+        "target": {
+          "id": "Danovy_Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "zrusenie registracie pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy_Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Den_Prestatia_Byt_Platitelom",
+          "type": "Datum",
+          "properties": {
+            "name": "den, ktorym platitel prestava byt platitelom"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "deň, ktorým platiteľ prestáva byť platiteľom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Osvedcenie_O_Registracii_Pre_Dan",
+          "type": "Doklad",
+          "properties": {
+            "name": "osvedcenie o registracii pre dan"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "platnost osvedcenia o registracii pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Identifikacne_Cislo_Pre_Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "platnost identifikacneho cisla pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Osvedcenie_O_Registracii_Pre_Dan",
+          "type": "Doklad",
+          "properties": {
+            "name": "osvedcenie o registracii pre dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "odovzdat danovemu uradu do desiatich dni",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Desat_Dni",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "desat dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "do desiatich dni odo dna, ked prestal byt platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Paragraf_85G",
+          "type": "Paragraf",
+          "properties": {
+            "name": "85g"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "odsek 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon_222_2004_Z_Z",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf_85G",
+          "type": "Paragraf",
+          "properties": {
+            "name": "85g"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prechodne_Ustanovenia_K_Upravam_Ucinnym_Od_1_Jula_2009",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Prechodne ustanovenia k upravam ucinnym od 1. jula 2009"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obrat_35_000_Eur",
+          "type": "Obrat",
+          "properties": {
+            "name": "35 000 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obrat_49_790_Eur",
+          "type": "Obrat",
+          "properties": {
+            "name": "49 790 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost_O_Zrusenie_Registracie_Pre_Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o zrusenie registracie pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy_Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den_Prestatia_Byt_Platitelom",
+          "type": "Datum",
+          "properties": {
+            "name": "den, ktorym platitel prestava byt platitelom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osvedcenie_O_Registracii_Pre_Dan",
+          "type": "Doklad",
+          "properties": {
+            "name": "osvedcenie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne_Cislo_Pre_Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desat_Dni",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "desat dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dvanast_Predchadzajucich_Po_Sebe_Nasledujucich_Kalendarnych_Mesiacov",
+          "type": "Obdobie",
+          "properties": {
+            "name": "najviac 12 predchadzajucich po sebe nasledujucich kalendarnych mesiacov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Konec_Mesiaca_Predchadzajuceho_Mesiacu_Podania_Ziadosti",
+          "type": "Datum",
+          "properties": {
+            "name": "k poslednemu dnu kalendarneho mesiaca, ktory predchadza kalendarnemu mesiacu podania ziadosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 136 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 85g\nPrechodné ustanovenia k úpravám účinným od 1. júla 2009\n(1) Zdaniteľná osoba, ktorá dosiahla obrat 35 000 eur podľa § 4 ods. 1 alebo 2 v znení účinnom\ndo 30. júna 2009 a stala sa platiteľom, môže požiadať o zrušenie registrácie pre daň, ak\nk poslednému dňu kalendárneho mesiaca, ktorý predchádza kalendárnemu mesiacu, v ktorom\npodala žiadosť o zrušenie registrácie pre daň, nedosiahla obrat 49 790 eur za najviac 12\npredchádzajúcich po sebe nasledujúcich kalendárnych mesiacov.\n(2) Daňový úrad po prijatí žiadosti o zrušenie registrácie pre daň bezodkladne určí platiteľovi\ndeň, ktorým platiteľ prestáva byť platiteľom, a týmto dňom zaniká platnosť osvedčenia o registrácii\npre daň a platnosť identifikačného čísla pre daň. Platiteľ je povinný odovzdať daňovému úradu\nosvedčenie o registrácii pre daň do desiatich dní odo dňa, keď prestal byť platiteľom.\n(3) Platiteľ, ktorý požiada o zrušenie registrácie pre daň podľa odseku 1, nemôže odpočítať daň",
+            "page": 135
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

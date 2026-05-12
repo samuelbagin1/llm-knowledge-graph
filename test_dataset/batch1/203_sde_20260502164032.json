@@ -1,0 +1,923 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "48d",
+        "type": "Paragraf",
+        "properties": {
+          "name": "48d"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane V Osobitnom Sklade",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "Oslobodenie od dane v osobitnom sklade"
+        }
+      },
+      {
+        "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Osobitny Sklad",
+        "type": "Podnik",
+        "properties": {
+          "name": "osobitny sklad"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Priloha C. 9 Cast I",
+        "type": "Priloha",
+        "properties": {
+          "name": "priloha c. 9 cast I"
+        }
+      },
+      {
+        "id": "50 000 000 l",
+        "type": "Mnozstvo",
+        "properties": {
+          "name": "50 000 000 l"
+        }
+      },
+      {
+        "id": "Stacionarna Nadrz",
+        "type": "Majetok",
+        "properties": {
+          "name": "stacionarna nadrz"
+        }
+      },
+      {
+        "id": "Urcene Meradlo",
+        "type": "Majetok",
+        "properties": {
+          "name": "urcene meradlo"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Ziadost O Povolenie Na Prevadzkovanie Osobitneho Skladu",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o povolenie na prevadzkovanie osobitneho skladu"
+        }
+      },
+      {
+        "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "povolenie na prevadzkovanie osobitneho skladu"
+        }
+      },
+      {
+        "id": "Financne Riaditelstvo",
+        "type": "Financneriaditelstvo",
+        "properties": {
+          "name": "financne riaditelstvo"
+        }
+      },
+      {
+        "id": "Webove Sidlo Financneho Riaditelstva",
+        "type": "Elektronickyprostriedok",
+        "properties": {
+          "name": "webove sidlo financneho riaditelstva"
+        }
+      },
+      {
+        "id": "Meno A Priezvisko Platitela Alebo Obchodne Meno Alebo Nazov Platitela",
+        "type": "Doklad",
+        "properties": {
+          "name": "meno a priezvisko platitela alebo obchodne meno alebo nazov platitela"
+        }
+      },
+      {
+        "id": "Adresa Sidla Miesta Podnikania Alebo Prevadzkarne",
+        "type": "Adresa",
+        "properties": {
+          "name": "adresa sidla miesta podnikania alebo prevadzkarne"
+        }
+      },
+      {
+        "id": "Adresa Osobitneho Skladu",
+        "type": "Adresa",
+        "properties": {
+          "name": "adresa osobitneho skladu"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+          "page": 52
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "48d",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48d"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "48d",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48d"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane V Osobitnom Sklade",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane v osobitnom sklade"
+          }
+        },
+        "type": "MA_NAZOV",
+        "properties": {
+          "add": "nazov paragrafu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "48d",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48d"
+          }
+        },
+        "target": {
+          "id": "Osobitny Sklad",
+          "type": "Podnik",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "osobitny sklad je priestorovo ohranicene miesto v tuzemsku na uskladnenie tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitny Sklad",
+          "type": "Podnik",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitny Sklad",
+          "type": "Podnik",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "uskladnenie tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitny Sklad",
+          "type": "Podnik",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "target": {
+          "id": "50 000 000 l",
+          "type": "Mnozstvo",
+          "properties": {
+            "name": "50 000 000 l"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "skladovacia kapacita najmenej",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Priloha C. 9 Cast I",
+          "type": "Priloha",
+          "properties": {
+            "name": "priloha c. 9 cast I"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "tovar uvedeny v prilozhe",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitny Sklad",
+          "type": "Podnik",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "target": {
+          "id": "Stacionarna Nadrz",
+          "type": "Majetok",
+          "properties": {
+            "name": "stacionarna nadrz"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "pevne zabudovana",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Stacionarna Nadrz",
+          "type": "Majetok",
+          "properties": {
+            "name": "stacionarna nadrz"
+          }
+        },
+        "target": {
+          "id": "Urcene Meradlo",
+          "type": "Majetok",
+          "properties": {
+            "name": "urcene meradlo"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "musí byt vybavena",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Urcene Meradlo",
+          "type": "Majetok",
+          "properties": {
+            "name": "urcene meradlo"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "UMOZNUJE",
+        "properties": {
+          "add": "pri prijme a vydaji merat mnozstvo preteceného tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Osobitny Sklad",
+          "type": "Podnik",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "prevadzkovanie osobitneho skladu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "ma mat povolenie vydane danovym uradom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "povolenie na prevadzkovanie osobitneho skladu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Financne Riaditelstvo",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "target": {
+          "id": "Webove Sidlo Financneho Riaditelstva",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "webove sidlo financneho riaditelstva"
+          }
+        },
+        "type": "UVADZA",
+        "properties": {
+          "add": "zverejni vzor tlaciva na webovom sidle",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Meno A Priezvisko Platitela Alebo Obchodne Meno Alebo Nazov Platitela",
+          "type": "Doklad",
+          "properties": {
+            "name": "meno a priezvisko platitela alebo obchodne meno alebo nazov platitela"
+          }
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Adresa Sidla Miesta Podnikania Alebo Prevadzkarne",
+          "type": "Adresa",
+          "properties": {
+            "name": "adresa sidla miesta podnikania alebo prevadzkarne"
+          }
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Adresa Osobitneho Skladu",
+          "type": "Adresa",
+          "properties": {
+            "name": "adresa osobitneho skladu"
+          }
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "48d",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane V Osobitnom Sklade",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Oslobodenie od dane v osobitnom sklade"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Sklad",
+          "type": "Podnik",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priloha C. 9 Cast I",
+          "type": "Priloha",
+          "properties": {
+            "name": "priloha c. 9 cast I"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "50 000 000 l",
+          "type": "Mnozstvo",
+          "properties": {
+            "name": "50 000 000 l"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Stacionarna Nadrz",
+          "type": "Majetok",
+          "properties": {
+            "name": "stacionarna nadrz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Urcene Meradlo",
+          "type": "Majetok",
+          "properties": {
+            "name": "urcene meradlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financne Riaditelstvo",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Webove Sidlo Financneho Riaditelstva",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "webove sidlo financneho riaditelstva"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Meno A Priezvisko Platitela Alebo Obchodne Meno Alebo Nazov Platitela",
+          "type": "Doklad",
+          "properties": {
+            "name": "meno a priezvisko platitela alebo obchodne meno alebo nazov platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Adresa Sidla Miesta Podnikania Alebo Prevadzkarne",
+          "type": "Adresa",
+          "properties": {
+            "name": "adresa sidla miesta podnikania alebo prevadzkarne"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Adresa Osobitneho Skladu",
+          "type": "Adresa",
+          "properties": {
+            "name": "adresa osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 53\n§ 48d\nOslobodenie od dane v osobitnom sklade\n(1) Osobitným skladom sa rozumie priestorovo ohraničené miesto v tuzemsku určené na\nuskladnenie tovaru uvedeného v prílohe č. 9 časti I so skladovacou kapacitou najmenej\n50 000 000 l.\n(2) Osobitný sklad musí mať na uskladnenie tovaru pevne zabudovanú stacionárnu nádrž\npoužívanú ako meradlo objemu, ktorá musí byť vybavená určeným meradlom,25b) ktoré umožňuje\npri príjme a výdaji tovaru merať množstvo pretečeného tovaru.\n(3) Na prevádzkovanie osobitného skladu musí mať platiteľ povolenie vydané daňovým úradom.\nŽiadosť o povolenie na prevádzkovanie osobitného skladu platiteľ podá na tlačive, ktorého vzor\nzverejní finančné riaditeľstvo na webovom sídle finančného riaditeľstva.\n(4) Žiadosť podľa odseku 3 musí obsahovať\na) meno a priezvisko platiteľa alebo obchodné meno alebo názov platiteľa,\nb) adresu sídla, miesta podnikania alebo prevádzkarne,\nc) adresu osobitného skladu,",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

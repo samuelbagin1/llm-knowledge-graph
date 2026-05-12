@@ -1,0 +1,838 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "§ 64",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 64"
+        }
+      },
+      {
+        "id": "§ 64A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 64a"
+        }
+      },
+      {
+        "id": "Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Vratienie dane neziskovym organizaciam poskytujucim vseobecne prospesne sluzby a Slovenskemu Cervenemu krizu"
+        }
+      },
+      {
+        "id": "Neziskova Organizacia Poskytujuca Vseobecne Prospesne Sluzby",
+        "type": "Organizacia",
+        "properties": {
+          "name": "Neziskova organizacia poskytujuca vseobecne prospesne sluzby"
+        }
+      },
+      {
+        "id": "Slovensky Cerveny Kriz",
+        "type": "Organizacia",
+        "properties": {
+          "name": "Slovensky Cerveny kriz"
+        }
+      },
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad Bratislava"
+        }
+      },
+      {
+        "id": "Zostavovanie Dokladov Preukazujucich Uvedenie Zakladu Dane A Dane V Danovom Priznani",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Zostavovanie dokladov preukazujucich uvedenie zakladu dane a dane v danovom priznani"
+        }
+      },
+      {
+        "id": "Doklad O Kupe Tovaru",
+        "type": "Doklad",
+        "properties": {
+          "name": "Doklad o kupe tovaru"
+        }
+      },
+      {
+        "id": "Colne Vyhlasenie O Vyvoze Tovaru",
+        "type": "Doklad",
+        "properties": {
+          "name": "Colne vyhlasenie o vyvoze tovaru"
+        }
+      },
+      {
+        "id": "Daňove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "Danove priznanie"
+        }
+      },
+      {
+        "id": "Vratenie Dane Zaplatenej V Cene Tovaru",
+        "type": "Dan",
+        "properties": {
+          "name": "Vratienie dane zaplatenej v cene tovaru"
+        }
+      },
+      {
+        "id": "Dane Z Tychto Tovarov A Sluzieb",
+        "type": "Dan",
+        "properties": {
+          "name": "Dane z tychto tovarov a sluzieb"
+        }
+      },
+      {
+        "id": "Suma Dane V Eurach",
+        "type": "Suma",
+        "properties": {
+          "name": "Suma dane v eurach"
+        }
+      },
+      {
+        "id": "Eurach",
+        "type": "Euro",
+        "properties": {
+          "name": "Eurach"
+        }
+      },
+      {
+        "id": "Humanitarna Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Humanitarna cinnost"
+        }
+      },
+      {
+        "id": "Dobrocinna Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dobrocinna cinnost"
+        }
+      },
+      {
+        "id": "Vzdelavacia Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Vzdelavacia cinnost"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Pravo",
+        "properties": {
+          "name": "Vratienie dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+          "page": 79
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "§ 64",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 64"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratienie dane neziskovym organizaciam poskytujucim vseobecne prospesne sluzby a Slovenskemu Cervenemu krizu"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "upravuje vymoze vrateni dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Neziskova Organizacia Poskytujuca Vseobecne Prospesne Sluzby",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Neziskova organizacia poskytujuca vseobecne prospesne sluzby"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Vratienie dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "narok na vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Slovensky Cerveny Kriz",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Slovensky Cerveny kriz"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Vratienie dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "narok na vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Neziskova Organizacia Poskytujuca Vseobecne Prospesne Sluzby",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Neziskova organizacia poskytujuca vseobecne prospesne sluzby"
+          }
+        },
+        "target": {
+          "id": "Doklad O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Doklad o kupe tovaru"
+          }
+        },
+        "type": "PREDKLADA",
+        "properties": {
+          "add": "k ziadosti o vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Neziskova Organizacia Poskytujuca Vseobecne Prospesne Sluzby",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Neziskova organizacia poskytujuca vseobecne prospesne sluzby"
+          }
+        },
+        "target": {
+          "id": "Colne Vyhlasenie O Vyvoze Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Colne vyhlasenie o vyvoze tovaru"
+          }
+        },
+        "type": "PREDKLADA",
+        "properties": {
+          "add": "k ziadosti o vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Neziskova Organizacia Poskytujuca Vseobecne Prospesne Sluzby",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Neziskova organizacia poskytujuca vseobecne prospesne sluzby"
+          }
+        },
+        "target": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane v eurach"
+          }
+        },
+        "type": "PREDKLADA",
+        "properties": {
+          "add": "doklad obsahuje sumu dane v eurach",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Doklad o kupe tovaru"
+          }
+        },
+        "target": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane v eurach"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "uvedena suma dane v eurach",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane v eurach"
+          }
+        },
+        "target": {
+          "id": "Eurach",
+          "type": "Euro",
+          "properties": {
+            "name": "Eurach"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "mena suma dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 64",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 64"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane Zaplatenej V Cene Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "Vratienie dane zaplatenej v cene tovaru"
+          }
+        },
+        "type": "VYPLNYVA_Z",
+        "properties": {
+          "add": "vratenie dane zaplatenej v cene tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 64",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 64"
+          }
+        },
+        "target": {
+          "id": "Dane Z Tychto Tovarov A Sluzieb",
+          "type": "Dan",
+          "properties": {
+            "name": "Dane z tychto tovarov a sluzieb"
+          }
+        },
+        "type": "VYPLNYVA_Z",
+        "properties": {
+          "add": "dane z tychto tovarov a sluzieb v danovom priznani",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratienie dane neziskovym organizaciam poskytujucim vseobecne prospesne sluzby a Slovenskemu Cervenemu krizu"
+          }
+        },
+        "target": {
+          "id": "Humanitarna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Humanitarna cinnost"
+          }
+        },
+        "type": "MA_PODMINKU",
+        "properties": {
+          "add": "vyvoz tovaru mimo uzemia EU na humanitarna cinnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratienie dane neziskovym organizaciam poskytujucim vseobecne prospesne sluzby a Slovenskemu Cervenemu krizu"
+          }
+        },
+        "target": {
+          "id": "Dobrocinna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dobrocinna cinnost"
+          }
+        },
+        "type": "MA_PODMINKU",
+        "properties": {
+          "add": "vyvoz tovaru mimo uzemia EU na dobrocinna cinnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratienie dane neziskovym organizaciam poskytujucim vseobecne prospesne sluzby a Slovenskemu Cervenemu krizu"
+          }
+        },
+        "target": {
+          "id": "Vzdelavacia Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vzdelavacia cinnost"
+          }
+        },
+        "type": "MA_PODMINKU",
+        "properties": {
+          "add": "vyvoz tovaru mimo uzemia EU na vzdelavacia cinnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratienie dane neziskovym organizaciam poskytujucim vseobecne prospesne sluzby a Slovenskemu Cervenemu krizu"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "ziadost sa podava danovemu uradu Bratislava",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 64A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 64a"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Vratienie dane"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "osobitna uprava uplatnovania dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 64",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 64"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 64A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 64a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vratienie dane neziskovym organizaciam poskytujucim vseobecne prospesne sluzby a Slovenskemu Cervenemu krizu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Neziskova Organizacia Poskytujuca Vseobecne Prospesne Sluzby",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Neziskova organizacia poskytujuca vseobecne prospesne sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Slovensky Cerveny Kriz",
+          "type": "Organizacia",
+          "properties": {
+            "name": "Slovensky Cerveny kriz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zostavovanie Dokladov Preukazujucich Uvedenie Zakladu Dane A Dane V Danovom Priznani",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zostavovanie dokladov preukazujucich uvedenie zakladu dane a dane v danovom priznani"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Doklad o kupe tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colne Vyhlasenie O Vyvoze Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "Colne vyhlasenie o vyvoze tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "Danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Zaplatenej V Cene Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "Vratienie dane zaplatenej v cene tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dane Z Tychto Tovarov A Sluzieb",
+          "type": "Dan",
+          "properties": {
+            "name": "Dane z tychto tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "Suma dane v eurach"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Eurach",
+          "type": "Euro",
+          "properties": {
+            "name": "Eurach"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Humanitarna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Humanitarna cinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dobrocinna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dobrocinna cinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vzdelavacia Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vzdelavacia cinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "Vratienie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "republiky, k žiadosti sa musia doložiť aj doklady preukazujúce uvedenie základu dane a dane\nz týchto tovarov a služieb v daňovom priznaní.\n§ 64\nVrátenie dane neziskovým organizáciám poskytujúcim všeobecne prospešné služby\na Slovenskému Červenému krížu\n(1) Nezisková organizácia poskytujúca všeobecne prospešné služby28) a Slovenský Červený kríž\nmôžu požiadať o vrátenie dane zaplatenej v cene tovaru, ktorý vyviezli mimo územia Európskej\núnie na humanitárnu, dobročinnú alebo vzdelávaciu činnosť.\n(2) Nezisková organizácia poskytujúca všeobecne prospešné služby a Slovenský Červený kríž\nuplatňujú nárok na vrátenie dane podaním žiadosti Daňovému úradu Bratislava. K žiadosti\no vrátenie dane sa musí doložiť\na) doklad o kúpe tovaru od platiteľa, v ktorom je uvedená suma dane v eurách s potvrdením\nplatby dane,\nb) colné vyhlásenie o vývoze tovaru.\nOsobitná úprava uplatňovania dane\n§ 64a\nNa miesto dodania služby, vznik daňovej povinnosti, základ dane, opravu základu dane,",
+            "page": 79
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

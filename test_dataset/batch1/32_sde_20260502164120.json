@@ -1,0 +1,660 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad"
+        }
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {
+          "name": "clen skupiny"
+        }
+      },
+      {
+        "id": "Skupina",
+        "type": "Skupina",
+        "properties": {
+          "name": "skupina"
+        }
+      },
+      {
+        "id": "§ 4A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4a"
+        }
+      },
+      {
+        "id": "Zakon",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "zakon"
+        }
+      },
+      {
+        "id": "Samostatny Platitel",
+        "type": "Status",
+        "properties": {
+          "name": "samostatny platitel"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie"
+        }
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Zaznam",
+        "properties": {
+          "name": "odvolanie"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Plnenia",
+        "type": "Cinnost",
+        "properties": {
+          "name": "plnenia"
+        }
+      },
+      {
+        "id": "Zmena Registracie Skupiny",
+        "type": "Registracia",
+        "properties": {
+          "name": "zmena registracie skupiny"
+        }
+      },
+      {
+        "id": "Prava",
+        "type": "Pravo",
+        "properties": {
+          "name": "prava"
+        }
+      },
+      {
+        "id": "Povinnosti",
+        "type": "Povinnost",
+        "properties": {
+          "name": "povinnosti"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+          "page": 7
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "§ 4A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "§ 4A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "type": "REGISTRUJE",
+        "properties": {
+          "add": "za samostatneho platitela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "PRIDELUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "target": {
+          "id": "Samostatny Platitel",
+          "type": "Status",
+          "properties": {
+            "name": "samostatny platitel"
+          }
+        },
+        "type": "MA_STATUS",
+        "properties": {
+          "add": "ku dnu ked nastali ucinky zmeny registracie skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "type": "MA_ODKLADNY_UCINOK",
+        "properties": {
+          "add": "proti rozhodnutiu nie je odvolanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "MA_ZASTUPCU",
+        "properties": {
+          "add": "vylucena zo skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prava",
+          "type": "Pravo",
+          "properties": {
+            "name": "prava"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "PRECHADZA_NA",
+        "properties": {
+          "add": "prava skupiny vyplivajuce z tohto zakona",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnosti",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnosti"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "PRECHADZA_NA",
+        "properties": {
+          "add": "povinnosti skupiny vyplivajuce z tohto zakona",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prava",
+          "type": "Pravo",
+          "properties": {
+            "name": "prava"
+          }
+        },
+        "target": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "type": "VYPLYVA_Z",
+        "properties": {
+          "add": "prava skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnosti",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnosti"
+          }
+        },
+        "target": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "type": "VYPLYVA_Z",
+        "properties": {
+          "add": "povinnosti skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Plnenia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "plnenia"
+          }
+        },
+        "target": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie skupiny"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "uskutocnene a prijate plnenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "clen skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {
+            "name": "skupina"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 4A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zakon"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Samostatny Platitel",
+          "type": "Status",
+          "properties": {
+            "name": "samostatny platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Plnenia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "plnenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {
+            "name": "zmena registracie skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prava",
+          "type": "Pravo",
+          "properties": {
+            "name": "prava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnosti",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Daňový úrad príslušný pre člena skupiny, ktorý prestal spĺňať podmienky podľa § 4a, zaregistruje\ntakéhoto člena skupiny za samostatného platiteľa ku dňu, keď nastali účinky zmeny registrácie\nskupiny, a pridelí mu identifikačné číslo pre daň; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Práva a povinnosti skupiny vyplývajúce z tohto zákona prechádzajú na zdaniteľnú\nosobu, ktorá bola zo skupiny vylúčená, dňom, keď nastali účinky zmeny registrácie skupiny, a to\nv rozsahu, v akom sa vzťahujú na plnenia uskutočnené a prijaté touto zdaniteľnou osobou.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

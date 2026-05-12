@@ -1,0 +1,844 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Osoba Registrovana Pre Dan Podľa § 7 Alebo 7A",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Osoba registrovana pre dan podla § 7 alebo 7a"
+        }
+      },
+      {
+        "id": "Call-Off Stock",
+        "type": "Cinnost",
+        "properties": {
+          "name": "call-off stock"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Iny Clenstvy Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "iny clensky stat"
+        }
+      },
+      {
+        "id": "Oprava Zakladu Dane Podla § 25 A 25A",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava zakladu dane podla § 25 a 25a"
+        }
+      },
+      {
+        "id": "Oprava Odpocitanej Dane Podla § 53, § 53A, § 53B Ods. 1 A 2",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava odpocitanej dane podla § 53, § 53a, § 53b ods. 1 a 2"
+        }
+      },
+      {
+        "id": "Oprava Opravenej Odpocitanej Dane Podla § 53B Ods. 4",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava opravenej odpocitanej dane podla § 53b ods. 4"
+        }
+      },
+      {
+        "id": "Hnutelny Hmotny Majetok Z Ineho Clenskeho Statu",
+        "type": "Majetok",
+        "properties": {
+          "name": "hnutelny hmotny majetok z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Osoba Identifikovana Pre Dan V Inom Clenskom State",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba identifikovana pre dan v inom clenskom state"
+        }
+      },
+      {
+        "id": "§ 25",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 25"
+        }
+      },
+      {
+        "id": "§ 25A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 25a"
+        }
+      },
+      {
+        "id": "§ 53",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 53"
+        }
+      },
+      {
+        "id": "§ 53A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 53a"
+        }
+      },
+      {
+        "id": "§ 53B Ods. 1 A 2",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 53b ods. 1 a 2"
+        }
+      },
+      {
+        "id": "§ 53B Ods. 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 53b ods. 4"
+        }
+      },
+      {
+        "id": "§ 7",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 7"
+        }
+      },
+      {
+        "id": "§ 7A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 7a"
+        }
+      },
+      {
+        "id": "§ 15 Ods. 1",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 15 ods. 1"
+        }
+      },
+      {
+        "id": "§ 69 Ods. 3",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 69 ods. 3"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+          "page": 108
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Call-Off Stock",
+          "type": "Cinnost",
+          "properties": {
+            "name": "call-off stock"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "reziim call-off stock",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Oprava Zakladu Dane Podla § 25 A 25A",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane podla § 25 a 25a"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "oprava zakladu dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpocitanej Dane Podla § 53, § 53A, § 53B Ods. 1 A 2",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpocitanej dane podla § 53, § 53a, § 53b ods. 1 a 2"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "oprava odpocitanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Oprava Opravenej Odpocitanej Dane Podla § 53B Ods. 4",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava opravenej odpocitanej dane podla § 53b ods. 4"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "oprava opravenej odpocitanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Hnutelny Hmotny Majetok Z Ineho Clenskeho Statu",
+          "type": "Majetok",
+          "properties": {
+            "name": "hnutelny hmotny majetok z ineho clenskeho statu"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "identifikacia majetku a vykonanie prac alebo ocenenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "§ 25",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "§ 25A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "§ 53",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "§ 53A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "§ 53B Ods. 1 A 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53b ods. 1 a 2"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "§ 53B Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53b ods. 4"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Registrovana Pre Dan Podľa § 7 Alebo 7A",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Osoba registrovana pre dan podla § 7 alebo 7a"
+          }
+        },
+        "target": {
+          "id": "§ 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Registrovana Pre Dan Podľa § 7 Alebo 7A",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Osoba registrovana pre dan podla § 7 alebo 7a"
+          }
+        },
+        "target": {
+          "id": "§ 7A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Registrovana Pre Dan Podľa § 7 Alebo 7A",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Osoba registrovana pre dan podla § 7 alebo 7a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Call-Off Stock",
+          "type": "Cinnost",
+          "properties": {
+            "name": "call-off stock"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Iny Clenstvy Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "iny clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane Podla § 25 A 25A",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane podla § 25 a 25a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Odpocitanej Dane Podla § 53, § 53A, § 53B Ods. 1 A 2",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpocitanej dane podla § 53, § 53a, § 53b ods. 1 a 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Opravenej Odpocitanej Dane Podla § 53B Ods. 4",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava opravenej odpocitanej dane podla § 53b ods. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hnutelny Hmotny Majetok Z Ineho Clenskeho Statu",
+          "type": "Majetok",
+          "properties": {
+            "name": "hnutelny hmotny majetok z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Identifikovana Pre Dan V Inom Clenskom State",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba identifikovana pre dan v inom clenskom state"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 25",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 25A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 25a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53B Ods. 1 A 2",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53b ods. 1 a 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 53B Ods. 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 53b ods. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 7A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 15 Ods. 1",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 15 ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 69 Ods. 3",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69 ods. 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "c) v režime call-off stock, v rozsahu podľa osobitného predpisu,28dc)\nh) tovare, ktorý bol pre neho odoslaný alebo prepravený do tuzemska z iného členského štátu\nv režime call-off stock, v rozsahu podľa osobitného predpisu,\ni) oprave základu dane podľa § 25 a 25a,\nj) oprave odpočítanej dane podľa § 53, § 53a, § 53b ods. 1 a 2 a oprave opravenej odpočítanej\ndane podľa § 53b ods. 4.\n(3) Platiteľ vedie osobitne záznamy potrebné na identifikáciu hnuteľného hmotného majetku\nz iného členského štátu, na ktorom vykoná práce alebo ho oceňuje, ak tieto práce vykonáva pre\nosobu identifikovanú pre daň v inom členskom štáte.\n(4) Osoba registrovaná pre daň podľa § 7 alebo 7a je povinná viesť záznamy o \na) nadobudnutých tovaroch z iného členského štátu,\nb) dodaných službách s miestom dodania v inom členskom štáte podľa § 15 ods. 1,\nc) prijatých službách, pri ktorých je povinná platiť daň podľa § 69 ods. 3,\nd) tovare, ktorý bol pre ňu odoslaný alebo prepravený do tuzemska z iného členského štátu",
+            "page": 108
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

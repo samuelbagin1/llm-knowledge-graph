@@ -1,0 +1,880 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf 7",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 7"
+        }
+      },
+      {
+        "id": "Paragraf 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4"
+        }
+      },
+      {
+        "id": "Paragraf 15",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 15"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "(2)"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "(3)"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Ziadost O Registraciu Pre Dan",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o registraciu pre dan"
+        }
+      },
+      {
+        "id": "Danova Registracia",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia pre dan"
+        }
+      },
+      {
+        "id": "Dodanien Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie sluzby"
+        }
+      },
+      {
+        "id": "Dodananie Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodavanie sluzby"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Miesto Dodania",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto dodania"
+        }
+      },
+      {
+        "id": "Desat Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "desiatich dni"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Osoba Povinna Platit Dan",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba povinna platit dan"
+        }
+      },
+      {
+        "id": "Prijemca Sluzby",
+        "type": "Osoba",
+        "properties": {
+          "name": "prijemca sluzby"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+          "page": 11
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "povinnost podat ziadost o registraciu pre dan a registracia pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "podat pred dodanim sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "registracia pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_SIDLO",
+        "properties": {
+          "add": "sidlom v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_MIESTO_PODNIKANIA",
+        "properties": {
+          "add": "miestom podnikania v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_PREVADZKAREN",
+        "properties": {
+          "add": "prevadzkaren v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "MA_BYDLISKO",
+        "properties": {
+          "add": "bydlisko v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Dodanien Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "dodava sluzbu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanien Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Miesto Dodania",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "podla paragrafu 15 ods. 1 v inom clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanien Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "Paragraf 15",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 15"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "ak nie je povinna podat ziadost podla paragrafu 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "pridelit do desiatich dni od dorucenia ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "REGISTRUJE",
+        "properties": {
+          "add": "pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desiatich dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "najneskor do desiatich dni odo dna dorucenia ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "(2)"
+          }
+        },
+        "target": {
+          "id": "Paragraf 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "odsek 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "target": {
+          "id": "Paragraf 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "odsek 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 15",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 15"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "(2)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Pre Dan",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o registraciu pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Registracia",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanien Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodananie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodavanie sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desiatich dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Povinna Platit Dan",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba povinna platit dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijemca Sluzby",
+          "type": "Osoba",
+          "properties": {
+            "name": "prijemca sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7.\n(2) Ak zdaniteľná osoba, ktorá nie je povinná podať žiadosť o registráciu pre daň podľa § 4\na ktorá má v tuzemsku sídlo, miesto podnikania, prevádzkareň, bydlisko alebo sa v tuzemsku\nobvykle zdržiava, dodáva službu, pri ktorej je miesto dodania podľa § 15 ods. 1 v inom členskom\nštáte a osobou povinnou platiť daň je príjemca služby, je povinná podať daňovému úradu žiadosť\no registráciu pre daň pred dodaním služby; žiadosť o registráciu pre daň táto zdaniteľná osoba\nnepodáva, ak je registrovaná pre daň podľa § 7.\n(3) Daňový úrad je povinný osobu podľa odseku 1 alebo 2 registrovať pre daň a prideliť jej\nidentifikačné číslo pre daň najneskôr do desiatich dní odo dňa doručenia žiadosti o registráciu pre\ndaň; ak zdaniteľná osoba má identifikačné číslo pre daň na účely uplatňovania osobitnej úpravy",
+            "page": 11
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

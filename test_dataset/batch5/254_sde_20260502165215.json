@@ -1,0 +1,250 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Ucely Podnikania",
+        "type": "Cinnost",
+        "properties": {
+          "name": "ucely podnikania"
+        }
+      },
+      {
+        "id": "Iny Ucel Ako Na Podnikanie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "iny ucel ako na podnikanie"
+        }
+      },
+      {
+        "id": "Uplava Odpocitanej Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "uprava odpocitanej dane"
+        }
+      },
+      {
+        "id": "Priloha C. 1",
+        "type": "Priloha",
+        "properties": {
+          "name": "priloha c. 1"
+        }
+      },
+      {
+        "id": "Investicny Majetok",
+        "type": "Investicnymajetok",
+        "properties": {
+          "name": "investicny majetok"
+        }
+      },
+      {
+        "id": "Dan Odpocitana",
+        "type": "Dan",
+        "properties": {
+          "name": "dan odpocitana"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "účely podnikania, ako aj na iný účel ako na podnikanie. Platiteľ postupuje pri úprave odpočítanej\ndane podľa prílohy č. 1. Na účely výpočtu úpravy dane odpočítanej pri investičnom majetku sa",
+          "page": 63
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Uplava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "uprava odpocitanej dane"
+          }
+        },
+        "target": {
+          "id": "Priloha C. 1",
+          "type": "Priloha",
+          "properties": {
+            "name": "priloha c. 1"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "podla priloha c. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Uplava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "uprava odpocitanej dane"
+          }
+        },
+        "target": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "na ucely vypoctu upravy dane ododpocitanej pri investicnom majetku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ucely Podnikania",
+          "type": "Cinnost",
+          "properties": {
+            "name": "ucely podnikania"
+          }
+        },
+        "target": {
+          "id": "Iny Ucel Ako Na Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "iny ucel ako na podnikanie"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "alternativny ucel",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ucely Podnikania",
+          "type": "Cinnost",
+          "properties": {
+            "name": "ucely podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účely podnikania, ako aj na iný účel ako na podnikanie. Platiteľ postupuje pri úprave odpočítanej\ndane podľa prílohy č. 1. Na účely výpočtu úpravy dane odpočítanej pri investičnom majetku sa",
+            "page": 63
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Iny Ucel Ako Na Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "iny ucel ako na podnikanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účely podnikania, ako aj na iný účel ako na podnikanie. Platiteľ postupuje pri úprave odpočítanej\ndane podľa prílohy č. 1. Na účely výpočtu úpravy dane odpočítanej pri investičnom majetku sa",
+            "page": 63
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uplava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "uprava odpocitanej dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účely podnikania, ako aj na iný účel ako na podnikanie. Platiteľ postupuje pri úprave odpočítanej\ndane podľa prílohy č. 1. Na účely výpočtu úpravy dane odpočítanej pri investičnom majetku sa",
+            "page": 63
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priloha C. 1",
+          "type": "Priloha",
+          "properties": {
+            "name": "priloha c. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účely podnikania, ako aj na iný účel ako na podnikanie. Platiteľ postupuje pri úprave odpočítanej\ndane podľa prílohy č. 1. Na účely výpočtu úpravy dane odpočítanej pri investičnom majetku sa",
+            "page": 63
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účely podnikania, ako aj na iný účel ako na podnikanie. Platiteľ postupuje pri úprave odpočítanej\ndane podľa prílohy č. 1. Na účely výpočtu úpravy dane odpočítanej pri investičnom majetku sa",
+            "page": 63
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Odpocitana",
+          "type": "Dan",
+          "properties": {
+            "name": "dan odpocitana"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "účely podnikania, ako aj na iný účel ako na podnikanie. Platiteľ postupuje pri úprave odpočítanej\ndane podľa prílohy č. 1. Na účely výpočtu úpravy dane odpočítanej pri investičnom majetku sa",
+            "page": 63
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

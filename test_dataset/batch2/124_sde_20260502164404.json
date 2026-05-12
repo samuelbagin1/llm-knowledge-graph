@@ -1,0 +1,656 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Doklad O Oprave Zakladu Dane",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklad o oprave zakladu dane"
+        }
+      },
+      {
+        "id": "Oprava Zakladu Dane",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava zakladu dane"
+        }
+      },
+      {
+        "id": "Zaklad Dane",
+        "type": "Dan",
+        "properties": {
+          "name": "zaklad dane"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Ineho Clenskeho Statu",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzba"
+        }
+      },
+      {
+        "id": "Nadobudatel Tovaru",
+        "type": "Subjekt",
+        "properties": {
+          "name": "nadobudatel tovaru"
+        }
+      },
+      {
+        "id": "Prijemca Sluzby",
+        "type": "Subjekt",
+        "properties": {
+          "name": "prijemca sluzby"
+        }
+      },
+      {
+        "id": "Danyove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "daňové priznanie"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdaňovacie obdobie"
+        }
+      },
+      {
+        "id": "Colny Organ",
+        "type": "Statnyorgan",
+        "properties": {
+          "name": "colny organ"
+        }
+      },
+      {
+        "id": "Ziadost",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadosti"
+        }
+      },
+      {
+        "id": "Dovoz Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dovoz tovaru"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Dan Z Dovezeneho Tovaru",
+        "type": "Dan",
+        "properties": {
+          "name": "dan z dovezeneho tovaru"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+          "page": 30
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Doklad O Oprave Zakladu Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o oprave zakladu dane"
+          }
+        },
+        "target": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "doklad o oprave zakladu dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "target": {
+          "id": "Zaklad Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "zaklad dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "nadobudnutie tovaru v tuzemsku z ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "target": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "dodanie sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danyove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdaňovacie obdobie"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "za ktore sa uvadza rozdiel",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Organ",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "colny organ"
+          }
+        },
+        "target": {
+          "id": "Ziadost",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadosti"
+          }
+        },
+        "type": "VYDA",
+        "properties": {
+          "add": "na zaklade ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dovoz Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dovoz tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "dovoz tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Dan Z Dovezeneho Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "dan z dovezeneho tovaru"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "odpoctat daň v plnom rozsahu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Z Dovezeneho Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "dan z dovezeneho tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dovezeny tovar",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad O Oprave Zakladu Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o oprave zakladu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ineho Clenskeho Statu",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadobudatel Tovaru",
+          "type": "Subjekt",
+          "properties": {
+            "name": "nadobudatel tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijemca Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "prijemca sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danyove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdaňovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Organ",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "colny organ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovoz Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dovoz tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Z Dovezeneho Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "dan z dovezeneho tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom sa vyhotovil doklad o oprave základu dane, a pri oprave základu dane pri nadobudnutí\ntovaru v tuzemsku z iného členského štátu alebo pri dodaní tovaru alebo služby, keď je povinný\nplatiť daň nadobúdateľ tovaru alebo príjemca služby, rozdiel sa uvedie v daňovom priznaní za\nzdaňovacie obdobie, v ktorom nadobúdateľ tovaru alebo príjemca služby obdržal doklad o oprave\nzákladu dane. Ak sa pri oprave základu dane nevyhotovuje doklad o oprave základu dane, uvedie\nsa rozdiel medzi pôvodným základom dane a opraveným základom dane a rozdiel medzi pôvodnou\ndaňou a opravenou daňou v daňovom priznaní za zdaňovacie obdobie, v ktorom nastala\nskutočnosť, ktorá má za následok opravu základu dane.\n(4) Colný orgán vráti alebo odpustí daň pri dovoze tovaru na základe žiadosti v prípadoch podľa\nosobitného predpisu6acaa) s výnimkou prípadu, ak platiteľ môže odpočítať daň z dovezeného tovaru\nv plnom rozsahu; táto výnimka sa nevzťahuje na prípad podľa osobitného predpisu.6acab) Ak pri",
+            "page": 30
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

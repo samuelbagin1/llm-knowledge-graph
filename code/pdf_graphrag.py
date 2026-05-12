@@ -477,6 +477,7 @@ class PDFGraphRAG:
         - Node type fallback to DEFAULT_NODE_TYPE
         - Relationship type normalization
         """
+        chunk_id = f"chunk_{i}_{document_id}"
         nodes = []
         relationships = []
         
@@ -487,7 +488,6 @@ class PDFGraphRAG:
                 properties={}
             )
         else:
-            chunk_id = f"chunk_{i}_{document_id}"
 
             chunk_node = Node(
                 id=chunk_id,
@@ -551,9 +551,10 @@ class PDFGraphRAG:
             if source_node and target_node:
                 # Format relationship properties
                 raw_rel_props = rel_data.get("properties", {})
+                section_property = section_id if section_id else chunk_id
                 formatted_rel_props = {
                     **sanitize_property_keys(raw_rel_props),
-                    "document_id": document_id
+                    "section": section_property
                 }
 
                 relationship = Relationship(

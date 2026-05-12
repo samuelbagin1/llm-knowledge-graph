@@ -1,0 +1,1279 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danovy Urad",
+        "type": "Spravcadane",
+        "properties": {
+          "name": "Danovy urad"
+        }
+      },
+      {
+        "id": "Skladovacia Kapacita Osobitneho Skladu",
+        "type": "Hodnota",
+        "properties": {
+          "name": "skladovacia kapacita osobitneho skladu"
+        }
+      },
+      {
+        "id": "Osobitny Sklad",
+        "type": "Majetok",
+        "properties": {
+          "name": "osobitny sklad"
+        }
+      },
+      {
+        "id": "Sadzba Dane Prisluchajuca K Tovaru",
+        "type": "Sadzbadane",
+        "properties": {
+          "name": "sadzba dane prisluchajuca k tovaru"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Posledna Zverejnena Priemerna Nominalna Cena Tovaru",
+        "type": "Hodnota",
+        "properties": {
+          "name": "posledna zverejnena priemerna nominalna cena tovaru"
+        }
+      },
+      {
+        "id": "Webove Sidlo Svetovej Banky",
+        "type": "Lokacia",
+        "properties": {
+          "name": "webove sidlo Svetovej banky"
+        }
+      },
+      {
+        "id": "Ziadost",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost"
+        }
+      },
+      {
+        "id": "Referencny Vymenny Kurz",
+        "type": "Kurz",
+        "properties": {
+          "name": "referencny vymenny kurz"
+        }
+      },
+      {
+        "id": "Eur",
+        "type": "Mena",
+        "properties": {
+          "name": "eur"
+        }
+      },
+      {
+        "id": "Europska Centralna Banka",
+        "type": "Statnyorgan",
+        "properties": {
+          "name": "Europska centralna banka"
+        }
+      },
+      {
+        "id": "Prvy Den Kalendarneho Mesiaca",
+        "type": "Datum",
+        "properties": {
+          "name": "prvy den kalendarneho mesiaca"
+        }
+      },
+      {
+        "id": "Nasledujuci Den",
+        "type": "Datum",
+        "properties": {
+          "name": "nasledujuci den"
+        }
+      },
+      {
+        "id": "Zabezpeka Na Dan",
+        "type": "Zabezpekanadan",
+        "properties": {
+          "name": "zabezpeka na dan"
+        }
+      },
+      {
+        "id": "Penezne Prostriedky",
+        "type": "Mnozstvo",
+        "properties": {
+          "name": "penezne prostriedky"
+        }
+      },
+      {
+        "id": "Ucet Danoveho Uradu",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "ucet danoveho uradu"
+        }
+      },
+      {
+        "id": "Bankova Zaruka",
+        "type": "Zavazok",
+        "properties": {
+          "name": "bankova zaruka"
+        }
+      },
+      {
+        "id": "Banka",
+        "type": "Banka",
+        "properties": {
+          "name": "banka"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Uroky",
+        "type": "Urok",
+        "properties": {
+          "name": "uroky"
+        }
+      },
+      {
+        "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+        "type": "Povolenie",
+        "properties": {
+          "name": "povolenie na prevadzkovanie osobitneho skladu"
+        }
+      },
+      {
+        "id": "Skutocnosti A Udaje Podla Odsekov 4 Az 6",
+        "type": "Zaznam",
+        "properties": {
+          "name": "skutocnosti a udaje podla odsekov 4 az 6"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 3"
+        }
+      },
+      {
+        "id": "Odseky 4 Az 6",
+        "type": "Odsek",
+        "properties": {
+          "name": "odseky 4 az 6"
+        }
+      },
+      {
+        "id": "Odsek 7",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 7"
+        }
+      },
+      {
+        "id": "Odsek 8",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 8"
+        }
+      },
+      {
+        "id": "Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+          "page": 52
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Skladovacia Kapacita Osobitneho Skladu",
+          "type": "Hodnota",
+          "properties": {
+            "name": "skladovacia kapacita osobitneho skladu"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "na zaklade skladovacej kapacity osobitneho skladu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Sadzba Dane Prisluchajuca K Tovaru",
+          "type": "Sadzbadane",
+          "properties": {
+            "name": "sadzba dane prisluchajuca k tovaru"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "na zaklade sadzby dane prisluchajucej k tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Posledna Zverejnena Priemerna Nominalna Cena Tovaru",
+          "type": "Hodnota",
+          "properties": {
+            "name": "posledna zverejnena priemerna nominalna cena tovaru"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "na zaklade poslednej zverejnenej priemernej nominalnej ceny tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Posledna Zverejnena Priemerna Nominalna Cena Tovaru",
+          "type": "Hodnota",
+          "properties": {
+            "name": "posledna zverejnena priemerna nominalna cena tovaru"
+          }
+        },
+        "target": {
+          "id": "Webove Sidlo Svetovej Banky",
+          "type": "Lokacia",
+          "properties": {
+            "name": "webove sidlo Svetovej banky"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "zverejnena na webovom sidle Svetovej banky",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Posledna Zverejnena Priemerna Nominalna Cena Tovaru",
+          "type": "Hodnota",
+          "properties": {
+            "name": "posledna zverejnena priemerna nominalna cena tovaru"
+          }
+        },
+        "target": {
+          "id": "Ziadost",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "pred podanim ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "daňový úrad vydal rozhodnutie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "Prvy Den Kalendarneho Mesiaca",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den kalendarneho mesiaca"
+          }
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "add": "v prvy den kalendarneho mesiaca",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prvy Den Kalendarneho Mesiaca",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den kalendarneho mesiaca"
+          }
+        },
+        "target": {
+          "id": "Referencny Vymenny Kurz",
+          "type": "Kurz",
+          "properties": {
+            "name": "referencny vymenny kurz"
+          }
+        },
+        "type": "NASTAVA_PRI",
+        "properties": {
+          "add": "ak bol urceny a vyhlaseny kurz",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Referencny Vymenny Kurz",
+          "type": "Kurz",
+          "properties": {
+            "name": "referencny vymenny kurz"
+          }
+        },
+        "target": {
+          "id": "Eur",
+          "type": "Mena",
+          "properties": {
+            "name": "eur"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "prepočet na eurá",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Referencny Vymenny Kurz",
+          "type": "Kurz",
+          "properties": {
+            "name": "referencny vymenny kurz"
+          }
+        },
+        "target": {
+          "id": "Europska Centralna Banka",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "Europska centralna banka"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "urceny a vyhlaseny ECB",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Referencny Vymenny Kurz",
+          "type": "Kurz",
+          "properties": {
+            "name": "referencny vymenny kurz"
+          }
+        },
+        "target": {
+          "id": "Nasledujuci Den",
+          "type": "Datum",
+          "properties": {
+            "name": "nasledujuci den"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "nasledujuci den ak nebol kurz urceny a vyhlaseny v tento den",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpeka Na Dan",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na dan"
+          }
+        },
+        "target": {
+          "id": "Penezne Prostriedky",
+          "type": "Mnozstvo",
+          "properties": {
+            "name": "penezne prostriedky"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "zlozenim penaznych prostriedkov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Penezne Prostriedky",
+          "type": "Mnozstvo",
+          "properties": {
+            "name": "penezne prostriedky"
+          }
+        },
+        "target": {
+          "id": "Ucet Danoveho Uradu",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "ucet danoveho uradu"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "na ucet danoveho uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpeka Na Dan",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na dan"
+          }
+        },
+        "target": {
+          "id": "Bankova Zaruka",
+          "type": "Zavazok",
+          "properties": {
+            "name": "bankova zaruka"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "alebo bankovou zarukou",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Bankova Zaruka",
+          "type": "Zavazok",
+          "properties": {
+            "name": "bankova zaruka"
+          }
+        },
+        "target": {
+          "id": "Banka",
+          "type": "Banka",
+          "properties": {
+            "name": "banka"
+          }
+        },
+        "type": "POSKYTUJE",
+        "properties": {
+          "add": "poskytnuta bankou bez vyhrad",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Uroky",
+          "type": "Urok",
+          "properties": {
+            "name": "uroky"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "zo zlozenej zabezpeky na dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Povolenie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "bezodkladne vydava povolenie na prevadzkovanie osobitneho skladu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Skutocnosti A Udaje Podla Odsekov 4 Az 6",
+          "type": "Zaznam",
+          "properties": {
+            "name": "skutocnosti a udaje podla odsekov 4 az 6"
+          }
+        },
+        "type": "PREVERUJE",
+        "properties": {
+          "add": "pred vydanim povolenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skutocnosti A Udaje Podla Odsekov 4 Az 6",
+          "type": "Zaznam",
+          "properties": {
+            "name": "skutocnosti a udaje podla odsekov 4 az 6"
+          }
+        },
+        "target": {
+          "id": "Odseky 4 Az 6",
+          "type": "Odsek",
+          "properties": {
+            "name": "odseky 4 az 6"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "podla odsekov 4 az 6",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Povolenie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Zabezpeka Na Dan",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na dan"
+          }
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "add": "ak platitel zlozil zabezpeku podla odseku 7",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Povolenie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Skutocnosti A Udaje Podla Odsekov 4 Az 6",
+          "type": "Zaznam",
+          "properties": {
+            "name": "skutocnosti a udaje podla odsekov 4 az 6"
+          }
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "add": "ak su skutocnosti a udaje pravdive a spravne",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Povolenie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 8"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 8",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zabezpeka Na Dan",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na dan"
+          }
+        },
+        "target": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 7",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Povolenie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "ziadost podla odseku 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skladovacia Kapacita Osobitneho Skladu",
+          "type": "Hodnota",
+          "properties": {
+            "name": "skladovacia kapacita osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitny Sklad",
+          "type": "Majetok",
+          "properties": {
+            "name": "osobitny sklad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sadzba Dane Prisluchajuca K Tovaru",
+          "type": "Sadzbadane",
+          "properties": {
+            "name": "sadzba dane prisluchajuca k tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledna Zverejnena Priemerna Nominalna Cena Tovaru",
+          "type": "Hodnota",
+          "properties": {
+            "name": "posledna zverejnena priemerna nominalna cena tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Webove Sidlo Svetovej Banky",
+          "type": "Lokacia",
+          "properties": {
+            "name": "webove sidlo Svetovej banky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Referencny Vymenny Kurz",
+          "type": "Kurz",
+          "properties": {
+            "name": "referencny vymenny kurz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Eur",
+          "type": "Mena",
+          "properties": {
+            "name": "eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Europska Centralna Banka",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "Europska centralna banka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prvy Den Kalendarneho Mesiaca",
+          "type": "Datum",
+          "properties": {
+            "name": "prvy den kalendarneho mesiaca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nasledujuci Den",
+          "type": "Datum",
+          "properties": {
+            "name": "nasledujuci den"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zabezpeka Na Dan",
+          "type": "Zabezpekanadan",
+          "properties": {
+            "name": "zabezpeka na dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Penezne Prostriedky",
+          "type": "Mnozstvo",
+          "properties": {
+            "name": "penezne prostriedky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ucet Danoveho Uradu",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "ucet danoveho uradu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bankova Zaruka",
+          "type": "Zavazok",
+          "properties": {
+            "name": "bankova zaruka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Banka",
+          "type": "Banka",
+          "properties": {
+            "name": "banka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uroky",
+          "type": "Urok",
+          "properties": {
+            "name": "uroky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povolenie Na Prevadzkovanie Osobitneho Skladu",
+          "type": "Povolenie",
+          "properties": {
+            "name": "povolenie na prevadzkovanie osobitneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnosti A Udaje Podla Odsekov 4 Az 6",
+          "type": "Zaznam",
+          "properties": {
+            "name": "skutocnosti a udaje podla odsekov 4 az 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odseky 4 Az 6",
+          "type": "Odsek",
+          "properties": {
+            "name": "odseky 4 az 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "daňový úrad určí na základe skladovacej kapacity osobitného skladu, sadzby dane prislúchajúcej\nk tovaru a poslednej zverejnenej priemernej nominálnej ceny tovaru na webovom sídle Svetovej\nbanky pred podaním žiadosti podľa odseku 3 prepočítanej na eurá; na prepočet sa použije\nreferenčný výmenný kurz určený a vyhlásený Európskou centrálnou bankou v prvý deň\nkalendárneho mesiaca, v ktorom daňový úrad vydal rozhodnutie, alebo nasledujúci deň, ak nebol\nv tento deň referenčný výmenný kurz určený a vyhlásený. Zábezpeka na daň sa skladá zložením\npeňažných prostriedkov na účet daňového úradu alebo bankovou zárukou poskytnutou bankou\nbez výhrad. Zo zloženej zábezpeky na daň platiteľ nemá nárok na úroky.\n(8) Daňový úrad pred vydaním povolenia na prevádzkovanie osobitného skladu preverí\nskutočnosti a údaje podľa odsekov 4 až 6, a ak sú pravdivé a správne a platiteľ zložil zábezpeku\npodľa odseku 7, vydá povolenie na prevádzkovanie osobitného skladu bezodkladne.",
+            "page": 52
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,572 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danovy Urad",
+        "type": "Spravcadane",
+        "properties": {
+          "name": "daňový úrad"
+        }
+      },
+      {
+        "id": "Nadmerny Odpocet",
+        "type": "Nadmernyodpocet",
+        "properties": {
+          "name": "nadmerný odpočet"
+        }
+      },
+      {
+        "id": "Odsek 7",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 7"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 5"
+        }
+      },
+      {
+        "id": "Pravoplatne Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "právoplatné rozhodnutie"
+        }
+      },
+      {
+        "id": "Danova Kontrola",
+        "type": "Konanie",
+        "properties": {
+          "name": "daňová kontrola"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platiteľ"
+        }
+      },
+      {
+        "id": "Narok Na Vranenie Nadmerneho Odctu",
+        "type": "Pravo",
+        "properties": {
+          "name": "nárok na vrátenie nadmerného odpočtu"
+        }
+      },
+      {
+        "id": "Desat Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "desať dní"
+        }
+      },
+      {
+        "id": "Tri Mesiace",
+        "type": "Casoveobdobie",
+        "properties": {
+          "name": "tri mesiace"
+        }
+      },
+      {
+        "id": "Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+        "type": "Datum",
+        "properties": {
+          "name": "deň nadobudnutia právoplatnosti rozhodnutia"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+          "page": 123
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Pravoplatne Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "právoplatné rozhodnutie"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "právoplatné rozhodnutie o nadmernom odpočte",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Danova Kontrola",
+          "type": "Konanie",
+          "properties": {
+            "name": "daňová kontrola"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "daňová kontrola",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Kontrola",
+          "type": "Konanie",
+          "properties": {
+            "name": "daňová kontrola"
+          }
+        },
+        "target": {
+          "id": "Nadmerny Odpocet",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "nadmerný odpočet"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "zistenie nadmerného odpočtu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "target": {
+          "id": "Narok Na Vranenie Nadmerneho Odctu",
+          "type": "Pravo",
+          "properties": {
+            "name": "nárok na vrátenie nadmerného odpočtu"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "vratenie nadmerneho odpočtu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Nadmerny Odpocet",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "nadmerný odpočet"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "vratit rozdiel alebo nadmerny odpočet do 10 dni",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desať dní"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "vratenie do desiatich dni odo dna nadobudnutia pravoplatnosti rozhodnutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Kontrola",
+          "type": "Konanie",
+          "properties": {
+            "name": "daňová kontrola"
+          }
+        },
+        "target": {
+          "id": "Tri Mesiace",
+          "type": "Casoveobdobie",
+          "properties": {
+            "name": "tri mesiace"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "vykonanie daňovej kontroly do troch mesiacov odo dna jej zacatia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Narok Na Vranenie Nadmerneho Odctu",
+          "type": "Pravo",
+          "properties": {
+            "name": "nárok na vrátenie nadmerného odpočtu"
+          }
+        },
+        "target": {
+          "id": "Tri Mesiace",
+          "type": "Casoveobdobie",
+          "properties": {
+            "name": "tri mesiace"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "ak platitel neumožni vykonanie daňovej kontroly do troch mesiacov odo dna jej zacatia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravoplatne Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "právoplatné rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+          "type": "Datum",
+          "properties": {
+            "name": "deň nadobudnutia právoplatnosti rozhodnutia"
+          }
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "add": "den nadobudnutia pravoplatnosti rozhodnutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "daňový úrad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadmerny Odpocet",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "nadmerný odpočet"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravoplatne Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "právoplatné rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Kontrola",
+          "type": "Konanie",
+          "properties": {
+            "name": "daňová kontrola"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platiteľ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Narok Na Vranenie Nadmerneho Odctu",
+          "type": "Pravo",
+          "properties": {
+            "name": "nárok na vrátenie nadmerného odpočtu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desat Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desať dní"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tri Mesiace",
+          "type": "Casoveobdobie",
+          "properties": {
+            "name": "tri mesiace"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+          "type": "Datum",
+          "properties": {
+            "name": "deň nadobudnutia právoplatnosti rozhodnutia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "a to vo výške zistenej daňovým úradom; ak bola časť nadmerného odpočtu vrátená podľa odseku\n7, vráti daňový úrad rozdiel medzi nadmerným odpočtom vo výške zistenej daňovým úradom\na nadmerným odpočtom vráteným podľa odseku 7. Ak po vrátení nadmerného odpočtu vznikne\nkladný rozdiel medzi nadmerným odpočtom uvedeným v právoplatnom rozhodnutí a vráteným\nnadmerným odpočtom podľa prvej vety, vráti daňový úrad tento rozdiel do desiatich dní odo dňa\nnadobudnutia právoplatnosti rozhodnutia. Ak daňový úrad daňovou kontrolou, ktorú začal\nv lehote na vrátenie nadmerného odpočtu podľa odseku 1, 2 alebo odseku 5, nezistí nadmerný\nodpočet a právoplatným rozhodnutím sa prizná nadmerný odpočet, vráti daňový úrad nadmerný\nodpočet uvedený v právoplatnom rozhodnutí do desiatich dní odo dňa nadobudnutia\nprávoplatnosti rozhodnutia. Ak platiteľ neumožní vykonanie daňovej kontroly do troch mesiacov\nodo dňa jej začatia, nárok na vrátenie nadmerného odpočtu zaniká posledným dňom tretieho",
+            "page": 123
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

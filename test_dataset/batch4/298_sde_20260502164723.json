@@ -1,0 +1,810 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Tlačivo Na Vrátenie Dane",
+        "type": "Doklad",
+        "properties": {
+          "name": "Tlačivo na vrátenie dane"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Desiatich Rokov",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "desiatich rokov"
+        }
+      },
+      {
+        "id": "Konca Kalendarneho Roka",
+        "type": "Obdobie",
+        "properties": {
+          "name": "konca kalendarneho roka"
+        }
+      },
+      {
+        "id": "Vratenu Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "vratenu dan"
+        }
+      },
+      {
+        "id": "Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "danove priznanie"
+        }
+      },
+      {
+        "id": "Poverena Osoba",
+        "type": "Subjekt",
+        "properties": {
+          "name": "poverena osoba"
+        }
+      },
+      {
+        "id": "Paragraf 59 Ods. 4 Pism. C",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 59 ods. 4 pism. c"
+        }
+      },
+      {
+        "id": "Cestujuci",
+        "type": "Subjekt",
+        "properties": {
+          "name": "cestujuci"
+        }
+      },
+      {
+        "id": "Paragraf 59 Ods. 1",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 59 ods. 1"
+        }
+      },
+      {
+        "id": "Paragraf 59 Ods. 3",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 59 ods. 3"
+        }
+      },
+      {
+        "id": "Paragraf 59 Ods. 6",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 59 ods. 6"
+        }
+      },
+      {
+        "id": "Elektronicky Predlozeny Doklad O Kupe Tovaru",
+        "type": "Doklad",
+        "properties": {
+          "name": "elektronicky predlozeny doklad o kupe tovaru"
+        }
+      },
+      {
+        "id": "Potvrdenie Vyvozu Tovaru Colnym Uradom",
+        "type": "Doklad",
+        "properties": {
+          "name": "potvrdenie vyvozu tovaru colnym uradom"
+        }
+      },
+      {
+        "id": "Ziadost O Vratenie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o vratenie dane"
+        }
+      },
+      {
+        "id": "Elektronicke Prostriedky",
+        "type": "Elektronickyprostriedok",
+        "properties": {
+          "name": "elektronicke prostriedky"
+        }
+      },
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad Bratislava"
+        }
+      },
+      {
+        "id": "Kalendar Ny Mesiac",
+        "type": "Obdobie",
+        "properties": {
+          "name": "kalendar ny mesiac"
+        }
+      },
+      {
+        "id": "Zoznam Dokladov O Kupe Tovaru",
+        "type": "Doklad",
+        "properties": {
+          "name": "zoznam dokladov o kupe tovaru"
+        }
+      },
+      {
+        "id": "Cestujuci",
+        "type": "Subjekt",
+        "properties": {
+          "name": "cestujuci"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+          "page": 74
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Tlačivo Na Vrátenie Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "Tlačivo na vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "type": "UCHOVAVA",
+        "properties": {
+          "add": "desiatich rokov od konca kalendarneho roka",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tlačivo Na Vrátenie Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "Tlačivo na vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "Vratenu Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenu dan"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Tlačivo Na Vrátenie Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "Tlačivo na vrátenie dane"
+          }
+        },
+        "type": "UCHOVAVA",
+        "properties": {
+          "add": "desiatich rokov od konca kalendarneho roka",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Poverena Osoba",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poverena osoba"
+          }
+        },
+        "target": {
+          "id": "Paragraf 59 Ods. 4 Pism. C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 59 ods. 4 pism. c"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "vratenie dane cestujucemu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Poverena Osoba",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poverena osoba"
+          }
+        },
+        "target": {
+          "id": "Cestujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "cestujuci"
+          }
+        },
+        "type": "VRATANIE_DANE",
+        "properties": {
+          "add": "daň cestujucemu po overeni opravnennosti naroku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Poverena Osoba",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poverena osoba"
+          }
+        },
+        "target": {
+          "id": "Elektronicky Predlozeny Doklad O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "elektronicky predlozeny doklad o kupe tovaru"
+          }
+        },
+        "type": "PREUKAZUJE",
+        "properties": {
+          "add": "overenie opravnenosti naroku na vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Poverena Osoba",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poverena osoba"
+          }
+        },
+        "target": {
+          "id": "Potvrdenie Vyvozu Tovaru Colnym Uradom",
+          "type": "Doklad",
+          "properties": {
+            "name": "potvrdenie vyvozu tovaru colnym uradom"
+          }
+        },
+        "type": "PREUKAZUJE",
+        "properties": {
+          "add": "overenie opravnenosti naroku na vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Poverena Osoba",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poverena osoba"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "elektronickymi prostriedkami",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "za kalendarny mesiac v ktorom bola daň vratena",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Zoznam Dokladov O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "zoznam dokladov o kupe tovaru"
+          }
+        },
+        "type": "MA_PRILOHU",
+        "properties": {
+          "add": "doklady o kupe tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zoznam Dokladov O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "zoznam dokladov o kupe tovaru"
+          }
+        },
+        "target": {
+          "id": "Cestujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "cestujuci"
+          }
+        },
+        "type": "UVADZA",
+        "properties": {
+          "add": "clenenie podľa cestujucich",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tlačivo Na Vrátenie Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "Tlačivo na vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desiatich Rokov",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "desiatich rokov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Konca Kalendarneho Roka",
+          "type": "Obdobie",
+          "properties": {
+            "name": "konca kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenu Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenu dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Poverena Osoba",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poverena osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 59 Ods. 4 Pism. C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 59 ods. 4 pism. c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cestujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "cestujuci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 59 Ods. 1",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 59 ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 59 Ods. 3",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 59 ods. 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 59 Ods. 6",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 59 ods. 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicky Predlozeny Doklad O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "elektronicky predlozeny doklad o kupe tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Potvrdenie Vyvozu Tovaru Colnym Uradom",
+          "type": "Doklad",
+          "properties": {
+            "name": "potvrdenie vyvozu tovaru colnym uradom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Elektronicke Prostriedky",
+          "type": "Elektronickyprostriedok",
+          "properties": {
+            "name": "elektronicke prostriedky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendar Ny Mesiac",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendar ny mesiac"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zoznam Dokladov O Kupe Tovaru",
+          "type": "Doklad",
+          "properties": {
+            "name": "zoznam dokladov o kupe tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cestujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "cestujuci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dane.\n(4) Tlačivo na vrátenie dane uchováva platiteľ počas desiatich rokov od konca kalendárneho\nroka, v ktorom vrátenú daň uplatnil v daňovom priznaní.\n(5) Ak sa vrátenie dane uplatňuje u poverenej osoby podľa § 59 ods. 4 písm. c), táto osoba vráti\ndaň cestujúcemu po overení oprávnenosti nároku na vrátenie dane (§ 59 ods. 1, 3 a 6) na základe\nelektronicky predloženého dokladu o kúpe tovaru a potvrdenia vývozu tovaru colným úradom.\n(6) Daň vrátenú podľa odseku 5 uplatní poverená osoba podľa § 59 ods. 4 písm. c) podaním\nžiadosti o vrátenie dane elektronickými prostriedkami Daňovému úradu Bratislava za kalendárny\nmesiac, v ktorom bola daň vrátená cestujúcemu. Prílohou k žiadosti o vrátenie dane je zoznam\ndokladov o kúpe tovaru, z ktorých bola vrátená daň. Zoznam dokladov o kúpe tovaru sa uvádza\nv členení podľa cestujúcich a obsahuje údaje v rozsahu dohodnutom podľa § 59 ods. 5 písm. d).",
+            "page": 74
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

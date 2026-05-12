@@ -1,0 +1,326 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "31 decembra 2022",
+        "type": "Datum",
+        "properties": {
+          "name": "31. decembra 2022"
+        }
+      },
+      {
+        "id": "1 januara 2023",
+        "type": "Datum",
+        "properties": {
+          "name": "1. januara 2023"
+        }
+      },
+      {
+        "id": "53b",
+        "type": "Paragraf",
+        "properties": {
+          "name": "53b"
+        }
+      },
+      {
+        "id": "Ods 8",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 8"
+        }
+      },
+      {
+        "id": "78a",
+        "type": "Paragraf",
+        "properties": {
+          "name": "78a"
+        }
+      },
+      {
+        "id": "Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze",
+        "type": "Povinnost",
+        "properties": {
+          "name": "povinnost vykazat opravu odpocitanej dane v kontrolnom vykaze"
+        }
+      },
+      {
+        "id": "Oprava Odpocitanej Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "oprava odpocitanej dane"
+        }
+      },
+      {
+        "id": "Kontrolny Vykaz",
+        "type": "Doklad",
+        "properties": {
+          "name": "kontrolny vykaz"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+          "page": 141
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "53b",
+          "type": "Paragraf",
+          "properties": {
+            "name": "53b"
+          }
+        },
+        "target": {
+          "id": "Ods 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 8"
+          }
+        },
+        "type": "MA_ODSEK",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnost vykazat opravu odpocitanej dane v kontrolnom vykaze"
+          }
+        },
+        "target": {
+          "id": "1 januara 2023",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januara 2023"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "v zneni ucinom od",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnost vykazat opravu odpocitanej dane v kontrolnom vykaze"
+          }
+        },
+        "target": {
+          "id": "78a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "78a"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "uplatni sa",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava odpocitanej dane"
+          }
+        },
+        "target": {
+          "id": "Kontrolny Vykaz",
+          "type": "Doklad",
+          "properties": {
+            "name": "kontrolny vykaz"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "v kontrolnom vykaze",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "31 decembra 2022",
+          "type": "Datum",
+          "properties": {
+            "name": "31. decembra 2022"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1 januara 2023",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januara 2023"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "53b",
+          "type": "Paragraf",
+          "properties": {
+            "name": "53b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ods 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "78a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "78a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnost vykazat opravu odpocitanej dane v kontrolnom vykaze"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Odpocitanej Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava odpocitanej dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kontrolny Vykaz",
+          "type": "Doklad",
+          "properties": {
+            "name": "kontrolny vykaz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2022, § 53b ods. 8 v znení účinnom od 1. januára 2023 a na povinnosť vykázať\nopravu odpočítanej dane v kontrolnom výkaze sa uplatní § 78a v znení účinnom do 31. decembra",
+            "page": 141
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

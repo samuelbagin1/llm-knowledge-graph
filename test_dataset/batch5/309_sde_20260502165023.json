@@ -1,0 +1,1056 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Vratnie Dane",
+        "type": "Pravo",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "Opatrenie",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "opatrenie"
+        }
+      },
+      {
+        "id": "Ministerstvo Financii Slovenskej Republiky",
+        "type": "Ministerstvo",
+        "properties": {
+          "name": "Ministerstvo financii Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Zbierka Zakonov Slovenskej Republiky",
+        "type": "Doklad",
+        "properties": {
+          "name": "Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Paragraf 62",
+        "type": "Paragraf",
+        "properties": {
+          "name": "62"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "2"
+        }
+      },
+      {
+        "id": "Zahranicny Zastupca",
+        "type": "Osoba",
+        "properties": {
+          "name": "Zahranicny zastupca"
+        }
+      },
+      {
+        "id": "Ziadost O Vratenie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o vratenie dane"
+        }
+      },
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad Bratislava"
+        }
+      },
+      {
+        "id": "Ministerstvo Zahranicnych Veci A Europskych Zalezitosti Slovenskej Republiky",
+        "type": "Ministerstvo",
+        "properties": {
+          "name": "Ministerstvo zahranicnych veci a europskych zalezitosti Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Podmienka Vzajomnosti",
+        "type": "Podmienka",
+        "properties": {
+          "name": "podmienka vzajomnosti"
+        }
+      },
+      {
+        "id": "Kalendarny Stvrtrok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "kalendarny stvrtrok"
+        }
+      },
+      {
+        "id": "30. den po skonceni kalendarneho stvrtroka",
+        "type": "Lehota",
+        "properties": {
+          "name": "30. den po skonceni kalendarneho stvrtroka"
+        }
+      },
+      {
+        "id": "Priloha C. 4",
+        "type": "Priloha",
+        "properties": {
+          "name": "priloha c. 4"
+        }
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktura"
+        }
+      },
+      {
+        "id": "Doklad O Kupe Tovaru Alebo Sluzby",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklad o kupe tovaru alebo sluzby"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzba"
+        }
+      },
+      {
+        "id": "Suma Dane V Eurach",
+        "type": "Suma",
+        "properties": {
+          "name": "suma dane v eurach"
+        }
+      },
+      {
+        "id": "Euro",
+        "type": "Mena",
+        "properties": {
+          "name": "euro"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+          "page": 77
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Opatrenie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "opatrenie"
+          }
+        },
+        "target": {
+          "id": "Vratnie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "uplatnenie oslobodenia od dane a vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Opatrenie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "opatrenie"
+          }
+        },
+        "target": {
+          "id": "Ministerstvo Financii Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "Ministerstvo financii Slovenskej republiky"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Opatrenie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "opatrenie"
+          }
+        },
+        "target": {
+          "id": "Zbierka Zakonov Slovenskej Republiky",
+          "type": "Doklad",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Opatrenie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "opatrenie"
+          }
+        },
+        "target": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "1"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "2"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "1"
+          }
+        },
+        "target": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "2"
+          }
+        },
+        "target": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicny Zastupca",
+          "type": "Osoba",
+          "properties": {
+            "name": "Zahranicny zastupca"
+          }
+        },
+        "target": {
+          "id": "Vratnie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "uplatnenie naroku na vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicny Zastupca",
+          "type": "Osoba",
+          "properties": {
+            "name": "Zahranicny zastupca"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Zahranicnych Veci A Europskych Zalezitosti Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "Ministerstvo zahranicnych veci a europskych zalezitosti Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "type": "POTVRDZUJE",
+        "properties": {
+          "add": "splnenie podmienky vzajomnosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Zahranicnych Veci A Europskych Zalezitosti Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "Ministerstvo zahranicnych veci a europskych zalezitosti Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Podmienka Vzajomnosti",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienka vzajomnosti"
+          }
+        },
+        "type": "VYPLYVA_Z",
+        "properties": {
+          "add": "podla § 61 ods. 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Kalendarny Stvrtrok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarny stvrtrok"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "30. den po skonceni kalendarneho stvrtroka",
+          "type": "Lehota",
+          "properties": {
+            "name": "30. den po skonceni kalendarneho stvrtroka"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Priloha C. 4",
+          "type": "Priloha",
+          "properties": {
+            "name": "priloha c. 4"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "add": "tlačivo",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "add": "originál faktúry",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Doklad O Kupe Tovaru Alebo Sluzby",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o kupe tovaru alebo sluzby"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad O Kupe Tovaru Alebo Sluzby",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o kupe tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "kupy tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad O Kupe Tovaru Alebo Sluzby",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o kupe tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "kupy sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad O Kupe Tovaru Alebo Sluzby",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o kupe tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "suma dane v eurach"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "suma dane v eurach"
+          }
+        },
+        "target": {
+          "id": "Euro",
+          "type": "Mena",
+          "properties": {
+            "name": "euro"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "v eurach",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratnie Dane",
+          "type": "Pravo",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Opatrenie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "opatrenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Financii Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "Ministerstvo financii Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky",
+          "type": "Doklad",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "62"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicny Zastupca",
+          "type": "Osoba",
+          "properties": {
+            "name": "Zahranicny zastupca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Zahranicnych Veci A Europskych Zalezitosti Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "Ministerstvo zahranicnych veci a europskych zalezitosti Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podmienka Vzajomnosti",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienka vzajomnosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendarny Stvrtrok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "kalendarny stvrtrok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "30. den po skonceni kalendarneho stvrtroka",
+          "type": "Lehota",
+          "properties": {
+            "name": "30. den po skonceni kalendarneho stvrtroka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priloha C. 4",
+          "type": "Priloha",
+          "properties": {
+            "name": "priloha c. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad O Kupe Tovaru Alebo Sluzby",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o kupe tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Dane V Eurach",
+          "type": "Suma",
+          "properties": {
+            "name": "suma dane v eurach"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Euro",
+          "type": "Mena",
+          "properties": {
+            "name": "euro"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "umožnené vrátenie dane podľa odsekov 4, 5, 7, 9, 10 a 11, pričom nárok na vrátenie dane sa\npomerne zníži. Podrobnosti uplatnenia oslobodenia od dane a vrátenia dane ustanoví opatrenie,\nktoré vydá Ministerstvo financií Slovenskej republiky a ktoré sa vyhlasuje v Zbierke zákonov\nSlovenskej republiky.\n§ 62\n(1) Zahraničný zástupca uplatňuje nárok na vrátenie dane podaním žiadosti o vrátenie dane\nDaňovému úradu Bratislava na tlačive, ktorého vzor je uvedený v prílohe č. 4. Ministerstvo\nzahraničných vecí a európskych záležitostí Slovenskej republiky potvrdí elektronicky Daňovému\núradu Bratislava splnenie podmienky vzájomnosti podľa § 61 ods. 3. Žiadosť o vrátenie dane sa\npodáva za obdobie kalendárneho štvrťroka do 30. dňa po skončení kalendárneho štvrťroka.\n(2) Zahraničný zástupca k žiadosti o vrátenie dane musí doložiť originál faktúry alebo iného\ndokladu o kúpe tovaru alebo služby od platiteľa, v ktorom je uvedená suma dane v eurách",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

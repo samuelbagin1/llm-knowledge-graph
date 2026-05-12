@@ -1,0 +1,999 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Dodania Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodania sluzby"
+        }
+      },
+      {
+        "id": "Dodavatel Tovaru Alebo Sluzby",
+        "type": "Subjekt",
+        "properties": {
+          "name": "dodavatel tovaru alebo sluzby"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {
+          "name": "sluzba"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Sidl O",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sidl o"
+        }
+      },
+      {
+        "id": "Miesto Podnikania",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto podnikania"
+        }
+      },
+      {
+        "id": "Prevadzkaren",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevadzkaren"
+        }
+      },
+      {
+        "id": "Bydlisko",
+        "type": "Adresa",
+        "properties": {
+          "name": "bydlisko"
+        }
+      },
+      {
+        "id": "Miesto Kde Sa Obvykle Zdrziava",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto kde sa obvykle zdrziava"
+        }
+      },
+      {
+        "id": "Celkova Hodnota Dodani Uvedenych V Pismene B Bez Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "celkova hodnota dodani uvedenych v pismene b bez dane"
+        }
+      },
+      {
+        "id": "10 000 eur",
+        "type": "Suma",
+        "properties": {
+          "name": "10 000 eur"
+        }
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "prebiehajuci kalendarny rok"
+        }
+      },
+      {
+        "id": "Predchadzajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "predchadzajuci kalendarny rok"
+        }
+      },
+      {
+        "id": "Limit Podla Odseku 1 Pism C",
+        "type": "Limit",
+        "properties": {
+          "name": "limit podla odseku 1 pism c"
+        }
+      },
+      {
+        "id": "Danovy Predpis",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Danovy predpis"
+        }
+      },
+      {
+        "id": "Paragraf 14",
+        "type": "Paragraf",
+        "properties": {
+          "name": "Paragraf 14"
+        }
+      },
+      {
+        "id": "Paragraf 16",
+        "type": "Paragraf",
+        "properties": {
+          "name": "Paragraf 16"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "Pismeno A",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno a"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno b"
+        }
+      },
+      {
+        "id": "Pismeno C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "pismeno c"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+          "page": 23
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "dodavatel tovaru alebo sluzby"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "ma len v jednom clenskom state sidlo, miesto podnikania, prevadzkaren, bydlisko alebo miesto obvykleho zdrziavania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "tovar sa odosiela alebo prepravuje do ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "sluzba sa dodava osobe v inom clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Celkova Hodnota Dodani Uvedenych V Pismene B Bez Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "celkova hodnota dodani uvedenych v pismene b bez dane"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "v prebiehajucom kalendarnom roku nepresiahne 10 000 eur a v predchadzajucom kalendarnom roku nepresiahla 10 000 eur",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Celkova Hodnota Dodani Uvedenych V Pismene B Bez Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "celkova hodnota dodani uvedenych v pismene b bez dane"
+          }
+        },
+        "target": {
+          "id": "10 000 eur",
+          "type": "Suma",
+          "properties": {
+            "name": "10 000 eur"
+          }
+        },
+        "type": "MA_HODNOTU",
+        "properties": {
+          "add": "limitna hodnota",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Celkova Hodnota Dodani Uvedenych V Pismene B Bez Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "celkova hodnota dodani uvedenych v pismene b bez dane"
+          }
+        },
+        "target": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "prebiehajuci kalendarny rok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Celkova Hodnota Dodani Uvedenych V Pismene B Bez Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "celkova hodnota dodani uvedenych v pismene b bez dane"
+          }
+        },
+        "target": {
+          "id": "Predchadzajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "predchadzajuci kalendarny rok"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "predchadzajuci kalendarny rok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Limit Podla Odseku 1 Pism C",
+          "type": "Limit",
+          "properties": {
+            "name": "limit podla odseku 1 pism c"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "pri presiahnuti sa meni miesto dodania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Paragraf 16",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 16"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods 14",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Danovy predpis"
+          }
+        },
+        "target": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "obsahuje ods 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Danovy predpis"
+          }
+        },
+        "target": {
+          "id": "Paragraf 16",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 16"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "obsahuje ods 14",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "type": "MA_ODSEK",
+        "properties": {
+          "add": "ods 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno a"
+          }
+        },
+        "type": "MA_PISMENO",
+        "properties": {
+          "add": "pismeno a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno b"
+          }
+        },
+        "type": "MA_PISMENO",
+        "properties": {
+          "add": "pismeno b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno c"
+          }
+        },
+        "type": "MA_PISMENO",
+        "properties": {
+          "add": "pismeno c",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodania Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodania sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "dodavatel tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba",
+          "type": "Sluzba",
+          "properties": {
+            "name": "sluzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidl O",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sidl o"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto podnikania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevadzkaren"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bydlisko",
+          "type": "Adresa",
+          "properties": {
+            "name": "bydlisko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Kde Sa Obvykle Zdrziava",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto kde sa obvykle zdrziava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Celkova Hodnota Dodani Uvedenych V Pismene B Bez Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "celkova hodnota dodani uvedenych v pismene b bez dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "10 000 eur",
+          "type": "Suma",
+          "properties": {
+            "name": "10 000 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predchadzajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "predchadzajuci kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Limit Podla Odseku 1 Pism C",
+          "type": "Limit",
+          "properties": {
+            "name": "limit podla odseku 1 pism c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Predpis",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Danovy predpis"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 14",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 14"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 16",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 16"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "pismeno c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dodania služby je jeho bydlisko alebo miesto, kde sa obvykle zdržiava, ak\na) dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\nb) tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \nc) celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n(2) Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.",
+            "page": 23
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

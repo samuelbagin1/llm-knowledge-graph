@@ -1,0 +1,642 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Uznesenie O Skoncení Restrukturalizacie",
+        "type": "Doklad",
+        "properties": {
+          "name": "uznesenie o skoncení restrukturalizacie"
+        }
+      },
+      {
+        "id": "Obchodnom Vestniku",
+        "type": "Doklad",
+        "properties": {
+          "name": "obchodnom vestniku"
+        }
+      },
+      {
+        "id": "Pohladavka",
+        "type": "Pohladavka",
+        "properties": {
+          "name": "pohladavka"
+        }
+      },
+      {
+        "id": "Konanie",
+        "type": "Konanie",
+        "properties": {
+          "name": "konanie"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Oprava Zakladu Dane",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava zakladu dane"
+        }
+      },
+      {
+        "id": "Zaklad Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "zaklad dane"
+        }
+      },
+      {
+        "id": "Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "danove priznanie"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Nevymozitelna Pohladavka",
+        "type": "Pohladavka",
+        "properties": {
+          "name": "nevymozitelna pohladavka"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru Alebo Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru alebo sluzby"
+        }
+      },
+      {
+        "id": "Neprijata Protihodnota",
+        "type": "Hodnota",
+        "properties": {
+          "name": "neprijata protihodnota"
+        }
+      },
+      {
+        "id": "Povodny Zaklad Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "povodny zaklad dane"
+        }
+      },
+      {
+        "id": "Opraveny Zaklad Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "opraveny zaklad dane"
+        }
+      },
+      {
+        "id": "Povodna Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "povodna dan"
+        }
+      },
+      {
+        "id": "Opravena Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "opravena dan"
+        }
+      },
+      {
+        "id": "Suma",
+        "type": "Suma",
+        "properties": {
+          "name": "suma"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+          "page": 32
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "opravit zaklad dane podla odseku 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "target": {
+          "id": "Neprijata Protihodnota",
+          "type": "Hodnota",
+          "properties": {
+            "name": "neprijata protihodnota"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "najviac vo vyske zodpovedajucej neprijatej protihodnote",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Neprijata Protihodnota",
+          "type": "Hodnota",
+          "properties": {
+            "name": "neprijata protihodnota"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru alebo sluzby"
+          }
+        },
+        "type": "DODA",
+        "properties": {
+          "add": "za dodanie tovaru alebo sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pohladavka",
+          "type": "Pohladavka",
+          "properties": {
+            "name": "pohladavka"
+          }
+        },
+        "target": {
+          "id": "Konanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "konanie"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "v tomto konani",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pohladavka",
+          "type": "Pohladavka",
+          "properties": {
+            "name": "pohladavka"
+          }
+        },
+        "target": {
+          "id": "Uznesenie O Skoncení Restrukturalizacie",
+          "type": "Doklad",
+          "properties": {
+            "name": "uznesenie o skoncení restrukturalizacie"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "zverejnenie uznesenia o skoncení restrukturalizacie v obchodnom vestniku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pohladavka",
+          "type": "Pohladavka",
+          "properties": {
+            "name": "pohladavka"
+          }
+        },
+        "target": {
+          "id": "Obchodnom Vestniku",
+          "type": "Doklad",
+          "properties": {
+            "name": "obchodnom vestniku"
+          }
+        },
+        "type": "DORUCUJE",
+        "properties": {
+          "add": "zverejnenie v obchodnom vestniku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Pohladavka",
+          "type": "Pohladavka",
+          "properties": {
+            "name": "pohladavka"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "uspokojenie pohladavky",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Uznesenie O Skoncení Restrukturalizacie",
+          "type": "Doklad",
+          "properties": {
+            "name": "uznesenie o skoncení restrukturalizacie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obchodnom Vestniku",
+          "type": "Doklad",
+          "properties": {
+            "name": "obchodnom vestniku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pohladavka",
+          "type": "Pohladavka",
+          "properties": {
+            "name": "pohladavka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Konanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "konanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "zaklad dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "danove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nevymozitelna Pohladavka",
+          "type": "Pohladavka",
+          "properties": {
+            "name": "nevymozitelna pohladavka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Neprijata Protihodnota",
+          "type": "Hodnota",
+          "properties": {
+            "name": "neprijata protihodnota"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povodny Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "povodny zaklad dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Opraveny Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "opraveny zaklad dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povodna Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "povodna dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Opravena Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "opravena dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma",
+          "type": "Suma",
+          "properties": {
+            "name": "suma"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) bolo zverejnené uznesenie o skončení reštrukturalizácie a pohľadávka v tomto konaní nebola\nprihlásená, a to dňom zverejnenia tohto uznesenia v Obchodnom vestníku v rozsahu, v akom\nplatiteľ preukáže, že by jeho pohľadávka nebola uspokojená, ani ak by bola prihlásená, za\npodmienky, že táto pohľadávka k tomuto dňu nebola premlčaná.\n(3) Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za zdaňovacie obdobie, v ktorom sa pohľadávka stala nevymožiteľnou\npodľa odseku 2; pôvodný základ dane sa nemôže znížiť o sumu, ktorú platiteľ prijal v súvislosti\ns dodaním tovaru alebo služby po tom, ako sa pohľadávka stala nevymožiteľnou podľa odseku 2.\n(4) Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak",
+            "page": 32
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

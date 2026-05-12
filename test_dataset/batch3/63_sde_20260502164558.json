@@ -1,0 +1,873 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Uvedeny Tovar Alebo Sluzba",
+        "type": "Tovar",
+        "properties": {
+          "name": "uvedený tovar alebo služba"
+        }
+      },
+      {
+        "id": "Podmienky Pouzitia Tohto Nastroja",
+        "type": "Podmienka",
+        "properties": {
+          "name": "podmienky použitia tohto nástroja"
+        }
+      },
+      {
+        "id": "Jednoucelovym Poukazom",
+        "type": "Poukaz",
+        "properties": {
+          "name": "jednoúčelovým poukazom"
+        }
+      },
+      {
+        "id": "Miesto Dodania Tovaru",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto dodania tovaru"
+        }
+      },
+      {
+        "id": "Miesto Dodania Sluzby",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesto dodania služby"
+        }
+      },
+      {
+        "id": "Dan Splatna",
+        "type": "Dan",
+        "properties": {
+          "name": "daň splatná"
+        }
+      },
+      {
+        "id": "Viacucelovym Poukazom",
+        "type": "Poukaz",
+        "properties": {
+          "name": "viacúčelovým poukazom"
+        }
+      },
+      {
+        "id": "Jednoucelovy Poukaz",
+        "type": "Poukaz",
+        "properties": {
+          "name": "jednoúčelový poukaz"
+        }
+      },
+      {
+        "id": "Prevod Jednouceloveho Poukazu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prevod jednoúčelového poukazu"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdaniteľnou osobou"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru"
+        }
+      },
+      {
+        "id": "Dodanie Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie služby"
+        }
+      },
+      {
+        "id": "Skutocne Odovzdanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "skutočné odovzdanie tovaru"
+        }
+      },
+      {
+        "id": "Skutocne Dodanie Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "skutočné dodanie služby"
+        }
+      },
+      {
+        "id": "Dodavatel Tovaru",
+        "type": "Subjekt",
+        "properties": {
+          "name": "dodávateľ tovaru"
+        }
+      },
+      {
+        "id": "Dodavatel Sluzby",
+        "type": "Subjekt",
+        "properties": {
+          "name": "dodávateľ služby"
+        }
+      },
+      {
+        "id": "Protihodnota",
+        "type": "Hodnota",
+        "properties": {
+          "name": "protihodnota"
+        }
+      },
+      {
+        "id": "Samostatna Transakcia",
+        "type": "Konanie",
+        "properties": {
+          "name": "samostatná transakcia"
+        }
+      },
+      {
+        "id": "Prevod Jednouceloveho Poukazu Vykonany Zdanitelnou Osobou",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prevod jednoúčelového poukazu vykonaný zdaniteľnou osobou"
+        }
+      },
+      {
+        "id": "Inou Zdanitelnou Osobou",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "inej zdaniteľnej osoby"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+          "page": 15
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Jednoucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelovým poukazom"
+          }
+        },
+        "target": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "v case vystavenia je zname",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Jednoucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelovým poukazom"
+          }
+        },
+        "target": {
+          "id": "Miesto Dodania Sluzby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania služby"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "v case vystavenia je zname",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Jednoucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelovým poukazom"
+          }
+        },
+        "target": {
+          "id": "Dan Splatna",
+          "type": "Dan",
+          "properties": {
+            "name": "daň splatná"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "dan splatna z tovaru alebo sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Viacucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "viacúčelovým poukazom"
+          }
+        },
+        "target": {
+          "id": "Jednoucelovy Poukaz",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelový poukaz"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "nie je jednoucelovy poukaz",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnou osobou"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "kona vo vlastnom mene",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "povazuje sa za",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie služby"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "povazuje sa za",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skutocne Odovzdanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "skutočné odovzdanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Samostatna Transakcia",
+          "type": "Konanie",
+          "properties": {
+            "name": "samostatná transakcia"
+          }
+        },
+        "type": "NEPODLIEHA",
+        "properties": {
+          "add": "nepovazuje sa za samostatnu transakciu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Skutocne Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "skutočné dodanie služby"
+          }
+        },
+        "target": {
+          "id": "Samostatna Transakcia",
+          "type": "Konanie",
+          "properties": {
+            "name": "samostatná transakcia"
+          }
+        },
+        "type": "NEPODLIEHA",
+        "properties": {
+          "add": "nepovazuje sa za samostatnu transakciu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru",
+          "type": "Subjekt",
+          "properties": {
+            "name": "dodávateľ tovaru"
+          }
+        },
+        "target": {
+          "id": "Jednoucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelovým poukazom"
+          }
+        },
+        "type": "PRIJIMA",
+        "properties": {
+          "add": "ako protihodnotu alebo cast protihodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "dodávateľ služby"
+          }
+        },
+        "target": {
+          "id": "Jednoucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelovým poukazom"
+          }
+        },
+        "type": "PRIJIMA",
+        "properties": {
+          "add": "ako protihodnotu alebo cast protihodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu Vykonany Zdanitelnou Osobou",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu vykonaný zdaniteľnou osobou"
+          }
+        },
+        "target": {
+          "id": "Inou Zdanitelnou Osobou",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "inej zdaniteľnej osoby"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "kona v mene inej zdanitelnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu Vykonany Zdanitelnou Osobou",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu vykonaný zdaniteľnou osobou"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "povazuje sa za",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu Vykonany Zdanitelnou Osobou",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu vykonaný zdaniteľnou osobou"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie služby"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "povazuje sa za",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Uvedeny Tovar Alebo Sluzba",
+          "type": "Tovar",
+          "properties": {
+            "name": "uvedený tovar alebo služba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podmienky Pouzitia Tohto Nastroja",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienky použitia tohto nástroja"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Jednoucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelovým poukazom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Sluzby",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesto dodania služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Splatna",
+          "type": "Dan",
+          "properties": {
+            "name": "daň splatná"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Viacucelovym Poukazom",
+          "type": "Poukaz",
+          "properties": {
+            "name": "viacúčelovým poukazom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Jednoucelovy Poukaz",
+          "type": "Poukaz",
+          "properties": {
+            "name": "jednoúčelový poukaz"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnou osobou"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocne Odovzdanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "skutočné odovzdanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocne Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "skutočné dodanie služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru",
+          "type": "Subjekt",
+          "properties": {
+            "name": "dodávateľ tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodavatel Sluzby",
+          "type": "Subjekt",
+          "properties": {
+            "name": "dodávateľ služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Protihodnota",
+          "type": "Hodnota",
+          "properties": {
+            "name": "protihodnota"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Samostatna Transakcia",
+          "type": "Konanie",
+          "properties": {
+            "name": "samostatná transakcia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevod Jednouceloveho Poukazu Vykonany Zdanitelnou Osobou",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevod jednoúčelového poukazu vykonaný zdaniteľnou osobou"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Inou Zdanitelnou Osobou",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "inej zdaniteľnej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uvedený tovar alebo služba, ktoré sa majú dodať, alebo totožnosť možných dodávateľov vrátane\npodmienok použitia tohto nástroja,\nb) jednoúčelovým poukazom poukaz, pri ktorom je v čase jeho vystavenia známe miesto dodania\ntovaru alebo miesto dodania služby, na ktoré sa poukaz vzťahuje, a daň splatná z tohto tovaru\nalebo služby,\nc) viacúčelovým poukazom poukaz iný ako jednoúčelový poukaz.\n(2) Každý prevod jednoúčelového poukazu uskutočnený zdaniteľnou osobou, ktorá koná vo\nvlastnom mene, sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa poukaz vzťahuje.\nSkutočné odovzdanie tovaru alebo skutočné dodanie služby za jednoúčelový poukaz, ktorý\ndodávateľ tovaru alebo dodávateľ služby prijme ako protihodnotu alebo časť protihodnoty, sa\nnepovažuje za samostatnú transakciu.\n(3) Ak prevod jednoúčelového poukazu vykoná zdaniteľná osoba, ktorá koná v mene inej\nzdaniteľnej osoby, tento prevod sa považuje za dodanie tovaru alebo dodanie služby, na ktoré sa",
+            "page": 15
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

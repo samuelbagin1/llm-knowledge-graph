@@ -1,0 +1,621 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Vyhlaska Ministerstva Financii Slovenskej Republiky C. 94/1996 Z. Z.",
+        "type": "Vyhlaska",
+        "properties": {
+          "name": "vyhlaska Ministerstva financii Slovenskej republiky c. 94/1996 Z. z."
+        }
+      },
+      {
+        "id": "Vyhlaska C. 424/2001 Z. Z.",
+        "type": "Vyhlaska",
+        "properties": {
+          "name": "vyhlaska c. 424/2001 Z. z."
+        }
+      },
+      {
+        "id": "Ministerstvo Financii Slovenskej Republiky",
+        "type": "Ministerstvo",
+        "properties": {
+          "name": "Ministerstvo financii Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Opatrenie Ministerstva Financii Slovenskej Republiky C. Mf/014640/2019-731",
+        "type": "Nariadenie",
+        "properties": {
+          "name": "opatrenie Ministerstva financii Slovenskej republiky c. MF/014640/2019-731"
+        }
+      },
+      {
+        "id": "Vyplatenie Dane Z Pridanej Hodnoty",
+        "type": "Ziadost",
+        "properties": {
+          "name": "vyplatenie dane z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "Dan Z Pridanej Hodnoty",
+        "type": "Dan",
+        "properties": {
+          "name": "dan z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "Medzinarodna Zmluva V Ramci Projektov Zahranicnej Pomoci",
+        "type": "Zmluva",
+        "properties": {
+          "name": "medzinarodna zmluva v ramci projektov zahranicnej pomoci"
+        }
+      },
+      {
+        "id": "§ 87A",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 87a"
+        }
+      },
+      {
+        "id": "§ 88",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 88"
+        }
+      },
+      {
+        "id": "1. januara 2021",
+        "type": "Datum",
+        "properties": {
+          "name": "1. januara 2021"
+        }
+      },
+      {
+        "id": "Tento Zakon",
+        "type": "Zakon",
+        "properties": {
+          "name": "tento zakon"
+        }
+      },
+      {
+        "id": "Zmluva O Pristupeni Slovenskej Republiky K Europskej Unii",
+        "type": "Zmluva",
+        "properties": {
+          "name": "zmluva o pristupeni Slovenskej republiky k Europskej unii"
+        }
+      },
+      {
+        "id": "Slovenska Republika",
+        "type": "Stat",
+        "properties": {
+          "name": "Slovenska republika"
+        }
+      },
+      {
+        "id": "Europska Unia",
+        "type": "Skupina",
+        "properties": {
+          "name": "Europska unia"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+          "page": 147
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Vyhlaska Ministerstva Financii Slovenskej Republiky C. 94/1996 Z. Z.",
+          "type": "Vyhlaska",
+          "properties": {
+            "name": "vyhlaska Ministerstva financii Slovenskej republiky c. 94/1996 Z. z."
+          }
+        },
+        "target": {
+          "id": "Vyplatenie Dane Z Pridanej Hodnoty",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vyplatenie dane z pridanej hodnoty"
+          }
+        },
+        "type": "MA_NAZOV",
+        "properties": {
+          "add": "rozsah a sposob vratenia dane z pridanej hodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyhlaska Ministerstva Financii Slovenskej Republiky C. 94/1996 Z. Z.",
+          "type": "Vyhlaska",
+          "properties": {
+            "name": "vyhlaska Ministerstva financii Slovenskej republiky c. 94/1996 Z. z."
+          }
+        },
+        "target": {
+          "id": "Medzinarodna Zmluva V Ramci Projektov Zahranicnej Pomoci",
+          "type": "Zmluva",
+          "properties": {
+            "name": "medzinarodna zmluva v ramci projektov zahranicnej pomoci"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "vratenie dane z pridanej hodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Opatrenie Ministerstva Financii Slovenskej Republiky C. Mf/014640/2019-731",
+          "type": "Nariadenie",
+          "properties": {
+            "name": "opatrenie Ministerstva financii Slovenskej republiky c. MF/014640/2019-731"
+          }
+        },
+        "target": {
+          "id": "Opatrenie Ministerstva Financii Slovenskej Republiky C. Mf/014640/2019-731",
+          "type": "Nariadenie",
+          "properties": {
+            "name": "opatrenie Ministerstva financii Slovenskej republiky c. MF/014640/2019-731"
+          }
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "add": "zrusuje sa od 1. januara 2021",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Opatrenie Ministerstva Financii Slovenskej Republiky C. Mf/014640/2019-731",
+          "type": "Nariadenie",
+          "properties": {
+            "name": "opatrenie Ministerstva financii Slovenskej republiky c. MF/014640/2019-731"
+          }
+        },
+        "target": {
+          "id": "Vyplatenie Dane Z Pridanej Hodnoty",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vyplatenie dane z pridanej hodnoty"
+          }
+        },
+        "type": "MA_NAZOV",
+        "properties": {
+          "add": "vzor danoveho priznania k dani z pridanej hodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 87A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 87a"
+          }
+        },
+        "target": {
+          "id": "1. januara 2021",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januara 2021"
+          }
+        },
+        "type": "MA_ODSEK",
+        "properties": {
+          "add": "ucinnost zrusovacieho ustanovenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 87A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 87a"
+          }
+        },
+        "target": {
+          "id": "Opatrenie Ministerstva Financii Slovenskej Republiky C. Mf/014640/2019-731",
+          "type": "Nariadenie",
+          "properties": {
+            "name": "opatrenie Ministerstva financii Slovenskej republiky c. MF/014640/2019-731"
+          }
+        },
+        "type": "RUSI",
+        "properties": {
+          "add": "zrusuje sa",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 88",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 88"
+          }
+        },
+        "target": {
+          "id": "Tento Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "add": "nadobudnutie ucinnosti dnom nadobudnutia platnosti zmluvy o pristupeni Slovenskej republiky k Europskej unii",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tento Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "target": {
+          "id": "Zmluva O Pristupeni Slovenskej Republiky K Europskej Unii",
+          "type": "Zmluva",
+          "properties": {
+            "name": "zmluva o pristupeni Slovenskej republiky k Europskej unii"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "nadobudnutie ucinnosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmluva O Pristupeni Slovenskej Republiky K Europskej Unii",
+          "type": "Zmluva",
+          "properties": {
+            "name": "zmluva o pristupeni Slovenskej republiky k Europskej unii"
+          }
+        },
+        "target": {
+          "id": "Slovenska Republika",
+          "type": "Stat",
+          "properties": {
+            "name": "Slovenska republika"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "pristupenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmluva O Pristupeni Slovenskej Republiky K Europskej Unii",
+          "type": "Zmluva",
+          "properties": {
+            "name": "zmluva o pristupeni Slovenskej republiky k Europskej unii"
+          }
+        },
+        "target": {
+          "id": "Europska Unia",
+          "type": "Skupina",
+          "properties": {
+            "name": "Europska unia"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "pristupenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyhlaska Ministerstva Financii Slovenskej Republiky C. 94/1996 Z. Z.",
+          "type": "Vyhlaska",
+          "properties": {
+            "name": "vyhlaska Ministerstva financii Slovenskej republiky c. 94/1996 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyhlaska C. 424/2001 Z. Z.",
+          "type": "Vyhlaska",
+          "properties": {
+            "name": "vyhlaska c. 424/2001 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Financii Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {
+            "name": "Ministerstvo financii Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Opatrenie Ministerstva Financii Slovenskej Republiky C. Mf/014640/2019-731",
+          "type": "Nariadenie",
+          "properties": {
+            "name": "opatrenie Ministerstva financii Slovenskej republiky c. MF/014640/2019-731"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyplatenie Dane Z Pridanej Hodnoty",
+          "type": "Ziadost",
+          "properties": {
+            "name": "vyplatenie dane z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Z Pridanej Hodnoty",
+          "type": "Dan",
+          "properties": {
+            "name": "dan z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Medzinarodna Zmluva V Ramci Projektov Zahranicnej Pomoci",
+          "type": "Zmluva",
+          "properties": {
+            "name": "medzinarodna zmluva v ramci projektov zahranicnej pomoci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 87A",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 87a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 88",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 88"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1. januara 2021",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januara 2021"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tento Zakon",
+          "type": "Zakon",
+          "properties": {
+            "name": "tento zakon"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmluva O Pristupeni Slovenskej Republiky K Europskej Unii",
+          "type": "Zmluva",
+          "properties": {
+            "name": "zmluva o pristupeni Slovenskej republiky k Europskej unii"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Slovenska Republika",
+          "type": "Stat",
+          "properties": {
+            "name": "Slovenska republika"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Europska Unia",
+          "type": "Skupina",
+          "properties": {
+            "name": "Europska unia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Z. z. a vyhlášky č. 424/2001 Z. z.,\n3. vyhláška Ministerstva financií Slovenskej republiky č. 94/1996 Z. z. o rozsahu a spôsobe\nvrátenia dane z pridanej hodnoty, ktoré vyplýva z medzinárodnej zmluvy v rámci projektov\nzahraničnej pomoci.\n§ 87a\nZrušovacie ustanovenie účinné od 1. januára 2021\nZrušuje sa opatrenie Ministerstva financií Slovenskej republiky z 28. októbra 2019\nč. MF/014640/2019-731, ktorým sa ustanovuje vzor daňového priznania k dani z pridanej\nhodnoty (oznámenie č. 404/2019 Z. z.).\n§ 88\nTento zákon nadobúda účinnosť dňom nadobudnutia platnosti zmluvy o pristúpení Slovenskej\nrepubliky k Európskej únii.\nPavol Hrušovský v. r.\n \nMikuláš Dzurinda v. r.",
+            "page": 147
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

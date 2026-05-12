@@ -1,0 +1,761 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danovy Urad",
+        "type": "Spravcadane",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Daňové Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "daňové priznanie"
+        }
+      },
+      {
+        "id": "Odpočítanie Dane",
+        "type": "Dan",
+        "properties": {
+          "name": "odpočítanie dane"
+        }
+      },
+      {
+        "id": "Nový Dopravný Prostriedok",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "nový dopravný prostriedok"
+        }
+      },
+      {
+        "id": "Daňové Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "daňové obdobie"
+        }
+      },
+      {
+        "id": "Odpočítaná Daň",
+        "type": "Dan",
+        "properties": {
+          "name": "odpočítaná daň"
+        }
+      },
+      {
+        "id": "Celková Splatná Daň",
+        "type": "Dan",
+        "properties": {
+          "name": "celková splatná daň"
+        }
+      },
+      {
+        "id": "Celková Odpočítateľná Daň",
+        "type": "Dan",
+        "properties": {
+          "name": "celková odpočítateľná daň"
+        }
+      },
+      {
+        "id": "Celková Hodnota Tovarov A Služieb",
+        "type": "Hodnota",
+        "properties": {
+          "name": "celková hodnota tovarov a služieb"
+        }
+      },
+      {
+        "id": "Hodnota Tovarov A Služieb Oslobodených Od Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "hodnota tovarov a služieb oslobodených od dane"
+        }
+      },
+      {
+        "id": "Eurocent",
+        "type": "Mena",
+        "properties": {
+          "name": "eurocent"
+        }
+      },
+      {
+        "id": "0,005 eura",
+        "type": "Euro",
+        "properties": {
+          "name": "0,005 eura"
+        }
+      },
+      {
+        "id": "30 dní",
+        "type": "Lehota",
+        "properties": {
+          "name": "30 dní"
+        }
+      },
+      {
+        "id": "Podanie Daňového Priznania",
+        "type": "Cinnost",
+        "properties": {
+          "name": "podanie daňového priznania"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+          "page": 119
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "podat daňové priznanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Odpočítanie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "odpočítanie dane"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "uplatnit odpočítanie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odpočítanie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "odpočítanie dane"
+          }
+        },
+        "target": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "uplatnenie odpočítania dane v daňovom priznaní",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Odpočítaná Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "odpočítaná daň"
+          }
+        },
+        "type": "VRATI",
+        "properties": {
+          "add": "vratenie uplatnenej odpočítanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "30 dní",
+          "type": "Lehota",
+          "properties": {
+            "name": "30 dní"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "vratenie od podania daňového priznania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "Celková Splatná Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "celková splatná daň"
+          }
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "add": "udaje na vypocet",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "Celková Odpočítateľná Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "celková odpočítateľná daň"
+          }
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "add": "udaje na vypocet",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "Celková Hodnota Tovarov A Služieb",
+          "type": "Hodnota",
+          "properties": {
+            "name": "celková hodnota tovarov a služieb"
+          }
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "add": "celkova hodnota vzťahujuca sa na celkovu dan a odpočítavanú daň",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "Hodnota Tovarov A Služieb Oslobodených Od Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota tovarov a služieb oslobodených od dane"
+          }
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "add": "uvadza sa za zdaňovacie obdobie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Hodnota Tovarov A Služieb Oslobodených Od Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota tovarov a služieb oslobodených od dane"
+          }
+        },
+        "target": {
+          "id": "Daňové Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "daňové obdobie"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "zdanovacie obdobie vzniku daňovej povinnosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "Eurocent",
+          "type": "Mena",
+          "properties": {
+            "name": "eurocent"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "zaokruhlovanie na najblizsi eurocent",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "0,005 eura",
+          "type": "Euro",
+          "properties": {
+            "name": "0,005 eura"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "hranica zaokruhlenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nový Dopravný Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "nový dopravný prostriedok"
+          }
+        },
+        "target": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "prilezitostne dodanie do ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Podanie Daňového Priznania",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podanie daňového priznania"
+          }
+        },
+        "target": {
+          "id": "30 dní",
+          "type": "Lehota",
+          "properties": {
+            "name": "30 dní"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "lehota pre vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Spravcadane",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňové Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpočítanie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "odpočítanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nový Dopravný Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "nový dopravný prostriedok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňové Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "daňové obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpočítaná Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "odpočítaná daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Celková Splatná Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "celková splatná daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Celková Odpočítateľná Daň",
+          "type": "Dan",
+          "properties": {
+            "name": "celková odpočítateľná daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Celková Hodnota Tovarov A Služieb",
+          "type": "Hodnota",
+          "properties": {
+            "name": "celková hodnota tovarov a služieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hodnota Tovarov A Služieb Oslobodených Od Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "hodnota tovarov a služieb oslobodených od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Eurocent",
+          "type": "Mena",
+          "properties": {
+            "name": "eurocent"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "0,005 eura",
+          "type": "Euro",
+          "properties": {
+            "name": "0,005 eura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "30 dní",
+          "type": "Lehota",
+          "properties": {
+            "name": "30 dní"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podanie Daňového Priznania",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podanie daňového priznania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "dopravného prostriedku a na požiadanie daňového úradu poskytnúť ďalšie informácie potrebné na\nsprávne určenie dane.\n(6) Osoba, ktorá nie je platiteľom a príležitostne dodá nový dopravný prostriedok do iného\nčlenského štátu, uplatňuje odpočítanie dane v daňovom priznaní. Daňový úrad vráti uplatnenú\nodpočítanú daň do 30 dní od podania daňového priznania.\n(7) Každá osoba, ktorá je povinná podať daňové priznanie, uvedie v daňovom priznaní všetky\núdaje potrebné na výpočet celkovej splatnej dane a na výpočet celkovej odpočítateľnej dane vrátane\ncelkovej hodnoty tovarov a služieb vzťahujúcej sa na celkovú daň a na odpočítavanú daň\na celkovej hodnoty tovarov a služieb oslobodených od dane. Hodnota tovarov a služieb\noslobodených od dane sa uvádza v daňovom priznaní za zdaňovacie obdobie, v ktorom vznikla\ndaňová povinnosť. Údaje v daňovom priznaní sa zaokrúhľujú na najbližší eurocent do 0,005 eura\nnadol a od 0,005 eura vrátane nahor.",
+            "page": 119
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

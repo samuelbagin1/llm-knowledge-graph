@@ -1,0 +1,803 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon 222/2004 Z. Z. O Dani Z Pridanej Hodnoty",
+        "type": "Zakon",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Paragraf 6",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 6"
+        }
+      },
+      {
+        "id": "Osobitna Oznamovacia Povinnost Platitela",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Osobitna oznamovacia povinnost platitela"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Osoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Financnemu Riaditelstvu",
+        "type": "Financneriaditelstvo",
+        "properties": {
+          "name": "financne riaditelstvo"
+        }
+      },
+      {
+        "id": "Bankovy Ucet",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "bankovy ucet"
+        }
+      },
+      {
+        "id": "Podnikanie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "podnikanie"
+        }
+      },
+      {
+        "id": "Dan Podla Paragrafu 2",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Poskytovatel Platobnych Sluzieb",
+        "type": "Subjekt",
+        "properties": {
+          "name": "poskytovatel platobnych sluzieb"
+        }
+      },
+      {
+        "id": "Zahranicny Poskytovatel Platobnych Sluzieb",
+        "type": "Subjekt",
+        "properties": {
+          "name": "zahranicny poskytovatel platobnych sluzieb"
+        }
+      },
+      {
+        "id": "Daňový Úrad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "§ 4",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 4"
+        }
+      },
+      {
+        "id": "§ 5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 5"
+        }
+      },
+      {
+        "id": "§ 85Kk",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 85kk"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "(1)"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "(2)"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "(5)"
+        }
+      },
+      {
+        "id": "Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+          "page": 10
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon 222/2004 Z. Z. O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Paragraf 6",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 6"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 6",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 6",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 6"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "(1)"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "(1)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 6",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 6"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "(2)"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "(2)",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Osobitna Oznamovacia Povinnost Platitela",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Osobitna oznamovacia povinnost platitela"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "oznamit kazdy vlastny ucet",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitna Oznamovacia Povinnost Platitela",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Osobitna oznamovacia povinnost platitela"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "(1)"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "§ 6 ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Osobitna Oznamovacia Povinnost Platitela",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Osobitna oznamovacia povinnost platitela"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "oznamit aj iny bankovy ucet",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitna Oznamovacia Povinnost Platitela",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Osobitna oznamovacia povinnost platitela"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "(2)"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "§ 6 ods. 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Financnemu Riaditelstvu",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "oznamenie sposobu podla odseku 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Bankovy Ucet",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "bankovy ucet"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "oznamit bankovy ucet na podnikanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Bankovy Ucet",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "bankovy ucet"
+          }
+        },
+        "target": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "na podnikanie, ktore je predmetom dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "target": {
+          "id": "Dan Podla Paragrafu 2",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "predmet dane podla § 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "MA_IDENTIFIKACNE_CISLO",
+        "properties": {
+          "add": "podla § 4, § 4b, § 4c alebo § 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon 222/2004 Z. Z. O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 6",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Oznamovacia Povinnost Platitela",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Osobitna oznamovacia povinnost platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Osoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financnemu Riaditelstvu",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bankovy Ucet",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "bankovy ucet"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Podla Paragrafu 2",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicny Poskytovatel Platobnych Sluzieb",
+          "type": "Subjekt",
+          "properties": {
+            "name": "zahranicny poskytovatel platobnych sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňový Úrad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 4",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 85Kk",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85kk"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "(1)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "(2)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "(5)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 11\nb) sa stal platiteľom pred doručením rozhodnutia o registrácii pre daň podľa § 4 alebo § 5, a to\npočnúc dňom doručenia tohto rozhodnutia alebo\nc) je skupinou, počnúc dňom, ku ktorému daňový úrad vykoná registráciu skupiny.\n§ 6\nOsobitná oznamovacia povinnosť platiteľa\n(1) Platiteľ je povinný oznámiť spôsobom podľa odseku 5 finančnému riaditeľstvu každý vlastný\núčet vedený u poskytovateľa platobných služieb alebo u zahraničného poskytovateľa platobných\nslužieb, ktorý bude používať na podnikanie, ktoré je predmetom dane podľa § 2 (ďalej len „bankový\núčet“), a to bezodkladne odo dňa, keď sa stal platiteľom, ktorý má pridelené identifikačné číslo pre\ndaň podľa § 4, § 4b, § 4c alebo § 5, alebo odo dňa, keď si takýto bankový účet následne zriadil.\n(2) Ak okrem bankového účtu oznámeného podľa odseku 1 alebo podľa § 85kk chce platiteľ\npoužívať aj iný bankový účet, je povinný tento účet oznámiť spôsobom podľa odseku 5 finančnému",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

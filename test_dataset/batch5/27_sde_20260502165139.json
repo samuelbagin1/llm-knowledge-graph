@@ -1,0 +1,397 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Financne Riaditelstvo Slovenskej Republiky",
+        "type": "Financneriaditelstvo",
+        "properties": {
+          "name": "Financne riaditelstvo Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Daňovy Urad Banska Bystrica",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňovy urad Banska Bystrica"
+        }
+      },
+      {
+        "id": "Registracia Skupiny Z Uradnej Moci",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia skupiny z uradnej moci"
+        }
+      },
+      {
+        "id": "Predpokladani Clenovia Skupiny",
+        "type": "Clenskupiny",
+        "properties": {
+          "name": "predpokladani clenovia skupiny"
+        }
+      },
+      {
+        "id": "Spolocny Zastupca",
+        "type": "Zastupca",
+        "properties": {
+          "name": "spolocny zastupca"
+        }
+      },
+      {
+        "id": "Registračne Konanie Z Uradnej Moci",
+        "type": "Konanie",
+        "properties": {
+          "name": "registračne konanie z uradnej moci"
+        }
+      },
+      {
+        "id": "Osem Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "osem dni"
+        }
+      },
+      {
+        "id": "Vvyzva",
+        "type": "Vyzva",
+        "properties": {
+          "name": "vyzva"
+        }
+      },
+      {
+        "id": "Oznamenie",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznamenie"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+          "page": 6
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Daňovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Banska Bystrica"
+          }
+        },
+        "target": {
+          "id": "Vvyzva",
+          "type": "Vyzva",
+          "properties": {
+            "name": "vyzva"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "vyzva predpokladanych clenov skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vvyzva",
+          "type": "Vyzva",
+          "properties": {
+            "name": "vyzva"
+          }
+        },
+        "target": {
+          "id": "Osem Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "osem dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "do osem dni od dorucenia poslednemu clenovi",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Banska Bystrica"
+          }
+        },
+        "target": {
+          "id": "Spolocny Zastupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "spolocny zastupca"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "spolocny zastupca pre registracne konanie z uradnej moci",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predpokladani Clenovia Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "predpokladani clenovia skupiny"
+          }
+        },
+        "target": {
+          "id": "Spolocny Zastupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "spolocny zastupca"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "urcit spolocneho zastupcu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Spolocny Zastupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "spolocny zastupca"
+          }
+        },
+        "target": {
+          "id": "Registračne Konanie Z Uradnej Moci",
+          "type": "Konanie",
+          "properties": {
+            "name": "registračne konanie z uradnej moci"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ucely registracneho konania z uradnej moci",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Banska Bystrica"
+          }
+        },
+        "target": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "urcenie spolocneho zastupcu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Financne Riaditelstvo Slovenskej Republiky",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "Financne riaditelstvo Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňovy urad Banska Bystrica"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Skupiny Z Uradnej Moci",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia skupiny z uradnej moci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predpokladani Clenovia Skupiny",
+          "type": "Clenskupiny",
+          "properties": {
+            "name": "predpokladani clenovia skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Spolocny Zastupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "spolocny zastupca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registračne Konanie Z Uradnej Moci",
+          "type": "Konanie",
+          "properties": {
+            "name": "registračne konanie z uradnej moci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osem Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "osem dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vvyzva",
+          "type": "Vyzva",
+          "properties": {
+            "name": "vyzva"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(2) Ak z podkladov získaných pri výkone správy daní alebo na základe výsledkov činnosti\nFinančného riaditeľstva Slovenskej republiky4f) (ďalej len „finančné riaditeľstvo“) vyplýva, že nastali\ndôvody na registráciu skupiny z úradnej moci, Daňový úrad Banská Bystrica vyzve\npredpokladaných členov skupiny, aby do ôsmich dní odo dňa, keď bola táto výzva doručená\nposlednému z týchto predpokladaných členov skupiny, spomedzi seba určili spoločného zástupcu\nna účely registračného konania z úradnej moci. Ak tak neurobia, Daňový úrad Banská Bystrica\nspomedzi nich určí spoločného zástupcu a oznámi to predpokladaným členom skupiny; proti",
+            "page": 6
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

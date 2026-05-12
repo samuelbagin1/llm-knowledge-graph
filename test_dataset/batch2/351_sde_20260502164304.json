@@ -1,0 +1,733 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňový úrad"
+        }
+      },
+      {
+        "id": "Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdaniteľná osoba"
+        }
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Zaznam",
+        "properties": {
+          "name": "odvolanie"
+        }
+      },
+      {
+        "id": "Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "činnosť"
+        }
+      },
+      {
+        "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+        "type": "Podmienka",
+        "properties": {
+          "name": "podmienky na uplatňovanie osobitnej úpravy"
+        }
+      },
+      {
+        "id": "Povinnosti Tykajuce Sa Uplatnovania Osobitnej Upravy",
+        "type": "Povinnost",
+        "properties": {
+          "name": "povinnosti týkajúce sa uplatňovania osobitnej úpravy"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Status",
+        "properties": {
+          "name": "osobitná úprava"
+        }
+      },
+      {
+        "id": "Zrusenie Povolenia",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "zrušenie povolenia"
+        }
+      },
+      {
+        "id": "Odsek 10",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 10"
+        }
+      },
+      {
+        "id": "Odsek 11",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 11"
+        }
+      },
+      {
+        "id": "Paragraf 68",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 68"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 1"
+        }
+      },
+      {
+        "id": "Pismeno B",
+        "type": "Pismeno",
+        "properties": {
+          "name": "písm. b"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 2"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+          "page": 87
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "o zruseni povolenia podla odseku 10",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "činnosť"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "podla § 68 ods. 1 písm. b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienky na uplatňovanie osobitnej úpravy"
+          }
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "add": "na uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Povinnosti Tykajuce Sa Uplatnovania Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnosti týkajúce sa uplatňovania osobitnej úpravy"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "povinnosti tykajuce sa uplatnovania osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "proti rozhodnutiu o zruseni povolenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "type": "MA_ODKLADNY_UCINOK",
+        "properties": {
+          "add": "nemá odkladný ucinok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zrusenie Povolenia",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "zrušenie povolenia"
+          }
+        },
+        "target": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "podla odseku 10",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "odsek 11",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "ods. 1",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "target": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "odsek 10",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "target": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "odsek 11",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "písm. b"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "písm. b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "target": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "písm. b"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "písm. b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "odsek 2",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľná osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "činnosť"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienky na uplatňovanie osobitnej úpravy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Povinnosti Tykajuce Sa Uplatnovania Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {
+            "name": "povinnosti týkajúce sa uplatňovania osobitnej úpravy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Status",
+          "properties": {
+            "name": "osobitná úprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zrusenie Povolenia",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "zrušenie povolenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 10",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 10"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 68",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 68"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno B",
+          "type": "Pismeno",
+          "properties": {
+            "name": "písm. b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "písm. b),\nb) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1\npísm. b),\nc) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo\nd) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej\núpravy.\n(11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto\nrozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný",
+            "page": 87
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Priloha C 4",
+        "type": "Priloha",
+        "properties": {
+          "name": "Priloha c. 4"
+        }
+      },
+      {
+        "id": "Zakon C 222/2004 Z Z",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon c. 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Z Iados O Vratenie Dane Z Pridanej Hodnoty Zahranicnemu Zastupcovi",
+        "type": "Ziadost",
+        "properties": {
+          "name": "Ziadost o vratenie dane z pridanej hodnoty zahranicnemu zastupcovi"
+        }
+      },
+      {
+        "id": "Vratenie Dane Z Pridanej Hodnoty",
+        "type": "Dan",
+        "properties": {
+          "name": "vratenie dane z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 153\nPríloha č. 4\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnému zástupcovi\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_3.pdf\nIADOS",
+          "page": 152
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon C 222/2004 Z Z",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c. 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Priloha C 4",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 4"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Priloha C 4",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 4"
+          }
+        },
+        "target": {
+          "id": "Zakon C 222/2004 Z Z",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c. 222/2004 Z. z."
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Z Iados O Vratenie Dane Z Pridanej Hodnoty Zahranicnemu Zastupcovi",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane z pridanej hodnoty zahranicnemu zastupcovi"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane Z Pridanej Hodnoty",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane z pridanej hodnoty"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "vratenie dane z pridanej hodnoty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Priloha C 4",
+          "type": "Priloha",
+          "properties": {
+            "name": "Priloha c. 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 153\nPríloha č. 4\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnému zástupcovi\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_3.pdf\nIADOS",
+            "page": 152
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakon C 222/2004 Z Z",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon c. 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 153\nPríloha č. 4\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnému zástupcovi\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_3.pdf\nIADOS",
+            "page": 152
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Z Iados O Vratenie Dane Z Pridanej Hodnoty Zahranicnemu Zastupcovi",
+          "type": "Ziadost",
+          "properties": {
+            "name": "Ziadost o vratenie dane z pridanej hodnoty zahranicnemu zastupcovi"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 153\nPríloha č. 4\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnému zástupcovi\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_3.pdf\nIADOS",
+            "page": 152
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane Z Pridanej Hodnoty",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 153\nPríloha č. 4\nk zákonu č. 222/2004 Z. z.\nŽIADOSŤ o vrátenie dane z pridanej hodnoty zahraničnému zástupcovi\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_3.pdf\nIADOS",
+            "page": 152
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

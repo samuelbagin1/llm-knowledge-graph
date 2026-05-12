@@ -1,0 +1,654 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Odsek 14",
+        "type": "Odsek",
+        "properties": {
+          "name": "14"
+        }
+      },
+      {
+        "id": "Posledneho Mesiaca Predchadzajuceho Kalendarneho Stvrroka",
+        "type": "Obdobie",
+        "properties": {
+          "name": "posledneho mesiaca predchadzajuceho kalendarneho stvrroka"
+        }
+      },
+      {
+        "id": "Oznamenie Podla Prvej Vety",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznamenie podla prvej vety"
+        }
+      },
+      {
+        "id": "Maly Podnik Tuzemskej Osoby",
+        "type": "Podnik",
+        "properties": {
+          "name": "maly podnik tuzemskej osoby"
+        }
+      },
+      {
+        "id": "Individualne Identifikacne Cislo S Príponou Ex",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "individualne identifikacne cislo s príponou EX"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "prebiehajuci kalendarny rok"
+        }
+      },
+      {
+        "id": "100 000 eur",
+        "type": "Euro",
+        "properties": {
+          "name": "100 000 eur"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Osobitna Uprava",
+        "type": "Cinnost",
+        "properties": {
+          "name": "osobitna uprava"
+        }
+      },
+      {
+        "id": "Dodanie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie"
+        }
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Konanie",
+        "properties": {
+          "name": "odvolanie"
+        }
+      },
+      {
+        "id": "15 pracovnych dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "15 pracovnych dni"
+        }
+      },
+      {
+        "id": "Vykaz Podla Odseku 8",
+        "type": "Doklad",
+        "properties": {
+          "name": "vykaz podla odseku 8"
+        }
+      },
+      {
+        "id": "Odsek 8",
+        "type": "Odsek",
+        "properties": {
+          "name": "8"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+          "page": 102
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Odsek 14",
+          "type": "Odsek",
+          "properties": {
+            "name": "14"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Tuzemskej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik tuzemskej osoby"
+          }
+        },
+        "target": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "odsek 14",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oznamenie Podla Prvej Vety",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie podla prvej vety"
+          }
+        },
+        "target": {
+          "id": "Odsek 14",
+          "type": "Odsek",
+          "properties": {
+            "name": "14"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "prva veta",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "Individualne Identifikacne Cislo S Príponou Ex",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "individualne identifikacne cislo s príponou EX"
+          }
+        },
+        "type": "ROZHODUJE_O",
+        "properties": {
+          "add": "odnatie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Osobitna Uprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "prestane uplatnovat pri presiahnuti obratu 100 000 eur",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Dodanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "prestat uplatnovat osobitnu upravu pocnuc dodanim, ktorym bol obrat presiahnuty",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Vykaz Podla Odseku 8",
+          "type": "Doklad",
+          "properties": {
+            "name": "vykaz podla odseku 8"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "podat do 15 pracovnych dni",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vykaz Podla Odseku 8",
+          "type": "Doklad",
+          "properties": {
+            "name": "vykaz podla odseku 8"
+          }
+        },
+        "target": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "8"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "add": "vykaz",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vykaz Podla Odseku 8",
+          "type": "Doklad",
+          "properties": {
+            "name": "vykaz podla odseku 8"
+          }
+        },
+        "target": {
+          "id": "15 pracovnych dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "15 pracovnych dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 14",
+          "type": "Odsek",
+          "properties": {
+            "name": "14"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledneho Mesiaca Predchadzajuceho Kalendarneho Stvrroka",
+          "type": "Obdobie",
+          "properties": {
+            "name": "posledneho mesiaca predchadzajuceho kalendarneho stvrroka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie Podla Prvej Vety",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie podla prvej vety"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Maly Podnik Tuzemskej Osoby",
+          "type": "Podnik",
+          "properties": {
+            "name": "maly podnik tuzemskej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Individualne Identifikacne Cislo S Príponou Ex",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "individualne identifikacne cislo s príponou EX"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "100 000 eur",
+          "type": "Euro",
+          "properties": {
+            "name": "100 000 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "15 pracovnych dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "15 pracovnych dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vykaz Podla Odseku 8",
+          "type": "Doklad",
+          "properties": {
+            "name": "vykaz podla odseku 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {
+            "name": "8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103\nposledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby\nv oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej\núpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku\ndňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti\ntomuto rozhodnutiu nemožno podať odvolanie.\n(14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu\nv Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je\nzdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento\nobrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať\nvýkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa,\nv ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+            "page": 102
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,544 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zastupca Tohto Statu",
+        "type": "Zastupca",
+        "properties": {
+          "name": "zastupca tohto statu"
+        }
+      },
+      {
+        "id": "Stat",
+        "type": "Stat",
+        "properties": {
+          "name": "stat"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Dan",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "Doklad",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklad"
+        }
+      },
+      {
+        "id": "Celkova Cena",
+        "type": "Suma",
+        "properties": {
+          "name": "celkova cena"
+        }
+      },
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad bratislava"
+        }
+      },
+      {
+        "id": "Faktury",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktury"
+        }
+      },
+      {
+        "id": "Ine Doklady O Kupe Tovarov A Sluzieb",
+        "type": "Doklad",
+        "properties": {
+          "name": "ine doklady o kupe tovarov a sluzieb"
+        }
+      },
+      {
+        "id": "Ziadost O Vratenie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o vratenie dane"
+        }
+      },
+      {
+        "id": "60 dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "60 dni"
+        }
+      },
+      {
+        "id": "Prislusny Kalendarny Stvrtrok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "prislusny kalendarny stvrtrok"
+        }
+      },
+      {
+        "id": "Zahranicny Zastupca",
+        "type": "Zastupca",
+        "properties": {
+          "name": "zahranicny zastupca"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+          "page": 77
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zastupca Tohto Statu",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zastupca tohto statu"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "ziadat o vratenie dane z dokladu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad"
+          }
+        },
+        "target": {
+          "id": "Celkova Cena",
+          "type": "Suma",
+          "properties": {
+            "name": "celkova cena"
+          }
+        },
+        "type": "MA_HODNOTU",
+        "properties": {
+          "add": "najmenej vo vyske urcenej tymto statom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktury"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "prilozene k ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ine Doklady O Kupe Tovarov A Sluzieb",
+          "type": "Doklad",
+          "properties": {
+            "name": "ine doklady o kupe tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "prilozene k ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad bratislava"
+          }
+        },
+        "target": {
+          "id": "Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktury"
+          }
+        },
+        "type": "VYDA",
+        "properties": {
+          "add": "vrati do 60 dni od podania ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad bratislava"
+          }
+        },
+        "target": {
+          "id": "Ine Doklady O Kupe Tovarov A Sluzieb",
+          "type": "Doklad",
+          "properties": {
+            "name": "ine doklady o kupe tovarov a sluzieb"
+          }
+        },
+        "type": "VYDA",
+        "properties": {
+          "add": "vrati do 60 dni od podania ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "60 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "od podania ziadosti o vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "60 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni"
+          }
+        },
+        "target": {
+          "id": "Prislusny Kalendarny Stvrtrok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prislusny kalendarny stvrtrok"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "prislusny kalendarny stvrtrok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zahranicny Zastupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zahranicny zastupca"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "vratenie dane za prislusny kalendarny stvrtrok",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zastupca Tohto Statu",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zastupca tohto statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Stat",
+          "type": "Stat",
+          "properties": {
+            "name": "stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Celkova Cena",
+          "type": "Suma",
+          "properties": {
+            "name": "celkova cena"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktury"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ine Doklady O Kupe Tovarov A Sluzieb",
+          "type": "Doklad",
+          "properties": {
+            "name": "ine doklady o kupe tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "60 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prislusny Kalendarny Stvrtrok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prislusny kalendarny stvrtrok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicny Zastupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "zahranicny zastupca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "zástupca tohto štátu žiadať vrátenie dane z takého dokladu, na ktorom je celková cena najmenej\nvo výške určenej týmto štátom.\n(4) Daňový úrad Bratislava opatrí odtlačkom úradnej pečiatky všetky faktúry a iné doklady\no kúpe tovarov a služieb priložené k žiadosti o vrátenie dane a do 60 dní od podania žiadosti\no vrátenie dane za príslušný kalendárny štvrťrok ich vráti zahraničnému zástupcovi.",
+            "page": 77
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

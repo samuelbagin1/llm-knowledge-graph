@@ -1,0 +1,565 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222_2004_Z_z_Zbierka_zakonov_Slovenskej_republiky",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+        "type": "Cinnost",
+        "properties": {
+          "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+        }
+      },
+      {
+        "id": "Predaj_Tovaru_Na_Dialku_Na_Uzemii_Europskej_Unie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "predaj tovaru na dialku na uzemii Europskej unie"
+        }
+      },
+      {
+        "id": "Dodanie_Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru"
+        }
+      },
+      {
+        "id": "Instalacia_Alebo_Montaz_Uskutocnena_Dodavatelom_Alebo_Na_His_Ucet",
+        "type": "Cinnost",
+        "properties": {
+          "name": "instalacia alebo montaz uskutocnena dodavatelom alebo na jeho ucet"
+        }
+      },
+      {
+        "id": "Zdanitelna_Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Pravnicka_Osoba_Ktora_Nie_Je_Zdanitelnou_Osobou",
+        "type": "Pravnickaosoba",
+        "properties": {
+          "name": "pravnicka osoba, ktora nie je zdanitelnou osobou"
+        }
+      },
+      {
+        "id": "Osoba_Ina_Ako_Zdanitelna_Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba ina ako zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Clensky_Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Uzemie_Europskej_Unie",
+        "type": "Uzemie",
+        "properties": {
+          "name": "uzemie Europskej unie"
+        }
+      },
+      {
+        "id": "Uzemie_Tretich_Statov",
+        "type": "Uzemie",
+        "properties": {
+          "name": "uzemie tretich statov"
+        }
+      },
+      {
+        "id": "Novy_Dopravny_Prostriedok",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "novy dopravny prostriedok"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+          "page": 20
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222_2004_Z_z_Zbierka_zakonov_Slovenskej_republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "ustanovenie o dodani tovaru pri predaji tovaru na dialku dovazanom z uzemia tretich statov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222_2004_Z_z_Zbierka_zakonov_Slovenskej_republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Predaj_Tovaru_Na_Dialku_Na_Uzemii_Europskej_Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku na uzemii Europskej unie"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "ustanovenie o mieste dodania tovaru pri predaji tovaru na dialku na uzemii Europskej unie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "dodanie tovaru pre zdanitelnu osobu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "Pravnicka_Osoba_Ktora_Nie_Je_Zdanitelnou_Osobou",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "pravnicka osoba, ktora nie je zdanitelnou osobou"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "dodanie tovaru pre pravnicku osobu, ktora nie je zdanitelnou osobou",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "Osoba_Ina_Ako_Zdanitelna_Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba ina ako zdanitelna osoba"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "dodanie tovaru pre osobu inu ako zdanitelnu osobu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "Novy_Dopravny_Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "novy dopravny prostriedok"
+          }
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "add": "dodanym tovarom nie su nove dopravne prostriedky",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "Instalacia_Alebo_Montaz_Uskutocnena_Dodavatelom_Alebo_Na_His_Ucet",
+          "type": "Cinnost",
+          "properties": {
+            "name": "instalacia alebo montaz uskutocnena dodavatelom alebo na jeho ucet"
+          }
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "add": "dodanemu tovaru nie je instalacia alebo montaz uskutocnena dodavatelom alebo na jeho ucet",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "Uzemie_Tretich_Statov",
+          "type": "Uzemie",
+          "properties": {
+            "name": "uzemie tretich statov"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "tovar je odoslany alebo prepraveny z uzemia tretich statov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "Clensky_Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "zakaznik v clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Na_Uzemii_Europskej_Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku na uzemii Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Uzemie_Europskej_Unie",
+          "type": "Uzemie",
+          "properties": {
+            "name": "uzemie Europskej unie"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "predaj tovaru na dialku na uzemii Europskej unie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222_2004_Z_z_Zbierka_zakonov_Slovenskej_republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Dovazany_Z_Uzemia_Tretich_Statov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku dovazany z uzemia tretich statov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predaj_Tovaru_Na_Dialku_Na_Uzemii_Europskej_Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predaj tovaru na dialku na uzemii Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie_Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Instalacia_Alebo_Montaz_Uskutocnena_Dodavatelom_Alebo_Na_His_Ucet",
+          "type": "Cinnost",
+          "properties": {
+            "name": "instalacia alebo montaz uskutocnena dodavatelom alebo na jeho ucet"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna_Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravnicka_Osoba_Ktora_Nie_Je_Zdanitelnou_Osobou",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "pravnicka osoba, ktora nie je zdanitelnou osobou"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba_Ina_Ako_Zdanitelna_Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba ina ako zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky_Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uzemie_Europskej_Unie",
+          "type": "Uzemie",
+          "properties": {
+            "name": "uzemie Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uzemie_Tretich_Statov",
+          "type": "Uzemie",
+          "properties": {
+            "name": "uzemie tretich statov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Novy_Dopravny_Prostriedok",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "novy dopravny prostriedok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 21\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet,\nb) predajom tovaru na diaľku dovážaného z územia tretích štátov dodanie tovaru, ktorý je\nodoslaný alebo prepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje\nnepriamo do odoslania alebo prepravy tovaru, z územia tretích štátov k zákazníkovi v členskom\nštáte, ak sú splnené tieto podmienky:\n1. dodanie tovaru sa uskutočňuje pre zdaniteľnú osobu alebo pre právnickú osobu, ktorá nie je\nzdaniteľnou osobou, u ktorých nadobudnutie tovaru na území Európskej únie nie je\npredmetom dane podľa § 11 ods. 4, alebo pre osobu inú ako zdaniteľnú osobu,\n2. dodaným tovarom nie sú nové dopravné prostriedky ani tovar dodaný s inštaláciou alebo\nmontážou uskutočnenou dodávateľom alebo na jeho účet.\n(2) Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde",
+            "page": 20
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

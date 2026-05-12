@@ -1,0 +1,621 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Osobitna Uprava",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "osobitna uprava"
+        }
+      },
+      {
+        "id": "Posledne Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "posledne zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Majetok",
+        "type": "Majetok",
+        "properties": {
+          "name": "majetok"
+        }
+      },
+      {
+        "id": "Vlastna Cinnost",
+        "type": "Cinnost",
+        "properties": {
+          "name": "vlastna cinnost"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Dodanie Majetku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie majetku"
+        }
+      },
+      {
+        "id": "Zdanenie Podla Paragrafu 8 Odsek 3",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "zdanenie podla paragrafu 8 odsek 3"
+        }
+      },
+      {
+        "id": "Zaklad Dane Podla Paragrafu 22 Odsek 5",
+        "type": "Vypocet",
+        "properties": {
+          "name": "zaklad dane podla paragrafu 22 odsek 5"
+        }
+      },
+      {
+        "id": "Odpoctana Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "odpoctana dan"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane Podla Paragrafu 38 Odsek 1 Alebo 7",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodenie od dane podla paragrafu 38 odsek 1 alebo 7"
+        }
+      },
+      {
+        "id": "Uprava Odpoctanej Dane Podla Paragrafu 54A",
+        "type": "Vypocet",
+        "properties": {
+          "name": "uprava odpoctanej dane podla paragrafu 54a"
+        }
+      },
+      {
+        "id": "Zmena Rozsahu Pouzitia Majetku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "zmena rozsahu pouzitia majetku"
+        }
+      },
+      {
+        "id": "Podnikanie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "podnikanie"
+        }
+      },
+      {
+        "id": "Investicny Majetok Podla Paragrafu 54 Odsek 2 Pismeno D",
+        "type": "Investicnymajetok",
+        "properties": {
+          "name": "investicny majetok podla paragrafu 54 odsek 2 pismeno d"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+          "page": 127
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "majetok"
+          }
+        },
+        "target": {
+          "id": "Vlastna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vlastna cinnost"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "nadobudnutie alebo vytvorenie vlastnou cinnostou",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "majetok"
+          }
+        },
+        "target": {
+          "id": "Odpoctana Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odpoctana dan"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "daň pri nadobudnuti alebo vytvoreni bola uplne alebo ciastocne odpoctana",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "majetok"
+          }
+        },
+        "target": {
+          "id": "Dodanie Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie majetku"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "majetok sa povazuje za dodany platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie majetku"
+          }
+        },
+        "target": {
+          "id": "Zdanenie Podla Paragrafu 8 Odsek 3",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zdanenie podla paragrafu 8 odsek 3"
+          }
+        },
+        "type": "VYPLYVA_Z",
+        "properties": {
+          "add": "podla § 8 ods. 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Zaklad Dane Podla Paragrafu 22 Odsek 5",
+          "type": "Vypocet",
+          "properties": {
+            "name": "zaklad dane podla paragrafu 22 odsek 5"
+          }
+        },
+        "type": "MA_VYNIMKU",
+        "properties": {
+          "add": "daň sa vypočíta zo zakladu dane podla § 22 ods. 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Odpoctana Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odpoctana dan"
+          }
+        },
+        "type": "MA_LIMIT",
+        "properties": {
+          "add": "najviac do vysky odpoctanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane Podla Paragrafu 38 Odsek 1 Alebo 7",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane podla paragrafu 38 odsek 1 alebo 7"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "okrem dane vztahujucej sa na majetok, ktoreho dodanie by bolo oslobodene od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Uprava Odpoctanej Dane Podla Paragrafu 54A",
+          "type": "Vypocet",
+          "properties": {
+            "name": "uprava odpoctanej dane podla paragrafu 54a"
+          }
+        },
+        "type": "MA_VYNIMKU",
+        "properties": {
+          "add": "vyska v akej by bol platitel povinny upravit odpoctanu dan podla § 54a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Uprava Odpoctanej Dane Podla Paragrafu 54A",
+          "type": "Vypocet",
+          "properties": {
+            "name": "uprava odpoctanej dane podla paragrafu 54a"
+          }
+        },
+        "target": {
+          "id": "Zmena Rozsahu Pouzitia Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmena rozsahu pouzitia majetku"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "zmenil rozsah pouzitia tohto majetku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmena Rozsahu Pouzitia Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmena rozsahu pouzitia majetku"
+          }
+        },
+        "target": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "len na iny ucel ako na podnikanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osobitna Uprava",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "osobitna uprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Posledne Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "posledne zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Majetok",
+          "type": "Majetok",
+          "properties": {
+            "name": "majetok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vlastna Cinnost",
+          "type": "Cinnost",
+          "properties": {
+            "name": "vlastna cinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie majetku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanenie Podla Paragrafu 8 Odsek 3",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "zdanenie podla paragrafu 8 odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane Podla Paragrafu 22 Odsek 5",
+          "type": "Vypocet",
+          "properties": {
+            "name": "zaklad dane podla paragrafu 22 odsek 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odpoctana Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "odpoctana dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane Podla Paragrafu 38 Odsek 1 Alebo 7",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane podla paragrafu 38 odsek 1 alebo 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Uprava Odpoctanej Dane Podla Paragrafu 54A",
+          "type": "Vypocet",
+          "properties": {
+            "name": "uprava odpoctanej dane podla paragrafu 54a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Rozsahu Pouzitia Majetku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "zmena rozsahu pouzitia majetku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok Podla Paragrafu 54 Odsek 2 Pismeno D",
+          "type": "Investicnymajetok",
+          "properties": {
+            "name": "investicny majetok podla paragrafu 54 odsek 2 pismeno d"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "uplatňovania tejto osobitnej úpravy nezaniká.\n(5) V poslednom zdaňovacom období sa majetok, pri ktorého nadobudnutí alebo vytvorení\nvlastnou činnosťou bola daň úplne alebo čiastočne odpočítaná alebo ktorý platiteľ nadobudol bez\ndane (§ 10 ods. 1 alebo ods. 3) a pri ktorého nadobudnutí alebo vytvorení vlastnou činnosťou bola\ndaň u predchádzajúceho vlastníka úplne alebo čiastočne odpočítaná, považuje za dodaný\nplatiteľom podľa § 8 ods. 3. Daň sa vypočíta zo základu dane podľa § 22 ods. 5, najviac však do\nvýšky odpočítanej dane, okrem dane vzťahujúcej sa na majetok, ktorého dodanie by bolo\noslobodené od dane podľa § 38 ods. 1 alebo ods. 7, pri ktorom sa daň vypočíta vo výške, v akej by\nbol platiteľ povinný upraviť odpočítanú daň podľa § 54a z dôvodu, že zmenil rozsah použitia tohto\nmajetku len na iný účel ako na podnikanie. Ak ide o investičný majetok podľa § 54 ods. 2 písm. d),\nv poslednom zdaňovacom období je platiteľ povinný upraviť odpočítanú daň postupom podľa",
+            "page": 127
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

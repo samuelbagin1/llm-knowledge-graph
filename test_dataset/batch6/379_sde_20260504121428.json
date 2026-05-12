@@ -1,0 +1,628 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon 222/2004 Z. Z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Paragraf 68Cb",
+        "type": "Paragraf",
+        "properties": {
+          "name": "68cb"
+        }
+      },
+      {
+        "id": "Daove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "daove priznanie"
+        }
+      },
+      {
+        "id": "Konecne Daove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "konecne daove priznanie"
+        }
+      },
+      {
+        "id": "Osobitne Tlacivo",
+        "type": "Doklad",
+        "properties": {
+          "name": "osobitne tlacivo"
+        }
+      },
+      {
+        "id": "Dodatocne Daove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "dodatocne daove priznanie"
+        }
+      },
+      {
+        "id": "Osoba Podla Odseku 6",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba podla odseku 6"
+        }
+      },
+      {
+        "id": "Lehota Na Podanie Osobitneho Tlaciva",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehota na podanie osobitneho tlaciva"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "tuzemsko"
+        }
+      },
+      {
+        "id": "Zasielka",
+        "type": "Zasielka",
+        "properties": {
+          "name": "zasielka"
+        }
+      },
+      {
+        "id": "Vlastna Hodnota 150 Eur",
+        "type": "Hodnota",
+        "properties": {
+          "name": "150 eur"
+        }
+      },
+      {
+        "id": "Ziadost",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost"
+        }
+      },
+      {
+        "id": "Colny Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "colny urad"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+          "page": 94
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Paragraf 68Cb",
+          "type": "Paragraf",
+          "properties": {
+            "name": "68cb"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "§ 68cb",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68Cb",
+          "type": "Paragraf",
+          "properties": {
+            "name": "68cb"
+          }
+        },
+        "target": {
+          "id": "Dodatocne Daove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "dodatocne daove priznanie"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "cast osobitneho tlaciva sa považuje za dodatocne daove priznanie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Podla Odseku 6",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba podla odseku 6"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "zaplatit dan vypocitanu z udajov alebo z opravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba Podla Odseku 6",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba podla odseku 6"
+          }
+        },
+        "target": {
+          "id": "Lehota Na Podanie Osobitneho Tlaciva",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na podanie osobitneho tlaciva"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "lehota na podanie osobitneho tlaciva",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68Cb",
+          "type": "Paragraf",
+          "properties": {
+            "name": "68cb"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "tovar nie je predmetom spotrebnej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68Cb",
+          "type": "Paragraf",
+          "properties": {
+            "name": "68cb"
+          }
+        },
+        "target": {
+          "id": "Zasielka",
+          "type": "Zasielka",
+          "properties": {
+            "name": "zasielka"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "dovazany do tuzemska",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68Cb",
+          "type": "Paragraf",
+          "properties": {
+            "name": "68cb"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "odoslanie alebo preprava skonci v tuzemske",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 68Cb",
+          "type": "Paragraf",
+          "properties": {
+            "name": "68cb"
+          }
+        },
+        "target": {
+          "id": "Vlastna Hodnota 150 Eur",
+          "type": "Hodnota",
+          "properties": {
+            "name": "150 eur"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "vlastna hodnota nepresahuje 150 eur",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "colny urad"
+          }
+        },
+        "target": {
+          "id": "Ziadost",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost"
+          }
+        },
+        "type": "ROZHODUJE_O",
+        "properties": {
+          "add": "na zaklade ziadosti povoli uplatnovanie osobitnej upravy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 68Cb",
+          "type": "Paragraf",
+          "properties": {
+            "name": "68cb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Konecne Daove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "konecne daove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobitne Tlacivo",
+          "type": "Doklad",
+          "properties": {
+            "name": "osobitne tlacivo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodatocne Daove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "dodatocne daove priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Podla Odseku 6",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba podla odseku 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehota Na Podanie Osobitneho Tlaciva",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota na podanie osobitneho tlaciva"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zasielka",
+          "type": "Zasielka",
+          "properties": {
+            "name": "zasielka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vlastna Hodnota 150 Eur",
+          "type": "Hodnota",
+          "properties": {
+            "name": "150 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "colny urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 95\n6 písm. b) až d) týka nesprávne uvedenej výšky dane alebo dane neuvedenej v daňovom priznaní,\nkonečnom daňovom priznaní alebo v daňovom priznaní podanom pred podaním konečného\ndaňového priznania, časť osobitného tlačiva sa v rozsahu týchto opráv považuje za dodatočné\ndaňové priznanie.\n(9) Osoba podľa odseku 6 je povinná v lehote na podanie osobitného tlačiva podľa odseku 6\npísm. a) až c) zaplatiť daň vypočítanú z údajov uvedených podľa odseku 7 písm. a) alebo\nvyplývajúcu z opravy podľa odseku 7 písm. b).\n§ 68cb\nOsobitná úprava na priznávanie a platbu dane pri dovoze tovaru\n(1) Ak sa na tovar, ktorý nie je predmetom spotrebnej dane, dovážaný do tuzemska v zásielke,\nktorej vlastná hodnota nepresahuje 150 eur, neuplatní osobitná úprava podľa § 68c, a odoslanie\nalebo preprava tohto tovaru skončí v tuzemsku, colný úrad na základe žiadosti povolí osobe, ktorá\nmu predkladá tovar na účet osoby, pre ktorú je tovar určený, uplatňovanie osobitnej úpravy podľa",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

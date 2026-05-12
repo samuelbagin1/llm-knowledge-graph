@@ -1,0 +1,564 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Pokuta Do Vysky 10 000 Eur",
+        "type": "Pokuta",
+        "properties": {
+          "name": "Pokuta do vysky 10 000 eur"
+        }
+      },
+      {
+        "id": "10 000 eur",
+        "type": "Suma",
+        "properties": {
+          "name": "10 000 eur"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Tlačivo Podľa Odseku 5",
+        "type": "Doklad",
+        "properties": {
+          "name": "tlacive podla odseku 5"
+        }
+      },
+      {
+        "id": "§ 6A Zmena Registracie Platitela",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 6a"
+        }
+      },
+      {
+        "id": "Zmena Registracie Platitela",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zmena registracie platitela"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Status Zahranicnej Osoby",
+        "type": "Status",
+        "properties": {
+          "name": "status zahranicnej osoby"
+        }
+      },
+      {
+        "id": "Cinnost V Tuzemsku",
+        "type": "Cinnost",
+        "properties": {
+          "name": "cinnost v tuzemsku"
+        }
+      },
+      {
+        "id": "Desiatich Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "do desiatich dni"
+        }
+      },
+      {
+        "id": "Oznamenie",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznamenie"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+          "page": 10
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zmena Registracie Platitela",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zmena registracie platitela"
+          }
+        },
+        "target": {
+          "id": "§ 6A Zmena Registracie Platitela",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 6a"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pokuta Do Vysky 10 000 Eur",
+          "type": "Pokuta",
+          "properties": {
+            "name": "Pokuta do vysky 10 000 eur"
+          }
+        },
+        "target": {
+          "id": "10 000 eur",
+          "type": "Suma",
+          "properties": {
+            "name": "10 000 eur"
+          }
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "add": "do vysky",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Pokuta Do Vysky 10 000 Eur",
+          "type": "Pokuta",
+          "properties": {
+            "name": "Pokuta do vysky 10 000 eur"
+          }
+        },
+        "type": "ULOZI",
+        "properties": {
+          "add": "platitelovi za nespravne, nepravdive alebo neuplne udaje na tlacive",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Tlačivo Podľa Odseku 5",
+          "type": "Doklad",
+          "properties": {
+            "name": "tlacive podla odseku 5"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "add": "uvedenie udajov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "oznamiit skutocnost ze prestala spĺnat status zahranicnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "oznamit danovemu uradu prestanie splnat status zahranicnej osoby do desiatich dni",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie"
+          }
+        },
+        "target": {
+          "id": "Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "do desiatich dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "odo dna ked prestala splnat status zahranicnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Status Zahranicnej Osoby",
+          "type": "Status",
+          "properties": {
+            "name": "status zahranicnej osoby"
+          }
+        },
+        "type": "MA_STATUS",
+        "properties": {
+          "add": "prestane spĺnat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Cinnost V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnost v tuzemsku"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "naďalej po strate statusu zahranicnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "§ 6A Zmena Registracie Platitela",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 6a"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "registrovana podla § 5 a prestala splnat status zahranicnej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pokuta Do Vysky 10 000 Eur",
+          "type": "Pokuta",
+          "properties": {
+            "name": "Pokuta do vysky 10 000 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "10 000 eur",
+          "type": "Suma",
+          "properties": {
+            "name": "10 000 eur"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tlačivo Podľa Odseku 5",
+          "type": "Doklad",
+          "properties": {
+            "name": "tlacive podla odseku 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 6A Zmena Registracie Platitela",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 6a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie Platitela",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zmena registracie platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Status Zahranicnej Osoby",
+          "type": "Status",
+          "properties": {
+            "name": "status zahranicnej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Cinnost V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {
+            "name": "cinnost v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "do desiatich dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(8) Ak platiteľ na tlačive podľa odseku 5 uvedie nesprávne, nepravdivé alebo neúplné údaje,\ndaňový úrad uloží platiteľovi pokutu do výšky 10 000 eur. Pri určení výšky pokuty prihliadne\ndaňový úrad na závažnosť a dĺžku trvania protiprávneho stavu.\n§ 6a\nZmena registrácie platiteľa\n(1) Zdaniteľná osoba, ktorá je registrovaná podľa § 5 a ktorá prestane spĺňať status zahraničnej\nosoby, sa považuje za platiteľa registrovaného podľa § 4 odo dňa, keď prestala spĺňať status\nzahraničnej osoby a naďalej vykonáva činnosť, ktorá je predmetom dane v tuzemsku. Zdaniteľná\nosoba je povinná oznámiť daňovému úradu skutočnosť, že prestala spĺňať status zahraničnej\nosoby do desiatich dní odo dňa, keď prestala spĺňať status zahraničnej osoby. V oznámení uvedie",
+            "page": 10
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,923 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf 5",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 5"
+        }
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 2"
+        }
+      },
+      {
+        "id": "Danovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňového úradu Bratislava"
+        }
+      },
+      {
+        "id": "Paragraf 8",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 8"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 1"
+        }
+      },
+      {
+        "id": "Pismeno C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "písm. c"
+        }
+      },
+      {
+        "id": "Najnna Zmluva S Dojednanym Pravom Kupy Tovaru",
+        "type": "Zmluva",
+        "properties": {
+          "name": "nájomnú zmluvu s dojednaným právom kúpy tovaru"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Pravo Kupy Tovaru",
+        "type": "Pravo",
+        "properties": {
+          "name": "právo kúpy tovaru"
+        }
+      },
+      {
+        "id": "Paragraf 55",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 55"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 3"
+        }
+      },
+      {
+        "id": "Paragraf 69",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 69"
+        }
+      },
+      {
+        "id": "Odsek 13",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 13"
+        }
+      },
+      {
+        "id": "Paragraf 78",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 78"
+        }
+      },
+      {
+        "id": "Odsek 9",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 9"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdaniteľnú osobu"
+        }
+      },
+      {
+        "id": "Danove Priznanie",
+        "type": "Danovepriznanie",
+        "properties": {
+          "name": "daňové priznanie"
+        }
+      },
+      {
+        "id": "31. decembra 2024",
+        "type": "Datum",
+        "properties": {
+          "name": "31. decembra 2024"
+        }
+      },
+      {
+        "id": "1. januara 2025",
+        "type": "Datum",
+        "properties": {
+          "name": "1. januára 2025"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+          "page": 142
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňového úradu Bratislava"
+          }
+        },
+        "target": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "postup uradu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "písm. c"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Najnna Zmluva S Dojednanym Pravom Kupy Tovaru",
+          "type": "Zmluva",
+          "properties": {
+            "name": "nájomnú zmluvu s dojednaným právom kúpy tovaru"
+          }
+        },
+        "target": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ods. 1 písm. c) v zneni ucinnom od 1. januara 2025",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Najnna Zmluva S Dojednanym Pravom Kupy Tovaru",
+          "type": "Zmluva",
+          "properties": {
+            "name": "nájomnú zmluvu s dojednaným právom kúpy tovaru"
+          }
+        },
+        "target": {
+          "id": "Pravo Kupy Tovaru",
+          "type": "Pravo",
+          "properties": {
+            "name": "právo kúpy tovaru"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "dojednane pravo kupy tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Najnna Zmluva S Dojednanym Pravom Kupy Tovaru",
+          "type": "Zmluva",
+          "properties": {
+            "name": "nájomnú zmluvu s dojednaným právom kúpy tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "tovar je predmetom najmu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Najnna Zmluva S Dojednanym Pravom Kupy Tovaru",
+          "type": "Zmluva",
+          "properties": {
+            "name": "nájomnú zmluvu s dojednaným právom kúpy tovaru"
+          }
+        },
+        "target": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ods. 1 písm. c) v zneni ucinnom od 1. januara 2025",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 55",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 55"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 3"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 69",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69"
+          }
+        },
+        "target": {
+          "id": "Odsek 13",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 13"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 78",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 78"
+          }
+        },
+        "target": {
+          "id": "Odsek 9",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 9"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnú osobu"
+          }
+        },
+        "target": {
+          "id": "Paragraf 55",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 55"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ods. 3 v zneni ucinnom do 31. decembra 2024",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnú osobu"
+          }
+        },
+        "target": {
+          "id": "Paragraf 69",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ods. 13 v zneni ucinnom do 31. decembra 2024",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnú osobu"
+          }
+        },
+        "target": {
+          "id": "Paragraf 78",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 78"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ods. 9 v zneni ucinnom do 31. decembra 2024",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnú osobu"
+          }
+        },
+        "target": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "podat danove priznanie podla § 78 ods. 9",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnú osobu"
+          }
+        },
+        "target": {
+          "id": "Paragraf 78",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 78"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ods. 9 v zneni ucinnom do 31. decembra 2024",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "31. decembra 2024",
+          "type": "Datum",
+          "properties": {
+            "name": "31. decembra 2024"
+          }
+        },
+        "type": "PLATI_DO",
+        "properties": {
+          "add": "v zneni ucinnom do",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "1. januara 2025",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januára 2025"
+          }
+        },
+        "type": "PLATI_OD",
+        "properties": {
+          "add": "v zneni ucinnom od",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 5",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 2"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňového úradu Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "písm. c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Najnna Zmluva S Dojednanym Pravom Kupy Tovaru",
+          "type": "Zmluva",
+          "properties": {
+            "name": "nájomnú zmluvu s dojednaným právom kúpy tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Kupy Tovaru",
+          "type": "Pravo",
+          "properties": {
+            "name": "právo kúpy tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 55",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 55"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 69",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 69"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 13",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 13"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 78",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 78"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 9",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 9"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdaniteľnú osobu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Priznanie",
+          "type": "Danovepriznanie",
+          "properties": {
+            "name": "daňové priznanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "31. decembra 2024",
+          "type": "Datum",
+          "properties": {
+            "name": "31. decembra 2024"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1. januara 2025",
+          "type": "Datum",
+          "properties": {
+            "name": "1. januára 2025"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení\núčinnom do 31. decembra 2024.\n(4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na\nnájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto\nzmluva uzavretá do 31. decembra 2024 vrátane.\n(5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024\nsa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78\nods. 9 v znení účinnom do 31. decembra 2024.",
+            "page": 142
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

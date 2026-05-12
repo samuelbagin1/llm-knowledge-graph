@@ -1,0 +1,796 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Ziadost O Vranie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "žiadost o vrátenie dane"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dane"
+        }
+      },
+      {
+        "id": "Ziadatel",
+        "type": "Subjekt",
+        "properties": {
+          "name": "žiadatel"
+        }
+      },
+      {
+        "id": "Bankovy Ucet Ziadatela",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "bankovom účte žiadateľa"
+        }
+      },
+      {
+        "id": "Medzinarodne Bankove Cislo Uctu Iban",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "IBAN"
+        }
+      },
+      {
+        "id": "Medzinarodny Kod Banky Bic",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "BIC"
+        }
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktúry"
+        }
+      },
+      {
+        "id": "Dovozny Doklad",
+        "type": "Doklad",
+        "properties": {
+          "name": "dovozného dokladu"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru Alebo Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodaní tovaru alebo služby"
+        }
+      },
+      {
+        "id": "Dovod Vratenia Dane",
+        "type": "Dovod",
+        "properties": {
+          "name": "vrátenie dane"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikačné číslo pre daň"
+        }
+      },
+      {
+        "id": "Danove Registracne Cislo",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "daňové registračné číslo"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "členskom štáte"
+        }
+      },
+      {
+        "id": "Sidlо Dodavatela",
+        "type": "Sidlo",
+        "properties": {
+          "name": "sídla dodávateľa"
+        }
+      },
+      {
+        "id": "Miesto Podnikania Dodavatela",
+        "type": "Sidlo",
+        "properties": {
+          "name": "miesta podnikania dodávateľa"
+        }
+      },
+      {
+        "id": "Prevadzkaren Dodavatela",
+        "type": "Prevadzkaren",
+        "properties": {
+          "name": "prevádzkarne dodávateľa"
+        }
+      },
+      {
+        "id": "Bydlisko Dodavatela",
+        "type": "Sidlo",
+        "properties": {
+          "name": "bydliska dodávateľa"
+        }
+      },
+      {
+        "id": "Miesto Kde Sa Obvykle Zdrziava Dodavatel",
+        "type": "Lokacia",
+        "properties": {
+          "name": "miesta, kde sa obvykle zdržiava dodávateľ"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+          "page": 67
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Ziadost O Vranie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "žiadost o vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikačné číslo pre daň"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "udaje o identifikacnom cisle pre dan ziadatela alebo jeho danovom registracnom cisle",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vranie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "žiadost o vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "Bankovy Ucet Ziadatela",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "bankovom účte žiadateľa"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "udaje o bankovom ucte vratane IBAN a BIC",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Bankovy Ucet Ziadatela",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "bankovom účte žiadateľa"
+          }
+        },
+        "target": {
+          "id": "Medzinarodne Bankove Cislo Uctu Iban",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "IBAN"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "IBAN",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Bankovy Ucet Ziadatela",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "bankovom účte žiadateľa"
+          }
+        },
+        "target": {
+          "id": "Medzinarodny Kod Banky Bic",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "BIC"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "BIC",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vranie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "žiadost o vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "udaje z kazdej faktury o dodani tovaru alebo sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vranie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "žiadost o vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "Dovozny Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozného dokladu"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "udaje z kazdeho dovozneho dokladu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaní tovaru alebo služby"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "dodanie tovaru alebo sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vranie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "žiadost o vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "Dovod Vratenia Dane",
+          "type": "Dovod",
+          "properties": {
+            "name": "vrátenie dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "target": {
+          "id": "Sidlо Dodavatela",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídla dodávateľa"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "adresa sidla dodavatela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "target": {
+          "id": "Miesto Podnikania Dodavatela",
+          "type": "Sidlo",
+          "properties": {
+            "name": "miesta podnikania dodávateľa"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "adresa miesta podnikania dodavatela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "target": {
+          "id": "Prevadzkaren Dodavatela",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevádzkarne dodávateľa"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "adresa prevadzkarne dodavatela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "target": {
+          "id": "Bydlisko Dodavatela",
+          "type": "Sidlo",
+          "properties": {
+            "name": "bydliska dodávateľa"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "adresa bydliska dodavatela",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "target": {
+          "id": "Miesto Kde Sa Obvykle Zdrziava Dodavatel",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesta, kde sa obvykle zdržiava dodávateľ"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "adresa miesta, kde sa obvykle zdrziava dodavatel",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vranie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "žiadost o vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadatel",
+          "type": "Subjekt",
+          "properties": {
+            "name": "žiadatel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bankovy Ucet Ziadatela",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "bankovom účte žiadateľa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Medzinarodne Bankove Cislo Uctu Iban",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "IBAN"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Medzinarodny Kod Banky Bic",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "BIC"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktúry"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovozny Doklad",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozného dokladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaní tovaru alebo služby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovod Vratenia Dane",
+          "type": "Dovod",
+          "properties": {
+            "name": "vrátenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikačné číslo pre daň"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danove Registracne Cislo",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "daňové registračné číslo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "členskom štáte"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sidlо Dodavatela",
+          "type": "Sidlo",
+          "properties": {
+            "name": "sídla dodávateľa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Podnikania Dodavatela",
+          "type": "Sidlo",
+          "properties": {
+            "name": "miesta podnikania dodávateľa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkaren Dodavatela",
+          "type": "Prevadzkaren",
+          "properties": {
+            "name": "prevádzkarne dodávateľa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bydlisko Dodavatela",
+          "type": "Sidlo",
+          "properties": {
+            "name": "bydliska dodávateľa"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Kde Sa Obvykle Zdrziava Dodavatel",
+          "type": "Lokacia",
+          "properties": {
+            "name": "miesta, kde sa obvykle zdržiava dodávateľ"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "f) identifikačné číslo pre daň žiadateľa alebo jeho daňové registračné číslo pridelené v inom\nčlenskom štáte,\ng) údaje o bankovom účte žiadateľa vrátane medzinárodného bankového čísla účtu (IBAN)\na medzinárodného kódu banky (BIC).\n(3) Žiadosť o vrátenie dane musí obsahovať okrem údajov podľa odseku 2 údaje z každej faktúry\no dodaní tovaru alebo služby a z každého dovozného dokladu, z ktorých žiadateľ žiada vrátenie\ndane, a to:\na) priezvisko a meno alebo názov dodávateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kde sa obvykle zdržiava,",
+            "page": 67
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

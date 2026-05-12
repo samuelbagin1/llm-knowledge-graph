@@ -1,0 +1,887 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Oprava",
+        "type": "Cinnost",
+        "properties": {
+          "name": "oprava"
+        }
+      },
+      {
+        "id": "Udrzba",
+        "type": "Cinnost",
+        "properties": {
+          "name": "udrzba"
+        }
+      },
+      {
+        "id": "Najom Vybavenia",
+        "type": "Cinnost",
+        "properties": {
+          "name": "najom vybavenia"
+        }
+      },
+      {
+        "id": "Dodanie Inych Sluzieb",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie inych sluzieb"
+        }
+      },
+      {
+        "id": "Dodanie Zlata Centralnym Bankam",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie zlata centralnym bankam"
+        }
+      },
+      {
+        "id": "Obstaranie Dodania Tovarov A Sluzieb",
+        "type": "Cinnost",
+        "properties": {
+          "name": "obstaranie dodania tovarov a sluzieb"
+        }
+      },
+      {
+        "id": "Obstaranie Tovarov A Sluzieb Mimo Uzemia Europskej Unie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "obstaranie tovarov a sluzieb mimo uzemia Europskej unie"
+        }
+      },
+      {
+        "id": "Obstaranie Sluzieb Cestovneho Ruchu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "obstaranie sluzieb cestovneho ruchu"
+        }
+      },
+      {
+        "id": "Bezodplatne Dodanie Tovaru Formou Daru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "bezodplatne dodanie tovaru formou daru"
+        }
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "clensky stat"
+        }
+      },
+      {
+        "id": "Europska Unia",
+        "type": "Uzemie",
+        "properties": {
+          "name": "europska unia"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "oslobodenie od dane"
+        }
+      },
+      {
+        "id": "Inej Osoby",
+        "type": "Osoba",
+        "properties": {
+          "name": "inej osoby"
+        }
+      },
+      {
+        "id": "Centralne Banky",
+        "type": "Banka",
+        "properties": {
+          "name": "centralne banky"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Odsek 1 Az 11",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1 az 11"
+        }
+      },
+      {
+        "id": "Odsek 11",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 11"
+        }
+      },
+      {
+        "id": "Odsek 12",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 12"
+        }
+      },
+      {
+        "id": "Odsek 13",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 13"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+          "page": 44
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Oprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava"
+          }
+        },
+        "target": {
+          "id": "Dodanie Inych Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie inych sluzieb"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "sluzby potrebne priamo pre lietadla",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Udrzba",
+          "type": "Cinnost",
+          "properties": {
+            "name": "udrzba"
+          }
+        },
+        "target": {
+          "id": "Dodanie Inych Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie inych sluzieb"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "sluzby potrebne priamo pre lietadla",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Najom Vybavenia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "najom vybavenia"
+          }
+        },
+        "target": {
+          "id": "Dodanie Inych Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie inych sluzieb"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "vybavenie instalovane alebo pouzivane v lietadlach",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Dodanie Zlata Centralnym Bankam",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie zlata centralnym bankam"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "odsek 11",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Obstaranie Dodania Tovarov A Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie dodania tovarov a sluzieb"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "odsek 12",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Obstaranie Sluzieb Cestovneho Ruchu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie sluzieb cestovneho ruchu"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "sluzby cestovneho ruchu dodane v inom clenskom state",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "Bezodplatne Dodanie Tovaru Formou Daru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "bezodplatne dodanie tovaru formou daru"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "odsek 13",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Dodania Tovarov A Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie dodania tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "Odsek 1 Az 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1 az 11"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "podla odsekov 1 az 11",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Dodania Tovarov A Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie dodania tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "Inej Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "inej osoby"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "vykonane v mene a na ucet inej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Tovarov A Sluzieb Mimo Uzemia Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie tovarov a sluzieb mimo uzemia Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Inej Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "inej osoby"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "vykonane v mene a na ucet inej osoby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Tovarov A Sluzieb Mimo Uzemia Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie tovarov a sluzieb mimo uzemia Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Europska Unia",
+          "type": "Uzemie",
+          "properties": {
+            "name": "europska unia"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "mimo uzemia Europskej unie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Sluzieb Cestovneho Ruchu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie sluzieb cestovneho ruchu"
+          }
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "inny clensky stat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Zlata Centralnym Bankam",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie zlata centralnym bankam"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "oslobodenie od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Dodania Tovarov A Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie dodania tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "oslobodenie od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Tovarov A Sluzieb Mimo Uzemia Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie tovarov a sluzieb mimo uzemia Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "oslobodenie od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Bezodplatne Dodanie Tovaru Formou Daru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "bezodplatne dodanie tovaru formou daru"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "oslobodenie od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Udrzba",
+          "type": "Cinnost",
+          "properties": {
+            "name": "udrzba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Najom Vybavenia",
+          "type": "Cinnost",
+          "properties": {
+            "name": "najom vybavenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Inych Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie inych sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Zlata Centralnym Bankam",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie zlata centralnym bankam"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaranie Dodania Tovarov A Sluzieb",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie dodania tovarov a sluzieb"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaranie Tovarov A Sluzieb Mimo Uzemia Europskej Unie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie tovarov a sluzieb mimo uzemia Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaranie Sluzieb Cestovneho Ruchu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "obstaranie sluzieb cestovneho ruchu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bezodplatne Dodanie Tovaru Formou Daru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "bezodplatne dodanie tovaru formou daru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Europska Unia",
+          "type": "Uzemie",
+          "properties": {
+            "name": "europska unia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "oslobodenie od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Inej Osoby",
+          "type": "Osoba",
+          "properties": {
+            "name": "inej osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Centralne Banky",
+          "type": "Banka",
+          "properties": {
+            "name": "centralne banky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1 Az 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1 az 11"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 11"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 12",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 12"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 13",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 13"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "oprava, údržba a nájom vybavenia inštalovaného alebo používaného v týchto lietadlách a dodanie\niných služieb potrebných priamo pre tieto lietadlá alebo ich náklad.\n(11) Oslobodené od dane je dodanie zlata centrálnym bankám.\n(12) Oslobodené od dane je obstaranie dodania tovarov a služieb podľa odsekov 1 až 11, ak sa\nobstaranie vykoná v mene a na účet inej osoby, a ďalej je oslobodené od dane obstaranie tovarov\na služieb uskutočnené mimo územia Európskej únie, ak sa obstaranie vykoná v mene a na účet\ninej osoby; oslobodenie od dane sa nevzťahuje na obstaranie služieb cestovného ruchu, ktoré sú\ndodané v inom členskom štáte.\n(13) Oslobodené od dane je bezodplatné dodanie tovaru formou daru poskytnutého na základe",
+            "page": 44
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

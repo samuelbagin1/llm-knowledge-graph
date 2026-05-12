@@ -1,0 +1,555 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zakon O Dani Z Pridanej Hodnoty",
+        "type": "Zakon",
+        "properties": {
+          "name": "zakon o dani z pridanej hodnoty"
+        }
+      },
+      {
+        "id": "Paragraf 61",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 61"
+        }
+      },
+      {
+        "id": "Paragraf 62",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 62"
+        }
+      },
+      {
+        "id": "Paragraf 85C",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 85c"
+        }
+      },
+      {
+        "id": "Veduci Diplomatickej Misie",
+        "type": "Fyzickaosoba",
+        "properties": {
+          "name": "veduci diplomatickej misie"
+        }
+      },
+      {
+        "id": "Clenovia Administrativneho A Technickeho Personalu Zastupenia Europskej Komisie V Slovenskej Republike",
+        "type": "Osoba",
+        "properties": {
+          "name": "clenovia administrativneho a technickeho personalu zastupenia europskej komisie v slovenskej republike"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Dan",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "Dana Zaplatena V Cenach Tovarov A Sluzieb Urcenych Na Ich Spotrebu",
+        "type": "Dan",
+        "properties": {
+          "name": "dana zaplatena v cenach tovarov a sluzieb urcenych na ich spotrebu"
+        }
+      },
+      {
+        "id": "Obdobie Od 1 Maja 2004 Do 30 Juna 2005",
+        "type": "Obdobie",
+        "properties": {
+          "name": "obdobie od 1 maja 2004 do 30 juna 2005"
+        }
+      },
+      {
+        "id": "1 janua 2006",
+        "type": "Datum",
+        "properties": {
+          "name": "1 januara 2006"
+        }
+      },
+      {
+        "id": "30 jun 2005",
+        "type": "Datum",
+        "properties": {
+          "name": "30. juna 2005"
+        }
+      },
+      {
+        "id": "1 maj 2004",
+        "type": "Datum",
+        "properties": {
+          "name": "1. maja 2004"
+        }
+      },
+      {
+        "id": "Daňova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Povinnost",
+        "properties": {
+          "name": "daňova povinnost pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Doklad O Oprave Zakladu Dane",
+        "type": "Doklad",
+        "properties": {
+          "name": "doklad o oprave zakladu dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+          "page": 133
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zakon O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "Paragraf 61",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 61"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 62"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "Paragraf 85C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85c"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Veduci Diplomatickej Misie",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "veduci diplomatickej misie"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "vratenie dane podla paragrafu 61",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Clenovia Administrativneho A Technickeho Personalu Zastupenia Europskej Komisie V Slovenskej Republike",
+          "type": "Osoba",
+          "properties": {
+            "name": "clenovia administrativneho a technickeho personalu zastupenia europskej komisie v slovenskej republike"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "vratenie dane zaplatenej v cenach tovarov a sluzieb urcenych na ich spotrebu podla paragrafu 61",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Od 1 Maja 2004 Do 30 Juna 2005",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie od 1 maja 2004 do 30 juna 2005"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "obdobie od 1 maja 2004 do 30 juna 2005",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 85C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85c"
+          }
+        },
+        "target": {
+          "id": "Daňova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Povinnost",
+          "properties": {
+            "name": "daňova povinnost pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "nevznikne ak vznikla podla paragrafu 20 ods. 4 doterajsieho predpisu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakon O Dani Z Pridanej Hodnoty",
+          "type": "Zakon",
+          "properties": {
+            "name": "zakon o dani z pridanej hodnoty"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 61",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 61"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 62",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 62"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 85C",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 85c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Veduci Diplomatickej Misie",
+          "type": "Fyzickaosoba",
+          "properties": {
+            "name": "veduci diplomatickej misie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clenovia Administrativneho A Technickeho Personalu Zastupenia Europskej Komisie V Slovenskej Republike",
+          "type": "Osoba",
+          "properties": {
+            "name": "clenovia administrativneho a technickeho personalu zastupenia europskej komisie v slovenskej republike"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dana Zaplatena V Cenach Tovarov A Sluzieb Urcenych Na Ich Spotrebu",
+          "type": "Dan",
+          "properties": {
+            "name": "dana zaplatena v cenach tovarov a sluzieb urcenych na ich spotrebu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obdobie Od 1 Maja 2004 Do 30 Juna 2005",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie od 1 maja 2004 do 30 juna 2005"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1 janua 2006",
+          "type": "Datum",
+          "properties": {
+            "name": "1 januara 2006"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "30 jun 2005",
+          "type": "Datum",
+          "properties": {
+            "name": "30. juna 2005"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "1 maj 2004",
+          "type": "Datum",
+          "properties": {
+            "name": "1. maja 2004"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Povinnost",
+          "properties": {
+            "name": "daňova povinnost pri nadobudnuti tovaru v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doklad O Oprave Zakladu Dane",
+          "type": "Doklad",
+          "properties": {
+            "name": "doklad o oprave zakladu dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "30. júna 2005 podľa podmienok a v rozsahu, v akom má nárok na vrátenie dane podľa § 61 vedúci\ndiplomatickej misie.\n(2) Členovia administratívneho a technického personálu Zastúpenia Európskej komisie\nv Slovenskej republike, ktorí nie sú občanmi Slovenskej republiky a nemajú trvalý pobyt\nv Slovenskej republike, majú nárok na vrátenie dane zaplatenej v cenách tovarov a služieb\nurčených na ich spotrebu za obdobie od 1. mája 2004 do 30. júna 2005 podľa podmienok\na v rozsahu, v akom majú nárok na vrátenie dane podľa § 61 členovia administratívneho\na technického personálu diplomatickej misie.\n(3) Na uplatnenie nároku na vrátenie dane osobám podľa odsekov 1 a 2 sa vzťahuje § 62.\n§ 85c\nPrechodné ustanovenia k úpravám účinným od 1. januára 2006\n(1) Daňová povinnosť pri nadobudnutí tovaru v tuzemsku z iného členského štátu podľa § 20\nods. 1 nevznikne, ak vznikla daňová povinnosť podľa § 20 ods. 4 doterajšieho predpisu.\n(2) Ak sa doklad o oprave základu dane pri nadobudnutí tovaru v tuzemsku z iného členského",
+            "page": 133
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

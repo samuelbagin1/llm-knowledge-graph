@@ -1,0 +1,481 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Prevadzkovanie Autoskoly",
+        "type": "Cinnost",
+        "properties": {
+          "name": "prevadzkovanie autoskoly"
+        }
+      },
+      {
+        "id": "Osobne Motorove Vozidlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "osobne motorove vozidlo"
+        }
+      },
+      {
+        "id": "Vycvikove Vozidlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "vycvikove vozidlo"
+        }
+      },
+      {
+        "id": "Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "predvadzacie alebo testovacie osobne motorove vozidlo"
+        }
+      },
+      {
+        "id": "Nahradne Osobne Motorove Vozidlo",
+        "type": "Vozidlo",
+        "properties": {
+          "name": "nahradne osobne motorove vozidlo"
+        }
+      },
+      {
+        "id": "Zakaznik Platitela",
+        "type": "Subjekt",
+        "properties": {
+          "name": "zakaznik platitela"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "Oprava Osobneho Motoroveho Vozidla",
+        "type": "Cinnost",
+        "properties": {
+          "name": "oprava osobneho motoroveho vozidla"
+        }
+      },
+      {
+        "id": "Ine Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "ine sluzby"
+        }
+      },
+      {
+        "id": "Odseky 1 Az 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odseky 1 az 3"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 5"
+        }
+      },
+      {
+        "id": "Platitel Nadobudol",
+        "type": "Cinnost",
+        "properties": {
+          "name": "platitel nadobudol"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+          "page": 144
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Prevadzkovanie Autoskoly",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevadzkovanie autoskoly"
+          }
+        },
+        "target": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "type": "APLIKUJE_SA_NA",
+        "properties": {
+          "add": "ak je vycvikovym vozidlom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nahradne Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "nahradne osobne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "Zakaznik Platitela",
+          "type": "Subjekt",
+          "properties": {
+            "name": "zakaznik platitela"
+          }
+        },
+        "type": "POSKYTUJE",
+        "properties": {
+          "add": "na dobu opravy osobneho motoroveho vozidla zakaznika alebo pocas vykonavania inych sluzieb",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Osobneho Motoroveho Vozidla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava osobneho motoroveho vozidla"
+          }
+        },
+        "target": {
+          "id": "Zakaznik Platitela",
+          "type": "Subjekt",
+          "properties": {
+            "name": "zakaznik platitela"
+          }
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "add": "podmienka pre poskytnutie nahradneho osobneho motoroveho vozidla",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ine Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "ine sluzby"
+          }
+        },
+        "target": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "na osobnom motorovom vozidle zakaznika",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odseky 1 Az 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odseky 1 az 3"
+          }
+        },
+        "target": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ak platitel nadobudol",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "type": "NADOBUDA",
+        "properties": {
+          "add": "uvedene v odsekoch 1 az 3 sa neuplatnia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevadzkovanie Autoskoly",
+          "type": "Cinnost",
+          "properties": {
+            "name": "prevadzkovanie autoskoly"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "osobne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vycvikove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "vycvikove vozidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "predvadzacie alebo testovacie osobne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nahradne Osobne Motorove Vozidlo",
+          "type": "Vozidlo",
+          "properties": {
+            "name": "nahradne osobne motorove vozidlo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zakaznik Platitela",
+          "type": "Subjekt",
+          "properties": {
+            "name": "zakaznik platitela"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Osobneho Motoroveho Vozidla",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oprava osobneho motoroveho vozidla"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ine Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "ine sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odseky 1 Az 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odseky 1 az 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel Nadobudol",
+          "type": "Cinnost",
+          "properties": {
+            "name": "platitel nadobudol"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)\nb) používa výlučne ako predvádzacie alebo testovacie osobné motorové vozidlo alebo ako náhradné\nosobné motorové vozidlo poskytnuté zákazníkovi platiteľa na dobu opravy osobného motorového\nvozidla zákazníka alebo počas ktorej sú na osobnom motorovom vozidle zákazníka vykonávané\niné služby.\n(5) Odseky 1 až 3 sa neuplatnia ani na osobné motorové vozidlo, ktoré platiteľ nadobudol ako",
+            "page": 144
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

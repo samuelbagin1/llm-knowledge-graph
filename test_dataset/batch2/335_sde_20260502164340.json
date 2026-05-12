@@ -1,0 +1,866 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Investicne Zlato Oslobodene Od Dane",
+        "type": "Oslobodenieoddane",
+        "properties": {
+          "name": "Investicne zlato oslobodene od dane"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "Dan"
+        }
+      },
+      {
+        "id": "Investicne Zlato",
+        "type": "Majetok",
+        "properties": {
+          "name": "Investicne zlato"
+        }
+      },
+      {
+        "id": "Iny Ako Investicne Zlato",
+        "type": "Majetok",
+        "properties": {
+          "name": "Iny ako investicne zlato"
+        }
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {
+          "name": "Tuzemsko"
+        }
+      },
+      {
+        "id": "Iny Clensky Stat",
+        "type": "Clenskystat",
+        "properties": {
+          "name": "Iny clensky stat"
+        }
+      },
+      {
+        "id": "Colny Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Colny urad"
+        }
+      },
+      {
+        "id": "Dodanie Investicneho Zlata Inym Platitelom",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dodanie investicneho zlata inym platitelom"
+        }
+      },
+      {
+        "id": "Vyuzenie Moznosti Zdanenia Podla Odseku 4",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Vyuzenie moznosti zdanenia podla odseku 4"
+        }
+      },
+      {
+        "id": "Dodanie Ineho Ako Investicneho Zlata Inym Platitelom",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dodanie ineho ako investicneho zlata inym platitelom"
+        }
+      },
+      {
+        "id": "Pretvorenie Na Investicne Zlato",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Pretvorenie na investicne zlato"
+        }
+      },
+      {
+        "id": "Nadobudnutie Ineho Ako Investicneho Zlata V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Nadobudnutie ineho ako investicneho zlata v tuzemsku z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Dovoz Ineho Ako Investicneho Zlata",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dovoz ineho ako investicneho zlata"
+        }
+      },
+      {
+        "id": "Dodanie Sluzieb Inym Platitelom",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dodanie sluzieb inym platitelom"
+        }
+      },
+      {
+        "id": "Zmena Podoby Hmotnosti Alebo Rdzosti Zlata",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Zmena podoby hmotnosti alebo rdzosti zlata"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+          "page": 83
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "odpocitat dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Investicne Zlato Oslobodene Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Investicne zlato oslobodene od dane"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "dodava investicne zlato oslobodene od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Investicneho Zlata Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie investicneho zlata inym platitelom"
+          }
+        },
+        "target": {
+          "id": "Investicne Zlato",
+          "type": "Majetok",
+          "properties": {
+            "name": "Investicne zlato"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "dodanie investicneho zlata",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Dodanie Investicneho Zlata Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie investicneho zlata inym platitelom"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "dodanie investicneho zlata inym platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyuzenie Moznosti Zdanenia Podla Odseku 4",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vyuzenie moznosti zdanenia podla odseku 4"
+          }
+        },
+        "target": {
+          "id": "Dodanie Investicneho Zlata Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie investicneho zlata inym platitelom"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "moznost zdanenia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Ineho Ako Investicneho Zlata Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie ineho ako investicneho zlata inym platitelom"
+          }
+        },
+        "target": {
+          "id": "Iny Ako Investicne Zlato",
+          "type": "Majetok",
+          "properties": {
+            "name": "Iny ako investicne zlato"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "ine ako investicne zlato",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Dodanie Ineho Ako Investicneho Zlata Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie ineho ako investicneho zlata inym platitelom"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "voči nemu uplatnenu dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pretvorenie Na Investicne Zlato",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Pretvorenie na investicne zlato"
+          }
+        },
+        "target": {
+          "id": "Iny Ako Investicne Zlato",
+          "type": "Majetok",
+          "properties": {
+            "name": "Iny ako investicne zlato"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "následne pretvorene na investicne zlato",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Ineho Ako Investicneho Zlata V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie ineho ako investicneho zlata v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Iny Ako Investicne Zlato",
+          "type": "Majetok",
+          "properties": {
+            "name": "Iny ako investicne zlato"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "ine ako investicne zlato",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Ineho Ako Investicneho Zlata V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie ineho ako investicneho zlata v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "Tuzemsko"
+          }
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "add": "v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Ineho Ako Investicneho Zlata V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie ineho ako investicneho zlata v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "Iny Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "Iny clensky stat"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "z ineho clenskeho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Nadobudnutie Ineho Ako Investicneho Zlata V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie ineho ako investicneho zlata v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "uplatnenu dan pri nadobudnuti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pretvorenie Na Investicne Zlato",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Pretvorenie na investicne zlato"
+          }
+        },
+        "target": {
+          "id": "Nadobudnutie Ineho Ako Investicneho Zlata V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie ineho ako investicneho zlata v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "následne pretvorene na investicne zlato",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dovoz Ineho Ako Investicneho Zlata",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dovoz ineho ako investicneho zlata"
+          }
+        },
+        "target": {
+          "id": "Iny Ako Investicne Zlato",
+          "type": "Majetok",
+          "properties": {
+            "name": "Iny ako investicne zlato"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "ine ako investicne zlato",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "Dovoz Ineho Ako Investicneho Zlata",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dovoz ineho ako investicneho zlata"
+          }
+        },
+        "type": "PRIJIMA",
+        "properties": {
+          "add": "zaplatenie dane colnemu uradu pri dovoze",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Dovoz Ineho Ako Investicneho Zlata",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dovoz ineho ako investicneho zlata"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "dovoz ineho ako investicneho zlata",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Pretvorenie Na Investicne Zlato",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Pretvorenie na investicne zlato"
+          }
+        },
+        "target": {
+          "id": "Dovoz Ineho Ako Investicneho Zlata",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dovoz ineho ako investicneho zlata"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "následne pretvorene na investicne zlato",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzieb Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzieb inym platitelom"
+          }
+        },
+        "target": {
+          "id": "Zmena Podoby Hmotnosti Alebo Rdzosti Zlata",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zmena podoby hmotnosti alebo rdzosti zlata"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "sluzby spočivajuce v zmene podoby, hmotnosti alebo rdzosti zlata",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Dodanie Sluzieb Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzieb inym platitelom"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "voči nemu uplatnenu dan pri dodani sluzieb",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicne Zlato Oslobodene Od Dane",
+          "type": "Oslobodenieoddane",
+          "properties": {
+            "name": "Investicne zlato oslobodene od dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "Dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Investicne Zlato",
+          "type": "Majetok",
+          "properties": {
+            "name": "Investicne zlato"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Iny Ako Investicne Zlato",
+          "type": "Majetok",
+          "properties": {
+            "name": "Iny ako investicne zlato"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {
+            "name": "Tuzemsko"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Iny Clensky Stat",
+          "type": "Clenskystat",
+          "properties": {
+            "name": "Iny clensky stat"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Investicneho Zlata Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie investicneho zlata inym platitelom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyuzenie Moznosti Zdanenia Podla Odseku 4",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vyuzenie moznosti zdanenia podla odseku 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Ineho Ako Investicneho Zlata Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie ineho ako investicneho zlata inym platitelom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pretvorenie Na Investicne Zlato",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Pretvorenie na investicne zlato"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Ineho Ako Investicneho Zlata V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Nadobudnutie ineho ako investicneho zlata v tuzemsku z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovoz Ineho Ako Investicneho Zlata",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dovoz ineho ako investicneho zlata"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Sluzieb Inym Platitelom",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie sluzieb inym platitelom"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Podoby Hmotnosti Alebo Rdzosti Zlata",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zmena podoby hmotnosti alebo rdzosti zlata"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(5) Platiteľ, ktorý dodáva investičné zlato oslobodené od dane, môže odpočítať daň\na) ním uplatnenú pri dodaní investičného zlata iným platiteľom, ktorý využil možnosť zdanenia\npodľa odseku 4,\nb) voči nemu uplatnenú pri dodaní iného ako investičného zlata iným platiteľom, ktoré je ním\nalebo na jeho účet následne pretvorené na investičné zlato,\nc) ním uplatnenú pri nadobudnutí iného ako investičného zlata v tuzemsku z iného členského\nštátu, ktoré je ním alebo na jeho účet následne pretvorené na investičné zlato,\nd) zaplatenú colnému úradu alebo ním uplatnenú pri dovoze iného ako investičného zlata, ktoré je\nním alebo na jeho účet následne pretvorené na investičné zlato,\ne) voči nemu uplatnenú pri dodaní služieb iným platiteľom, ktoré spočívali v zmene podoby,\nhmotnosti alebo rýdzosti zlata vrátane investičného zlata.",
+            "page": 83
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

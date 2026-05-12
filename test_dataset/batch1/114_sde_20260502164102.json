@@ -1,0 +1,792 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+        }
+      },
+      {
+        "id": "Paragraf 8",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 8"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "(3)"
+        }
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {
+          "name": "(4)"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "(5)"
+        }
+      },
+      {
+        "id": "Zaklad Dane",
+        "type": "Hodnota",
+        "properties": {
+          "name": "základ dane"
+        }
+      },
+      {
+        "id": "Vydavky Plateny V Mene A Na Ucet Kupujuceho Alebo Zakaznika",
+        "type": "Suma",
+        "properties": {
+          "name": "výdavky platené v mene a na účet kupujúceho alebo zákazníka"
+        }
+      },
+      {
+        "id": "Prechodne Polozky",
+        "type": "Hodnota",
+        "properties": {
+          "name": "prechodné položky"
+        }
+      },
+      {
+        "id": "Zaloha Na Zalohovane Obaly",
+        "type": "Suma",
+        "properties": {
+          "name": "záloha na zálohované obaly"
+        }
+      },
+      {
+        "id": "Zlava Z Ceny",
+        "type": "Zlava",
+        "properties": {
+          "name": "zľava z ceny"
+        }
+      },
+      {
+        "id": "Zlava Za Skorsiu Uhradu Ceny",
+        "type": "Zlava",
+        "properties": {
+          "name": "zľava za skoršiu úhradu ceny"
+        }
+      },
+      {
+        "id": "Suma Zlavy",
+        "type": "Suma",
+        "properties": {
+          "name": "suma zľavy"
+        }
+      },
+      {
+        "id": "Kupa Cena Prislusneho Tovaru",
+        "type": "Suma",
+        "properties": {
+          "name": "kúpna cena príslušného tovaru"
+        }
+      },
+      {
+        "id": "Kupa Cena Podobneho Tovaru",
+        "type": "Suma",
+        "properties": {
+          "name": "kúpna cena podobného tovaru"
+        }
+      },
+      {
+        "id": "Naklady Na Vytvorenie Tohto Tovaru",
+        "type": "Suma",
+        "properties": {
+          "name": "náklady na vytvorenie tohto tovaru"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+          "page": 28
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "(4)"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "(5)"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "target": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "základ dane"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "do zakladu dane sa nezahrnaju vydavky, prechodne polozky, zaloha na zalohovane obaly a zaloha na jednorazovom obale na napoje",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "target": {
+          "id": "Vydavky Plateny V Mene A Na Ucet Kupujuceho Alebo Zakaznika",
+          "type": "Suma",
+          "properties": {
+            "name": "výdavky platené v mene a na účet kupujúceho alebo zákazníka"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "do zakladu dane sa nezahrnaju",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "target": {
+          "id": "Prechodne Polozky",
+          "type": "Hodnota",
+          "properties": {
+            "name": "prechodné položky"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "definicia prechodnych poloziek",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "target": {
+          "id": "Zaloha Na Zalohovane Obaly",
+          "type": "Suma",
+          "properties": {
+            "name": "záloha na zálohované obaly"
+          }
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "add": "do zakladu dane sa nezahrnuje",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "(4)"
+          }
+        },
+        "target": {
+          "id": "Zlava Z Ceny",
+          "type": "Zlava",
+          "properties": {
+            "name": "zľava z ceny"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "poskytnuta v case dodania tovaru alebo sluzby",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "(4)"
+          }
+        },
+        "target": {
+          "id": "Zlava Za Skorsiu Uhradu Ceny",
+          "type": "Zlava",
+          "properties": {
+            "name": "zľava za skoršiu úhradu ceny"
+          }
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "add": "poskytnuta za skorsiu uhradu ceny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "(4)"
+          }
+        },
+        "target": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "základ dane"
+          }
+        },
+        "type": "ZNIZI_SA",
+        "properties": {
+          "add": "o sumu zlavy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Suma Zlavy",
+          "type": "Suma",
+          "properties": {
+            "name": "suma zľavy"
+          }
+        },
+        "target": {
+          "id": "Zlava Z Ceny",
+          "type": "Zlava",
+          "properties": {
+            "name": "zľava z ceny"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "suma zliavy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Suma Zlavy",
+          "type": "Suma",
+          "properties": {
+            "name": "suma zľavy"
+          }
+        },
+        "target": {
+          "id": "Zlava Za Skorsiu Uhradu Ceny",
+          "type": "Zlava",
+          "properties": {
+            "name": "zľava za skoršiu úhradu ceny"
+          }
+        },
+        "type": "JE_DRUHOM",
+        "properties": {
+          "add": "suma zliavy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "(5)"
+          }
+        },
+        "target": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla § 8 ods. 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "(5)"
+          }
+        },
+        "target": {
+          "id": "Kupa Cena Prislusneho Tovaru",
+          "type": "Suma",
+          "properties": {
+            "name": "kúpna cena príslušného tovaru"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "zaklad dane pri dodani tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "(5)"
+          }
+        },
+        "target": {
+          "id": "Kupa Cena Podobneho Tovaru",
+          "type": "Suma",
+          "properties": {
+            "name": "kúpna cena podobného tovaru"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "ak kupna cena prislusneho tovaru nie je mozne zistit",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "(5)"
+          }
+        },
+        "target": {
+          "id": "Naklady Na Vytvorenie Tohto Tovaru",
+          "type": "Suma",
+          "properties": {
+            "name": "náklady na vytvorenie tohto tovaru"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "ak kupna cena neexistuje",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z. Zbierka zakonov Slovenskej republiky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "(3)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "(4)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "(5)"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaklad Dane",
+          "type": "Hodnota",
+          "properties": {
+            "name": "základ dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vydavky Plateny V Mene A Na Ucet Kupujuceho Alebo Zakaznika",
+          "type": "Suma",
+          "properties": {
+            "name": "výdavky platené v mene a na účet kupujúceho alebo zákazníka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prechodne Polozky",
+          "type": "Hodnota",
+          "properties": {
+            "name": "prechodné položky"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zaloha Na Zalohovane Obaly",
+          "type": "Suma",
+          "properties": {
+            "name": "záloha na zálohované obaly"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zlava Z Ceny",
+          "type": "Zlava",
+          "properties": {
+            "name": "zľava z ceny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zlava Za Skorsiu Uhradu Ceny",
+          "type": "Zlava",
+          "properties": {
+            "name": "zľava za skoršiu úhradu ceny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Suma Zlavy",
+          "type": "Suma",
+          "properties": {
+            "name": "suma zľavy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kupa Cena Prislusneho Tovaru",
+          "type": "Suma",
+          "properties": {
+            "name": "kúpna cena príslušného tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kupa Cena Podobneho Tovaru",
+          "type": "Suma",
+          "properties": {
+            "name": "kúpna cena podobného tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Naklady Na Vytvorenie Tohto Tovaru",
+          "type": "Suma",
+          "properties": {
+            "name": "náklady na vytvorenie tohto tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 29\n(3) Do základu dane podľa odseku 1 sa nezahŕňajú výdavky platené v mene a na účet\nkupujúceho alebo zákazníka, ktoré dodávateľ požaduje od kupujúceho alebo zákazníka (ďalej len\n„prechodné položky“). Pri dodaní tovaru v zálohovaných obaloch sa do základu dane podľa odseku\n1 nezahŕňa záloha na zálohované obaly, ktoré sú dodané spolu s tovarom. Pri dodaní nápoja\nv zálohovanom jednorazovom obale na nápoje6abd) sa do základu dane podľa odseku 1 nezahŕňa\nzáloh na tento obal.\n(4) Ak je v čase dodania tovaru alebo služby poskytnutá zľava z ceny alebo ak je poskytnutá\nzľava za skoršiu úhradu ceny, základ dane sa zníži o sumu zľavy.\n(5) Pri dodaní tovaru podľa § 8 ods. 3 je základom dane kúpna cena príslušného tovaru v čase\njeho dodania alebo ak takúto kúpnu cenu nie je možné zistiť, kúpna cena podobného tovaru\nv čase jeho dodania; ak kúpna cena neexistuje, sú základom dane náklady na vytvorenie tohto",
+            "page": 28
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

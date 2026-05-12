@@ -1,0 +1,711 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "222/2004 Z. z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "222/2004 Z. z."
+        }
+      },
+      {
+        "id": "48ca",
+        "type": "Paragraf",
+        "properties": {
+          "name": "48ca"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane V Colnom Sklade",
+        "type": "Dan",
+        "properties": {
+          "name": "Oslobodenie od dane v colnom sklade"
+        }
+      },
+      {
+        "id": "Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "Osoba"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Prevadzkovatel Colneho Skladu",
+        "type": "Pravnickaosoba",
+        "properties": {
+          "name": "prevadzkovatel colneho skladu"
+        }
+      },
+      {
+        "id": "Obchodne Meno Alebo Nazov Osoby",
+        "type": "Doklad",
+        "properties": {
+          "name": "obchodne meno alebo nazov osoby"
+        }
+      },
+      {
+        "id": "Datum Dodania Tovaru",
+        "type": "Datum",
+        "properties": {
+          "name": "datum dodania tovaru"
+        }
+      },
+      {
+        "id": "Mnozstvo Dodaneho Tovaru V Metrickych Tonach",
+        "type": "Mnozstvo",
+        "properties": {
+          "name": "mnozstvo dodaneho tovaru v metrickych tonach"
+        }
+      },
+      {
+        "id": "Desiatich Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "desiatich dni"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodanie tovaru"
+        }
+      },
+      {
+        "id": "Oznamenit",
+        "type": "Cinnost",
+        "properties": {
+          "name": "oznamenit"
+        }
+      },
+      {
+        "id": "Priznat A Zaplatit Dan",
+        "type": "Cinnost",
+        "properties": {
+          "name": "priznat a zaplatit dan"
+        }
+      },
+      {
+        "id": "Oslobodenie Od Dane Na Prijate Sluzby",
+        "type": "Dan",
+        "properties": {
+          "name": "oslobodenie od dane na prijate sluzby"
+        }
+      },
+      {
+        "id": "Colny Rezim Colne Uskladnovanie",
+        "type": "Stav",
+        "properties": {
+          "name": "colny rezim colne uskladnovanie"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+          "page": 51
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "48ca",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48ca"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane V Colnom Sklade",
+          "type": "Dan",
+          "properties": {
+            "name": "Oslobodenie od dane v colnom sklade"
+          }
+        },
+        "target": {
+          "id": "48ca",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48ca"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "oslobodenie od dane v colnom sklade",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane V Colnom Sklade",
+          "type": "Dan",
+          "properties": {
+            "name": "Oslobodenie od dane v colnom sklade"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "dodanie tovaru s oslobodenim od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desiatich dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "na oznamenie po dodani tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Prevadzkovatel Colneho Skladu",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "prevadzkovatel colneho skladu"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "obchodne meno alebo nazov osoby, datum dodania tovaru a mnozstvo dodaneho tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Obchodne Meno Alebo Nazov Osoby",
+          "type": "Doklad",
+          "properties": {
+            "name": "obchodne meno alebo nazov osoby"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "add": "oznamenie",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Datum Dodania Tovaru",
+          "type": "Datum",
+          "properties": {
+            "name": "datum dodania tovaru"
+          }
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "add": "datum dodania tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Mnozstvo Dodaneho Tovaru V Metrickych Tonach",
+          "type": "Mnozstvo",
+          "properties": {
+            "name": "mnozstvo dodaneho tovaru v metrickych tonach"
+          }
+        },
+        "type": "MA_MNOZSTVO",
+        "properties": {
+          "add": "dodaneho tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "add": "dodanie tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "s oslobodenim od dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane V Colnom Sklade",
+          "type": "Dan",
+          "properties": {
+            "name": "Oslobodenie od dane v colnom sklade"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane Na Prijate Sluzby",
+          "type": "Dan",
+          "properties": {
+            "name": "oslobodenie od dane na prijate sluzby"
+          }
+        },
+        "type": "ZRUSUJE",
+        "properties": {
+          "add": "pri prestani vztaahu colneho rezimu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane V Colnom Sklade",
+          "type": "Dan",
+          "properties": {
+            "name": "Oslobodenie od dane v colnom sklade"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "priznat a zaplatit dan ku dnu ked skusutocnost nastala",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "Colny Rezim Colne Uskladnovanie",
+          "type": "Stav",
+          "properties": {
+            "name": "colny rezim colne uskladnovanie"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "prestane vztaahovat na tovar",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "222/2004 Z. z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "48ca",
+          "type": "Paragraf",
+          "properties": {
+            "name": "48ca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane V Colnom Sklade",
+          "type": "Dan",
+          "properties": {
+            "name": "Oslobodenie od dane v colnom sklade"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "Osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevadzkovatel Colneho Skladu",
+          "type": "Pravnickaosoba",
+          "properties": {
+            "name": "prevadzkovatel colneho skladu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obchodne Meno Alebo Nazov Osoby",
+          "type": "Doklad",
+          "properties": {
+            "name": "obchodne meno alebo nazov osoby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Datum Dodania Tovaru",
+          "type": "Datum",
+          "properties": {
+            "name": "datum dodania tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Mnozstvo Dodaneho Tovaru V Metrickych Tonach",
+          "type": "Mnozstvo",
+          "properties": {
+            "name": "mnozstvo dodaneho tovaru v metrickych tonach"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desiatich dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenit",
+          "type": "Cinnost",
+          "properties": {
+            "name": "oznamenit"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Priznat A Zaplatit Dan",
+          "type": "Cinnost",
+          "properties": {
+            "name": "priznat a zaplatit dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane Na Prijate Sluzby",
+          "type": "Dan",
+          "properties": {
+            "name": "oslobodenie od dane na prijate sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Colny Rezim Colne Uskladnovanie",
+          "type": "Stav",
+          "properties": {
+            "name": "colny rezim colne uskladnovanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 52 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\n§ 48ca\nOslobodenie od dane v colnom sklade\n(1) Osoba, ktorá dodá tovar s oslobodením od dane podľa § 48c ods. 1 písm. a), je povinná do\ndesiatich dní odo dňa dodania tovaru oznámiť držiteľovi povolenia na prevádzkovanie colného\nskladu (ďalej len „prevádzkovateľ colného skladu“) obchodné meno alebo názov osoby, ktorej tovar\ndodala, dátum dodania tovaru a množstvo dodaného tovaru v metrických tonách.\n(2) Ak sa na tovar prestane vzťahovať colný režim colné uskladňovanie okrem ukončenia colného\nrežimu colné uskladňovanie, ku ktorému dochádza v súvislosti s dodaním tovaru, oslobodenie od\ndane uplatnené na dodanie tovaru, ktoré tomu predchádzalo, a oslobodenie od dane na prijaté\nslužby sa týmto okamihom zrušujú a osobou povinnou priznať a zaplatiť daň ku dňu, keď táto\nskutočnosť nastala, je osoba, ktorá spôsobí, že sa na tovar prestane vzťahovať colný režim colné",
+            "page": 51
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

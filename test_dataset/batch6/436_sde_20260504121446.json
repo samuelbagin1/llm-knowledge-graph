@@ -1,0 +1,642 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Danovy urad"
+        }
+      },
+      {
+        "id": "Bankovy Ucet",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "Bankovy ucet"
+        }
+      },
+      {
+        "id": "Danovy Preplatok",
+        "type": "Nadmernyodpocet",
+        "properties": {
+          "name": "Danovy preplatok"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "Odsek 3"
+        }
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {
+          "name": "Odsek 4"
+        }
+      },
+      {
+        "id": "Odsek 6",
+        "type": "Odsek",
+        "properties": {
+          "name": "Odsek 6"
+        }
+      },
+      {
+        "id": "§ 70",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 70"
+        }
+      },
+      {
+        "id": "Vedenie Zaznamov",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Vedenie zaznamov"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Dodane Tovary A Sluzby",
+        "type": "Tovar",
+        "properties": {
+          "name": "dodane tovary a sluzby"
+        }
+      },
+      {
+        "id": "Prijate Tovary A Sluzby",
+        "type": "Tovar",
+        "properties": {
+          "name": "prijate tovary a sluzby"
+        }
+      },
+      {
+        "id": "Dodaniz Tovarov A Sluzieb Do Ineho Clenskeho Statu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dodaniz tovarov a sluzieb do ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Nadobudnutie Tovaru Z Ineho Clenskeho Statu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "nadobudnutie tovaru z ineho clenskeho statu"
+        }
+      },
+      {
+        "id": "Desiatich Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "desiatich dni"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+          "page": 107
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Danovy Preplatok",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "Danovy preplatok"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "vratenie danoveho preplatku na bankovy ucet",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "Bankovy Ucet",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "Bankovy ucet"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "vratenie danoveho preplatku na oznameny bankovy ucet",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Preplatok",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "Danovy preplatok"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 3"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "podla odseku 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Preplatok",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "Danovy preplatok"
+          }
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 4"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "podla odseku 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Preplatok",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "Danovy preplatok"
+          }
+        },
+        "target": {
+          "id": "Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desiatich dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "vratenie do desiatich dni od skoncenia danovej kontroly alebo od nadobudnutia pravoplatnosti rozhodnutia",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "§ 70",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 70"
+          }
+        },
+        "target": {
+          "id": "Vedenie Zaznamov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vedenie zaznamov"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "add": "vedenie zaznamov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Vedenie Zaznamov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vedenie zaznamov"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "vies podrobne zaznamy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vedenie Zaznamov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vedenie zaznamov"
+          }
+        },
+        "target": {
+          "id": "Dodane Tovary A Sluzby",
+          "type": "Tovar",
+          "properties": {
+            "name": "dodane tovary a sluzby"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "o dodanych tovaroch a sluzbach",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vedenie Zaznamov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vedenie zaznamov"
+          }
+        },
+        "target": {
+          "id": "Prijate Tovary A Sluzby",
+          "type": "Tovar",
+          "properties": {
+            "name": "prijate tovary a sluzby"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "o prijatych tovaroch a sluzbach",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vedenie Zaznamov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vedenie zaznamov"
+          }
+        },
+        "target": {
+          "id": "Dodaniz Tovarov A Sluzieb Do Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaniz tovarov a sluzieb do ineho clenskeho statu"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "osobitne vedie zaznamy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vedenie Zaznamov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vedenie zaznamov"
+          }
+        },
+        "target": {
+          "id": "Nadobudnutie Tovaru Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "nadobudnutie tovaru z ineho clenskeho statu"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "osobitne vedie zaznamy",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Bankovy Ucet",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "Bankovy ucet"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Preplatok",
+          "type": "Nadmernyodpocet",
+          "properties": {
+            "name": "Danovy preplatok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 6",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 70",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 70"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vedenie Zaznamov",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Vedenie zaznamov"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodane Tovary A Sluzby",
+          "type": "Tovar",
+          "properties": {
+            "name": "dodane tovary a sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijate Tovary A Sluzby",
+          "type": "Tovar",
+          "properties": {
+            "name": "prijate tovary a sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodaniz Tovarov A Sluzieb Do Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dodaniz tovarov a sluzieb do ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "nadobudnutie tovaru z ineho clenskeho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Desiatich Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "desiatich dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "4 začne daňovú kontrolu, tento daňový preplatok vráti do desiatich dní od skončenia daňovej\nkontroly, ak sa daňovou kontrolou nezistil rozdiel vo výške tohto daňového preplatku, inak do\ndesiatich dní od nadobudnutia právoplatnosti rozhodnutia.\n(6) Daňový úrad vráti daňový preplatok podľa odseku 3 alebo podľa odseku 4 na bankový účet\noznámený podľa § 6 ods. 1 až 3 alebo podľa § 85kk spôsobom podľa § 6 ods. 5 a ak dodávateľ\nnesplnil takúto povinnosť, daňový úrad vráti daňový preplatok do desiatich dní odo dňa, keď\ndodávateľ takúto povinnosť dodatočne splnil; postup podľa osobitného predpisu týmto nie je\ndotknutý.27bd)\nPovinnosti osôb povinných platiť daň\n§ 70\nVedenie záznamov\n(1) Platiteľ je povinný viesť podrobné záznamy podľa jednotlivých zdaňovacích období\no dodaných tovaroch a službách a o prijatých tovaroch a službách; osobitne vedie záznamy\no dodaní tovarov a služieb do iného členského štátu, o nadobudnutí tovaru z iného členského",
+            "page": 107
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

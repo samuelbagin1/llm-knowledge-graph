@@ -1,0 +1,612 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+        "type": "Zakon",
+        "properties": {
+          "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "§ 19",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 19"
+        }
+      },
+      {
+        "id": "§ 50",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 50"
+        }
+      },
+      {
+        "id": "Doterajsie Predpisy",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "doterajsie predpisy"
+        }
+      },
+      {
+        "id": "Dazdovacia Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "dazdovacia povinnost"
+        }
+      },
+      {
+        "id": "Opakovane A Ciastkove Dodanie Tovaru Alebo Sluzby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "opakovane a ciastkove dodanie tovaru alebo sluzby"
+        }
+      },
+      {
+        "id": "Oprava Zakladu Dane Zdanitelneho Plnenia",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava zakladu dane zdanitelneho plnenia"
+        }
+      },
+      {
+        "id": "Odcitanie Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "odcitanie dane"
+        }
+      },
+      {
+        "id": "Predbezne Odcitanie Dane",
+        "type": "Cinnost",
+        "properties": {
+          "name": "predbezne odcitanie dane"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia pre dan"
+        }
+      },
+      {
+        "id": "30 aprila 2004",
+        "type": "Datum",
+        "properties": {
+          "name": "30 aprila 2004"
+        }
+      },
+      {
+        "id": "31 decembra 2003",
+        "type": "Datum",
+        "properties": {
+          "name": "31 decembra 2003"
+        }
+      },
+      {
+        "id": "Rok 2004",
+        "type": "Obdobie",
+        "properties": {
+          "name": "rok 2004"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+          "page": 131
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "§ 19",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 19"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "§ 50",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 50"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dazdovacia Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "dazdovacia povinnost"
+          }
+        },
+        "target": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "urcenie vzniku podla doterajsich predpisov",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dazdovacia Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "dazdovacia povinnost"
+          }
+        },
+        "target": {
+          "id": "§ 19",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 19"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "urcenie vzniku pri opakovanom a ciastkovom dodani",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Opakovane A Ciastkove Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "opakovane a ciastkove dodanie tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "Dazdovacia Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "dazdovacia povinnost"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "ak nevznikla do 30 aprila 2004",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane Zdanitelneho Plnenia",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane zdanitelneho plnenia"
+          }
+        },
+        "target": {
+          "id": "30 aprila 2004",
+          "type": "Datum",
+          "properties": {
+            "name": "30 aprila 2004"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "plnenie uskutovnene do tohto datumu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odcitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "30 aprila 2004",
+          "type": "Datum",
+          "properties": {
+            "name": "30 aprila 2004"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "zdanitelne plnenia a tovar dovezeny do tohto datumu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odcitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "s vynimkou odcitania dane viazucej sa na majetok pri registracii pre dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "Odcitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "mozne pri registracii",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predbezne Odcitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predbezne odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "§ 50",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 50"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "podla tohto paragrafu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Predbezne Odcitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predbezne odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "Rok 2004",
+          "type": "Obdobie",
+          "properties": {
+            "name": "rok 2004"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "zdanovacie obdobia roku 2004",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Zakon",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 19",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 19"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "§ 50",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 50"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Doterajsie Predpisy",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "doterajsie predpisy"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dazdovacia Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "dazdovacia povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Opakovane A Ciastkove Dodanie Tovaru Alebo Sluzby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "opakovane a ciastkove dodanie tovaru alebo sluzby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Zakladu Dane Zdanitelneho Plnenia",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava zakladu dane zdanitelneho plnenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odcitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predbezne Odcitanie Dane",
+          "type": "Cinnost",
+          "properties": {
+            "name": "predbezne odcitanie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "30 aprila 2004",
+          "type": "Datum",
+          "properties": {
+            "name": "30 aprila 2004"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "31 decembra 2003",
+          "type": "Datum",
+          "properties": {
+            "name": "31 decembra 2003"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rok 2004",
+          "type": "Obdobie",
+          "properties": {
+            "name": "rok 2004"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 132 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nvrátane, určí sa vznik daňovej povinnosti podľa doterajších predpisov.\n(4) Pri opakovanom a čiastkovom dodaní tovaru alebo služby, pri ktorom nevznikla daňová\npovinnosť do 30. apríla 2004 vrátane, sa vznik daňovej povinnosti určuje podľa § 19 ods. 3 a 4\ntohto zákona.\n(5) Pri oprave základu dane zdaniteľného plnenia uskutočneného do 31. decembra 2003 vrátane\nsa použije sadzba dane platná v čase vzniku daňovej povinnosti pri pôvodnom zdaniteľnom plnení.\n(6) Na odpočítanie dane, ktorá sa vzťahuje na zdaniteľné plnenia uskutočnené do 30. apríla\n2004 vrátane a ktorá sa vzťahuje na tovar dovezený do 30. apríla 2004 vrátane, sa vzťahujú\ndoterajšie predpisy s výnimkou odpočítania dane viažucej sa na majetok, ktorú platiteľ môže\nodpočítať pri registrácii pre daň.\n(7) Pri predbežnom odpočítaní dane podľa § 50 tohto zákona v zdaňovacích obdobiach roku\n2004 použije platiteľ koeficient vypočítaný podľa doterajších predpisov.",
+            "page": 131
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

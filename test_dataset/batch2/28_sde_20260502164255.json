@@ -1,0 +1,469 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+        }
+      },
+      {
+        "id": "Konanie O Registracii Skupiny Z Uradnej Moci",
+        "type": "Konanie",
+        "properties": {
+          "name": "konanie o registracii skupiny z uradnej moci"
+        }
+      },
+      {
+        "id": "Daňový Úrad Banská Bystrica",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňový úrad Banská Bystrica"
+        }
+      },
+      {
+        "id": "Spoločný Zástupca",
+        "type": "Zastupca",
+        "properties": {
+          "name": "spoločný zástupca"
+        }
+      },
+      {
+        "id": "RegistráCia Clenov Skupiny",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia clenov skupiny"
+        }
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Zaznam",
+        "properties": {
+          "name": "odvolanie"
+        }
+      },
+      {
+        "id": "Lehota 15 Dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "lehota 15 dni"
+        }
+      },
+      {
+        "id": "8 dni",
+        "type": "Lehota",
+        "properties": {
+          "name": "8 dni"
+        }
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {
+          "name": "identifikacne cislo pre dan"
+        }
+      },
+      {
+        "id": "Dovody Na Registraciu Skupiny Z Uradnej Moci",
+        "type": "Dovod",
+        "properties": {
+          "name": "dovody na registraciu skupiny z uradnej moci"
+        }
+      },
+      {
+        "id": "Odkladny Ucinek",
+        "type": "Stav",
+        "properties": {
+          "name": "odkladny ucinek"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+          "page": 7
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "Konanie O Registracii Skupiny Z Uradnej Moci",
+          "type": "Konanie",
+          "properties": {
+            "name": "konanie o registracii skupiny z uradnej moci"
+          }
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňový Úrad Banská Bystrica",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Banská Bystrica"
+          }
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "type": "PRIDELUJE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňový Úrad Banská Bystrica",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Banská Bystrica"
+          }
+        },
+        "target": {
+          "id": "Spoločný Zástupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "spoločný zástupca"
+          }
+        },
+        "type": "URCUJE",
+        "properties": {
+          "add": "zastupca skupiny",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Spoločný Zástupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "spoločný zástupca"
+          }
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "type": "PODAVA",
+        "properties": {
+          "add": "odvolanie proti rozhodnutiu o registracii",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "8 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "8 dni"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "Odkladny Ucinek",
+          "type": "Stav",
+          "properties": {
+            "name": "odkladny ucinek"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Konanie O Registracii Skupiny Z Uradnej Moci",
+          "type": "Konanie",
+          "properties": {
+            "name": "konanie o registracii skupiny z uradnej moci"
+          }
+        },
+        "target": {
+          "id": "Dovody Na Registraciu Skupiny Z Uradnej Moci",
+          "type": "Dovod",
+          "properties": {
+            "name": "dovody na registraciu skupiny z uradnej moci"
+          }
+        },
+        "type": "MA_DOVOD",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "Zbierka zakonov Slovenskej republiky 222/2004 Z. z."
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Konanie O Registracii Skupiny Z Uradnej Moci",
+          "type": "Konanie",
+          "properties": {
+            "name": "konanie o registracii skupiny z uradnej moci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňový Úrad Banská Bystrica",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Banská Bystrica"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Spoločný Zástupca",
+          "type": "Zastupca",
+          "properties": {
+            "name": "spoločný zástupca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "RegistráCia Clenov Skupiny",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia clenov skupiny"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Zaznam",
+          "properties": {
+            "name": "odvolanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Lehota 15 Dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "lehota 15 dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "8 dni",
+          "type": "Lehota",
+          "properties": {
+            "name": "8 dni"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {
+            "name": "identifikacne cislo pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovody Na Registraciu Skupiny Z Uradnej Moci",
+          "type": "Dovod",
+          "properties": {
+            "name": "dovody na registraciu skupiny z uradnej moci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odkladny Ucinek",
+          "type": "Stav",
+          "properties": {
+            "name": "odkladny ucinek"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "Strana 8 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\ntomuto rozhodnutiu nemožno podať odvolanie. Začatie konania o registrácii skupiny z úradnej\nmoci bráni registrácii členov skupiny podľa § 4b.\n(3) Daňový úrad Banská Bystrica vyzve spoločného zástupcu podľa odseku 2, aby sa vyjadril\nk dôvodom na registráciu skupiny z úradnej moci v určenej lehote, ktorá nesmie byť kratšia ako\n15 dní odo dňa doručenia výzvy.\n(4) Ak na základe vyjadrenia podľa odseku 3 nedôjde k vyvráteniu dôvodov na registráciu\nskupiny z úradnej moci alebo ak spoločný zástupca výzve podľa odseku 3 nevyhovie, Daňový úrad\nBanská Bystrica rozhodne z úradnej moci o registrácii tých členov skupiny, pri ktorých sú splnené\ndôvody na registráciu skupiny z úradnej moci, pridelí skupine identifikačné číslo pre daň a určí\nzástupcu skupiny. Proti tomuto rozhodnutiu môže spoločný zástupca podľa odseku 2 podať do\nôsmich dní odo dňa jeho doručenia odvolanie, ktoré má odkladný účinok.",
+            "page": 7
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

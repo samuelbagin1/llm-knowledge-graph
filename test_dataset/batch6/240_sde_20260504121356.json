@@ -1,0 +1,607 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Platitel",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "Platitel"
+        }
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Opravena Odpoctitana Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "opravena odpoctitana dan"
+        }
+      },
+      {
+        "id": "Oprava Odpoctanej Dane",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava odpoctanej dane"
+        }
+      },
+      {
+        "id": "Oprava Sadzby Dane",
+        "type": "Oprava",
+        "properties": {
+          "name": "oprava sadzby dane"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Podnikanie",
+        "type": "Cinnost",
+        "properties": {
+          "name": "podnikanie"
+        }
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "Zdanovacieobdobie",
+        "properties": {
+          "name": "zdanovacie obdobie"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 5"
+        }
+      },
+      {
+        "id": "Odsek 6",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 6"
+        }
+      },
+      {
+        "id": "Odsek 7",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 7"
+        }
+      },
+      {
+        "id": "Najviac Do Vysky Dane Odvedenej Podla Odseku 5",
+        "type": "Limit",
+        "properties": {
+          "name": "najviac do vysky dane odvedenej podla odseku 5"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+          "page": 60
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 6",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 6"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "type": "MA_PRAWO",
+        "properties": {
+          "add": "platitel ma pravo vykonat opravu opravenej odpoctanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "vykonat opravu opravenej odpoctanej dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "opravi odpoctanu dan pri znizeni dane opravou sadzby dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "opravi odpoctanu dan pri zvyseni dane opravou sadzby dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "target": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "v ktorom bolo vykonana oprava sadzby dane alebo tovar ziskany spat",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "target": {
+          "id": "Najviac Do Vysky Dane Odvedenej Podla Odseku 5",
+          "type": "Limit",
+          "properties": {
+            "name": "najviac do vysky dane odvedenej podla odseku 5"
+          }
+        },
+        "type": "MA_HODNOTU",
+        "properties": {
+          "add": "najviac do vysky dane odvedenej podla odseku 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "target": {
+          "id": "Oprava Sadzby Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava sadzby dane"
+          }
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {
+          "add": "oprava sadzby dane ma za nasledok znizenie alebo zvysenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "target": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "add": "ziskanie spat tovaru odcudzeneho platitelovi",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "target": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "add": "pouzitie spat ziskaneho tovaru na podnikanie s moznostou odpocitania dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "pri znizeni dane je platitel povinny opravit odpocitanu dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "target": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "type": "MA_PRAVO",
+        "properties": {
+          "add": "pri zvyseni dane ma platitel pravo opravit odpocitanu dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "target": {
+          "id": "Oprava Sadzby Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava sadzby dane"
+          }
+        },
+        "type": "MA_VYNIMKU",
+        "properties": {
+          "add": "nepovinnost pri uplatneni nespravnej sadzby dane pri nadobudnuti tovaru v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "Platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Opravena Odpoctitana Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "opravena odpoctitana dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Odpoctanej Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava odpoctanej dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oprava Sadzby Dane",
+          "type": "Oprava",
+          "properties": {
+            "name": "oprava sadzby dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podnikanie",
+          "type": "Cinnost",
+          "properties": {
+            "name": "podnikanie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "Zdanovacieobdobie",
+          "properties": {
+            "name": "zdanovacie obdobie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 6",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 6"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 7",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Najviac Do Vysky Dane Odvedenej Podla Odseku 5",
+          "type": "Limit",
+          "properties": {
+            "name": "najviac do vysky dane odvedenej podla odseku 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(6) Platiteľ, ktorý odviedol daň podľa odseku 5, má právo vykonať opravu opravenej odpočítanej\ndane, ak získa späť tovar, ktorý mu bol odcudzený, v rozsahu, v akom platiteľ použije späť získaný\ntovar na podnikanie s možnosťou odpočítania dane; opravu platiteľ vykoná v zdaňovacom období,\nv ktorom tovar získal späť, a to najviac do výšky dane odvedenej podľa odseku 5.\n(7) Ak bola vykonaná oprava sadzby dane, ktorá má za následok zníženie dane, je platiteľ, ktorý\nodpočítal daň, povinný opraviť odpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná\noprava sadzby dane, alebo v prvom nasledujúcom zdaňovacom období. Ak bola vykonaná oprava\nsadzby dane, ktorá má za následok zvýšenie dane, má platiteľ, ktorý odpočítal daň, právo opraviť\nodpočítanú daň v tom zdaňovacom období, v ktorom bola vykonaná oprava sadzby dane, alebo\nv prvom nasledujúcom zdaňovacom období. Opravu sadzby dane a opravu odpočítanej dane nie je\npovinný vykonať platiteľ pri uplatnení nesprávnej sadzby dane pri nadobudnutí tovaru v tuzemsku",
+            "page": 60
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,754 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Ziadost O Vratenie Dane",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost o vratenie dane"
+        }
+      },
+      {
+        "id": "Vratenie Dane",
+        "type": "Dan",
+        "properties": {
+          "name": "vratenie dane"
+        }
+      },
+      {
+        "id": "Neopravnene Vratena Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "neopravnene vratena dan"
+        }
+      },
+      {
+        "id": "Daňovy Urad Bratislava",
+        "type": "Urad",
+        "properties": {
+          "name": "Daňový úrad Bratislava"
+        }
+      },
+      {
+        "id": "Faktury",
+        "type": "Doklad",
+        "properties": {
+          "name": "faktury"
+        }
+      },
+      {
+        "id": "Dovozne Doklady",
+        "type": "Doklad",
+        "properties": {
+          "name": "dovozne doklady"
+        }
+      },
+      {
+        "id": "Zahranicna Osoba Z Tretieho Statu",
+        "type": "Osoba",
+        "properties": {
+          "name": "zahranicna osoba z tretieho statu"
+        }
+      },
+      {
+        "id": "Ucty Vedeny V Banke V Tuzemsku",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "ucty vedeny v banke v tuzemsku"
+        }
+      },
+      {
+        "id": "Ucet Vedeny V Zahranicnej Banke",
+        "type": "Bankovyucet",
+        "properties": {
+          "name": "ucet vedeny v zahranicnej banke"
+        }
+      },
+      {
+        "id": "Banka V Tuzemsku",
+        "type": "Banka",
+        "properties": {
+          "name": "banka v tuzemsku"
+        }
+      },
+      {
+        "id": "Zahranicna Banka",
+        "type": "Banka",
+        "properties": {
+          "name": "zahranicna banka"
+        }
+      },
+      {
+        "id": "Siestich Mesiacov Odo Dna Podania Ziadosti",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "siestich mesiacov odo dna podania ziadosti"
+        }
+      },
+      {
+        "id": "60 dni od ich predlozenia",
+        "type": "Lehota",
+        "properties": {
+          "name": "60 dni od ich predlozenia"
+        }
+      },
+      {
+        "id": "V Eurach",
+        "type": "Mena",
+        "properties": {
+          "name": "v eurach"
+        }
+      },
+      {
+        "id": "O Vratenie Dane",
+        "type": "Povinnost",
+        "properties": {
+          "name": "o vratenie dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+          "page": 72
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "MA_PREDMETOM",
+        "properties": {
+          "add": "ziadost o vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "ROZHODUJE_O",
+        "properties": {
+          "add": "do siestich mesiacov odo dna podania ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Siestich Mesiacov Odo Dna Podania Ziadosti",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "siestich mesiacov odo dna podania ziadosti"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "podanie ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktury"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "prilozene k ziadosti o vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dovozne Doklady",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozne doklady"
+          }
+        },
+        "target": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "type": "JE_SUCASTOU",
+        "properties": {
+          "add": "prilozene k ziadosti o vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktury"
+          }
+        },
+        "type": "VRATI",
+        "properties": {
+          "add": "vrati zahranicnej osobe z tretieho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Dovozne Doklady",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozne doklady"
+          }
+        },
+        "type": "VRATI",
+        "properties": {
+          "add": "vrati zahranicnej osobe z tretieho statu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktury"
+          }
+        },
+        "target": {
+          "id": "60 dni od ich predlozenia",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni od ich predlozenia"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "pred vratenim",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dovozne Doklady",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozne doklady"
+          }
+        },
+        "target": {
+          "id": "60 dni od ich predlozenia",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni od ich predlozenia"
+          }
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "add": "pred vratenim",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "ROZHODUJE_O",
+        "properties": {
+          "add": "ak rozhodne o vrateni dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "type": "VRATI",
+        "properties": {
+          "add": "v lehote na rozhodnutie o ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Banka V Tuzemsku",
+          "type": "Banka",
+          "properties": {
+            "name": "banka v tuzemsku"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "ucet vedeny v banke v tuzemsku",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Zahranicna Banka",
+          "type": "Banka",
+          "properties": {
+            "name": "zahranicna banka"
+          }
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "add": "ucet vedeny v zahranicnej banke",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Zahranicna Osoba Z Tretieho Statu",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba z tretieho statu"
+          }
+        },
+        "type": "PLATI_PRE",
+        "properties": {
+          "add": "na zaklade ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "V Eurach",
+          "type": "Mena",
+          "properties": {
+            "name": "v eurach"
+          }
+        },
+        "type": "MA_VLASTNOST",
+        "properties": {
+          "add": "vratenie dane v eurach",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Vratenie Dane",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vratenie Dane",
+          "type": "Dan",
+          "properties": {
+            "name": "vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Neopravnene Vratena Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "neopravnene vratena dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Daňovy Urad Bratislava",
+          "type": "Urad",
+          "properties": {
+            "name": "Daňový úrad Bratislava"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktury",
+          "type": "Doklad",
+          "properties": {
+            "name": "faktury"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dovozne Doklady",
+          "type": "Doklad",
+          "properties": {
+            "name": "dovozne doklady"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicna Osoba Z Tretieho Statu",
+          "type": "Osoba",
+          "properties": {
+            "name": "zahranicna osoba z tretieho statu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ucty Vedeny V Banke V Tuzemsku",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "ucty vedeny v banke v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ucet Vedeny V Zahranicnej Banke",
+          "type": "Bankovyucet",
+          "properties": {
+            "name": "ucet vedeny v zahranicnej banke"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Banka V Tuzemsku",
+          "type": "Banka",
+          "properties": {
+            "name": "banka v tuzemsku"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zahranicna Banka",
+          "type": "Banka",
+          "properties": {
+            "name": "zahranicna banka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Siestich Mesiacov Odo Dna Podania Ziadosti",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "siestich mesiacov odo dna podania ziadosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "60 dni od ich predlozenia",
+          "type": "Lehota",
+          "properties": {
+            "name": "60 dni od ich predlozenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "V Eurach",
+          "type": "Mena",
+          "properties": {
+            "name": "v eurach"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "O Vratenie Dane",
+          "type": "Povinnost",
+          "properties": {
+            "name": "o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "b) údaje uvedené v žiadosti o vrátenie dane sú pravdivé,\nc) sa zaväzuje vrátiť späť akúkoľvek neoprávnene vrátenú daň.\n§ 58\n(1) Daňový úrad Bratislava rozhodne o žiadosti o vrátenie dane do šiestich mesiacov odo dňa\npodania žiadosti. Faktúry a dovozné doklady priložené k žiadosti o vrátenie dane Daňový úrad\nBratislava vráti zahraničnej osobe z tretieho štátu do 60 dní od ich predloženia; tieto faktúry\na dovozné doklady môže pred vrátením označiť.\n(2) Ak Daňový úrad Bratislava rozhodne o vrátení dane, vráti daň v lehote na rozhodnutie\no žiadosti podľa odseku 1. Daň vráti v eurách na účet vedený v banke v tuzemsku alebo na\nzáklade žiadosti zahraničnej osoby z tretieho štátu na účet vedený v zahraničnej banke v inom",
+            "page": 72
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

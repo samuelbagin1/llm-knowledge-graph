@@ -1,0 +1,481 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {
+          "name": "dan"
+        }
+      },
+      {
+        "id": "Osoba",
+        "type": "Osoba",
+        "properties": {
+          "name": "osoba"
+        }
+      },
+      {
+        "id": "Hlásenie",
+        "type": "Doklad",
+        "properties": {
+          "name": "hlasenie"
+        }
+      },
+      {
+        "id": "Tlačivo",
+        "type": "Doklad",
+        "properties": {
+          "name": "tlacivo"
+        }
+      },
+      {
+        "id": "Finančné Riaditeľstvo",
+        "type": "Financneriaditelstvo",
+        "properties": {
+          "name": "financne riaditelstvo"
+        }
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 4"
+        }
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 5"
+        }
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 3"
+        }
+      },
+      {
+        "id": "Kalendárny Mesiac",
+        "type": "Casovyudaj",
+        "properties": {
+          "name": "kalendarny mesiac"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+          "page": 94
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "Hlásenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "hlasenie"
+          }
+        },
+        "type": "JE_PREDMETOM",
+        "properties": {
+          "add": "vybrana dan a celkova vybrana dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Hlásenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "hlasenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uviest celkovu vybranu dan a referencne cisla colnych vyhlaseni",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Hlásenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "hlasenie"
+          }
+        },
+        "target": {
+          "id": "Tlačivo",
+          "type": "Doklad",
+          "properties": {
+            "name": "tlacivo"
+          }
+        },
+        "type": "DOPLNA",
+        "properties": {
+          "add": "podava sa na tlacive",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Finančné Riaditeľstvo",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "target": {
+          "id": "Tlačivo",
+          "type": "Doklad",
+          "properties": {
+            "name": "tlacivo"
+          }
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "add": "zverejni vzor tlaciva na webovom sidle",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "add": "vybrana dan",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Hlásenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "hlasenie"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "uviest doplnene alebo opravene udaje pri nespravnych, nepravdivych alebo neuplnych udajoch",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Hlásenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "hlasenie"
+          }
+        },
+        "target": {
+          "id": "Kalendárny Mesiac",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "kalendarny mesiac"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "za kalendarny mesiac",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ma povolenie podla odseku 3",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 4"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "vybrana dan podla odseku 4",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "osoba podla odseku 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {
+            "name": "dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {
+            "name": "osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Hlásenie",
+          "type": "Doklad",
+          "properties": {
+            "name": "hlasenie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tlačivo",
+          "type": "Doklad",
+          "properties": {
+            "name": "tlacivo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Finančné Riaditeľstvo",
+          "type": "Financneriaditelstvo",
+          "properties": {
+            "name": "financne riaditelstvo"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 4"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 3"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kalendárny Mesiac",
+          "type": "Casovyudaj",
+          "properties": {
+            "name": "kalendarny mesiac"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "v ktorom bola daň vybraná podľa odseku 4. Táto osoba je povinná v hlásení uviesť celkovú\nvybranú daň od osoby podľa odseku 5 a referenčné čísla colných vyhlásení, ku ktorým sa\npríslušná daň vzťahuje. Hlásenie sa podáva na tlačive, ktorého vzor zverejní finančné riaditeľstvo\nna webovom sídle finančného riaditeľstva.\n(8) Ak osoba, ktorá má povolenie podľa odseku 3, uvedie v hlásení nesprávne, nepravdivé alebo\nneúplné údaje, je povinná uviesť doplnené alebo opravené údaje v hlásení podanom za kalendárny\nmesiac, v ktorom tieto skutočnosti zistila.\n(9) Osoba, ktorá má povolenie podľa odseku 3, je povinná viesť záznamy o dovezených tovaroch,",
+            "page": 94
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

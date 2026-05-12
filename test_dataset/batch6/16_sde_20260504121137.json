@@ -1,0 +1,746 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "7",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 7"
+        }
+      },
+      {
+        "id": "7a",
+        "type": "Paragraf",
+        "properties": {
+          "name": "§ 7a"
+        }
+      },
+      {
+        "id": "48c ods. 5",
+        "type": "Odsek",
+        "properties": {
+          "name": "ods. 5"
+        }
+      },
+      {
+        "id": "Odsek 4 Pism. A",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 4 pism. a"
+        }
+      },
+      {
+        "id": "Odsek 1 Pism. B Az I",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 1 pism. b az i"
+        }
+      },
+      {
+        "id": "Odsek 8 Pism. B",
+        "type": "Odsek",
+        "properties": {
+          "name": "odsek 8 pism. b"
+        }
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {
+          "name": "zdanitelna osoba"
+        }
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "danovy urad"
+        }
+      },
+      {
+        "id": "Oznamenie Skutocnosti",
+        "type": "Oznamenie",
+        "properties": {
+          "name": "oznamenie skutocnosti"
+        }
+      },
+      {
+        "id": "Registracia Pre Dan",
+        "type": "Registracia",
+        "properties": {
+          "name": "registracia pre dan"
+        }
+      },
+      {
+        "id": "Rozhodnutie O Registracii Pre Dan",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie o registracii pre dan"
+        }
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {
+          "name": "prebiehajuci kalendarny rok"
+        }
+      },
+      {
+        "id": "31. decembra prebiehajuceho kalendarneho roka",
+        "type": "Datum",
+        "properties": {
+          "name": "31. decembra prebiehajuceho kalendarneho roka"
+        }
+      },
+      {
+        "id": "Den Dorucenia Tohto Rozhodnutia",
+        "type": "Datum",
+        "properties": {
+          "name": "den dorucenia tohto rozhodnutia"
+        }
+      },
+      {
+        "id": "Den Nasledujuci Po Dni Oznamenia",
+        "type": "Datum",
+        "properties": {
+          "name": "den nasledujuci po dni oznamenia"
+        }
+      },
+      {
+        "id": "Skutocnost",
+        "type": "Status",
+        "properties": {
+          "name": "skutocnost"
+        }
+      },
+      {
+        "id": "Platitel",
+        "type": "Status",
+        "properties": {
+          "name": "platitel"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+          "page": 4
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "target": {
+          "id": "7a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7a"
+          }
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "add": "oznamenie skutocnosti pred tym ako nastane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Skutocnost",
+          "type": "Status",
+          "properties": {
+            "name": "skutocnost"
+          }
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "add": "podla § 7 alebo § 7a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "add": "bolo dorucene alebo este nebolo dorucene",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "type": "PODLIEHA",
+        "properties": {
+          "add": "pre dan podla odseku 4 pism. a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "na ucely tohto zakona",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "7a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7a"
+          }
+        },
+        "type": "PODLA",
+        "properties": {
+          "add": "na ucely tohto zakona",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "add": "do 31. decembra alebo do dna ked sa stane platitelom",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "31. decembra prebiehajuceho kalendarneho roka",
+          "type": "Datum",
+          "properties": {
+            "name": "31. decembra prebiehajuceho kalendarneho roka"
+          }
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "add": "termin",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Den Dorucenia Tohto Rozhodnutia",
+          "type": "Datum",
+          "properties": {
+            "name": "den dorucenia tohto rozhodnutia"
+          }
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "add": "zaciatok obdobia v pripade b",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Den Nasledujuci Po Dni Oznamenia",
+          "type": "Datum",
+          "properties": {
+            "name": "den nasledujuci po dni oznamenia"
+          }
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "add": "zaciatok obdobia v pripade a",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Status",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "type": "STAVA_SA",
+        "properties": {
+          "add": "podla odseku 1 pism. b az i alebo odseku 8 pism. b alebo podla § 48c ods. 5",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "7",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "7a",
+          "type": "Paragraf",
+          "properties": {
+            "name": "§ 7a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "48c ods. 5",
+          "type": "Odsek",
+          "properties": {
+            "name": "ods. 5"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 4 Pism. A",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 4 pism. a"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1 Pism. B Az I",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 1 pism. b az i"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 8 Pism. B",
+          "type": "Odsek",
+          "properties": {
+            "name": "odsek 8 pism. b"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {
+            "name": "zdanitelna osoba"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "danovy urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Oznamenie Skutocnosti",
+          "type": "Oznamenie",
+          "properties": {
+            "name": "oznamenie skutocnosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan",
+          "type": "Registracia",
+          "properties": {
+            "name": "registracia pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Registracii Pre Dan",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o registracii pre dan"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {
+            "name": "prebiehajuci kalendarny rok"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "31. decembra prebiehajuceho kalendarneho roka",
+          "type": "Datum",
+          "properties": {
+            "name": "31. decembra prebiehajuceho kalendarneho roka"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Dorucenia Tohto Rozhodnutia",
+          "type": "Datum",
+          "properties": {
+            "name": "den dorucenia tohto rozhodnutia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Den Nasledujuci Po Dni Oznamenia",
+          "type": "Datum",
+          "properties": {
+            "name": "den nasledujuci po dni oznamenia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skutocnost",
+          "type": "Status",
+          "properties": {
+            "name": "skutocnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Status",
+          "properties": {
+            "name": "platitel"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "podľa § 7 alebo § 7a, je zdaniteľná osoba povinná túto skutočnosť oznámiť daňovému úradu pred\ntým, ako táto skutočnosť nastane. Zdaniteľná osoba, ktorej ku dňu oznámenia skutočnosti podľa\nprvej vety\na) bolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\nnasledujúceho po dni, v ktorom oznámila túto skutočnosť, do 31. decembra prebiehajúceho\nkalendárneho roka alebo do dňa, keď sa v prebiehajúcom kalendárnom roku stane platiteľom\npodľa odseku 1 písm. b) až i), odseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely\ntohto zákona za osobu registrovanú pre daň podľa § 7 alebo § 7a; daňový úrad rozhodnutie\nnevydáva,\nb) ešte nebolo doručené rozhodnutie o registrácii pre daň podľa odseku 4 písm. a), sa odo dňa\ndoručenia tohto rozhodnutia do 31. decembra prebiehajúceho kalendárneho roka alebo do dňa,\nkeď sa v prebiehajúcom kalendárnom roku stane platiteľom podľa odseku 1 písm. b) až i),\nodseku 8 písm. b) alebo podľa § 48c ods. 5, považuje na účely tohto zákona za osobu",
+            "page": 4
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

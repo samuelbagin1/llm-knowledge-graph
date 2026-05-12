@@ -1,0 +1,586 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Danova Povinnost",
+        "type": "Povinnost",
+        "properties": {
+          "name": "Danova povinnost"
+        }
+      },
+      {
+        "id": "Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dodanie tovaru"
+        }
+      },
+      {
+        "id": "Prevod Alebo Prechod Nehnutelnosti",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Prevod alebo prechod nehnutelnosti"
+        }
+      },
+      {
+        "id": "Odovzdanie Nehnutelnosti Do Uzivania",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Odovzdanie nehnutelnosti do uzivania"
+        }
+      },
+      {
+        "id": "Zapisy Vlastnickeho Prava K Nehnutelnosti Do Katastra Nehnutelnosti",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Zapisy vlastnickeho prava k nehnutelnosti do katastra nehnutelnosti"
+        }
+      },
+      {
+        "id": "Dodanie Stavby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Dodanie stavby"
+        }
+      },
+      {
+        "id": "Odovzdanie Stavby",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Odovzdanie stavby"
+        }
+      },
+      {
+        "id": "Odovzdanie Tovaru Najomcovi",
+        "type": "Cinnost",
+        "properties": {
+          "name": "Odovzdanie tovaru najomcovi"
+        }
+      },
+      {
+        "id": "Kupujuci",
+        "type": "Subjekt",
+        "properties": {
+          "name": "Kupujuci"
+        }
+      },
+      {
+        "id": "Najomca",
+        "type": "Subjekt",
+        "properties": {
+          "name": "Najomca"
+        }
+      },
+      {
+        "id": "Pravo Nakladat S Tovarom Ako Vlastnik",
+        "type": "Pravo",
+        "properties": {
+          "name": "Pravo nakladat s tovarom ako vlastnik"
+        }
+      },
+      {
+        "id": "Zmluva O Dielo Alebo Ina Obdobna Zmluva",
+        "type": "Zmluva",
+        "properties": {
+          "name": "Zmluva o dielo alebo ina obdobna zmluva"
+        }
+      },
+      {
+        "id": "Paragraf 8",
+        "type": "Paragraf",
+        "properties": {
+          "name": "Paragraf 8"
+        }
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {
+          "name": "Odsek 1"
+        }
+      },
+      {
+        "id": "Pismeno C",
+        "type": "Pismeno",
+        "properties": {
+          "name": "Pismeno c"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+          "page": 24
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Danova povinnost"
+          }
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie tovaru"
+          }
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "add": "danova povinnost",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Pravo Nakladat S Tovarom Ako Vlastnik",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo nakladat s tovarom ako vlastnik"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "add": "nadobudnutie kupujucim",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Alebo Prechod Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Prevod alebo prechod nehnutelnosti"
+          }
+        },
+        "target": {
+          "id": "Odovzdanie Nehnutelnosti Do Uzivania",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odovzdanie nehnutelnosti do uzivania"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "add": "den dodania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Prevod Alebo Prechod Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Prevod alebo prechod nehnutelnosti"
+          }
+        },
+        "target": {
+          "id": "Zapisy Vlastnickeho Prava K Nehnutelnosti Do Katastra Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zapisy vlastnickeho prava k nehnutelnosti do katastra nehnutelnosti"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "add": "ak je tento den skorosti ako zapis",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Stavby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie stavby"
+          }
+        },
+        "target": {
+          "id": "Odovzdanie Stavby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odovzdanie stavby"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "add": "den dodania",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 8"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "add": "ods. 1 pism. c",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "Odovzdanie Tovaru Najomcovi",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odovzdanie tovaru najomcovi"
+          }
+        },
+        "type": "MA_UCINOK",
+        "properties": {
+          "add": "den dodania tovaru",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost",
+          "type": "Povinnost",
+          "properties": {
+            "name": "Danova povinnost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prevod Alebo Prechod Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Prevod alebo prechod nehnutelnosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odovzdanie Nehnutelnosti Do Uzivania",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odovzdanie nehnutelnosti do uzivania"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zapisy Vlastnickeho Prava K Nehnutelnosti Do Katastra Nehnutelnosti",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Zapisy vlastnickeho prava k nehnutelnosti do katastra nehnutelnosti"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Stavby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Dodanie stavby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odovzdanie Stavby",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odovzdanie stavby"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odovzdanie Tovaru Najomcovi",
+          "type": "Cinnost",
+          "properties": {
+            "name": "Odovzdanie tovaru najomcovi"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Kupujuci",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Kupujuci"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Najomca",
+          "type": "Subjekt",
+          "properties": {
+            "name": "Najomca"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Nakladat S Tovarom Ako Vlastnik",
+          "type": "Pravo",
+          "properties": {
+            "name": "Pravo nakladat s tovarom ako vlastnik"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmluva O Dielo Alebo Ina Obdobna Zmluva",
+          "type": "Zmluva",
+          "properties": {
+            "name": "Zmluva o dielo alebo ina obdobna zmluva"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf 8",
+          "type": "Paragraf",
+          "properties": {
+            "name": "Paragraf 8"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {
+            "name": "Odsek 1"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno C",
+          "type": "Pismeno",
+          "properties": {
+            "name": "Pismeno c"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(1) Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnuteľnosti do katastra nehnuteľností. Pri dodaní stavby na základe\nzmluvy o dielo alebo inej obdobnej zmluvy je dňom dodania deň odovzdania stavby. Pri dodaní\ntovaru podľa § 8 ods. 1 písm. c) je dňom dodania tovaru deň odovzdania tovaru nájomcovi.",
+            "page": 24
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

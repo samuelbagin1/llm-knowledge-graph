@@ -1,0 +1,595 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Colny Urad",
+        "type": "Urad",
+        "properties": {
+          "name": "Colny urad"
+        }
+      },
+      {
+        "id": "Ziadost",
+        "type": "Ziadost",
+        "properties": {
+          "name": "ziadost"
+        }
+      },
+      {
+        "id": "Dan Zaplatena Pri Dovoze Tovaru",
+        "type": "Dan",
+        "properties": {
+          "name": "dan zaplatena pri dovoze tovaru"
+        }
+      },
+      {
+        "id": "Obdobie Od 1. Januara 2021 Do 31. Decembra 2021",
+        "type": "Obdobie",
+        "properties": {
+          "name": "obdobie od 1. januara 2021 do 31. decembra 2021"
+        }
+      },
+      {
+        "id": "Európska Komisia",
+        "type": "Agentura",
+        "properties": {
+          "name": "Európska komisia"
+        }
+      },
+      {
+        "id": "Agentura",
+        "type": "Agentura",
+        "properties": {
+          "name": "agentura"
+        }
+      },
+      {
+        "id": "Organ Zriadeny Podla Prava Europskej Unie",
+        "type": "Statnyorgan",
+        "properties": {
+          "name": "organ zriadeny podla prava Europskej unie"
+        }
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {
+          "name": "tovar"
+        }
+      },
+      {
+        "id": "Plnenie Uloh",
+        "type": "Cinnost",
+        "properties": {
+          "name": "plnenie uloh"
+        }
+      },
+      {
+        "id": "Pravo Europskej Unie",
+        "type": "Pravnypredpis",
+        "properties": {
+          "name": "pravo Europskej unie"
+        }
+      },
+      {
+        "id": "Pandemia Ochorenia Covid-19",
+        "type": "Dovod",
+        "properties": {
+          "name": "pandemia ochorenia COVID-19"
+        }
+      },
+      {
+        "id": "Dalsie Dodanie Za Protihodnotu",
+        "type": "Cinnost",
+        "properties": {
+          "name": "dalsie dodanie za protihodnotu"
+        }
+      },
+      {
+        "id": "Podmienky Na Vratenie Dane",
+        "type": "Podmienka",
+        "properties": {
+          "name": "podmienky na vratenie dane"
+        }
+      },
+      {
+        "id": "Rozhodnutie O Vratenie Dane",
+        "type": "Rozhodnutie",
+        "properties": {
+          "name": "rozhodnutie o vratenie dane"
+        }
+      },
+      {
+        "id": "chunk_0_ZZ_222_2004",
+        "type": "Chunk",
+        "properties": {
+          "name": "chunk_0_ZZ_222_2004",
+          "document_id": "ZZ_222_2004",
+          "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+          "page": 140
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "Dan Zaplatena Pri Dovoze Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "dan zaplatena pri dovoze tovaru"
+          }
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "add": "vratenie dane na zaklade ziadosti",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dan Zaplatena Pri Dovoze Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "dan zaplatena pri dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "Obdobie Od 1. Januara 2021 Do 31. Decembra 2021",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie od 1. januara 2021 do 31. decembra 2021"
+          }
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Európska Komisia",
+          "type": "Agentura",
+          "properties": {
+            "name": "Európska komisia"
+          }
+        },
+        "target": {
+          "id": "Agentura",
+          "type": "Agentura",
+          "properties": {
+            "name": "agentura"
+          }
+        },
+        "type": "JE_TYPOM",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Agentura",
+          "type": "Agentura",
+          "properties": {
+            "name": "agentura"
+          }
+        },
+        "target": {
+          "id": "Pravo Europskej Unie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "pravo Europskej unie"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Organ Zriadeny Podla Prava Europskej Unie",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "organ zriadeny podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "Pravo Europskej Unie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "pravo Europskej unie"
+          }
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "Plnenie Uloh",
+          "type": "Cinnost",
+          "properties": {
+            "name": "plnenie uloh"
+          }
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "add": "uvolnenie pre ulohy suvisiace s pandemiou COVID-19",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Plnenie Uloh",
+          "type": "Cinnost",
+          "properties": {
+            "name": "plnenie uloh"
+          }
+        },
+        "target": {
+          "id": "Pandemia Ochorenia Covid-19",
+          "type": "Dovod",
+          "properties": {
+            "name": "pandemia ochorenia COVID-19"
+          }
+        },
+        "type": "SUVISI_S",
+        "properties": {
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Dalsie Dodanie Za Protihodnotu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dalsie dodanie za protihodnotu"
+          }
+        },
+        "target": {
+          "id": "Podmienky Na Vratenie Dane",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienky na vratenie dane"
+          }
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "add": "neplati ak sa tovar pouzije na dalsie dodanie za protihodnotu",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Vratenie Dane",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "type": "ZRUSUJE",
+        "properties": {
+          "add": "ak sa prestali plnit podmienky na vratenie dane",
+          "document_id": "ZZ_222_2004"
+        }
+      },
+      {
+        "source": {
+          "id": "Colny Urad",
+          "type": "Urad",
+          "properties": {
+            "name": "Colny urad"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost",
+          "type": "Ziadost",
+          "properties": {
+            "name": "ziadost"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dan Zaplatena Pri Dovoze Tovaru",
+          "type": "Dan",
+          "properties": {
+            "name": "dan zaplatena pri dovoze tovaru"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obdobie Od 1. Januara 2021 Do 31. Decembra 2021",
+          "type": "Obdobie",
+          "properties": {
+            "name": "obdobie od 1. januara 2021 do 31. decembra 2021"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Európska Komisia",
+          "type": "Agentura",
+          "properties": {
+            "name": "Európska komisia"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Agentura",
+          "type": "Agentura",
+          "properties": {
+            "name": "agentura"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Organ Zriadeny Podla Prava Europskej Unie",
+          "type": "Statnyorgan",
+          "properties": {
+            "name": "organ zriadeny podla prava Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {
+            "name": "tovar"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Plnenie Uloh",
+          "type": "Cinnost",
+          "properties": {
+            "name": "plnenie uloh"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pravo Europskej Unie",
+          "type": "Pravnypredpis",
+          "properties": {
+            "name": "pravo Europskej unie"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pandemia Ochorenia Covid-19",
+          "type": "Dovod",
+          "properties": {
+            "name": "pandemia ochorenia COVID-19"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dalsie Dodanie Za Protihodnotu",
+          "type": "Cinnost",
+          "properties": {
+            "name": "dalsie dodanie za protihodnotu"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Podmienky Na Vratenie Dane",
+          "type": "Podmienka",
+          "properties": {
+            "name": "podmienky na vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Vratenie Dane",
+          "type": "Rozhodnutie",
+          "properties": {
+            "name": "rozhodnutie o vratenie dane"
+          }
+        },
+        "target": {
+          "id": "chunk_0_ZZ_222_2004",
+          "type": "Chunk",
+          "properties": {
+            "name": "chunk_0_ZZ_222_2004",
+            "document_id": "ZZ_222_2004",
+            "text": "(4) Colný úrad na základe žiadosti vráti daň zaplatenú pri dovoze tovaru, ktorý bol dovezený\nv období od 1. januára 2021 do 31. decembra 2021 Európskou komisiou, agentúrou alebo\norgánom zriadeným podľa práva Európskej únie, ak tento tovar je určený alebo bol určený\na použitý na plnenie úloh, ktoré im boli zverené právom Európskej únie, súvisiacich s pandémiou\nochorenia COVID-19; to neplatí, ak Európska komisia, agentúra alebo orgán zriadený podľa práva\nEurópskej únie použila alebo požije dovezený tovar na účely ďalšieho dodania za protihodnotu.\n(5) Ak sa po podaní žiadosti podľa odseku 4 prestali plniť podmienky na vrátenie dane\nv súvislosti s dovozom tovaru podľa odseku 4, Európska komisia, agentúra alebo orgán zriadený\npodľa práva Európskej únie sú povinné o tejto skutočnosti bez zbytočného odkladu informovať\ncolný úrad.\n(6) Ak sa prestali plniť podmienky na vrátenie dane podľa odseku 4 a rozhodnutie o vrátení dane\nuž bolo vydané, colný úrad toto rozhodnutie zruší.",
+            "page": 140
+          }
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

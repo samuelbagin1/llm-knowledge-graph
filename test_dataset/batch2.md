@@ -60,7 +60,7 @@ text: b) právnickou osobou alebo fyzickou osobou, ktorá spĺňa jednu podmienk
 relationships:
   Pravnicka Osoba -> [SPLNA_PODMIENKY] -> Podmienky Podla Paragrafu 30 Odsek 2
   Fyzicka Osoba -> [SPLNA_PODMIENKY] -> Podmienky Podla Paragrafu 30 Odsek 2
-  Podmienky Podla Paragrafu 30 Odsek 2 -> [JE_PODLA] -> Paragraf 30 Odsek 2
+  Podmienky Podla Paragrafu 30 Odsek 2 -> [JE_PODLA] -> Paragraf § 30 Odsek 2
 
   Oslobodenie Od Dane -> [VZTAHUJE_SA_NA] -> Odborny Vycvik A Rekvalifikacia
   Odborny Vycvik A Rekvalifikacia -> [JE_PODLA] -> Osobitny Predpis
@@ -72,7 +72,7 @@ relationships:
   Dodanie Sluzieb -> [SUVISI_S] -> Vychovne Sluzby
   Dodanie Sluzieb -> [SUVISI_S] -> Vzdelavacie Sluzby
 
-  Sluzby Dodavane Clenom -> [JE_PODLA] -> Paragraf 32
+  Sluzby Dodavane Clenom -> [JE_PODLA] -> Paragraf § 32
   Oslobodenie Od Dane -> [VZTAHUJE_SA_NA] -> Sluzby Dodavane Clenom
   Sluzby Dodavane Clenom -> [SUVISI_S] -> Clensky Prispevok
   Sluzby Dodavane Clenom -> [TYKA_SA] -> Clenovia
@@ -92,8 +92,8 @@ relationships:
   Oslobodenie Od Dane -> [VZTAHUJE_SA_NA] -> Tovar Dodany V Uzkej Suvislosti So Sluzbou
 
 nodes:
-  Paragraf: Paragraf 30 Odsek 2
-  Paragraf: Paragraf 32
+  Odsek: Paragraf § 30 Odsek 2
+  Paragraf: Paragraf § 32
   PravnickaOsoba: Pravnicka Osoba
   FyzickaOsoba: Fyzicka Osoba
   Podmienka: Podmienky Podla Paragrafu 30 Odsek 2
@@ -128,7 +128,7 @@ relationships:
   Zabezpeka Na Dan Pri Dovoze Tovaru -> [VZTAHUJE_SA_NA] -> Dan
   Zabezpeka Na Dan Pri Dovoze Tovaru -> [VZTAHUJE_SA_NA] -> Oslobodenie Od Dane Podla Paragrafu 48 Odsek 3
   Oslobodenie Od Dane Podla Paragrafu 48 Odsek 3 -> [JE_PODLA] -> Odsek 3
-  Paragraf 48 -> [MA_ODSEK] -> Odsek 3
+  Paragraf § 48 -> [MA_ODSEK] -> Odsek 3
 
   Osoba Povinna Platit Dan -> [MA_POVINNOST] -> Zlozenie Zabezpeky Na Dan
   Zlozenie Zabezpeky Na Dan -> [TYKA_SA] -> Zabezpeka Na Dan Pri Dovoze Tovaru
@@ -161,7 +161,7 @@ nodes:
   Tovar: Tovar
   Dan: Dan
   OslobodenieOdDane: Oslobodenie Od Dane Podla Paragrafu 48 Odsek 3
-  Paragraf: Paragraf 48
+  Paragraf: Paragraf § 48
   Odsek: Odsek 3
   Osoba: Osoba Povinna Platit Dan
   Povinnost: Zlozenie Zabezpeky Na Dan
@@ -196,13 +196,41 @@ relationships:
   Tovary A Sluzby Podla Odseku 2 -> [JE_PODLA] -> Odsek 2
   Tovary A Sluzby Podla Odseku 2 -> [VZTAHUJE_SA_NA] -> Dodavky Tovarov A Sluzieb
   Dodavky Tovarov A Sluzieb -> [JE_OSLOBODENE_OD] -> Dan
-  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragrafy 28 Az 42
-  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragrafy 28 Az 42
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 28
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 29
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 30
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 31
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 32
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 33
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 34
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 35
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 36
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 37
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 38
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 39
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 40
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 41
+  Dodavky Tovarov A Sluzieb -> [JE_PODLA] -> Paragraf § 42
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 28
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 29
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 30
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 31
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 32
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 33
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 34
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 35
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 36
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 37
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 38
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 39
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 40
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 41
+  Oslobodenie Od Dane Podla Paragrafov 28 Az 42 -> [JE_PODLA] -> Paragraf § 42
 
   Vynimka Z Neodpoctu Dane -> [VZTAHUJE_SA_NA] -> Poistovacie Sluzby Podla Paragrafu 37
   Vynimka Z Neodpoctu Dane -> [VZTAHUJE_SA_NA] -> Financne Sluzby Podla Paragrafu 39
-  Poistovacie Sluzby Podla Paragrafu 37 -> [JE_PODLA] -> Paragraf 37
-  Financne Sluzby Podla Paragrafu 39 -> [JE_PODLA] -> Paragraf 39
+  Poistovacie Sluzby Podla Paragrafu 37 -> [JE_PODLA] -> Paragraf § 37
+  Financne Sluzby Podla Paragrafu 39 -> [JE_PODLA] -> Paragraf § 39
   Vynimka Z Neodpoctu Dane -> [MA_PODMIENKU] -> Zakaznik Bez Sidla Miesta Podnikania Prevadzkarne Ani Bydliska V EU
   Vynimka Z Neodpoctu Dane -> [MA_PODMIENKU] -> Priame Spojenie Sluzieb S Vyvozom Tovaru Mimo EU
 
@@ -216,14 +244,15 @@ relationships:
 
   Platitel -> [DODAVA] -> Investicne Zlato Oslobodene Od Dane Podla Paragrafu 67 Odsek 3
   Investicne Zlato Oslobodene Od Dane Podla Paragrafu 67 Odsek 3 -> [JE_OSLOBODENE_OD] -> Dan
-  Investicne Zlato Oslobodene Od Dane Podla Paragrafu 67 Odsek 3 -> [JE_PODLA] -> Paragraf 67 Odsek 3
+  Investicne Zlato Oslobodene Od Dane Podla Paragrafu 67 Odsek 3 -> [JE_PODLA] -> Paragraf § 67 Odsek 3
   Platitel -> [VYKONAVA] -> Sprostredkovanie Dodania Investicneho Zlata Oslobodeneho Od Dane Podla Paragrafu 67 Odsek 3
   Sprostredkovanie Dodania Investicneho Zlata Oslobodeneho Od Dane Podla Paragrafu 67 Odsek 3 -> [TYKA_SA] -> Investicne Zlato Oslobodene Od Dane Podla Paragrafu 67 Odsek 3
-  Sprostredkovanie Dodania Investicneho Zlata Oslobodeneho Od Dane Podla Paragrafu 67 Odsek 3 -> [JE_PODLA] -> Paragraf 67 Odsek 3
+  Sprostredkovanie Dodania Investicneho Zlata Oslobodeneho Od Dane Podla Paragrafu 67 Odsek 3 -> [JE_PODLA] -> Paragraf § 67 Odsek 3
   Platitel -> [NEMA_NAROK_NA] -> Odpocitanie Dane Pri Investicnom Zlate
   Odpocitanie Dane Pri Investicnom Zlate -> [TYKA_SA] -> Tovary A Sluzby Podla Odseku 2
   Odpocitanie Dane Pri Investicnom Zlate -> [MA_VYNIMKU] -> Vynimka Podla Paragrafu 67 Odsek 5 A 6
-  Vynimka Podla Paragrafu 67 Odsek 5 A 6 -> [JE_PODLA] -> Paragraf 67 Odsek 5 A 6
+  Vynimka Podla Paragrafu 67 Odsek 5 A 6 -> [JE_PODLA] -> Paragraf § 67 Odsek 5
+  Vynimka Podla Paragrafu 67 Odsek 5 A 6 -> [JE_PODLA] -> Paragraf § 67 Odsek 6
 
 nodes:
   Dan: Dan
@@ -238,11 +267,23 @@ nodes:
   Odsek: Odsek 2
   Cinnost: Dodavky Tovarov A Sluzieb
   OslobodenieOdDane: Oslobodenie Od Dane Podla Paragrafov 28 Az 42
-  Paragraf: Paragrafy 28 Az 42
+  Paragraf: Paragraf § 28
+  Paragraf: Paragraf § 29
+  Paragraf: Paragraf § 30
+  Paragraf: Paragraf § 31
+  Paragraf: Paragraf § 32
+  Paragraf: Paragraf § 33
+  Paragraf: Paragraf § 34
+  Paragraf: Paragraf § 35
+  Paragraf: Paragraf § 36
+  Paragraf: Paragraf § 38
+  Paragraf: Paragraf § 40
+  Paragraf: Paragraf § 41
+  Paragraf: Paragraf § 42
   Sluzba: Poistovacie Sluzby Podla Paragrafu 37
   Sluzba: Financne Sluzby Podla Paragrafu 39
-  Paragraf: Paragraf 37
-  Paragraf: Paragraf 39
+  Paragraf: Paragraf § 37
+  Paragraf: Paragraf § 39
   OslobodenieOdDane: Vynimka Z Neodpoctu Dane
   Subjekt: Zakaznik Bez Sidla Miesta Podnikania Prevadzkarne Ani Bydliska V EU
   Sidlo: Sidlo V EU
@@ -254,10 +295,11 @@ nodes:
   Uzemie: Mimo Uzemia Europskej Unie
   InvesticnyMajetok: Investicne Zlato Oslobodene Od Dane Podla Paragrafu 67 Odsek 3
   Cinnost: Sprostredkovanie Dodania Investicneho Zlata Oslobodeneho Od Dane Podla Paragrafu 67 Odsek 3
-  Paragraf: Paragraf 67 Odsek 3
+  Odsek: Paragraf § 67 Odsek 3
   Pravo: Odpocitanie Dane Pri Investicnom Zlate
   OslobodenieOdDane: Vynimka Podla Paragrafu 67 Odsek 5 A 6
-  Paragraf: Paragraf 67 Odsek 5 A 6
+  Odsek: Paragraf § 67 Odsek 5
+  Odsek: Paragraf § 67 Odsek 6
 
 
 chunk: 270
@@ -329,7 +371,7 @@ relationships:
   Zakon 222/2004 Z. z. -> [UPRAVUJE] -> Konanie O Registracii Skupiny Z Uradnej Moci
 
   Zacatie Konania O Registracii Skupiny Z Uradnej Moci -> [TYKA_SA] -> Registracia Skupiny Z Uradnej Moci
-  Registracia Clenov Skupiny Podla Paragrafu 4b -> [JE_PODLA] -> Paragraf 4b
+  Registracia Clenov Skupiny Podla Paragrafu 4b -> [JE_PODLA] -> Paragraf § 4b
   Zacatie Konania O Registracii Skupiny Z Uradnej Moci -> [NEVZTAHUJE_SA_NA] -> Registracia Clenov Skupiny Podla Paragrafu 4b
 
   Danovy Urad Banska Bystrica -> [DORUCUJE] -> Vyzva
@@ -363,7 +405,7 @@ nodes:
   Registracia: Registracia Skupiny Z Uradnej Moci
   Registracia: Registracia Clenov Skupiny Podla Paragrafu 4b
   Registracia: Registracia Clenov Skupiny Z Uradnej Moci
-  Paragraf: Paragraf 4b
+  Paragraf: Paragraf § 4b
   Urad: Danovy Urad Banska Bystrica
   Vyzva: Vyzva
   Zastupca: Spolocny Zastupca
@@ -460,12 +502,12 @@ relationships:
   Dodanie Tovaru Na Uzemi Europskej Unie -> [TYKA_SA] -> Osoba Ina Ako Zdanitelna Osoba
   Dodanie Tovaru Na Uzemi Europskej Unie -> [VYCHADZA_Z] -> Ulahcenie Dodania Tovaru
   Zdanitelna Osoba Ulahcujuca Dodanie Tovaru -> [VYKONAVA] -> Ulahcenie Dodania Tovaru
-  Ulahcenie Dodania Tovaru -> [JE_PODLA] -> Paragraf 8 Odsek 7 Prva Veta
+  Ulahcenie Dodania Tovaru -> [JE_PODLA] -> Paragraf § 8 Odsek 7
   Odoslanie Alebo Preprava Tovaru -> [TYKA_SA] -> Tovar
   Odoslanie Alebo Preprava Tovaru -> [MA_PODMIENKU] -> Zacatie A Skoncenie V Tom Istom Clenskom State
   Zacatie A Skoncenie V Tom Istom Clenskom State -> [VZTAHUJE_SA_NA] -> Ten Isty Clensky Stat
 
-  Paragraf 68c -> [VZTAHUJE_SA_NA] -> Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke
+  Paragraf § 68c -> [VZTAHUJE_SA_NA] -> Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke
   Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke -> [TYKA_SA] -> Tovar
   Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke -> [VYCHADZA_Z] -> Uzemie Tretich Statov
   Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke -> [TYKA_SA] -> Zasielka
@@ -483,9 +525,9 @@ relationships:
   Splatna Dan -> [NACHADZA_SA_V] -> Clensky Stat
 
   Osobitne Upravy -> [JE_PODLA] -> Odsek 1
-  Osobitna Uprava Podla Paragrafu 68a -> [JE_PODLA] -> Paragraf 68a
-  Osobitna Uprava Podla Paragrafu 68b -> [JE_PODLA] -> Paragraf 68b
-  Osobitna Uprava Podla Paragrafu 68c -> [JE_PODLA] -> Paragraf 68c
+  Osobitna Uprava Podla Paragrafu 68a -> [JE_PODLA] -> Paragraf § 68a
+  Osobitna Uprava Podla Paragrafu 68b -> [JE_PODLA] -> Paragraf § 68b
+  Osobitna Uprava Podla Paragrafu 68c -> [JE_PODLA] -> Paragraf § 68c
   Zdanitelna Osoba -> [MA_POVINNOST] -> Dorucovanie Pisomnosti Tykajucich Sa Osobitnej Upravy
   Dorucovanie Pisomnosti Tykajucich Sa Osobitnej Upravy -> [TYKA_SA] -> Pisomnosti Tykajuce Sa Osobitnej Upravy
   Dorucovanie Pisomnosti Tykajucich Sa Osobitnej Upravy -> [TYKA_SA] -> Danovy Urad
@@ -500,13 +542,13 @@ nodes:
   Osoba: Osoba Ina Ako Zdanitelna Osoba
   Tovar: Tovar
   Cinnost: Ulahcenie Dodania Tovaru
-  Paragraf: Paragraf 8 Odsek 7 Prva Veta
+  Odsek: Paragraf § 8 Odsek 7
   Cinnost: Odoslanie Alebo Preprava Tovaru
   Podmienka: Zacatie A Skoncenie V Tom Istom Clenskom State
   ClenskyStat: Ten Isty Clensky Stat
-  Paragraf: Paragraf 68a
-  Paragraf: Paragraf 68b
-  Paragraf: Paragraf 68c
+  Paragraf: Paragraf § 68a
+  Paragraf: Paragraf § 68b
+  Paragraf: Paragraf § 68c
   Cinnost: Predaj Tovaru Na Dialku Dovazany Z Uzemia Tretich Statov V Zasielke
   TretiStat: Uzemie Tretich Statov
   Zasielka: Zasielka
@@ -536,10 +578,10 @@ chunk: 351
 page: 87
 text: písm. b), b) možno predpokladať, že táto zdaniteľná osoba prestala vykonávať činnosť podľa § 68 ods. 1 písm. b), c) táto zdaniteľná osoba prestala spĺňať podmienky na uplatňovanie osobitnej úpravy alebo d) táto zdaniteľná osoba opakovane porušuje povinnosti týkajúce sa uplatňovania osobitnej úpravy. (11) Daňový úrad o zrušení povolenia podľa odseku 10 vydá rozhodnutie; proti tomuto rozhodnutiu môže zdaniteľná osoba uvedená v odseku 2 podať odvolanie, ktoré nemá odkladný
 relationships:
-  Paragraf 68 -> [OBSAHUJE] -> Odsek 1
-  Paragraf 68 -> [OBSAHUJE] -> Odsek 10
-  Paragraf 68 -> [OBSAHUJE] -> Odsek 11
-  Odsek 1 -> [MA_PISMENO] -> Pismeno B
+  Paragraf § 68 -> [OBSAHUJE] -> Odsek 1
+  Paragraf § 68 -> [OBSAHUJE] -> Odsek 10
+  Paragraf § 68 -> [OBSAHUJE] -> Odsek 11
+  Odsek 1 -> [MA_PISMENO] -> Pismeno b)
 
   Zrusenie Povolenia -> [JE_PODLA] -> Odsek 10
   Zrusenie Povolenia -> [MA_DOVOD] -> Predpoklad Ukoncenia Cinnosti Podla Paragrafu 68 Odsek 1 Pismeno B
@@ -547,7 +589,7 @@ relationships:
   Zrusenie Povolenia -> [MA_DOVOD] -> Opakovane Porusovanie Povinnosti Tykajucich Sa Osobitnej Upravy
 
   Predpoklad Ukoncenia Cinnosti Podla Paragrafu 68 Odsek 1 Pismeno B -> [TYKA_SA] -> Cinnost Podla Paragrafu 68 Odsek 1 Pismeno B
-  Cinnost Podla Paragrafu 68 Odsek 1 Pismeno B -> [JE_PODLA] -> Pismeno B
+  Cinnost Podla Paragrafu 68 Odsek 1 Pismeno B -> [JE_PODLA] -> Pismeno b)
   Zdanitelna Osoba -> [NEVZTAHUJE_SA_NA] -> Cinnost Podla Paragrafu 68 Odsek 1 Pismeno B
 
   Zdanitelna Osoba -> [NESPLNA_PODMIENKY] -> Podmienky Na Uplatnovanie Osobitnej Upravy
@@ -572,12 +614,12 @@ nodes:
   Rozhodnutie: Zrusenie Povolenia
   Zaznam: Odvolanie
   Status: Bez Odkladneho Ucinku
-  Paragraf: Paragraf 68
+  Paragraf: Paragraf § 68
   Odsek: Odsek 1
   Odsek: Odsek 2
   Odsek: Odsek 10
   Odsek: Odsek 11
-  Pismeno: Pismeno B
+  Pismeno: Pismeno b)
   Dovod: Predpoklad Ukoncenia Cinnosti Podla Paragrafu 68 Odsek 1 Pismeno B
   Dovod: Nesplnenie Podmienok Na Uplatnovanie Osobitnej Upravy
   Dovod: Opakovane Porusovanie Povinnosti Tykajucich Sa Osobitnej Upravy
@@ -688,16 +730,17 @@ relationships:
   Tovar Odoslany Alebo Prepraveny Do Tuzemska Z Ineho Clenskeho Statu V Rezime Call-Off Stock -> [JE_PODLA] -> Osobitny Predpis
 
   Platitel -> [VIES_ZAZNAMY_O] -> Oprava Zakladu Dane
-  Oprava Zakladu Dane -> [JE_PODLA] -> Paragraf 25
-  Oprava Zakladu Dane -> [JE_PODLA] -> Paragraf 25a
+  Oprava Zakladu Dane -> [JE_PODLA] -> Paragraf § 25
+  Oprava Zakladu Dane -> [JE_PODLA] -> Paragraf § 25a
 
   Platitel -> [VIES_ZAZNAMY_O] -> Oprava Odpocitanej Dane
-  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf 53
-  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf 53a
-  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf 53b Odsek 1 A 2
+  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 53
+  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 53a
+  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 53b Odsek 1
+  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 53b Odsek 2
 
   Platitel -> [VIES_ZAZNAMY_O] -> Oprava Opravenej Odpocitanej Dane
-  Oprava Opravenej Odpocitanej Dane -> [JE_PODLA] -> Paragraf 53b Odsek 4
+  Oprava Opravenej Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 53b Odsek 4
 
   Platitel -> [VIES_ZAZNAMY_O] -> Hnutelny Hmotny Majetok Z Ineho Clenskeho Statu
   Hnutelny Hmotny Majetok Z Ineho Clenskeho Statu -> [VYCHADZA_Z] -> Iny Clensky Stat
@@ -709,14 +752,14 @@ relationships:
   Prace Na Hnutelnom Hmotnom Majetku -> [PLATI_PRE] -> Osoba Identifikovana Pre Dan V Inom Clenskom State
   Ocenovanie Hnutelneho Hmotneho Majetku -> [PLATI_PRE] -> Osoba Identifikovana Pre Dan V Inom Clenskom State
 
-  Osoba Registrovana Pre Dan Podla Paragrafu 7 Alebo 7a -> [JE_PODLA] -> Paragraf 7
-  Osoba Registrovana Pre Dan Podla Paragrafu 7 Alebo 7a -> [JE_PODLA] -> Paragraf 7a
+  Osoba Registrovana Pre Dan Podla Paragrafu 7 Alebo 7a -> [JE_PODLA] -> Paragraf § 7
+  Osoba Registrovana Pre Dan Podla Paragrafu 7 Alebo 7a -> [JE_PODLA] -> Paragraf § 7a
   Osoba Registrovana Pre Dan Podla Paragrafu 7 Alebo 7a -> [MA_POVINNOST] -> Vedenie Zaznamov
   Vedenie Zaznamov -> [TYKA_SA] -> Nadobudnute Tovary Z Ineho Clenskeho Statu
   Vedenie Zaznamov -> [TYKA_SA] -> Dodane Sluzby S Miestom Dodania V Inom Clenskom State
-  Dodane Sluzby S Miestom Dodania V Inom Clenskom State -> [JE_PODLA] -> Paragraf 15 Odsek 1
+  Dodane Sluzby S Miestom Dodania V Inom Clenskom State -> [JE_PODLA] -> Paragraf § 15 Odsek 1
   Vedenie Zaznamov -> [TYKA_SA] -> Prijate Sluzby
-  Prijate Sluzby -> [JE_PODLA] -> Paragraf 69 Odsek 3
+  Prijate Sluzby -> [JE_PODLA] -> Paragraf § 69 Odsek 3
   Prijate Sluzby -> [JE_POVINNY_PLATIT] -> Dan
   Vedenie Zaznamov -> [TYKA_SA] -> Tovar Odoslany Alebo Prepraveny Do Tuzemska Z Ineho Clenskeho Statu
 
@@ -745,16 +788,17 @@ nodes:
   Sluzba: Dodane Sluzby S Miestom Dodania V Inom Clenskom State
   Sluzba: Prijate Sluzby
   Dan: Dan
-  Paragraf: Paragraf 25
-  Paragraf: Paragraf 25a
-  Paragraf: Paragraf 53
-  Paragraf: Paragraf 53a
-  Paragraf: Paragraf 53b Odsek 1 A 2
-  Paragraf: Paragraf 53b Odsek 4
-  Paragraf: Paragraf 7
-  Paragraf: Paragraf 7a
-  Paragraf: Paragraf 15 Odsek 1
-  Paragraf: Paragraf 69 Odsek 3
+  Paragraf: Paragraf § 25
+  Paragraf: Paragraf § 25a
+  Paragraf: Paragraf § 53
+  Paragraf: Paragraf § 53a
+  Odsek: Paragraf § 53b Odsek 1
+  Odsek: Paragraf § 53b Odsek 2
+  Odsek: Paragraf § 53b Odsek 4
+  Paragraf: Paragraf § 7
+  Paragraf: Paragraf § 7a
+  Odsek: Paragraf § 15 Odsek 1
+  Odsek: Paragraf § 69 Odsek 3
 
 
 chunk: 483
@@ -832,17 +876,17 @@ relationships:
   Majetok -> [POVAZUJE_SA_ZA] -> Dodanie Majetku Platitelom
   Platitel -> [USKUTOCNUJE] -> Dodanie Majetku Platitelom
   Dodanie Majetku Platitelom -> [TYKA_SA] -> Majetok
-  Dodanie Majetku Platitelom -> [JE_PODLA] -> Odsek 3 Paragrafu 8
+  Dodanie Majetku Platitelom -> [JE_PODLA] -> Paragraf § 8 Odsek 3
 
   Majetok -> [MA_PODMIENKU] -> Uplne Alebo Ciastocne Odpocitana Dan
   Vytvorenie Majetku Vlastnou Cinnostou -> [TYKA_SA] -> Majetok
   Nadobudnutie Majetku Bez Dane -> [TYKA_SA] -> Majetok
-  Nadobudnutie Majetku Bez Dane -> [JE_PODLA] -> Odsek 1 Paragrafu 10
-  Nadobudnutie Majetku Bez Dane -> [JE_PODLA] -> Odsek 3 Paragrafu 10
+  Nadobudnutie Majetku Bez Dane -> [JE_PODLA] -> Paragraf § 10 Odsek 1
+  Nadobudnutie Majetku Bez Dane -> [JE_PODLA] -> Paragraf § 10 Odsek 3
   Predchadzajuci Vlastnik -> [SUVISI_S] -> Uplne Alebo Ciastocne Odpocitana Dan
 
   Dan -> [MA_ZAKLAD_DANE] -> Zaklad Dane Podla Odseku 5 Paragrafu 22
-  Zaklad Dane Podla Odseku 5 Paragrafu 22 -> [JE_PODLA] -> Odsek 5 Paragrafu 22
+  Zaklad Dane Podla Odseku 5 Paragrafu 22 -> [JE_PODLA] -> Paragraf § 22 Odsek 5
   Vypocet Dane -> [VYCHADZA_Z] -> Zaklad Dane Podla Odseku 5 Paragrafu 22
   Vypocet Dane -> [MA_PODMIENKU] -> Limit Do Vysky Odpocitanej Dane
   Limit Do Vysky Odpocitanej Dane -> [MA_HODNOTU] -> Vyska Odpocitanej Dane
@@ -851,17 +895,17 @@ relationships:
   Vypocet Dane Pri Majetku S Oslobodenym Dodanim -> [VZTAHUJE_SA_NA] -> Majetok S Oslobodenym Dodanim
   Dodanie Majetku S Oslobodenym Dodanim -> [TYKA_SA] -> Majetok S Oslobodenym Dodanim
   Dodanie Majetku S Oslobodenym Dodanim -> [JE_OSLOBODENE_OD] -> Dan
-  Dodanie Majetku S Oslobodenym Dodanim -> [JE_PODLA] -> Odsek 1 Paragrafu 38
-  Dodanie Majetku S Oslobodenym Dodanim -> [JE_PODLA] -> Odsek 7 Paragrafu 38
+  Dodanie Majetku S Oslobodenym Dodanim -> [JE_PODLA] -> Paragraf § 38 Odsek 1
+  Dodanie Majetku S Oslobodenym Dodanim -> [JE_PODLA] -> Paragraf § 38 Odsek 7
 
   Vypocet Dane Pri Majetku S Oslobodenym Dodanim -> [VYCHADZA_Z] -> Uprava Odpocitanej Dane Podla Paragrafu 54a
-  Uprava Odpocitanej Dane Podla Paragrafu 54a -> [JE_PODLA] -> Paragraf 54a
+  Uprava Odpocitanej Dane Podla Paragrafu 54a -> [JE_PODLA] -> Paragraf § 54a
   Uprava Odpocitanej Dane Podla Paragrafu 54a -> [MA_DOVOD] -> Zmena Rozsahu Pouzitia Majetku
   Zmena Rozsahu Pouzitia Majetku -> [TYKA_SA] -> Majetok
   Zmena Rozsahu Pouzitia Majetku -> [MA_UCEL] -> Iny Ucel Ako Podnikanie
   Iny Ucel Ako Podnikanie -> [NEVZTAHUJE_SA_NA] -> Podnikanie
 
-  Investicny Majetok Podla Paragrafu 54 Odsek 2 Pismeno D -> [JE_PODLA] -> Pismeno D Odseku 2 Paragrafu 54
+  Investicny Majetok Podla Paragrafu 54 Odsek 2 Pismeno D -> [JE_PODLA] -> Paragraf § 54 Odsek 2 Pismeno d)
   Platitel -> [MA_POVINNOST] -> Uprava Odpocitanej Dane Pri Investicnom Majetku
   Uprava Odpocitanej Dane Pri Investicnom Majetku -> [TYKA_SA] -> Investicny Majetok Podla Paragrafu 54 Odsek 2 Pismeno D
   Uprava Odpocitanej Dane Pri Investicnom Majetku -> [MA_OBDOBIE] -> Posledne Zdanovacie Obdobie
@@ -890,14 +934,14 @@ nodes:
   Cinnost: Iny Ucel Ako Podnikanie
   Cinnost: Podnikanie
   InvesticnyMajetok: Investicny Majetok Podla Paragrafu 54 Odsek 2 Pismeno D
-  Odsek: Odsek 3 Paragrafu 8
-  Odsek: Odsek 1 Paragrafu 10
-  Odsek: Odsek 3 Paragrafu 10
-  Odsek: Odsek 5 Paragrafu 22
-  Odsek: Odsek 1 Paragrafu 38
-  Odsek: Odsek 7 Paragrafu 38
-  Paragraf: Paragraf 54a
-  Pismeno: Pismeno D Odseku 2 Paragrafu 54
+  Odsek: Paragraf § 8 Odsek 3
+  Odsek: Paragraf § 10 Odsek 1
+  Odsek: Paragraf § 10 Odsek 3
+  Odsek: Paragraf § 22 Odsek 5
+  Odsek: Paragraf § 38 Odsek 1
+  Odsek: Paragraf § 38 Odsek 7
+  Paragraf: Paragraf § 54a
+  Pismeno: Paragraf § 54 Odsek 2 Pismeno d)
 
 
 chunk: 568
@@ -986,10 +1030,10 @@ chunk: 60
 page: 14
 text: odoslaný alebo prepravený, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť bezprostredne predtým, ako sa odoslanie alebo preprava tovaru do iného štátu začala. Ak dôjde k zničeniu, strate alebo ku krádeži tovaru, posudzuje sa, že podmienky podľa odsekov 1 a 5 sa prestali plniť v deň, keď došlo k zničeniu, strate alebo ku krádeži tovaru; ak tento deň nie je možné určiť, v deň, keď sa zistilo, že tovar je zničený alebo chýba. § 9 Dodanie služby (1) Dodaním služby je každé plnenie, ktoré nie je dodaním tovaru podľa § 8, vrátane a) prevodu práva k nehmotnému majetku vrátane poskytnutia práva k priemyselnému vlastníctvu alebo inému duševnému vlastníctvu, b) poskytnutia práva užívať hmotný majetok, c) prijatia záväzku zdržať sa konania alebo strpieť konanie alebo stav, d) služby dodanej na základe poverenia alebo rozhodnutia vydaného štátnym orgánom alebo na základe zákona. (2) Užívanie hmotného majetku, ktorý je vo vlastníctve platiteľa a pri ktorého kúpe alebo
 relationships:
-  Paragraf 9 -> [DEFINUJE] -> Dodanie Sluzby
+  Paragraf § 9 -> [DEFINUJE] -> Dodanie Sluzby
   Dodanie Sluzby -> [ROZUMIE_SA] -> Plnenie Ktore Nie Je Dodanim Tovaru
   Plnenie Ktore Nie Je Dodanim Tovaru -> [NEVZTAHUJE_SA_NA] -> Dodanie Tovaru
-  Dodanie Tovaru -> [JE_PODLA] -> Paragraf 8
+  Dodanie Tovaru -> [JE_PODLA] -> Paragraf § 8
 
   Dodanie Sluzby -> [ZAHRNUJE] -> Prevod Prava K Nehmotnemu Majetku
   Prevod Prava K Nehmotnemu Majetku -> [ZAHRNUJE] -> Poskytnutie Prava K Priemyselnemu Vlastnictvu
@@ -1015,8 +1059,8 @@ relationships:
   Prestanie Plnenia Podmienok Podla Odsekov 1 A 5 -> [MA_DATUM] -> Den Zistenia Ze Tovar Je Zniceny Alebo Chyba
 
 nodes:
-  Paragraf: Paragraf 9
-  Paragraf: Paragraf 8
+  Paragraf: Paragraf § 9
+  Paragraf: Paragraf § 8
   Cinnost: Dodanie Sluzby
   Cinnost: Plnenie Ktore Nie Je Dodanim Tovaru
   Cinnost: Dodanie Tovaru
@@ -1047,14 +1091,14 @@ chunk: 7
 page: 2
 text: ktoré je predmetom dane podľa § 2, uskutočneným zdaniteľnou osobou, ktorá má v tuzemsku výlučne prevádzkareň, ak nejde o malý podnik zahraničnej osoby, ktorý uplatňuje oslobodenie od dane podľa § 68f ods. 2. (2) Zdaniteľná osoba podľa odseku 1 je povinná podať daňovému úradu žiadosť o registráciu pre daň do piatich pracovných dní a) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. a), b) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak nebola povinná podať žiadosť o registráciu pre daň podľa písmena a), c) odo dňa, v ktorom bol presiahnutý obrat podľa odseku 1 písm. b), ak bol tento obrat presiahnutý po presiahnutí obratu podľa odseku 1 písm. a) do uplynutia lehoty na podanie žiadosti o registráciu pre daň podľa písmena a) a žiadosť o registráciu pre daň podľa písmena a) nebola ešte podaná, d) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i) alebo e) odo dňa, keď sa stala platiteľom podľa odseku 1 písm. c) až i), ak táto skutočnosť nastala po
 relationships:
-  Predmet Dane -> [JE_PODLA] -> Paragraf 2
+  Predmet Dane -> [JE_PODLA] -> Paragraf § 2
 
   Zdanitelna Osoba -> [MA_PREVADZKAREN] -> Prevadzkaren
   Prevadzkaren -> [NACHADZA_SA_V] -> Tuzemsko
 
   Maly Podnik Zahranicnej Osoby -> [MA_NAROK_NA] -> Oslobodenie Od Dane Podla Paragrafu 68f Odsek 2
   Oslobodenie Od Dane Podla Paragrafu 68f Odsek 2 -> [JE_PODLA] -> Odsek 2
-  Paragraf 68f -> [MA_ODSEK] -> Odsek 2
+  Paragraf § 68f -> [MA_ODSEK] -> Odsek 2
 
   Zdanitelna Osoba Podla Odseku 1 -> [JE_PODLA] -> Odsek 1
   Zdanitelna Osoba Podla Odseku 1 -> [MA_POVINNOST] -> Podanie Ziadosti O Registraciu Pre Dan
@@ -1069,21 +1113,27 @@ relationships:
 
   Den Presiahnutia Obratu Podla Odseku 1 Pismeno A -> [TYKA_SA] -> Obrat Podla Odseku 1 Pismeno A
   Den Presiahnutia Obratu Podla Odseku 1 Pismeno B -> [TYKA_SA] -> Obrat Podla Odseku 1 Pismeno B
-  Obrat Podla Odseku 1 Pismeno A -> [JE_PODLA] -> Pismeno A
-  Obrat Podla Odseku 1 Pismeno B -> [JE_PODLA] -> Pismeno B
+  Obrat Podla Odseku 1 Pismeno A -> [JE_PODLA] -> Pismeno a)
+  Obrat Podla Odseku 1 Pismeno B -> [JE_PODLA] -> Pismeno b)
 
   Den Presiahnutia Obratu Podla Odseku 1 Pismeno B -> [MA_PODMIENKU] -> Nepodanie Povinnosti Podat Ziadost Podla Pismena A
   Den Presiahnutia Obratu Podla Odseku 1 Pismeno B -> [MA_PODMIENKU] -> Presiahnutie Obratu Po Presiahnuti Obratu Podla Pismena A Pred Uplynutim Lehoty
   Presiahnutie Obratu Po Presiahnuti Obratu Podla Pismena A Pred Uplynutim Lehoty -> [TYKA_SA] -> Lehota Na Podanie Ziadosti Podla Pismena A
 
 nodes:
-  Paragraf: Paragraf 2
-  Paragraf: Paragraf 68f
+  Paragraf: Paragraf § 2
+  Paragraf: Paragraf § 68f
   Odsek: Odsek 1
   Odsek: Odsek 2
-  Pismeno: Pismeno A
-  Pismeno: Pismeno B
-  Pismeno: Pismeno C Az I
+  Pismeno: Pismeno a)
+  Pismeno: Pismeno b)
+  Pismeno: Pismeno c)
+  Pismeno: Pismeno d)
+  Pismeno: Pismeno e)
+  Pismeno: Pismeno f)
+  Pismeno: Pismeno g)
+  Pismeno: Pismeno h)
+  Pismeno: Pismeno i)
   Dan: Predmet Dane
   ZdanitelnaOsoba: Zdanitelna Osoba
   ZdanitelnaOsoba: Zdanitelna Osoba Podla Odseku 1
@@ -1135,7 +1185,7 @@ relationships:
   Nadobudnutie Tovaru Na Uzemi Europskej Unie -> [TYKA_SA] -> Tovar
   Nadobudnutie Tovaru Na Uzemi Europskej Unie -> [MA_MIESTO] -> Uzemie Europskej Unie
   Nadobudnutie Tovaru Na Uzemi Europskej Unie -> [NIE_JE_PREDMETOM] -> Dan
-  Nadobudnutie Tovaru Na Uzemi Europskej Unie -> [JE_PODLA] -> Paragraf 11 Odsek 4
+  Nadobudnutie Tovaru Na Uzemi Europskej Unie -> [JE_PODLA] -> Paragraf § 11 Odsek 4
 
   Tovar -> [NEVZTAHUJE_SA_NA] -> Novy Dopravny Prostriedok
   Tovar -> [NEVZTAHUJE_SA_NA] -> Tovar Dodany S Instalaciou Alebo Montazou
@@ -1166,7 +1216,7 @@ nodes:
   Podmienka: Dodanie Pre Osobu Inu Ako Zdanitelnu Osobu
   Cinnost: Nadobudnutie Tovaru Na Uzemi Europskej Unie
   Dan: Dan
-  Paragraf: Paragraf 11 Odsek 4
+  Odsek: Paragraf § 11 Odsek 4
   Vozidlo: Novy Dopravny Prostriedok
   Cinnost: Instalacia Alebo Montaz Uskutocnena Dodavatelom Alebo Na Jeho Ucet
   Ucet: Ucet Dodavatela

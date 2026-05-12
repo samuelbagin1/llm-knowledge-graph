@@ -19,9 +19,9 @@ relationships:
   Dodanie Stavby -> [VYPLNYVA_Z] -> Zmluva O Dielo Alebo Ina Obdobna Zmluva
   Den Dodania Stavby -> [POVAZUJE_SA_ZA] -> Den Odovzdania Stavby
 
-  Dodanie Tovaru Podla Paragrafu 8 Odseku 1 Pismena C -> [JE_PODLA] -> Pismeno C Paragrafu 8 Odseku 1
-  Paragraf 8 -> [OBSAHUJE] -> Odsek 1 Paragrafu 8
-  Odsek 1 Paragrafu 8 -> [OBSAHUJE] -> Pismeno C Paragrafu 8 Odseku 1
+  Dodanie Tovaru Podla Paragrafu 8 Odseku 1 Pismena C -> [JE_PODLA] -> Paragraf § 8 Odsek 1 Pismeno c)
+  Paragraf § 8 -> [OBSAHUJE] -> Paragraf § 8 Odsek 1
+  Paragraf § 8 Odsek 1 -> [OBSAHUJE] -> Paragraf § 8 Odsek 1 Pismeno c)
   Den Dodania Tovaru Podla Paragrafu 8 Odseku 1 Pismena C -> [POVAZUJE_SA_ZA] -> Den Odovzdania Tovaru Najomcovi
 
 nodes:
@@ -50,9 +50,9 @@ nodes:
   Datum: Den Dodania Tovaru Podla Paragrafu 8 Odseku 1 Pismena C
   Datum: Den Odovzdania Tovaru Najomcovi
   Subjekt: Najomca
-  Paragraf: Paragraf 8
-  Odsek: Odsek 1 Paragrafu 8
-  Pismeno: Pismeno C Paragrafu 8 Odseku 1
+  Paragraf: Paragraf § 8
+  Odsek: Paragraf § 8 Odsek 1
+  Pismeno: Paragraf § 8 Odsek 1 Pismeno c)
 
 
 chunk: 109
@@ -75,24 +75,24 @@ relationships:
   Vyska Zalohy Za Zalohovany Obal -> [VZTAHUJE_SA_NA] -> Zalohovany Obal
   Vyska Zalohy Za Zalohovany Obal -> [MA_DATUM] -> Posledny Den Prislusneho Kalendarneho Roka
 
-  Paragraf 8 -> [OBSAHUJE] -> Odsek 7 Paragrafu 8
+  Paragraf § 8 -> [OBSAHUJE] -> Paragraf § 8 Odsek 7
   Odsek 11 -> [UPRAVUJE] -> Den Dodania Tovaru A Den Vzniku Danovej Povinnosti
   Zdanitelna Osoba Ulahcujuca Dodanie Tovaru -> [VYKONAVA] -> Ulahcenie Dodania Tovaru Na Uzemi Europskej Unie
   Zdanitelna Osoba Ulahcujuca Dodanie Tovaru -> [VYKONAVA] -> Ulahcenie Predaja Tovaru Na Dialku
-  Ulahcenie Dodania Tovaru Na Uzemi Europskej Unie -> [JE_PODLA] -> Odsek 7 Paragrafu 8
-  Ulahcenie Predaja Tovaru Na Dialku -> [JE_PODLA] -> Odsek 7 Paragrafu 8
+  Ulahcenie Dodania Tovaru Na Uzemi Europskej Unie -> [JE_PODLA] -> Paragraf § 8 Odsek 7
+  Ulahcenie Predaja Tovaru Na Dialku -> [JE_PODLA] -> Paragraf § 8 Odsek 7
   Dodanie Tovaru Zdanitelnou Osobou Ulahcujucou Dodanie -> [MA_DATUM] -> Den Prijatia Platby
   Dodanie Tovaru Tejto Zdanitelnej Osobe -> [MA_DATUM] -> Den Prijatia Platby
   Den Dodania Tovaru -> [POVAZUJE_SA_ZA] -> Den Prijatia Platby
   Den Vzniku Danovej Povinnosti -> [POVAZUJE_SA_ZA] -> Den Prijatia Platby
 
-  Paragraf 20 -> [MA_NAZOV] -> Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu
-  Paragraf 20 -> [OBSAHUJE] -> Odsek 1 Paragrafu 20
-  Odsek 1 Paragrafu 20 -> [OBSAHUJE] -> Pismeno A Odseku 1 Paragrafu 20
-  Odsek 1 Paragrafu 20 -> [UPRAVUJE] -> Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu
+  Paragraf § 20 -> [MA_NAZOV] -> Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu
+  Paragraf § 20 -> [OBSAHUJE] -> Paragraf § 20 Odsek 1
+  Paragraf § 20 Odsek 1 -> [OBSAHUJE] -> Paragraf § 20 Odsek 1 Pismeno a)
+  Paragraf § 20 Odsek 1 -> [UPRAVUJE] -> Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu
   Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu -> [VZNIKA_PRI] -> Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu
   Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu -> [MA_DATUM] -> 15 Den Kalendarneho Mesiaca Nasledujuceho Po Mesiaci Nadobudnutia Tovaru
-  Pismeno A Odseku 1 Paragrafu 20 -> [VYMEDZUJE] -> 15 Den Kalendarneho Mesiaca Nasledujuceho Po Mesiaci Nadobudnutia Tovaru
+  Paragraf § 20 Odsek 1 Pismeno a) -> [VYMEDZUJE] -> 15 Den Kalendarneho Mesiaca Nasledujuceho Po Mesiaci Nadobudnutia Tovaru
   Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu -> [MA_MIESTO] -> Tuzemsko
   Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu -> [TYKA_SA] -> Iny Clensky Stat
 
@@ -115,8 +115,8 @@ nodes:
   Datum: Posledny Den Prislusneho Kalendarneho Roka
   Obdobie: Prislusny Kalendarneho Rok
 
-  Paragraf: Paragraf 8
-  Odsek: Odsek 7 Paragrafu 8
+  Paragraf: Paragraf § 8
+  Odsek: Paragraf § 8 Odsek 7
   Odsek: Odsek 11
   ZdanitelnaOsoba: Zdanitelna Osoba Ulahcujuca Dodanie Tovaru
   Cinnost: Ulahcenie Dodania Tovaru Na Uzemi Europskej Unie
@@ -128,10 +128,10 @@ nodes:
   Datum: Den Dodania Tovaru
   Datum: Den Vzniku Danovej Povinnosti
 
-  Paragraf: Paragraf 20
+  Paragraf: Paragraf § 20
   Hodnota: Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu
-  Odsek: Odsek 1 Paragrafu 20
-  Pismeno: Pismeno A Odseku 1 Paragrafu 20
+  Odsek: Paragraf § 20 Odsek 1
+  Pismeno: Paragraf § 20 Odsek 1 Pismeno a)
   Povinnost: Danova Povinnost Pri Nadobudnuti Tovaru V Tuzemsku Z Ineho Clenskeho Statu
   Cinnost: Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu
   Datum: 15 Den Kalendarneho Mesiaca Nasledujuceho Po Mesiaci Nadobudnutia Tovaru
@@ -143,10 +143,15 @@ page: 3
 text: odseku 8 písm. a), pričom identifikačné číslo pre daň nadobúda platnosť dňom, keď sa zdaniteľná osoba stala platiteľom, 2. zdaniteľná osoba sa stala platiteľom podľa odseku 1 písm. c) až h) a doručenia dokladov podľa odseku 3, pričom identifikačné číslo pre daň nadobúda platnosť dňom, keď sa zdaniteľná osoba stala platiteľom. (5) Zdaniteľná osoba, ktorá podala žiadosť o registráciu pre daň podľa odseku 2 písm. a), je povinná bezodkladne oznámiť daňovému úradu skutočnosť, že sa stala platiteľom podľa odseku 1 písm. b) až i) alebo podľa § 48c ods. 5 do 31. decembra prebiehajúceho kalendárneho roka; v oznámení uvedie deň, keď k tejto skutočnosti došlo. Ak daňový úrad ku dňu oznámenia podľa prvej vety ešte nevydal rozhodnutie podľa odseku 4 písm. a), vydá rozhodnutie o registrácii pre daň podľa odseku 4 písm. b). (6) Platiteľom sa môže stať aj zdaniteľná osoba, ktorá má v tuzemsku sídlo, miesto podnikania, a ak nemá takéto miesto, ale má bydlisko v tuzemsku alebo sa v tuzemsku obvykle zdržiava, pred
 relationships:
   Zdanitelna Osoba -> [PODAVA] -> Ziadost O Registraciu Pre Dan
-  Ziadost O Registraciu Pre Dan -> [JE_PODLA] -> Odsek 2 Pismeno A
+  Ziadost O Registraciu Pre Dan -> [JE_PODLA] -> Odsek 2 Pismeno a)
 
   Zdanitelna Osoba -> [STAVA_SA] -> Platitel
-  Platitel -> [JE_PODLA] -> Odsek 1 Pismena C Az H
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno c)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno d)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno e)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno f)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno g)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno h)
   Doručenie Dokladov -> [JE_PODLA] -> Odsek 3
   Identifikacne Cislo Pre Dan -> [PLATI_OD] -> Den Ked Sa Zdanitelna Osoba Stala Platitelom
 
@@ -154,11 +159,18 @@ relationships:
   Oznamenie Skutocnosti Ze Sa Stala Platitelom -> [DORUCUJE] -> Danovy Urad
   Oznamenie Skutocnosti Ze Sa Stala Platitelom -> [MA_OBSAH] -> Den Ked Sa Zdanitelna Osoba Stala Platitelom
   Oznamenie Skutocnosti Ze Sa Stala Platitelom -> [MA_LEHOTU] -> Do 31 Decembra Prebiehajuceho Kalendarneho Roka
-  Platitel -> [JE_PODLA] -> Odsek 1 Pismena B Az I
-  Platitel -> [JE_PODLA] -> Paragraf 48c Odsek 5
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno b)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno c)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno d)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno e)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno f)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno g)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno h)
+  Platitel -> [JE_PODLA] -> Odsek 1 Pismeno i)
+  Platitel -> [JE_PODLA] -> Paragraf § 48c Odsek 5
 
   Danovy Urad -> [VYDAVA] -> Rozhodnutie O Registracii Pre Dan
-  Rozhodnutie O Registracii Pre Dan -> [JE_PODLA] -> Odsek 4 Pismeno B
+  Rozhodnutie O Registracii Pre Dan -> [JE_PODLA] -> Odsek 4 Pismeno b)
   Vydanie Rozhodnutia O Registracii Pre Dan -> [MA_PODMIENKU] -> Nevydanie Rozhodnutia Podla Odseku 4 Pismena A Ku Dnu Oznamenia
 
   Zdanitelna Osoba -> [MA_SIDLO] -> Sidlo V Tuzemsku
@@ -183,12 +195,18 @@ nodes:
   Odsek: Odsek 3
   Odsek: Odsek 4
   Odsek: Odsek 8
-  Pismeno: Odsek 2 Pismeno A
-  Pismeno: Odsek 4 Pismeno A
-  Pismeno: Odsek 4 Pismeno B
-  Pismeno: Odsek 1 Pismena B Az I
-  Pismeno: Odsek 1 Pismena C Az H
-  Odsek: Paragraf 48c Odsek 5
+  Pismeno: Odsek 2 Pismeno a)
+  Pismeno: Odsek 4 Pismeno a)
+  Pismeno: Odsek 4 Pismeno b)
+  Pismeno: Odsek 1 Pismeno b)
+  Pismeno: Odsek 1 Pismeno c)
+  Pismeno: Odsek 1 Pismeno d)
+  Pismeno: Odsek 1 Pismeno e)
+  Pismeno: Odsek 1 Pismeno f)
+  Pismeno: Odsek 1 Pismeno g)
+  Pismeno: Odsek 1 Pismeno h)
+  Pismeno: Odsek 1 Pismeno i)
+  Odsek: Paragraf § 48c Odsek 5
   Sidlo: Sidlo V Tuzemsku
   Lokacia: Miesto Podnikania V Tuzemsku
   Adresa: Bydlisko V Tuzemsku
@@ -277,7 +295,12 @@ nodes:
   Odsek: Odsek 2
   Odsek: Odsek 3
   Odsek: Odsek 12
-  Odsek: Odseky 6 Az 12
+  Odsek: Odsek 6
+  Odsek: Odsek 7
+  Odsek: Odsek 8
+  Odsek: Odsek 9
+  Odsek: Odsek 10
+  Odsek: Odsek 11
   Tovar: Pohonne Latky Ine Ako V Odseku 12
   Majetok: Osobna Batozina
   Majetok: Osobna Batozina Cestujuceho
@@ -319,52 +342,58 @@ text: (9) Platiteľ, ktorý je zahraničnou osobou a spĺňa podmienky na vrát
 relationships:
   Platitel -> [JE_TYPOM] -> Zahranicna Osoba
   Platitel -> [SPLNA_PODMIENKY] -> Podmienky Na Vratenie Dane
-  Podmienky Na Vratenie Dane -> [JE_PODLA] -> Paragraf 55a
-  Podmienky Na Vratenie Dane -> [JE_PODLA] -> Paragraf 56
+  Podmienky Na Vratenie Dane -> [JE_PODLA] -> Paragraf § 55a
+  Podmienky Na Vratenie Dane -> [JE_PODLA] -> Paragraf § 56
 
   Platitel -> [NEMA_NAROK_NA] -> Odpocitanie Dane Z Tovarov A Sluzieb Prostrednictvom Danoveho Priznania
   Odpocitanie Dane Z Tovarov A Sluzieb Prostrednictvom Danoveho Priznania -> [VZTAHUJE_SA_NA] -> Danove Priznanie
   Odpocitanie Dane Z Tovarov A Sluzieb Prostrednictvom Danoveho Priznania -> [MA_VYNIMKU] -> Odpocitanie Dane Z Tovarov A Sluzieb Pouzitych Na Dodavky Tovarov A Sluzieb Podla Paragrafu 69 Odseku 1
   Odpocitanie Dane Z Tovarov A Sluzieb Prostrednictvom Danoveho Priznania -> [MA_VYNIMKU] -> Odpocitanie Dane Uplatnenej Platitelom Na Tovary A Sluzby Pri Ktorych Je Osobou Povinnou Platit Dan
   Platitel -> [JE_POVINNY_PLATIT] -> Dan
-  Dan -> [JE_PODLA] -> Paragraf 69 Odsek 1
+  Dan -> [JE_PODLA] -> Paragraf § 69 Odsek 1
 
   Zahranicna Osoba -> [VYKONAVA] -> Uplatnovanie Osobitnej Upravy Podla Paragrafov 68a Az 68c
-  Uplatnovanie Osobitnej Upravy Podla Paragrafov 68a Az 68c -> [JE_PODLA] -> Paragrafy 68a Az 68c
+  Uplatnovanie Osobitnej Upravy Podla Paragrafov 68a Az 68c -> [JE_PODLA] -> Paragraf § 68a
+  Uplatnovanie Osobitnej Upravy Podla Paragrafov 68a Az 68c -> [JE_PODLA] -> Paragraf § 68b
+  Uplatnovanie Osobitnej Upravy Podla Paragrafov 68a Az 68c -> [JE_PODLA] -> Paragraf § 68c
   Zahranicna Osoba -> [VYKONAVA] -> Uplatnovanie Osobitnej Upravy Podla Zakona Ineho Clenskeho Statu
   Uplatnovanie Osobitnej Upravy Podla Zakona Ineho Clenskeho Statu -> [JE_PODLA] -> Ustanovenia Zakona Platneho V Inom Clenskom State
-  Ustanovenia Zakona Platneho V Inom Clenskom State -> [SUVISI_S] -> Paragrafy 68a Az 68c
+  Ustanovenia Zakona Platneho V Inom Clenskom State -> [SUVISI_S] -> Paragraf § 68a
+  Ustanovenia Zakona Platneho V Inom Clenskom State -> [SUVISI_S] -> Paragraf § 68b
+  Ustanovenia Zakona Platneho V Inom Clenskom State -> [SUVISI_S] -> Paragraf § 68c
 
   Zahranicna Osoba -> [VYKONAVA] -> Cinnosti V Tuzemsku
   Osobitne Upravy -> [NEVZTAHUJE_SA_NA] -> Cinnosti V Tuzemsku
   Cinnosti V Tuzemsku -> [MA_MIESTO] -> Tuzemsko
   Zahranicna Osoba -> [MA_STATUS] -> Platitel Registrovany Podla Paragrafu 5
-  Platitel Registrovany Podla Paragrafu 5 -> [JE_PODLA] -> Paragraf 5
+  Platitel Registrovany Podla Paragrafu 5 -> [JE_PODLA] -> Paragraf § 5
 
   Zahranicna Osoba -> [MA_PRAVO] -> Odpocitanie Dane Uplatnenej Pri Tovaroch A Sluzbach
   Odpocitanie Dane Uplatnenej Pri Tovaroch A Sluzbach -> [VZTAHUJE_SA_NA] -> Tovary A Sluzby Suvisiace S Dodanim Tovarov A Sluzieb Podla Paragrafu 68 Odseku 1
   Tovary A Sluzby Suvisiace S Dodanim Tovarov A Sluzieb Podla Paragrafu 68 Odseku 1 -> [TYKA_SA] -> Dodanie Tovarov A Sluzieb Podla Paragrafu 68 Odseku 1
-  Dodanie Tovarov A Sluzieb Podla Paragrafu 68 Odseku 1 -> [JE_PODLA] -> Paragraf 68 Odsek 1
+  Dodanie Tovarov A Sluzieb Podla Paragrafu 68 Odseku 1 -> [JE_PODLA] -> Paragraf § 68 Odsek 1
 
-  Paragraf 49a -> [OBSAHUJE] -> Odsek 1 Paragrafu 49a
+  Paragraf § 49a -> [OBSAHUJE] -> Paragraf § 49a Odsek 1
   Dan Uplatnena Na Investicny Majetok -> [VZTAHUJE_SA_NA] -> Investicny Majetok
-  Investicny Majetok -> [JE_PODLA] -> Paragraf 54 Odsek 2 Pismeno B
-  Investicny Majetok -> [JE_PODLA] -> Paragraf 54 Odsek 2 Pismeno C
+  Investicny Majetok -> [JE_PODLA] -> Paragraf § 54 Odsek 2 Pismeno b)
+  Investicny Majetok -> [JE_PODLA] -> Paragraf § 54 Odsek 2 Pismeno c)
 
 nodes:
   ZdanitelnaOsoba: Platitel
   Osoba: Zahranicna Osoba
   Podmienka: Podmienky Na Vratenie Dane
-  Paragraf: Paragraf 55a
-  Paragraf: Paragraf 56
-  Odsek: Paragraf 69 Odsek 1
-  Paragraf: Paragrafy 68a Az 68c
-  Paragraf: Paragraf 5
-  Odsek: Paragraf 68 Odsek 1
-  Paragraf: Paragraf 49a
-  Odsek: Odsek 1 Paragrafu 49a
-  Pismeno: Paragraf 54 Odsek 2 Pismeno B
-  Pismeno: Paragraf 54 Odsek 2 Pismeno C
+  Paragraf: Paragraf § 55a
+  Paragraf: Paragraf § 56
+  Odsek: Paragraf § 69 Odsek 1
+  Paragraf: Paragraf § 68a
+  Paragraf: Paragraf § 68b
+  Paragraf: Paragraf § 68c
+  Paragraf: Paragraf § 5
+  Odsek: Paragraf § 68 Odsek 1
+  Paragraf: Paragraf § 49a
+  Odsek: Paragraf § 49a Odsek 1
+  Pismeno: Paragraf § 54 Odsek 2 Pismeno b)
+  Pismeno: Paragraf § 54 Odsek 2 Pismeno c)
 
   Pravo: Odpocitanie Dane Z Tovarov A Sluzieb Prostrednictvom Danoveho Priznania
   Pravo: Odpocitanie Dane Z Tovarov A Sluzieb Pouzitych Na Dodavky Tovarov A Sluzieb Podla Paragrafu 69 Odseku 1
@@ -392,14 +421,14 @@ chunk: 246
 page: 62
 text: 222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 63 podľa § 25a ods. 6, a to vo výške zodpovedajúcej sume protihodnoty, ktorá bola zaplatená za dodanie tovaru alebo služby. (5) Pri oprave opravenej odpočítanej dane podľa odseku 4 platiteľ zohľadní pomerné odpočítanie dane a vykonané úpravy odpočítanej dane; ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 z dôvodu, že za dodanie tovaru alebo služby úplne nezaplatil, zohľadní aj úpravy odpočítanej dane, ktoré by bol povinný vykonať, ak by neopravil odpočítanú daň podľa odseku 1 alebo odseku 2. (6) Ak platiteľ opravil odpočítanú daň podľa odseku 1 alebo odseku 2 alebo opravil opravenú odpočítanú daň podľa odseku 4, zohľadní tieto opravy pri úprave odpočítanej dane podľa § 54, § 54a alebo § 54d. (7) Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu opravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).
 relationships:
-  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf 25a
-  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf 54
-  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf 54a
-  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf 54d
-  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf 70
+  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf § 25a
+  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf § 54
+  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf § 54a
+  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf § 54d
+  222/2004 Z. z. Zbierka zakonov Slovenskej republiky -> [OBSAHUJE] -> Paragraf § 70
 
   Suma Protihodnoty Zaplatena Za Dodanie Tovaru Alebo Sluzby -> [VZTAHUJE_SA_NA] -> Dodanie Tovaru Alebo Sluzby
-  Suma Protihodnoty Zaplatena Za Dodanie Tovaru Alebo Sluzby -> [JE_PODLA] -> Paragraf 25a Odsek 6
+  Suma Protihodnoty Zaplatena Za Dodanie Tovaru Alebo Sluzby -> [JE_PODLA] -> Paragraf § 25a Odsek 6
 
   Oprava Opravenej Odpocitanej Dane -> [JE_PODLA] -> Odsek 4
   Platitel -> [VYKONAVA] -> Oprava Opravenej Odpocitanej Dane
@@ -414,28 +443,28 @@ relationships:
   Platitel -> [VYKONAVA] -> Zohladnenie Oprav Pri Uprave Odpocitanej Dane
   Zohladnenie Oprav Pri Uprave Odpocitanej Dane -> [VZTAHUJE_SA_NA] -> Oprava Odpocitanej Dane
   Zohladnenie Oprav Pri Uprave Odpocitanej Dane -> [VZTAHUJE_SA_NA] -> Oprava Opravenej Odpocitanej Dane
-  Uprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf 54
-  Uprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf 54a
-  Uprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf 54d
+  Uprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 54
+  Uprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 54a
+  Uprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 54d
 
   Platitel -> [MA_POVINNOST] -> Uvedenie Oprav V Zaznamoch
   Uvedenie Oprav V Zaznamoch -> [VZTAHUJE_SA_NA] -> Oprava Odpocitanej Dane
   Uvedenie Oprav V Zaznamoch -> [VZTAHUJE_SA_NA] -> Oprava Opravenej Odpocitanej Dane
   Uvedenie Oprav V Zaznamoch -> [VZTAHUJE_SA_NA] -> Zaznamy Podla Paragrafu 70 Odseku 2 Pismena J
-  Zaznamy Podla Paragrafu 70 Odseku 2 Pismena J -> [JE_PODLA] -> Paragraf 70 Odsek 2 Pismeno J
+  Zaznamy Podla Paragrafu 70 Odseku 2 Pismena J -> [JE_PODLA] -> Paragraf § 70 Odsek 2 Pismeno j)
 
 nodes:
   PravnyPredpis: 222/2004 Z. z. Zbierka zakonov Slovenskej republiky
-  Paragraf: Paragraf 25a
-  Paragraf: Paragraf 54
-  Paragraf: Paragraf 54a
-  Paragraf: Paragraf 54d
-  Paragraf: Paragraf 70
-  Odsek: Paragraf 25a Odsek 6
+  Paragraf: Paragraf § 25a
+  Paragraf: Paragraf § 54
+  Paragraf: Paragraf § 54a
+  Paragraf: Paragraf § 54d
+  Paragraf: Paragraf § 70
+  Odsek: Paragraf § 25a Odsek 6
   Odsek: Odsek 1
   Odsek: Odsek 2
   Odsek: Odsek 4
-  Pismeno: Paragraf 70 Odsek 2 Pismeno J
+  Pismeno: Paragraf § 70 Odsek 2 Pismeno j)
 
   ZdanitelnaOsoba: Platitel
   Suma: Suma Protihodnoty Zaplatena Za Dodanie Tovaru Alebo Sluzby
@@ -455,8 +484,8 @@ chunk: 261
 page: 65
 text: dane, akoby bol používaný len na podnikanie. § 55 Odpočítanie dane pri registrácii platiteľa a pri oneskorenej registrácii platiteľa (1) Platiteľ môže výlučne v prvom zdaňovacom období uplatniť právo na odpočítanie dane viažucej sa k tovarom a službám, ktoré nadobudol alebo prijal v postavení zdaniteľnej osoby pred dňom, keď sa stal platiteľom, alebo ktoré nadobudne alebo prijme v postavení platiteľa, ak daňová povinnosť vznikla podľa § 19 ods. 4 pred dňom, keď sa stal platiteľom, ak tieto prijaté plnenia okrem zásob neboli zahrnuté do daňových výdavkov podľa osobitného predpisu27a) v kalendárnych rokoch predchádzajúcich kalendárnemu roku, v ktorom sa stal platiteľom. Daň pri majetku, ktorý je podľa osobitného predpisu odpisovaným majetkom,26) platiteľ zníži o pomernú časť dane zodpovedajúcu odpisom; platiteľ, ktorý nie je účtovnou jednotkou, použije pri znížení odpočítateľnej dane postup ako platiteľ, ktorý je účtovnou jednotkou.
 relationships:
-  Zakon O Dani Z Pridanej Hodnoty -> [OBSAHUJE] -> Paragraf 55
-  Paragraf 55 -> [MA_NAZOV] -> Odpocitanie Dane Pri Registracii Platitela A Pri Oneskorenej Registracii Platitela
+  Zakon O Dani Z Pridanej Hodnoty -> [OBSAHUJE] -> Paragraf § 55
+  Paragraf § 55 -> [MA_NAZOV] -> Odpocitanie Dane Pri Registracii Platitela A Pri Oneskorenej Registracii Platitela
 
   Platitel -> [MA_PRAVO] -> Pravo Na Odpocitanie Dane
   Pravo Na Odpocitanie Dane -> [MA_OBDOBIE] -> Prve Zdanovacie Obdobie
@@ -468,7 +497,7 @@ relationships:
 
   Platitel -> [NADOBUDA] -> Tovary A Sluzby Nadobudnute Alebo Prijate V Postaveni Platitela
   Tovary A Sluzby Nadobudnute Alebo Prijate V Postaveni Platitela -> [MA_PODMIENKU] -> Danova Povinnost Vznikla Podla Paragrafu 19 Odseku 4 Pred Dnom Ked Sa Zdanitelna Osoba Stala Platitelom
-  Danova Povinnost -> [JE_PODLA] -> Paragraf 19 Odsek 4
+  Danova Povinnost -> [JE_PODLA] -> Paragraf § 19 Odsek 4
 
   Prijate Plnenia Okrem Zasob -> [NESPLNA_PODMIENKY] -> Zahrnutie Do Danovych Vydavkov
   Zahrnutie Do Danovych Vydavkov -> [JE_PODLA] -> Osobitny Predpis
@@ -485,7 +514,7 @@ relationships:
 
 nodes:
   PravnyPredpis: Zakon O Dani Z Pridanej Hodnoty
-  Paragraf: Paragraf 55
+  Paragraf: Paragraf § 55
   Hodnota: Odpocitanie Dane Pri Registracii Platitela A Pri Oneskorenej Registracii Platitela
 
   ZdanitelnaOsoba: Platitel
@@ -501,7 +530,7 @@ nodes:
   Datum: Pred Dnom Ked Sa Zdanitelna Osoba Stala Platitelom
   Podmienka: Danova Povinnost Vznikla Podla Paragrafu 19 Odseku 4 Pred Dnom Ked Sa Zdanitelna Osoba Stala Platitelom
   Povinnost: Danova Povinnost
-  Odsek: Paragraf 19 Odsek 4
+  Odsek: Paragraf § 19 Odsek 4
 
   Cinnost: Prijate Plnenia Okrem Zasob
   Tovar: Zasoby
@@ -528,13 +557,13 @@ relationships:
   Desat Rokov Od Konca Kalendarneho Roka -> [PLATI_OD] -> Koniec Kalendarneho Roka V Ktorom Bola Vratena Dan Uplatnena V Danovom Priznani
   Platitel -> [VYKONAVA] -> Uplatnenie Vratenej Dane V Danovom Priznani
 
-  Poverena Osoba -> [JE_PODLA] -> Paragraf 59 Odsek 4 Pismeno C
+  Poverena Osoba -> [JE_PODLA] -> Paragraf § 59 Odsek 4 Pismeno c)
   Poverena Osoba -> [VYKONAVA] -> Vratenie Dane Cestujucemu
   Vratenie Dane Cestujucemu -> [VZTAHUJE_SA_NA] -> Cestujuci
   Vratenie Dane Cestujucemu -> [MA_PODMIENKU] -> Overenie Opravnenosti Naroku Na Vratenie Dane
-  Overenie Opravnenosti Naroku Na Vratenie Dane -> [JE_PODLA] -> Paragraf 59 Odsek 1
-  Overenie Opravnenosti Naroku Na Vratenie Dane -> [JE_PODLA] -> Paragraf 59 Odsek 3
-  Overenie Opravnenosti Naroku Na Vratenie Dane -> [JE_PODLA] -> Paragraf 59 Odsek 6
+  Overenie Opravnenosti Naroku Na Vratenie Dane -> [JE_PODLA] -> Paragraf § 59 Odsek 1
+  Overenie Opravnenosti Naroku Na Vratenie Dane -> [JE_PODLA] -> Paragraf § 59 Odsek 3
+  Overenie Opravnenosti Naroku Na Vratenie Dane -> [JE_PODLA] -> Paragraf § 59 Odsek 6
   Overenie Opravnenosti Naroku Na Vratenie Dane -> [VYCHADZA_Z] -> Elektronicky Predlozeny Doklad O Kupe Tovaru
   Overenie Opravnenosti Naroku Na Vratenie Dane -> [VYCHADZA_Z] -> Potvrdenie Vyvozu Tovaru Colnym Uradom
 
@@ -549,7 +578,7 @@ relationships:
   Doklady O Kupe Tovaru -> [VZTAHUJE_SA_NA] -> Dan Vratena Cestujucemu
   Zoznam Dokladov O Kupe Tovaru -> [MA_VLASTNOST] -> Clenenie Podla Cestujucich
   Zoznam Dokladov O Kupe Tovaru -> [MA_OBSAH] -> Udaje V Rozsahu Dohodnutom Podla Paragrafu 59 Odseku 5 Pismena D
-  Udaje V Rozsahu Dohodnutom Podla Paragrafu 59 Odseku 5 Pismena D -> [JE_PODLA] -> Paragraf 59 Odsek 5 Pismeno D
+  Udaje V Rozsahu Dohodnutom Podla Paragrafu 59 Odseku 5 Pismena D -> [JE_PODLA] -> Paragraf § 59 Odsek 5 Pismeno d)
 
 nodes:
   ZdanitelnaOsoba: Platitel
@@ -581,12 +610,12 @@ nodes:
   Hodnota: Clenenie Podla Cestujucich
   Hodnota: Udaje V Rozsahu Dohodnutom Podla Paragrafu 59 Odseku 5 Pismena D
 
-  Pismeno: Paragraf 59 Odsek 4 Pismeno C
-  Odsek: Paragraf 59 Odsek 1
-  Odsek: Paragraf 59 Odsek 3
-  Odsek: Paragraf 59 Odsek 6
+  Pismeno: Paragraf § 59 Odsek 4 Pismeno c)
+  Odsek: Paragraf § 59 Odsek 1
+  Odsek: Paragraf § 59 Odsek 3
+  Odsek: Paragraf § 59 Odsek 6
   Odsek: Odsek 5
-  Pismeno: Paragraf 59 Odsek 5 Pismeno D
+  Pismeno: Paragraf § 59 Odsek 5 Pismeno d)
 
 
 chunk: 327
@@ -626,15 +655,36 @@ text: (9) Zdaniteľná osoba, ktorá má povolenie na uplatňovanie osobitnej ú
 relationships:
   Odsek 9 -> [UPRAVUJE] -> Povinnost Uplatnovat Osobitnu Upravu
   Zdanitelna Osoba -> [MA_DOKLAD] -> Povolenie Na Uplatnovanie Osobitnej Upravy
-  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odseky 4 Az 25
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 4
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 5
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 6
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 7
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 8
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 9
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 10
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 11
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 12
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 13
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 14
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 15
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 16
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 17
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 18
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 19
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 20
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 21
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 22
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 23
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 24
+  Povolenie Na Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Odsek 25
 
   Zdanitelna Osoba -> [MA_POVINNOST] -> Povinnost Uplatnovat Osobitnu Upravu
   Povinnost Uplatnovat Osobitnu Upravu -> [VZTAHUJE_SA_NA] -> Vsetky Predaje Tovaru Na Dialku Podla Paragrafu 68 Odseku 1 Pismena C
   Osobitna Uprava -> [VZTAHUJE_SA_NA] -> Vsetky Predaje Tovaru Na Dialku Podla Paragrafu 68 Odseku 1 Pismena C
 
-  Vsetky Predaje Tovaru Na Dialku Podla Paragrafu 68 Odseku 1 Pismena C -> [JE_PODLA] -> Pismeno C Paragrafu 68 Odseku 1
-  Paragraf 68 -> [OBSAHUJE] -> Odsek 1 Paragrafu 68
-  Odsek 1 Paragrafu 68 -> [OBSAHUJE] -> Pismeno C Paragrafu 68 Odseku 1
+  Vsetky Predaje Tovaru Na Dialku Podla Paragrafu 68 Odseku 1 Pismena C -> [JE_PODLA] -> Paragraf § 68 Odsek 1 Pismeno c)
+  Paragraf § 68 -> [OBSAHUJE] -> Paragraf § 68 Odsek 1
+  Paragraf § 68 Odsek 1 -> [OBSAHUJE] -> Paragraf § 68 Odsek 1 Pismeno c)
 
 nodes:
   Odsek: Odsek 9
@@ -642,11 +692,31 @@ nodes:
   Povinnost: Povinnost Uplatnovat Osobitnu Upravu
   Doklad: Povolenie Na Uplatnovanie Osobitnej Upravy
   Status: Osobitna Uprava
-  Odsek: Odseky 4 Az 25
+  Odsek: Odsek 4
+  Odsek: Odsek 5
+  Odsek: Odsek 6
+  Odsek: Odsek 7
+  Odsek: Odsek 8
+  Odsek: Odsek 10
+  Odsek: Odsek 11
+  Odsek: Odsek 12
+  Odsek: Odsek 13
+  Odsek: Odsek 14
+  Odsek: Odsek 15
+  Odsek: Odsek 16
+  Odsek: Odsek 17
+  Odsek: Odsek 18
+  Odsek: Odsek 19
+  Odsek: Odsek 20
+  Odsek: Odsek 21
+  Odsek: Odsek 22
+  Odsek: Odsek 23
+  Odsek: Odsek 24
+  Odsek: Odsek 25
   Cinnost: Vsetky Predaje Tovaru Na Dialku Podla Paragrafu 68 Odseku 1 Pismena C
-  Paragraf: Paragraf 68
-  Odsek: Odsek 1 Paragrafu 68
-  Pismeno: Pismeno C Paragrafu 68 Odseku 1
+  Paragraf: Paragraf § 68
+  Odsek: Paragraf § 68 Odsek 1
+  Pismeno: Paragraf § 68 Odsek 1 Pismeno c)
 
 
 chunk: 372
@@ -672,7 +742,7 @@ relationships:
   Nasledujuce Danove Priznanie -> [MA_OBSAH] -> Zdanovacie Obdobie
   Nasledujuce Danove Priznanie -> [MA_OBSAH] -> Suma Dane Vyplyvajuca Z Opravy
 
-  Predaj Tovaru Na Dialku -> [JE_PODLA] -> Paragraf 68 Odsek 1 Pismeno C
+  Predaj Tovaru Na Dialku -> [JE_PODLA] -> Paragraf § 68 Odsek 1 Pismeno c)
   Uhrada V Inej Mene Ako V Eurach -> [MA_PODMIENKU] -> Ina Mena Ako Euro
   Oprava Sumy Dane -> [MA_PODMIENKU] -> Uhrada V Inej Mene Ako V Eurach
   Oprava Sumy Dane -> [VYCHADZA_Z] -> Kurz Podla Odseku 22
@@ -704,7 +774,7 @@ nodes:
   Suma: Suma Dane Vyplyvajuca Z Opravy
 
   Cinnost: Predaj Tovaru Na Dialku
-  Pismeno: Paragraf 68 Odsek 1 Pismeno C
+  Pismeno: Paragraf § 68 Odsek 1 Pismeno c)
   Suma: Uhrada V Inej Mene Ako V Eurach
   Mena: Ina Mena Ako Euro
   Oprava: Oprava Sumy Dane
@@ -721,8 +791,8 @@ relationships:
   Zahranicna Osoba -> [STAVA_SA] -> Platitel
   Platitel -> [MA_IDENTIFIKACNE_CISLO] -> Identifikacne Cislo Pre Dan
 
-  Identifikacne Cislo Pre Dan -> [JE_PODLA] -> Paragraf 7
-  Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Paragraf 68b Odsek 2
+  Identifikacne Cislo Pre Dan -> [JE_PODLA] -> Paragraf § 7
+  Uplatnovanie Osobitnej Upravy -> [JE_PODLA] -> Paragraf § 68b Odsek 2
   Danovy Urad -> [PRIDELUJE] -> To Iste Identifikacne Cislo Pre Dan
   To Iste Identifikacne Cislo Pre Dan -> [JE_TYPOM] -> Identifikacne Cislo Pre Dan
 
@@ -757,8 +827,8 @@ nodes:
   IdentifikacneCislo: To Iste Identifikacne Cislo Pre Dan
   Urad: Danovy Urad
   Urad: Danovy Urad Bratislava
-  Paragraf: Paragraf 7
-  Odsek: Paragraf 68b Odsek 2
+  Paragraf: Paragraf § 7
+  Odsek: Paragraf § 68b Odsek 2
   Cinnost: Uplatnovanie Osobitnej Upravy
   Rozhodnutie: Rozhodnutie Podla Druhej Vety
   Rozhodnutie: Rozhodnutie O Nezaregistrovani Zahranicnej Osoby
@@ -789,7 +859,7 @@ page: 110
 text: služieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby poskytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému príjemcovi platby. (5) Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný a) viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov od konca kalendárneho roka, v ktorom bola platba vykonaná, b) sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8 prostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca nasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného predpisu.28p) (6) Za miesto poskytovateľa platby, ktorý vykoná cezhraničnú platbu, sa na účely tohto ustanovenia považuje členský štát identifikovaný podľa a) IBAN platobného účtu poskytovateľa platby alebo akéhokoľvek iného identifikátora, ktorý určuje poskytovateľa platby a jeho miesto, alebo
 relationships:
   Poskytovatel Platobnych Sluzieb Poskytovatela Platby -> [MA_POVINNOST] -> Zahrnutie Vsetkych Platobnych Sluzieb
-  Zahrnutie Vsetkych Platobnych Sluzieb -> [JE_PODLA] -> Odsek 3 Pismeno B
+  Zahrnutie Vsetkych Platobnych Sluzieb -> [JE_PODLA] -> Odsek 3 Pismeno b)
   Zahrnutie Vsetkych Platobnych Sluzieb -> [VZTAHUJE_SA_NA] -> Platobne Sluzby Poskytnute Poskytovatelovi Platby
   Platobne Sluzby Poskytnute Poskytovatelovi Platby -> [TYKA_SA] -> Cezhranicne Platby Rovnakemu Prijemcovi Platby
 
@@ -817,7 +887,7 @@ relationships:
 nodes:
   Odsek: Odsek 3
   Odsek: Odsek 8
-  Pismeno: Odsek 3 Pismeno B
+  Pismeno: Odsek 3 Pismeno b)
   Subjekt: Poskytovatel Platobnych Sluzieb Poskytovatela Platby
   Subjekt: Tuzemsky Poskytovatel Platobnych Sluzieb
   Subjekt: Poskytovatel Platby
@@ -883,7 +953,7 @@ relationships:
   Zanik Platnosti Identifikacneho Cisla Pre Dan -> [NASTAVA_PRI] -> Den Prestania Byt Platitelom
 
   Pravnicka Osoba Alebo Fyzicka Osoba -> [VYKONAVA] -> Uplatnovanie Osobitnej Upravy Podla Paragrafu 68b
-  Uplatnovanie Osobitnej Upravy Podla Paragrafu 68b -> [JE_PODLA] -> Paragraf 68b
+  Uplatnovanie Osobitnej Upravy Podla Paragrafu 68b -> [JE_PODLA] -> Paragraf § 68b
   Zanik Platnosti Identifikacneho Cisla Pre Dan -> [NEVZTAHUJE_SA_NA] -> Identifikacne Cislo Pre Dan Na Ucely Osobitnej Upravy Podla Paragrafu 68b
 
 nodes:
@@ -914,7 +984,7 @@ nodes:
   Status: Zanik Platnosti Identifikacneho Cisla Pre Dan
   IdentifikacneCislo: Identifikacne Cislo Pre Dan Na Ucely Osobitnej Upravy Podla Paragrafu 68b
   Cinnost: Uplatnovanie Osobitnej Upravy Podla Paragrafu 68b
-  Paragraf: Paragraf 68b
+  Paragraf: Paragraf § 68b
   Dovod: Opakovane Nesplnenie Povinnosti Podat Danove Priznanie
   Dovod: Opakovane Nesplnenie Povinnosti Podat Kontrolny Vykaz
   Dovod: Opakovane Nezaplatenie Vlastnej Danovej Povinnosti
@@ -985,21 +1055,21 @@ relationships:
 
   Platitel -> [UVADZA] -> Premiestnenie Tovaru
   Premiestnenie Tovaru -> [NACHADZA_SA_V] -> Zaznamy
-  Zaznamy -> [JE_PODLA] -> Paragraf 70 Odsek 2 Pismeno G
+  Zaznamy -> [JE_PODLA] -> Paragraf § 70 Odsek 2 Pismeno g)
 
   Platitel -> [UVADZA] -> Identifikacne Cislo Pre Dan
   Identifikacne Cislo Pre Dan -> [NACHADZA_SA_V] -> Suhrnny Vykaz
-  Suhrnny Vykaz -> [JE_PODLA] -> Paragraf 80 Odsek 1 Pismeno E
+  Suhrnny Vykaz -> [JE_PODLA] -> Paragraf § 80 Odsek 1 Pismeno e)
   Identifikacne Cislo Pre Dan -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba Ktora Nadobudne Tovar
 
   Podmienky -> [SPLNA_PODMIENKY] -> Odsek 1
   Prevod Prava Nakladat S Tovarom Ako Vlastnik -> [MA_LEHOTU] -> Lehota
   Lehota -> [JE_PODLA] -> Odsek 3
   Prevod Prava Nakladat S Tovarom Ako Vlastnik -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
-  Zdanitelna Osoba -> [JE_PODLA] -> Odsek 1 Pismeno C
+  Zdanitelna Osoba -> [JE_PODLA] -> Odsek 1 Pismeno c)
   Zdanitelna Osoba -> [JE_PODLA] -> Odsek 5
 
-  Dodanie Tovaru Oslobodene Od Dane -> [JE_PODLA] -> Paragraf 43 Odsek 1
+  Dodanie Tovaru Oslobodene Od Dane -> [JE_PODLA] -> Paragraf § 43 Odsek 1
   Dodanie Tovaru Oslobodene Od Dane -> [POVAZUJE_SA_ZA] -> Dodanie Tovaru Uskutocnene Platitelom Ktory Tovar Odoslal Alebo Prepravil
   Platitel Ktory Tovar Odoslal Alebo Prepravil -> [DODAVA] -> Tovar
 
@@ -1030,69 +1100,69 @@ nodes:
   Odsek: Odsek 1
   Odsek: Odsek 3
   Odsek: Odsek 5
-  Pismeno: Odsek 1 Pismeno C
-  Pismeno: Pismeno D
-  Pismeno: Pismeno E
-  Pismeno: Pismeno A
-  Pismeno: Paragraf 70 Odsek 2 Pismeno G
-  Pismeno: Paragraf 80 Odsek 1 Pismeno E
-  Odsek: Paragraf 43 Odsek 1
+  Pismeno: Odsek 1 Pismeno c)
+  Pismeno: Pismeno d)
+  Pismeno: Pismeno e)
+  Pismeno: Pismeno a)
+  Pismeno: Paragraf § 70 Odsek 2 Pismeno g)
+  Pismeno: Paragraf § 80 Odsek 1 Pismeno e)
+  Odsek: Paragraf § 43 Odsek 1
 
 
 chunk: 578
 page: 142
 text: do 31. decembra 2024, na postup Daňového úradu Bratislava sa vzťahuje § 5 ods. 2 v znení účinnom do 31. decembra 2024. (4) Ustanovenie § 8 ods. 1 písm. c) v znení účinnom od 1. januára 2025 sa nepoužije na nájomnú zmluvu s dojednaným právom kúpy tovaru, ktorý je predmetom nájmu, ak bola táto zmluva uzavretá do 31. decembra 2024 vrátane. (5) Ustanovenia § 55 ods. 3, § 69 ods. 13 a § 78 ods. 9 v znení účinnom do 31. decembra 2024 sa vzťahujú na zdaniteľnú osobu, ktorej vznikla povinnosť podať daňové priznanie podľa § 78 ods. 9 v znení účinnom do 31. decembra 2024.
 relationships:
-  Paragraf 5 -> [OBSAHUJE] -> Odsek 2 Paragrafu 5
-  Postup Danoveho Uradu Bratislava -> [JE_PODLA] -> Odsek 2 Paragrafu 5 V Zneni Ucinnom Do 31 Decembra 2024
-  Odsek 2 Paragrafu 5 V Zneni Ucinnom Do 31 Decembra 2024 -> [PLATI_DO] -> 31 Decembra 2024
+  Paragraf § 5 -> [OBSAHUJE] -> Paragraf § 5 Odsek 2
+  Postup Danoveho Uradu Bratislava -> [JE_PODLA] -> Paragraf § 5 Odsek 2 V Zneni Ucinnom Do 31 Decembra 2024
+  Paragraf § 5 Odsek 2 V Zneni Ucinnom Do 31 Decembra 2024 -> [PLATI_DO] -> 31 Decembra 2024
 
-  Paragraf 8 -> [OBSAHUJE] -> Odsek 1 Paragrafu 8
-  Odsek 1 Paragrafu 8 -> [OBSAHUJE] -> Pismeno C Paragrafu 8 Odseku 1
-  Pismeno C Paragrafu 8 Odseku 1 V Zneni Ucinnom Od 1 Januara 2025 -> [PLATI_OD] -> 1 Januara 2025
-  Pismeno C Paragrafu 8 Odseku 1 V Zneni Ucinnom Od 1 Januara 2025 -> [NEVZTAHUJE_SA_NA] -> Najomna Zmluva S Dojednanym Pravom Kupy Tovaru
+  Paragraf § 8 -> [OBSAHUJE] -> Paragraf § 8 Odsek 1
+  Paragraf § 8 Odsek 1 -> [OBSAHUJE] -> Paragraf § 8 Odsek 1 Pismeno c)
+  Paragraf § 8 Odsek 1 Pismeno c) V Zneni Ucinnom Od 1 Januara 2025 -> [PLATI_OD] -> 1 Januara 2025
+  Paragraf § 8 Odsek 1 Pismeno c) V Zneni Ucinnom Od 1 Januara 2025 -> [NEVZTAHUJE_SA_NA] -> Najomna Zmluva S Dojednanym Pravom Kupy Tovaru
   Najomna Zmluva S Dojednanym Pravom Kupy Tovaru -> [MA_PRAVO] -> Pravo Kupy Tovaru
   Tovar -> [JE_PREDMETOM] -> Najom
   Najomna Zmluva S Dojednanym Pravom Kupy Tovaru -> [MA_DATUM] -> Uzavretie Zmluvy Do 31 Decembra 2024 Vratane
 
-  Paragraf 55 -> [OBSAHUJE] -> Odsek 3 Paragrafu 55
-  Paragraf 69 -> [OBSAHUJE] -> Odsek 13 Paragrafu 69
-  Paragraf 78 -> [OBSAHUJE] -> Odsek 9 Paragrafu 78
+  Paragraf § 55 -> [OBSAHUJE] -> Paragraf § 55 Odsek 3
+  Paragraf § 69 -> [OBSAHUJE] -> Paragraf § 69 Odsek 13
+  Paragraf § 78 -> [OBSAHUJE] -> Paragraf § 78 Odsek 9
 
-  Odsek 3 Paragrafu 55 V Zneni Ucinnom Do 31 Decembra 2024 -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
-  Odsek 13 Paragrafu 69 V Zneni Ucinnom Do 31 Decembra 2024 -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
-  Odsek 9 Paragrafu 78 V Zneni Ucinnom Do 31 Decembra 2024 -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
+  Paragraf § 55 Odsek 3 V Zneni Ucinnom Do 31 Decembra 2024 -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
+  Paragraf § 69 Odsek 13 V Zneni Ucinnom Do 31 Decembra 2024 -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
+  Paragraf § 78 Odsek 9 V Zneni Ucinnom Do 31 Decembra 2024 -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
   Zdanitelna Osoba -> [MA_POVINNOST] -> Podanie Danoveho Priznania
-  Podanie Danoveho Priznania -> [JE_PODLA] -> Odsek 9 Paragrafu 78 V Zneni Ucinnom Do 31 Decembra 2024
+  Podanie Danoveho Priznania -> [JE_PODLA] -> Paragraf § 78 Odsek 9 V Zneni Ucinnom Do 31 Decembra 2024
 
 nodes:
   Urad: Danovy Urad Bratislava
   Cinnost: Postup Danoveho Uradu Bratislava
-  Paragraf: Paragraf 5
-  Odsek: Odsek 2 Paragrafu 5
-  Odsek: Odsek 2 Paragrafu 5 V Zneni Ucinnom Do 31 Decembra 2024
+  Paragraf: Paragraf § 5
+  Odsek: Paragraf § 5 Odsek 2
+  Odsek: Paragraf § 5 Odsek 2 V Zneni Ucinnom Do 31 Decembra 2024
   Datum: 31 Decembra 2024
   Datum: 1 Januara 2025
 
-  Paragraf: Paragraf 8
-  Odsek: Odsek 1 Paragrafu 8
-  Pismeno: Pismeno C Paragrafu 8 Odseku 1
-  Pismeno: Pismeno C Paragrafu 8 Odseku 1 V Zneni Ucinnom Od 1 Januara 2025
+  Paragraf: Paragraf § 8
+  Odsek: Paragraf § 8 Odsek 1
+  Pismeno: Paragraf § 8 Odsek 1 Pismeno c)
+  Pismeno: Paragraf § 8 Odsek 1 Pismeno c) V Zneni Ucinnom Od 1 Januara 2025
   Zmluva: Najomna Zmluva S Dojednanym Pravom Kupy Tovaru
   Pravo: Pravo Kupy Tovaru
   Tovar: Tovar
   Cinnost: Najom
   Datum: Uzavretie Zmluvy Do 31 Decembra 2024 Vratane
 
-  Paragraf: Paragraf 55
-  Odsek: Odsek 3 Paragrafu 55
-  Odsek: Odsek 3 Paragrafu 55 V Zneni Ucinnom Do 31 Decembra 2024
-  Paragraf: Paragraf 69
-  Odsek: Odsek 13 Paragrafu 69
-  Odsek: Odsek 13 Paragrafu 69 V Zneni Ucinnom Do 31 Decembra 2024
-  Paragraf: Paragraf 78
-  Odsek: Odsek 9 Paragrafu 78
-  Odsek: Odsek 9 Paragrafu 78 V Zneni Ucinnom Do 31 Decembra 2024
+  Paragraf: Paragraf § 55
+  Odsek: Paragraf § 55 Odsek 3
+  Odsek: Paragraf § 55 Odsek 3 V Zneni Ucinnom Do 31 Decembra 2024
+  Paragraf: Paragraf § 69
+  Odsek: Paragraf § 69 Odsek 13
+  Odsek: Paragraf § 69 Odsek 13 V Zneni Ucinnom Do 31 Decembra 2024
+  Paragraf: Paragraf § 78
+  Odsek: Paragraf § 78 Odsek 9
+  Odsek: Paragraf § 78 Odsek 9 V Zneni Ucinnom Do 31 Decembra 2024
   ZdanitelnaOsoba: Zdanitelna Osoba
   Povinnost: Podanie Danoveho Priznania
   DanovePriznanie: Danove Priznanie
@@ -1103,8 +1173,8 @@ page: 144
 text: podnikanie sa nepovažuje za dodanie služby za protihodnotu (§ 9 ods. 3). Ustanovenie § 49 ods. 4 týmto nie je dotknuté. (3) Platiteľ, ktorý v súvislosti s osobným motorovým vozidlom používaným na účely svojho podnikania, ako aj na iný účel ako na podnikanie, od 1. januára 2026 do 30. júna 2028 vrátane prijme služby alebo nadobudne tovar, ktorý nie je investičným majetkom podľa § 54 ods. 2 písm. a), odpočíta daň vzťahujúcu sa na tieto služby alebo tovar v rozsahu 50 %; ustanovenie § 49 ods. 4 týmto nie je dotknuté. (4) Odseky 1 až 3 sa, bez toho, aby boli dotknuté ustanovenia § 49 ods. 4 a § 54, neuplatnia na osobné motorové vozidlo, ktoré platiteľ a) nadobudol alebo používa výlučne na podnikanie, ktorým je 1. krátkodobý nájom alebo iný ako krátkodobý nájom osobného motorového vozidla, 2. doprava osôb a ich batožiny za protihodnotu vrátane taxislužby, 3. prevádzkovanie autoškoly, ak osobné motorové vozidlo je výcvikovým vozidlom,41)
 relationships:
   Pouzitie Na Iny Ucel Ako Podnikanie -> [NEVZTAHUJE_SA_NA] -> Dodanie Sluzby Za Protihodnotu
-  Dodanie Sluzby Za Protihodnotu -> [JE_PODLA] -> Paragraf 9 Odsek 3
-  Ustanovenie Paragraf 49 Odsek 4 -> [NEVZTAHUJE_SA_NA] -> Dotknutie Tymto Ustanovenim
+  Dodanie Sluzby Za Protihodnotu -> [JE_PODLA] -> Paragraf § 9 Odsek 3
+  Paragraf § 49 Odsek 4 -> [NEVZTAHUJE_SA_NA] -> Dotknutie Tymto Ustanovenim
 
   Platitel -> [MA_PRAVO] -> Odpocitanie Dane V Rozsahu 50 Percent
   Odpocitanie Dane V Rozsahu 50 Percent -> [MA_OBDOBIE] -> Od 1 Januara 2026 Do 30 Juna 2028 Vratane
@@ -1116,10 +1186,12 @@ relationships:
   Sluzby -> [VZTAHUJE_SA_NA] -> Osobne Motorove Vozidlo Pouzivane Na Podnikanie Aj Na Iny Ucel Ako Podnikanie
   Tovar Ktory Nie Je Investicnym Majetkom -> [VZTAHUJE_SA_NA] -> Osobne Motorove Vozidlo Pouzivane Na Podnikanie Aj Na Iny Ucel Ako Podnikanie
   Tovar Ktory Nie Je Investicnym Majetkom -> [NEVZTAHUJE_SA_NA] -> Investicny Majetok 
-  Investicny Majetok -> [JE_PODLA] -> Paragraf 54 Odsek 2 Pismeno A
-  Ustanovenie Paragraf 49 Odsek 4 -> [NEVZTAHUJE_SA_NA] -> Dotknutie Odsekom 3
+  Investicny Majetok -> [JE_PODLA] -> Paragraf § 54 Odsek 2 Pismeno a)
+  Paragraf § 49 Odsek 4 -> [NEVZTAHUJE_SA_NA] -> Dotknutie Odsekom 3
 
-  Odseky 1 Az 3 -> [NEVZTAHUJE_SA_NA] -> Osobne Motorove Vozidlo Nadobudnute Alebo Pouzivane Vylucne Na Podnikanie
+  Odsek 1 -> [NEVZTAHUJE_SA_NA] -> Osobne Motorove Vozidlo Nadobudnute Alebo Pouzivane Vylucne Na Podnikanie
+  Odsek 2 -> [NEVZTAHUJE_SA_NA] -> Osobne Motorove Vozidlo Nadobudnute Alebo Pouzivane Vylucne Na Podnikanie
+  Odsek 3 -> [NEVZTAHUJE_SA_NA] -> Osobne Motorove Vozidlo Nadobudnute Alebo Pouzivane Vylucne Na Podnikanie
   Osobne Motorove Vozidlo Nadobudnute Alebo Pouzivane Vylucne Na Podnikanie -> [MA_UCEL] -> Podnikanie
   Platitel -> [NADOBUDA] -> Osobne Motorove Vozidlo Nadobudnute Alebo Pouzivane Vylucne Na Podnikanie
   Platitel -> [VYKONAVA] -> Pouzivanie Osobneho Motoroveho Vozidla Vylucne Na Podnikanie
@@ -1134,8 +1206,8 @@ relationships:
 nodes:
   Cinnost: Pouzitie Na Iny Ucel Ako Podnikanie
   Cinnost: Dodanie Sluzby Za Protihodnotu
-  Odsek: Paragraf 9 Odsek 3
-  Odsek: Ustanovenie Paragraf 49 Odsek 4
+  Odsek: Paragraf § 9 Odsek 3
+  Odsek: Paragraf § 49 Odsek 4
   Hodnota: Dotknutie Tymto Ustanovenim
   Hodnota: Dotknutie Odsekom 3
 
@@ -1147,11 +1219,13 @@ nodes:
   Sluzba: Sluzby
   Tovar: Tovar Ktory Nie Je Investicnym Majetkom
   InvesticnyMajetok: Investicny Majetok
-  Pismeno: Paragraf 54 Odsek 2 Pismeno A
+  Pismeno: Paragraf § 54 Odsek 2 Pismeno a)
   Vozidlo: Osobne Motorove Vozidlo
   Vozidlo: Osobne Motorove Vozidlo Pouzivane Na Podnikanie Aj Na Iny Ucel Ako Podnikanie
 
-  Odsek: Odseky 1 Az 3
+  Odsek: Odsek 1
+  Odsek: Odsek 2
+  Odsek: Odsek 3
   Vozidlo: Osobne Motorove Vozidlo Nadobudnute Alebo Pouzivane Vylucne Na Podnikanie
   Cinnost: Podnikanie
   Cinnost: Pouzivanie Osobneho Motoroveho Vozidla Vylucne Na Podnikanie
@@ -1172,7 +1246,7 @@ relationships:
   Miesto Dodania Telekomunikacnych Sluzieb Sluzieb Rozhlasoveho Vysielania Sluzieb Televizneho Vysielania A Elektronickych Sluzieb -> [POVAZUJE_SA_ZA] -> Sidlo Osoby
   Miesto Dodania Telekomunikacnych Sluzieb Sluzieb Rozhlasoveho Vysielania Sluzieb Televizneho Vysielania A Elektronickych Sluzieb -> [POVAZUJE_SA_ZA] -> Bydlisko Osoby
   Miesto Dodania Telekomunikacnych Sluzieb Sluzieb Rozhlasoveho Vysielania Sluzieb Televizneho Vysielania A Elektronickych Sluzieb -> [POVAZUJE_SA_ZA] -> Miesto Kde Sa Osoba Obvykle Zdrziava
-  Miesto Dodania Telekomunikacnych Sluzieb Sluzieb Rozhlasoveho Vysielania Sluzieb Televizneho Vysielania A Elektronickych Sluzieb -> [MA_VYNIMKU] -> Paragraf 16a Odsek 1
+  Miesto Dodania Telekomunikacnych Sluzieb Sluzieb Rozhlasoveho Vysielania Sluzieb Televizneho Vysielania A Elektronickych Sluzieb -> [MA_VYNIMKU] -> Paragraf § 16a Odsek 1
 
   Odsek 15 -> [UPRAVUJE] -> Miesto Dodania Sluzieb Uvedenych V Odseku 16
   Miesto Dodania Sluzieb Uvedenych V Odseku 16 -> [VZTAHUJE_SA_NA] -> Osoba Ina Ako Zdanitelna Osoba Mimo Uzemia Europskej Unie
@@ -1191,7 +1265,7 @@ nodes:
   Odsek: Odsek 14
   Odsek: Odsek 15
   Odsek: Odsek 16
-  Odsek: Paragraf 16a Odsek 1
+  Odsek: Paragraf § 16a Odsek 1
 
   Lokacia: Miesto Dodania Telekomunikacnych Sluzieb Sluzieb Rozhlasoveho Vysielania Sluzieb Televizneho Vysielania A Elektronickych Sluzieb
   Lokacia: Miesto Dodania Sluzieb Uvedenych V Odseku 16

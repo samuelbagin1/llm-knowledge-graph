@@ -168,6 +168,21 @@ response_schema_for_schema_refinement = {
             "required": ["node_types", "relationship_types", "merge_log"]
         }
 
+# - "podľa odseku 1" means odsek of this paragraph
+### CURRENT LEGAL CONTEXT
+# Use this as authoritative context for all local references:
+# {path_str if path_str else "UNKNOWN"}
+
+# If context is UNKNOWN, do not invent paragraph numbers.
+# If text says "podla odseku 1", interpret it inside CURRENT LEGAL CONTEXT.
+# Canonical legal IDs:
+# - Paragraf: "Paragraf § X"
+# - Odsek with known paragraph: "Paragraf § X Odsek Y"
+# - Odsek without known paragraph: "Odsek Y"
+# - Pismeno with known paragraph/odsek: "Paragraf § X Odsek Y Pismeno a)"
+
+# - add concise, explicit semantic clarification into relationship properties (`MA_NAROK_NA` → `add: vratenie dane`), use key `add`
+
 
 # schema driven extraction
 system_prompt_for_sde = """
@@ -182,6 +197,14 @@ You are expert in extracting information from text (NER and RE). Extract a knowl
 - no diacritics (remove all diacritics from nodes id)
 - decompose complex relation into multiple relations (multi-hop)
 
+Create legal concept/action nodes, but ALSO create provision edges when the text says that a provision defines, regulates, concerns or references a concept.
+
+If an Odsek/Paragraf explicitly regulates/defines/concerns a concept:
+- Odsek -[UPRAVUJE]-> concept
+- Odsek -[VYMEDZUJE]-> concept
+- Odsek -[TYKA_SA]-> concept
+- Odsek -[ODKAZUJE_NA]-> referenced provision
+
 ### LEGAL
 - laws → `PravnyPredpis`
 - sections → `Paragraf`
@@ -190,19 +213,34 @@ You are expert in extracting information from text (NER and RE). Extract a knowl
 
 ### NODES
 - ID = full readable name (not numeric only), Title Case
-- "podľa odseku 1" means odsek of this paragraph
-- atomic decomposition of entities: Odseky 1 Az 3 -> Odsek 1, Odsek 2, Odsek 3
 - properties only if explicit
 - unify duplicates (coreference)
 - `Paragraf` → Paragraf: Paragraf § 16
 - `Odsek` → Odsek: Paragraf § 16 Odsek 1
 - `Pismeno` → Pismeno: Paragraf § 54 Odsek 2 Pismeno a)
+Decompose coordinated lists and alternatives into separate nodes and relationships.
+Do not create one combined node for "A, B alebo C" when A/B/C can each have a legal relation.
+
+Examples:
+- "oprava, udrzba a najom vybavenia" -> Oprava; Udrzba; Najom Vybavenia
+- "faktury a ine doklady" -> Faktury; Ine Doklady
+- "sobota, nedela alebo den pracovneho pokoja" -> one combined condition only if the phrase is the legal condition itself
+
 
 ### RELATIONSHIPS
 - only allowed types
 - correct direction
 - exact match required
-- add concise, explicit semantic clarification into relationship properties (`MA_NAROK_NA` → `add: vratenie dane`), use key `add`
+Do NOT store graph facts in relationship properties.
+Use properties: {}.
+Every legal fact must be represented as a node and relationship.
+Never use properties.add to carry an omitted entity, amount, date, condition, document or legal reference.
+
+Strana N is page number, never Paragraf N.
+Do not create Paragraf from page number.
+If text contains only numbered paragraphs like "(7)" and no explicit §, create Odsek 7, not Paragraf § 7 and not Paragraf § page.
+If a law heading is present and only local Odsek nodes are visible, use:
+PravnyPredpis -[OBSAHUJE]-> Odsek N
 
 ### FORMAT
 - NO DIACRITICS

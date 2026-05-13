@@ -355,7 +355,31 @@ def normalize_node_id(value: Any) -> str:
     text = normalize_text(value)
     text = re.sub(r"\s*§\s*", " § ", text)
     text = text.replace("paragraf paragraf", "paragraf")
+    text = normalize_legal_reference_id(text)
     text = _WS.sub(" ", text).strip()
+    return text
+
+
+def normalize_legal_reference_id(text: str) -> str:
+    """Canonicalize common Slovak legal-reference variants for matching."""
+    text = re.sub(
+        r"\bparagraf\s+(?!§)([0-9]+[a-z]?)\b",
+        r"paragraf § \1",
+        text,
+    )
+    text = re.sub(
+        r"^odsek\s+([0-9]+[a-z]?)\s+paragraf\s+§\s+[0-9]+[a-z]?$",
+        r"odsek \1",
+        text,
+    )
+
+    law_match = re.search(
+        r"\b(?:zakon\s+)?(?:c\.?\s*)?([0-9]+)(?:\s*/\s*|\s+)([0-9]{4})\s+z\.?\s*z\.?\b",
+        text,
+    )
+    if law_match:
+        return f"zakon {law_match.group(1)}/{law_match.group(2)} z z"
+
     return text
 
 
@@ -442,6 +466,31 @@ def is_bad_id(value: str) -> bool:
     return any(pattern.search(value or "") for pattern in _BAD_ID_PATTERNS)
 
 
+def strip_extraction_system_items(graph: KGGraph) -> KGGraph:
+    """Remove extraction bookkeeping items that should not affect KG evaluation."""
+    system_node_ids = {
+        normalize_node_id(node.id)
+        for node in graph.nodes
+        if normalize_type(node.type) in {"chunk", "document"}
+    }
+    return KGGraph(
+        nodes=[
+            node
+            for node in graph.nodes
+            if normalize_type(node.type) not in {"chunk", "document"}
+        ],
+        edges=[
+            edge
+            for edge in graph.edges
+            if normalize_relation(edge.relation) not in {"IN_CHUNK", "IN_DOCUMENT"}
+            and normalize_type(edge.source_type) not in {"chunk", "document"}
+            and normalize_type(edge.target_type) not in {"chunk", "document"}
+            and normalize_node_id(edge.source_id) not in system_node_ids
+            and normalize_node_id(edge.target_id) not in system_node_ids
+        ],
+    )
+
+
 # ---------------------------------------------------------------------------
 # Loading and serialization
 # ---------------------------------------------------------------------------
@@ -492,16 +541,12 @@ def parse_edge(raw: dict[str, Any]) -> KGEdge:
 def graph_from_payload(payload: dict[str, Any], include_system_nodes: bool = False) -> KGGraph:
     nodes = [parse_node(n) for n in payload.get("nodes", []) if isinstance(n, dict)]
     edges = [parse_edge(e) for e in payload.get("relationships", []) if isinstance(e, dict)]
+    graph = KGGraph(nodes=dedupe_nodes(nodes), edges=dedupe_edges(edges))
 
     if not include_system_nodes:
-        nodes = [n for n in nodes if normalize_type(n.type) not in {"chunk", "document"}]
-        edges = [
-            e
-            for e in edges
-            if normalize_relation(e.relation) not in {"IN_CHUNK", "IN_DOCUMENT"}
-        ]
+        graph = strip_extraction_system_items(graph)
 
-    return KGGraph(nodes=dedupe_nodes(nodes), edges=dedupe_edges(edges))
+    return KGGraph(nodes=dedupe_nodes(graph.nodes), edges=dedupe_edges(graph.edges))
 
 
 def graph_from_graph_document(graph_doc: Any, include_system_nodes: bool = False) -> KGGraph:
@@ -529,7 +574,49 @@ def graph_from_graph_document(graph_doc: Any, include_system_nodes: bool = False
     return graph_from_payload(payload, include_system_nodes=include_system_nodes)
 
 
-def graph_to_payload(graph: KGGraph) -> dict[str, Any]:
+def strip_graph_document_system_items(graph_doc: Any) -> Any:
+    """Hard-remove extraction bookkeeping from a GraphDocument-like object."""
+    raw_nodes = list(getattr(graph_doc, "nodes", []) or [])
+    raw_relationships = list(getattr(graph_doc, "relationships", []) or [])
+
+    system_node_ids = {
+        normalize_node_id(getattr(node, "id", ""))
+        for node in raw_nodes
+        if normalize_type(getattr(node, "type", "")) in {"chunk", "document"}
+    }
+    nodes = [
+        node
+        for node in raw_nodes
+        if normalize_type(getattr(node, "type", "")) not in {"chunk", "document"}
+    ]
+
+    relationships = []
+    for rel in raw_relationships:
+        source = getattr(rel, "source", None)
+        target = getattr(rel, "target", None)
+        if normalize_relation(getattr(rel, "type", "")) in {"IN_CHUNK", "IN_DOCUMENT"}:
+            continue
+        if normalize_type(getattr(source, "type", "")) in {"chunk", "document"}:
+            continue
+        if normalize_type(getattr(target, "type", "")) in {"chunk", "document"}:
+            continue
+        if normalize_node_id(getattr(source, "id", "")) in system_node_ids:
+            continue
+        if normalize_node_id(getattr(target, "id", "")) in system_node_ids:
+            continue
+        relationships.append(rel)
+
+    return SimpleNamespace(
+        nodes=nodes,
+        relationships=relationships,
+        source=getattr(graph_doc, "source", None),
+    )
+
+
+def graph_to_payload(graph: KGGraph, include_system_nodes: bool = False) -> dict[str, Any]:
+    if not include_system_nodes:
+        graph = strip_extraction_system_items(graph)
+
     return {
         "nodes": [
             {"id": n.id, "type": n.type, "properties": n.properties}
@@ -640,7 +727,7 @@ async def extract_graph_with_llm(
 
     if not graph_documents:
         return KGGraph()
-    graph_document = graph_documents[0]
+    graph_document = strip_graph_document_system_items(graph_documents[0])
     return graph_from_graph_document(graph_document)
 
 

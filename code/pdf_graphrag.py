@@ -264,10 +264,11 @@ class PDFGraphRAG:
         # ChatOpenAI for question generation
         self.openai_client = ChatOpenAI(
             model="gpt-5.4-mini",
-            temperature=0.1,
+            temperature=0.05,
+            reasoning_effort="medium",
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
-            timeout=120
+            timeout=180
         )
 
         self.openai_graph_transform = ChatOpenAI(
@@ -1857,6 +1858,39 @@ Pred vystupom over:
         - most specific types
         - no diacritics
         - only Slovak language
+        
+        ### RELATION MAPPING
+        - "podla § / podla odseku / podla pismena" -> JE_PODLA
+        - "upravuje" -> UPRAVUJE
+        - "vymedzuje / rozumie sa" -> VYMEDZUJE or ROZUMIE_SA
+        - "nezahrna sa / neprihliada sa / nevztahuje sa" -> NEVZTAHUJE_SA_NA
+        - "je oslobodene od dane" -> JE_OSLOBODENE_OD, source is dodanie/cinnost/tovar/sluzba, target is Dan
+        - "ma narok na" -> MA_NAROK_NA
+        - "je povinny / su povinni" -> MA_POVINNOST
+        - "je povinny platit dan" -> JE_POVINNY_PLATIT
+        - "podava ziadost/odvolanie" -> PODAVA
+        - "dorucuje danovemu uradu" -> DORUCUJE
+        - "vydava rozhodnutie/opatrenie" -> VYDAVA, source is authority, target is document
+        - "ma lehotu / do X dni" -> MA_LEHOTU
+        - "ma sumu / vo vyske / limit" -> MA_SUMU or MA_HODNOTU
+        - "ma miesto / v tuzemsku / v clenskom state" -> MA_MIESTO
+        - "vedie zaznamy o" -> VIES_ZAZNAMY_O
+        - "dodava tovar" -> DODAVA
+        - "poskytuje sluzbu" -> POSKYTUJE
+        - "vyhotovené orgánom" -> orgán VYDAVA doklad
+        - "odberateľ odovzdal platiteľovi" -> odberateľ PREDKLADA doklad a PREDKLADA platiteľ
+        - "vychádza z / rozdiel medzi" -> VYCHADZA_Z
+        - "nachádza sa v" -> NACHADZA_SA_V
+        - "považuje sa za" -> POVAZUJE_SA_ZA
+        
+        TYKA_SA = topic/object of action, document, period, provision, notification, delivery, control.
+        VZTAHUJE_SA_NA = scope/applicability of right, rule, exception, regime, refund, exemption.
+        VYCHADZA_Z = source/base/origin/cause for derived value, difference, calculation, obligation or movement.
+        MA_PODMIENKU = explicit condition introduced by "ak", "za podmienky", "podmienkou je".
+        VYKONAVA = actor performs action. Source is actor, target is action.
+        PREDKLADA/DORUCUJE/VYDAVA = source is actor/authority, target is document/object.
+
+
 
         ### SCHEMA
         Entities: {", ".join(schema.nodes)}
@@ -1869,6 +1903,13 @@ Pred vystupom over:
         - valid types only
         - most specific used
         - includes legal + detailed data
+        Before returning, verify every extracted action/concept:
+        - Does it have legal reference? add JE_PODLA.
+        - Does it have object/topic? add TYKA_SA or VZTAHUJE_SA_NA.
+        - Does it have actor? add VYKONAVA / PODAVA / PREDKLADA / DORUCUJE / VYDAVA.
+        - Does it have condition? add MA_PODMIENKU.
+        - Does it have amount/date/period/limit/document? add MA_SUMU / MA_DATUM / MA_OBDOBIE / MA_LEHOTU / MA_DOKLAD.
+
         """
 
         # Create and run the agent

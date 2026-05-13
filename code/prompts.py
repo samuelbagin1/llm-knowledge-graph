@@ -186,17 +186,17 @@ You are expert in extracting information from text (NER and RE). Extract a knowl
 - laws → `PravnyPredpis`
 - sections → `Paragraf`
 - `PravnyPredpis` -[OBSAHUJE]-> `Paragraf`
-- entity -[PODLA]-> `Paragraf` (if referenced)
-- `Paragraf` → Paragraf: Paragraf § 16
-- `Odsek` → Odsek: Paragraf § 16 Odsek 1
-- `Pismeno` → Pismeno: Paragraf § 54 Odsek 2 Pismeno a)
+- entity -[JE_PODLA]-> `Paragraf` (if referenced)
 
 ### NODES
-- ID = full readable name (not numeric only)
+- ID = full readable name (not numeric only), Title Case
 - "podľa odseku 1" means odsek of this paragraph
 - atomic decomposition of entities: Odseky 1 Az 3 -> Odsek 1, Odsek 2, Odsek 3
 - properties only if explicit
 - unify duplicates (coreference)
+- `Paragraf` → Paragraf: Paragraf § 16
+- `Odsek` → Odsek: Paragraf § 16 Odsek 1
+- `Pismeno` → Pismeno: Paragraf § 54 Odsek 2 Pismeno a)
 
 ### RELATIONSHIPS
 - only allowed types

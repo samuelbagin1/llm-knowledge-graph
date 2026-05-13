@@ -13,6 +13,7 @@ from pathlib import Path
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # When run as a script (python chunker.py), sys.path[0] is this file's directory
 # and `import chunker` would resolve to *this file*, masking the package. Add
@@ -33,6 +34,19 @@ _PAGE_HEADER_RE = re.compile(
 def _join(*parts: str) -> str:
     """Strip each part, drop empties, join with a single space."""
     return " ".join(s for s in (p.strip() for p in parts) if s)
+
+
+_SPLITTER = RecursiveCharacterTextSplitter(
+    separators=["\n"],
+    chunk_size=3000,
+    chunk_overlap=300,
+)
+
+
+def _split_if_long(doc: Document) -> list[Document]:
+    if len(doc.page_content) <= 3000:
+        return [doc]
+    return [Document(page_content=p, metadata=doc.metadata) for p in _SPLITTER.split_text(doc.page_content)]
 
 
 def _make_doc(text: str, path: list[str], headline: str | None) -> Document:
@@ -209,7 +223,7 @@ class Chunker:
         odseky = para.get("odseky", [])
 
         if not odseky:
-            out.append(_make_doc(_join(p_text), [p_token], headline))
+            out.extend(_split_if_long(_make_doc(_join(p_text), [p_token], headline)))
             return
 
         for odsek in odseky:
@@ -218,11 +232,11 @@ class Chunker:
             letters = odsek.get("letters", [])
 
             if not letters:
-                out.append(_make_doc(
+                out.extend(_split_if_long(_make_doc(
                     _join(p_text, o_part),
                     [p_token, o_token],
                     headline,
-                ))
+                )))
                 continue
 
             for letter in letters:
@@ -236,11 +250,11 @@ class Chunker:
                     )
                     l_part = f"{l_part}\n{bod_lines}"
 
-                out.append(_make_doc(
+                out.extend(_split_if_long(_make_doc(
                     _join(p_text, o_part, l_part),
                     [p_token, o_token, l_token],
                     headline,
-                ))
+                )))
 
 
 if __name__ == "__main__":

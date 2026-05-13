@@ -1694,8 +1694,8 @@ Pred vystupom over:
             existing_schema.nodes == [] and existing_schema.relationships == []
         ):
             existing_schema = Schema(
-                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum"],
-                    relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI"]
+                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum", "Pismeno"],
+                    relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI", "JE_PODLA"]
                 )
         
         
@@ -1832,6 +1832,8 @@ Pred vystupom over:
         # `path` is only present on chunks emitted by Chunker (structured law body).
         # Trailing chunks from RecursiveCharacterTextSplitter have just {page, source},
         # so we gate on the key, not on metadata truthiness.
+        #         {"You are in paragraph: " + path_segments[0] if path_segments else ""}
+        #         {"This text represents section: " + path_str if path_str else ""}
         path_segments: list[str] = metadata.get("path") or []
         path_str = ""
         path_label = ""
@@ -1847,8 +1849,6 @@ Pred vystupom over:
 
         user_prompt = f"""
         Extract entities and relationships from text.
-        {"You are in paragraph: " + path_segments[0] if path_segments else ""}
-        {"This text represents section: " + path_str if path_str else ""}
 
         ### RULES
         - only schema types (exact)

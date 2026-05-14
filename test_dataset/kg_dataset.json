@@ -48626,5 +48626,625 @@
         "properties": {}
       }
     ]
+  },
+  {
+    "chunk": 105,
+    "page": 25,
+    "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej platby dňom prijatia platby. (5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť v ten istý deň, keď vzniká daňová povinnosť komisionárovi. (6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo dodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú dňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je vyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania služby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1, pri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+    "nodes": [
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 6",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Z Prijatej Platby",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Platba Prijata Pred Dodanim Tovaru Alebo Sluzby",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Prijata Platba",
+        "type": "Suma",
+        "properties": {}
+      },
+      {
+        "id": "Den Prijatia Platby",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {}
+      },
+      {
+        "id": "Sluzba",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Dodanie Tovaru",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Dodanie Sluzby",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Pri Dodani Tovaru Na Zaklade Komisionarskej Zmluvy",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Komisionarska Zmluva",
+        "type": "Zmluva",
+        "properties": {}
+      },
+      {
+        "id": "Komitent",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Komisionar",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Komitenta",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Komisionara",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Ten Isty Den Ako Vznik Danovej Povinnosti Komisionara",
+        "type": "CasovyUdaj",
+        "properties": {}
+      },
+      {
+        "id": "Obstaranie Sluzby Podla Paragrafu § 9 Odsek 4",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Obstaranie Sluzby",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Obstaranie Opakovane Alebo Ciastkovo Dodavanych Sluzieb",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Osoba Ktora Kona Vo Svojom Mene",
+        "type": "Osoba",
+        "properties": {}
+      },
+      {
+        "id": "Sluzba Obstarana Osobou Ktora Kona Vo Svojom Mene",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Dodana Sluzba",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Den Vyhotovenia Faktury",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Obstaravatel",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {}
+      },
+      {
+        "id": "Uhrada Za Sluzbu",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Nevyhotovenie Faktury Do Konca Tretieho Kalendarneho Mesiaca",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Pri Nevyhotoveni Faktury",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci Dodania Sluzby",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Urcenie Dna Dodania Sluzby Podla Odseku 6",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Sluzba S Miestom Dodania Podla Paragrafu § 15 Odsek 1",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Miesto Dodania Sluzby Podla Paragrafu § 15 Odsek 1",
+        "type": "Lokacia",
+        "properties": {}
+      },
+      {
+        "id": "Prijemca Sluzby",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 9",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 9 Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 15",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 15 Odsek 1",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Z Prijatej Platby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "UPRAVUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platba Prijata Pred Dodanim Tovaru Alebo Sluzby",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Z Prijatej Platby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Z Prijatej Platby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prijata Platba",
+          "type": "Suma",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Z Prijatej Platby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Den Prijatia Platby",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platba Prijata Pred Dodanim Tovaru Alebo Sluzby",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodanie Tovaru",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platba Prijata Pred Dodanim Tovaru Alebo Sluzby",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodanie Sluzby",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Pri Dodani Tovaru Na Zaklade Komisionarskej Zmluvy",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "UPRAVUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Komisionarska Zmluva",
+          "type": "Zmluva",
+          "properties": {}
+        },
+        "type": "VYCHADZA_Z",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Komitent",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Komitenta",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Komisionar",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Komisionara",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Komitenta",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Komitenta",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ten Isty Den Ako Vznik Danovej Povinnosti Komisionara",
+          "type": "CasovyUdaj",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Komitenta",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Komisionara",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "SUVISI_S",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odsek 6",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Obstaranie Sluzby Podla Paragrafu § 9 Odsek 4",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "UPRAVUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaranie Sluzby",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 9 Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaranie Sluzby",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Obstaranie Opakovane Alebo Ciastkovo Dodavanych Sluzieb",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "ZAHRNUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba Ktora Kona Vo Svojom Mene",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Obstaranie Sluzby",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "VYKONAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba Obstarana Osobou Ktora Kona Vo Svojom Mene",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodana Sluzba",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "type": "POVAZUJE_SA_ZA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Dodana Sluzba",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Den Vyhotovenia Faktury",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obstaravatel",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {}
+        },
+        "type": "VYDAVA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Uhrada Za Sluzbu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "MA_UCEL",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Nevyhotovenie Faktury Do Konca Tretieho Kalendarneho Mesiaca",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Pri Nevyhotoveni Faktury",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Pri Nevyhotoveni Faktury",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci Dodania Sluzby",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Urcenie Dna Dodania Sluzby Podla Odseku 6",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Sluzba S Miestom Dodania Podla Paragrafu § 15 Odsek 1",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "type": "NEPLATI_PRE",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Sluzba S Miestom Dodania Podla Paragrafu § 15 Odsek 1",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Miesto Dodania Sluzby Podla Paragrafu § 15 Odsek 1",
+          "type": "Lokacia",
+          "properties": {}
+        },
+        "type": "MA_MIESTO_DODANIA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Sluzby Podla Paragrafu § 15 Odsek 1",
+          "type": "Lokacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 15 Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prijemca Sluzby",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 9",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 9 Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "MA_ODSEK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 15",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 15 Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "MA_ODSEK",
+        "properties": {}
+      }
+    ]
   }
 ]

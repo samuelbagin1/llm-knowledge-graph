@@ -263,9 +263,9 @@ class PDFGraphRAG:
         # Initialize LLM clients
         # ChatOpenAI for question generation
         self.openai_client = ChatOpenAI(
-            model="gpt-5.4-mini",
+            model="gpt-5.5",
             temperature=0.05,
-            reasoning_effort="medium",
+            # reasoning_effort="medium",
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=180
@@ -1900,10 +1900,10 @@ Pred vystupom over:
         {text}
 
         ### CHECK
+        Before returning, verify every extracted action/concept:
         - valid types only
         - most specific used
         - includes legal + detailed data
-        Before returning, verify every extracted action/concept:
         - Does it have legal reference? add JE_PODLA.
         - Does it have object/topic? add TYKA_SA or VZTAHUJE_SA_NA.
         - Does it have actor? add VYKONAVA / PODAVA / PREDKLADA / DORUCUJE / VYDAVA.
@@ -1913,15 +1913,26 @@ Pred vystupom over:
         """
 
         # Create and run the agent
-        agent = create_agent(
-            model=self.openai_client,
-            response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
-            system_prompt=system_prompt_for_sde
+        # agent = create_agent(
+        #     model=self.openai_client,
+        #     response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
+        #     system_prompt=system_prompt_for_sde
+        # )
+        # response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
+        
+        structured_llm = self.openai_client.with_structured_output(
+            response_schema_for_sde,
+            method="json_schema",
+            strict=True,
         )
-        response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
+
+        response = await structured_llm.ainvoke([
+            SystemMessage(content=system_prompt_for_sde),
+            HumanMessage(content=user_prompt),
+        ])
 
         # structured_response is already a dict when using ProviderStrategy
-        data = response["structured_response"]
+        data = response # ["structured_response"]
         
         print(data)
 

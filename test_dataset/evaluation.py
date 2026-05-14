@@ -18,7 +18,6 @@ source text.
 
 from __future__ import annotations
 
-import argparse
 import asyncio
 import csv
 import json
@@ -1334,168 +1333,232 @@ def run_langsmith_evaluation(
 # ---------------------------------------------------------------------------
 
 
+CSV_FIELDS = [
+    "chunk",
+    "page",
+    "gold_nodes",
+    "pred_nodes",
+    "node_precision",
+    "node_recall",
+    "node_f1",
+    "gold_relationships",
+    "pred_relationships",
+    "relationship_precision",
+    "relationship_recall",
+    "relationship_f1",
+    "strict_relationship_f1",
+    "relationship_hallucination_rate",
+    "relationship_omission_rate",
+    "ontology_conformance_nodes",
+    "ontology_conformance_relationships",
+    "bad_id_format_rate",
+    "unknown_type_rate",
+    "dangling_edge_rate",
+    "normalized_ged",
+    "latency_seconds",
+]
+
+
+def _render_error_audit(rows: list[dict[str, Any]]) -> str:
+    lines = ["# KG Evaluation Error Audit", ""]
+    for row in sorted(rows, key=lambda r: r["relationship_f1"])[:20]:
+        details = row.get("details", {})
+        lines.extend(
+            [
+                f"## Chunk {row['chunk']} | relationship_f1={row['relationship_f1']:.3f}",
+                "",
+                f"- Missing gold relationships: {details.get('unmatched_gold_edges', [])}",
+                f"- Extra predicted relationships: {details.get('unmatched_pred_edges', [])}",
+                f"- Missing gold nodes: {details.get('unmatched_gold_nodes', [])}",
+                f"- Extra predicted nodes: {details.get('unmatched_pred_nodes', [])}",
+                "",
+            ]
+        )
+    return "\n".join(lines)
+
+
 async def evaluate_examples(
     examples: list[dict[str, Any]],
     schema: Any,
     config: EvalConfig,
     predictions: Optional[dict[int, dict[str, Any]]] = None,
+    output_dir: Optional[Path] = None,
+    append: bool = False,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     judge = LLMJudge(config)
     rows: list[dict[str, Any]] = []
     predictions_out: list[dict[str, Any]] = []
 
-    for index, item in enumerate(examples):
-        chunk = int(item.get("chunk", index))
-        gold_graph = graph_from_payload(item)
-        started = time.perf_counter()
+    csv_handle = None
+    csv_writer = None
+    by_chunk_json_path: Optional[Path] = None
+    predictions_json_path: Optional[Path] = None
+    audit_path: Optional[Path] = None
 
-        if predictions is not None:
-            pred_payload = predictions.get(chunk)
-            pred_graph = graph_from_payload(pred_payload or {})
-        else:
-            pred_graph = await extract_graph_with_llm(
-                text=item["text"],
-                page=item.get("page"),
-                chunk=chunk,
-                schema=schema,
-                config=config,
+    if output_dir is not None:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        csv_path = output_dir / "by_chunk.csv"
+        by_chunk_json_path = output_dir / "by_chunk.json"
+        predictions_json_path = output_dir / "predictions.json"
+        audit_path = output_dir / "error_audit.md"
+
+        if append:
+            if by_chunk_json_path.exists():
+                try:
+                    data = json.loads(by_chunk_json_path.read_text(encoding="utf-8"))
+                    if isinstance(data, list):
+                        rows.extend(data)
+                except json.JSONDecodeError:
+                    pass
+            if predictions_json_path.exists():
+                try:
+                    data = json.loads(predictions_json_path.read_text(encoding="utf-8"))
+                    if isinstance(data, list):
+                        predictions_out.extend(data)
+                except json.JSONDecodeError:
+                    pass
+
+        use_append_csv = append and csv_path.exists()
+        csv_handle = csv_path.open("a" if use_append_csv else "w", newline="", encoding="utf-8")
+        csv_writer = csv.DictWriter(csv_handle, fieldnames=CSV_FIELDS)
+        if not use_append_csv:
+            csv_writer.writeheader()
+        csv_handle.flush()
+
+        by_chunk_json_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
+        predictions_json_path.write_text(json.dumps(predictions_out, indent=2, ensure_ascii=False), encoding="utf-8")
+        audit_path.write_text(_render_error_audit(rows), encoding="utf-8")
+
+    try:
+        for index, item in enumerate(examples):
+            chunk = int(item.get("chunk", index))
+            gold_graph = graph_from_payload(item)
+            started = time.perf_counter()
+
+            if predictions is not None:
+                pred_payload = predictions.get(chunk)
+                pred_graph = graph_from_payload(pred_payload or {})
+            else:
+                pred_graph = await extract_graph_with_llm(
+                    text=item["text"],
+                    page=item.get("page"),
+                    chunk=chunk,
+                    schema=schema,
+                    config=config,
+                )
+
+            elapsed = time.perf_counter() - started
+            result = evaluate_graph(gold_graph, pred_graph, schema, judge, config)
+            result["chunk"] = chunk
+            result["page"] = item.get("page")
+            result["latency_seconds"] = elapsed
+            rows.append(result)
+            predictions_out.append({"chunk": chunk, **graph_to_payload(pred_graph)})
+
+            if csv_writer is not None and csv_handle is not None:
+                csv_writer.writerow({key: result.get(key) for key in CSV_FIELDS})
+                csv_handle.flush()
+
+            if by_chunk_json_path is not None:
+                by_chunk_json_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
+            if predictions_json_path is not None:
+                predictions_json_path.write_text(json.dumps(predictions_out, indent=2, ensure_ascii=False), encoding="utf-8")
+            if audit_path is not None:
+                audit_path.write_text(_render_error_audit(rows), encoding="utf-8")
+
+            print(
+                f"chunk={chunk} node_f1={result['node_f1']:.3f} "
+                f"rel_f1={result['relationship_f1']:.3f} "
+                f"rel_hall={result['relationship_hallucination_rate']:.3f} "
+                f"rel_omis={result['relationship_omission_rate']:.3f}"
             )
-
-        elapsed = time.perf_counter() - started
-        result = evaluate_graph(gold_graph, pred_graph, schema, judge, config)
-        result["chunk"] = chunk
-        result["page"] = item.get("page")
-        result["latency_seconds"] = elapsed
-        rows.append(result)
-        predictions_out.append({"chunk": chunk, **graph_to_payload(pred_graph)})
-
-        print(
-            f"chunk={chunk} node_f1={result['node_f1']:.3f} "
-            f"rel_f1={result['relationship_f1']:.3f} "
-            f"rel_hall={result['relationship_hallucination_rate']:.3f} "
-            f"rel_omis={result['relationship_omission_rate']:.3f}"
-        )
+    finally:
+        if csv_handle is not None:
+            csv_handle.close()
 
     return rows, predictions_out
 
 
-def write_reports(rows: list[dict[str, Any]], predictions: list[dict[str, Any]], output_dir: Path) -> None:
+def write_reports(
+    rows: list[dict[str, Any]],
+    predictions: list[dict[str, Any]],
+    output_dir: Path,
+    write_csv: bool = True,
+    append: bool = False,
+) -> None:
+    del predictions, append  # streamed per-chunk by evaluate_examples
     output_dir.mkdir(parents=True, exist_ok=True)
     summary = aggregate(rows)
     (output_dir / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
-    (output_dir / "by_chunk.json").write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
-    (output_dir / "predictions.json").write_text(json.dumps(predictions, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    csv_fields = [
-        "chunk",
-        "page",
-        "gold_nodes",
-        "pred_nodes",
-        "node_precision",
-        "node_recall",
-        "node_f1",
-        "gold_relationships",
-        "pred_relationships",
-        "relationship_precision",
-        "relationship_recall",
-        "relationship_f1",
-        "strict_relationship_f1",
-        "relationship_hallucination_rate",
-        "relationship_omission_rate",
-        "ontology_conformance_nodes",
-        "ontology_conformance_relationships",
-        "bad_id_format_rate",
-        "unknown_type_rate",
-        "dangling_edge_rate",
-        "normalized_ged",
-        "latency_seconds",
-    ]
-    with (output_dir / "by_chunk.csv").open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=csv_fields)
-        writer.writeheader()
-        for row in rows:
-            writer.writerow({key: row.get(key) for key in csv_fields})
-
-    lines = ["# KG Evaluation Error Audit", ""]
-    for row in sorted(rows, key=lambda r: r["relationship_f1"])[:20]:
-        details = row["details"]
-        lines.extend(
-            [
-                f"## Chunk {row['chunk']} | relationship_f1={row['relationship_f1']:.3f}",
-                "",
-                f"- Missing gold relationships: {details['unmatched_gold_edges']}",
-                f"- Extra predicted relationships: {details['unmatched_pred_edges']}",
-                f"- Missing gold nodes: {details['unmatched_gold_nodes']}",
-                f"- Extra predicted nodes: {details['unmatched_pred_nodes']}",
-                "",
-            ]
-        )
-    (output_dir / "error_audit.md").write_text("\n".join(lines), encoding="utf-8")
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Evaluate KG extraction from text chunks.")
-    parser.add_argument("--dataset", type=Path, default=Path(__file__).resolve().parent / "kg_dataset.json")
-    parser.add_argument(
-        "--schema",
-        type=Path,
-        default=Path(__file__).resolve().parent / "schema.md",
-        help="Kept for CLI compatibility; evaluation uses hardcoded schema copied from schema.md.",
-    )
-    parser.add_argument("--predictions", type=Path, default=None, help="Existing predictions JSON. If omitted, extraction LLM is called.")
-    parser.add_argument("--output-dir", type=Path, default=Path(__file__).resolve().parent / "evaluation_results")
-    parser.add_argument("--limit", type=int, default=None)
-    parser.add_argument("--offset", type=int, default=0)
-    parser.add_argument("--no-write", action="store_true", help="Print summary only; do not write report files.")
-    parser.add_argument("--no-llm-judge", action="store_true", help="Disable LLM judge and use string matching only.")
-    parser.add_argument("--judge-model", default=os.getenv("KG_EVAL_JUDGE_MODEL", "gpt-4o-mini"))
-    parser.add_argument("--extraction-model", default=os.getenv("KG_EVAL_EXTRACTION_MODEL", "gpt-4o-mini"))
-    parser.add_argument("--relaxed-threshold", type=float, default=0.92)
-    parser.add_argument("--judge-candidate-threshold", type=float, default=0.55)
-    parser.add_argument("--legal-reference-judge-threshold", type=float, default=0.35)
-    parser.add_argument("--relationship-judge-candidate-threshold", type=float, default=0.45)
-    parser.add_argument("--langsmith", action="store_true", help="Run through LangSmith evaluate().")
-    parser.add_argument("--langsmith-dataset", default="kg_extraction_eval_v1")
-    return parser.parse_args()
+    if write_csv:
+        with (output_dir / "by_chunk.csv").open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+            writer.writeheader()
+            for row in rows:
+                writer.writerow({key: row.get(key) for key in CSV_FIELDS})
 
 
 def main() -> None:
-    args = parse_args()
-    dataset = load_gold_dataset(args.dataset)
-    examples = dataset[args.offset :]
-    if args.limit is not None:
-        examples = examples[: args.limit]
+    dataset_path: Path = Path(__file__).resolve().parent / "kg_dataset.json"
+    predictions_path: Optional[Path] = None
+    output_dir: Path = Path(__file__).resolve().parent / "evaluation_results"
+    limit: Optional[int] = None
+    offset: int = 0
+    start_chunk_index: Optional[int] = 51
+    no_write: bool = False
+    no_llm_judge: bool = False
+    judge_model: str = os.getenv("KG_EVAL_JUDGE_MODEL", "gpt-4o-mini")
+    extraction_model: str = os.getenv("KG_EVAL_EXTRACTION_MODEL", "gpt-4o-mini")
+    relaxed_threshold: float = 0.75
+    judge_candidate_threshold: float = 0.55
+    legal_reference_judge_threshold: float = 0.35
+    relationship_judge_candidate_threshold: float = 0.35
+    use_langsmith: bool = False
+    langsmith_dataset: str = "kg_extraction_eval_v2"
+
+    dataset = load_gold_dataset(dataset_path)
+    examples = dataset[offset:]
+    if start_chunk_index is not None:
+        examples = examples[start_chunk_index:]
+    if limit is not None:
+        examples = examples[:limit]
+
+    append_mode = start_chunk_index is not None
 
     schema = build_project_schema()
-    predictions = load_predictions(args.predictions) if args.predictions else None
+    predictions = load_predictions(predictions_path) if predictions_path else None
     config = EvalConfig(
-        use_llm_judge=not args.no_llm_judge,
-        judge_model=args.judge_model,
-        extraction_model=args.extraction_model,
-        relaxed_threshold=args.relaxed_threshold,
-        judge_candidate_threshold=args.judge_candidate_threshold,
-        legal_reference_judge_threshold=args.legal_reference_judge_threshold,
-        relationship_judge_candidate_threshold=args.relationship_judge_candidate_threshold,
+        use_llm_judge=not no_llm_judge,
+        judge_model=judge_model,
+        extraction_model=extraction_model,
+        relaxed_threshold=relaxed_threshold,
+        judge_candidate_threshold=judge_candidate_threshold,
+        legal_reference_judge_threshold=legal_reference_judge_threshold,
+        relationship_judge_candidate_threshold=relationship_judge_candidate_threshold,
     )
 
-    if args.langsmith:
+    if use_langsmith:
         result = run_langsmith_evaluation(
             examples=examples,
             schema=schema,
             config=config,
             predictions=predictions,
-            dataset_name=args.langsmith_dataset,
+            dataset_name=langsmith_dataset,
         )
         print(result)
         return
 
-    rows, pred_out = asyncio.run(evaluate_examples(examples, schema, config, predictions))
+    csv_output_dir = None if no_write else output_dir
+    rows, pred_out = asyncio.run(
+        evaluate_examples(examples, schema, config, predictions, output_dir=csv_output_dir, append=append_mode)
+    )
     summary = aggregate(rows)
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 
-    if not args.no_write:
-        write_reports(rows, pred_out, args.output_dir)
-        print(f"Wrote reports to {args.output_dir}")
+    if not no_write:
+        write_reports(rows, pred_out, output_dir, write_csv=False, append=append_mode)
+        print(f"Wrote reports to {output_dir}")
 
 
 if __name__ == "__main__":

@@ -186,7 +186,7 @@ response_schema_for_schema_refinement = {
 
 # schema driven extraction
 system_prompt_for_sde = """
-You are expert in extracting information from text (NER and RE). Extract a knowledge graph strictly using the provided schema.
+You are expert in extracting information from text (NER and RE). Extract a knowledge graph strictly using the provided schema from financial law.
 
 ### RULES
 - Use ONLY exact schema types (entities + relationships).
@@ -199,11 +199,6 @@ You are expert in extracting information from text (NER and RE). Extract a knowl
 
 Create legal concept/action nodes, but ALSO create provision edges when the text says that a provision defines, regulates, concerns or references a concept.
 
-If an Odsek/Paragraf explicitly regulates/defines/concerns a concept:
-- Odsek -[UPRAVUJE]-> concept
-- Odsek -[VYMEDZUJE]-> concept
-- Odsek -[TYKA_SA]-> concept
-- Odsek -[ODKAZUJE_NA]-> referenced provision
 
 ### LEGAL
 - laws → `PravnyPredpis`
@@ -218,13 +213,19 @@ If an Odsek/Paragraf explicitly regulates/defines/concerns a concept:
 - `Paragraf` → Paragraf: Paragraf § 16
 - `Odsek` → Odsek: Paragraf § 16 Odsek 1
 - `Pismeno` → Pismeno: Paragraf § 54 Odsek 2 Pismeno a)
-Decompose coordinated lists and alternatives into separate nodes and relationships.
-Do not create one combined node for "A, B alebo C" when A/B/C can each have a legal relation.
+Pri kompozitnej odkaze (§ X ods. Y písm. z)) vytvor JEDEN uzol s plným ID:
+  - „Paragraf § 68 Odsek 1 Pismeno c)" (jeden uzol)
 
-Examples:
-- "oprava, udrzba a najom vybavenia" -> Oprava; Udrzba; Najom Vybavenia
-- "faktury a ine doklady" -> Faktury; Ine Doklady
-- "sobota, nedela alebo den pracovneho pokoja" -> one combined condition only if the phrase is the legal condition itself
+
+### QUALIFIER SUFFIX (CRITICAL FOR ID UNIQUENESS)
+Ak entita získava význam až cez kvalifikátor, ZACHOVAJ kvalifikátor v ID:
+  - „oslobodenie od dane podla odseku 3" -> Oslobodenie Od Dane Podla Odseku 3
+    (NIE „Oslobodenie Od Dane")
+  - „osobné motorové vozidlo zákazníka" -> Osobne Motorove Vozidlo Zakaznika
+  - „uplatňovanie oslobodenia od dane podľa odseku 3" ->
+    Uplatnovanie Oslobodenia Od Dane Podla Odseku 3
+  - „hodnota bytu/apartmánu/nebytového priestoru pred začatím stavebných prác" ->
+    nedeľ na 3 uzly; ponechaj kanonickú zlúčenú frázu z textu
 
 
 ### RELATIONSHIPS
@@ -265,17 +266,18 @@ response_schema_for_sde = {
                         "type": "object",
                         "properties": {
                             "id": {"type": "string", "description": "Unique identifier for the node"},
-                            "label": {"type": "string", "description": "Type/label of the entity (e.g., Person, Organization)"},
+                            "label": {"type": "string", "description": "Type/label of the entity"},
                             "properties": {
                                 "type": "object",
-                                "description": "Properties of the entity as mentioned in the text",
                                 "properties": {
                                     "name": {"type": "string", "description": "Name of the entity"}
                                 },
-                                "required": ["name"]
+                                "required": ["name"],
+                                "additionalProperties": False,
                             },
                         },
-                        "required": ["id", "label", "properties"]
+                        "required": ["id", "label", "properties"],
+                        "additionalProperties": False,
                     }
                 },
                 "relationships": {
@@ -284,22 +286,22 @@ response_schema_for_sde = {
                     "items": {
                         "type": "object",
                         "properties": {
-                            "source_node_id": {"type": "string", "description": "ID of the source node"},
-                            "source_node_type": {"type": "string", "description": "Type/label of the source node"},
-                            "relation": {"type": "string", "description": "Type of relationship between source and target (e.g., KNOWS, WORKS_AT)"},
-                            "target_node_id": {"type": "string", "description": "ID of the target node"},
-                            "target_node_type": {"type": "string", "description": "Type/label of the target node"},
-                            "properties": {
-                                "type": "object",
-                                "description": "Properties of the relationship as mentioned in the text",
-                                "properties": { }
-                            },
+                            "source_node_id": {"type": "string"},
+                            "source_node_type": {"type": "string"},
+                            "relation": {"type": "string"},
+                            "target_node_id": {"type": "string"},
+                            "target_node_type": {"type": "string"},
                         },
-                        "required": ["relation", "source_node_id", "target_node_id", "source_node_type", "target_node_type"]
-                    }
+                        "required": [
+                            "source_node_id", "source_node_type", "relation",
+                            "target_node_id", "target_node_type"
+                        ],
+                        "additionalProperties": False,
+                    },
                 }
             },
-            "required": ["nodes", "relationships"]
+            "required": ["nodes", "relationships"],
+            "additionalProperties": False,
         }
 
 

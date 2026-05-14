@@ -539,7 +539,52 @@ Pri opätovnom vyhodnotení nákladov a prínosov sa však ukázalo, že pri ná
 \subsection{Kvalitatívne výsledky}
 
 \subsubsection{Extrakcia}
-F1 skore
+Evaluácia extrakcie porovnáva graf vygenerovaný modelom s ručne pripraveným referenčným grafom. Najprv sa normalizujú identifikátory uzlov, typy uzlov a názvy vzťahov: odstráni sa diakritika, zjednotia sa medzery, veľkosť písmen a bežné varianty právnych odkazov. Duplicitné uzly a hrany sa pred výpočtom odstránia. Zhoda uzlov sa určuje buď presne, alebo približne pomocou textovej podobnosti. Pri nejasných prípadoch sa použije LLM hodnotiteľ, ktorý posúdi, či dve entity alebo vzťahy vyjadrujú ten istý význam. Nehodnotí sa však opora trojice v zdrojovom texte, iba zhoda s referenčným grafom.
+
+Pre uzly aj vzťahy sa počítajú hodnoty $TP$, $FP$ a $FN$. Hodnota $TP$ označuje správne nájdené prvky, $FP$ prvky navyše vo výstupe modelu a $FN$ prvky, ktoré sú v referenčnom grafe, ale model ich nenašiel. Z nich sa počíta presnosť, úplnosť a F1 skóre:
+
+\[
+P = \frac{TP}{TP + FP}, \qquad R = \frac{TP}{TP + FN}
+\]
+
+\[
+F_{1} = \frac{2 \cdot P \cdot R}{P + R}
+\]
+
+Presnosť $P$ teda hovorí, aká časť vygenerovaných prvkov bola správna. Úplnosť $R$ hovorí, aká časť referenčných prvkov bola nájdená. F1 skóre je ich harmonický priemer, preto trestá aj veľa chýbajúcich prvkov, aj veľa prvkov navyše. Okrem toho sa počíta miera halucinácie a miera vynechania:
+
+\[
+H = \frac{FP}{TP + FP}, \qquad O = \frac{FN}{TP + FN}
+\]
+
+\begin{table}[h]
+\shorthandoff{-}
+\centering
+\renewcommand{\arraystretch}{1.18}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrr|rrr|rrr|rr}
+\hline
+\textbf{Model} & \textbf{Typ} & \textbf{Gold} & \textbf{Pred.} &
+\textbf{TP} & \textbf{FP} & \textbf{FN} &
+\textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} & \textbf{O} \\
+\hline
+\multirow{2}{*}{\shortstack[c]{gpt-5.4-mini\\{\scriptsize effort: medium}}}
+& Uzly &
+2695 & 2231 & 1391 & 840 & 1304 & 0{,}623 & 0{,}516 & 0{,}565 & 0{,}377 & 0{,}484 \\
+\cline{2-12}
+& Vzťahy &
+2431 & 3070 & 393 & 2677 & 2038 & 0{,}128 & 0{,}162 & 0{,}143 & 0{,}872 & 0{,}838 \\
+\hline
+\end{tabular}%
+}
+\caption{Súhrnné výsledky evaluácie extrakcie pre modely na 100 chunkoch.}
+\label{tab:extraction-evaluation}
+\shorthandon{-}
+\end{table}
+
+
+
+Výsledky ukazujú, že model zachytáva entity podstatne spoľahlivejšie než vzťahy. Pri uzloch dosiahol mikro F1 skóre 0{,}565, zatiaľ čo pri vzťahoch iba 0{,}143. Problém teda nie je hlavne v dodržaní schémy, keďže zhoda s ontológiou je pri uzloch 0{,}998 a pri vzťahoch 0{,}999, ale v správnom výbere a prepojení hrán medzi entitami.
 
 \subsubsection{Porovnanie RAG s GraphRAG}
 

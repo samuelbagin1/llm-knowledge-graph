@@ -2,58 +2,84 @@ chunk: 105
 page: 25
 text: (4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej platby dňom prijatia platby. (5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť v ten istý deň, keď vzniká daňová povinnosť komisionárovi. (6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo dodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú dňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je vyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania služby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1, pri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských
 relationships:
-  Danova Povinnost -> [VZNIKA_PRI:"z prijatej platby"] -> Prijatie Platby
-  Prijatie Platby -> [PLATI_PRE:"pred dodanim tovaru alebo sluzby"] -> Platba
-  Danova Povinnost -> [VZNIKA_PRI:"pri dodani tovaru na zaklade komisionarskej zmluvy"] -> Dodanie Tovaru
-  Komitent -> [MA_POVINNOST:"pri dodani tovaru na zaklade komisionarskej zmluvy"] -> Danova Povinnost
-  Komitent -> [JE_POVINNY_PLATIT:"daň"] -> Danova Povinnost
-  Obstaranie Sluzby -> [VZTAHUJE_SA_NA:"podla § 9 ods. 4"] -> § 9 Ods. 4
-  Sluzba -> [PODLIEHA:"obstarana sluzba"] -> § 9 Ods. 4
-  Osoba, Ktora Kona Vo Svojom Mene -> [VYKONAVA:"konanie vo svojom mene"] -> Obstaranie Sluzby
-  Faktura -> [MA_UCINOK:"sluzba sa povazuje za dodanu dnom vyhotovenia faktury"] -> Dodanie Sluzby
-  Faktura -> [MA_LEHOTU:"ak nie je vyhotovena do konca tretieho kalendarneho mesiaca"] -> Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana
-  Danova Povinnost -> [VZNIKA_PRI:"ak faktura nie je vyhotovena do konca lehoty"] -> Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana
-  Sluzba -> [MA_MIESTO_DODANIA:"miesto dodania podla § 15 ods. 1"] -> § 15 Ods. 1
-  Danova Povinnost -> [VZNIKA_PRI:"nositel autorskych prav"] -> Nositel Autorskych
-  Danova Povinnost -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Platba -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Tovar -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Sluzba -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Komisionarska Zmluva -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Komitent -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Komisionar -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Osoba, Ktora Kona Vo Svojom Mene -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Faktura -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Obstaravatel -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Nositel Autorskych -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  § 9 Ods. 4 -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  § 15 Ods. 1 -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Prijatie Platby -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Dodanie Tovaru -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Dodanie Sluzby -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Obstaranie Sluzby -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Vyhotovenie Faktury -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
-  Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana -> [IN_CHUNK] -> chunk_0_ZZ_222_2004
+- Odsek 4 -> [UPRAVUJE] -> Danova Povinnost Z Prijatej Platby
+- Platba Prijata Pred Dodanim Tovaru Alebo Sluzby -> [PODMIENUJE] -> Danova Povinnost Z Prijatej Platby
+- Danova Povinnost Z Prijatej Platby -> [TYKA_SA] -> Prijata Platba
+- Danova Povinnost Z Prijatej Platby -> [MA_DATUM] -> Den Prijatia Platby
+- Platba Prijata Pred Dodanim Tovaru Alebo Sluzby -> [TYKA_SA] -> Dodanie Tovaru
+- Platba Prijata Pred Dodanim Tovaru Alebo Sluzby -> [TYKA_SA] -> Dodanie Sluzby
+
+- Odsek 5 -> [UPRAVUJE] -> Danova Povinnost Pri Dodani Tovaru Na Zaklade Komisionarskej Zmluvy
+- Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy -> [VYCHADZA_Z] -> Komisionarska Zmluva
+- Komitent -> [MA_POVINNOST] -> Danova Povinnost Komitenta
+- Komisionar -> [MA_POVINNOST] -> Danova Povinnost Komisionara
+- Danova Povinnost Komitenta -> [VZNIKA_PRI] -> Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy
+- Danova Povinnost Komitenta -> [MA_DATUM] -> Ten Isty Den Ako Vznik Danovej Povinnosti Komisionara
+- Danova Povinnost Komitenta -> [SUVISI_S] -> Danova Povinnost Komisionara
+
+- Odsek 6 -> [UPRAVUJE] -> Obstaranie Sluzby Podla Paragrafu § 9 Odsek 4
+- Obstaranie Sluzby -> [JE_PODLA] -> Paragraf § 9 Odsek 4
+- Obstaranie Sluzby -> [ZAHRNUJE] -> Obstaranie Opakovane Alebo Ciastkovo Dodavanych Sluzieb
+- Osoba Ktora Kona Vo Svojom Mene -> [VYKONAVA] -> Obstaranie Sluzby
+- Sluzba Obstarana Osobou Ktora Kona Vo Svojom Mene -> [POVAZUJE_SA_ZA] -> Dodana Sluzba
+- Dodana Sluzba -> [MA_DATUM] -> Den Vyhotovenia Faktury
+- Obstaravatel -> [VYDAVA] -> Faktura
+- Faktura -> [MA_UCEL] -> Uhrada Za Sluzbu
+
+- Nevyhotovenie Faktury Do Konca Tretieho Kalendarneho Mesiaca -> [PODMIENUJE] -> Danova Povinnost Pri Nevyhotoveni Faktury
+- Danova Povinnost Pri Nevyhotoveni Faktury -> [MA_DATUM] -> Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci Dodania Sluzby
+
+- Urcenie Dna Dodania Sluzby Podla Odseku 6 -> [NEPLATI_PRE] -> Sluzba S Miestom Dodania Podla Paragraf § 15 Odsek 1
+- Sluzba S Miestom Dodania Podla Paragrafu § 15 Odsek 1 -> [MA_MIESTO_DODANIA] -> Miesto Dodania Sluzby Podla Paragraf § 15 Odsek 1
+- Miesto Dodania Sluzby Podla Paragrafu § 15 Odsek 1 -> [JE_PODLA] -> Paragraf § 15 Odsek 1
+- Prijemca Sluzby -> [JE_POVINNY_PLATIT] -> Dan
+
+- Paragraf § 9 -> [MA_ODSEK] -> Paragraf § 9 Odsek 4
+- Paragraf § 15 -> [MA_ODSEK] -> Paragraf § 15 Odsek 1
+
 nodes:
-  Povinnost: Danova Povinnost
-  Zaznam: Platba
-  Tovar: Tovar
-  Sluzba: Sluzba
-  Zmluva: Komisionarska Zmluva
-  Subjekt: Komitent
-  Subjekt: Komisionar
-  Osoba: Osoba, Ktora Kona Vo Svojom Mene
-  Doklad: Faktura
-  Subjekt: Obstaravatel
-  Subjekt: Nositel Autorskych
-  Paragraf: § 9 Ods. 4
-  Paragraf: § 15 Ods. 1
-  Cinnost: Prijatie Platby
-  Cinnost: Dodanie Tovaru
-  Cinnost: Dodanie Sluzby
-  Cinnost: Obstaranie Sluzby
-  Cinnost: Vyhotovenie Faktury
-  Datum: Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci, V Ktorom Bola Sluzba Dodana
+- Odsek: Odsek 4
+- Odsek: Odsek 5
+- Odsek: Odsek 6
+- Povinnost: Danova Povinnost Z Prijatej Platby
+- Podmienka: Platba Prijata Pred Dodanim Tovaru Alebo Sluzby
+- Suma: Prijata Platba
+- Datum: Den Prijatia Platby
+- Tovar: Tovar
+- Sluzba: Sluzba
+- Cinnost: Dodanie Tovaru
+- Cinnost: Dodanie Sluzby
+- Cinnost: Danova Povinnost Pri Dodani Tovaru Na Zaklade Komisionarskej Zmluvy
+- Cinnost: Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy
+- Zmluva: Komisionarska Zmluva
+- Subjekt: Komitent
+- Subjekt: Komisionar
+- Povinnost: Danova Povinnost Komitenta
+- Povinnost: Danova Povinnost Komisionara
+- CasovyUdaj: Ten Isty Den Ako Vznik Danovej Povinnosti Komisionara
+- Cinnost: Obstaranie Sluzby Podla Paragrafu § 9 Odsek 4
+- Cinnost: Obstaranie Sluzby
+- Cinnost: Obstaranie Opakovane Alebo Ciastkovo Dodavanych Sluzieb
+- Osoba: Osoba Ktora Kona Vo Svojom Mene
+- Sluzba: Sluzba Obstarana Osobou Ktora Kona Vo Svojom Mene
+- Sluzba: Dodana Sluzba
+- Datum: Den Vyhotovenia Faktury
+- Subjekt: Obstaravatel
+- Doklad: Faktura
+- Cinnost: Uhrada Za Sluzbu
+- Podmienka: Nevyhotovenie Faktury Do Konca Tretieho Kalendarneho Mesiaca
+- Povinnost: Danova Povinnost Pri Nevyhotoveni Faktury
+- Datum: Posledny Den Tretieho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci Dodania Sluzby
+- Cinnost: Urcenie Dna Dodania Sluzby Podla Odseku 6
+- Sluzba: Sluzba S Miestom Dodania Podla Paragrafu § 15 Odsek 1
+- Lokacia: Miesto Dodania Sluzby Podla Paragrafu § 15 Odsek 1
+- Subjekt: Prijemca Sluzby
+- Dan: Dan
+- Paragraf: Paragraf § 9
+- Odsek: Paragraf § 9 Odsek 4
+- Paragraf: Paragraf § 15
+- Odsek: Paragraf § 15 Odsek 1
+
 
 chunk: 137
 page: 33

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.13)  14 MAY 2026 21:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.13)  15 MAY 2026 10:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1690,6 +1690,11 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [12{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
 [13]
+Overfull \hbox (1.45094pt too wide) in paragraph at lines 74--75
+[]\T1/lmr/m/n/12 (-20) Naj£astej²ie vy-uºí-va-nými ²ta-tis-tic-kými mo-delmi sú Mar-ko-vove mo-dely (HMM)
+ []
+
+
 
 [14]
 
@@ -1725,22 +1730,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 351.
+(caption)                particular \caption on input line 369.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (17.92537pt too wide) in paragraph at lines 317--354
+Overfull \hbox (17.92537pt too wide) in paragraph at lines 317--373
 []$[]$ 
  []
 
 
 
 [26]
-Overfull \hbox (15.55983pt too wide) in paragraph at lines 357--358
-\T1/lmr/m/n/12 (-20) dého chunku má tvar chunk_<i>_<document_id> (chunk_42_ZZ_2003_595_20260101).
- []
-
-
 
 [27]
 
@@ -1753,7 +1753,7 @@ Overfull \hbox (15.55983pt too wide) in paragraph at lines 357--358
 [31]
 
 [32]
-Overfull \hbox (39.23227pt too wide) in paragraph at lines 485--485
+Overfull \hbox (39.23227pt too wide) in paragraph at lines 512--512
 []\T1/lmtt/m/n/8 1. **Deduplikácia a sémantické zjednotenie**: Zlú£ synonymá a sémanticky blízke typy do jedného kanonického typu.[] 
  []
 
@@ -1769,11 +1769,13 @@ Overfull \hbox (39.23227pt too wide) in paragraph at lines 485--485
 
 [37]
 
-[38])
+[38]
 
-[39] (./includes/conclusion.tex)
+[39])
 
-[40
+[40] (./includes/conclusion.tex)
+
+[41
 
 
 ]
@@ -1787,16 +1789,16 @@ Overfull \hbox (3.70052pt too wide) in paragraph at lines 117--117
 
 
 
-[41
+[42
 
 
 ]
 
-[42]
+[43]
 
-[43] (./includes/ai_declaration.tex)
+[44] (./includes/ai_declaration.tex)
 
-[44]
+[45]
 
 Package caption Warning: Unused \captionsetup[sub] on input line 10.
 See the caption package documentation for explanation.
@@ -1807,24 +1809,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A5353DA12EDE9DC7566100A212B9DA15;9015.
+(rerunfilecheck)             Checksum: 4C53C836CF7246AD47202699E0C4BC7C;9189.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47478 strings out of 473190
- 908805 string characters out of 5715800
- 1841600 words of memory out of 5000000
- 69563 multiletter control sequences out of 15000+600000
- 688894 words of font info for 252 fonts, out of 8000000 for 9000
+ 47546 strings out of 473190
+ 910322 string characters out of 5715800
+ 1841001 words of memory out of 5000000
+ 69624 multiletter control sequences out of 15000+600000
+ 691943 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,16n,131p,2422b,3118s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on thesis.pdf (45 pages, 435032 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+Output written on thesis.pdf (46 pages, 463091 bytes).
 PDF statistics:
- 772 PDF objects out of 1000 (max. 8388607)
- 683 compressed objects within 7 object streams
- 141 named destinations out of 1000 (max. 500000)
- 75141 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 790 PDF objects out of 1000 (max. 8388607)
+ 698 compressed objects within 7 object streams
+ 145 named destinations out of 1000 (max. 500000)
+ 77197 words of extra memory for PDF output out of 89155 (max. 10000000)
 

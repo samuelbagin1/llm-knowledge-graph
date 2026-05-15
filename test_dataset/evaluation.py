@@ -1500,12 +1500,12 @@ def write_reports(
 
 
 def main() -> None:
-    dataset_path: Path = Path(__file__).resolve().parent / "kg_dataset.json"
+    dataset_path: Path = Path(__file__).resolve().parent / "kg_test_dataset.json"
     predictions_path: Optional[Path] = None
     output_dir: Path = Path(__file__).resolve().parent / "evaluation_results"
     limit: Optional[int] = None
     offset: int = 0
-    start_chunk_index: Optional[int] = 51
+    start_chunk_index: Optional[int] = None
     no_write: bool = False
     no_llm_judge: bool = False
     judge_model: str = os.getenv("KG_EVAL_JUDGE_MODEL", "gpt-4o-mini")

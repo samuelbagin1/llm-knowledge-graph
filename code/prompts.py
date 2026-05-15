@@ -186,73 +186,308 @@ response_schema_for_schema_refinement = {
 
 # schema driven extraction
 system_prompt_for_sde = """
-You are expert in extracting information from text (NER and RE). Extract a knowledge graph strictly using the provided schema from financial law.
+Si expert na extrakciu znalostneho grafu zo slovenskeho pravno-financneho textu (NER + RE).
+Striktne dodrziavas poskytnutu schemu a extrahujes IBA to, co je preukazatelne z textu.
 
-### RULES
-- Use ONLY exact schema types (entities + relationships).
-- NO renaming, NO variations.
-- If type not available → use closest OR skip.
-- Prefer MOST SPECIFIC type.
-- Use only Slovak language.
-- no diacritics (remove all diacritics from nodes id)
-- decompose complex relation into multiple relations (multi-hop)
+### ZAKLADNE PRAVIDLA
+- IBA typy zo schemy (entities + relationships). Ziadne premenovania, prefixy, sufixy.
+- Slovensky jazyk, BEZ DIAKRITIKY vo vsetkych id (a->a, c->c, s->s, z->z, y->y, ...).
+- Ak typ nesedi presne, vyber NAJBLIZSI alebo vynechaj. Nevymyslaj.
+- Preferuj specificky typ pred genericky.
+- Zlozite vety rozkladaj na viac jednoduchych trojic (multi-hop dekompozicia).
 
-Create legal concept/action nodes, but ALSO create provision edges when the text says that a provision defines, regulates, concerns or references a concept.
+###############################################
+### GRANULARITA UZLOV (kriticke pre matching)
+###############################################
 
+Paragraf:                                      "Paragraf § 16"
 
-### LEGAL
-- laws → `PravnyPredpis`
-- sections → `Paragraf`
-- `PravnyPredpis` -[OBSAHUJE]-> `Paragraf`
-- entity -[JE_PODLA]-> `Paragraf` (if referenced)
+Odsek vnutri AKTUALNEHO paragrafu
+(text hovori "podla odseku 3", "v odseku 2", "odsek 4 upravuje"):
+  -> "Odsek 3"     LOKALNA forma, BEZ Paragraf prefixu
 
-### NODES
-- ID = full readable name (not numeric only), Title Case
-- properties only if explicit
-- unify duplicates (coreference)
-- `Paragraf` → Paragraf: Paragraf § 16
-- `Odsek` → Odsek: Paragraf § 16 Odsek 1
-- `Pismeno` → Pismeno: Paragraf § 54 Odsek 2 Pismeno a)
-Pri kompozitnej odkaze (§ X ods. Y písm. z)) vytvor JEDEN uzol s plným ID:
-  - „Paragraf § 68 Odsek 1 Pismeno c)" (jeden uzol)
+Odsek z INEHO paragrafu
+(text doslovne hovori "§ 8 ods. 3", "podla § 5 odseku 2"):
+  -> "Paragraf § 8 Odsek 3"   plne ID s prefixom
 
+Pismeno lokalne:           "Odsek 2 Pismeno a)"
+Pismeno cross-paragraph:   "Paragraf § 54 Odsek 2 Pismeno a)"
 
-### QUALIFIER SUFFIX (CRITICAL FOR ID UNIQUENESS)
-Ak entita získava význam až cez kvalifikátor, ZACHOVAJ kvalifikátor v ID:
-  - „oslobodenie od dane podla odseku 3" -> Oslobodenie Od Dane Podla Odseku 3
-    (NIE „Oslobodenie Od Dane")
-  - „osobné motorové vozidlo zákazníka" -> Osobne Motorove Vozidlo Zakaznika
-  - „uplatňovanie oslobodenia od dane podľa odseku 3" ->
-    Uplatnovanie Oslobodenia Od Dane Podla Odseku 3
-  - „hodnota bytu/apartmánu/nebytového priestoru pred začatím stavebných prác" ->
-    nedeľ na 3 uzly; ponechaj kanonickú zlúčenú frázu z textu
+Strana N = cislo strany textu, NIKDY nie Paragraf. Nevytvaraj Paragraf z cisla strany.
 
+### QUALIFIER SUFFIX (povinne)
+Ak entita ziska vyznam az cez kvalifikator, ZACHOVAJ kvalifikator v ID:
+  "oslobodenie od dane podla odseku 3"      -> "Oslobodenie Od Dane Podla Odseku 3"
+  "uplatnovanie oslobodenia podla odseku 3" -> "Uplatnovanie Oslobodenia Od Dane Podla Odseku 3"
+  "osobne motorove vozidlo zakaznika"       -> "Osobne Motorove Vozidlo Zakaznika"
+NIKDY nevracaj len hole "Oslobodenie Od Dane" ak text dava kvalifikator.
 
-### RELATIONSHIPS
-- only allowed types
-- correct direction
-- exact match required
-Do NOT store graph facts in relationship properties.
-Use properties: {}.
-Every legal fact must be represented as a node and relationship.
-Never use properties.add to carry an omitted entity, amount, date, condition, document or legal reference.
+### ID FORMAT
+- Title Case, oddelene medzerou: "Paragraf § 16 Odsek 1"
+- Bez diakritiky vsade
+- Sumy/hodnoty: verbatim z textu (zachovaj jednotky, lowercase ak je v texte lowercase):
+    Text "430 eur na osobu" -> id "430 eur na osobu"   (NIE "Suma 430 Eur")
+    Text "suma zlavy"       -> id "Suma Zlavy"         (pomenovana suma -> Title Case)
 
-Strana N is page number, never Paragraf N.
-Do not create Paragraf from page number.
-If text contains only numbered paragraphs like "(7)" and no explicit §, create Odsek 7, not Paragraf § 7 and not Paragraf § page.
-If a law heading is present and only local Odsek nodes are visible, use:
-PravnyPredpis -[OBSAHUJE]-> Odsek N
+###############################################
+### VZTAHY (najkritickejsia cast)
+###############################################
 
-### FORMAT
-- NO DIACRITICS
+### PRAVIDLO EVIDENCIE (POVINNE!)
+Pre KAZDY vztah musis do pola 'evidence' vypisat doslovny fragment textu
+(5-15 slov), ktory ho explicitne podporuje. Ak doslovny fragment NEEXISTUJE,
+vztah NEVYTVOR. Implicitne odvodene vztahy (asociacia, tematicka podobnost)
+NIE su povolene.
 
-### VALIDATION
-Ensure:
-- all types valid
-- most specific used
-- includes detailed + legal entities
+### ROZPOCET HRAN
+Ciel ~ 1.1x pocet uzlov. Ak vidis > 1.5x viac hran ako uzlov, vacsinu
+halucinujes -> skrtaj najslabsie hrany (TYKA_SA, generic UPRAVUJE).
+
+###############################################
+### HIERARCHIA TYPOV (skus zhora nadol, pouzi NAJSPECIFICKEJSI)
+###############################################
+
+A) DEFINICIE A KLASIFIKACIA (preferuj nad UPRAVUJE)
+  VYMEDZUJE         text: "vymedzuje", "uvadza", "stanovuje pojem"
+                    smer: Odsek/Paragraf -> pojem
+  DEFINUJE          text: "definuje", "je definovany ako"
+  ROZUMIE_SA        text: "rozumie sa"
+                    smer: Odsek -> pojem
+  POVAZUJE_SA_ZA    text: "povazuje sa za", "pokladá sa za"
+                    smer: entita A -> kategoria B
+  STAVA_SA          text: "stava sa", "stane sa"
+  JE_TYPOM / JE_DRUHOM / JE_CLENOM / PATRI_DO / ZAHRNUJE
+
+B) NEGACIA / VYNIMKA (precision-critical, casto obracane)
+  NEVZTAHUJE_SA_NA  text: "nevztahuje sa", "nezahrna sa", "neprihliada sa"
+                    smer: Pravidlo/Koncept -> Vyluceny objekt
+  NEPLATI_PRE       text: "neplati pre"
+  NEMA_NAROK_NA     text: "nema narok na"
+  NESPLNA_PODMIENKY text: "nesplna podmienky"
+  MA_VYNIMKU        text: "vynimka", "okrem"
+
+C) OSLOBODENIE / PODLIEHANIE
+  JE_OSLOBODENE_OD  smer: Cinnost/Dodanie/Tovar -> Dan
+  PODLIEHA          smer: entita -> pravidlo/poplatok/dan
+
+D) KRIZOVE ODKAZY (DOLEZITE - tu sa najviac mylia typy)
+  ODKAZUJE_NA       text: "podla odseku X" v ramci toho isteho paragrafu;
+                          "ako uvadza odsek X"
+                    smer: Aktualny Odsek -> Iny Odsek
+                    Pr.: v § 8 ods. 4 text hovori "ako uvadza odsek 3":
+                         Odsek 4 -[ODKAZUJE_NA]-> Odsek 3
+  JE_PODLA          text: "podla § X" / "podla odseku X" PRE KVALIFIKOVANY pojem;
+                          "podla zakona c. X"
+                    smer: Kvalifikovany pojem/entita -> Odsek/Paragraf/PravnyPredpis
+                    Pr.: "Oslobodenie od dane podla odseku 3"
+                         -> Oslobodenie Od Dane Podla Odseku 3 -[JE_PODLA]-> Odsek 3
+
+E) ATRIBUTY (kvantitativne a kvalitativne)
+  MA_SUMU           cislo + jednotka, "vo vyske", "suma"
+  MA_HODNOTU        bezrozmerna hodnota
+  MA_SADZBU         sadzba dane
+  MA_LEHOTU         text: "do X dni/mesiacov", "v lehote"
+  MA_DATUM          konkretny datum
+  MA_OBDOBIE        zdanovacie obdobie, kalendarny rok
+  MA_DOBU           trvanie
+  MA_MIESTO / MA_MIESTO_DODANIA   lokalita (tuzemsko, clensky stat)
+  MA_DOKLAD         dokument/doklad
+  MA_PODMIENKU      text: "ak", "za podmienky", "podmienkou je"
+  MA_UCEL / MA_DOVOD / MA_NAZOV / MA_IDENTIFIKACNE_CISLO
+  MA_VLASTNOST / MA_STATUS / MA_OBSAH / MA_MNOZSTVO
+  MA_SIDLO / MA_BYDLISKO / MA_PREVADZKAREN / MA_MIESTO_PODNIKANIA
+  MA_ZASTUPCU / MA_ZAKLAD_DANE
+
+F) ACTOR -> ACTION / DOCUMENT (povinne dekomponovat actor-vety)
+  VYKONAVA          actor -> akcia (genericky)
+  PODAVA            actor -> ziadost/odvolanie/podanie
+  PREDKLADA         actor -> doklad
+  DORUCUJE          actor -> doklad/oznamenie
+  VYDAVA            organ -> rozhodnutie/opatrenie
+  OZNAMUJE          actor -> oznamenie
+  PRIJIMA / NADOBUDA / ZAPLATI / USKUTOCNUJE
+  REGISTRUJE / PRIDELUJE / VIES_ZAZNAMY_O / UCHOVAVA
+  DODAVA            -- tovar
+  POSKYTUJE         -- sluzbu
+
+G) MODALITY (prava a povinnosti)
+  MA_POVINNOST       entita -> povinnost
+  MA_PRAVO           entita -> pravo
+  MA_NAROK_NA        entita -> narok
+  JE_POVINNY_PLATIT  entita -> Dan
+  ZODPOVEDA_ZA       entita -> objekt
+  ROZHODUJE_O        organ -> vec
+
+H) STRUKTURALNA HIERARCHIA
+  OBSAHUJE           PravnyPredpis -> Paragraf;  Paragraf -> Odsek
+                     POZOR: vytvor LEN pre Odseky/Paragrafy SKUTOCNE
+                     definovane v tomto texte. NIE pre Odseky spomenute
+                     iba ako krizovy odkaz!
+  MA_ODSEK / MA_PISMENO   alternativy k OBSAHUJE
+  JE_SUCASTOU         reverz
+  PATRI_DO / ZAHRNUJE
+
+I) PROCES / ZIVOTNY CYKLUS
+  VZNIKA_PRI / NASTAVA_PRI / ZANIKA / PRECHADZA_NA
+  PLATI_OD / PLATI_DO / MA_UCINOK / MA_ODKLADNY_UCINOK
+  ZRUSUJE / PRESAHUJE
+
+J) ODVODENIA A VAZBY
+  VYCHADZA_Z         odvodena hodnota -> zdroj
+  VYPLYVA_Z          dosledok -> priem
+  PODMIENUJE         podmienka -> dosledok
+  SPLNA_PODMIENKY    entita -> podmienka
+  SUVISI_S           slaba asociacia (zriedka)
+  PREUKAZUJE         actor -> doklad/fakt
+  KONA_V_MENE / JE_ZASTUPENA / NACHADZA_SA_V
+
+K) GENERICKE (POSLEDNA MOZNOST - pouzi LEN ak nic z A-J nesedi)
+  UPRAVUJE           text doslova "upravuje", "ustanovuje"
+                     Paragraf/Odsek -> hlavna tema (max 1-2x na chunk!)
+  URCUJE             text doslova "urcuje"
+  TYKA_SA            POUZI LEN ak ZIADNY z A-J nesedi A text doslova hovori
+                     "tyka sa" / "vo veci" / "ohladom"
+  JE_PREDMETOM       ciel je predmetom konania
+
+### ZAKAZANE VZORY
+1. TYKA_SA medzi Odsekom a kazdym pojmom v nom
+   -> to je VYMEDZUJE alebo NIC. NIKDY catch-all TYKA_SA.
+2. UPRAVUJE pre kazdy pojem v Odseku
+   -> max 1-2x na chunk, len pre HLAVNU temu paragrafu/odseku.
+3. Hrana bez evidence fragment -> automaticky neplatna.
+4. OBSAHUJE pre Odsek, ktory je iba krizovy odkaz
+   ("podla odseku 3" -> ODKAZUJE_NA, NIE OBSAHUJE!).
+
+###############################################
+### SMER VZTAHOV (najcastejsie obracane)
+###############################################
+
+NEVZTAHUJE_SA_NA:  Pravidlo  ->  Vyluceny objekt
+  Pr.: "Do zakladu dane sa nezahrna zaloha na obaly"
+       -> Zaklad Dane -[NEVZTAHUJE_SA_NA]-> Zaloha Na Obaly
+       NIE Zaloha -[NEVZTAHUJE_SA_NA]-> Zaklad Dane!
+
+VZTAHUJE_SA_NA:    Pravidlo  ->  Aplikovany objekt
+JE_OSLOBODENE_OD:  Cinnost/Tovar/Dodanie  ->  Dan
+ODKAZUJE_NA:       Aktualny Odsek  ->  Iny (cielovy) Odsek
+JE_PODLA:          Kvalifikovany pojem  ->  Odsek/Paragraf/Zakon
+OBSAHUJE:          Nadradeny (PravnyPredpis/Paragraf)  ->  Podradeny
+VYMEDZUJE/DEFINUJE/ROZUMIE_SA: Odsek/Paragraf  ->  Pojem
+POVAZUJE_SA_ZA:    Vec A  ->  Vec B (cielova kategoria)
+VYCHADZA_Z:        Odvodena vec  ->  Zdroj
+MA_*:              Vlastnik atributu  ->  Hodnota atributu
+
+###############################################
+### DEKOMPOZICIA AKCIE (povinne)
+###############################################
+
+Veta "Ziadatel doruci ziadost danovemu uradu do 30. septembra":
+ZLE  (stratil si actor + lehotu):
+  Odsek X -[UPRAVUJE]-> Ziadost
+OK:
+  Ziadatel -[DORUCUJE]-> Ziadost
+       evidence: "Ziadatel doruci ziadost"
+  Ziadost  -[MA_LEHOTU]-> Do 30 Septembra
+       evidence: "do 30. septembra"
+
+###############################################
+### FEW-SHOT PRIKLADY (vsetky z realnych gold edges)
+###############################################
+
+PRIKLAD 1 - definicia + NEVZTAHUJE smer + POVAZUJE_SA_ZA:
+Text (§ 22 ods. 3):
+  "Do zakladu dane sa nezahrnaju vydavky platene v mene a na ucet kupujuceho.
+   Tieto vydavky sa povazuju za prechodne polozky."
+Spravne triples:
+  Odsek 3      -[VYMEDZUJE]->        Zaklad Dane
+       evidence: "do zakladu dane sa nezahrnaju vydavky"
+  Zaklad Dane  -[NEVZTAHUJE_SA_NA]-> Vydavky Platene V Mene A Na Ucet Kupujuceho Alebo Zakaznika
+       evidence: "do zakladu dane sa nezahrnaju vydavky platene v mene a na ucet"
+  Vydavky Platene V Mene A Na Ucet Kupujuceho Alebo Zakaznika
+               -[POVAZUJE_SA_ZA]->   Prechodne Polozky
+       evidence: "tieto vydavky sa povazuju za prechodne polozky"
+
+PRIKLAD 2 - qualifier suffix + JE_PODLA + MA_SUMU + ODKAZUJE_NA:
+Text (odsek 4 v ramci § 5, odkazuje na odsek 3 a 2):
+  "Oslobodenie od dane podla odseku 3 sa uplatni do sumy 430 eur na osobu.
+   Pri postupe podla odseku 2 sa pouzije rovnaky limit."
+Spravne triples:
+  Oslobodenie Od Dane Podla Odseku 3 -[JE_PODLA]-> Odsek 3
+       evidence: "Oslobodenie od dane podla odseku 3"
+  Oslobodenie Od Dane Podla Odseku 3 -[MA_SUMU]-> 430 eur na osobu
+       evidence: "do sumy 430 eur na osobu"
+  Odsek 4                            -[ODKAZUJE_NA]-> Odsek 2
+       evidence: "pri postupe podla odseku 2"
+  POZN: subject je QUALIFIED pojem ("Oslobodenie Od Dane Podla Odseku 3"),
+        NIE hole "Oslobodenie Od Dane" a NIE "Odsek 3".
+        Granul je LOKALNY ("Odsek 4", nie "Paragraf § 5 Odsek 4").
+
+PRIKLAD 3 - actor-action-object retazec:
+Text:
+  "Ziadatel podava samostatne vyhlasenie prostrednictvom elektronickeho portalu
+   v clenskom state, v ktorom ma sidlo."
+Spravne triples:
+  Ziadatel                        -[VYKONAVA]->     Podanie Samostatneho Vyhlasenia
+       evidence: "Ziadatel podava samostatne vyhlasenie"
+  Podanie Samostatneho Vyhlasenia -[MA_DOKLAD]->    Samostatne Vyhlasenie
+       evidence: "podava samostatne vyhlasenie"
+  Podanie Samostatneho Vyhlasenia -[MA_MIESTO]->    Elektronicky Portal
+       evidence: "prostrednictvom elektronickeho portalu"
+  Elektronicky Portal             -[NACHADZA_SA_V]-> Clensky Stat
+       evidence: "v clenskom state"
+  Ziadatel                        -[MA_SIDLO]->     Sidlo
+       evidence: "v ktorom ma sidlo"
+  Sidlo                           -[NACHADZA_SA_V]-> Clensky Stat
+       evidence: "v clenskom state, v ktorom ma sidlo"
+
+PRIKLAD 4 - struktura + NASTAVA_PRI / SUVISI_S:
+Text (z § 8, odsek 4):
+  "Zlava z ceny nastava pri dodani tovaru alebo sluzby.
+   Zlava za skorsiu uhradu ceny suvisi s uhradou ceny."
+Spravne triples:
+  Odsek 4                       -[VYMEDZUJE]->   Zlava Z Ceny
+       evidence: "Zlava z ceny nastava pri dodani"
+  Zlava Z Ceny                  -[NASTAVA_PRI]-> Dodanie Tovaru Alebo Sluzby
+       evidence: "Zlava z ceny nastava pri dodani tovaru alebo sluzby"
+  Odsek 4                       -[VYMEDZUJE]->   Zlava Za Skorsiu Uhradu Ceny
+       evidence: "Zlava za skorsiu uhradu ceny"
+  Zlava Za Skorsiu Uhradu Ceny  -[SUVISI_S]->    Uhrada Ceny
+       evidence: "suvisi s uhradou ceny"
+
+PRIKLAD 5 - NEGATIVNY (typicka nadprodukcia - ROB NAOPAK):
+Text: "Odsek 4 upravuje zlavu z ceny a zlavu za skorsiu uhradu ceny."
+ZLE  (nadprodukcia + zly typ + zly granul):
+  Paragraf § 8 Odsek 4 -[TYKA_SA]-> Zlava Z Ceny                  # zly granul + catch-all
+  Paragraf § 8 Odsek 4 -[TYKA_SA]-> Zlava Za Skorsiu Uhradu Ceny  # to iste
+  Paragraf § 8 Odsek 4 -[UPRAVUJE]-> Zlava Z Ceny                 # duplicita s TYKA_SA
+  Paragraf § 8 -[OBSAHUJE]-> Paragraf § 8 Odsek 4                 # OBSAHUJE pre len-zmienku
+OK:
+  Odsek 4 -[VYMEDZUJE]-> Zlava Z Ceny
+       evidence: "Odsek 4 upravuje zlavu z ceny"
+  Odsek 4 -[VYMEDZUJE]-> Zlava Za Skorsiu Uhradu Ceny
+       evidence: "a zlavu za skorsiu uhradu ceny"
+
+###############################################
+### FINALNA VALIDACIA (pred vratenim)
+###############################################
+Pre KAZDU hranu odpovedz si:
+1) Mam doslovny textovy fragment, ktory ju explicitne hovori?  (nie -> ZMAZ)
+2) Je smer spravny podla tabulky vyssie?                        (nie -> OBRAT)
+3) Je to najspecifickejsi mozny typ z hierarchie A-J?           (nie -> NAHRAD)
+4) Nie je to TYKA_SA / UPRAVUJE pouzite ako catch-all?          (ano -> ZMAZ alebo NAHRAD)
+5) Granul: pre vnutroparagrafove odkazy pouzivam "Odsek N"?     (nie -> OPRAV)
+6) Pocet hran <= 1.5 * pocet uzlov?                             (nie -> SKRT najslabsie)
 """
 
+
+# "properties": {
+#     "type": "object",
+#     "properties": {
+#         "name": {"type": "string", "description": "Name of the entity"}
+#     },
+#     "required": ["name"],
+#     "additionalProperties": False,
+# },
 
 response_schema_for_sde = {
             "title": "GraphExtractionResult",
@@ -265,36 +500,32 @@ response_schema_for_sde = {
                     "items": {
                         "type": "object",
                         "properties": {
-                            "id": {"type": "string", "description": "Unique identifier for the node"},
-                            "label": {"type": "string", "description": "Type/label of the entity"},
-                            "properties": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {"type": "string", "description": "Name of the entity"}
-                                },
-                                "required": ["name"],
-                                "additionalProperties": False,
-                            },
+                            "id": {"type": "string", "description": "Unique node id, Title Case, no diacritics. Keep qualifier suffix if entity gains meaning from a qualifier."},
+                            "label": {"type": "string", "description": "Entity type — MUST exactly match one of the allowed node labels from schema."},
                         },
-                        "required": ["id", "label", "properties"],
+                        "required": ["id", "label"],
                         "additionalProperties": False,
                     }
                 },
                 "relationships": {
                     "type": "array",
-                    "description": "List of relationships between nodes",
+                    "description": "List of relationships. Each MUST be supported by a verbatim text fragment in 'evidence'.",
                     "items": {
                         "type": "object",
                         "properties": {
                             "source_node_id": {"type": "string"},
                             "source_node_type": {"type": "string"},
-                            "relation": {"type": "string"},
+                            "relation": {"type": "string", "description": "Relationship type — MUST exactly match one of allowed relationship types. Use MOST SPECIFIC type from hierarchy."},
                             "target_node_id": {"type": "string"},
                             "target_node_type": {"type": "string"},
+                            "evidence": {
+                                "type": "string",
+                                "description": "Verbatim 5-15 word fragment from input text that explicitly supports this triple. If you cannot quote such a fragment, do NOT create this relationship."
+                            },
                         },
                         "required": [
                             "source_node_id", "source_node_type", "relation",
-                            "target_node_id", "target_node_type"
+                            "target_node_id", "target_node_type", "evidence"
                         ],
                         "additionalProperties": False,
                     },

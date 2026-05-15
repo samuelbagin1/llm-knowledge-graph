@@ -1,0 +1,3145 @@
+[
+  {
+    "chunk": 341,
+    "text": "(3) Ak zdaniteľná osoba nespĺňa podmienky na uplatňovanie osobitnej úpravy, Daňový úrad Bratislava vydá rozhodnutie o tom, že jej nepovoľuje uplatňovanie osobitnej úpravy; proti tomuto rozhodnutiu môže zdaniteľná osoba podať odvolanie. (4) Zdaniteľná osoba neusadená na území Európskej únie, ktorá má povolenie podľa odseku 2, je povinná uplatňovať osobitnú úpravu na všetky služby podľa § 68 ods. 1 písm. a). (5) Každú zmenu údajov uvedených v oznámení o začatí činnosti podľa odseku 2 je zdaniteľná osoba neusadená na území Európskej únie povinná oznámiť Daňovému úradu Bratislava. (6) Zdaniteľná osoba neusadená na území Európskej únie je povinná oznámiť Daňovému úradu Bratislava skončenie činnosti alebo zmenu činnosti v takom rozsahu, že ďalej nebude spĺňať podmienky na uplatňovanie osobitnej úpravy. (7) Daňový úrad Bratislava zruší zdaniteľnej osobe neusadenej na území Európskej únie povolenie uplatňovať osobitnú úpravu a odníme osobitné identifikačné číslo pre daň, ak",
+    "nodes": [
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "ZdanitelnaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Dany Urad Bratislava",
+        "type": "SpravcaDane",
+        "properties": {}
+      },
+      {
+        "id": "Rozhodnutie O Nepovoleni Uplatnovania Osobitnej Upravy",
+        "type": "Rozhodnutie",
+        "properties": {}
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Konanie",
+        "properties": {}
+      },
+      {
+        "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+        "type": "ZdanitelnaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Povolenie Uplatnovat Osobitnu Upravu Podla Odseku 2",
+        "type": "Status",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Povinnost Uplatnovat Osobitnu Upravu Na Vsetky Sluzby",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Vsetky Sluzby",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 68 Odsek 1 Pismeno a",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Zmena Udajov Uvedenych V Oznameni O Zacati Cinnosti Podla Odseku 2",
+        "type": "Zaznam",
+        "properties": {}
+      },
+      {
+        "id": "Skoncenie Cinnosti Alebo Zmena Cinnosti",
+        "type": "Cinnost",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dany Urad Bratislava",
+          "type": "SpravcaDane",
+          "properties": {}
+        },
+        "target": {
+          "id": "Rozhodnutie O Nepovoleni Uplatnovania Osobitnej Upravy",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "type": "PODAVA",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Povolenie Uplatnovat Osobitnu Upravu Podla Odseku 2",
+          "type": "Status",
+          "properties": {}
+        },
+        "type": "MA_STATUS",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Povolenie Uplatnovat Osobitnu Upravu Podla Odseku 2",
+          "type": "Status",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Povinnost Uplatnovat Osobitnu Upravu Na Vsetky Sluzby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnost Uplatnovat Osobitnu Upravu Na Vsetky Sluzby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Vsetky Sluzby",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "type": "APLIKUJE_SA_NA",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnost Uplatnovat Osobitnu Upravu Na Vsetky Sluzby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 68 Odsek 1 Pismeno a",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zmena Udajov Uvedenych V Oznameni O Zacati Cinnosti Podla Odseku 2",
+          "type": "Zaznam",
+          "properties": {}
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zmena Udajov Uvedenych V Oznameni O Zacati Cinnosti Podla Odseku 2",
+          "type": "Zaznam",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba Neusadena Na Uzemi Europskej Unie",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncenie Cinnosti Alebo Zmena Cinnosti",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Skoncenie Cinnosti Alebo Zmena Cinnosti",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Podmienky Na Uplatnovanie Osobitnej Upravy",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dany Urad Bratislava",
+          "type": "SpravcaDane",
+          "properties": {}
+        },
+        "target": {
+          "id": "Povolenie Uplatnovat Osobitnu Upravu Podla Odseku 2",
+          "type": "Status",
+          "properties": {}
+        },
+        "type": "ZRUSUJE",
+        "properties": {
+          "section": "chunk_0_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 389,
+    "text": "v ktorom svoje rozhodnutie písomne oznámi daňovému úradu. (11) Platiteľ je povinný skončiť uplatňovanie osobitnej úpravy, ak a) v prebiehajúcom kalendárnom roku dosiahne obrat 100 000 eur, a to posledným dňom zdaňovacieho obdobia, v ktorom dosiahol obrat, b) sa stane členom skupiny, a to dňom, ktorý predchádza dňu, keď sa stal členom skupiny, c) je naňho vyhlásený konkurz alebo vstúpil do likvidácie, a to dňom, ktorý predchádza vyhláseniu konkurzu alebo vstupu do likvidácie, d) sa zrušuje bez likvidácie, a to dňom, ktorý predchádza dňu jeho zániku, e) je fyzickou osobou pokračujúcou v podnikaní po úmrtí platiteľa podľa § 83, a to posledným dňom posledného zdaňovacieho obdobia, v ktorom sa skončí konanie o dedičstve, f) nastane skutočnosť na zmenu registrácie pre daň podľa § 6a ods. 2, a to dňom, ktorý predchádza dňu, keď táto skutočnosť nastala. (12) Dátum skončenia uplatňovania osobitnej úpravy podľa odseku 11 platiteľ alebo jeho právny",
+    "nodes": [
+      {
+        "id": "Platitel",
+        "type": "ZdanitelnaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Obrat 100 000 eur",
+        "type": "Obrat",
+        "properties": {}
+      },
+      {
+        "id": "100 000 eur",
+        "type": "Suma",
+        "properties": {}
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {}
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "ClenSkupiny",
+        "properties": {}
+      },
+      {
+        "id": "Vyhlaseny Konkurz",
+        "type": "Konanie",
+        "properties": {}
+      },
+      {
+        "id": "Vstup Do Likvidacie",
+        "type": "Konanie",
+        "properties": {}
+      },
+      {
+        "id": "Zrusenie Bez Likvidacie",
+        "type": "Konanie",
+        "properties": {}
+      },
+      {
+        "id": "Fyzicka Osoba Pokracujuca V Podnikani Po Umrti Platitela Podla Paragraf § 83",
+        "type": "FyzickaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 83",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Skutocnost Na Zmenu Registracie Pre Dan Podla Paragraf § 6a Odsek 2",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 6a Odsek 2",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Datum Skoncenia Uplatnovania Osobitnej Upravy Podla Odseku 11",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 11",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Obrat 100 000 eur",
+          "type": "Obrat",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Obrat 100 000 eur",
+          "type": "Obrat",
+          "properties": {}
+        },
+        "target": {
+          "id": "100 000 eur",
+          "type": "Suma",
+          "properties": {}
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Obrat 100 000 eur",
+          "type": "Obrat",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "ClenSkupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Vyhlaseny Konkurz",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Vstup Do Likvidacie",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zrusenie Bez Likvidacie",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Fyzicka Osoba Pokracujuca V Podnikani Po Umrti Platitela Podla Paragraf § 83",
+          "type": "FyzickaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Fyzicka Osoba Pokracujuca V Podnikani Po Umrti Platitela Podla Paragraf § 83",
+          "type": "FyzickaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 83",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Skutocnost Na Zmenu Registracie Pre Dan Podla Paragraf § 6a Odsek 2",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skoncit Uplatnovanie Osobitnej Upravy",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "PODMIENUJE",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Skutocnost Na Zmenu Registracie Pre Dan Podla Paragraf § 6a Odsek 2",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 6a Odsek 2",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Datum Skoncenia Uplatnovania Osobitnej Upravy Podla Odseku 11",
+          "type": "Datum",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 11",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_1_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 414,
+    "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 103 posledného mesiaca predchádzajúceho kalendárneho štvrťroka. Ak malý podnik tuzemskej osoby v oznámení podľa prvej vety vyznačil skutočnosť, že sa rozhodol skončiť uplatňovanie osobitnej úpravy, daňový úrad rozhodne o odňatí individuálneho identifikačného čísla s príponou EX ku dňu, počnúc ktorým malý podnik tuzemskej osoby nesmie uplatňovať osobitnú úpravu; proti tomuto rozhodnutiu nemožno podať odvolanie. (14) Ak hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu v Únii, zdaniteľnou osobou presiahne v prebiehajúcom kalendárnom roku 100 000 eur, je zdaniteľná osoba povinná prestať uplatňovať osobitnú úpravu počnúc dodaním, ktorým bol tento obrat presiahnutý; zdaniteľná osoba je súčasne povinná do 15 pracovných dní od tohto dňa podať výkaz podľa odseku 8 za obdobie od začiatku príslušného kalendárneho štvrťroka do dňa, v ktorom hodnota bez dane dodaných tovarov a služieb, ktoré sa zahŕňajú do ročného obratu",
+    "nodes": [
+      {
+        "id": "Odsek 14",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 8",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "ZdanitelnaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Podanie Vykazu Podla Odseku 8",
+        "type": "Konanie",
+        "properties": {}
+      },
+      {
+        "id": "Vykaz Podla Odseku 8",
+        "type": "Doklad",
+        "properties": {}
+      },
+      {
+        "id": "15 pracovnych dni od tohto dna",
+        "type": "Lehota",
+        "properties": {}
+      },
+      {
+        "id": "Od Zaciatku Prislusneho Kalendarneho Stvrtroka Do Dna",
+        "type": "Obdobie",
+        "properties": {}
+      },
+      {
+        "id": "Presiahnutie 100 000 eur V Prebiehajucom Kalendarnom Roku",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "100 000 eur",
+        "type": "Suma",
+        "properties": {}
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {}
+      },
+      {
+        "id": "Rocny Obrat V Unii",
+        "type": "Obrat",
+        "properties": {}
+      },
+      {
+        "id": "Dodane Tovary",
+        "type": "Tovar",
+        "properties": {}
+      },
+      {
+        "id": "Dodane Sluzby",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Povinnost Prestat Uplatnovat Osobitnu Upravu",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {}
+      },
+      {
+        "id": "Odnatie Individualneho Identifikacneho Cisla S Priponou EX",
+        "type": "Rozhodnutie",
+        "properties": {}
+      },
+      {
+        "id": "Individualne Identifikacne Cislo S Priponou EX",
+        "type": "IdentifikacneCislo",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 14",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 14",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Presiahnutie 100 000 eur V Prebiehajucom Kalendarnom Roku",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Podanie Vykazu Podla Odseku 8",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "type": "PODAVA",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Podanie Vykazu Podla Odseku 8",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Vykaz Podla Odseku 8",
+          "type": "Doklad",
+          "properties": {}
+        },
+        "type": "MA_DOKLAD",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Vykaz Podla Odseku 8",
+          "type": "Doklad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 8",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Podanie Vykazu Podla Odseku 8",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "15 pracovnych dni od tohto dna",
+          "type": "Lehota",
+          "properties": {}
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Podanie Vykazu Podla Odseku 8",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Od Zaciatku Prislusneho Kalendarneho Stvrtroka Do Dna",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Presiahnutie 100 000 eur V Prebiehajucom Kalendarnom Roku",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "100 000 eur",
+          "type": "Suma",
+          "properties": {}
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Presiahnutie 100 000 eur V Prebiehajucom Kalendarnom Roku",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Povinnost Prestat Uplatnovat Osobitnu Upravu",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Povinnost Prestat Uplatnovat Osobitnu Upravu",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Presiahnutie 100 000 eur V Prebiehajucom Kalendarnom Roku",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Podanie Vykazu Podla Odseku 8",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Presiahnutie 100 000 eur V Prebiehajucom Kalendarnom Roku",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Rocny Obrat V Unii",
+          "type": "Obrat",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodane Tovary",
+          "type": "Tovar",
+          "properties": {}
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Rocny Obrat V Unii",
+          "type": "Obrat",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodane Sluzby",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "type": "ZAHRNUJE",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odnatie Individualneho Identifikacneho Cisla S Priponou EX",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "type": "ROZHODUJE_O",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odnatie Individualneho Identifikacneho Cisla S Priponou EX",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Individualne Identifikacne Cislo S Priponou EX",
+          "type": "IdentifikacneCislo",
+          "properties": {}
+        },
+        "type": "MA_IDENTIFIKACNE_CISLO",
+        "properties": {
+          "section": "chunk_2_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 520,
+    "text": "(10) Ak bolo zdaniteľnej osobe registrovanej pre daň podľa § 4 alebo § 5 oznámené individuálne identifikačné číslo s príponou EX pre tuzemsko, táto osoba prestáva byť platiteľom dňom, ktorý predchádza dňu tohto oznámenia; túto skutočnosť daňový úrad bezodkladne oznámi zdaniteľnej osobe. Uplynutím dňa, kedy zdaniteľná osoba podľa prvej vety prestáva byť platiteľom, končí prebiehajúce zdaňovacie obdobie a zaniká platnosť identifikačného čísla pre daň; ustanovenia odsekov 5 až 9 týmto nie sú dotknuté. § 81a (1) Daňový úrad zruší registráciu skupiny podľa § 4b k 31. decembru kalendárneho roka, ak zástupca skupiny podá žiadosť o zrušenie registrácie skupiny najneskôr do 31. októbra kalendárneho roka. Ak je žiadosť o zrušenie registrácie skupiny podaná po 31. októbri kalendárneho roka, daňový úrad zruší registráciu skupiny najneskôr k 31. decembru kalendárneho roka nasledujúceho po podaní žiadosti. (2) Ak skupina podľa § 4b alebo § 4c prestane spĺňať podmienky podľa § 4a, zástupca skupiny je",
+    "nodes": [
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "ZdanitelnaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 5",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Platitel",
+        "type": "Status",
+        "properties": {}
+      },
+      {
+        "id": "Individualne Identifikacne Cislo S Priponou EX Pre Tuzemsko",
+        "type": "IdentifikacneCislo",
+        "properties": {}
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {}
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "SpravcaDane",
+        "properties": {}
+      },
+      {
+        "id": "Zdanovacie Obdobie",
+        "type": "ZdanovacieObdobie",
+        "properties": {}
+      },
+      {
+        "id": "Platnost Identifikacneho Cisla Pre Dan",
+        "type": "Status",
+        "properties": {}
+      },
+      {
+        "id": "Den Ktory Predchadza Dnu Tohto Oznamenia",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 81a",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 81a Odsek 1",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 81a Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Zastupca Skupiny",
+        "type": "Zastupca",
+        "properties": {}
+      },
+      {
+        "id": "Ziadost O Zrusenie Registracie Skupiny",
+        "type": "Ziadost",
+        "properties": {}
+      },
+      {
+        "id": "Zrusenie Registracie Skupiny",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Datum 31. Oktobra Kalendareho Roka",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Skupina",
+        "type": "Skupina",
+        "properties": {}
+      },
+      {
+        "id": "Registracia Skupiny",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4b",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Datum 31. Decembra Kalendareho Roka",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Datum 31. Decembra Kalendareho Roka Nasledujuceho Po Podani Ziadosti",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4c",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4a",
+        "type": "Paragraf",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 5",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Status",
+          "properties": {}
+        },
+        "type": "MA_STATUS",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Individualne Identifikacne Cislo S Priponou EX Pre Tuzemsko",
+          "type": "IdentifikacneCislo",
+          "properties": {}
+        },
+        "type": "MA_IDENTIFIKACNE_CISLO",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Individualne Identifikacne Cislo S Priponou EX Pre Tuzemsko",
+          "type": "IdentifikacneCislo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {}
+        },
+        "type": "MA_MIESTO",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "SpravcaDane",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanovacie Obdobie",
+          "type": "ZdanovacieObdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Den Ktory Predchadza Dnu Tohto Oznamenia",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "PLATI_DO",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Individualne Identifikacne Cislo S Priponou EX Pre Tuzemsko",
+          "type": "IdentifikacneCislo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Platnost Identifikacneho Cisla Pre Dan",
+          "type": "Status",
+          "properties": {}
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 81a",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 81a Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 81a",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 81a Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zastupca Skupiny",
+          "type": "Zastupca",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ziadost O Zrusenie Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "type": "PODAVA",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zrusenie Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zrusenie Registracie Skupiny",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "MA_UCEL",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zrusenie Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Datum 31. Oktobra Kalendareho Roka",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zrusenie Registracie Skupiny",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Datum 31. Decembra Kalendareho Roka",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zrusenie Registracie Skupiny",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Datum 31. Decembra Kalendareho Roka Nasledujuceho Po Podani Ziadosti",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "SpravcaDane",
+          "properties": {}
+        },
+        "target": {
+          "id": "Registracia Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "type": "ZRUSUJE",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Registracia Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zastupca Skupiny",
+          "type": "Zastupca",
+          "properties": {}
+        },
+        "type": "MA_ZASTUPCU",
+        "properties": {
+          "section": "chunk_3_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 552,
+    "text": "(1) V období od 1. januára 2011 do posledného dňa kalendárneho roka, v ktorom Európska komisia (Eurostat) uverejní údaje36) o tom, že aktuálny schodok verejnej správy Slovenskej republiky je menej ako 3 %, je základná sadzba dane na tovary a služby 20 % zo základu dane. Skončenie obdobia uplatňovania základnej sadzby dane 20 % podľa prvej vety vyhlási Ministerstvo financií Slovenskej republiky všeobecne záväzným právnym predpisom. (2) Ak platiteľ investičný majetok uvedený v § 54 ods. 2 písm. b) a c) nadobudol alebo vytvoril do 31. decembra 2010, uplatní § 9 ods. 2 predpisu účinného do 31. decembra 2010. (3) Ak bol platiteľ povinný vykonať jednu alebo viac úprav odpočítanej dane pri investičnom majetku uvedenom v § 54 ods. 2 písm. b) a c) za obdobie rokov 2004 až 2010, je obdobím na úpravu dane odpočítanej pri tomto majetku desať rokov podľa § 54 ods. 4 predpisu účinného do 31. decembra 2010 a platiteľ použije pri každej zmene účelu použitia postup podľa prílohy č. 1 predpisu účinného do 31. decembra 2010.",
+    "nodes": [
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Zakladna Sadzba Dane",
+        "type": "SadzbaDane",
+        "properties": {}
+      },
+      {
+        "id": "20 %",
+        "type": "Hodnota",
+        "properties": {}
+      },
+      {
+        "id": "Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 %",
+        "type": "Obdobie",
+        "properties": {}
+      },
+      {
+        "id": "Ministerstvo Financii Slovenskej Republiky",
+        "type": "Ministerstvo",
+        "properties": {}
+      },
+      {
+        "id": "Vseobecne Zavazny Pravny Predpis",
+        "type": "PravnyPredpis",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Platitel",
+        "type": "ZdanitelnaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Uplatnenie § 9 Odsek 2",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Nadobudnutie Alebo Vytvorenie Do 31 Decembra 2010",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 9 Odsek 2 Predpisu Ucinneho Do 31 Decembra 2010",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 54 Odsek 2",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 54 Odsek 2 Pismeno b",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 54 Odsek 2 Pismeno c",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Investicny Majetok Uvedeny V Paragraf § 54 Odsek 2 Pismeno b A c",
+        "type": "InvesticnyMajetok",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Uprava Odpocitanej Dane",
+        "type": "Oprava",
+        "properties": {}
+      },
+      {
+        "id": "Roky 2004 Az 2010",
+        "type": "Obdobie",
+        "properties": {}
+      },
+      {
+        "id": "Obdobie Na Upravu Dane Odpocitanej Pri Tomto Majetku",
+        "type": "Obdobie",
+        "properties": {}
+      },
+      {
+        "id": "Desat Rokov",
+        "type": "Lehota",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 54 Odsek 4 Predpisu Ucinneho Do 31 Decembra 2010",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Pouzitie Postupu",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Priloha C. 1 Predpisu Ucinneho Do 31 Decembra 2010",
+        "type": "Priloha",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zakladna Sadzba Dane",
+          "type": "SadzbaDane",
+          "properties": {}
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakladna Sadzba Dane",
+          "type": "SadzbaDane",
+          "properties": {}
+        },
+        "target": {
+          "id": "20 %",
+          "type": "Hodnota",
+          "properties": {}
+        },
+        "type": "MA_HODNOTU",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zakladna Sadzba Dane",
+          "type": "SadzbaDane",
+          "properties": {}
+        },
+        "target": {
+          "id": "Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 %",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Ministerstvo Financii Slovenskej Republiky",
+          "type": "Ministerstvo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Vseobecne Zavazny Pravny Predpis",
+          "type": "PravnyPredpis",
+          "properties": {}
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 9 Odsek 2 Predpisu Ucinneho Do 31 Decembra 2010",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "UPRAVUJE",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Uplatnenie § 9 Odsek 2",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Uplatnenie § 9 Odsek 2",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Nadobudnutie Alebo Vytvorenie Do 31 Decembra 2010",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Uplatnenie § 9 Odsek 2",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 9 Odsek 2 Predpisu Ucinneho Do 31 Decembra 2010",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Investicny Majetok Uvedeny V Paragraf § 54 Odsek 2 Pismeno b A c",
+          "type": "InvesticnyMajetok",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 54 Odsek 2",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 54 Odsek 2",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 54 Odsek 2 Pismeno b",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "MA_PISMENO",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 54 Odsek 2",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 54 Odsek 2 Pismeno c",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "MA_PISMENO",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Obdobie Na Upravu Dane Odpocitanej Pri Tomto Majetku",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "VYMEDZUJE",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Uprava Odpocitanej Dane",
+          "type": "Oprava",
+          "properties": {}
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Uprava Odpocitanej Dane",
+          "type": "Oprava",
+          "properties": {}
+        },
+        "target": {
+          "id": "Investicny Majetok Uvedeny V Paragraf § 54 Odsek 2 Pismeno b A c",
+          "type": "InvesticnyMajetok",
+          "properties": {}
+        },
+        "type": "APLIKUJE_SA_NA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Uprava Odpocitanej Dane",
+          "type": "Oprava",
+          "properties": {}
+        },
+        "target": {
+          "id": "Roky 2004 Az 2010",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Na Upravu Dane Odpocitanej Pri Tomto Majetku",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Desat Rokov",
+          "type": "Lehota",
+          "properties": {}
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Obdobie Na Upravu Dane Odpocitanej Pri Tomto Majetku",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 54 Odsek 4 Predpisu Ucinneho Do 31 Decembra 2010",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Pouzitie Postupu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Pouzitie Postupu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Priloha C. 1 Predpisu Ucinneho Do 31 Decembra 2010",
+          "type": "Priloha",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_4_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 58,
+    "text": "222/2004 Z. z. Zbierka zákonov Slovenskej republiky Strana 15 členského štátu. (3) Ak do 12 mesiacov po skončení prepravy tovaru v členskom štáte, do ktorého bol tovar odoslaný alebo prepravený, tento tovar nebol dodaný zdaniteľnej osobe, ktorej sa mal dodať podľa odseku 1 písm. c) alebo odseku 5, premiestnenie podľa § 8 ods. 4 prvej vety sa považuje za uskutočnené v deň, ktorý nasleduje po uplynutí 12 mesiacov, okrem situácií uvedených v odseku 6. (4) Premiestnenie podľa § 8 ods. 4 prvej vety sa nepovažuje za uskutočnené, ak a) nedošlo k prevodu práva nakladať s tovarom ako vlastník a tovar bol vrátený do tuzemska v lehote podľa odseku 3 a  b) platiteľ, ktorý tovar odoslal alebo prepravil podľa odseku 1 písm. a), uviedol vrátenie tovaru v záznamoch podľa § 70 ods. 2 písm. g). (5) Ak v lehote podľa odseku 3 zdaniteľnú osobu podľa odseku 1 písm. c) nahradila iná zdaniteľná osoba, premiestnenie podľa § 8 ods. 4 prvej vety sa nepovažuje za uskutočnené v okamihu tohto nahradenia, ak",
+    "nodes": [
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 5",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 6",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 1 Pismeno c",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 1 Pismeno a",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 70 Odsek 2 Pismeno g",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 8 Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Premiestnenie Podla Paragraf § 8 Odsek 4",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Do 12 Mesiacov Po Skonceni Prepravy Tovaru",
+        "type": "Lehota",
+        "properties": {}
+      },
+      {
+        "id": "Tovar Nebol Dodany Zdanitelnej Osobe Podla Odseku 1 Pismeno c Alebo Odseku 5",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Nedoslo K Prevodu Prava Nakladat S Tovarom Ako Vlastnik",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Tovar Bol Vrateny Do Tuzemska V Lehote Podla Odseku 3",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Tovar",
+        "type": "Tovar",
+        "properties": {}
+      },
+      {
+        "id": "Clensky Stat",
+        "type": "ClenskyStat",
+        "properties": {}
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {}
+      },
+      {
+        "id": "Platitel",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Odoslanie Alebo Preprava Tovaru Podla Odseku 1 Pismeno a",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Vratenie Tovaru Podla Paragraf § 70 Odsek 2 Pismeno g",
+        "type": "Zaznam",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 1 Pismeno c",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 6",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "MA_VYNIMKU",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 1 Pismeno a",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 1 Pismeno c",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Premiestnenie Podla Paragraf § 8 Odsek 4",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 8 Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Premiestnenie Podla Paragraf § 8 Odsek 4",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Do 12 Mesiacov Po Skonceni Prepravy Tovaru",
+          "type": "Lehota",
+          "properties": {}
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Premiestnenie Podla Paragraf § 8 Odsek 4",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tovar Nebol Dodany Zdanitelnej Osobe Podla Odseku 1 Pismeno c Alebo Odseku 5",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Premiestnenie Podla Paragraf § 8 Odsek 4",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Nedoslo K Prevodu Prava Nakladat S Tovarom Ako Vlastnik",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Premiestnenie Podla Paragraf § 8 Odsek 4",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tovar Bol Vrateny Do Tuzemska V Lehote Podla Odseku 3",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar Nebol Dodany Zdanitelnej Osobe Podla Odseku 1 Pismeno c Alebo Odseku 5",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 1 Pismeno c",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar Nebol Dodany Zdanitelnej Osobe Podla Odseku 1 Pismeno c Alebo Odseku 5",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar Bol Vrateny Do Tuzemska V Lehote Podla Odseku 3",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {}
+        },
+        "target": {
+          "id": "Clensky Stat",
+          "type": "ClenskyStat",
+          "properties": {}
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Tovar",
+          "type": "Tovar",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {}
+        },
+        "type": "NACHADZA_SA_V",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odoslanie Alebo Preprava Tovaru Podla Odseku 1 Pismeno a",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "VYKONAVA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Odoslanie Alebo Preprava Tovaru Podla Odseku 1 Pismeno a",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 1 Pismeno a",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Vratenie Tovaru Podla Paragraf § 70 Odsek 2 Pismeno g",
+          "type": "Zaznam",
+          "properties": {}
+        },
+        "type": "VIES_ZAZNAMY_O",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Vratenie Tovaru Podla Paragraf § 70 Odsek 2 Pismeno g",
+          "type": "Zaznam",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 70 Odsek 2 Pismeno g",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_5_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 69,
+    "text": "(4) Nadobudnutie tovaru v tuzemsku z iného členského štátu nie je predmetom dane, ak a) dodanie takého tovaru v tuzemsku by bolo oslobodené od dane podľa § 47 ods. 7 až 10, b) nadobúdateľom je zdaniteľná osoba, ktorá nie je platiteľom a ktorá nie je registrovaná pre daň podľa § 7, alebo právnická osoba, ktorá nie je zdaniteľnou osobou a ktorá nie je registrovaná pre daň podľa § 7, a súčasne celková hodnota nadobudnutého tovaru nedosiahla 14 000 eur za predchádzajúci kalendárny rok a ani v prebiehajúcom kalendárnom roku túto hodnotu nedosiahne,",
+    "nodes": [
+      {
+        "id": "Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {}
+      },
+      {
+        "id": "Dodanie Takeho Tovaru V Tuzemsku",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Oslobodenie Od Dane Podla Paragraf § 47 Odsek 7 Az 10",
+        "type": "OslobodenieOdDane",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 47",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "ZdanitelnaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Registracia Pre Dan Podla Paragraf § 7",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 7",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Pravnicka Osoba",
+        "type": "PravnickaOsoba",
+        "properties": {}
+      },
+      {
+        "id": "Celkova Hodnota Nadobudnuteho Tovaru",
+        "type": "Hodnota",
+        "properties": {}
+      },
+      {
+        "id": "14 000 eur",
+        "type": "Suma",
+        "properties": {}
+      },
+      {
+        "id": "Predchadzajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {}
+      },
+      {
+        "id": "Prebiehajuci Kalendarny Rok",
+        "type": "Obdobie",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "UPRAVUJE",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodanie Takeho Tovaru V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Takeho Tovaru V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Oslobodenie Od Dane Podla Paragraf § 47 Odsek 7 Az 10",
+          "type": "OslobodenieOdDane",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Oslobodenie Od Dane Podla Paragraf § 47 Odsek 7 Az 10",
+          "type": "OslobodenieOdDane",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 47",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodanie Takeho Tovaru V Tuzemsku",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "type": "JE_OSLOBODENE_OD",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "ZdanitelnaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Registracia Pre Dan Podla Paragraf § 7",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Registracia Pre Dan Podla Paragraf § 7",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 7",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Pravnicka Osoba",
+          "type": "PravnickaOsoba",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Pravnicka Osoba",
+          "type": "PravnickaOsoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Registracia Pre Dan Podla Paragraf § 7",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "type": "NESPLNA_PODMIENKY",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Nadobudnutie Tovaru V Tuzemsku Z Ineho Clenskeho Statu",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Celkova Hodnota Nadobudnuteho Tovaru",
+          "type": "Hodnota",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Celkova Hodnota Nadobudnuteho Tovaru",
+          "type": "Hodnota",
+          "properties": {}
+        },
+        "target": {
+          "id": "14 000 eur",
+          "type": "Suma",
+          "properties": {}
+        },
+        "type": "MA_SUMU",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Celkova Hodnota Nadobudnuteho Tovaru",
+          "type": "Hodnota",
+          "properties": {}
+        },
+        "target": {
+          "id": "Predchadzajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Celkova Hodnota Nadobudnuteho Tovaru",
+          "type": "Hodnota",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prebiehajuci Kalendarny Rok",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_OBDOBIE",
+        "properties": {
+          "section": "chunk_6_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 97,
+    "text": "tovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16 ods. 14. (3) Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť pre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je povinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.",
+    "nodes": [
+      {
+        "id": "Odsek 3",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Odsek 1",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 14 Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 16 Odsek 14",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Dodavatel Tovaru Alebo Sluzby",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Podmienky Podla Odseku 1",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Miesto Dodania Tovaru Podla Paragraf § 14 Odsek 2",
+        "type": "Lokacia",
+        "properties": {}
+      },
+      {
+        "id": "Miesto Dodania Sluzieb Podla Paragraf § 16 Odsek 14",
+        "type": "Lokacia",
+        "properties": {}
+      },
+      {
+        "id": "Uplatnovanie Tychto Miest",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Dvoch Kalendarnych Rokov",
+        "type": "Obdobie",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Odsek 3",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Podmienky Podla Odseku 1",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Podmienky Podla Odseku 1",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Miesto Dodania Tovaru Podla Paragraf § 14 Odsek 2",
+          "type": "Lokacia",
+          "properties": {}
+        },
+        "type": "MA_MIESTO_DODANIA",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Tovaru Podla Paragraf § 14 Odsek 2",
+          "type": "Lokacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 14 Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Miesto Dodania Sluzieb Podla Paragraf § 16 Odsek 14",
+          "type": "Lokacia",
+          "properties": {}
+        },
+        "type": "MA_MIESTO_DODANIA",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Miesto Dodania Sluzieb Podla Paragraf § 16 Odsek 14",
+          "type": "Lokacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 16 Odsek 14",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodavatel Tovaru Alebo Sluzby",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Uplatnovanie Tychto Miest",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Uplatnovanie Tychto Miest",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dvoch Kalendarnych Rokov",
+          "type": "Obdobie",
+          "properties": {}
+        },
+        "type": "MA_DOBU",
+        "properties": {
+          "section": "chunk_7_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  },
+  {
+    "chunk": 105,
+    "text": "(4) Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej platby dňom prijatia platby. (5) Pri dodaní tovaru na základe komisionárskej zmluvy vzniká komitentovi daňová povinnosť v ten istý deň, keď vzniká daňová povinnosť komisionárovi. (6) Pri obstaraní služby podľa § 9 ods. 4 vrátane obstarania opakovane alebo čiastkovo dodávaných služieb sa služba obstaraná osobou, ktorá koná vo svojom mene, považuje za dodanú dňom vyhotovenia faktúry, ktorou obstarávateľ požaduje úhradu za službu, a ak faktúra nie je vyhotovená do konca tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná, daňová povinnosť vzniká posledným dňom tretieho kalendárneho mesiaca nasledujúceho po kalendárnom mesiaci, v ktorom bola služba dodaná; deň dodania služby podľa tohto odseku sa neurčí, ak sa obstará služba s miestom dodania podľa § 15 ods. 1, pri ktorej je povinný platiť daň príjemca služby. Daňová povinnosť vzniká nositeľovi autorských",
+    "nodes": [
+      {
+        "id": "Danova Povinnost Z Prijatej Platby",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Prijata Platba",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Den Prijatia Platby",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Komitent",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Komitenta",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Komisionar",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Komisionara",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Ten isty Den",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Obstaranie Sluzby",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 9 Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Obstarana Sluzba",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Dodana Sluzba",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Datum Vyhotovenia Faktury",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Faktura",
+        "type": "Doklad",
+        "properties": {}
+      },
+      {
+        "id": "Do Konca Treteho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci V Ktorom Bola Sluzba Dodana",
+        "type": "Lehota",
+        "properties": {}
+      },
+      {
+        "id": "Danova Povinnost Zo Sluzby",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Posledny Den Treteho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci V Ktorom Bola Sluzba Dodana",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Prijemca Sluzby",
+        "type": "Subjekt",
+        "properties": {}
+      },
+      {
+        "id": "Dan",
+        "type": "Dan",
+        "properties": {}
+      },
+      {
+        "id": "Sluzba S Miestom Dodania Podla Paragraf § 15 Odsek 1",
+        "type": "Sluzba",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 15 Odsek 1",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Den Dodania Sluzby Podla Tohto Odseku",
+        "type": "Datum",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Danova Povinnost Z Prijatej Platby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prijata Platba",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Z Prijatej Platby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Den Prijatia Platby",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Komitent",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Komitenta",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Komitenta",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodanie Tovaru Na Zaklade Komisionarskej Zmluvy",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "VZNIKA_PRI",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Komitenta",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ten isty Den",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Komisionar",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danova Povinnost Komisionara",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Komisionara",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ten isty Den",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstaranie Sluzby",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 9 Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Obstarana Sluzba",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dodana Sluzba",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "type": "POVAZUJE_SA_ZA",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Dodana Sluzba",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Datum Vyhotovenia Faktury",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Faktura",
+          "type": "Doklad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Do Konca Treteho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci V Ktorom Bola Sluzba Dodana",
+          "type": "Lehota",
+          "properties": {}
+        },
+        "type": "MA_LEHOTU",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Danova Povinnost Zo Sluzby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Posledny Den Treteho Kalendarneho Mesiaca Nasledujuceho Po Kalendarnom Mesiaci V Ktorom Bola Sluzba Dodana",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_DATUM",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Prijemca Sluzby",
+          "type": "Subjekt",
+          "properties": {}
+        },
+        "target": {
+          "id": "Dan",
+          "type": "Dan",
+          "properties": {}
+        },
+        "type": "JE_POVINNY_PLATIT",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Sluzba S Miestom Dodania Podla Paragraf § 15 Odsek 1",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 15 Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      },
+      {
+        "source": {
+          "id": "Den Dodania Sluzby Podla Tohto Odseku",
+          "type": "Datum",
+          "properties": {}
+        },
+        "target": {
+          "id": "Sluzba S Miestom Dodania Podla Paragraf § 15 Odsek 1",
+          "type": "Sluzba",
+          "properties": {}
+        },
+        "type": "NEVZTAHUJE_SA_NA",
+        "properties": {
+          "section": "chunk_8_kg_eval"
+        }
+      }
+    ],
+    "error": null
+  }
+]

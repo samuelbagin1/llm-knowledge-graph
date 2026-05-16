@@ -1,56 +1,66 @@
+"""Render kg_dataset-linearized.json as a Markdown report.
+
+Each entry becomes a block of sections: chunk, path, path_as_text, text,
+relations, id. Sections (and entries) are separated by `---`.
+"""
+
 import json
-import os
-import re
+from pathlib import Path
 
-directory = "./test_dataset/batch6"
-output_path = "./test_dataset/batch6.md"
+INPUT_PATH = Path("./test_dataset/kg_dataset-linearized.json")
+OUTPUT_PATH = Path("./test_dataset/batchNew.md")
 
-lines = []
 
-for filename in sorted(os.listdir(directory)):
-    if not filename.endswith(".json"):
-        continue
+def build_legal_context(path_segments: list[str]) -> tuple[str, str]:
+    """Return (path_str, path_label) following the canonical legal ID format."""
+    if not path_segments:
+        return "", ""
+    path_str = "Paragraf " + path_segments[0]
+    path_label = "Paragraf"
+    if len(path_segments) > 1:
+        path_str += " Odsek " + path_segments[1]
+        path_label = "Odsek"
+    if len(path_segments) > 2:
+        path_str += " Pismeno " + path_segments[2]
+        path_label = "Pismeno"
+    return path_str, path_label
 
-    match = re.match(r"(\d{1,3})", filename)
-    chunk_num = match.group(1) if match else filename
 
-    with open(os.path.join(directory, filename), "r", encoding="utf-8") as f:
-        data = json.load(f)
+def format_relation(rel: dict) -> str:
+    src = rel["source"]["id"]
+    tgt = rel["target"]["id"]
+    return f"  {src} -> [{rel['type']}] -> {tgt}"
 
-    for entry in data:
-        nodes = entry.get("nodes", [])
-        relationships = entry.get("relationships", [])
 
-        chunk_node = next((n for n in nodes if n.get("type") == "Chunk"), None)
-        if not chunk_node:
-            continue
+def format_node(node: dict) -> str:
+    return f"  {node['type']}: {node['id']}"
 
-        props = chunk_node.get("properties", {})
-        page = props.get("page", "")
-        text = props.get("text", "").replace("\n", " ")
 
-        def fmt_rel(r):
-            add = r.get("properties", {}).get("add", "")
-            rel_type = f"{r['type']}:\"{add}\"" if add else r['type']
-            return f"  {r['source']['id']} -> [{rel_type}] -> {r['target']['id']}"
+def render_entry(entry: dict) -> str:
+    path_segments = entry.get("path", [])
+    path_as_text, _ = build_legal_context(path_segments)
 
-        rel_lines = [fmt_rel(r) for r in relationships]
-        node_lines = [
-            f"  {n['type']}: {n['id']}"
-            for n in nodes
-            if n.get("type") != "Chunk"
-        ]
+    relations = entry.get("relationships", [])
+    nodes = entry.get("nodes", [])
+    text = entry.get("text", "").replace("\n", " ")
 
-        lines.append(f"chunk: {chunk_num}")
-        lines.append(f"page: {page}")
-        lines.append(f"text: {text}")
-        lines.append("relationships:")
-        lines.extend(rel_lines)
-        lines.append("nodes:")
-        lines.extend(node_lines)
-        lines.append("")
+    sections = [
+        f"chunk: {entry.get('chunk')}",
+        f"path: {path_segments}",
+        f"path_as_text: {path_as_text}",
+        f"text: {text}",
+        "\nrelations:\n" + "\n".join(format_relation(r) for r in relations),
+        "\nnodes:\n" + "\n".join(format_node(n) for n in nodes),
+    ]
+    return "\n".join(sections)
 
-with open(output_path, "a", encoding="utf-8") as f:
-    f.write("\n".join(lines))
 
-print(f"Appended {len([l for l in lines if l.startswith('chunk:')])} chunks to {output_path}")
+def main() -> None:
+    data = json.loads(INPUT_PATH.read_text(encoding="utf-8"))
+    blocks = [render_entry(entry) for entry in data]
+    OUTPUT_PATH.write_text("\n\n---\n\n".join(blocks) + "\n\n---\n\n", encoding="utf-8")
+    print(f"Wrote {len(blocks)} entries to {OUTPUT_PATH}")
+
+
+if __name__ == "__main__":
+    main()

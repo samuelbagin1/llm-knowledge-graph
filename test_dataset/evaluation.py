@@ -662,6 +662,20 @@ def load_predictions(path: Path) -> dict[int, dict[str, Any]]:
     return by_chunk
 
 
+def resolve_predictions_path(
+    predictions_path: Optional[Path],
+    output_dir: Path,
+) -> Optional[Path]:
+    if predictions_path is None:
+        candidate = output_dir / "predictions.json"
+        return candidate if candidate.exists() else None
+
+    if predictions_path.is_dir():
+        return predictions_path / "predictions.json"
+
+    return predictions_path
+
+
 # ---------------------------------------------------------------------------
 # LLM extraction and judge
 # ---------------------------------------------------------------------------
@@ -1384,6 +1398,7 @@ async def evaluate_examples(
     predictions: Optional[dict[int, dict[str, Any]]] = None,
     output_dir: Optional[Path] = None,
     append: bool = False,
+    write_predictions: bool = True,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     judge = LLMJudge(config)
     rows: list[dict[str, Any]] = []
@@ -1399,7 +1414,8 @@ async def evaluate_examples(
         output_dir.mkdir(parents=True, exist_ok=True)
         csv_path = output_dir / "by_chunk.csv"
         by_chunk_json_path = output_dir / "by_chunk.json"
-        predictions_json_path = output_dir / "predictions.json"
+        if write_predictions:
+            predictions_json_path = output_dir / "predictions.json"
         audit_path = output_dir / "error_audit.md"
 
         if append:
@@ -1410,7 +1426,7 @@ async def evaluate_examples(
                         rows.extend(data)
                 except json.JSONDecodeError:
                     pass
-            if predictions_json_path.exists():
+            if predictions_json_path is not None and predictions_json_path.exists():
                 try:
                     data = json.loads(predictions_json_path.read_text(encoding="utf-8"))
                     if isinstance(data, list):
@@ -1426,7 +1442,8 @@ async def evaluate_examples(
         csv_handle.flush()
 
         by_chunk_json_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
-        predictions_json_path.write_text(json.dumps(predictions_out, indent=2, ensure_ascii=False), encoding="utf-8")
+        if predictions_json_path is not None:
+            predictions_json_path.write_text(json.dumps(predictions_out, indent=2, ensure_ascii=False), encoding="utf-8")
         audit_path.write_text(_render_error_audit(rows), encoding="utf-8")
 
     try:
@@ -1501,7 +1518,7 @@ def write_reports(
 
 def main() -> None:
     dataset_path: Path = Path(__file__).resolve().parent / "kg_test_dataset.json"
-    predictions_path: Optional[Path] = None
+    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "evaluation_results_gpt-5.5"
     output_dir: Path = Path(__file__).resolve().parent / "evaluation_results"
     limit: Optional[int] = None
     offset: int = 0
@@ -1527,7 +1544,8 @@ def main() -> None:
     append_mode = start_chunk_index is not None
 
     schema = build_project_schema()
-    predictions = load_predictions(predictions_path) if predictions_path else None
+    resolved_predictions_path = resolve_predictions_path(predictions_path, output_dir)
+    predictions = load_predictions(resolved_predictions_path) if resolved_predictions_path else None
     config = EvalConfig(
         use_llm_judge=not no_llm_judge,
         judge_model=judge_model,
@@ -1551,7 +1569,15 @@ def main() -> None:
 
     csv_output_dir = None if no_write else output_dir
     rows, pred_out = asyncio.run(
-        evaluate_examples(examples, schema, config, predictions, output_dir=csv_output_dir, append=append_mode)
+        evaluate_examples(
+            examples,
+            schema,
+            config,
+            predictions,
+            output_dir=csv_output_dir,
+            append=append_mode,
+            write_predictions=predictions is None,
+        )
     )
     summary = aggregate(rows)
     print(json.dumps(summary, indent=2, ensure_ascii=False))

@@ -13,6 +13,7 @@ from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATASET_PATH = Path(__file__).resolve().parent / "kg_test_dataset.json"
+CHUNKS_PATH = PROJECT_ROOT / "chunks.json"
 DEFAULT_OUTPUT_PATH = Path(__file__).resolve().parent / "predictions.json"
 AGENT_NAME = "kg-sde-extractor"
 AGENT_PATH = PROJECT_ROOT / ".codex" / "agents" / f"{AGENT_NAME}.toml"
@@ -33,214 +34,117 @@ class AgentConfig:
 
 
 SCHEMA_NODE_TYPES = [
+    "Subjekt",
+    "Osoba",
+    "Organizacia",
     "Adresa",
-    "Agentura",
+    "Lokacia",
+    "Stat",
     "Banka",
-    "BankovyUcet",
+    "Paragraf",
+    "Odsek",
+    "Pismeno",
     "Bod",
-    "CasovyUdaj",
-    "Cinnost",
-    "Cislo",
-    "ClenSkupiny",
-    "ClenskyStat",
+    "Priloha",
+    "PravnyPredpis",
+    "Dokument",
+    "Konanie",
+    "Rozhodnutie",
+    "Ziadost",
+    "Oznamenie",
     "Dan",
     "DanovePriznanie",
-    "Datum",
-    "Doklad",
-    "Dovod",
-    "ElektronickyProstriedok",
-    "Euro",
-    "FinancneRiaditelstvo",
-    "FyzickaOsoba",
-    "Hodnota",
-    "IdentifikacneCislo",
-    "InvesticnyMajetok",
-    "Konanie",
-    "Kurz",
-    "Lehota",
-    "Limit",
-    "Lokacia",
-    "Majetok",
-    "Mena",
-    "Ministerstvo",
-    "Mnozstvo",
+    "ZdanovacieObdobie",
+    "SadzbaDane",
     "NadmernyOdpocet",
-    "Nariadenie",
-    "NarodnaBanka",
-    "Nehnutelnost",
-    "Obrat",
-    "Obdobie",
-    "Odsek",
-    "Oprava",
-    "Organizacia",
-    "OslobodenieOdDane",
-    "Osoba",
-    "Oznamenie",
-    "Paragraf",
-    "Pismeno",
-    "Pohladavka",
-    "Pokuta",
-    "Podmienka",
-    "Podnik",
-    "Poukaz",
+    "Sankcia",
     "Povinnost",
     "Pravo",
-    "PravnickaOsoba",
-    "PravnyNastupca",
-    "PravnyPredpis",
-    "Prevazdkaren",
-    "Priloha",
-    "Registracia",
-    "Rozhodnutie",
-    "SadzbaDane",
-    "Sankcia",
-    "Sidlo",
-    "Skupina",
-    "Sluzba",
-    "Smernica",
-    "SpotrebnaDan",
-    "SpravcaDane",
-    "Stat",
-    "StatnyOrgan",
+    "Podmienka",
+    "Lehota",
+    "Obdobie",
+    "Datum",
+    "Dovod",
     "Status",
-    "Stavba",
-    "Subjekt",
-    "Sud",
-    "Suma",
     "Tovar",
-    "TretiStat",
-    "Tuzemsko",
-    "Ucet",
-    "Urad",
-    "Urok",
-    "Uzemie",
+    "Sluzba",
+    "Majetok",
+    "Nehnutelnost",
     "Vozidlo",
-    "Vyhlaska",
-    "Vypocet",
-    "Vyzva",
-    "ZabezpekaNaDan",
-    "Zakon",
-    "Zasielka",
-    "Zastupca",
-    "Zavazok",
-    "Zaznam",
-    "ZdanitelnaOsoba",
-    "ZdanovacieObdobie",
-    "Ziadost",
-    "Zlava",
+    "Ucet",
+    "BankovyUcet",
+    "Platba",
+    "Suma",
+    "Mnozstvo",
+    "Obrat",
+    "Mena",
+    "Kurz",
     "Zmluva",
-    "Zodpovednost",
+    "Pohladavka",
+    "Zavazok",
+    "Zastupenie",
+    "Registracia",
+    "Zaznam",
 ]
 
 
 SCHEMA_RELATIONSHIP_TYPES = [
-    "APLIKUJE_SA_NA",
-    "DEFINUJE",
-    "DODA",
-    "DODAVA",
-    "DOPLNA",
-    "DORUCUJE",
-    "JE_CASTOU",
-    "JE_CLENOM",
-    "JE_DRUHOM",
-    "JE_OSLOBODENE_OD",
-    "JE_PODLA",
-    "JE_POVINNY_PLATIT",
-    "JE_PREDMETOM",
-    "JE_SUCASTOU",
-    "JE_TYPOM",
-    "JE_ZASTUPENA",
-    "KONA_V_MENE",
-    "MA_ADRESU",
-    "MA_BYDLISKO",
-    "MA_CENU",
-    "MA_DATUM",
-    "MA_DOBU",
-    "MA_DOKLAD",
-    "MA_DOVOD",
-    "MA_HODNOTU",
-    "MA_IDENTIFIKACNE_CISLO",
-    "MA_LEHOTU",
-    "MA_MIESTO",
-    "MA_MIESTO_DODANIA",
-    "MA_MIESTO_PODNIKANIA",
-    "MA_MNOZSTVO",
-    "MA_NAROK_NA",
-    "MA_NAZOV",
-    "MA_OBDOBIE",
-    "MA_OBSAH",
-    "MA_ODKLADNY_UCINOK",
-    "MA_ODSEK",
-    "MA_PISMENO",
-    "MA_PODMIENKU",
-    "MA_POVINNOST",
-    "MA_PRAVO",
-    "MA_PREVADZKAREN",
-    "MA_SADZBU",
-    "MA_SIDLO",
-    "MA_STATUS",
-    "MA_SUMU",
-    "MA_UCEL",
-    "MA_UCINOK",
-    "MA_VLASTNOST",
-    "MA_VYNIMKU",
-    "MA_ZAKLAD_DANE",
-    "MA_ZASTUPCU",
-    "NADOBUDA",
-    "NACHADZA_SA_V",
-    "NAHRADZA",
-    "NASTAVA_PRI",
-    "NEMA_NAROK_NA",
-    "NEPLATI_PRE",
-    "NESPLNA_PODMIENKY",
-    "NEVZTAHUJE_SA_NA",
-    "OBSAHUJE",
-    "ODKAZUJE_NA",
-    "OPRAVUJE",
-    "OSLOBODZUJE_OD",
-    "OZNAMUJE",
-    "PATRI_DO",
-    "PLATI_DO",
-    "PLATI_OD",
-    "PLATI_PRE",
-    "PODAVA",
-    "PODLIEHA",
-    "PODMIENUJE",
-    "POSKYTUJE",
-    "POVAZUJE_SA_ZA",
-    "PRECHADZA_NA",
-    "PREDKLADA",
-    "PRESAHUJE",
-    "PREUKAZUJE",
-    "PRIJIMA",
-    "PRIDELUJE",
-    "REGISTRUJE",
-    "ROZHODUJE_O",
-    "ROZUMIE_SA",
-    "RUSI",
-    "SPADA_POD",
-    "SPLNA_PODMIENKY",
-    "STAVA_SA",
-    "SUVISI_S",
-    "TYKA_SA",
-    "UCHOVAVA",
-    "UPRAVUJE",
-    "URCUJE",
-    "USKUTOCNUJE",
-    "UVADZA",
-    "VIES_ZAZNAMY_O",
-    "VYDAVA",
-    "VYCHADZA_Z",
-    "VYKONAVA",
-    "VYMEDZUJE",
-    "VYPLNYVA_Z",
     "VZTAHUJE_SA_NA",
-    "VZNIKA_PRI",
-    "ZAHRNUJE",
-    "ZANIKA",
-    "ZAPLATI",
+    "NEVZTAHUJE_SA_NA",
+    "UPRAVUJE",
+    "DEFINUJE",
+    "URCUJE",
+    "ODKAZUJE_NA",
+    "VYPLYVA_Z",
+    "JE_TYPOM",
+    "JE_SUCASTOU",
+    "OBSAHUJE",
+    "PATRI_DO",
+    "NACHADZA_SA_V",
+    "MA",
+    "MA_ADRESU",
+    "MA_IDENTIFIKATOR",
+    "MA_STATUS",
+    "MA_DATUM",
+    "MA_OBDOBIE",
+    "MA_LEHOTU",
+    "MA_SUMU",
+    "MA_HODNOTU",
+    "MA_PODMIENKU",
+    "MA_PRAVO",
+    "MA_POVINNOST",
+    "MA_NAROK_NA",
+    "NEMA_NAROK_NA",
+    "SPLNA_PODMIENKY",
+    "NESPLNA_PODMIENKY",
+    "KONA_V_MENE",
+    "JE_ZASTUPENA",
     "ZODPOVEDA_ZA",
-    "ZRUSUJE",
+    "PODAVA",
+    "PREDKLADA",
+    "DORUCUJE",
+    "OZNAMUJE",
+    "PRIJIMA",
+    "VYDAVA",
+    "ROZHODUJE_O",
+    "REGISTRUJE",
+    "UCHOVAVA",
+    "DODAVA",
+    "POSKYTUJE",
+    "PLATI",
+    "PODLIEHA",
+    "OSLOBODZUJE_OD",
+    "VZNIKA",
+    "ZANIKA",
+    "NADOBUDA",
+    "PRECHADZA_NA",
+    "MENI",
+    "NAHRADZA",
+    "RUSI",
+    "SUVISI_S",
+    "JE_OSLOBODENE_OD_DANE",
+    "JE_PREDMETOM_DANE",
+    "NIE_JE_PREDMETOM_DANE",
 ]
 
 
@@ -266,6 +170,89 @@ def load_dataset(path: Path) -> list[dict[str, Any]]:
     if not isinstance(data, list):
         raise ValueError(f"Dataset must be a list, got {type(data).__name__}")
     return data
+
+
+def load_chunks_as_items(path: Path) -> list[dict[str, Any]]:
+    """Load chunks.json and normalize entries to the item shape used downstream.
+
+    Each returned item has the same keys the rest of the pipeline expects:
+      - chunk:   integer id (from chunks.json `id`)
+      - text:    legal text body
+      - path:    hierarchy path segments (e.g. ["§ 2", "1", "a)"])
+      - headline:section title from chunks.json
+    """
+    if not path.exists():
+        raise FileNotFoundError(f"chunks file not found: {path}")
+    with path.open("r", encoding="utf-8") as handle:
+        data = json.load(handle)
+    if not isinstance(data, list):
+        raise ValueError(f"Chunks file must be a list, got {type(data).__name__}")
+    items: list[dict[str, Any]] = []
+    for entry in data:
+        if not isinstance(entry, dict):
+            continue
+        items.append(
+            {
+                "chunk": entry.get("id"),
+                "text": entry.get("text", ""),
+                "path": entry.get("path", []),
+                "headline": entry.get("headline"),
+            }
+        )
+    return items
+
+
+def load_chunks_index(path: Path) -> dict[int, dict[str, Any]]:
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as handle:
+        data = json.load(handle)
+    if not isinstance(data, list):
+        raise ValueError(f"Chunks file must be a list, got {type(data).__name__}")
+    index: dict[int, dict[str, Any]] = {}
+    for entry in data:
+        if not isinstance(entry, dict):
+            continue
+        chunk_id = entry.get("id")
+        if isinstance(chunk_id, int):
+            index[chunk_id] = entry
+    return index
+
+
+def resolve_chunk_path(
+    item: dict[str, Any],
+    chunks_index: dict[int, dict[str, Any]] | None = None,
+) -> list[str]:
+    direct = item.get("path")
+    if isinstance(direct, list) and direct:
+        return [str(segment) for segment in direct]
+    if chunks_index is not None:
+        chunk_id = item.get("chunk")
+        if isinstance(chunk_id, int) and chunk_id in chunks_index:
+            path_segments = chunks_index[chunk_id].get("path")
+            if isinstance(path_segments, list):
+                return [str(segment) for segment in path_segments]
+    metadata = item.get("metadata") or {}
+    if isinstance(metadata, dict):
+        fallback = metadata.get("path")
+        if isinstance(fallback, list):
+            return [str(segment) for segment in fallback]
+    return []
+
+
+def build_legal_context(path_segments: list[str]) -> tuple[str, str]:
+    """Return (path_str, path_label) following the canonical legal ID format."""
+    if not path_segments:
+        return "", ""
+    path_str = "Paragraf " + path_segments[0]
+    path_label = "Paragraf"
+    if len(path_segments) > 1:
+        path_str += " Odsek " + path_segments[1]
+        path_label = "Odsek"
+    if len(path_segments) > 2:
+        path_str += " Pismeno " + path_segments[2]
+        path_label = "Pismeno"
+    return path_str, path_label
 
 
 def load_existing_predictions(path: Path) -> list[dict[str, Any]]:
@@ -298,29 +285,72 @@ def build_prompt(
     schema: Schema,
     agent_config: AgentConfig,
     section_id: str,
+    path_segments: list[str],
 ) -> str:
-    payload = {
-        "chunk": item.get("chunk"),
-        "page": item.get("page"),
-        "text": item.get("text", ""),
-        "metadata": item.get("metadata", {}),
-        "schema": {
-            "nodes": schema.nodes,
-            "relationships": schema.relationships,
-        },
-    }
+    path_str, _ = build_legal_context(path_segments)
+    text = item.get("text", "")
+
+    paragraf_line = (
+        f"You are currently in Paragraf: {path_segments[0]}" if path_segments else ""
+    )
+    section_line = (
+        f"Section context (current section): {path_str}" if path_str else ""
+    )
+    context_block = "\n".join(line for line in (paragraf_line, section_line) if line)
+    if not context_block:
+        context_block = "(no explicit paragraf context provided)"
+
+    user_prompt = f"""Extract entities and relationships from the Slovak legal text strictly according to the provided schema.
+
+# CONTEXT
+{context_block}
+
+# RULES
+- use ONLY exact schema types
+- no renaming or invented types
+- prefer most specific valid type
+- remove all diacritics
+- use only Slovak language
+- Node IDs must be in Title Case
+- Relationship labels must be in SCREAMING_SNAKE_CASE
+- decompose entities and relations into atomic legal units whenever valid
+- if decomposition reduces legal meaning -> keep compound legal concept
+- skip unsupported information
+
+
+# LEGAL CONTEXT
+If text contains:
+- `odsek` without explicit paragraf:
+  inherit active paragraf context
+
+# SCHEMA
+Entities: {", ".join(schema.nodes)}
+
+Relationships: {", ".join(schema.relationships)}
+
+# TEXT
+{text}
+
+# CHECK
+- valid schema types only
+- most specific types used
+- full legal hierarchy in IDs
+- odsek inheritance resolved
+- odsek ranges atomically decomposed
+- detailed legal entities included
+"""
 
     return f"""You are executing the local Codex custom agent definition from {AGENT_PATH}.
 
 Agent name: {agent_config.name}
 
-Extraction instructions:
+# SYSTEM INSTRUCTIONS
 {extraction_rules(agent_config)}
 
 Process exactly one schema-driven extraction item. Do not run shell commands, do not edit files, and do not explain your work.
 
-Input JSON:
-{json.dumps(payload, ensure_ascii=False, indent=2)}
+# USER REQUEST
+{user_prompt}
 
 Return only one JSON object with this exact shape:
 {{
@@ -360,12 +390,13 @@ def run_codex_for_item(
     schema: Schema,
     agent_config: AgentConfig,
     section_id: str,
+    path_segments: list[str],
     codex_bin: str,
     model: str | None,
     reasoning_effort: str | None,
     timeout_seconds: int,
 ) -> dict[str, Any]:
-    prompt = build_prompt(item, schema, agent_config, section_id)
+    prompt = build_prompt(item, schema, agent_config, section_id, path_segments)
     with tempfile.NamedTemporaryFile(
         mode="w+", encoding="utf-8", suffix=".json", delete=True
     ) as output_file:
@@ -553,15 +584,25 @@ def build_prediction(
 
 
 def main() -> int:
-    dataset_path: Path = DATASET_PATH
+    # dataset_path: Path = DATASET_PATH  # used only by the disabled kg_test_dataset.json path
     output_path: Path = DEFAULT_OUTPUT_PATH
     codex_bin: str = os.getenv(
         "CODEX_BIN",
         "/Users/samuelbagin/.vscode/extensions/openai.chatgpt-26.506.31421-darwin-arm64/bin/macos-aarch64/codex",
     )
     model: str | None = "gpt-5.5"
-    reasoning_effort: str | None = "high"
-    chunk_ids: list[int] | None = None
+    reasoning_effort: str | None = None
+    chunk_ids: list[int] | None = [12, 45, 78, 103, 126, 149, 172, 195, 218, 241,
+264, 287, 310, 333, 356, 379, 402, 425, 448, 471,
+494, 517, 540, 563, 586, 609, 632, 655, 678, 701,
+724, 747, 770, 793, 816, 839, 862, 885, 908, 931,
+954, 977, 1000, 1023, 1046, 1069, 1092, 1115, 1138, 1161,
+1184, 1207, 1230, 1253, 1276, 1299, 1322, 1345, 1368, 1391,
+1414, 1437, 1460, 1483, 1506, 1529, 1552, 1575, 1598, 1600,
+0, 31, 62, 93, 124, 155, 186, 217, 248, 279,
+320, 361, 1140, 443, 484, 525, 566, 607, 648, 689,
+730, 771, 812, 853, 894, 935, 976, 1017, 1058, 1099
+]
     limit: int | None = None
     offset: int = 0
     start_chunk_index: int | None = None
@@ -570,7 +611,15 @@ def main() -> int:
 
     schema = build_project_schema()
     agent_config = load_agent_config()
-    dataset = load_dataset(dataset_path)
+
+    # === ACTIVE: drive the loop from chunks.json (canonical source of text + path) ===
+    dataset = load_chunks_as_items(CHUNKS_PATH)
+    chunks_index = None  # not needed; chunks.json items already carry `path`
+
+    # === DISABLED: kg_test_dataset.json path (kept for evaluation runs later) ===
+    # dataset = load_dataset(dataset_path)
+    # chunks_index = load_chunks_index(CHUNKS_PATH)
+
     selected_items = dataset[offset:]
     if chunk_ids is not None:
         chunk_id_set = set(chunk_ids)
@@ -589,13 +638,18 @@ def main() -> int:
             continue
 
         section_id = f"chunk_{section_start + index - 1}_kg_eval"
-        print(f"[{index}/{len(selected_items)}] chunk={chunk} running codex")
+        path_segments = resolve_chunk_path(item, chunks_index)
+        path_preview = " > ".join(path_segments) if path_segments else "(none)"
+        print(
+            f"[{index}/{len(selected_items)}] chunk={chunk} path={path_preview} running codex"
+        )
         try:
             payload = run_codex_for_item(
                 item=item,
                 schema=schema,
                 agent_config=agent_config,
                 section_id=section_id,
+                path_segments=path_segments,
                 codex_bin=codex_bin,
                 model=model,
                 reasoning_effort=reasoning_effort,

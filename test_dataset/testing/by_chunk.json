@@ -1,0 +1,1642 @@
+[
+  {
+    "gold_nodes": 32,
+    "pred_nodes": 36,
+    "gold_relationships": 30,
+    "pred_relationships": 35,
+    "node_tp": 20,
+    "node_fp": 16,
+    "node_fn": 12,
+    "relationship_tp": 3,
+    "relationship_fp": 32,
+    "relationship_fn": 27,
+    "node_precision": 0.5555555555555556,
+    "node_recall": 0.625,
+    "node_f1": 0.5882352941176471,
+    "node_type_accuracy_on_matches": 1.0,
+    "relationship_precision": 0.08571428571428572,
+    "relationship_recall": 0.1,
+    "relationship_f1": 0.09230769230769231,
+    "strict_node_precision": 0.5,
+    "strict_node_recall": 0.5625,
+    "strict_node_f1": 0.5294117647058824,
+    "strict_relationship_precision": 0.08571428571428572,
+    "strict_relationship_recall": 0.1,
+    "strict_relationship_f1": 0.09230769230769231,
+    "node_hallucination_rate": 0.4444444444444444,
+    "node_omission_rate": 0.375,
+    "relationship_hallucination_rate": 0.9142857142857143,
+    "relationship_omission_rate": 0.9,
+    "normalized_ged": 0.6541353383458647,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [
+        {
+          "gold": "Oslobodenie Od Dane Podla Odseku 3",
+          "predicted": "Oslobodenie Od Dane Podla Odseku 3",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Oslobodenie Od Dane Podla Odseku 2",
+          "predicted": "Oslobodenie Od Dane Podla Odseku 2",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 2",
+          "predicted": "Odsek 2",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 3",
+          "predicted": "Odsek 3",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 6",
+          "predicted": "Odsek 6",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "430 eur na osobu",
+          "predicted": "430 eur na osobu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Hodnota Jednotliveho Tovaru",
+          "predicted": "Hodnota Jednotliveho Tovaru",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Hodnota Osobnej Batoziny Cestujuceho",
+          "predicted": "Hodnota Osobnej Batoziny Cestujuceho",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Hodnota Liekov Nevyhnutnych Na Osobnu Potrebu Cestujuceho",
+          "predicted": "Hodnota Liekov Nevyhnutnych Na Osobnu Potrebu Cestujuceho",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Lieky Nevyhnutne Na Osobnu Potrebu Cestujuceho",
+          "predicted": "Lieky Nevyhnutne Na Osobnu Potrebu Cestujuceho",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Dovoz Tabakovych Vyrobkov",
+          "predicted": "Dovoz Tabakovych Vyrobkov",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Tabakove Vyrobky",
+          "predicted": "Tabakove Vyrobky",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "200 kusov cigariet na osobu",
+          "predicted": "200 kusov cigariet na osobu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "40 kusov cigariet na osobu",
+          "predicted": "40 kusov cigariet na osobu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "100 kusov cigariek na osobu",
+          "predicted": "100 kusov cigariek na osobu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "20 kusov cigariek na osobu",
+          "predicted": "20 kusov cigariek na osobu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "50 kusov cigar na osobu",
+          "predicted": "50 kusov cigar na osobu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "10 kusov cigar na osobu",
+          "predicted": "10 kusov cigar na osobu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "150 eur na osobu",
+          "predicted": "150 eur na osobu mladsiu ako 15 rokov",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "15 Rokov",
+          "predicted": "Penazny Limit Pre Osobu Mladsiu Ako 15 Rokov",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        }
+      ],
+      "edge_matches": [
+        {
+          "gold": "Oslobodenie Od Dane Podla Odseku 3 -[JE_PODLA]-> Odsek 3",
+          "predicted": "Oslobodenie Od Dane Podla Odseku 3 -[JE_PODLA]-> Odsek 3",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Oslobodenie Od Dane Podla Odseku 2 -[JE_PODLA]-> Odsek 2",
+          "predicted": "Oslobodenie Od Dane Podla Odseku 2 -[JE_PODLA]-> Odsek 2",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Oslobodenie Od Dane Podla Odseku 2 -[VZTAHUJE_SA_NA]-> Dovoz Tabakovych Vyrobkov",
+          "predicted": "Oslobodenie Od Dane Podla Odseku 2 -[VZTAHUJE_SA_NA]-> Dovoz Tabakovych Vyrobkov",
+          "method": "strict_relation",
+          "reason": ""
+        }
+      ],
+      "unmatched_gold_nodes": [
+        "Odsek 4",
+        "Odsek 5",
+        "Letecka Doprava",
+        "Inak Ako Letecka Doprava",
+        "Osoba Mladsia Ako 15 Rokov",
+        "Dopravny Prostriedok",
+        "Uplatnovanie Penaznych Limitov Podla Odseku 3",
+        "Uplatnovanie Oslobodenia Od Dane Podla Odseku 3",
+        "Rozdelenie Hodnoty",
+        "Osobna Batozina Cestujuceho",
+        "Docasny Dovoz",
+        "Spatny Dovoz Po Docasnom Vyvoze"
+      ],
+      "unmatched_pred_nodes": [
+        "Odsek 6 Pismeno a)",
+        "Odsek 6 Pismeno b)",
+        "Odsek 6 Pismeno c)",
+        "Penazne Limity Podla Odseku 3",
+        "Penazny Limit Pri Leteckej Doprave",
+        "Cestovanie Leteckou Dopravou",
+        "Osoba Mladsia Ako 15 Rokov",
+        "Bez Ohladu Na Dopravny Prostriedok",
+        "Jednotlivy Tovar",
+        "Nemoznost Rozdelenia",
+        "Osobna Batozina Cestujuceho",
+        "Cestujuci",
+        "Cigarety",
+        "Cigarky",
+        "Cigary",
+        "Cestovanie Inak Ako Leteckou Dopravou"
+      ],
+      "unmatched_gold_edges": [
+        "Odsek 4 -[ODKAZUJE_NA]-> Odsek 3",
+        "Odsek 5 -[ODKAZUJE_NA]-> Odsek 3",
+        "Odsek 6 -[ODKAZUJE_NA]-> Odsek 2",
+        "Oslobodenie Od Dane Podla Odseku 3 -[MA_SUMU]-> 430 eur na osobu",
+        "430 eur na osobu -[MA_PODMIENKU]-> Letecka Doprava",
+        "Oslobodenie Od Dane Podla Odseku 3 -[MA_SUMU]-> 150 eur na osobu",
+        "150 eur na osobu -[MA_PODMIENKU]-> Osoba Mladsia Ako 15 Rokov",
+        "150 eur na osobu -[NEVZTAHUJE_SA_NA]-> Dopravny Prostriedok",
+        "Odsek 4 -[UPRAVUJE]-> Uplatnovanie Penaznych Limitov Podla Odseku 3",
+        "Hodnota Jednotliveho Tovaru -[NESPLNA_PODMIENKY]-> Rozdelenie Hodnoty",
+        "Odsek 5 -[UPRAVUJE]-> Uplatnovanie Oslobodenia Od Dane Podla Odseku 3",
+        "Uplatnovanie Oslobodenia Od Dane Podla Odseku 3 -[NEVZTAHUJE_SA_NA]-> Hodnota Osobnej Batoziny Cestujuceho",
+        "Uplatnovanie Oslobodenia Od Dane Podla Odseku 3 -[NEVZTAHUJE_SA_NA]-> Hodnota Liekov Nevyhnutnych Na Osobnu Potrebu Cestujuceho",
+        "Osobna Batozina Cestujuceho -[DODAVA]-> Docasny Dovoz",
+        "Osobna Batozina Cestujuceho -[DODAVA]-> Spatny Dovoz Po Docasnom Vyvoze",
+        "Oslobodenie Od Dane Podla Odseku 2 -[MA_MNOZSTVO]-> 200 kusov cigariet na osobu",
+        "200 kusov cigariet na osobu -[MA_PODMIENKU]-> Letecka Doprava",
+        "Oslobodenie Od Dane Podla Odseku 2 -[MA_MNOZSTVO]-> 40 kusov cigariet na osobu",
+        "40 kusov cigariet na osobu -[MA_PODMIENKU]-> Inak Ako Letecka Doprava",
+        "Oslobodenie Od Dane Podla Odseku 2 -[MA_MNOZSTVO]-> 100 kusov cigariek na osobu"
+      ],
+      "unmatched_pred_edges": [
+        "Odsek 6 -[OBSAHUJE]-> Odsek 6 Pismeno a)",
+        "Odsek 6 -[OBSAHUJE]-> Odsek 6 Pismeno b)",
+        "Odsek 6 -[OBSAHUJE]-> Odsek 6 Pismeno c)",
+        "Penazne Limity Podla Odseku 3 -[JE_PODLA]-> Odsek 3",
+        "Penazny Limit Pri Leteckej Doprave -[MA_SUMU]-> 430 eur na osobu",
+        "Penazny Limit Pri Leteckej Doprave -[MA_PODMIENKU]-> Cestovanie Leteckou Dopravou",
+        "Penazny Limit Pre Osobu Mladsiu Ako 15 Rokov -[MA_SUMU]-> 150 eur na osobu mladsiu ako 15 rokov",
+        "Penazny Limit Pre Osobu Mladsiu Ako 15 Rokov -[VZTAHUJE_SA_NA]-> Osoba Mladsia Ako 15 Rokov",
+        "Penazny Limit Pre Osobu Mladsiu Ako 15 Rokov -[MA_PODMIENKU]-> Bez Ohladu Na Dopravny Prostriedok",
+        "Jednotlivy Tovar -[MA_HODNOTU]-> Hodnota Jednotliveho Tovaru",
+        "Hodnota Jednotliveho Tovaru -[MA_STATUS]-> Nemoznost Rozdelenia",
+        "Oslobodenie Od Dane Podla Odseku 3 -[NEVZTAHUJE_SA_NA]-> Hodnota Osobnej Batoziny Cestujuceho",
+        "Oslobodenie Od Dane Podla Odseku 3 -[NEVZTAHUJE_SA_NA]-> Hodnota Liekov Nevyhnutnych Na Osobnu Potrebu Cestujuceho",
+        "Osobna Batozina Cestujuceho -[MA_HODNOTU]-> Hodnota Osobnej Batoziny Cestujuceho",
+        "Lieky Nevyhnutne Na Osobnu Potrebu Cestujuceho -[MA_HODNOTU]-> Hodnota Liekov Nevyhnutnych Na Osobnu Potrebu Cestujuceho",
+        "Oslobodenie Od Dane Podla Odseku 2 -[VZTAHUJE_SA_NA]-> Cestujuci",
+        "Dovoz Tabakovych Vyrobkov -[TYKA_SA]-> Tabakove Vyrobky",
+        "Tabakove Vyrobky -[JE_TYPOM]-> Cigarety",
+        "Tabakove Vyrobky -[JE_TYPOM]-> Cigarky",
+        "Tabakove Vyrobky -[JE_TYPOM]-> Cigary"
+      ]
+    },
+    "chunk": 188,
+    "page": 48,
+    "latency_seconds": 0.002554458798840642
+  },
+  {
+    "gold_nodes": 29,
+    "pred_nodes": 27,
+    "gold_relationships": 35,
+    "pred_relationships": 26,
+    "node_tp": 20,
+    "node_fp": 7,
+    "node_fn": 9,
+    "relationship_tp": 11,
+    "relationship_fp": 15,
+    "relationship_fn": 24,
+    "node_precision": 0.7407407407407407,
+    "node_recall": 0.6896551724137931,
+    "node_f1": 0.7142857142857143,
+    "node_type_accuracy_on_matches": 1.0,
+    "relationship_precision": 0.4230769230769231,
+    "relationship_recall": 0.3142857142857143,
+    "relationship_f1": 0.360655737704918,
+    "strict_node_precision": 0.6296296296296297,
+    "strict_node_recall": 0.5862068965517241,
+    "strict_node_f1": 0.6071428571428571,
+    "strict_relationship_precision": 0.34615384615384615,
+    "strict_relationship_recall": 0.2571428571428571,
+    "strict_relationship_f1": 0.29508196721311475,
+    "node_hallucination_rate": 0.25925925925925924,
+    "node_omission_rate": 0.3103448275862069,
+    "relationship_hallucination_rate": 0.5769230769230769,
+    "relationship_omission_rate": 0.6857142857142857,
+    "normalized_ged": 0.4700854700854701,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [
+        {
+          "gold": "Ziadatel",
+          "predicted": "Ziadatel",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 6",
+          "predicted": "Odsek 6",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Elektronicky Portal",
+          "predicted": "Elektronicky Portal",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Clensky Stat",
+          "predicted": "Clensky Stat",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Sidlo",
+          "predicted": "Sidlo",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Miesto Podnikania",
+          "predicted": "Miesto Podnikania",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Prevadzkaren",
+          "predicted": "Prevadzkaren",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Bydlisko",
+          "predicted": "Bydlisko",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Ziadost O Vratenie Dane",
+          "predicted": "Ziadost O Vratenie Dane",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Povinnost Vratit Sumu Dane",
+          "predicted": "Povinnost Vratit Sumu Dane",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Suma Dane",
+          "predicted": "Suma Dane",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Zaklad Dane",
+          "predicted": "Zaklad Dane",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Dan",
+          "predicted": "Dan",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Dodanie Tovaru Alebo Sluzby",
+          "predicted": "Dodanie Tovaru Alebo Sluzby",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Doklad O Oprave Zakladu Dane A Dane",
+          "predicted": "Doklad O Oprave Zakladu Dane A Dane",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Danovy Urad Bratislava",
+          "predicted": "Danovy Urad Bratislava",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Elektronicke Prostriedky",
+          "predicted": "Elektronicke Prostriedky",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Vratenie Sumy Dane",
+          "predicted": "Vratenie Dane",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Oznamenie O Prijati Dokladu O Oprave Zakladu Dane A Dane",
+          "predicted": "Oznamenie O Dostani Dokladu O Oprave Zakladu Dane A Dane",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Najneskor Do 30 Septembra Nasledujuceho Kalendarneho Roka",
+          "predicted": "Lehota Do 30. Septembra Kalendarného Roka",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        }
+      ],
+      "edge_matches": [
+        {
+          "gold": "Elektronicky Portal -[NACHADZA_SA_V]-> Clensky Stat",
+          "predicted": "Elektronicky Portal -[NACHADZA_SA_V]-> Clensky Stat",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[MA_SIDLO]-> Sidlo",
+          "predicted": "Ziadatel -[MA_SIDLO]-> Sidlo",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[MA_MIESTO_PODNIKANIA]-> Miesto Podnikania",
+          "predicted": "Ziadatel -[MA_MIESTO_PODNIKANIA]-> Miesto Podnikania",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[MA_PREVADZKAREN]-> Prevadzkaren",
+          "predicted": "Ziadatel -[MA_PREVADZKAREN]-> Prevadzkaren",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[MA_BYDLISKO]-> Bydlisko",
+          "predicted": "Ziadatel -[MA_BYDLISKO]-> Bydlisko",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[PODAVA]-> Ziadost O Vratenie Dane",
+          "predicted": "Ziadatel -[PODAVA]-> Ziadost O Vratenie Dane",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[MA_POVINNOST]-> Povinnost Vratit Sumu Dane",
+          "predicted": "Ziadatel -[MA_POVINNOST]-> Povinnost Vratit Sumu Dane",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Povinnost Vratit Sumu Dane -[MA_SUMU]-> Suma Dane",
+          "predicted": "Povinnost Vratit Sumu Dane -[MA_SUMU]-> Suma Dane",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[VYKONAVA]-> Vratenie Sumy Dane",
+          "predicted": "Ziadatel -[VYKONAVA]-> Vratenie Dane",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Oznamenie O Prijati Dokladu O Oprave Zakladu Dane A Dane -[MA_LEHOTU]-> Najneskor Do 30 Septembra Nasledujuceho Kalendarneho Roka",
+          "predicted": "Oznamenie O Dostani Dokladu O Oprave Zakladu Dane A Dane -[MA_LEHOTU]-> Lehota Do 30. Septembra Kalendarného Roka",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Ziadatel -[PREDKLADA]-> Doklad O Oprave Zakladu Dane A Dane",
+          "predicted": "Ziadatel -[PREDKLADA]-> Doklad O Oprave Zakladu Dane A Dane",
+          "method": "strict_relation",
+          "reason": ""
+        }
+      ],
+      "unmatched_gold_nodes": [
+        "Samostatne Vyhlasenie",
+        "Podanie Samostatneho Vyhlasenia",
+        "Miesto Obvykleho Zdrziavania",
+        "Znizenie Zakladu Dane A Dane",
+        "Znizenie Zakladu Dane A Dane Po Podani Ziadosti O Vratenie Dane",
+        "Obdobie Kalendarneho Roka Vyhotovenia Dokladu O Oprave Zakladu Dane A Dane",
+        "Oprava Zakladu Dane A Dane",
+        "Nepodanie Ziadosti O Vratenie Dane Za Obdobie Kalendarneho Roka",
+        "Prijatie Dokladu O Oprave Zakladu Dane A Dane"
+      ],
+      "unmatched_pred_nodes": [
+        "Vyhlasenie",
+        "Podanie Ziadosti O Vratenie Dane",
+        "Znizenie Zakladu Dane A Dane Za Dodanie Tovaru Alebo Sluzby",
+        "Tovar",
+        "Sluzba",
+        "Obdobie Kalenderneho Roka",
+        "Kalendarny Rok"
+      ],
+      "unmatched_gold_edges": [
+        "Ziadatel -[VYKONAVA]-> Podanie Samostatneho Vyhlasenia",
+        "Podanie Samostatneho Vyhlasenia -[MA_DOKLAD]-> Samostatne Vyhlasenie",
+        "Podanie Samostatneho Vyhlasenia -[MA_MIESTO]-> Elektronicky Portal",
+        "Sidlo -[NACHADZA_SA_V]-> Clensky Stat",
+        "Miesto Podnikania -[NACHADZA_SA_V]-> Clensky Stat",
+        "Prevadzkaren -[NACHADZA_SA_V]-> Clensky Stat",
+        "Bydlisko -[NACHADZA_SA_V]-> Clensky Stat",
+        "Ziadatel -[MA_MIESTO]-> Miesto Obvykleho Zdrziavania",
+        "Miesto Obvykleho Zdrziavania -[NACHADZA_SA_V]-> Clensky Stat",
+        "Odsek 6 -[UPRAVUJE]-> Povinnost Vratit Sumu Dane",
+        "Znizenie Zakladu Dane A Dane -[TYKA_SA]-> Dodanie Tovaru Alebo Sluzby",
+        "Povinnost Vratit Sumu Dane -[MA_PODMIENKU]-> Znizenie Zakladu Dane A Dane Po Podani Ziadosti O Vratenie Dane",
+        "Ziadost O Vratenie Dane -[MA_SUMU]-> Suma Dane",
+        "Vratenie Sumy Dane -[JE_SUCASTOU]-> Ziadost O Vratenie Dane",
+        "Ziadost O Vratenie Dane -[MA_OBDOBIE]-> Obdobie Kalendarneho Roka Vyhotovenia Dokladu O Oprave Zakladu Dane A Dane",
+        "Doklad O Oprave Zakladu Dane A Dane -[TYKA_SA]-> Oprava Zakladu Dane A Dane",
+        "Doklad O Oprave Zakladu Dane A Dane -[MA_OBDOBIE]-> Obdobie Kalendarneho Roka Vyhotovenia Dokladu O Oprave Zakladu Dane A Dane",
+        "Ziadatel -[PRIJIMA]-> Doklad O Oprave Zakladu Dane A Dane",
+        "Ziadatel -[MA_POVINNOST]-> Oznamenie O Prijati Dokladu O Oprave Zakladu Dane A Dane",
+        "Oznamenie O Prijati Dokladu O Oprave Zakladu Dane A Dane -[MA_PODMIENKU]-> Nepodanie Ziadosti O Vratenie Dane Za Obdobie Kalendarneho Roka"
+      ],
+      "unmatched_pred_edges": [
+        "Vyhlasenie -[MA_MIESTO]-> Elektronicky Portal",
+        "Povinnost Vratit Sumu Dane -[MA_PODMIENKU]-> Znizenie Zakladu Dane A Dane Za Dodanie Tovaru Alebo Sluzby",
+        "Znizenie Zakladu Dane A Dane Za Dodanie Tovaru Alebo Sluzby -[TYKA_SA]-> Zaklad Dane",
+        "Znizenie Zakladu Dane A Dane Za Dodanie Tovaru Alebo Sluzby -[TYKA_SA]-> Dan",
+        "Dodanie Tovaru Alebo Sluzby -[TYKA_SA]-> Tovar",
+        "Dodanie Tovaru Alebo Sluzby -[TYKA_SA]-> Sluzba",
+        "Vratenie Dane -[MA_MIESTO]-> Ziadost O Vratenie Dane",
+        "Ziadost O Vratenie Dane -[MA_OBDOBIE]-> Obdobie Kalenderneho Roka",
+        "Obdobie Kalenderneho Roka -[VYCHADZA_Z]-> Doklad O Oprave Zakladu Dane A Dane",
+        "Ziadatel -[OZNAMUJE]-> Oznamenie O Dostani Dokladu O Oprave Zakladu Dane A Dane",
+        "Oznamenie O Dostani Dokladu O Oprave Zakladu Dane A Dane -[MA_MIESTO]-> Elektronicke Prostriedky",
+        "Oznamenie O Dostani Dokladu O Oprave Zakladu Dane A Dane -[VZTAHUJE_SA_NA]-> Danovy Urad Bratislava",
+        "Kalendarny Rok -[VYCHADZA_Z]-> Doklad O Oprave Zakladu Dane A Dane",
+        "Doklad O Oprave Zakladu Dane A Dane -[TYKA_SA]-> Zaklad Dane",
+        "Doklad O Oprave Zakladu Dane A Dane -[TYKA_SA]-> Dan"
+      ]
+    },
+    "chunk": 276,
+    "page": 69,
+    "latency_seconds": 0.002279500011354685
+  },
+  {
+    "gold_nodes": 11,
+    "pred_nodes": 15,
+    "gold_relationships": 7,
+    "pred_relationships": 9,
+    "node_tp": 8,
+    "node_fp": 7,
+    "node_fn": 3,
+    "relationship_tp": 1,
+    "relationship_fp": 8,
+    "relationship_fn": 6,
+    "node_precision": 0.5333333333333333,
+    "node_recall": 0.7272727272727273,
+    "node_f1": 0.6153846153846153,
+    "node_type_accuracy_on_matches": 1.0,
+    "relationship_precision": 0.1111111111111111,
+    "relationship_recall": 0.14285714285714285,
+    "relationship_f1": 0.125,
+    "strict_node_precision": 0.3333333333333333,
+    "strict_node_recall": 0.45454545454545453,
+    "strict_node_f1": 0.3846153846153846,
+    "strict_relationship_precision": 0.1111111111111111,
+    "strict_relationship_recall": 0.14285714285714285,
+    "strict_relationship_f1": 0.125,
+    "node_hallucination_rate": 0.4666666666666667,
+    "node_omission_rate": 0.2727272727272727,
+    "relationship_hallucination_rate": 0.8888888888888888,
+    "relationship_omission_rate": 0.8571428571428571,
+    "normalized_ged": 0.5714285714285714,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [
+        {
+          "gold": "Identifikacne Cislo Pre Dan Dodavatela",
+          "predicted": "Identifikacne Cislo Pre Dan Dodavatela",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Opravny Doklad",
+          "predicted": "Opravny Doklad",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Faktura O Dodani Tovaru Alebo Sluzby",
+          "predicted": "Faktura O Dodani Tovaru Alebo Sluzby",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Oprava Zakladu Dane",
+          "predicted": "Oprava Zakladu Dane",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Sadzba Dane",
+          "predicted": "Sadzba Dane",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Poradove Cislo Faktury",
+          "predicted": "Poradove Cislo Faktury O Dodani Tovaru Alebo Sluzby",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odpoctana Dan",
+          "predicted": "Dan",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Suma O Ktoru Sa Opravila Odpoctana Dan",
+          "predicted": "Suma O Ktoru Sa Opravila Odpocitana Dan",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        }
+      ],
+      "edge_matches": [
+        {
+          "gold": "Oprava Zakladu Dane -[TYKA_SA]-> Faktura O Dodani Tovaru Alebo Sluzby",
+          "predicted": "Oprava Zakladu Dane -[TYKA_SA]-> Faktura O Dodani Tovaru Alebo Sluzby",
+          "method": "strict_relation",
+          "reason": ""
+        }
+      ],
+      "unmatched_gold_nodes": [
+        "Dodavatel",
+        "Ciselna Identifikacia Opravneho Dokladu",
+        "Oprava Odpoctanej Dane"
+      ],
+      "unmatched_pred_nodes": [
+        "Dodavatel",
+        "Ciselna Identifikacia Opravneho Dokladu",
+        "Dodanie Tovaru",
+        "Tovar",
+        "Dodanie Sluzby",
+        "Sluzba",
+        "Odpocitana Dan"
+      ],
+      "unmatched_gold_edges": [
+        "Dodavatel -[MA_IDENTIFIKACNE_CISLO]-> Identifikacne Cislo Pre Dan Dodavatela",
+        "Opravny Doklad -[MA_IDENTIFIKACNE_CISLO]-> Ciselna Identifikacia Opravneho Dokladu",
+        "Faktura O Dodani Tovaru Alebo Sluzby -[MA_IDENTIFIKACNE_CISLO]-> Poradove Cislo Faktury",
+        "Oprava Odpoctanej Dane -[MA_SUMU]-> Suma O Ktoru Sa Opravila Odpoctana Dan",
+        "Oprava Odpoctanej Dane -[TYKA_SA]-> Odpoctana Dan",
+        "Opravny Doklad -[MA_SADZBU]-> Sadzba Dane"
+      ],
+      "unmatched_pred_edges": [
+        "Dodavatel -[MA_IDENTIFIKACNE_CISLO]-> Identifikacne Cislo Pre Dan Dodavatela",
+        "Ciselna Identifikacia Opravneho Dokladu -[TYKA_SA]-> Opravny Doklad",
+        "Faktura O Dodani Tovaru Alebo Sluzby -[TYKA_SA]-> Dodanie Tovaru",
+        "Faktura O Dodani Tovaru Alebo Sluzby -[TYKA_SA]-> Dodanie Sluzby",
+        "Dodanie Tovaru -[TYKA_SA]-> Tovar",
+        "Dodanie Sluzby -[TYKA_SA]-> Sluzba",
+        "Suma O Ktoru Sa Opravila Odpocitana Dan -[TYKA_SA]-> Odpocitana Dan",
+        "Sadzba Dane -[TYKA_SA]-> Dan"
+      ]
+    },
+    "chunk": 492,
+    "page": 121,
+    "latency_seconds": 0.0011218751315027475
+  },
+  {
+    "gold_nodes": 16,
+    "pred_nodes": 12,
+    "gold_relationships": 14,
+    "pred_relationships": 10,
+    "node_tp": 8,
+    "node_fp": 4,
+    "node_fn": 8,
+    "relationship_tp": 5,
+    "relationship_fp": 5,
+    "relationship_fn": 9,
+    "node_precision": 0.6666666666666666,
+    "node_recall": 0.5,
+    "node_f1": 0.5714285714285715,
+    "node_type_accuracy_on_matches": 1.0,
+    "relationship_precision": 0.5,
+    "relationship_recall": 0.35714285714285715,
+    "relationship_f1": 0.41666666666666663,
+    "strict_node_precision": 0.5833333333333334,
+    "strict_node_recall": 0.4375,
+    "strict_node_f1": 0.5,
+    "strict_relationship_precision": 0.5,
+    "strict_relationship_recall": 0.35714285714285715,
+    "strict_relationship_f1": 0.41666666666666663,
+    "node_hallucination_rate": 0.3333333333333333,
+    "node_omission_rate": 0.5,
+    "relationship_hallucination_rate": 0.5,
+    "relationship_omission_rate": 0.6428571428571429,
+    "normalized_ged": 0.5,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [
+        {
+          "gold": "Prevadzkovanie Autoskoly",
+          "predicted": "Prevadzkovanie Autoskoly",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Osobne Motorove Vozidlo",
+          "predicted": "Osobne Motorove Vozidlo",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Vycvikove Vozidlo",
+          "predicted": "Vycvikove Vozidlo",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo",
+          "predicted": "Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Nahradne Osobne Motorove Vozidlo",
+          "predicted": "Nahradne Osobne Motorove Vozidlo",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Vylucne Pouzitie",
+          "predicted": "Vylucne Pouzitie",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 5",
+          "predicted": "Odsek 5",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 1 az 3",
+          "predicted": "Odseky 1 Az 3",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        }
+      ],
+      "edge_matches": [
+        {
+          "gold": "Prevadzkovanie Autoskoly -[VZTAHUJE_SA_NA]-> Osobne Motorove Vozidlo",
+          "predicted": "Prevadzkovanie Autoskoly -[VZTAHUJE_SA_NA]-> Osobne Motorove Vozidlo",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Osobne Motorove Vozidlo -[JE_TYPOM]-> Vycvikove Vozidlo",
+          "predicted": "Osobne Motorove Vozidlo -[JE_TYPOM]-> Vycvikove Vozidlo",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Osobne Motorove Vozidlo -[JE_TYPOM]-> Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo",
+          "predicted": "Osobne Motorove Vozidlo -[JE_TYPOM]-> Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo -[MA_VLASTNOST]-> Vylucne Pouzitie",
+          "predicted": "Predvadzacie Alebo Testovacie Osobne Motorove Vozidlo -[MA_VLASTNOST]-> Vylucne Pouzitie",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Osobne Motorove Vozidlo -[JE_TYPOM]-> Nahradne Osobne Motorove Vozidlo",
+          "predicted": "Osobne Motorove Vozidlo -[JE_TYPOM]-> Nahradne Osobne Motorove Vozidlo",
+          "method": "strict_relation",
+          "reason": ""
+        }
+      ],
+      "unmatched_gold_nodes": [
+        "Osobne Motorove Vozidlo Zakaznika",
+        "Osobne Motorove Vozidlo Nadobudnute Platitelom",
+        "Zakaznik Platitela",
+        "Platitel",
+        "Oprava Osobneho Motoroveho Vozidla Zakaznika",
+        "Ine Sluzby",
+        "Doba Opravy Osobneho Motoroveho Vozidla Zakaznika",
+        "Doba Vykonavania Inych Sluzieb Na Osobnom Motorovom Vozidle Zakaznika"
+      ],
+      "unmatched_pred_nodes": [
+        "Zakaznik Platitela",
+        "Doba Opravy Osobneho Motoroveho Vozidla Zakaznika",
+        "Ine Sluzby",
+        "Platitel"
+      ],
+      "unmatched_gold_edges": [
+        "Nahradne Osobne Motorove Vozidlo -[MA_VLASTNOST]-> Vylucne Pouzitie",
+        "Platitel -[POSKYTUJE]-> Nahradne Osobne Motorove Vozidlo",
+        "Nahradne Osobne Motorove Vozidlo -[VZTAHUJE_SA_NA]-> Zakaznik Platitela",
+        "Nahradne Osobne Motorove Vozidlo -[MA_DOBU]-> Doba Opravy Osobneho Motoroveho Vozidla Zakaznika",
+        "Nahradne Osobne Motorove Vozidlo -[MA_DOBU]-> Doba Vykonavania Inych Sluzieb Na Osobnom Motorovom Vozidle Zakaznika",
+        "Oprava Osobneho Motoroveho Vozidla Zakaznika -[VZTAHUJE_SA_NA]-> Osobne Motorove Vozidlo Zakaznika",
+        "Ine Sluzby -[VYKONAVA]-> Osobne Motorove Vozidlo Zakaznika",
+        "Odsek 1 az 3 -[NEVZTAHUJE_SA_NA]-> Osobne Motorove Vozidlo Nadobudnute Platitelom",
+        "Platitel -[NADOBUDA]-> Osobne Motorove Vozidlo"
+      ],
+      "unmatched_pred_edges": [
+        "Nahradne Osobne Motorove Vozidlo -[VZTAHUJE_SA_NA]-> Zakaznik Platitela",
+        "Nahradne Osobne Motorove Vozidlo -[MA_DOBU]-> Doba Opravy Osobneho Motoroveho Vozidla Zakaznika",
+        "Ine Sluzby -[VZTAHUJE_SA_NA]-> Osobne Motorove Vozidlo",
+        "Platitel -[NADOBUDA]-> Osobne Motorove Vozidlo",
+        "Odseky 1 Az 3 -[NEVZTAHUJE_SA_NA]-> Osobne Motorove Vozidlo"
+      ]
+    },
+    "chunk": 586,
+    "page": 144,
+    "latency_seconds": 0.0006955000571906567
+  },
+  {
+    "gold_nodes": 27,
+    "pred_nodes": 26,
+    "gold_relationships": 21,
+    "pred_relationships": 27,
+    "node_tp": 19,
+    "node_fp": 7,
+    "node_fn": 8,
+    "relationship_tp": 2,
+    "relationship_fp": 25,
+    "relationship_fn": 19,
+    "node_precision": 0.7307692307692307,
+    "node_recall": 0.7037037037037037,
+    "node_f1": 0.7169811320754716,
+    "node_type_accuracy_on_matches": 1.0,
+    "relationship_precision": 0.07407407407407407,
+    "relationship_recall": 0.09523809523809523,
+    "relationship_f1": 0.08333333333333333,
+    "strict_node_precision": 0.5,
+    "strict_node_recall": 0.48148148148148145,
+    "strict_node_f1": 0.49056603773584906,
+    "strict_relationship_precision": 0.0,
+    "strict_relationship_recall": 0.0,
+    "strict_relationship_f1": 0.0,
+    "node_hallucination_rate": 0.2692307692307692,
+    "node_omission_rate": 0.2962962962962963,
+    "relationship_hallucination_rate": 0.9259259259259259,
+    "relationship_omission_rate": 0.9047619047619048,
+    "normalized_ged": 0.5841584158415841,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [
+        {
+          "gold": "Danova Kontrola",
+          "predicted": "Danova Kontrola",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Nadmerny Odpocet Vo Vyske Zistenej Danovym Uradom",
+          "predicted": "Nadmerny Odpocet Vo Vyske Zistenej Danovym Uradom",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Nadmerny Odpocet Vrateny Podla Odseku 7",
+          "predicted": "Nadmerny Odpocet Vrateny Podla Odseku 7",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Nadmerny Odpocet Uvedeny V Pravoplatnom Rozhodnuti",
+          "predicted": "Nadmerny Odpocet Uvedeny V Pravoplatnom Rozhodnuti",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Vrateny Nadmerny Odpocet Podla Prvej Vety",
+          "predicted": "Vrateny Nadmerny Odpocet Podla Prvej Vety",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Vratenie Kladneho Rozdielu",
+          "predicted": "Vratenie Kladneho Rozdielu",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Pravoplatne Rozhodnutie",
+          "predicted": "Pravoplatne Rozhodnutie",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+          "predicted": "Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 1",
+          "predicted": "Odsek 1",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 2",
+          "predicted": "Odsek 2",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 5",
+          "predicted": "Odsek 5",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Odsek 7",
+          "predicted": "Odsek 7",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Platitel",
+          "predicted": "Platitel",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Desat Dni",
+          "predicted": "Desat Dni Odo Dna Nadobudnutia Pravoplatnosti Rozhodnutia",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Tri Mesiace",
+          "predicted": "Tri Mesiace Odo Dna Zacatia Danovej Kontroly",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Vratenie Nadmerneho Odpocetu Uvedeneho V Pravoplatnom Rozhodnuti",
+          "predicted": "Vratenie Nadmerneho Odpocit Uvedeneho V Pravoplatnom Rozhodnuti",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Lehota Na Vratenie Nadmerneho Odpocetu Podla Odseku 1 2 Alebo 5",
+          "predicted": "Lehota Na Vratenie Nadmerneho Odpocit Podla Odseku 1 2 Alebo Odseku 5",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Narok Na Vratenie Nadmerneho Odpocetu",
+          "predicted": "Narok Na Vratenie Nadmerneho Odpocit",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Vratenie Nadmerneho Odpocetu",
+          "predicted": "Vratenie Nadmerneho Odpocit",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        }
+      ],
+      "edge_matches": [
+        {
+          "gold": "Vratenie Kladneho Rozdielu -[MA_LEHOTU]-> Desat Dni",
+          "predicted": "Vratenie Kladneho Rozdielu -[MA_LEHOTU]-> Desat Dni Odo Dna Nadobudnutia Pravoplatnosti Rozhodnutia",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Vratenie Nadmerneho Odpocetu Uvedeneho V Pravoplatnom Rozhodnuti -[MA_LEHOTU]-> Desat Dni",
+          "predicted": "Vratenie Nadmerneho Odpocit Uvedeneho V Pravoplatnom Rozhodnuti -[MA_LEHOTU]-> Desat Dni Odo Dna Nadobudnutia Pravoplatnosti Rozhodnutia",
+          "method": "strict_relation",
+          "reason": ""
+        }
+      ],
+      "unmatched_gold_nodes": [
+        "Danovy Urad",
+        "Nadmerny Odpocet",
+        "Cast Nadmerneho Odpocetu",
+        "Rozdiel Medzi Nadmernym Odpocetom Zistenym Danovym Uradom A Nadmernym Odpocetom Vratenym Podla Odseku 7",
+        "Kladny Rozdiel",
+        "Umoznenie Vykonania Danovej Kontroly Do Troch Mesiacov",
+        "Zacatie Danovej Kontroly",
+        "Posledny Den Tretieho Mesiaca"
+      ],
+      "unmatched_pred_nodes": [
+        "Danovy Urad",
+        "Vratenie Rozdielu",
+        "Rozdiel Medzi Nadmernym Odpocitom A Vratenym Nadmernym Odpocitom",
+        "Kladny Rozdiel",
+        "Vykonanie Danovej Kontroly",
+        "Podmienka Neumoznenia Vykonania Danovej Kontroly",
+        "Zanik Naroku Na Vratenie Nadmerneho Odpocit"
+      ],
+      "unmatched_gold_edges": [
+        "Danovy Urad -[VYKONAVA]-> Danova Kontrola",
+        "Danova Kontrola -[TYKA_SA]-> Nadmerny Odpocet",
+        "Danova Kontrola -[PLATI_PRE]-> Lehota Na Vratenie Nadmerneho Odpocetu Podla Odseku 1 2 Alebo 5",
+        "Cast Nadmerneho Odpocetu -[JE_PODLA]-> Odsek 7",
+        "Danovy Urad -[ZAPLATI]-> Rozdiel Medzi Nadmernym Odpocetom Zistenym Danovym Uradom A Nadmernym Odpocetom Vratenym Podla Odseku 7",
+        "Rozdiel Medzi Nadmernym Odpocetom Zistenym Danovym Uradom A Nadmernym Odpocetom Vratenym Podla Odseku 7 -[VYCHADZA_Z]-> Nadmerny Odpocet Vo Vyske Zistenej Danovym Uradom",
+        "Rozdiel Medzi Nadmernym Odpocetom Zistenym Danovym Uradom A Nadmernym Odpocetom Vratenym Podla Odseku 7 -[VYCHADZA_Z]-> Nadmerny Odpocet Vrateny Podla Odseku 7",
+        "Kladny Rozdiel -[VZNIKA_PRI]-> Vratenie Nadmerneho Odpocetu",
+        "Kladny Rozdiel -[VYCHADZA_Z]-> Nadmerny Odpocet Uvedeny V Pravoplatnom Rozhodnuti",
+        "Kladny Rozdiel -[VYCHADZA_Z]-> Vrateny Nadmerny Odpocet Podla Prvej Vety",
+        "Danovy Urad -[ZAPLATI]-> Kladny Rozdiel",
+        "Desat Dni -[PLATI_OD]-> Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+        "Pravoplatne Rozhodnutie -[MA_DATUM]-> Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+        "Pravoplatne Rozhodnutie -[TYKA_SA]-> Nadmerny Odpocet",
+        "Danovy Urad -[ZAPLATI]-> Nadmerny Odpocet Uvedeny V Pravoplatnom Rozhodnuti",
+        "Platitel -[NESPLNA_PODMIENKY]-> Umoznenie Vykonania Danovej Kontroly Do Troch Mesiacov",
+        "Umoznenie Vykonania Danovej Kontroly Do Troch Mesiacov -[MA_LEHOTU]-> Tri Mesiace",
+        "Tri Mesiace -[PLATI_OD]-> Zacatie Danovej Kontroly",
+        "Narok Na Vratenie Nadmerneho Odpocetu -[ZANIKA]-> Posledny Den Tretieho Mesiaca"
+      ],
+      "unmatched_pred_edges": [
+        "Danovy Urad -[VYKONAVA]-> Vratenie Rozdielu",
+        "Vratenie Rozdielu -[TYKA_SA]-> Rozdiel Medzi Nadmernym Odpocitom A Vratenym Nadmernym Odpocitom",
+        "Rozdiel Medzi Nadmernym Odpocitom A Vratenym Nadmernym Odpocitom -[VYCHADZA_Z]-> Nadmerny Odpocet Vo Vyske Zistenej Danovym Uradom",
+        "Rozdiel Medzi Nadmernym Odpocitom A Vratenym Nadmernym Odpocitom -[VYCHADZA_Z]-> Nadmerny Odpocet Vrateny Podla Odseku 7",
+        "Nadmerny Odpocet Vrateny Podla Odseku 7 -[JE_PODLA]-> Odsek 7",
+        "Kladny Rozdiel -[VZNIKA_PRI]-> Vratenie Nadmerneho Odpocit",
+        "Kladny Rozdiel -[VYCHADZA_Z]-> Nadmerny Odpocet Uvedeny V Pravoplatnom Rozhodnuti",
+        "Kladny Rozdiel -[VYCHADZA_Z]-> Vrateny Nadmerny Odpocet Podla Prvej Vety",
+        "Pravoplatne Rozhodnutie -[UVADZA]-> Nadmerny Odpocet Uvedeny V Pravoplatnom Rozhodnuti",
+        "Danovy Urad -[VYKONAVA]-> Vratenie Kladneho Rozdielu",
+        "Vratenie Kladneho Rozdielu -[TYKA_SA]-> Kladny Rozdiel",
+        "Desat Dni Odo Dna Nadobudnutia Pravoplatnosti Rozhodnutia -[VYCHADZA_Z]-> Den Nadobudnutia Pravoplatnosti Rozhodnutia",
+        "Danovy Urad -[VYKONAVA]-> Danova Kontrola",
+        "Danova Kontrola -[MA_LEHOTU]-> Lehota Na Vratenie Nadmerneho Odpocit Podla Odseku 1 2 Alebo Odseku 5",
+        "Lehota Na Vratenie Nadmerneho Odpocit Podla Odseku 1 2 Alebo Odseku 5 -[JE_PODLA]-> Odsek 1",
+        "Lehota Na Vratenie Nadmerneho Odpocit Podla Odseku 1 2 Alebo Odseku 5 -[JE_PODLA]-> Odsek 2",
+        "Lehota Na Vratenie Nadmerneho Odpocit Podla Odseku 1 2 Alebo Odseku 5 -[JE_PODLA]-> Odsek 5",
+        "Pravoplatne Rozhodnutie -[ROZHODUJE_O]-> Nadmerny Odpocet Uvedeny V Pravoplatnom Rozhodnuti",
+        "Danovy Urad -[VYKONAVA]-> Vratenie Nadmerneho Odpocit Uvedeneho V Pravoplatnom Rozhodnuti",
+        "Vykonanie Danovej Kontroly -[MA_LEHOTU]-> Tri Mesiace Odo Dna Zacatia Danovej Kontroly"
+      ]
+    },
+    "chunk": 501,
+    "page": 123,
+    "latency_seconds": 0.0018737090285867453
+  },
+  {
+    "gold_nodes": 0,
+    "pred_nodes": 0,
+    "gold_relationships": 0,
+    "pred_relationships": 0,
+    "node_tp": 0,
+    "node_fp": 0,
+    "node_fn": 0,
+    "relationship_tp": 0,
+    "relationship_fp": 0,
+    "relationship_fn": 0,
+    "node_precision": 0.0,
+    "node_recall": 0.0,
+    "node_f1": 0.0,
+    "node_type_accuracy_on_matches": 0.0,
+    "relationship_precision": 0.0,
+    "relationship_recall": 0.0,
+    "relationship_f1": 0.0,
+    "strict_node_precision": 0.0,
+    "strict_node_recall": 0.0,
+    "strict_node_f1": 0.0,
+    "strict_relationship_precision": 0.0,
+    "strict_relationship_recall": 0.0,
+    "strict_relationship_f1": 0.0,
+    "node_hallucination_rate": 0.0,
+    "node_omission_rate": 0.0,
+    "relationship_hallucination_rate": 0.0,
+    "relationship_omission_rate": 0.0,
+    "normalized_ged": 0.0,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [],
+      "edge_matches": [],
+      "unmatched_gold_nodes": [],
+      "unmatched_pred_nodes": [],
+      "unmatched_gold_edges": [],
+      "unmatched_pred_edges": []
+    },
+    "chunk": 603,
+    "page": 153,
+    "latency_seconds": 4.58303838968277e-06
+  },
+  {
+    "gold_nodes": 19,
+    "pred_nodes": 19,
+    "gold_relationships": 17,
+    "pred_relationships": 19,
+    "node_tp": 6,
+    "node_fp": 13,
+    "node_fn": 13,
+    "relationship_tp": 0,
+    "relationship_fp": 19,
+    "relationship_fn": 17,
+    "node_precision": 0.3157894736842105,
+    "node_recall": 0.3157894736842105,
+    "node_f1": 0.3157894736842105,
+    "node_type_accuracy_on_matches": 1.0,
+    "relationship_precision": 0.0,
+    "relationship_recall": 0.0,
+    "relationship_f1": 0.0,
+    "strict_node_precision": 0.15789473684210525,
+    "strict_node_recall": 0.15789473684210525,
+    "strict_node_f1": 0.15789473684210525,
+    "strict_relationship_precision": 0.0,
+    "strict_relationship_recall": 0.0,
+    "strict_relationship_f1": 0.0,
+    "node_hallucination_rate": 0.6842105263157895,
+    "node_omission_rate": 0.6842105263157895,
+    "relationship_hallucination_rate": 1.0,
+    "relationship_omission_rate": 1.0,
+    "normalized_ged": 0.8378378378378378,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [
+        {
+          "gold": "Colny Urad",
+          "predicted": "Colny Urad",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Doterajsie Predpisy",
+          "predicted": "Doterajsie Predpisy",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Colny Rezim",
+          "predicted": "Colny Rezim",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Tovar",
+          "predicted": "Tovar K 30. aprilu 2004 V Tuzemsku",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "30. april 2004",
+          "predicted": "30. aprilu 2004",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "1. maj 2004",
+          "predicted": "1. maju 2004",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        }
+      ],
+      "edge_matches": [],
+      "unmatched_gold_nodes": [
+        "Docasne Uskladnenie Alebo Colne Schvalene Urcenie",
+        "Docasne Uskladnenie",
+        "Colne Schvalene Urcenie",
+        "Uskladnovanie V Colnom Sklade",
+        "Aktivny Zuslachcovaci Styk",
+        "Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+        "Spolocny Tranzitny Rezim",
+        "Iny Colny Rezim Tranzit",
+        "Skoncenie Docasneho Uskladnenia",
+        "Skoncenie Colne Schvaleneho Urcenia",
+        "Skoncenie Spolocneho Tranzitneho Rezimu",
+        "Skoncenie Ineho Colneho Rezimu Tranzit",
+        "Clensky Stat K 1. Maju 2004"
+      ],
+      "unmatched_pred_nodes": [
+        "Odsek 15",
+        "Odsek 16",
+        "Tuzemsko",
+        "Postavenie Docasne Uskladneneho Tovaru",
+        "Slobodne Colne Pasmo",
+        "Slobodny Colny Sklad",
+        "Colny Rezim Uskladnovanie V Colnom Sklade",
+        "Colny Rezim Aktivny Zuslachtovaci Styk",
+        "Colny Rezim Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+        "Docasne Uskladnenie Alebo Colne Schvalene Urcenie",
+        "Tovar Prepusteny Do Spolocneho Tranzitneho Rezimu",
+        "Spolocny Tranzitny Rezim",
+        "Iny Colny Rezim Tranzit"
+      ],
+      "unmatched_gold_edges": [
+        "Docasne Uskladnenie Alebo Colne Schvalene Urcenie -[ZAHRNUJE]-> Docasne Uskladnenie",
+        "Docasne Uskladnenie Alebo Colne Schvalene Urcenie -[ZAHRNUJE]-> Colne Schvalene Urcenie",
+        "Docasne Uskladnenie Alebo Colne Schvalene Urcenie -[VZTAHUJE_SA_NA]-> Tovar",
+        "Uskladnovanie V Colnom Sklade -[JE_DRUHOM]-> Colny Rezim",
+        "Aktivny Zuslachcovaci Styk -[JE_DRUHOM]-> Colny Rezim",
+        "Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla -[JE_DRUHOM]-> Colny Rezim",
+        "Spolocny Tranzitny Rezim -[JE_DRUHOM]-> Colny Rezim",
+        "Iny Colny Rezim Tranzit -[JE_DRUHOM]-> Colny Rezim",
+        "Colne Schvalene Urcenie -[ZAHRNUJE]-> Uskladnovanie V Colnom Sklade",
+        "Colne Schvalene Urcenie -[ZAHRNUJE]-> Aktivny Zuslachcovaci Styk",
+        "Colne Schvalene Urcenie -[ZAHRNUJE]-> Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+        "Colne Schvalene Urcenie -[ZAHRNUJE]-> Spolocny Tranzitny Rezim",
+        "Colne Schvalene Urcenie -[ZAHRNUJE]-> Iny Colny Rezim Tranzit",
+        "Doterajsie Predpisy -[PLATI_DO]-> Skoncenie Docasneho Uskladnenia",
+        "Doterajsie Predpisy -[PLATI_DO]-> Skoncenie Colne Schvaleneho Urcenia",
+        "Doterajsie Predpisy -[PLATI_DO]-> Skoncenie Spolocneho Tranzitneho Rezimu",
+        "Doterajsie Predpisy -[PLATI_DO]-> Skoncenie Ineho Colneho Rezimu Tranzit"
+      ],
+      "unmatched_pred_edges": [
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[MA_DATUM]-> 30. aprilu 2004",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[NACHADZA_SA_V]-> Tuzemsko",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[PREDKLADA]-> Colny Urad",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[MA_STATUS]-> Postavenie Docasne Uskladneneho Tovaru",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[NACHADZA_SA_V]-> Slobodne Colne Pasmo",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[NACHADZA_SA_V]-> Slobodny Colny Sklad",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[SPADA_POD]-> Colny Rezim Uskladnovanie V Colnom Sklade",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[SPADA_POD]-> Colny Rezim Aktivny Zuslachtovaci Styk",
+        "Tovar K 30. aprilu 2004 V Tuzemsku -[SPADA_POD]-> Colny Rezim Docasne Pouzitie S Uplnym Oslobodenim Od Dovozneho Cla",
+        "Postavenie Docasne Uskladneneho Tovaru -[PLATI_DO]-> 1. maju 2004",
+        "Doterajsie Predpisy -[PLATI_PRE]-> Tovar K 30. aprilu 2004 V Tuzemsku",
+        "Docasne Uskladnenie Alebo Colne Schvalene Urcenie -[TYKA_SA]-> Tovar K 30. aprilu 2004 V Tuzemsku",
+        "Tovar Prepusteny Do Spolocneho Tranzitneho Rezimu -[MA_DATUM]-> 30. aprilu 2004",
+        "Tovar Prepusteny Do Spolocneho Tranzitneho Rezimu -[SPADA_POD]-> Spolocny Tranzitny Rezim",
+        "Tovar Prepusteny Do Spolocneho Tranzitneho Rezimu -[SPADA_POD]-> Iny Colny Rezim Tranzit",
+        "Spolocny Tranzitny Rezim -[PLATI_DO]-> 1. maju 2004",
+        "Doterajsie Predpisy -[PLATI_PRE]-> Tovar Prepusteny Do Spolocneho Tranzitneho Rezimu",
+        "Colny Rezim -[JE_TYPOM]-> Spolocny Tranzitny Rezim",
+        "Colny Rezim -[JE_TYPOM]-> Iny Colny Rezim Tranzit"
+      ]
+    },
+    "chunk": 534,
+    "page": 131,
+    "latency_seconds": 0.001296791946515441
+  },
+  {
+    "gold_nodes": 28,
+    "pred_nodes": 23,
+    "gold_relationships": 18,
+    "pred_relationships": 25,
+    "node_tp": 21,
+    "node_fp": 2,
+    "node_fn": 7,
+    "relationship_tp": 8,
+    "relationship_fp": 17,
+    "relationship_fn": 10,
+    "node_precision": 0.9130434782608695,
+    "node_recall": 0.75,
+    "node_f1": 0.8235294117647057,
+    "node_type_accuracy_on_matches": 1.0,
+    "relationship_precision": 0.32,
+    "relationship_recall": 0.4444444444444444,
+    "relationship_f1": 0.37209302325581395,
+    "strict_node_precision": 0.8260869565217391,
+    "strict_node_recall": 0.6785714285714286,
+    "strict_node_f1": 0.7450980392156864,
+    "strict_relationship_precision": 0.32,
+    "strict_relationship_recall": 0.4444444444444444,
+    "strict_relationship_f1": 0.37209302325581395,
+    "node_hallucination_rate": 0.08695652173913043,
+    "node_omission_rate": 0.25,
+    "relationship_hallucination_rate": 0.68,
+    "relationship_omission_rate": 0.5555555555555556,
+    "normalized_ged": 0.3829787234042553,
+    "ontology_conformance_nodes": 1.0,
+    "ontology_conformance_relationships": 1.0,
+    "invalid_node_type_rate": 0.0,
+    "invalid_relationship_type_rate": 0.0,
+    "dangling_edge_rate": 0.0,
+    "unknown_type_rate": 0.0,
+    "bad_id_format_rate": 0.0,
+    "details": {
+      "node_matches": [
+        {
+          "gold": "Danovy Urad Bratislava",
+          "predicted": "Danovy Urad Bratislava",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Postup Danoveho Uradu Bratislava",
+          "predicted": "Postup Danoveho Uradu Bratislava",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 5",
+          "predicted": "Paragraf § 5",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 5 Odsek 2",
+          "predicted": "Paragraf § 5 Odsek 2",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 8",
+          "predicted": "Paragraf § 8",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 8 Odsek 1",
+          "predicted": "Paragraf § 8 Odsek 1",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 8 Odsek 1 Pismeno c)",
+          "predicted": "Paragraf § 8 Odsek 1 Pismeno c)",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Najomna Zmluva S Dojednanym Pravom Kupy Tovaru",
+          "predicted": "Najomna Zmluva S Dojednanym Pravom Kupy Tovaru",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Pravo Kupy Tovaru",
+          "predicted": "Pravo Kupy Tovaru",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Tovar",
+          "predicted": "Tovar",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Najom",
+          "predicted": "Najom",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 55",
+          "predicted": "Paragraf § 55",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 55 Odsek 3",
+          "predicted": "Paragraf § 55 Odsek 3",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 69",
+          "predicted": "Paragraf § 69",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 69 Odsek 13",
+          "predicted": "Paragraf § 69 Odsek 13",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 78",
+          "predicted": "Paragraf § 78",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 78 Odsek 9",
+          "predicted": "Paragraf § 78 Odsek 9",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Zdanitelna Osoba",
+          "predicted": "Zdanitelna Osoba",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "Danove Priznanie",
+          "predicted": "Danove Priznanie",
+          "method": "strict",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "31 Decembra 2024",
+          "predicted": "31. decembra 2024",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        },
+        {
+          "gold": "1 Januara 2025",
+          "predicted": "1. januara 2025",
+          "method": "relaxed_string",
+          "type_ok": true,
+          "reason": ""
+        }
+      ],
+      "edge_matches": [
+        {
+          "gold": "Paragraf § 5 -[OBSAHUJE]-> Paragraf § 5 Odsek 2",
+          "predicted": "Paragraf § 5 -[OBSAHUJE]-> Paragraf § 5 Odsek 2",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 8 -[OBSAHUJE]-> Paragraf § 8 Odsek 1",
+          "predicted": "Paragraf § 8 -[OBSAHUJE]-> Paragraf § 8 Odsek 1",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 8 Odsek 1 -[OBSAHUJE]-> Paragraf § 8 Odsek 1 Pismeno c)",
+          "predicted": "Paragraf § 8 Odsek 1 -[OBSAHUJE]-> Paragraf § 8 Odsek 1 Pismeno c)",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Najomna Zmluva S Dojednanym Pravom Kupy Tovaru -[MA_PRAVO]-> Pravo Kupy Tovaru",
+          "predicted": "Najomna Zmluva S Dojednanym Pravom Kupy Tovaru -[MA_PRAVO]-> Pravo Kupy Tovaru",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Tovar -[JE_PREDMETOM]-> Najom",
+          "predicted": "Tovar -[JE_PREDMETOM]-> Najom",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 55 -[OBSAHUJE]-> Paragraf § 55 Odsek 3",
+          "predicted": "Paragraf § 55 -[OBSAHUJE]-> Paragraf § 55 Odsek 3",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 69 -[OBSAHUJE]-> Paragraf § 69 Odsek 13",
+          "predicted": "Paragraf § 69 -[OBSAHUJE]-> Paragraf § 69 Odsek 13",
+          "method": "strict_relation",
+          "reason": ""
+        },
+        {
+          "gold": "Paragraf § 78 -[OBSAHUJE]-> Paragraf § 78 Odsek 9",
+          "predicted": "Paragraf § 78 -[OBSAHUJE]-> Paragraf § 78 Odsek 9",
+          "method": "strict_relation",
+          "reason": ""
+        }
+      ],
+      "unmatched_gold_nodes": [
+        "Paragraf § 5 Odsek 2 V Zneni Ucinnom Do 31 Decembra 2024",
+        "Paragraf § 8 Odsek 1 Pismeno c) V Zneni Ucinnom Od 1 Januara 2025",
+        "Uzavretie Zmluvy Do 31 Decembra 2024 Vratane",
+        "Paragraf § 55 Odsek 3 V Zneni Ucinnom Do 31 Decembra 2024",
+        "Paragraf § 69 Odsek 13 V Zneni Ucinnom Do 31 Decembra 2024",
+        "Paragraf § 78 Odsek 9 V Zneni Ucinnom Do 31 Decembra 2024",
+        "Podanie Danoveho Priznania"
+      ],
+      "unmatched_pred_nodes": [
+        "Podmienka Uzavretia Zmluvy Do 31. Decembra 2024 Vratane",
+        "Povinnost Podat Danove Priznanie"
+      ],
+      "unmatched_gold_edges": [
+        "Postup Danoveho Uradu Bratislava -[JE_PODLA]-> Paragraf § 5 Odsek 2 V Zneni Ucinnom Do 31 Decembra 2024",
+        "Paragraf § 5 Odsek 2 V Zneni Ucinnom Do 31 Decembra 2024 -[PLATI_DO]-> 31 Decembra 2024",
+        "Paragraf § 8 Odsek 1 Pismeno c) V Zneni Ucinnom Od 1 Januara 2025 -[PLATI_OD]-> 1 Januara 2025",
+        "Paragraf § 8 Odsek 1 Pismeno c) V Zneni Ucinnom Od 1 Januara 2025 -[NEVZTAHUJE_SA_NA]-> Najomna Zmluva S Dojednanym Pravom Kupy Tovaru",
+        "Najomna Zmluva S Dojednanym Pravom Kupy Tovaru -[MA_DATUM]-> Uzavretie Zmluvy Do 31 Decembra 2024 Vratane",
+        "Paragraf § 55 Odsek 3 V Zneni Ucinnom Do 31 Decembra 2024 -[VZTAHUJE_SA_NA]-> Zdanitelna Osoba",
+        "Paragraf § 69 Odsek 13 V Zneni Ucinnom Do 31 Decembra 2024 -[VZTAHUJE_SA_NA]-> Zdanitelna Osoba",
+        "Paragraf § 78 Odsek 9 V Zneni Ucinnom Do 31 Decembra 2024 -[VZTAHUJE_SA_NA]-> Zdanitelna Osoba",
+        "Zdanitelna Osoba -[MA_POVINNOST]-> Podanie Danoveho Priznania",
+        "Podanie Danoveho Priznania -[JE_PODLA]-> Paragraf § 78 Odsek 9 V Zneni Ucinnom Do 31 Decembra 2024"
+      ],
+      "unmatched_pred_edges": [
+        "Postup Danoveho Uradu Bratislava -[TYKA_SA]-> Danovy Urad Bratislava",
+        "Paragraf § 5 Odsek 2 -[VZTAHUJE_SA_NA]-> Postup Danoveho Uradu Bratislava",
+        "Paragraf § 5 Odsek 2 -[PLATI_DO]-> 31. decembra 2024",
+        "Paragraf § 8 Odsek 1 Pismeno c) -[PLATI_OD]-> 1. januara 2025",
+        "Paragraf § 8 Odsek 1 Pismeno c) -[NEVZTAHUJE_SA_NA]-> Najomna Zmluva S Dojednanym Pravom Kupy Tovaru",
+        "Pravo Kupy Tovaru -[TYKA_SA]-> Tovar",
+        "Paragraf § 8 Odsek 1 Pismeno c) -[MA_PODMIENKU]-> Podmienka Uzavretia Zmluvy Do 31. Decembra 2024 Vratane",
+        "Podmienka Uzavretia Zmluvy Do 31. Decembra 2024 Vratane -[MA_DATUM]-> 31. decembra 2024",
+        "Paragraf § 55 Odsek 3 -[PLATI_DO]-> 31. decembra 2024",
+        "Paragraf § 69 Odsek 13 -[PLATI_DO]-> 31. decembra 2024",
+        "Paragraf § 78 Odsek 9 -[PLATI_DO]-> 31. decembra 2024",
+        "Paragraf § 55 Odsek 3 -[VZTAHUJE_SA_NA]-> Zdanitelna Osoba",
+        "Paragraf § 69 Odsek 13 -[VZTAHUJE_SA_NA]-> Zdanitelna Osoba",
+        "Paragraf § 78 Odsek 9 -[VZTAHUJE_SA_NA]-> Zdanitelna Osoba",
+        "Zdanitelna Osoba -[MA_POVINNOST]-> Povinnost Podat Danove Priznanie",
+        "Povinnost Podat Danove Priznanie -[TYKA_SA]-> Danove Priznanie",
+        "Povinnost Podat Danove Priznanie -[JE_PODLA]-> Paragraf § 78 Odsek 9"
+      ]
+    },
+    "chunk": 578,
+    "page": 142,
+    "latency_seconds": 0.0015859168488532305
+  }
+]

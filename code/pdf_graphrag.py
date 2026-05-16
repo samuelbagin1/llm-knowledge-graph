@@ -1696,7 +1696,7 @@ Pred vystupom over:
         ):
             existing_schema = Schema(
                     nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum", "Pismeno"],
-                    relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI", "JE_PODLA"]
+                    relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI", "JE_PODLA", "JE_OSLOBODENE_OD_DANE", "JE_PREDMETOM_DANE", "NIE_JE_PREDMETOM_DANE"]
                 )
         
         

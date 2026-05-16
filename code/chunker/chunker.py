@@ -59,10 +59,12 @@ def _make_doc(text: str, path: list[str], headline: str | None) -> Document:
 
 def write_json(chunks: list[Document], path: str | Path) -> None:
     """Serialize a list of `Document`s to `path` as UTF-8 JSON (no ASCII escapes,
-    so Slovak diacritics stay readable)."""
+    so Slovak diacritics stay readable). `id` is emitted first for readability."""
     Path(path).write_text(
         json.dumps(
-            [{"text": d.page_content, **d.metadata} for d in chunks],
+            [{"id": d.metadata["id"], "text": d.page_content,
+              **{k: v for k, v in d.metadata.items() if k != "id"}}
+             for d in chunks],
             ensure_ascii=False,
             indent=2,
         ),
@@ -205,6 +207,11 @@ class Chunker:
             if "marker" not in para:
                 continue
             self._walk_paragraph(para, chunks)
+
+        # Assign a unique sequential id once the full chunk list is known.
+        # Done post-walk so _split_if_long expansions get their own ids for free.
+        for i, doc in enumerate(chunks):
+            doc.metadata["id"] = i
 
         write_json(chunks, "./chunks.json")
         return chunks

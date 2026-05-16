@@ -1518,8 +1518,8 @@ def write_reports(
 
 def main() -> None:
     dataset_path: Path = Path(__file__).resolve().parent / "kg_test_dataset.json"
-    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "evaluation_results_gpt-5.5"
-    output_dir: Path = Path(__file__).resolve().parent / "evaluation_results"
+    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "testing"
+    output_dir: Path = Path(__file__).resolve().parent / "testing"
     limit: Optional[int] = None
     offset: int = 0
     start_chunk_index: Optional[int] = None
@@ -1546,6 +1546,20 @@ def main() -> None:
     schema = build_project_schema()
     resolved_predictions_path = resolve_predictions_path(predictions_path, output_dir)
     predictions = load_predictions(resolved_predictions_path) if resolved_predictions_path else None
+    if predictions is not None:
+        before_count = len(examples)
+        examples = [
+            item
+            for index, item in enumerate(examples)
+            if int(item.get("chunk", index)) in predictions
+        ]
+        skipped_count = before_count - len(examples)
+        print(
+            f"Loaded predictions for {len(predictions)} chunks from {resolved_predictions_path}. "
+            f"Evaluating {len(examples)} matched chunks; skipping {skipped_count} gold chunks without predictions."
+        )
+        if not examples:
+            raise ValueError("No matching chunk IDs between the gold dataset and predictions.")
     config = EvalConfig(
         use_llm_judge=not no_llm_judge,
         judge_model=judge_model,

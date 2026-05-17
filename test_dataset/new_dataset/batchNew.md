@@ -4579,50 +4579,70 @@ relations:
   Paragraf § 68f Odsek 6 -> [OBSAHUJE] -> Paragraf § 68f Odsek 6 Pismeno c)
   Paragraf § 68f -> [OBSAHUJE] -> Paragraf § 68f Odsek 2
   Paragraf § 68f Odsek 6 Pismeno c) -> [ODKAZUJE_NA] -> Paragraf § 68f Odsek 2
-  Zdanitelna Osoba -> [MA_ADRESU] -> Sidlo
-  Zdanitelna Osoba -> [MA_ADRESU] -> Miesto Podnikania
-  Zdanitelna Osoba -> [MA_ADRESU] -> Bydlisko
-  Sidlo -> [NACHADZA_SA_V] -> Iny Clensky Stat
-  Miesto Podnikania -> [NACHADZA_SA_V] -> Iny Clensky Stat
-  Bydlisko -> [NACHADZA_SA_V] -> Iny Clensky Stat
-  Oslobodenie Od Dane Podla Paragrafu § 68f Odsek 2 -> [OSLOBODZUJE_OD] -> Dan
-  Oslobodenie Od Dane Podla Paragrafu § 68f Odsek 2 -> [VYPLYVA_Z] -> Paragraf § 68f Odsek 2
-  Zdanitelna Osoba -> [NEMA_NAROK_NA] -> Oslobodenie Od Dane Podla Paragrafu § 68f Odsek 2
-  Zdanitelna Osoba -> [DODAVA] -> Dodanie Tovaru Alebo Sluzby
-  Dodanie Tovaru Alebo Sluzby -> [VZTAHUJE_SA_NA] -> Tovar
-  Dodanie Tovaru Alebo Sluzby -> [VZTAHUJE_SA_NA] -> Sluzba
-  Dodanie Tovaru Alebo Sluzby -> [MA_HODNOTU] -> Hodnota Bez Dane Dodanych Tovarov A Sluzieb
-  Hodnota Bez Dane Dodanych Tovarov A Sluzieb -> [PATRI_DO] -> Rocny Obrat V Unii
+
+  Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State -> [JE_TYPOM] -> Zdanitelna Osoba
+  Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State -> [MA_ADRESU] -> Sidlo V Inom Clenskom State
+  Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State -> [MA_ADRESU] -> Miesto Podnikania V Inom Clenskom State
+  Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State -> [MA_ADRESU] -> Bydlisko V Inom Clenskom State
+  Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State -> [NACHADZA_SA_V] -> Miesto Obvykleho Zdrziavania V Inom Clenskom State
+
+  Sidlo V Inom Clenskom State -> [NACHADZA_SA_V] -> Iny Clensky Stat
+  Miesto Podnikania V Inom Clenskom State -> [NACHADZA_SA_V] -> Iny Clensky Stat
+  Bydlisko V Inom Clenskom State -> [NACHADZA_SA_V] -> Iny Clensky Stat
+  Miesto Obvykleho Zdrziavania V Inom Clenskom State -> [NACHADZA_SA_V] -> Iny Clensky Stat
+
+  Oslobodenie Od Dane Podla Paragraf § 68f Odsek 2 -> [OSLOBODZUJE_OD] -> Dan
+  Oslobodenie Od Dane Podla Paragraf § 68f Odsek 2 -> [JE_PODLA] -> Paragraf § 68f Odsek 2
+
+  Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State -> [NEMA_NAROK_NA] -> Uplatnovanie Oslobodenia Od Dane Podla Paragraf § 68f Odsek 2
+  Uplatnovanie Oslobodenia Od Dane Podla Paragraf § 68f Odsek 2 -> [VZTAHUJE_SA_NA] -> Oslobodenie Od Dane Podla Paragraf § 68f Odsek 2
+  Uplatnovanie Oslobodenia Od Dane Podla Paragraf § 68f Odsek 2 -> [ZANIKA] -> Dodanie Tovaru Alebo Sluzby Ktorym Hodnota Bez Dane Presiahla 100 000 Eur V Prebiehajucom Kalendarnom Roku
+
+  Dodanie Tovaru Alebo Sluzby Ktorym Hodnota Bez Dane Presiahla 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [VZTAHUJE_SA_NA] -> Tovar
+  Dodanie Tovaru Alebo Sluzby Ktorym Hodnota Bez Dane Presiahla 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [VZTAHUJE_SA_NA] -> Sluzba
+  Dodanie Tovaru Alebo Sluzby Ktorym Hodnota Bez Dane Presiahla 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [VZTAHUJE_SA_NA] -> Hodnota Bez Dane Dodanych Tovarov A Sluzieb Zahrnanych Do Rocneho Obratu V Unii
+  Dodanie Tovaru Alebo Sluzby Ktorym Hodnota Bez Dane Presiahla 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State
+
+  Hodnota Bez Dane Dodanych Tovarov A Sluzieb Zahrnanych Do Rocneho Obratu V Unii -> [VZTAHUJE_SA_NA] -> Dodane Tovary A Sluzby
+  Hodnota Bez Dane Dodanych Tovarov A Sluzieb Zahrnanych Do Rocneho Obratu V Unii -> [PATRI_DO] -> Rocny Obrat V Unii
   Rocny Obrat V Unii -> [VZTAHUJE_SA_NA] -> Unia
-  Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [VZTAHUJE_SA_NA] -> Hodnota Bez Dane Dodanych Tovarov A Sluzieb
-  Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [MA_SUMU] -> 100 000 Eur
-  100 000 Eur -> [MA] -> Eur
+
+  Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [VZTAHUJE_SA_NA] -> Hodnota Bez Dane Dodanych Tovarov A Sluzieb Zahrnanych Do Rocneho Obratu V Unii
+  Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [MA_SUMU] -> Suma 100 000 Eur
   Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku -> [MA_OBDOBIE] -> Prebiehajuci Kalendarny Rok
-  Zdanitelna Osoba -> [NESPLNA_PODMIENKY] -> Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku
-  Paragraf § 68f Odsek 6 Pismeno c) -> [URCUJE] -> Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku
 
 nodes:
   Paragraf: Paragraf § 68f
   Odsek: Paragraf § 68f Odsek 6
   Pismeno: Paragraf § 68f Odsek 6 Pismeno c)
   Odsek: Paragraf § 68f Odsek 2
+
   Subjekt: Zdanitelna Osoba
+  Subjekt: Zdanitelna Osoba Usadena Alebo Zdrziavajuca Sa V Inom Clenskom State
   Stat: Iny Clensky Stat
-  Adresa: Sidlo
-  Adresa: Miesto Podnikania
-  Adresa: Bydlisko
-  Pravo: Oslobodenie Od Dane Podla Paragrafu § 68f Odsek 2
+
+  Adresa: Sidlo V Inom Clenskom State
+  Adresa: Miesto Podnikania V Inom Clenskom State
+  Adresa: Bydlisko V Inom Clenskom State
+  Lokacia: Miesto Obvykleho Zdrziavania V Inom Clenskom State
+
+  Pravo: Oslobodenie Od Dane Podla Paragraf § 68f Odsek 2
+  Pravo: Uplatnovanie Oslobodenia Od Dane Podla Paragraf § 68f Odsek 2
   Dan: Dan
-  Konanie: Dodanie Tovaru Alebo Sluzby
+
+  Konanie: Dodanie Tovaru Alebo Sluzby Ktorym Hodnota Bez Dane Presiahla 100 000 Eur V Prebiehajucom Kalendarnom Roku
   Tovar: Tovar
   Sluzba: Sluzba
-  Suma: Hodnota Bez Dane Dodanych Tovarov A Sluzieb
+  Tovar: Dodane Tovary A Sluzby
+
+  Suma: Hodnota Bez Dane Dodanych Tovarov A Sluzieb Zahrnanych Do Rocneho Obratu V Unii
   Obrat: Rocny Obrat V Unii
   Organizacia: Unia
-  Obdobie: Prebiehajuci Kalendarny Rok
-  Suma: 100 000 Eur
-  Mena: Eur
+
   Podmienka: Presiahnutie Hodnoty Bez Dane 100 000 Eur V Prebiehajucom Kalendarnom Roku
+  Suma: Suma 100 000 Eur
+  Obdobie: Prebiehajuci Kalendarny Rok
+
 
 ---
 
@@ -4632,65 +4652,90 @@ path_as_text: Paragraf § 68g Odsek 15 Pismeno a)
 text: (15) Daňový úrad bezodkladne a) rozhodne o odňatí individuálneho identifikačného čísla s príponou EX, ak  1. ročný obrat v Únii malého podniku tuzemskej osoby v prebiehajúcom kalendárnom roku, uvedený vo výkaze podľa odseku 8 alebo podľa odseku 14, presiahol 100 000 eur, 2. malý podnik tuzemskej osoby prestal vykonávať podnikanie podľa § 3, 3. malý podnik tuzemskej osoby už nemá v tuzemsku sídlo, miesto podnikania, bydlisko alebo sa v tuzemsku obvykle nezdržiava, 4. po doručení oznámenia podľa písmena b) malý podnik tuzemskej osoby neuplatňuje osobitnú úpravu na území žiadneho iného členského štátu, 5. sa malý podnik tuzemskej osoby stal členom skupiny podľa § 4b alebo § 4c,
 
 relations:
-  Paragraf § 68G -> [OBSAHUJE] -> Paragraf § 68G Odsek 15
-  Paragraf § 68G Odsek 15 -> [OBSAHUJE] -> Paragraf § 68G Odsek 15 Pismeno a)
-  Paragraf § 68G -> [OBSAHUJE] -> Paragraf § 68G Odsek 8
-  Paragraf § 68G -> [OBSAHUJE] -> Paragraf § 68G Odsek 14
-  Paragraf § 68G Odsek 15 Pismeno a) -> [VZTAHUJE_SA_NA] -> Danovy Urad
-  Danovy Urad -> [VYDAVA] -> Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou Ex
-  Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou Ex -> [ROZHODUJE_O] -> Individualne Identifikacne Cislo S Priponou Ex
-  Maly Podnik Tuzemskej Osoby -> [PATRI_DO] -> Tuzemska Osoba
-  Maly Podnik Tuzemskej Osoby -> [MA] -> Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby
+  Paragraf § 68g -> [OBSAHUJE] -> Paragraf § 68g Odsek 15
+  Paragraf § 68g Odsek 15 -> [OBSAHUJE] -> Paragraf § 68g Odsek 15 Pismeno a)
+  Paragraf § 68g Odsek 15 Pismeno a) -> [OBSAHUJE] -> Paragraf § 68g Odsek 15 Pismeno a) Bod 1
+  Paragraf § 68g Odsek 15 Pismeno a) -> [OBSAHUJE] -> Paragraf § 68g Odsek 15 Pismeno a) Bod 2
+  Paragraf § 68g Odsek 15 Pismeno a) -> [OBSAHUJE] -> Paragraf § 68g Odsek 15 Pismeno a) Bod 3
+  Paragraf § 68g Odsek 15 Pismeno a) -> [OBSAHUJE] -> Paragraf § 68g Odsek 15 Pismeno a) Bod 4
+  Paragraf § 68g Odsek 15 Pismeno a) -> [OBSAHUJE] -> Paragraf § 68g Odsek 15 Pismeno a) Bod 5
+
+  Paragraf § 68g Odsek 15 Pismeno a) -> [VZTAHUJE_SA_NA] -> Danovy Urad
+  Danovy Urad -> [MA_POVINNOST] -> Povinnost Bezodkladne Rozhodnut O Odnati Individualneho Identifikacneho Cisla S Priponou EX
+  Povinnost Bezodkladne Rozhodnut O Odnati Individualneho Identifikacneho Cisla S Priponou EX -> [VYPLYVA_Z] -> Paragraf § 68g Odsek 15 Pismeno a)
+  Danovy Urad -> [VYDAVA] -> Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX
+  Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX -> [ROZHODUJE_O] -> Individualne Identifikacne Cislo S Priponou EX
+
+  Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX -> [MA_PODMIENKU] -> Podmienka Rocny Obrat V Unii Presiahol 100000 Eur
+  Podmienka Rocny Obrat V Unii Presiahol 100000 Eur -> [VZTAHUJE_SA_NA] -> Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby
   Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby -> [MA_OBDOBIE] -> Prebiehajuci Kalendarny Rok
-  Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby -> [MA_HODNOTU] -> Suma 100000 Eur
-  Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby -> [VYPLYVA_Z] -> Vykaz Podla Paragrafu § 68G Odsek 8
-  Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby -> [VYPLYVA_Z] -> Vykaz Podla Paragrafu § 68G Odsek 14
-  Maly Podnik Tuzemskej Osoby -> [ZANIKA] -> Podnikanie Podla Paragrafu § 3
-  Maly Podnik Tuzemskej Osoby -> [MA_ADRESU] -> SIdlo V Tuzemsku
-  Maly Podnik Tuzemskej Osoby -> [MA_ADRESU] -> Miesto Podnikania V Tuzemsku
-  Maly Podnik Tuzemskej Osoby -> [MA_ADRESU] -> Bydlisko V Tuzemsku
-  Maly Podnik Tuzemskej Osoby -> [MA_STATUS] -> Obvykle Zdrziavanie Sa V Tuzemsku
-  SIdlo V Tuzemsku -> [NACHADZA_SA_V] -> Tuzemsko
-  Miesto Podnikania V Tuzemsku -> [NACHADZA_SA_V] -> Tuzemsko
-  Bydlisko V Tuzemsku -> [NACHADZA_SA_V] -> Tuzemsko
-  Obvykle Zdrziavanie Sa V Tuzemsku -> [NACHADZA_SA_V] -> Tuzemsko
-  Maly Podnik Tuzemskej Osoby -> [PRIJIMA] -> Oznamenie Podla Paragrafu § 68G Odsek 15 Pismeno b)
-  Maly Podnik Tuzemskej Osoby -> [NEVZTAHUJE_SA_NA] -> Osobitna Uprava
-  Osobitna Uprava -> [VZTAHUJE_SA_NA] -> Uzemi Ziadneho Ineho Clenskeho Statu
-  Maly Podnik Tuzemskej Osoby -> [PATRI_DO] -> Skupina Podla Paragrafu § 4B
-  Maly Podnik Tuzemskej Osoby -> [PATRI_DO] -> Skupina Podla Paragrafu § 4C
+  Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby -> [MA_SUMU] -> Suma 100000 Eur
+  Vykaz Podla Paragrafu § 68g Odsek 8 -> [OBSAHUJE] -> Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby
+  Vykaz Podla Paragrafu § 68g Odsek 8 -> [ODKAZUJE_NA] -> Paragraf § 68g Odsek 8
+  Vykaz Podla Paragrafu § 68g Odsek 14 -> [OBSAHUJE] -> Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby
+  Vykaz Podla Paragrafu § 68g Odsek 14 -> [ODKAZUJE_NA] -> Paragraf § 68g Odsek 14
+
+  Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX -> [MA_PODMIENKU] -> Podmienka Maly Podnik Tuzemskej Osoby Prestal Vykonavat Podnikanie Podla Paragrafu § 3
+  Podmienka Maly Podnik Tuzemskej Osoby Prestal Vykonavat Podnikanie Podla Paragrafu § 3 -> [VZTAHUJE_SA_NA] -> Maly Podnik Tuzemskej Osoby
+  Podmienka Maly Podnik Tuzemskej Osoby Prestal Vykonavat Podnikanie Podla Paragrafu § 3 -> [ODKAZUJE_NA] -> Paragraf § 3
+
+  Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX -> [MA_PODMIENKU] -> Podmienka Maly Podnik Tuzemskej Osoby Uz Nema Tuzemsku Vazbu
+  Podmienka Maly Podnik Tuzemskej Osoby Uz Nema Tuzemsku Vazbu -> [VZTAHUJE_SA_NA] -> Sidlo V Tuzemsku
+  Podmienka Maly Podnik Tuzemskej Osoby Uz Nema Tuzemsku Vazbu -> [VZTAHUJE_SA_NA] -> Miesto Podnikania V Tuzemsku
+  Podmienka Maly Podnik Tuzemskej Osoby Uz Nema Tuzemsku Vazbu -> [VZTAHUJE_SA_NA] -> Bydlisko V Tuzemsku
+  Podmienka Maly Podnik Tuzemskej Osoby Uz Nema Tuzemsku Vazbu -> [VZTAHUJE_SA_NA] -> Obvykle Zdrziavanie Sa V Tuzemsku
+
+  Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX -> [MA_PODMIENKU] -> Podmienka Po Doruceni Oznamenia Maly Podnik Tuzemskej Osoby Neuplatnuje Osobitnu Upravu Na Uzemi Ziadneho Ineho Clenskeho Statu
+  Podmienka Po Doruceni Oznamenia Maly Podnik Tuzemskej Osoby Neuplatnuje Osobitnu Upravu Na Uzemi Ziadneho Ineho Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Oznamenie Podla Paragrafu § 68g Odsek 15 Pismeno b)
+  Podmienka Po Doruceni Oznamenia Maly Podnik Tuzemskej Osoby Neuplatnuje Osobitnu Upravu Na Uzemi Ziadneho Ineho Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Osobitna Uprava
+  Podmienka Po Doruceni Oznamenia Maly Podnik Tuzemskej Osoby Neuplatnuje Osobitnu Upravu Na Uzemi Ziadneho Ineho Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Uzemi Ziadneho Ineho Clenskeho Statu
+
+  Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX -> [MA_PODMIENKU] -> Podmienka Maly Podnik Tuzemskej Osoby Sa Stal Clenom Skupiny Podla Paragrafu § 4b Alebo Paragrafu § 4c
+  Podmienka Maly Podnik Tuzemskej Osoby Sa Stal Clenom Skupiny Podla Paragrafu § 4b Alebo Paragrafu § 4c -> [VZTAHUJE_SA_NA] -> Skupina Podla Paragrafu § 4b
+  Podmienka Maly Podnik Tuzemskej Osoby Sa Stal Clenom Skupiny Podla Paragrafu § 4b Alebo Paragrafu § 4c -> [VZTAHUJE_SA_NA] -> Skupina Podla Paragrafu § 4c
+  Skupina Podla Paragrafu § 4b -> [ODKAZUJE_NA] -> Paragraf § 4b
+  Skupina Podla Paragrafu § 4c -> [ODKAZUJE_NA] -> Paragraf § 4c
 
 nodes:
   Organizacia: Danovy Urad
-  Paragraf: Paragraf § 68G
-  Odsek: Paragraf § 68G Odsek 15
-  Pismeno: Paragraf § 68G Odsek 15 Pismeno a)
-  Pismeno: Paragraf § 68G Odsek 15 Pismeno b)
-  Odsek: Paragraf § 68G Odsek 8
-  Odsek: Paragraf § 68G Odsek 14
+  Paragraf: Paragraf § 68g
+  Odsek: Paragraf § 68g Odsek 15
+  Pismeno: Paragraf § 68g Odsek 15 Pismeno a)
+  Pismeno: Paragraf § 68g Odsek 15 Pismeno b)
+  Bod: Paragraf § 68g Odsek 15 Pismeno a) Bod 1
+  Bod: Paragraf § 68g Odsek 15 Pismeno a) Bod 2
+  Bod: Paragraf § 68g Odsek 15 Pismeno a) Bod 3
+  Bod: Paragraf § 68g Odsek 15 Pismeno a) Bod 4
+  Bod: Paragraf § 68g Odsek 15 Pismeno a) Bod 5
+  Odsek: Paragraf § 68g Odsek 8
+  Odsek: Paragraf § 68g Odsek 14
   Paragraf: Paragraf § 3
-  Paragraf: Paragraf § 4B
-  Paragraf: Paragraf § 4C
-  Rozhodnutie: Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou Ex
-  Zaznam: Individualne Identifikacne Cislo S Priponou Ex
+  Paragraf: Paragraf § 4b
+  Paragraf: Paragraf § 4c
+  Povinnost: Povinnost Bezodkladne Rozhodnut O Odnati Individualneho Identifikacneho Cisla S Priponou EX
+  Rozhodnutie: Rozhodnutie O Odnati Individualneho Identifikacneho Cisla S Priponou EX
+  Zaznam: Individualne Identifikacne Cislo S Priponou EX
   Subjekt: Maly Podnik Tuzemskej Osoby
-  Osoba: Tuzemska Osoba
   Obrat: Rocny Obrat V Unii Maleho Podniku Tuzemskej Osoby
   Obdobie: Prebiehajuci Kalendarny Rok
   Suma: Suma 100000 Eur
-  Dokument: Vykaz Podla Paragrafu § 68G Odsek 8
-  Dokument: Vykaz Podla Paragrafu § 68G Odsek 14
-  Konanie: Podnikanie Podla Paragrafu § 3
-  Adresa: SIdlo V Tuzemsku
+  Dokument: Vykaz Podla Paragrafu § 68g Odsek 8
+  Dokument: Vykaz Podla Paragrafu § 68g Odsek 14
+  Podmienka: Podmienka Rocny Obrat V Unii Presiahol 100000 Eur
+  Podmienka: Podmienka Maly Podnik Tuzemskej Osoby Prestal Vykonavat Podnikanie Podla Paragrafu § 3
+  Podmienka: Podmienka Maly Podnik Tuzemskej Osoby Uz Nema Tuzemsku Vazbu
+  Podmienka: Podmienka Po Doruceni Oznamenia Maly Podnik Tuzemskej Osoby Neuplatnuje Osobitnu Upravu Na Uzemi Ziadneho Ineho Clenskeho Statu
+  Podmienka: Podmienka Maly Podnik Tuzemskej Osoby Sa Stal Clenom Skupiny Podla Paragrafu § 4b Alebo Paragrafu § 4c
+  Adresa: Sidlo V Tuzemsku
   Adresa: Miesto Podnikania V Tuzemsku
   Adresa: Bydlisko V Tuzemsku
   Status: Obvykle Zdrziavanie Sa V Tuzemsku
-  Stat: Tuzemsko
-  Oznamenie: Oznamenie Podla Paragrafu § 68G Odsek 15 Pismeno b)
+  Oznamenie: Oznamenie Podla Paragrafu § 68g Odsek 15 Pismeno b)
   Konanie: Osobitna Uprava
   Lokacia: Uzemi Ziadneho Ineho Clenskeho Statu
-  Organizacia: Skupina Podla Paragrafu § 4B
-  Organizacia: Skupina Podla Paragrafu § 4C
+  Organizacia: Skupina Podla Paragrafu § 4b
+  Organizacia: Skupina Podla Paragrafu § 4c
+
 
 ---
 
@@ -4701,17 +4746,20 @@ text: (16) Na účely uplatňovania tejto osobitnej úpravy sa písomnosti doru�
 
 relations:
   Paragraf § 68g -> [OBSAHUJE] -> Paragraf § 68g Odsek 16
-  Paragraf § 68g Odsek 16 -> [UPRAVUJE] -> Uplatnovanie Osobitnej Upravy
-  Dorucovanie Pisomnosti Elektronickymi Prostriedkami -> [VZTAHUJE_SA_NA] -> Pisomnosti
-  Dorucovanie Pisomnosti Elektronickymi Prostriedkami -> [VZTAHUJE_SA_NA] -> Uplatnovanie Osobitnej Upravy
+  Paragraf § 68g Odsek 16 -> [UPRAVUJE] -> Dorucovanie Pisomnosti Elektronickymi Prostriedkami Sposobom Podla Osobitneho Predpisu 28ag)
+  Dorucovanie Pisomnosti Elektronickymi Prostriedkami Sposobom Podla Osobitneho Predpisu 28ag) -> [VZTAHUJE_SA_NA] -> Pisomnosti
+  Dorucovanie Pisomnosti Elektronickymi Prostriedkami Sposobom Podla Osobitneho Predpisu 28ag) -> [VZTAHUJE_SA_NA] -> Uplatnovanie Osobitnej Upravy
+  Dorucovanie Pisomnosti Elektronickymi Prostriedkami Sposobom Podla Osobitneho Predpisu 28ag) -> [JE_PODLA] -> Osobitny Predpis 28ag)
+  Paragraf § 68g Odsek 16 -> [ODKAZUJE_NA] -> Osobitny Predpis 28ag)
 
 nodes:
   Paragraf: Paragraf § 68g
   Odsek: Paragraf § 68g Odsek 16
   Konanie: Uplatnovanie Osobitnej Upravy
   Dokument: Pisomnosti
-  Povinnost: Dorucovanie Pisomnosti Elektronickymi Prostriedkami
+  Povinnost: Dorucovanie Pisomnosti Elektronickymi Prostriedkami Sposobom Podla Osobitneho Predpisu 28ag)
   PravnyPredpis: Osobitny Predpis 28ag)
+
 
 ---
 
@@ -4723,46 +4771,74 @@ text: (12) Platiteľ, ktorý má pridelené identifikačné číslo pre daň pod
 relations:
   Paragraf § 69 -> [OBSAHUJE] -> Paragraf § 69 Odsek 12
   Paragraf § 69 Odsek 12 -> [OBSAHUJE] -> Paragraf § 69 Odsek 12 Pismeno h)
+
+  Paragraf § 69 Odsek 12 Pismeno h) -> [VZTAHUJE_SA_NA] -> Dodanie Mobilnych Telefonov
+  Dodanie Mobilnych Telefonov -> [VZTAHUJE_SA_NA] -> Mobilne Telefony
+
   Platitel -> [MA_IDENTIFIKATOR] -> Identifikacne Cislo Pre Dan
   Iny Platitel -> [MA_IDENTIFIKATOR] -> Identifikacne Cislo Pre Dan
   Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 4
-  Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 4B
-  Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 4C
+  Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 4b
+  Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 4c
   Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 5
-  Platitel -> [JE_TYPOM] -> Prijemca Plnenia
-  Prijemca Plnenia -> [PRIJIMA] -> Iny Platitel
-  Platitel -> [MA_POVINNOST] -> Povinnost Platit Dan
-  Povinnost Platit Dan -> [VZTAHUJE_SA_NA] -> Dan
-  Platitel -> [PLATI] -> Dan
+
+  Platitel -> [PRIJIMA] -> Plnenie Od Ineho Platitela
+  Iny Platitel -> [POSKYTUJE] -> Plnenie Od Ineho Platitela
+
+  Platitel -> [MA_POVINNOST] -> Povinnost Platit Dan Vztahujucu Sa Na Dodanie Mobilnych Telefonov
+  Povinnost Platit Dan Vztahujucu Sa Na Dodanie Mobilnych Telefonov -> [VZTAHUJE_SA_NA] -> Dan
   Dan -> [VZTAHUJE_SA_NA] -> Dodanie Mobilnych Telefonov
-  Paragraf § 69 Odsek 12 Pismeno h) -> [VZTAHUJE_SA_NA] -> Dodanie Mobilnych Telefonov
-  Dodanie Mobilnych Telefonov -> [VZTAHUJE_SA_NA] -> Mobilne Telefony
-  Mobilne Telefony -> [VZTAHUJE_SA_NA] -> Licencovana Siet
-  Mobilne Telefony -> [VZTAHUJE_SA_NA] -> Stanovene Frekvencie
+  Platitel -> [PLATI] -> Dan
+
+  Povinnost Platit Dan Vztahujucu Sa Na Dodanie Mobilnych Telefonov -> [MA_PODMIENKU] -> Podmienka Platitel Je Prijemcom Plnenia Od Ineho Platitela
+  Podmienka Platitel Je Prijemcom Plnenia Od Ineho Platitela -> [VZTAHUJE_SA_NA] -> Platitel
+  Podmienka Platitel Je Prijemcom Plnenia Od Ineho Platitela -> [VZTAHUJE_SA_NA] -> Iny Platitel
+  Podmienka Platitel Je Prijemcom Plnenia Od Ineho Platitela -> [VZTAHUJE_SA_NA] -> Plnenie Od Ineho Platitela
+
+  Povinnost Platit Dan Vztahujucu Sa Na Dodanie Mobilnych Telefonov -> [MA_PODMIENKU] -> Podmienka Zaklad Dane Vo Fakture Je 5000 Eur A Viac
+  Podmienka Zaklad Dane Vo Fakture Je 5000 Eur A Viac -> [VZTAHUJE_SA_NA] -> Zaklad Dane Vo Fakture Za Dodanie Mobilnych Telefonov
+  Zaklad Dane Vo Fakture Za Dodanie Mobilnych Telefonov -> [MA_SUMU] -> Suma 5000 Eur A Viac
   Faktura Za Dodanie Mobilnych Telefonov -> [VZTAHUJE_SA_NA] -> Dodanie Mobilnych Telefonov
-  Faktura Za Dodanie Mobilnych Telefonov -> [MA_SUMU] -> Zaklad Dane Vo Fakture Za Dodanie Mobilnych Telefonov
-  Povinnost Platit Dan -> [MA_PODMIENKU] -> Zaklad Dane Vo Fakture Za Dodanie Mobilnych Telefonov
+  Faktura Za Dodanie Mobilnych Telefonov -> [OBSAHUJE] -> Zaklad Dane Vo Fakture Za Dodanie Mobilnych Telefonov
+
+  Mobilne Telefony -> [MA_PODMIENKU] -> Podmienka Vyrobene Alebo Prisposobene Na Pouzitie V Spojeni S Licencovanou Sietou
+  Podmienka Vyrobene Alebo Prisposobene Na Pouzitie V Spojeni S Licencovanou Sietou -> [VZTAHUJE_SA_NA] -> Licencovana Siet
+  Mobilne Telefony -> [MA_PODMIENKU] -> Podmienka Funguju Na Stanovenych Frekvenciach
+  Podmienka Funguju Na Stanovenych Frekvenciach -> [VZTAHUJE_SA_NA] -> Stanovene Frekvencie
+  Mobilne Telefony -> [MA_PODMIENKU] -> Podmienka Bez Ohladu Na Ine Využitie
 
 nodes:
   Paragraf: Paragraf § 69
   Odsek: Paragraf § 69 Odsek 12
   Pismeno: Paragraf § 69 Odsek 12 Pismeno h)
   Paragraf: Paragraf § 4
-  Paragraf: Paragraf § 4B
-  Paragraf: Paragraf § 4C
+  Paragraf: Paragraf § 4b
+  Paragraf: Paragraf § 4c
   Paragraf: Paragraf § 5
+
   Subjekt: Platitel
   Subjekt: Iny Platitel
-  Subjekt: Prijemca Plnenia
   Zaznam: Identifikacne Cislo Pre Dan
-  Povinnost: Povinnost Platit Dan
+  Konanie: Plnenie Od Ineho Platitela
+
+  Povinnost: Povinnost Platit Dan Vztahujucu Sa Na Dodanie Mobilnych Telefonov
   Dan: Dan
-  Tovar: Dodanie Mobilnych Telefonov
+  Konanie: Dodanie Mobilnych Telefonov
   Tovar: Mobilne Telefony
-  Sluzba: Licencovana Siet
-  Zaznam: Stanovene Frekvencie
+
   Dokument: Faktura Za Dodanie Mobilnych Telefonov
   Suma: Zaklad Dane Vo Fakture Za Dodanie Mobilnych Telefonov
+  Suma: Suma 5000 Eur A Viac
+
+  Sluzba: Licencovana Siet
+  Zaznam: Stanovene Frekvencie
+
+  Podmienka: Podmienka Platitel Je Prijemcom Plnenia Od Ineho Platitela
+  Podmienka: Podmienka Zaklad Dane Vo Fakture Je 5000 Eur A Viac
+  Podmienka: Podmienka Vyrobene Alebo Prisposobene Na Pouzitie V Spojeni S Licencovanou Sietou
+  Podmienka: Podmienka Funguju Na Stanovenych Frekvenciach
+  Podmienka: Podmienka Bez Ohladu Na Ine Využitie
+
 
 ---
 
@@ -4773,13 +4849,19 @@ text: (9) Proti rozhodnutiu, ktorým Daňový úrad Bratislava zrušil daňovém
 
 relations:
   Paragraf § 69a -> [OBSAHUJE] -> Paragraf § 69a Odsek 9
+  Paragraf § 69a Odsek 9 -> [ODKAZUJE_NA] -> Paragraf § 69a Odsek 8 Pismeno b)
   Paragraf § 69a -> [OBSAHUJE] -> Paragraf § 69a Odsek 8
   Paragraf § 69a Odsek 8 -> [OBSAHUJE] -> Paragraf § 69a Odsek 8 Pismeno b)
-  Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 69a Odsek 8 Pismeno b)
+
   Danovy Urad Bratislava -> [VYDAVA] -> Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan
   Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan -> [RUSI] -> Osobitne Identifikacne Cislo Pre Dan
-  Danovy Zastupca -> [MA] -> Osobitne Identifikacne Cislo Pre Dan
-  Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan -> [NEMA_NAROK_NA] -> Podanie Odvolania
+  Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan -> [VZTAHUJE_SA_NA] -> Danovy Zastupca
+  Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 69a Odsek 8 Pismeno b)
+
+  Danovy Zastupca -> [MA_IDENTIFIKATOR] -> Osobitne Identifikacne Cislo Pre Dan
+
+  Podanie Odvolania -> [NEVZTAHUJE_SA_NA] -> Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan
+  Danovy Zastupca -> [NEMA_NAROK_NA] -> Podanie Odvolania
 
 nodes:
   Paragraf: Paragraf § 69a
@@ -4789,45 +4871,68 @@ nodes:
   Rozhodnutie: Rozhodnutie O Zruseni Osobitneho Identifikacneho Cisla Pre Dan
   Organizacia: Danovy Urad Bratislava
   Subjekt: Danovy Zastupca
-  Registracia: Osobitne Identifikacne Cislo Pre Dan
+  Zaznam: Osobitne Identifikacne Cislo Pre Dan
   Pravo: Podanie Odvolania
+
 
 ---
 
 chunk: 1207
 path: ['§ 70', '2', 'g)']
 path_as_text: Paragraf § 70 Odsek 2 Pismeno g)
-text: (2) Platiteľ vedie podrobné záznamy podľa jednotlivých zdaňovacích období o g) premiestnení tovaru, vrátení tovaru alebo nahradení zdaniteľnej osoby podľa § 8a ods. 1 písm.
+text: (2) Platiteľ vedie podrobné záznamy podľa jednotlivých zdaňovacích období o g) premiestnení tovaru, vrátení tovaru alebo nahradení zdaniteľnej osoby podľa § 8a ods. 1 písm. c) v režime call-off stock, v rozsahu podľa osobitného predpisu,
 
 relations:
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 2
   Paragraf § 70 Odsek 2 -> [OBSAHUJE] -> Paragraf § 70 Odsek 2 Pismeno g)
-  Paragraf § 8a -> [OBSAHUJE] -> Paragraf § 8a Odsek 1
-  Platitel -> [UCHOVAVA] -> Podrobne Zaznamy
+
+  Platitel -> [MA_POVINNOST] -> Povinnost Viest Podrobne Zaznamy Podla Jednotlivych Zdanovacich Obdobi
+  Povinnost Viest Podrobne Zaznamy Podla Jednotlivych Zdanovacich Obdobi -> [VZTAHUJE_SA_NA] -> Podrobne Zaznamy
+  Povinnost Viest Podrobne Zaznamy Podla Jednotlivych Zdanovacich Obdobi -> [VYPLYVA_Z] -> Paragraf § 70 Odsek 2 Pismeno g)
+
   Podrobne Zaznamy -> [MA_OBDOBIE] -> Jednotlive Zdanovacie Obdobia
   Podrobne Zaznamy -> [VZTAHUJE_SA_NA] -> Premiestnenie Tovaru
   Podrobne Zaznamy -> [VZTAHUJE_SA_NA] -> Vratenie Tovaru
   Podrobne Zaznamy -> [VZTAHUJE_SA_NA] -> Nahradenie Zdanitelnej Osoby
+  Podrobne Zaznamy -> [JE_PODLA] -> Osobitny Predpis
+
   Premiestnenie Tovaru -> [VZTAHUJE_SA_NA] -> Tovar
   Vratenie Tovaru -> [VZTAHUJE_SA_NA] -> Tovar
   Nahradenie Zdanitelnej Osoby -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
-  Nahradenie Zdanitelnej Osoby -> [VYPLYVA_Z] -> Paragraf § 8a Odsek 1
-  Podrobne Zaznamy -> [VYPLYVA_Z] -> Paragraf § 70 Odsek 2 Pismeno g)
+
+  Premiestnenie Tovaru -> [JE_PODLA] -> Paragraf § 8a Odsek 1 Pismeno c)
+  Vratenie Tovaru -> [JE_PODLA] -> Paragraf § 8a Odsek 1 Pismeno c)
+  Nahradenie Zdanitelnej Osoby -> [JE_PODLA] -> Paragraf § 8a Odsek 1 Pismeno c)
+
+  Premiestnenie Tovaru -> [VZTAHUJE_SA_NA] -> Rezim Call-Off Stock
+  Vratenie Tovaru -> [VZTAHUJE_SA_NA] -> Rezim Call-Off Stock
+  Nahradenie Zdanitelnej Osoby -> [VZTAHUJE_SA_NA] -> Rezim Call-Off Stock
+
+  Paragraf § 70 Odsek 2 Pismeno g) -> [ODKAZUJE_NA] -> Paragraf § 8a Odsek 1 Pismeno c)
+  Paragraf § 8a -> [OBSAHUJE] -> Paragraf § 8a Odsek 1
+  Paragraf § 8a Odsek 1 -> [OBSAHUJE] -> Paragraf § 8a Odsek 1 Pismeno c)
 
 nodes:
   Subjekt: Platitel
+  Povinnost: Povinnost Viest Podrobne Zaznamy Podla Jednotlivych Zdanovacich Obdobi
   Zaznam: Podrobne Zaznamy
   ZdanovacieObdobie: Jednotlive Zdanovacie Obdobia
+
   Konanie: Premiestnenie Tovaru
   Konanie: Vratenie Tovaru
   Konanie: Nahradenie Zdanitelnej Osoby
   Tovar: Tovar
   Subjekt: Zdanitelna Osoba
+  Konanie: Rezim Call-Off Stock
+
   Paragraf: Paragraf § 70
   Odsek: Paragraf § 70 Odsek 2
   Pismeno: Paragraf § 70 Odsek 2 Pismeno g)
   Paragraf: Paragraf § 8a
   Odsek: Paragraf § 8a Odsek 1
+  Pismeno: Paragraf § 8a Odsek 1 Pismeno c)
+  PravnyPredpis: Osobitny Predpis
+
 
 ---
 
@@ -4839,6 +4944,7 @@ text: (11) Záznamy podľa a) odsekov 1 až 6 a 10 sa uchovávajú do konca kal
 relations:
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 11
   Paragraf § 70 Odsek 11 -> [OBSAHUJE] -> Paragraf § 70 Odsek 11 Pismeno a)
+
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 1
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 2
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 3
@@ -4846,6 +4952,15 @@ relations:
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 5
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 6
   Paragraf § 70 -> [OBSAHUJE] -> Paragraf § 70 Odsek 10
+
+  Paragraf § 70 Odsek 11 Pismeno a) -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 1
+  Paragraf § 70 Odsek 11 Pismeno a) -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 2
+  Paragraf § 70 Odsek 11 Pismeno a) -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 3
+  Paragraf § 70 Odsek 11 Pismeno a) -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 4
+  Paragraf § 70 Odsek 11 Pismeno a) -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 5
+  Paragraf § 70 Odsek 11 Pismeno a) -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 6
+  Paragraf § 70 Odsek 11 Pismeno a) -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 10
+
   Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10 -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 1
   Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10 -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 2
   Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10 -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 3
@@ -4853,9 +4968,11 @@ relations:
   Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10 -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 5
   Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10 -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 6
   Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10 -> [ODKAZUJE_NA] -> Paragraf § 70 Odsek 10
+
   Paragraf § 70 Odsek 11 Pismeno a) -> [URCUJE] -> Uchovavanie Zaznamov
   Uchovavanie Zaznamov -> [VZTAHUJE_SA_NA] -> Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10
-  Uchovavanie Zaznamov -> [MA_LEHOTU] -> Do Konca Kalendarneho Roka V Ktorom Uplynie Desat Rokov Od Skoncenia Roka Ktoreho Sa Tykaju
+  Uchovavanie Zaznamov -> [MA_LEHOTU] -> Lehota Do Konca Kalendarneho Roka V Ktorom Uplynie Desat Rokov Od Skoncenia Roka Ktoreho Sa Zaznamy Tykaju
+  Lehota Do Konca Kalendarneho Roka V Ktorom Uplynie Desat Rokov Od Skoncenia Roka Ktoreho Sa Zaznamy Tykaju -> [MA_OBDOBIE] -> Rok Ktoreho Sa Zaznamy Tykaju
 
 nodes:
   Paragraf: Paragraf § 70
@@ -4870,7 +4987,9 @@ nodes:
   Odsek: Paragraf § 70 Odsek 10
   Zaznam: Zaznamy Podla Paragrafu § 70 Odsek 1 Az 6 A 10
   Povinnost: Uchovavanie Zaznamov
-  Lehota: Do Konca Kalendarneho Roka V Ktorom Uplynie Desat Rokov Od Skoncenia Roka Ktoreho Sa Tykaju
+  Lehota: Lehota Do Konca Kalendarneho Roka V Ktorom Uplynie Desat Rokov Od Skoncenia Roka Ktoreho Sa Zaznamy Tykaju
+  Obdobie: Rok Ktoreho Sa Zaznamy Tykaju
+
 
 ---
 
@@ -4882,9 +5001,27 @@ text: (8) Záznamy podľa odseku 2, ktoré je povinný viesť tuzemský poskytov
 relations:
   Paragraf § 70a -> [OBSAHUJE] -> Paragraf § 70a Odsek 8
   Paragraf § 70a Odsek 8 -> [OBSAHUJE] -> Paragraf § 70a Odsek 8 Pismeno b)
-  Tuzemsky Poskytovatel Platobnych Sluzieb -> [MA_POVINNOST] -> Povinnost Viest Zaznamy
-  Povinnost Viest Zaznamy -> [VZTAHUJE_SA_NA] -> Zaznamy Podla Paragrafu § 70a Odsek 2
-  Zaznamy Podla Paragrafu § 70a Odsek 2 -> [OBSAHUJE] -> Prijemca Platby
+  Paragraf § 70a -> [OBSAHUJE] -> Paragraf § 70a Odsek 2
+  Paragraf § 70a -> [OBSAHUJE] -> Paragraf § 70a Odsek 3
+
+  Paragraf § 70a Odsek 8 Pismeno b) -> [ODKAZUJE_NA] -> Paragraf § 70a Odsek 2
+  Paragraf § 70a Odsek 8 Pismeno b) -> [ODKAZUJE_NA] -> Paragraf § 70a Odsek 3
+
+  Tuzemsky Poskytovatel Platobnych Sluzieb -> [MA_POVINNOST] -> Povinnost Viest Zaznamy Podla Paragrafu § 70a Odsek 3
+  Povinnost Viest Zaznamy Podla Paragrafu § 70a Odsek 3 -> [VZTAHUJE_SA_NA] -> Zaznamy Podla Paragrafu § 70a Odsek 2
+  Povinnost Viest Zaznamy Podla Paragrafu § 70a Odsek 3 -> [VYPLYVA_Z] -> Paragraf § 70a Odsek 3
+
+  Zaznamy Podla Paragrafu § 70a Odsek 2 -> [OBSAHUJE] -> Meno A Priezvisko Prijemcu Platby
+  Zaznamy Podla Paragrafu § 70a Odsek 2 -> [OBSAHUJE] -> Obchodne Meno Prijemcu Platby
+  Zaznamy Podla Paragrafu § 70a Odsek 2 -> [OBSAHUJE] -> Nazov Prijemcu Platby
+
+  Meno A Priezvisko Prijemcu Platby -> [VZTAHUJE_SA_NA] -> Prijemca Platby
+  Obchodne Meno Prijemcu Platby -> [VZTAHUJE_SA_NA] -> Prijemca Platby
+  Nazov Prijemcu Platby -> [VZTAHUJE_SA_NA] -> Prijemca Platby
+
+  Meno A Priezvisko Prijemcu Platby -> [VYPLYVA_Z] -> Zaznamy Poskytovatela Platobnych Sluzieb
+  Obchodne Meno Prijemcu Platby -> [VYPLYVA_Z] -> Zaznamy Poskytovatela Platobnych Sluzieb
+  Nazov Prijemcu Platby -> [VYPLYVA_Z] -> Zaznamy Poskytovatela Platobnych Sluzieb
 
 nodes:
   Paragraf: Paragraf § 70a
@@ -4892,10 +5029,17 @@ nodes:
   Pismeno: Paragraf § 70a Odsek 8 Pismeno b)
   Odsek: Paragraf § 70a Odsek 2
   Odsek: Paragraf § 70a Odsek 3
-  Zaznam: Zaznamy Podla Paragrafu § 70a Odsek 2
+
   Organizacia: Tuzemsky Poskytovatel Platobnych Sluzieb
   Subjekt: Prijemca Platby
-  Povinnost: Povinnost Viest Zaznamy
+  Povinnost: Povinnost Viest Zaznamy Podla Paragrafu § 70a Odsek 3
+
+  Zaznam: Zaznamy Podla Paragrafu § 70a Odsek 2
+  Zaznam: Zaznamy Poskytovatela Platobnych Sluzieb
+  Zaznam: Meno A Priezvisko Prijemcu Platby
+  Zaznam: Obchodne Meno Prijemcu Platby
+  Zaznam: Nazov Prijemcu Platby
+
 
 ---
 
@@ -4906,25 +5050,38 @@ text: (2) Za faktúru sa považuje aj každý doklad alebo oznámenie, ktoré me
 
 relations:
   Paragraf § 71 -> [OBSAHUJE] -> Paragraf § 71 Odsek 2
-  Paragraf § 71 Odsek 2 -> [DEFINUJE] -> Faktura
-  Doklad Meniaci Povodnu Fakturu -> [JE_TYPOM] -> Faktura
-  Oznamenie Meniace Povodnu Fakturu -> [JE_TYPOM] -> Faktura
+  Paragraf § 71 Odsek 2 -> [DEFINUJE] -> Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety
+
   Doklad Meniaci Povodnu Fakturu -> [MENI] -> Povodna Faktura
   Oznamenie Meniace Povodnu Fakturu -> [MENI] -> Povodna Faktura
+
   Doklad Meniaci Povodnu Fakturu -> [VZTAHUJE_SA_NA] -> Povodna Faktura
   Oznamenie Meniace Povodnu Fakturu -> [VZTAHUJE_SA_NA] -> Povodna Faktura
-  Opravny Doklad -> [VYPLYVA_Z] -> Paragraf § 25A
-  Opravny Doklad -> [NEVZTAHUJE_SA_NA] -> Faktura
+
+  Doklad Meniaci Povodnu Fakturu -> [MA_PODMIENKU] -> Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu
+  Oznamenie Meniace Povodnu Fakturu -> [MA_PODMIENKU] -> Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu
+  Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu -> [VZTAHUJE_SA_NA] -> Povodna Faktura
+
+  Doklad Meniaci Povodnu Fakturu -> [JE_TYPOM] -> Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety
+  Oznamenie Meniace Povodnu Fakturu -> [JE_TYPOM] -> Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety
+
+  Opravny Doklad Podla Paragrafu § 25a -> [JE_PODLA] -> Paragraf § 25a
+  Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety -> [NEVZTAHUJE_SA_NA] -> Opravny Doklad Podla Paragrafu § 25a
+  Paragraf § 71 Odsek 2 -> [ODKAZUJE_NA] -> Paragraf § 25a
 
 nodes:
   Paragraf: Paragraf § 71
   Odsek: Paragraf § 71 Odsek 2
-  Paragraf: Paragraf § 25A
-  Dokument: Faktura
+  Paragraf: Paragraf § 25a
+
+  Dokument: Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety
   Dokument: Povodna Faktura
   Dokument: Doklad Meniaci Povodnu Fakturu
   Oznamenie: Oznamenie Meniace Povodnu Fakturu
-  Dokument: Opravny Doklad
+  Dokument: Opravny Doklad Podla Paragrafu § 25a
+
+  Podmienka: Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu
+
 
 ---
 
@@ -4936,40 +5093,54 @@ text: (1) Faktúra podľa § 72 musí byť vyhotovená do 15 dní d) od konca k
 relations:
   Paragraf § 73 -> [OBSAHUJE] -> Paragraf § 73 Odsek 1
   Paragraf § 73 Odsek 1 -> [OBSAHUJE] -> Paragraf § 73 Odsek 1 Pismeno d)
-  Paragraf § 15 -> [OBSAHUJE] -> Paragraf § 15 Odsek 1
-  Paragraf § 73 Odsek 1 Pismeno d) -> [UPRAVUJE] -> Vyhotovenie Faktury
-  Vyhotovenie Faktury -> [VZTAHUJE_SA_NA] -> Faktura
-  Faktura -> [ODKAZUJE_NA] -> Paragraf § 72
-  Vyhotovenie Faktury -> [MA_LEHOTU] -> Lehota 15 Dni
-  Lehota 15 Dni -> [VYPLYVA_Z] -> Koniec Kalendarneho Mesiaca
+
+  Paragraf § 73 Odsek 1 Pismeno d) -> [UPRAVUJE] -> Vyhotovenie Faktury Podla Paragrafu § 72
+  Paragraf § 73 Odsek 1 Pismeno d) -> [ODKAZUJE_NA] -> Paragraf § 72
+  Paragraf § 73 Odsek 1 Pismeno d) -> [ODKAZUJE_NA] -> Paragraf § 15 Odsek 1
+
+  Vyhotovenie Faktury Podla Paragrafu § 72 -> [VZTAHUJE_SA_NA] -> Faktura Podla Paragrafu § 72
+  Faktura Podla Paragrafu § 72 -> [JE_PODLA] -> Paragraf § 72
+  Vyhotovenie Faktury Podla Paragrafu § 72 -> [MA_LEHOTU] -> Lehota Do 15 Dni Od Konca Kalendarneho Mesiaca
+
+  Lehota Do 15 Dni Od Konca Kalendarneho Mesiaca -> [MA_DATUM] -> Koniec Kalendarneho Mesiaca
   Koniec Kalendarneho Mesiaca -> [MA_OBDOBIE] -> Kalendarneho Mesiaca
-  Kalendarneho Mesiaca -> [VZTAHUJE_SA_NA] -> Dodanie Sluzby
-  Dodanie Sluzby -> [DODAVA] -> Sluzba
-  Kalendarneho Mesiaca -> [VZTAHUJE_SA_NA] -> Prijatie Platby Pred Dodanim Sluzby
-  Prijatie Platby Pred Dodanim Sluzby -> [PRIJIMA] -> Platba
+
+  Kalendarneho Mesiaca -> [MA_PODMIENKU] -> Podmienka V Kalendarom Mesiaci Bola Dodana Sluzba Alebo Prijata Platba Pred Dodanim Sluzby
+  Podmienka V Kalendarom Mesiaci Bola Dodana Sluzba Alebo Prijata Platba Pred Dodanim Sluzby -> [VZTAHUJE_SA_NA] -> Dodanie Sluzby
+  Podmienka V Kalendarom Mesiaci Bola Dodana Sluzba Alebo Prijata Platba Pred Dodanim Sluzby -> [VZTAHUJE_SA_NA] -> Prijatie Platby Pred Dodanim Sluzby
+
+  Dodanie Sluzby -> [VZTAHUJE_SA_NA] -> Sluzba
+  Prijatie Platby Pred Dodanim Sluzby -> [VZTAHUJE_SA_NA] -> Platba
   Prijatie Platby Pred Dodanim Sluzby -> [VZTAHUJE_SA_NA] -> Dodanie Sluzby
+
   Sluzba -> [MA] -> Miesto Dodania Sluzby
-  Miesto Dodania Sluzby -> [ODKAZUJE_NA] -> Paragraf § 15 Odsek 1
+  Miesto Dodania Sluzby -> [JE_PODLA] -> Paragraf § 15 Odsek 1
   Miesto Dodania Sluzby -> [NACHADZA_SA_V] -> Iny Clensky Stat
 
+  Paragraf § 15 -> [OBSAHUJE] -> Paragraf § 15 Odsek 1
+
 nodes:
-  Dokument: Faktura
+  Dokument: Faktura Podla Paragrafu § 72
   Paragraf: Paragraf § 72
   Paragraf: Paragraf § 73
   Odsek: Paragraf § 73 Odsek 1
   Pismeno: Paragraf § 73 Odsek 1 Pismeno d)
   Paragraf: Paragraf § 15
   Odsek: Paragraf § 15 Odsek 1
-  Povinnost: Vyhotovenie Faktury
-  Lehota: Lehota 15 Dni
+
+  Povinnost: Vyhotovenie Faktury Podla Paragrafu § 72
+  Lehota: Lehota Do 15 Dni Od Konca Kalendarneho Mesiaca
   Datum: Koniec Kalendarneho Mesiaca
   Obdobie: Kalendarneho Mesiaca
+
+  Podmienka: Podmienka V Kalendarom Mesiaci Bola Dodana Sluzba Alebo Prijata Platba Pred Dodanim Sluzby
   Konanie: Dodanie Sluzby
   Sluzba: Sluzba
   Konanie: Prijatie Platby Pred Dodanim Sluzby
   Platba: Platba
   Lokacia: Miesto Dodania Sluzby
   Stat: Iny Clensky Stat
+
 
 ---
 
@@ -4982,21 +5153,34 @@ relations:
   Paragraf § 74 -> [OBSAHUJE] -> Paragraf § 74 Odsek 5
   Paragraf § 74 -> [OBSAHUJE] -> Paragraf § 74 Odsek 3
   Paragraf § 74 Odsek 3 -> [OBSAHUJE] -> Paragraf § 74 Odsek 3 Pismeno b)
-  Zjednodusena Faktura -> [ODKAZUJE_NA] -> Paragraf § 74 Odsek 3 Pismeno b)
-  Vyhotovenie Zjednodusenej Faktury -> [VZTAHUJE_SA_NA] -> Zjednodusena Faktura
-  Danove Identifikacne Cislo -> [JE_TYPOM] -> Identifikacne Cislo Pre Dan
-  Identifikacne Cislo -> [JE_TYPOM] -> Identifikacne Cislo Pre Dan
-  Danove Identifikacne Cislo -> [VZTAHUJE_SA_NA] -> Platitel
-  Identifikacne Cislo -> [VZTAHUJE_SA_NA] -> Platitel
-  Danove Identifikacne Cislo -> [VYPLYVA_Z] -> Osobitny Predpis 29aaa)
-  Identifikacne Cislo -> [VYPLYVA_Z] -> Osobitny Predpis 29aab)
+
+  Paragraf § 74 Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 74 Odsek 3 Pismeno b)
+  Paragraf § 74 Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 4
+  Paragraf § 74 Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 5
+
+  Zjednodusena Faktura Podla Paragrafu § 74 Odsek 3 Pismeno b) -> [JE_PODLA] -> Paragraf § 74 Odsek 3 Pismeno b)
+  Vyhotovenie Zjednodusenej Faktury -> [VZTAHUJE_SA_NA] -> Zjednodusena Faktura Podla Paragrafu § 74 Odsek 3 Pismeno b)
+
+  Danove Identifikacne Cislo Podla Osobitneho Predpisu 29aaa) -> [JE_PODLA] -> Osobitny Predpis 29aaa)
+  Identifikacne Cislo Podla Osobitneho Predpisu 29aab) -> [JE_PODLA] -> Osobitny Predpis 29aab)
+
+  Platitel -> [MA_IDENTIFIKATOR] -> Danove Identifikacne Cislo Podla Osobitneho Predpisu 29aaa)
+  Platitel -> [MA_IDENTIFIKATOR] -> Identifikacne Cislo Podla Osobitneho Predpisu 29aab)
+
+  Danove Identifikacne Cislo Podla Osobitneho Predpisu 29aaa) -> [JE_TYPOM] -> Identifikacne Cislo Pre Dan Na Ucely Vyhotovenia Zjednodusenej Faktury
+  Identifikacne Cislo Podla Osobitneho Predpisu 29aab) -> [JE_TYPOM] -> Identifikacne Cislo Pre Dan Na Ucely Vyhotovenia Zjednodusenej Faktury
+
+  Identifikacne Cislo Pre Dan Na Ucely Vyhotovenia Zjednodusenej Faktury -> [VZTAHUJE_SA_NA] -> Vyhotovenie Zjednodusenej Faktury
+  Identifikacne Cislo Pre Dan Na Ucely Vyhotovenia Zjednodusenej Faktury -> [MA_PODMIENKU] -> Podmienka Platitel Splnil Registracnu Povinnost A Nema Pridelene Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 Ku Dnu Vyhotovenia Zjednodusenej Faktury
+
   Platitel -> [MA_POVINNOST] -> Registracna Povinnost
-  Platitel -> [SPLNA_PODMIENKY] -> Splnenie Registracnej Povinnosti
-  Nepridelenie Identifikacneho Cisla Pre Dan Ku Dnu Vyhotovenia Zjednodusenej Faktury -> [MA_DATUM] -> Den Vyhotovenia Zjednodusenej Faktury
-  Nepridelenie Identifikacneho Cisla Pre Dan Ku Dnu Vyhotovenia Zjednodusenej Faktury -> [VZTAHUJE_SA_NA] -> Identifikacne Cislo Pre Dan
-  Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 4
-  Identifikacne Cislo Pre Dan -> [ODKAZUJE_NA] -> Paragraf § 5
-  Identifikacne Cislo Pre Dan -> [VZTAHUJE_SA_NA] -> Vyhotovenie Zjednodusenej Faktury
+  Podmienka Platitel Splnil Registracnu Povinnost A Nema Pridelene Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 Ku Dnu Vyhotovenia Zjednodusenej Faktury -> [VZTAHUJE_SA_NA] -> Platitel
+  Podmienka Platitel Splnil Registracnu Povinnost A Nema Pridelene Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 Ku Dnu Vyhotovenia Zjednodusenej Faktury -> [VZTAHUJE_SA_NA] -> Registracna Povinnost
+  Podmienka Platitel Splnil Registracnu Povinnost A Nema Pridelene Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 Ku Dnu Vyhotovenia Zjednodusenej Faktury -> [VZTAHUJE_SA_NA] -> Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5
+  Podmienka Platitel Splnil Registracnu Povinnost A Nema Pridelene Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 Ku Dnu Vyhotovenia Zjednodusenej Faktury -> [MA_DATUM] -> Den Vyhotovenia Zjednodusenej Faktury
+
+  Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 -> [ODKAZUJE_NA] -> Paragraf § 4
+  Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 -> [ODKAZUJE_NA] -> Paragraf § 5
 
 nodes:
   Paragraf: Paragraf § 74
@@ -5005,18 +5189,23 @@ nodes:
   Pismeno: Paragraf § 74 Odsek 3 Pismeno b)
   Paragraf: Paragraf § 4
   Paragraf: Paragraf § 5
-  Dokument: Zjednodusena Faktura
+
+  Dokument: Zjednodusena Faktura Podla Paragrafu § 74 Odsek 3 Pismeno b)
   Konanie: Vyhotovenie Zjednodusenej Faktury
-  Zaznam: Identifikacne Cislo Pre Dan
-  Zaznam: Danove Identifikacne Cislo
-  Zaznam: Identifikacne Cislo
   Subjekt: Platitel
+
+  Zaznam: Identifikacne Cislo Pre Dan Na Ucely Vyhotovenia Zjednodusenej Faktury
+  Zaznam: Danove Identifikacne Cislo Podla Osobitneho Predpisu 29aaa)
+  Zaznam: Identifikacne Cislo Podla Osobitneho Predpisu 29aab)
+  Zaznam: Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5
+
   Povinnost: Registracna Povinnost
-  Podmienka: Splnenie Registracnej Povinnosti
-  Podmienka: Nepridelenie Identifikacneho Cisla Pre Dan Ku Dnu Vyhotovenia Zjednodusenej Faktury
+  Podmienka: Podmienka Platitel Splnil Registracnu Povinnost A Nema Pridelene Identifikacne Cislo Pre Dan Podla Paragrafu § 4 Alebo Paragrafu § 5 Ku Dnu Vyhotovenia Zjednodusenej Faktury
   Datum: Den Vyhotovenia Zjednodusenej Faktury
+
   PravnyPredpis: Osobitny Predpis 29aaa)
   PravnyPredpis: Osobitny Predpis 29aab)
+
 
 ---
 
@@ -5026,25 +5215,41 @@ path_as_text: Paragraf § 76a Odsek 5
 text: (5) Finančné riaditeľstvo vedie evidenciu európskych doručovacích štandardov a certifikovaných poskytovateľov doručovacej služby pôsobiacich na území Slovenskej republiky a zverejňuje ju prostredníctvom svojho webového sídla.
 
 relations:
-  Paragraf § 76A -> [OBSAHUJE] -> Paragraf § 76A Odsek 5
-  Financne Riaditelstvo -> [UCHOVAVA] -> Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby
+  Paragraf § 76a -> [OBSAHUJE] -> Paragraf § 76a Odsek 5
+
+  Financne Riaditelstvo -> [MA_POVINNOST] -> Povinnost Viest Evidenciu Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby
+  Povinnost Viest Evidenciu Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby -> [VZTAHUJE_SA_NA] -> Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby
+  Povinnost Viest Evidenciu Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby -> [VYPLYVA_Z] -> Paragraf § 76a Odsek 5
+
   Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby -> [OBSAHUJE] -> Europske Dorucovacie Standardy
   Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby -> [OBSAHUJE] -> Certifikovani Poskytovatelia Dorucovacej Sluzby
+
   Certifikovani Poskytovatelia Dorucovacej Sluzby -> [POSKYTUJE] -> Dorucovacia Sluzba
-  Certifikovani Poskytovatelia Dorucovacej Sluzby -> [NACHADZA_SA_V] -> Slovenska Republika
-  Financne Riaditelstvo -> [VYDAVA] -> Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby
-  Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby -> [NACHADZA_SA_V] -> Webove Sidlo Financneho Riaditelstva
+  Certifikovani Poskytovatelia Dorucovacej Sluzby -> [VZTAHUJE_SA_NA] -> Uzemie Slovenskej Republiky
+  Uzemie Slovenskej Republiky -> [NACHADZA_SA_V] -> Slovenska Republika
+
+  Financne Riaditelstvo -> [MA_POVINNOST] -> Povinnost Zverejnovat Evidenciu Prostrednictvom Weboveho Sidla
+  Povinnost Zverejnovat Evidenciu Prostrednictvom Weboveho Sidla -> [VZTAHUJE_SA_NA] -> Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby
+  Povinnost Zverejnovat Evidenciu Prostrednictvom Weboveho Sidla -> [VZTAHUJE_SA_NA] -> Webove Sidlo Financneho Riaditelstva
+  Webove Sidlo Financneho Riaditelstva -> [VZTAHUJE_SA_NA] -> Financne Riaditelstvo
 
 nodes:
-  Paragraf: Paragraf § 76A
-  Odsek: Paragraf § 76A Odsek 5
+  Paragraf: Paragraf § 76a
+  Odsek: Paragraf § 76a Odsek 5
   Organizacia: Financne Riaditelstvo
+
+  Povinnost: Povinnost Viest Evidenciu Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby
+  Povinnost: Povinnost Zverejnovat Evidenciu Prostrednictvom Weboveho Sidla
+
   Zaznam: Evidencia Europskych Dorucovacich Standardov A Certifikovanych Poskytovatelov Dorucovacej Sluzby
   Dokument: Europske Dorucovacie Standardy
   Organizacia: Certifikovani Poskytovatelia Dorucovacej Sluzby
   Sluzba: Dorucovacia Sluzba
+
+  Lokacia: Uzemie Slovenskej Republiky
   Stat: Slovenska Republika
   Dokument: Webove Sidlo Financneho Riaditelstva
+
 
 ---
 
@@ -5054,9 +5259,176 @@ path_as_text: Paragraf § 78 Odsek 2 Pismeno a)
 text: (2) Platiteľ, ktorý a) má sídlo, miesto podnikania alebo prevádzkareň v tuzemsku, a ak nemá takéto miesto, ale má bydlisko v tuzemsku alebo sa v tuzemsku obvykle zdržiava, je povinný podať daňové priznanie do 25 dní po skončení každého zdaňovacieho obdobia a v tej istej lehote je povinný zaplatiť vlastnú daňovú povinnosť, okrem platiteľa, ktorý  1. splnil registračnú povinnosť podľa § 4, a ktorému nebolo do uplynutia lehoty na podanie daňového priznania za prvé zdaňovacie obdobie pridelené identifikačné číslo pre daň podľa § 4, ktorý je povinný podať daňové priznanie a zaplatiť vlastnú daňovú povinnosť do piatich  pracovných dní odo dňa doručenia rozhodnutia o registrácii pre daň podľa § 4 ods. 4, 2. uskutočňuje v tuzemsku výlučne plnenia oslobodené od dane podľa § 28 až 42, na ktorého sa povinnosť podávať daňové priznanie vzťahuje počnúc zdaňovacím obdobím, v ktorom mu vznikne povinnosť platiť daň zo zdaniteľného obchodu, ktorý nie je oslobodený od dane podľa § 28 až 42, alebo počnúc prvým zdaňovacím obdobím, ak sa stal platiteľom 1. januára kalendárneho roka nasledujúceho po kalendárnom roku, za ktorý presiahol obrat podľa § 4 ods. 1 písm. a) výlučne z dodaní tovarov a služieb, ktoré sú oslobodené od dane podľa § 37 až 39, a od tohto presiahnutia obratu do 31. decembra prebiehajúceho kalendárneho roka dodal v tuzemsku tovar alebo službu, ktorá nie je oslobodená od dane podľa § 28 až 42,
 
 relations:
+  Paragraf § 78 -> [OBSAHUJE] -> Paragraf § 78 Odsek 2
+  Paragraf § 78 Odsek 2 -> [OBSAHUJE] -> Paragraf § 78 Odsek 2 Pismeno a)
+  Paragraf § 78 Odsek 2 Pismeno a) -> [OBSAHUJE] -> Paragraf § 78 Odsek 2 Pismeno a) Bod 1
+  Paragraf § 78 Odsek 2 Pismeno a) -> [OBSAHUJE] -> Paragraf § 78 Odsek 2 Pismeno a) Bod 2
+
+  Platitel -> [MA_POVINNOST] -> Povinnost Podat Danove Priznanie
+  Platitel -> [MA_POVINNOST] -> Povinnost Zaplatit Vlastnu Danovu Povinnost
+  Povinnost Podat Danove Priznanie -> [VZTAHUJE_SA_NA] -> Danove Priznanie
+  Povinnost Zaplatit Vlastnu Danovu Povinnost -> [VZTAHUJE_SA_NA] -> Vlastna Danova Povinnost
+  Povinnost Podat Danove Priznanie -> [MA_LEHOTU] -> Lehota Do 25 Dni Po Skonceni Kazdeho Zdanovacieho Obdobia
+  Povinnost Zaplatit Vlastnu Danovu Povinnost -> [MA_LEHOTU] -> Lehota Do 25 Dni Po Skonceni Kazdeho Zdanovacieho Obdobia
+  Lehota Do 25 Dni Po Skonceni Kazdeho Zdanovacieho Obdobia -> [MA_OBDOBIE] -> Kazde Zdanovacie Obdobie
+
+  Povinnost Podat Danove Priznanie -> [MA_PODMIENKU] -> Podmienka Tuzemskej Vazby Platitela
+  Povinnost Zaplatit Vlastnu Danovu Povinnost -> [MA_PODMIENKU] -> Podmienka Tuzemskej Vazby Platitela
+  Podmienka Tuzemskej Vazby Platitela -> [VZTAHUJE_SA_NA] -> Sidlo V Tuzemsku
+  Podmienka Tuzemskej Vazby Platitela -> [VZTAHUJE_SA_NA] -> Miesto Podnikania V Tuzemsku
+  Podmienka Tuzemskej Vazby Platitela -> [VZTAHUJE_SA_NA] -> Prevadzkarne V Tuzemsku
+  Podmienka Tuzemskej Vazby Platitela -> [VZTAHUJE_SA_NA] -> Bydlisko V Tuzemsku
+  Podmienka Tuzemskej Vazby Platitela -> [VZTAHUJE_SA_NA] -> Obvykle Zdrziavanie Sa V Tuzemsku
+
+  Povinnost Podat Danove Priznanie -> [NEVZTAHUJE_SA_NA] -> Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 1
+  Povinnost Zaplatit Vlastnu Danovu Povinnost -> [NEVZTAHUJE_SA_NA] -> Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 1
+
+  Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 1 -> [MA_POVINNOST] -> Povinnost Podat Danove Priznanie Do Piatich Pracovnych Dni
+  Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 1 -> [MA_POVINNOST] -> Povinnost Zaplatit Vlastnu Danovu Povinnost Do Piatich Pracovnych Dni
+  Povinnost Podat Danove Priznanie Do Piatich Pracovnych Dni -> [MA_LEHOTU] -> Lehota Do Piatich Pracovnych Dni Odo Dna Dorucenia Rozhodnutia O Registracii Pre Dan
+  Povinnost Zaplatit Vlastnu Danovu Povinnost Do Piatich Pracovnych Dni -> [MA_LEHOTU] -> Lehota Do Piatich Pracovnych Dni Odo Dna Dorucenia Rozhodnutia O Registracii Pre Dan
+  Lehota Do Piatich Pracovnych Dni Odo Dna Dorucenia Rozhodnutia O Registracii Pre Dan -> [MA_DATUM] -> Den Dorucenia Rozhodnutia O Registracii Pre Dan
+  Rozhodnutie O Registracii Pre Dan Podla Paragrafu § 4 Odsek 4 -> [JE_PODLA] -> Paragraf § 4 Odsek 4
+  Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 1 -> [SPLNA_PODMIENKY] -> Podmienka Splnena Registracna Povinnost Podla Paragrafu § 4 A Nepridelene Identifikacne Cislo Pre Dan Do Uplynutia Lehoty Na Podanie Danoveho Priznania
+  Podmienka Splnena Registracna Povinnost Podla Paragrafu § 4 A Nepridelene Identifikacne Cislo Pre Dan Do Uplynutia Lehoty Na Podanie Danoveho Priznania -> [ODKAZUJE_NA] -> Paragraf § 4
+  Podmienka Splnena Registracna Povinnost Podla Paragrafu § 4 A Nepridelene Identifikacne Cislo Pre Dan Do Uplynutia Lehoty Na Podanie Danoveho Priznania -> [VZTAHUJE_SA_NA] -> Identifikacne Cislo Pre Dan Podla Paragrafu § 4
+  Podmienka Splnena Registracna Povinnost Podla Paragrafu § 4 A Nepridelene Identifikacne Cislo Pre Dan Do Uplynutia Lehoty Na Podanie Danoveho Priznania -> [VZTAHUJE_SA_NA] -> Prve Zdanovacie Obdobie
+
+  Povinnost Podat Danove Priznanie -> [NEVZTAHUJE_SA_NA] -> Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 2
+  Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 2 -> [DODAVA] -> Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [JE_OSLOBODENE_OD_DANE] -> Dan
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragrafy § 28 Az § 42
+
+  Povinnost Podavat Danove Priznanie Platitela Podla Bodu 2 -> [VZTAHUJE_SA_NA] -> Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 2
+  Povinnost Podavat Danove Priznanie Platitela Podla Bodu 2 -> [VZNIKA] -> Zdanovacie Obdobie V Ktorom Vznikne Povinnost Platit Dan Zo Zdanitelneho Obchodu Neoslobodeneho Od Dane
+  Zdanitelny Obchod Neoslobodeny Od Dane Podla Paragrafov § 28 Az § 42 -> [NIE_JE_PREDMETOM_DANE] -> Oslobodenie Od Dane Podla Paragrafov § 28 Az § 42
+  Povinnost Platit Dan Zo Zdanitelneho Obchodu Neoslobodeneho Od Dane -> [VZTAHUJE_SA_NA] -> Zdanitelny Obchod Neoslobodeny Od Dane Podla Paragrafov § 28 Az § 42
+
+  Povinnost Podavat Danove Priznanie Platitela Podla Bodu 2 -> [VZNIKA] -> Prve Zdanovacie Obdobie
+  Prve Zdanovacie Obdobie -> [MA_PODMIENKU] -> Podmienka Platitel Sa Stal Platitelom 1 Januara Nasledujuceho Kalendarneho Roka
+  Podmienka Platitel Sa Stal Platitelom 1 Januara Nasledujuceho Kalendarneho Roka -> [MA_DATUM] -> 1 Januar Kalendarneho Roka Nasledujuceho Po Roku Presiahnutia Obratu
+  Podmienka Platitel Sa Stal Platitelom 1 Januara Nasledujuceho Kalendarneho Roka -> [MA_PODMIENKU] -> Podmienka Presiahnutie Obratu Podla Paragrafu § 4 Odsek 1 Pismeno a) Vylucne Z Dodani Oslobodenych Od Dane Podla Paragrafov § 37 Az § 39
+  Podmienka Presiahnutie Obratu Podla Paragrafu § 4 Odsek 1 Pismeno a) Vylucne Z Dodani Oslobodenych Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragraf § 4 Odsek 1 Pismeno a)
+  Podmienka Presiahnutie Obratu Podla Paragrafu § 4 Odsek 1 Pismeno a) Vylucne Z Dodani Oslobodenych Od Dane Podla Paragrafov § 37 Az § 39 -> [VZTAHUJE_SA_NA] -> Obrat Podla Paragrafu § 4 Odsek 1 Pismeno a)
+  Dodania Tovarov A Sluzieb Oslobodene Od Dane Podla Paragrafov § 37 Az § 39 -> [JE_OSLOBODENE_OD_DANE] -> Dan
+  Dodania Tovarov A Sluzieb Oslobodene Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragrafy § 37 Az § 39
+  Podmienka Platitel Sa Stal Platitelom 1 Januara Nasledujuceho Kalendarneho Roka -> [MA_PODMIENKU] -> Podmienka Od Presiahnutia Obratu Do 31 Decembra Prebiehajuceho Kalendarneho Roka Dodal Tovar Alebo Sluzbu Neoslobodenu Od Dane
+  Podmienka Od Presiahnutia Obratu Do 31 Decembra Prebiehajuceho Kalendarneho Roka Dodal Tovar Alebo Sluzbu Neoslobodenu Od Dane -> [MA_DATUM] -> 31 December Prebiehajuceho Kalendarneho Roka
+  Podmienka Od Presiahnutia Obratu Do 31 Decembra Prebiehajuceho Kalendarneho Roka Dodal Tovar Alebo Sluzbu Neoslobodenu Od Dane -> [VZTAHUJE_SA_NA] -> Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42
+
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 28
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 29
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 30
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 31
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 32
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 33
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 34
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 35
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 36
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 37
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 38
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 39
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 40
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 41
+  Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 42
+
+  Dodania Tovarov A Sluzieb Oslobodene Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragraf § 37
+  Dodania Tovarov A Sluzieb Oslobodene Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragraf § 38
+  Dodania Tovarov A Sluzieb Oslobodene Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragraf § 39
+
+  Podmienka Presiahnutie Obratu Podla Paragrafu § 4 Odsek 1 Pismeno a) Vylucne Z Dodani Oslobodenych Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragraf § 37
+  Podmienka Presiahnutie Obratu Podla Paragrafu § 4 Odsek 1 Pismeno a) Vylucne Z Dodani Oslobodenych Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragraf § 38
+  Podmienka Presiahnutie Obratu Podla Paragrafu § 4 Odsek 1 Pismeno a) Vylucne Z Dodani Oslobodenych Od Dane Podla Paragrafov § 37 Az § 39 -> [ODKAZUJE_NA] -> Paragraf § 39
+
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 28
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 29
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 30
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 31
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 32
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 33
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 34
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 35
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 36
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 37
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 38
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 39
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 40
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 41
+  Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42 -> [ODKAZUJE_NA] -> Paragraf § 42
 
 
 nodes:
+  Paragraf: Paragraf § 78
+  Odsek: Paragraf § 78 Odsek 2
+  Pismeno: Paragraf § 78 Odsek 2 Pismeno a)
+  Bod: Paragraf § 78 Odsek 2 Pismeno a) Bod 1
+  Bod: Paragraf § 78 Odsek 2 Pismeno a) Bod 2
+  Paragraf: Paragraf § 4
+  Odsek: Paragraf § 4 Odsek 4
+  Odsek: Paragraf § 4 Odsek 1
+  Pismeno: Paragraf § 4 Odsek 1 Pismeno a)
+  PravnyPredpis: Paragrafy § 28 Az § 42
+  PravnyPredpis: Paragrafy § 37 Az § 39
+
+  Subjekt: Platitel
+  Subjekt: Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 1
+  Subjekt: Platitel Podla Paragrafu § 78 Odsek 2 Pismeno a) Bod 2
+
+  Adresa: Sidlo V Tuzemsku
+  Adresa: Miesto Podnikania V Tuzemsku
+  Lokacia: Prevadzkarne V Tuzemsku
+  Adresa: Bydlisko V Tuzemsku
+  Status: Obvykle Zdrziavanie Sa V Tuzemsku
+
+  Povinnost: Povinnost Podat Danove Priznanie
+  Povinnost: Povinnost Zaplatit Vlastnu Danovu Povinnost
+  Povinnost: Povinnost Podat Danove Priznanie Do Piatich Pracovnych Dni
+  Povinnost: Povinnost Zaplatit Vlastnu Danovu Povinnost Do Piatich Pracovnych Dni
+  Povinnost: Povinnost Podavat Danove Priznanie Platitela Podla Bodu 2
+  Povinnost: Povinnost Platit Dan Zo Zdanitelneho Obchodu Neoslobodeneho Od Dane
+
+  DanovePriznanie: Danove Priznanie
+  Dan: Vlastna Danova Povinnost
+  Dan: Dan
+  Zaznam: Identifikacne Cislo Pre Dan Podla Paragrafu § 4
+  Rozhodnutie: Rozhodnutie O Registracii Pre Dan Podla Paragrafu § 4 Odsek 4
+
+  Lehota: Lehota Do 25 Dni Po Skonceni Kazdeho Zdanovacieho Obdobia
+  Lehota: Lehota Do Piatich Pracovnych Dni Odo Dna Dorucenia Rozhodnutia O Registracii Pre Dan
+  ZdanovacieObdobie: Kazde Zdanovacie Obdobie
+  ZdanovacieObdobie: Prve Zdanovacie Obdobie
+  ZdanovacieObdobie: Zdanovacie Obdobie V Ktorom Vznikne Povinnost Platit Dan Zo Zdanitelneho Obchodu Neoslobodeneho Od Dane
+  Datum: Den Dorucenia Rozhodnutia O Registracii Pre Dan
+  Datum: 1 Januar Kalendarneho Roka Nasledujuceho Po Roku Presiahnutia Obratu
+  Datum: 31 December Prebiehajuceho Kalendarneho Roka
+
+  Podmienka: Podmienka Tuzemskej Vazby Platitela
+  Podmienka: Podmienka Splnena Registracna Povinnost Podla Paragrafu § 4 A Nepridelene Identifikacne Cislo Pre Dan Do Uplynutia Lehoty Na Podanie Danoveho Priznania
+  Podmienka: Podmienka Platitel Sa Stal Platitelom 1 Januara Nasledujuceho Kalendarneho Roka
+  Podmienka: Podmienka Presiahnutie Obratu Podla Paragrafu § 4 Odsek 1 Pismeno a) Vylucne Z Dodani Oslobodenych Od Dane Podla Paragrafov § 37 Az § 39
+  Podmienka: Podmienka Od Presiahnutia Obratu Do 31 Decembra Prebiehajuceho Kalendarneho Roka Dodal Tovar Alebo Sluzbu Neoslobodenu Od Dane
+
+  Konanie: Plnenia Oslobodene Od Dane Podla Paragrafov § 28 Az § 42
+  Konanie: Zdanitelny Obchod Neoslobodeny Od Dane Podla Paragrafov § 28 Az § 42
+  Konanie: Dodania Tovarov A Sluzieb Oslobodene Od Dane Podla Paragrafov § 37 Az § 39
+  Konanie: Dodanie Tovaru Alebo Sluzby V Tuzemsku Neoslobodene Od Dane Podla Paragrafov § 28 Az § 42
+  Obrat: Obrat Podla Paragrafu § 4 Odsek 1 Pismeno a)
+  Paragraf: Paragraf § 28
+  Paragraf: Paragraf § 29
+  Paragraf: Paragraf § 30
+  Paragraf: Paragraf § 31
+  Paragraf: Paragraf § 32
+  Paragraf: Paragraf § 33
+  Paragraf: Paragraf § 34
+  Paragraf: Paragraf § 35
+  Paragraf: Paragraf § 36
+  Paragraf: Paragraf § 37
+  Paragraf: Paragraf § 38
+  Paragraf: Paragraf § 39
+  Paragraf: Paragraf § 40
+  Paragraf: Paragraf § 41
+  Paragraf: Paragraf § 42
+
 
 
 ---
@@ -5071,16 +5443,39 @@ relations:
   Paragraf § 78a -> [OBSAHUJE] -> Paragraf § 78a Odsek 3
   Paragraf § 78a -> [OBSAHUJE] -> Paragraf § 78a Odsek 4
   Paragraf § 78a Odsek 4 -> [OBSAHUJE] -> Paragraf § 78a Odsek 4 Pismeno g)
+
   Paragraf § 69 -> [OBSAHUJE] -> Paragraf § 69 Odsek 12
   Paragraf § 69 Odsek 12 -> [OBSAHUJE] -> Paragraf § 69 Odsek 12 Pismeno h)
   Paragraf § 69 Odsek 12 -> [OBSAHUJE] -> Paragraf § 69 Odsek 12 Pismeno i)
+
+  Paragraf § 78a Odsek 4 Pismeno g) -> [ODKAZUJE_NA] -> Paragraf § 78a Odsek 2
+  Paragraf § 78a Odsek 4 Pismeno g) -> [ODKAZUJE_NA] -> Paragraf § 78a Odsek 3
+  Paragraf § 78a Odsek 4 Pismeno g) -> [ODKAZUJE_NA] -> Paragraf § 69 Odsek 12 Pismeno h)
+  Paragraf § 78a Odsek 4 Pismeno g) -> [ODKAZUJE_NA] -> Paragraf § 69 Odsek 12 Pismeno i)
+
   Kontrolny Vykaz -> [OBSAHUJE] -> Druh Tovaru
   Kontrolny Vykaz -> [OBSAHUJE] -> Mnozstvo Tovaru
-  Faktura -> [VZTAHUJE_SA_NA] -> Dodanie Tovaru
-  Dodanie Tovaru -> [VZTAHUJE_SA_NA] -> Druh Tovaru
-  Dodanie Tovaru -> [MA_HODNOTU] -> Mnozstvo Tovaru
-  Prijemca Plnenia -> [MA_POVINNOST] -> Povinnost Platit Dan
-  Povinnost Platit Dan -> [VZTAHUJE_SA_NA] -> Dan
+
+  Druh Tovaru -> [VZTAHUJE_SA_NA] -> Tovar
+  Mnozstvo Tovaru -> [VZTAHUJE_SA_NA] -> Tovar
+
+  Faktury Uvedene V Paragraf § 78a Odsek 2 -> [ODKAZUJE_NA] -> Paragraf § 78a Odsek 2
+  Doklad Podla Paragraf § 78a Odsek 3 -> [ODKAZUJE_NA] -> Paragraf § 78a Odsek 3
+  Kontrolny Vykaz -> [VZTAHUJE_SA_NA] -> Faktury Uvedene V Paragraf § 78a Odsek 2
+  Kontrolny Vykaz -> [VZTAHUJE_SA_NA] -> Doklad Podla Paragraf § 78a Odsek 3
+
+  Faktura Vyhotovena O Dodani Tovaru -> [VZTAHUJE_SA_NA] -> Dodanie Tovaru
+  Dodanie Tovaru -> [VZTAHUJE_SA_NA] -> Tovar
+
+  Prijemca Plnenia -> [MA_POVINNOST] -> Povinnost Platit Dan Z Dodania Tovaru Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i)
+  Povinnost Platit Dan Z Dodania Tovaru Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i) -> [VZTAHUJE_SA_NA] -> Dan
+  Povinnost Platit Dan Z Dodania Tovaru Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i) -> [VZTAHUJE_SA_NA] -> Dodanie Tovaru
+  Povinnost Platit Dan Z Dodania Tovaru Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i) -> [ODKAZUJE_NA] -> Paragraf § 69 Odsek 12 Pismeno h)
+  Povinnost Platit Dan Z Dodania Tovaru Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i) -> [ODKAZUJE_NA] -> Paragraf § 69 Odsek 12 Pismeno i)
+
+  Kontrolny Vykaz -> [MA_PODMIENKU] -> Podmienka Faktura Je Vyhotovena O Dodani Tovaru Pri Ktorom Je Prijemca Plnenia Povinny Platit Dan Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i)
+  Podmienka Faktura Je Vyhotovena O Dodani Tovaru Pri Ktorom Je Prijemca Plnenia Povinny Platit Dan Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i) -> [VZTAHUJE_SA_NA] -> Faktura Vyhotovena O Dodani Tovaru
+  Podmienka Faktura Je Vyhotovena O Dodani Tovaru Pri Ktorom Je Prijemca Plnenia Povinny Platit Dan Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i) -> [VZTAHUJE_SA_NA] -> Prijemca Plnenia
 
 nodes:
   Paragraf: Paragraf § 78a
@@ -5088,19 +5483,27 @@ nodes:
   Odsek: Paragraf § 78a Odsek 3
   Odsek: Paragraf § 78a Odsek 4
   Pismeno: Paragraf § 78a Odsek 4 Pismeno g)
+
   Paragraf: Paragraf § 69
   Odsek: Paragraf § 69 Odsek 12
   Pismeno: Paragraf § 69 Odsek 12 Pismeno h)
   Pismeno: Paragraf § 69 Odsek 12 Pismeno i)
-  Dokument: Faktura
-  Dokument: Doklad
+
   Dokument: Kontrolny Vykaz
-  Tovar: Druh Tovaru
+  Dokument: Faktury Uvedene V Paragraf § 78a Odsek 2
+  Dokument: Doklad Podla Paragraf § 78a Odsek 3
+  Dokument: Faktura Vyhotovena O Dodani Tovaru
+
+  Tovar: Tovar
+  Zaznam: Druh Tovaru
   Mnozstvo: Mnozstvo Tovaru
   Konanie: Dodanie Tovaru
+
   Subjekt: Prijemca Plnenia
   Dan: Dan
-  Povinnost: Povinnost Platit Dan
+  Povinnost: Povinnost Platit Dan Z Dodania Tovaru Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i)
+  Podmienka: Podmienka Faktura Je Vyhotovena O Dodani Tovaru Pri Ktorom Je Prijemca Plnenia Povinny Platit Dan Podla Paragrafu § 69 Odsek 12 Pismeno h) A Pismeno i)
+
 
 ---
 
@@ -5112,23 +5515,32 @@ text: (3) Platiteľ, ktorý spĺňa podmienky podľa odseku 2, vyznačí túto s
 relations:
   Paragraf § 79 -> [OBSAHUJE] -> Paragraf § 79 Odsek 3
   Paragraf § 79 -> [OBSAHUJE] -> Paragraf § 79 Odsek 2
-  Platitel -> [SPLNA_PODMIENKY] -> Podmienky Podla Paragraf § 79 Odsek 2
-  Podmienky Podla Paragraf § 79 Odsek 2 -> [VYPLYVA_Z] -> Paragraf § 79 Odsek 2
-  Platitel -> [MA_POVINNOST] -> Vyznačenie Splnenia Podmienok V Danovom Priznani
-  Vyznačenie Splnenia Podmienok V Danovom Priznani -> [VZTAHUJE_SA_NA] -> Danove Priznanie
-  Danove Priznanie -> [MA_OBDOBIE] -> Zdanovacie Obdobie Vzniku Nadmerneho Odpocetu
-  Nadmerny Odpocet -> [MA_OBDOBIE] -> Zdanovacie Obdobie Vzniku Nadmerneho Odpocetu
+  Paragraf § 79 Odsek 3 -> [ODKAZUJE_NA] -> Paragraf § 79 Odsek 2
+
+  Platitel -> [SPLNA_PODMIENKY] -> Podmienky Podla Paragrafu § 79 Odsek 2
+  Podmienky Podla Paragrafu § 79 Odsek 2 -> [JE_PODLA] -> Paragraf § 79 Odsek 2
+
+  Platitel -> [MA_POVINNOST] -> Povinnost Vyznacit Splnenie Podmienok V Danovom Priznani
+  Povinnost Vyznacit Splnenie Podmienok V Danovom Priznani -> [VYPLYVA_Z] -> Paragraf § 79 Odsek 3
+  Povinnost Vyznacit Splnenie Podmienok V Danovom Priznani -> [MA_PODMIENKU] -> Podmienky Podla Paragrafu § 79 Odsek 2
+  Povinnost Vyznacit Splnenie Podmienok V Danovom Priznani -> [VZTAHUJE_SA_NA] -> Danove Priznanie
+  Povinnost Vyznacit Splnenie Podmienok V Danovom Priznani -> [VZTAHUJE_SA_NA] -> Splnenie Podmienok Podla Paragrafu § 79 Odsek 2
+
+  Danove Priznanie -> [MA_OBDOBIE] -> Zdanovacie Obdobie V Ktorom Nadmerny Odpocet Vznikol
+  Nadmerny Odpocet -> [MA_OBDOBIE] -> Zdanovacie Obdobie V Ktorom Nadmerny Odpocet Vznikol
 
 nodes:
   Subjekt: Platitel
   Paragraf: Paragraf § 79
   Odsek: Paragraf § 79 Odsek 3
   Odsek: Paragraf § 79 Odsek 2
-  Podmienka: Podmienky Podla Paragraf § 79 Odsek 2
-  Povinnost: Vyznačenie Splnenia Podmienok V Danovom Priznani
+  Podmienka: Podmienky Podla Paragrafu § 79 Odsek 2
+  Podmienka: Splnenie Podmienok Podla Paragrafu § 79 Odsek 2
+  Povinnost: Povinnost Vyznacit Splnenie Podmienok V Danovom Priznani
   DanovePriznanie: Danove Priznanie
-  ZdanovacieObdobie: Zdanovacie Obdobie Vzniku Nadmerneho Odpocetu
+  ZdanovacieObdobie: Zdanovacie Obdobie V Ktorom Nadmerny Odpocet Vznikol
   NadmernyOdpocet: Nadmerny Odpocet
+
 
 ---
 
@@ -5143,23 +5555,36 @@ relations:
   Paragraf § 80 Odsek 1 -> [OBSAHUJE] -> Paragraf § 80 Odsek 1 Pismeno a)
   Paragraf § 80 Odsek 1 -> [OBSAHUJE] -> Paragraf § 80 Odsek 1 Pismeno b)
   Paragraf § 80 Odsek 1 -> [OBSAHUJE] -> Paragraf § 80 Odsek 1 Pismeno c)
-  Platitel -> [MA_PRAVO] -> Podanie Suhrnneho Vykazu Za Kalendarny Stvrtrok
-  Podanie Suhrnneho Vykazu Za Kalendarny Stvrtrok -> [VZTAHUJE_SA_NA] -> Suhrnny Vykaz
-  Podanie Suhrnneho Vykazu Za Kalendarny Stvrtrok -> [MA_OBDOBIE] -> Kalendarny Stvrtrok
-  Podanie Suhrnneho Vykazu Za Kalendarny Stvrtrok -> [MA_PODMIENKU] -> Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur
-  Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [VZTAHUJE_SA_NA] -> Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c)
-  Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [MA_SUMU] -> 50000 Eur
-  Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [MA_OBDOBIE] -> Prislusny Kalendarny Stvrtrok
-  Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [MA_OBDOBIE] -> Predchadzajuce Styri Kalenderne Stvrtroky
-  Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok -> [ZANIKA] -> Skoncenie Kalenderneho Mesiaca
-  Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok -> [MA_PODMIENKU] -> Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur
-  Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur -> [VZTAHUJE_SA_NA] -> Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c)
-  Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur -> [MA_SUMU] -> 50000 Eur
-  Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur -> [MA_OBDOBIE] -> Prislusny Kalendarny Stvrtrok
-  Platitel -> [MA_POVINNOST] -> Povinnost Podat Suhrnny Vykaz Za Kazdy Kalendarny Mesiac
-  Povinnost Podat Suhrnny Vykaz Za Kazdy Kalendarny Mesiac -> [VZTAHUJE_SA_NA] -> Suhrnny Vykaz
-  Povinnost Podat Suhrnny Vykaz Za Kazdy Kalendarny Mesiac -> [MA_OBDOBIE] -> Kalendarny Mesiac
-  Povinnost Podat Suhrnny Vykaz Za Kazdy Kalendarny Mesiac -> [MA_OBDOBIE] -> Prislusny Kalendarny Stvrtrok
+
+  Paragraf § 80 Odsek 2 -> [ODKAZUJE_NA] -> Paragraf § 80 Odsek 1 Pismeno a)
+  Paragraf § 80 Odsek 2 -> [ODKAZUJE_NA] -> Paragraf § 80 Odsek 1 Pismeno b)
+  Paragraf § 80 Odsek 2 -> [ODKAZUJE_NA] -> Paragraf § 80 Odsek 1 Pismeno c)
+
+  Platitel -> [MA_PRAVO] -> Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok
+  Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok -> [VZTAHUJE_SA_NA] -> Suhrnny Vykaz
+  Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok -> [MA_OBDOBIE] -> Kalendarny Stvrtrok
+  Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok -> [MA_PODMIENKU] -> Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur
+
+  Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [VZTAHUJE_SA_NA] -> Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c)
+  Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [MA_SUMU] -> Suma 50000 Eur
+  Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [MA_OBDOBIE] -> Prislusny Kalendarny Stvrtrok
+  Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur -> [MA_OBDOBIE] -> Predchadzajuce Styri Kalendarné Stvrtroky
+
+  Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) -> [ODKAZUJE_NA] -> Paragraf § 80 Odsek 1 Pismeno a)
+  Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) -> [ODKAZUJE_NA] -> Paragraf § 80 Odsek 1 Pismeno b)
+  Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) -> [ODKAZUJE_NA] -> Paragraf § 80 Odsek 1 Pismeno c)
+
+  Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok -> [ZANIKA] -> Skoncenie Kalendarného Mesiaca V Ktorom Hodnota Tovarov Presiahne 50000 Eur
+  Skoncenie Kalendarného Mesiaca V Ktorom Hodnota Tovarov Presiahne 50000 Eur -> [MA_PODMIENKU] -> Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur
+
+  Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur -> [VZTAHUJE_SA_NA] -> Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c)
+  Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur -> [MA_SUMU] -> Suma 50000 Eur
+  Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur -> [MA_OBDOBIE] -> Prislusny Kalendarny Stvrtrok
+
+  Platitel -> [MA_POVINNOST] -> Povinnost Podat Suhrnny Vykaz Osobitne Za Kazdy Kalendarny Mesiac Prislusneho Kalendárneho Stvrtroka
+  Povinnost Podat Suhrnny Vykaz Osobitne Za Kazdy Kalendarny Mesiac Prislusneho Kalendárneho Stvrtroka -> [VZTAHUJE_SA_NA] -> Suhrnny Vykaz
+  Povinnost Podat Suhrnny Vykaz Osobitne Za Kazdy Kalendarny Mesiac Prislusneho Kalendárneho Stvrtroka -> [MA_OBDOBIE] -> Kazdy Kalendarny Mesiac Prislusneho Kalendárneho Stvrtroka
+  Povinnost Podat Suhrnny Vykaz Osobitne Za Kazdy Kalendarny Mesiac Prislusneho Kalendárneho Stvrtroka -> [MA_PODMIENKU] -> Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur
 
 nodes:
   Paragraf: Paragraf § 80
@@ -5168,20 +5593,24 @@ nodes:
   Pismeno: Paragraf § 80 Odsek 1 Pismeno a)
   Pismeno: Paragraf § 80 Odsek 1 Pismeno b)
   Pismeno: Paragraf § 80 Odsek 1 Pismeno c)
+
   Subjekt: Platitel
   Dokument: Suhrnny Vykaz
-  Pravo: Podanie Suhrnneho Vykazu Za Kalendarny Stvrtrok
-  Povinnost: Povinnost Podat Suhrnny Vykaz Za Kazdy Kalendarny Mesiac
-  Podmienka: Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur
-  Podmienka: Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur
+  Pravo: Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok
+  Povinnost: Povinnost Podat Suhrnny Vykaz Osobitne Za Kazdy Kalendarny Mesiac Prislusneho Kalendárneho Stvrtroka
+
+  Podmienka: Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Nepresiahne 50000 Eur
+  Podmienka: Podmienka Hodnota Tovarov Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c) Presiahne 50000 Eur
+
   Tovar: Tovary Podla Paragrafu § 80 Odsek 1 Pismeno a) Az c)
+  Suma: Suma 50000 Eur
+
   Obdobie: Kalendarny Stvrtrok
   Obdobie: Prislusny Kalendarny Stvrtrok
-  Obdobie: Predchadzajuce Styri Kalenderne Stvrtroky
-  Obdobie: Kalendarny Mesiac
-  Datum: Skoncenie Kalenderneho Mesiaca
-  Suma: 50000 Eur
-  Pravo: Moznost Podat Suhrnny Vykaz Za Kalendarny Stvrtrok
+  Obdobie: Predchadzajuce Styri Kalendarné Stvrtroky
+  Obdobie: Kazdy Kalendarny Mesiac Prislusneho Kalendárneho Stvrtroka
+  Datum: Skoncenie Kalendarného Mesiaca V Ktorom Hodnota Tovarov Presiahne 50000 Eur
+
 
 ---
 
@@ -5193,35 +5622,55 @@ text: (7) Daňová povinnosť podľa odseku 5 nevzniká pri zániku platiteľa b
 relations:
   Paragraf § 81 -> [OBSAHUJE] -> Paragraf § 81 Odsek 7
   Paragraf § 81 -> [OBSAHUJE] -> Paragraf § 81 Odsek 5
+  Paragraf § 81 Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 81 Odsek 5
+
   Paragraf § 4 -> [OBSAHUJE] -> Paragraf § 4 Odsek 1
   Paragraf § 4 Odsek 1 -> [OBSAHUJE] -> Paragraf § 4 Odsek 1 Pismeno c)
   Paragraf § 5 -> [OBSAHUJE] -> Paragraf § 5 Odsek 4
   Paragraf § 5 Odsek 4 -> [OBSAHUJE] -> Paragraf § 5 Odsek 4 Pismeno a)
+
+  Paragraf § 81 Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 4 Odsek 1 Pismeno c)
+  Paragraf § 81 Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 5 Odsek 4 Pismeno a)
+
   Danova Povinnost Podla Paragrafu § 81 Odsek 5 -> [VYPLYVA_Z] -> Paragraf § 81 Odsek 5
-  Danova Povinnost Podla Paragrafu § 81 Odsek 5 -> [NEVZTAHUJE_SA_NA] -> Zanik Platitela Bez Likvidacie
+  Danova Povinnost Podla Paragrafu § 81 Odsek 5 -> [NEVZTAHUJE_SA_NA] -> Zanik Platitela Bez Likvidacie Pri Pravnom Nastupcovi Ktory Je Alebo Sa Stava Platitelom
+
+  Zanik Platitela Bez Likvidacie Pri Pravnom Nastupcovi Ktory Je Alebo Sa Stava Platitelom -> [VZTAHUJE_SA_NA] -> Zanik Platitela Bez Likvidacie
   Zanik Platitela Bez Likvidacie -> [VZTAHUJE_SA_NA] -> Platitel
-  Pravny Nastupca -> [JE_TYPOM] -> Platitel
-  Pravny Nastupca -> [REGISTRUJE] -> Statie Sa Platitelom Podla Paragrafu § 4 Odsek 1 Pismeno c)
-  Statie Sa Platitelom Podla Paragrafu § 4 Odsek 1 Pismeno c) -> [VYPLYVA_Z] -> Paragraf § 4 Odsek 1 Pismeno c)
-  Pravny Nastupca -> [REGISTRUJE] -> Statie Sa Platitelom Podla Paragrafu § 5 Odsek 4 Pismeno a)
-  Statie Sa Platitelom Podla Paragrafu § 5 Odsek 4 Pismeno a) -> [VYPLYVA_Z] -> Paragraf § 5 Odsek 4 Pismeno a)
+  Zanik Platitela Bez Likvidacie Pri Pravnom Nastupcovi Ktory Je Alebo Sa Stava Platitelom -> [MA_PODMIENKU] -> Podmienka Pravny Nastupca Je Platitelom Alebo Sa Stava Platitelom
+
+  Podmienka Pravny Nastupca Je Platitelom Alebo Sa Stava Platitelom -> [VZTAHUJE_SA_NA] -> Pravny Nastupca
+  Podmienka Pravny Nastupca Je Platitelom Alebo Sa Stava Platitelom -> [VZTAHUJE_SA_NA] -> Platitel
+  Podmienka Pravny Nastupca Je Platitelom Alebo Sa Stava Platitelom -> [VZTAHUJE_SA_NA] -> Statie Sa Platitelom Podla Paragrafu § 4 Odsek 1 Pismeno c)
+  Podmienka Pravny Nastupca Je Platitelom Alebo Sa Stava Platitelom -> [VZTAHUJE_SA_NA] -> Statie Sa Platitelom Podla Paragrafu § 5 Odsek 4 Pismeno a)
+
+  Statie Sa Platitelom Podla Paragrafu § 4 Odsek 1 Pismeno c) -> [JE_PODLA] -> Paragraf § 4 Odsek 1 Pismeno c)
+  Statie Sa Platitelom Podla Paragrafu § 5 Odsek 4 Pismeno a) -> [JE_PODLA] -> Paragraf § 5 Odsek 4 Pismeno a)
 
 nodes:
   Paragraf: Paragraf § 81
   Odsek: Paragraf § 81 Odsek 7
   Odsek: Paragraf § 81 Odsek 5
+
   Paragraf: Paragraf § 4
   Odsek: Paragraf § 4 Odsek 1
   Pismeno: Paragraf § 4 Odsek 1 Pismeno c)
+
   Paragraf: Paragraf § 5
   Odsek: Paragraf § 5 Odsek 4
   Pismeno: Paragraf § 5 Odsek 4 Pismeno a)
+
   Povinnost: Danova Povinnost Podla Paragrafu § 81 Odsek 5
   Dovod: Zanik Platitela Bez Likvidacie
+  Dovod: Zanik Platitela Bez Likvidacie Pri Pravnom Nastupcovi Ktory Je Alebo Sa Stava Platitelom
+
   Subjekt: Platitel
   Subjekt: Pravny Nastupca
-  Registracia: Statie Sa Platitelom Podla Paragrafu § 4 Odsek 1 Pismeno c)
-  Registracia: Statie Sa Platitelom Podla Paragrafu § 5 Odsek 4 Pismeno a)
+
+  Podmienka: Podmienka Pravny Nastupca Je Platitelom Alebo Sa Stava Platitelom
+  Status: Statie Sa Platitelom Podla Paragrafu § 4 Odsek 1 Pismeno c)
+  Status: Statie Sa Platitelom Podla Paragrafu § 5 Odsek 4 Pismeno a)
+
 
 ---
 
@@ -5232,21 +5681,29 @@ text: (1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky 
 
 relations:
   Paragraf § 85 -> [OBSAHUJE] -> Paragraf § 85 Odsek 1
+  Paragraf § 85 Odsek 1 -> [UPRAVUJE] -> Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona
   Paragraf § 85 Odsek 1 -> [ODKAZUJE_NA] -> Doterajsie Predpisy
-  Paragraf § 85 Odsek 1 -> [UPRAVUJE] -> Lehoty Zacinajuce Plynut Pred Ucinnostou Tohto Zakona
-  Lehoty Zacinajuce Plynut Pred Ucinnostou Tohto Zakona -> [VYPLYVA_Z] -> Doterajsie Predpisy
-  Lehoty Zacinajuce Plynut Pred Ucinnostou Tohto Zakona -> [MA_DATUM] -> Ucinnost Tohto Zakona
+
+  Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona -> [VZTAHUJE_SA_NA] -> Vsetky Lehoty Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona
+  Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona -> [JE_PODLA] -> Doterajsie Predpisy
+  Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona -> [MA_LEHOTU] -> Do Uplynutia Tychto Lehot
+
+  Vsetky Lehoty Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona -> [MA_PODMIENKU] -> Podmienka Zacali Plynut Pred Ucinnostou Tohto Zakona
+  Podmienka Zacali Plynut Pred Ucinnostou Tohto Zakona -> [MA_DATUM] -> Ucinnost Tohto Zakona
   Ucinnost Tohto Zakona -> [VZTAHUJE_SA_NA] -> Tento Zakon
-  Lehoty Zacinajuce Plynut Pred Ucinnostou Tohto Zakona -> [MA_DATUM] -> Uplynutie Lehot
 
 nodes:
   Paragraf: Paragraf § 85
   Odsek: Paragraf § 85 Odsek 1
   PravnyPredpis: Doterajsie Predpisy
   PravnyPredpis: Tento Zakon
-  Lehota: Lehoty Zacinajuce Plynut Pred Ucinnostou Tohto Zakona
+
+  Konanie: Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona
+  Lehota: Vsetky Lehoty Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona
+  Lehota: Do Uplynutia Tychto Lehot
+  Podmienka: Podmienka Zacali Plynut Pred Ucinnostou Tohto Zakona
   Datum: Ucinnost Tohto Zakona
-  Datum: Uplynutie Lehot
+
 
 ---
 
@@ -5261,30 +5718,44 @@ relations:
   Paragraf § 85 -> [OBSAHUJE] -> Paragraf § 85 Odsek 19
   Paragraf § 85 Odsek 17 -> [OBSAHUJE] -> Paragraf § 85 Odsek 17 Pismeno a)
   Paragraf § 85 Odsek 19 -> [OBSAHUJE] -> Paragraf § 85 Odsek 19 Pismeno c)
-  Tovar Podla Paragrafu § 85 Odsek 17 Pismeno a) -> [JE_TYPOM] -> Dopravny Prostriedok
-  Tovar Podla Paragrafu § 85 Odsek 17 -> [NIE_JE_PREDMETOM_DANE] -> Dan
-  Tovar Podla Paragrafu § 85 Odsek 18 -> [NIE_JE_PREDMETOM_DANE] -> Dan
-  Tovar Podla Paragrafu § 85 Odsek 17 -> [MA_PODMIENKU] -> Nadobudnutie Alebo Dovezenie Dopravneho Prostriedku Do 30. Aprila 2004 Vratane
-  Tovar Podla Paragrafu § 85 Odsek 18 -> [MA_PODMIENKU] -> Nadobudnutie Alebo Dovezenie Dopravneho Prostriedku Do 30. Aprila 2004 Vratane
-  Nadobudnutie Alebo Dovezenie Dopravneho Prostriedku Do 30. Aprila 2004 Vratane -> [MA_DATUM] -> 30. April 2004
-  Nadobudnutie Alebo Dovezenie Dopravneho Prostriedku Do 30. Aprila 2004 Vratane -> [MA_PODMIENKU] -> Danove Podmienky Platne Na Domacom Trhu Clenskeho Statu
-  Danove Podmienky Platne Na Domacom Trhu Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Clensky Stat K 30. Aprilu 2004
-  Danove Podmienky Platne Na Domacom Trhu Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Stat Ktory Sa Stane Clenskym Statom 1. Maja 2004
-  Clensky Stat K 30. Aprilu 2004 -> [MA_DATUM] -> 30. April 2004
-  Stat Ktory Sa Stane Clenskym Statom 1. Maja 2004 -> [MA_DATUM] -> 1. Maj 2004
-  Tovar Podla Paragrafu § 85 Odsek 17 -> [MA_PODMIENKU] -> Neoslobodenie Dopravneho Prostriedku Od Dane Pri Vyvoze
-  Tovar Podla Paragrafu § 85 Odsek 18 -> [MA_PODMIENKU] -> Neoslobodenie Dopravneho Prostriedku Od Dane Pri Vyvoze
-  Neoslobodenie Dopravneho Prostriedku Od Dane Pri Vyvoze -> [NEVZTAHUJE_SA_NA] -> Dan
-  Tovar Podla Paragrafu § 85 Odsek 17 -> [MA_PODMIENKU] -> Nevratenie Dane Viazucej Sa Na Dopravny Prostriedok
-  Tovar Podla Paragrafu § 85 Odsek 18 -> [MA_PODMIENKU] -> Nevratenie Dane Viazucej Sa Na Dopravny Prostriedok
-  Nevratenie Dane Viazucej Sa Na Dopravny Prostriedok -> [VZTAHUJE_SA_NA] -> Dan Viazuca Sa Na Dopravny Prostriedok
+
+  Paragraf § 85 Odsek 19 Pismeno c) -> [ODKAZUJE_NA] -> Paragraf § 85 Odsek 17
+  Paragraf § 85 Odsek 19 Pismeno c) -> [ODKAZUJE_NA] -> Paragraf § 85 Odsek 18
+  Paragraf § 85 Odsek 19 Pismeno c) -> [ODKAZUJE_NA] -> Paragraf § 85 Odsek 17 Pismeno a)
+
+  Tovar Podla Paragrafu § 85 Odsekov 17 A 18 -> [NIE_JE_PREDMETOM_DANE] -> Dan
+  Tovar Podla Paragrafu § 85 Odsekov 17 A 18 -> [MA_PODMIENKU] -> Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c)
+
+  Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c) -> [VZTAHUJE_SA_NA] -> Dopravny Prostriedok
+  Dopravny Prostriedok -> [JE_TYPOM] -> Tovar Podla Paragrafu § 85 Odsek 17 Pismeno a)
+
+  Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c) -> [MA_PODMIENKU] -> Podmienka Dopravny Prostriedok Bol Nadobudnuty Alebo Dovezeny Do 30 Aprila 2004 Vratane
+  Podmienka Dopravny Prostriedok Bol Nadobudnuty Alebo Dovezeny Do 30 Aprila 2004 Vratane -> [MA_DATUM] -> 30 April 2004
+  Podmienka Dopravny Prostriedok Bol Nadobudnuty Alebo Dovezeny Do 30 Aprila 2004 Vratane -> [VZTAHUJE_SA_NA] -> Dopravny Prostriedok
+
+  Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c) -> [MA_PODMIENKU] -> Podmienka Sulad S Danovymi Podmienkami Platnymi Na Domacom Trhu Clenskeho Statu
+  Podmienka Sulad S Danovymi Podmienkami Platnymi Na Domacom Trhu Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Danove Podmienky Platne Na Domacom Trhu Statu
+  Podmienka Sulad S Danovymi Podmienkami Platnymi Na Domacom Trhu Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Clensky Stat K 30 Aprilu 2004
+  Podmienka Sulad S Danovymi Podmienkami Platnymi Na Domacom Trhu Clenskeho Statu -> [VZTAHUJE_SA_NA] -> Stat Ktory Sa Stane Clenskym Statom 1 Maja 2004
+
+  Clensky Stat K 30 Aprilu 2004 -> [MA_DATUM] -> 30 April 2004
+  Stat Ktory Sa Stane Clenskym Statom 1 Maja 2004 -> [MA_DATUM] -> 1 Maj 2004
+
+  Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c) -> [MA_PODMIENKU] -> Podmienka Dopravny Prostriedok Nebol Pri Vyvoze Oslobodeny Od Dane
+  Podmienka Dopravny Prostriedok Nebol Pri Vyvoze Oslobodeny Od Dane -> [VZTAHUJE_SA_NA] -> Dopravny Prostriedok
+  Podmienka Dopravny Prostriedok Nebol Pri Vyvoze Oslobodeny Od Dane -> [VZTAHUJE_SA_NA] -> Dan
+
+  Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c) -> [MA_PODMIENKU] -> Podmienka Dan Viazuca Sa Na Dopravny Prostriedok Nebola Vratena
+  Podmienka Dan Viazuca Sa Na Dopravny Prostriedok Nebola Vratena -> [VZTAHUJE_SA_NA] -> Dan Viazuca Sa Na Dopravny Prostriedok
   Dan Viazuca Sa Na Dopravny Prostriedok -> [VZTAHUJE_SA_NA] -> Dopravny Prostriedok
-  Neoslobodenie Dopravneho Prostriedku Od Dane Pri Vyvoze -> [SPLNA_PODMIENKY] -> Pouzitie Dopravneho Prostriedku Prvykrat Pred 1. Majom 1996
-  Nevratenie Dane Viazucej Sa Na Dopravny Prostriedok -> [SPLNA_PODMIENKY] -> Pouzitie Dopravneho Prostriedku Prvykrat Pred 1. Majom 1996
-  Pouzitie Dopravneho Prostriedku Prvykrat Pred 1. Majom 1996 -> [MA_DATUM] -> 1. Maj 1996
-  Neoslobodenie Dopravneho Prostriedku Od Dane Pri Vyvoze -> [SPLNA_PODMIENKY] -> Zanedbatelna Vyska Dane Pri Dovoze Dopravneho Prostriedku
-  Nevratenie Dane Viazucej Sa Na Dopravny Prostriedok -> [SPLNA_PODMIENKY] -> Zanedbatelna Vyska Dane Pri Dovoze Dopravneho Prostriedku
-  Zanedbatelna Vyska Dane Pri Dovoze Dopravneho Prostriedku -> [VZTAHUJE_SA_NA] -> Dan
+
+  Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c) -> [SPLNA_PODMIENKY] -> Podmienka Dopravny Prostriedok Bol Prvykrat Pouzity Pred 1 Majom 1996
+  Podmienka Dopravny Prostriedok Bol Prvykrat Pouzity Pred 1 Majom 1996 -> [MA_DATUM] -> 1 Maj 1996
+  Podmienka Dopravny Prostriedok Bol Prvykrat Pouzity Pred 1 Majom 1996 -> [VZTAHUJE_SA_NA] -> Dopravny Prostriedok
+
+  Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c) -> [SPLNA_PODMIENKY] -> Podmienka Vyska Dane Pri Dovoze Dopravneho Prostriedku Je Zanedbatelna
+  Podmienka Vyska Dane Pri Dovoze Dopravneho Prostriedku Je Zanedbatelna -> [VZTAHUJE_SA_NA] -> Dan Pri Dovoze Dopravneho Prostriedku
+  Dan Pri Dovoze Dopravneho Prostriedku -> [VZTAHUJE_SA_NA] -> Dopravny Prostriedok
 
 nodes:
   Paragraf: Paragraf § 85
@@ -5293,23 +5764,30 @@ nodes:
   Odsek: Paragraf § 85 Odsek 19
   Pismeno: Paragraf § 85 Odsek 17 Pismeno a)
   Pismeno: Paragraf § 85 Odsek 19 Pismeno c)
-  Tovar: Tovar Podla Paragrafu § 85 Odsek 17
-  Tovar: Tovar Podla Paragrafu § 85 Odsek 18
+
+  Tovar: Tovar Podla Paragrafu § 85 Odsekov 17 A 18
   Tovar: Tovar Podla Paragrafu § 85 Odsek 17 Pismeno a)
   Vozidlo: Dopravny Prostriedok
+
   Dan: Dan
   Dan: Dan Viazuca Sa Na Dopravny Prostriedok
-  Podmienka: Danove Podmienky Platne Na Domacom Trhu Clenskeho Statu
-  Podmienka: Nadobudnutie Alebo Dovezenie Dopravneho Prostriedku Do 30. Aprila 2004 Vratane
-  Podmienka: Neoslobodenie Dopravneho Prostriedku Od Dane Pri Vyvoze
-  Podmienka: Nevratenie Dane Viazucej Sa Na Dopravny Prostriedok
-  Podmienka: Pouzitie Dopravneho Prostriedku Prvykrat Pred 1. Majom 1996
-  Podmienka: Zanedbatelna Vyska Dane Pri Dovoze Dopravneho Prostriedku
-  Datum: 30. April 2004
-  Datum: 1. Maj 2004
-  Datum: 1. Maj 1996
-  Stat: Clensky Stat K 30. Aprilu 2004
-  Stat: Stat Ktory Sa Stane Clenskym Statom 1. Maja 2004
+  Dan: Dan Pri Dovoze Dopravneho Prostriedku
+
+  Podmienka: Podmienka Podla Paragrafu § 85 Odsek 19 Pismeno c)
+  Podmienka: Podmienka Dopravny Prostriedok Bol Nadobudnuty Alebo Dovezeny Do 30 Aprila 2004 Vratane
+  Podmienka: Podmienka Sulad S Danovymi Podmienkami Platnymi Na Domacom Trhu Clenskeho Statu
+  Podmienka: Podmienka Dopravny Prostriedok Nebol Pri Vyvoze Oslobodeny Od Dane
+  Podmienka: Podmienka Dan Viazuca Sa Na Dopravny Prostriedok Nebola Vratena
+  Podmienka: Podmienka Dopravny Prostriedok Bol Prvykrat Pouzity Pred 1 Majom 1996
+  Podmienka: Podmienka Vyska Dane Pri Dovoze Dopravneho Prostriedku Je Zanedbatelna
+  Podmienka: Danove Podmienky Platne Na Domacom Trhu Statu
+
+  Datum: 30 April 2004
+  Datum: 1 Maj 2004
+  Datum: 1 Maj 1996
+  Stat: Clensky Stat K 30 Aprilu 2004
+  Stat: Stat Ktory Sa Stane Clenskym Statom 1 Maja 2004
+
 
 ---
 
@@ -5320,43 +5798,61 @@ text: (8) Vo faktúre, ktorá bola vyhotovená po 1. januári 2009 a vzťahuje 
 
 relations:
   Paragraf § 85e -> [OBSAHUJE] -> Paragraf § 85e Odsek 8
-  Paragraf § 85e Odsek 8 -> [UPRAVUJE] -> Uvedenie Udajov O Zaklade Dane A Vyske Dane V Eurach A Slovenskych Korunach
-  Faktura -> [MA_PODMIENKU] -> Vyhotovenie Faktury Po 1. Januari 2009
-  Vyhotovenie Faktury Po 1. Januari 2009 -> [MA_DATUM] -> Datum 1. Januar 2009
+
+  Paragraf § 85e Odsek 8 -> [UPRAVUJE] -> Povinnost Uviest Udaje O Zaklade Dane A Vyske Dane V Eurach Aj V Slovenskych Korunach
+
+  Povinnost Uviest Udaje O Zaklade Dane A Vyske Dane V Eurach Aj V Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Faktura
+  Povinnost Uviest Udaje O Zaklade Dane A Vyske Dane V Eurach Aj V Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Udaje O Zaklade Dane
+  Povinnost Uviest Udaje O Zaklade Dane A Vyske Dane V Eurach Aj V Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Udaje O Vyske Dane
+  Povinnost Uviest Udaje O Zaklade Dane A Vyske Dane V Eurach Aj V Slovenskych Korunach -> [MA_PODMIENKU] -> Podmienka Faktura Vyhotovena Po 1 Januari 2009 Sa Vztahuje K Zdanitelnemu Obchodu S Danovou Povinnostou Vzniknutou Pred 1 Januarom 2009 A Platbou Dohodnutou V Slovenskych Korunach
+
+  Podmienka Faktura Vyhotovena Po 1 Januari 2009 Sa Vztahuje K Zdanitelnemu Obchodu S Danovou Povinnostou Vzniknutou Pred 1 Januarom 2009 A Platbou Dohodnutou V Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Faktura
+  Podmienka Faktura Vyhotovena Po 1 Januari 2009 Sa Vztahuje K Zdanitelnemu Obchodu S Danovou Povinnostou Vzniknutou Pred 1 Januarom 2009 A Platbou Dohodnutou V Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Zdanitelny Obchod
+  Podmienka Faktura Vyhotovena Po 1 Januari 2009 Sa Vztahuje K Zdanitelnemu Obchodu S Danovou Povinnostou Vzniknutou Pred 1 Januarom 2009 A Platbou Dohodnutou V Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Platba
+
+  Faktura -> [MA_PODMIENKU] -> Vyhotovenie Faktury Po 1 Januari 2009
+  Vyhotovenie Faktury Po 1 Januari 2009 -> [MA_DATUM] -> 1 Januar 2009
   Faktura -> [VZTAHUJE_SA_NA] -> Zdanitelny Obchod
-  Zdanitelny Obchod -> [MA_POVINNOST] -> Danova Povinnost
-  Danova Povinnost -> [VZNIKA] -> Vznik Danovej Povinnosti Pred 1. Januari 2009
-  Vznik Danovej Povinnosti Pred 1. Januari 2009 -> [MA_DATUM] -> Datum 1. Januar 2009
+
+  Danova Povinnost -> [VZTAHUJE_SA_NA] -> Zdanitelny Obchod
+  Danova Povinnost -> [MA_PODMIENKU] -> Vznik Danovej Povinnosti Pred 1 Januarom 2009
+  Vznik Danovej Povinnosti Pred 1 Januarom 2009 -> [MA_DATUM] -> 1 Januar 2009
+
   Platba -> [MA_PODMIENKU] -> Dohodnutie Platby V Slovenskych Korunach
-  Dohodnutie Platby V Slovenskych Korunach -> [MA_HODNOTU] -> Slovenska Koruna
-  Uvedenie Udajov O Zaklade Dane A Vyske Dane V Eurach A Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Faktura
-  Uvedenie Udajov O Zaklade Dane A Vyske Dane V Eurach A Slovenskych Korunach -> [MA] -> Udaje O Zaklade Dane
+  Dohodnutie Platby V Slovenskych Korunach -> [VZTAHUJE_SA_NA] -> Slovenska Koruna
+
   Udaje O Zaklade Dane -> [VZTAHUJE_SA_NA] -> Zaklad Dane
-  Uvedenie Udajov O Zaklade Dane A Vyske Dane V Eurach A Slovenskych Korunach -> [MA] -> Udaje O Vyske Dane
   Udaje O Vyske Dane -> [VZTAHUJE_SA_NA] -> Vyska Dane
-  Udaje O Zaklade Dane -> [MA_HODNOTU] -> Euro
-  Udaje O Zaklade Dane -> [MA_HODNOTU] -> Slovenska Koruna
-  Udaje O Vyske Dane -> [MA_HODNOTU] -> Euro
-  Udaje O Vyske Dane -> [MA_HODNOTU] -> Slovenska Koruna
+  Udaje O Zaklade Dane -> [MA] -> Euro
+  Udaje O Zaklade Dane -> [MA] -> Slovenska Koruna
+  Udaje O Vyske Dane -> [MA] -> Euro
+  Udaje O Vyske Dane -> [MA] -> Slovenska Koruna
 
 nodes:
   Paragraf: Paragraf § 85e
   Odsek: Paragraf § 85e Odsek 8
+
   Dokument: Faktura
-  Podmienka: Vyhotovenie Faktury Po 1. Januari 2009
-  Datum: Datum 1. Januar 2009
   Konanie: Zdanitelny Obchod
-  Povinnost: Danova Povinnost
-  Podmienka: Vznik Danovej Povinnosti Pred 1. Januari 2009
   Platba: Platba
+  Dan: Danova Povinnost
+
+  Povinnost: Povinnost Uviest Udaje O Zaklade Dane A Vyske Dane V Eurach Aj V Slovenskych Korunach
+
+  Podmienka: Podmienka Faktura Vyhotovena Po 1 Januari 2009 Sa Vztahuje K Zdanitelnemu Obchodu S Danovou Povinnostou Vzniknutou Pred 1 Januarom 2009 A Platbou Dohodnutou V Slovenskych Korunach
+  Podmienka: Vyhotovenie Faktury Po 1 Januari 2009
+  Podmienka: Vznik Danovej Povinnosti Pred 1 Januarom 2009
   Podmienka: Dohodnutie Platby V Slovenskych Korunach
-  Mena: Slovenska Koruna
+
+  Datum: 1 Januar 2009
   Mena: Euro
+  Mena: Slovenska Koruna
+
   Zaznam: Udaje O Zaklade Dane
-  Dan: Zaklad Dane
   Zaznam: Udaje O Vyske Dane
+  Suma: Zaklad Dane
   Suma: Vyska Dane
-  Povinnost: Uvedenie Udajov O Zaklade Dane A Vyske Dane V Eurach A Slovenskych Korunach
+
 
 ---
 
@@ -5366,41 +5862,61 @@ path_as_text: Paragraf § 85kb Odsek 2
 text: (2) Poverená osoba podľa § 4 ods. 3 v znení účinnom do 31. decembra 2013 uvedie vo svojom daňovom priznaní, dodatočnom daňovom priznaní, súhrnom výkaze a dodatočnom súhrnnom výkaze údaje týkajúce sa spoločného podnikania združenia za obdobia do konca kalendárneho roka 2013. Za daň vzťahujúcu sa na spoločné podnikanie do konca kalendárneho roka 2013 zodpovedajú všetci účastníci združenia spoločne a nerozdielne.
 
 relations:
-  Paragraf § 85Kb -> [OBSAHUJE] -> Paragraf § 85Kb Odsek 2
+  Paragraf § 85kb -> [OBSAHUJE] -> Paragraf § 85kb Odsek 2
   Paragraf § 4 -> [OBSAHUJE] -> Paragraf § 4 Odsek 3
-  Poverena Osoba -> [ODKAZUJE_NA] -> Paragraf § 4 Odsek 3
-  Poverena Osoba -> [PODAVA] -> Danove Priznanie
-  Poverena Osoba -> [PODAVA] -> Dodatocne Danove Priznanie
-  Poverena Osoba -> [PREDKLADA] -> Suhrnny Vykaz
-  Poverena Osoba -> [PREDKLADA] -> Dodatocny Suhrnny Vykaz
+
+  Paragraf § 85kb Odsek 2 -> [ODKAZUJE_NA] -> Paragraf § 4 Odsek 3
+  Paragraf § 4 Odsek 3 -> [MA_OBDOBIE] -> Znenie Ucinne Do 31 Decembra 2013
+  Znenie Ucinne Do 31 Decembra 2013 -> [MA_DATUM] -> 31 December 2013
+
+  Poverena Osoba -> [JE_PODLA] -> Paragraf § 4 Odsek 3
+  Poverena Osoba -> [MA_POVINNOST] -> Povinnost Uviest Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
+
+  Povinnost Uviest Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia -> [VZTAHUJE_SA_NA] -> Danove Priznanie
+  Povinnost Uviest Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia -> [VZTAHUJE_SA_NA] -> Dodatocne Danove Priznanie
+  Povinnost Uviest Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia -> [VZTAHUJE_SA_NA] -> Suhrnny Vykaz
+  Povinnost Uviest Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia -> [VZTAHUJE_SA_NA] -> Dodatocny Suhrnny Vykaz
+  Povinnost Uviest Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia -> [VZTAHUJE_SA_NA] -> Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
+
   Danove Priznanie -> [OBSAHUJE] -> Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
   Dodatocne Danove Priznanie -> [OBSAHUJE] -> Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
   Suhrnny Vykaz -> [OBSAHUJE] -> Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
   Dodatocny Suhrnny Vykaz -> [OBSAHUJE] -> Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
+
   Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia -> [VZTAHUJE_SA_NA] -> Spolocne Podnikanie Zdruzenia
   Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia -> [MA_OBDOBIE] -> Obdobia Do Konca Kalendarneho Roka 2013
+  Obdobia Do Konca Kalendarneho Roka 2013 -> [MA_DATUM] -> 31 December 2013
+
   Dan Vztahujuca Sa Na Spolocne Podnikanie Do Konca Kalendarneho Roka 2013 -> [VZTAHUJE_SA_NA] -> Spolocne Podnikanie Zdruzenia
   Dan Vztahujuca Sa Na Spolocne Podnikanie Do Konca Kalendarneho Roka 2013 -> [MA_OBDOBIE] -> Obdobia Do Konca Kalendarneho Roka 2013
-  Ucastnici Zdruzenia -> [ZODPOVEDA_ZA] -> Dan Vztahujuca Sa Na Spolocne Podnikanie Do Konca Kalendarneho Roka 2013
-  Ucastnici Zdruzenia -> [MA_POVINNOST] -> Spolocna A Nerozdielna Zodpovednost
+
+  Vsetci Ucastnici Zdruzenia -> [ZODPOVEDA_ZA] -> Dan Vztahujuca Sa Na Spolocne Podnikanie Do Konca Kalendarneho Roka 2013
+  Spolocna A Nerozdielna Zodpovednost -> [VZTAHUJE_SA_NA] -> Vsetci Ucastnici Zdruzenia
+  Spolocna A Nerozdielna Zodpovednost -> [VZTAHUJE_SA_NA] -> Dan Vztahujuca Sa Na Spolocne Podnikanie Do Konca Kalendarneho Roka 2013
 
 nodes:
-  Paragraf: Paragraf § 85Kb
-  Odsek: Paragraf § 85Kb Odsek 2
+  Paragraf: Paragraf § 85kb
+  Odsek: Paragraf § 85kb Odsek 2
   Paragraf: Paragraf § 4
   Odsek: Paragraf § 4 Odsek 3
+
   Osoba: Poverena Osoba
   DanovePriznanie: Danove Priznanie
   DanovePriznanie: Dodatocne Danove Priznanie
   Dokument: Suhrnny Vykaz
   Dokument: Dodatocny Suhrnny Vykaz
+
+  Povinnost: Povinnost Uviest Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
   Zaznam: Udaje TykaJuce Sa Spolocneho Podnikania Zdruzenia
   Konanie: Spolocne Podnikanie Zdruzenia
   Obdobie: Obdobia Do Konca Kalendarneho Roka 2013
+  Obdobie: Znenie Ucinne Do 31 Decembra 2013
+  Datum: 31 December 2013
+
   Dan: Dan Vztahujuca Sa Na Spolocne Podnikanie Do Konca Kalendarneho Roka 2013
-  Subjekt: Ucastnici Zdruzenia
+  Subjekt: Vsetci Ucastnici Zdruzenia
   Povinnost: Spolocna A Nerozdielna Zodpovednost
-  Datum: Datum 31. Decembra 2013
+
 
 ---
 
@@ -5412,48 +5928,88 @@ text: (2) Ak chce zdaniteľná osoba okrem zdaniteľnej osoby, ktorá uplatňuje
 relations:
   Paragraf § 85kj -> [OBSAHUJE] -> Paragraf § 85kj Odsek 2
   Paragraf § 85kj Odsek 2 -> [ODKAZUJE_NA] -> Paragraf § 68b
-  Zdanitelna Osoba -> [VZTAHUJE_SA_NA] -> Uplatnovanie Osobitnej Upravy Podla Paragrafu § 68b Od 1. Jula 2021
-  Zdanitelna Osoba Uplatnujuca Osobitnu Upravu Podla Paragrafu § 68b Do 30. Juna 2021 -> [NEVZTAHUJE_SA_NA] -> Uplatnovanie Osobitnej Upravy Podla Paragrafu § 68b Od 1. Jula 2021
-  Uplatnovanie Osobitnej Upravy Podla Paragrafu § 68b Od 1. Jula 2021 -> [ODKAZUJE_NA] -> Paragraf § 68b
-  Uplatnovanie Osobitnej Upravy Podla Paragrafu § 68b Od 1. Jula 2021 -> [MA_DATUM] -> Datum 1. Jula 2021
-  Zdanitelna Osoba Uplatnujuca Osobitnu Upravu Podla Paragrafu § 68b Do 30. Juna 2021 -> [MA_DATUM] -> Datum 30. Juna 2021
+
+  Osobitna Uprava Podla Paragrafu § 68b V Zneni Ucinnom Do 30 Juna 2021 -> [JE_PODLA] -> Paragraf § 68b
+  Osobitna Uprava Podla Paragrafu § 68b V Zneni Ucinnom Do 30 Juna 2021 -> [MA_OBDOBIE] -> Znenie Ucinne Do 30 Juna 2021
+  Znenie Ucinne Do 30 Juna 2021 -> [MA_DATUM] -> 30 Jun 2021
+
+  Osobitna Uprava Podla Paragrafu § 68b V Zneni Ucinnom Od 1 Jula 2021 -> [JE_PODLA] -> Paragraf § 68b
+  Osobitna Uprava Podla Paragrafu § 68b V Zneni Ucinnom Od 1 Jula 2021 -> [MA_OBDOBIE] -> Znenie Ucinne Od 1 Jula 2021
+  Znenie Ucinne Od 1 Jula 2021 -> [MA_DATUM] -> 1 Jul 2021
+
+  Zdanitelna Osoba -> [MA_POVINNOST] -> Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu
+  Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu -> [VZTAHUJE_SA_NA] -> Oznamenie O Zacati Cinnosti
+  Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu -> [VZTAHUJE_SA_NA] -> Zacatie Cinnosti
+  Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu -> [VZTAHUJE_SA_NA] -> Danovy Urad
+  Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu -> [MA_PODMIENKU] -> Podmienka Zdanitelna Osoba Chce Uplatnovat Osobitnu Upravu Podla Paragrafu § 68b Od 1 Jula 2021
+  Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu -> [MA_LEHOTU] -> Lehota Najskor 1 Aprila 2021 A Najneskor 10 Juna 2021
+
+  Podmienka Zdanitelna Osoba Chce Uplatnovat Osobitnu Upravu Podla Paragrafu § 68b Od 1 Jula 2021 -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
+  Podmienka Zdanitelna Osoba Chce Uplatnovat Osobitnu Upravu Podla Paragrafu § 68b Od 1 Jula 2021 -> [VZTAHUJE_SA_NA] -> Osobitna Uprava Podla Paragrafu § 68b V Zneni Ucinnom Od 1 Jula 2021
+
+  Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu -> [NEVZTAHUJE_SA_NA] -> Zdanitelna Osoba Uplatnujuca Osobitnu Upravu Podla Paragrafu § 68b V Zneni Ucinnom Do 30 Juna 2021
+
   Zdanitelna Osoba -> [OZNAMUJE] -> Oznamenie O Zacati Cinnosti
-  Oznamenie O Zacati Cinnosti -> [VZTAHUJE_SA_NA] -> Zacatie Cinnosti
-  Zdanitelna Osoba -> [DORUCUJE] -> Danovy Urad
-  Oznamenie O Zacati Cinnosti -> [DORUCUJE] -> Danovy Urad
-  Oznamenie O Zacati Cinnosti -> [MA] -> Elektronicke Prostriedky
-  Oznamenie O Zacati Cinnosti -> [MA_LEHOTU] -> Lehota Na Oznamenie Zacatia Cinnosti
-  Lehota Na Oznamenie Zacatia Cinnosti -> [MA_DATUM] -> Datum 1. Aprila 2021
-  Lehota Na Oznamenie Zacatia Cinnosti -> [MA_DATUM] -> Datum 10. Juna 2021
-  Zdanitelna Osoba -> [MA_IDENTIFIKATOR] -> Identifikacne Cislo Pre Dan
+  Zdanitelna Osoba -> [OZNAMUJE] -> Danovy Urad
+  Oznamenie O Zacati Cinnosti -> [VZTAHUJE_SA_NA] -> Elektronicke Prostriedky
+
+  Lehota Najskor 1 Aprila 2021 A Najneskor 10 Juna 2021 -> [MA_DATUM] -> 1 April 2021
+  Lehota Najskor 1 Aprila 2021 A Najneskor 10 Juna 2021 -> [MA_DATUM] -> 10 Jun 2021
+
+  Povinnost Uviest Udaje V Oznameni O Zacati Cinnosti -> [MA_PODMIENKU] -> Podmienka Zdanitelna Osoba Nema V Tuzemsku Pridelene Identifikacne Cislo Pre Dan
+  Podmienka Zdanitelna Osoba Nema V Tuzemsku Pridelene Identifikacne Cislo Pre Dan -> [VZTAHUJE_SA_NA] -> Zdanitelna Osoba
+  Podmienka Zdanitelna Osoba Nema V Tuzemsku Pridelene Identifikacne Cislo Pre Dan -> [VZTAHUJE_SA_NA] -> Identifikacne Cislo Pre Dan V Tuzemsku
+
+  Zdanitelna Osoba -> [MA_POVINNOST] -> Povinnost Uviest Udaje V Oznameni O Zacati Cinnosti
+  Povinnost Uviest Udaje V Oznameni O Zacati Cinnosti -> [VZTAHUJE_SA_NA] -> Oznamenie O Zacati Cinnosti
   Oznamenie O Zacati Cinnosti -> [OBSAHUJE] -> Obchodne Meno
   Oznamenie O Zacati Cinnosti -> [OBSAHUJE] -> Adresa
   Oznamenie O Zacati Cinnosti -> [OBSAHUJE] -> Elektronicka Adresa
   Oznamenie O Zacati Cinnosti -> [OBSAHUJE] -> Webove Sidla
-  Oznamenie O Zacati Cinnosti -> [ODKAZUJE_NA] -> Osobitny Predpis 28aa
+  Oznamenie O Zacati Cinnosti -> [OBSAHUJE] -> Dalsie Udaje Uvedene V Osobitnom Predpise 28aa)
+
+  Elektronicka Adresa -> [OBSAHUJE] -> Webove Sidla
+  Dalsie Udaje Uvedene V Osobitnom Predpise 28aa) -> [JE_PODLA] -> Osobitny Predpis 28aa)
 
 nodes:
   Paragraf: Paragraf § 85kj
   Odsek: Paragraf § 85kj Odsek 2
   Paragraf: Paragraf § 68b
+
   Osoba: Zdanitelna Osoba
-  Osoba: Zdanitelna Osoba Uplatnujuca Osobitnu Upravu Podla Paragrafu § 68b Do 30. Juna 2021
-  Konanie: Uplatnovanie Osobitnej Upravy Podla Paragrafu § 68b Od 1. Jula 2021
-  Oznamenie: Oznamenie O Zacati Cinnosti
-  Konanie: Zacatie Cinnosti
+  Osoba: Zdanitelna Osoba Uplatnujuca Osobitnu Upravu Podla Paragrafu § 68b V Zneni Ucinnom Do 30 Juna 2021
   Organizacia: Danovy Urad
+
+  Konanie: Osobitna Uprava Podla Paragrafu § 68b V Zneni Ucinnom Do 30 Juna 2021
+  Konanie: Osobitna Uprava Podla Paragrafu § 68b V Zneni Ucinnom Od 1 Jula 2021
+  Konanie: Zacatie Cinnosti
+
+  Povinnost: Povinnost Elektronicky Oznamit Zacatie Cinnosti Danovemu Uradu
+  Povinnost: Povinnost Uviest Udaje V Oznameni O Zacati Cinnosti
+
+  Oznamenie: Oznamenie O Zacati Cinnosti
   Dokument: Elektronicke Prostriedky
-  Lehota: Lehota Na Oznamenie Zacatia Cinnosti
-  Datum: Datum 1. Aprila 2021
-  Datum: Datum 10. Juna 2021
-  Datum: Datum 1. Jula 2021
-  Datum: Datum 30. Juna 2021
-  Zaznam: Identifikacne Cislo Pre Dan
+
+  Lehota: Lehota Najskor 1 Aprila 2021 A Najneskor 10 Juna 2021
+  Datum: 1 April 2021
+  Datum: 10 Jun 2021
+  Datum: 1 Jul 2021
+  Datum: 30 Jun 2021
+
+  Obdobie: Znenie Ucinne Do 30 Juna 2021
+  Obdobie: Znenie Ucinne Od 1 Jula 2021
+
+  Podmienka: Podmienka Zdanitelna Osoba Chce Uplatnovat Osobitnu Upravu Podla Paragrafu § 68b Od 1 Jula 2021
+  Podmienka: Podmienka Zdanitelna Osoba Nema V Tuzemsku Pridelene Identifikacne Cislo Pre Dan
+
+  Zaznam: Identifikacne Cislo Pre Dan V Tuzemsku
   Zaznam: Obchodne Meno
   Adresa: Adresa
   Adresa: Elektronicka Adresa
-  Adresa: Webove Sidla
-  PravnyPredpis: Osobitny Predpis 28aa
+  Dokument: Webove Sidla
+  Zaznam: Dalsie Udaje Uvedene V Osobitnom Predpise 28aa)
+  PravnyPredpis: Osobitny Predpis 28aa)
+
 
 ---
 
@@ -5464,31 +6020,55 @@ text: (5) Ak platiteľ dostane opravný doklad podľa § 25a ods. 7 písm. a) 
 
 relations:
   Paragraf § 85km -> [OBSAHUJE] -> Paragraf § 85km Odsek 5
+
   Paragraf § 25a -> [OBSAHUJE] -> Paragraf § 25a Odsek 7
   Paragraf § 25a Odsek 7 -> [OBSAHUJE] -> Paragraf § 25a Odsek 7 Pismeno a)
   Paragraf § 25a -> [OBSAHUJE] -> Paragraf § 25a Odsek 3
   Paragraf § 25a -> [OBSAHUJE] -> Paragraf § 25a Odsek 2
   Paragraf § 25a Odsek 2 -> [OBSAHUJE] -> Paragraf § 25a Odsek 2 Pismeno a)
   Paragraf § 25a Odsek 2 -> [OBSAHUJE] -> Paragraf § 25a Odsek 2 Pismeno f)
-  Opravny Doklad -> [VYPLYVA_Z] -> Paragraf § 25a Odsek 7 Pismeno a)
-  Platitel -> [PRIJIMA] -> Opravny Doklad
-  Dodavatel -> [MA] -> Oprava Zakladu Dane
-  Oprava Zakladu Dane -> [VYPLYVA_Z] -> Paragraf § 25a Odsek 3
-  Pohladavka -> [MA_STATUS] -> Nevymozitelna
-  Pohladavka -> [VYPLYVA_Z] -> Paragraf § 25a Odsek 2 Pismeno a)
-  Pohladavka -> [VYPLYVA_Z] -> Paragraf § 25a Odsek 2 Pismeno f)
+
+  Paragraf § 85km Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 7 Pismeno a)
+  Paragraf § 85km Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 3
+  Paragraf § 85km Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 2 Pismeno a)
+  Paragraf § 85km Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 2 Pismeno f)
+  Paragraf § 85km Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 53b
+  Paragraf § 85km Odsek 5 -> [ODKAZUJE_NA] -> Paragraf § 78a
+
+  Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno a) -> [JE_PODLA] -> Paragraf § 25a Odsek 7 Pismeno a)
+  Platitel -> [PRIJIMA] -> Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno a)
+
   Platitel -> [MA_POVINNOST] -> Povinnost Opravit Odpocitanu Dan
   Povinnost Opravit Odpocitanu Dan -> [VZTAHUJE_SA_NA] -> Oprava Odpocitanej Dane
   Oprava Odpocitanej Dane -> [VZTAHUJE_SA_NA] -> Odpocitana Dan
-  Povinnost Opravit Odpocitanu Dan -> [MA_OBDOBIE] -> Zdanovacie Obdobie Dostania Dokladu
-  Zdanovacie Obdobie Dostania Dokladu -> [VZTAHUJE_SA_NA] -> Opravny Doklad
-  Oprava Odpocitanej Dane -> [VYPLYVA_Z] -> Paragraf § 53b
-  Paragraf § 53b -> [MA_OBDOBIE] -> Znenie Ucinne Do 31. Decembra 2022
-  Znenie Ucinne Do 31. Decembra 2022 -> [MA_DATUM] -> Datum 31. December 2022
-  Povinnost Vykazat Opravu Odpocitanej Dane -> [VZTAHUJE_SA_NA] -> Oprava Odpocitanej Dane
-  Povinnost Vykazat Opravu Odpocitanej Dane -> [VZTAHUJE_SA_NA] -> Kontrolny Vykaz
-  Povinnost Vykazat Opravu Odpocitanej Dane -> [VYPLYVA_Z] -> Paragraf § 78a
-  Paragraf § 78a -> [MA_OBDOBIE] -> Znenie Ucinne Do 31. Decembra 2022
+  Povinnost Opravit Odpocitanu Dan -> [MA_OBDOBIE] -> Zdanovacie Obdobie V Ktorom Platitel Dostane Opravny Doklad
+  Zdanovacie Obdobie V Ktorom Platitel Dostane Opravny Doklad -> [VZTAHUJE_SA_NA] -> Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno a)
+
+  Povinnost Opravit Odpocitanu Dan -> [MA_PODMIENKU] -> Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Nevymozitelnu Pohladavku
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Nevymozitelnu Pohladavku -> [MA_DATUM] -> 31 December 2022
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Nevymozitelnu Pohladavku -> [VZTAHUJE_SA_NA] -> Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno a)
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Nevymozitelnu Pohladavku -> [VZTAHUJE_SA_NA] -> Oprava Zakladu Dane
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Nevymozitelnu Pohladavku -> [VZTAHUJE_SA_NA] -> Nevymozitelna Pohladavka
+
+  Dodavatel -> [VZTAHUJE_SA_NA] -> Oprava Zakladu Dane
+  Oprava Zakladu Dane -> [VZTAHUJE_SA_NA] -> Zaklad Dane
+  Oprava Zakladu Dane -> [JE_PODLA] -> Paragraf § 25a Odsek 3
+
+  Pohladavka -> [MA_STATUS] -> Nevymozitelna
+  Nevymozitelna Pohladavka -> [VZTAHUJE_SA_NA] -> Pohladavka
+  Nevymozitelna Pohladavka -> [JE_PODLA] -> Paragraf § 25a Odsek 2 Pismeno a)
+  Nevymozitelna Pohladavka -> [JE_PODLA] -> Paragraf § 25a Odsek 2 Pismeno f)
+  Nevymozitelna Pohladavka -> [MA_OBDOBIE] -> Znenie Ucinne Do 31 Decembra 2022
+
+  Oprava Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 53b
+  Paragraf § 53b -> [MA_OBDOBIE] -> Znenie Ucinne Do 31 Decembra 2022
+
+  Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze -> [VZTAHUJE_SA_NA] -> Oprava Odpocitanej Dane
+  Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze -> [VZTAHUJE_SA_NA] -> Kontrolny Vykaz
+  Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze -> [JE_PODLA] -> Paragraf § 78a
+  Paragraf § 78a -> [MA_OBDOBIE] -> Znenie Ucinne Do 31 Decembra 2022
+
+  Znenie Ucinne Do 31 Decembra 2022 -> [MA_DATUM] -> 31 December 2022
 
 nodes:
   Paragraf: Paragraf § 85km
@@ -5502,20 +6082,30 @@ nodes:
   Pismeno: Paragraf § 25a Odsek 2 Pismeno f)
   Paragraf: Paragraf § 53b
   Paragraf: Paragraf § 78a
+
   Subjekt: Platitel
   Subjekt: Dodavatel
-  Dokument: Opravny Doklad
+  Dokument: Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno a)
+
   Konanie: Oprava Zakladu Dane
   Konanie: Oprava Odpocitanej Dane
-  Povinnost: Povinnost Opravit Odpocitanu Dan
-  Povinnost: Povinnost Vykazat Opravu Odpocitanej Dane
+  Suma: Zaklad Dane
   Dan: Odpocitana Dan
-  ZdanovacieObdobie: Zdanovacie Obdobie Dostania Dokladu
+
+  Povinnost: Povinnost Opravit Odpocitanu Dan
+  Povinnost: Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze
+
+  ZdanovacieObdobie: Zdanovacie Obdobie V Ktorom Platitel Dostane Opravny Doklad
   Dokument: Kontrolny Vykaz
+
   Pohladavka: Pohladavka
+  Pohladavka: Nevymozitelna Pohladavka
   Status: Nevymozitelna
-  Datum: Datum 31. December 2022
-  Obdobie: Znenie Ucinne Do 31. Decembra 2022
+
+  Podmienka: Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Nevymozitelnu Pohladavku
+  Obdobie: Znenie Ucinne Do 31 Decembra 2022
+  Datum: 31 December 2022
+
 
 ---
 
@@ -5526,50 +6116,84 @@ text: (7) Platiteľ má právo opraviť opravenú odpočítanú daň, ak po 31. 
 
 relations:
   Paragraf § 85km -> [OBSAHUJE] -> Paragraf § 85km Odsek 7
-  Paragraf § 85km Odsek 7 -> [UPRAVUJE] -> Platitel
-  Platitel -> [MA_PRAVO] -> Pravo Opravit Opravenu Odpocitanu Dan
-  Pravo Opravit Opravenu Odpocitanu Dan -> [VZTAHUJE_SA_NA] -> Opravena Odpocitana Dan
-  Pravo Opravit Opravenu Odpocitanu Dan -> [MA_PODMIENKU] -> Opravny Doklad
-  Opravny Doklad -> [MA_DATUM] -> Datum 31. Decembra 2022
+
   Paragraf § 25a -> [OBSAHUJE] -> Paragraf § 25a Odsek 7
   Paragraf § 25a Odsek 7 -> [OBSAHUJE] -> Paragraf § 25a Odsek 7 Pismeno b)
-  Dodavatel -> [MENI] -> Oprava Zakladu Dane
-  Oprava Zakladu Dane -> [VZTAHUJE_SA_NA] -> Zaklad Dane
   Paragraf § 25a -> [OBSAHUJE] -> Paragraf § 25a Odsek 6
-  Dodavatel -> [PRIJIMA] -> Platba
-  Platba -> [SUVISI_S] -> Nevymozitelna Pohladavka
   Paragraf § 25a -> [OBSAHUJE] -> Paragraf § 25a Odsek 2
   Paragraf § 25a Odsek 2 -> [OBSAHUJE] -> Paragraf § 25a Odsek 2 Pismeno a)
   Paragraf § 25a Odsek 2 -> [OBSAHUJE] -> Paragraf § 25a Odsek 2 Pismeno f)
+
+  Paragraf § 85km Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 7 Pismeno b)
+  Paragraf § 85km Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 6
+  Paragraf § 85km Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 2 Pismeno a)
+  Paragraf § 85km Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 25a Odsek 2 Pismeno f)
+  Paragraf § 85km Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 53b
+  Paragraf § 85km Odsek 7 -> [ODKAZUJE_NA] -> Paragraf § 78a
+
+  Platitel -> [MA_PRAVO] -> Pravo Opravit Opravenu Odpocitanu Dan
+  Pravo Opravit Opravenu Odpocitanu Dan -> [VZTAHUJE_SA_NA] -> Oprava Opravenej Odpocitanej Dane
   Oprava Opravenej Odpocitanej Dane -> [VZTAHUJE_SA_NA] -> Opravena Odpocitana Dan
+
+  Pravo Opravit Opravenu Odpocitanu Dan -> [MA_PODMIENKU] -> Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Platbu Suvisiacu S Nevymozitelnou Pohladavkou
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Platbu Suvisiacu S Nevymozitelnou Pohladavkou -> [MA_DATUM] -> 31 December 2022
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Platbu Suvisiacu S Nevymozitelnou Pohladavkou -> [VZTAHUJE_SA_NA] -> Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno b)
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Platbu Suvisiacu S Nevymozitelnou Pohladavkou -> [VZTAHUJE_SA_NA] -> Oprava Zakladu Dane
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Platbu Suvisiacu S Nevymozitelnou Pohladavkou -> [VZTAHUJE_SA_NA] -> Platba
+  Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Platbu Suvisiacu S Nevymozitelnou Pohladavkou -> [VZTAHUJE_SA_NA] -> Nevymozitelna Pohladavka
+
+  Platitel -> [PRIJIMA] -> Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno b)
+  Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno b) -> [JE_PODLA] -> Paragraf § 25a Odsek 7 Pismeno b)
+
+  Dodavatel -> [VZTAHUJE_SA_NA] -> Oprava Zakladu Dane
+  Oprava Zakladu Dane -> [VZTAHUJE_SA_NA] -> Zaklad Dane
+  Oprava Zakladu Dane -> [JE_PODLA] -> Paragraf § 25a Odsek 6
+
+  Dodavatel -> [PRIJIMA] -> Platba
+  Platba -> [SUVISI_S] -> Nevymozitelna Pohladavka
+  Nevymozitelna Pohladavka -> [JE_PODLA] -> Paragraf § 25a Odsek 2 Pismeno a)
+  Nevymozitelna Pohladavka -> [JE_PODLA] -> Paragraf § 25a Odsek 2 Pismeno f)
+  Nevymozitelna Pohladavka -> [MA_OBDOBIE] -> Znenie Ucinne Do 31 Decembra 2022
+
+  Oprava Opravenej Odpocitanej Dane -> [JE_PODLA] -> Paragraf § 53b
+  Paragraf § 53b -> [MA_OBDOBIE] -> Znenie Ucinne Do 31 Decembra 2022
+
   Povinnost Vykazat Opravu Opravenej Odpocitanej Dane V Kontrolnom Vykaze -> [VZTAHUJE_SA_NA] -> Oprava Opravenej Odpocitanej Dane
   Povinnost Vykazat Opravu Opravenej Odpocitanej Dane V Kontrolnom Vykaze -> [VZTAHUJE_SA_NA] -> Kontrolny Vykaz
+  Povinnost Vykazat Opravu Opravenej Odpocitanej Dane V Kontrolnom Vykaze -> [JE_PODLA] -> Paragraf § 78a
+  Paragraf § 78a -> [MA_OBDOBIE] -> Znenie Ucinne Do 31 Decembra 2022
+
+  Znenie Ucinne Do 31 Decembra 2022 -> [MA_DATUM] -> 31 December 2022
 
 nodes:
   Paragraf: Paragraf § 85km
   Odsek: Paragraf § 85km Odsek 7
-  Subjekt: Platitel
-  Pravo: Pravo Opravit Opravenu Odpocitanu Dan
-  Dan: Opravena Odpocitana Dan
-  Dokument: Opravny Doklad
-  Datum: Datum 31. Decembra 2022
   Paragraf: Paragraf § 25a
   Odsek: Paragraf § 25a Odsek 7
   Pismeno: Paragraf § 25a Odsek 7 Pismeno b)
-  Subjekt: Dodavatel
-  Konanie: Oprava Zakladu Dane
-  Dan: Zaklad Dane
   Odsek: Paragraf § 25a Odsek 6
-  Platba: Platba
-  Pohladavka: Nevymozitelna Pohladavka
   Odsek: Paragraf § 25a Odsek 2
   Pismeno: Paragraf § 25a Odsek 2 Pismeno a)
   Pismeno: Paragraf § 25a Odsek 2 Pismeno f)
-  Konanie: Oprava Opravenej Odpocitanej Dane
   Paragraf: Paragraf § 53b
+  Paragraf: Paragraf § 78a
+
+  Subjekt: Platitel
+  Subjekt: Dodavatel
+  Pravo: Pravo Opravit Opravenu Odpocitanu Dan
+  Dan: Opravena Odpocitana Dan
+  Konanie: Oprava Opravenej Odpocitanej Dane
+  Konanie: Oprava Zakladu Dane
+  Suma: Zaklad Dane
+  Dokument: Opravny Doklad Podla Paragrafu § 25a Odsek 7 Pismeno b)
+  Platba: Platba
+  Pohladavka: Nevymozitelna Pohladavka
   Povinnost: Povinnost Vykazat Opravu Opravenej Odpocitanej Dane V Kontrolnom Vykaze
   Dokument: Kontrolny Vykaz
-  Paragraf: Paragraf § 78a
+  Podmienka: Podmienka Platitel Dostane Opravny Doklad Po 31 Decembri 2022 Z Dovodu Opravy Zakladu Dane Pre Platbu Suvisiacu S Nevymozitelnou Pohladavkou
+  Obdobie: Znenie Ucinne Do 31 Decembra 2022
+  Datum: 31 December 2022
+
 
 ---
 

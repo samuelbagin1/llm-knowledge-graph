@@ -12,7 +12,7 @@ from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DATASET_PATH = Path(__file__).resolve().parent / "kg_dataset.json"
+DATASET_PATH = Path(__file__).resolve().parent / "kg_test_dataset_linearized.json"
 CHUNKS_PATH = PROJECT_ROOT / "chunks.json"
 DEFAULT_OUTPUT_PATH = Path(__file__).resolve().parent / "predictions.json"
 AGENT_NAME = "kg-sde-extractor"
@@ -593,7 +593,10 @@ def main() -> int:
     )
     model: str | None = "gpt-5.5"
     reasoning_effort: str | None = None
-    chunk_ids: list[int] | None = None
+    chunk_ids: list[int] | None = [1023, 1046, 1069, 1092, 1184, 1207, 1230, 1253, 1276, 1322,
+    1345, 1391, 1460, 1483, 1529, 1552, 1598, 1600, 31, 124,
+    155, 186, 217, 248, 320, 443, 484, 566, 648, 689,
+    771, 812, 853, 894, 976, 1017, 1058, 1099,]
     limit: int | None = None
     offset: int = 0
     start_chunk_index: int | None = None

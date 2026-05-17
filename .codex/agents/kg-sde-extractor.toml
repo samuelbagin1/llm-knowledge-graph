@@ -43,6 +43,14 @@ If text contains ranges:
 - `odsek 1 a 2`
   -> split into atomic units
 
+- `paragraf § 2 az 4`
+  -> create:
+  - `Paragraf § 2`
+  - `Paragraf § 3`
+  - `Paragraf § 4`
+
+Connect united mention with decomposed via `ODKAZUJE_NA`.
+
 # LEGAL NODE ID FORMAT (STRICT)
 Use EXACT formats:
 
@@ -64,7 +72,7 @@ Split complex legal constructs into multiple nodes/relations when:
 - supported by schema
 - semantics remain correct
 
-Otherwise keep compound legal concepts intact.
+Otherwise keep compound legal concepts intact. Connect them with decomposed entities via `VZTAHUJE_SA_NA`.
 
 Prefer:
 - multi-hop legal structures

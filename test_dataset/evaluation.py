@@ -1518,8 +1518,8 @@ def write_reports(
 
 def main() -> None:
     dataset_path: Path = Path(__file__).resolve().parent / "kg_test_dataset_linearized.json"
-    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "linearized_eval_results_gpt-5.5"
-    output_dir: Path = Path(__file__).resolve().parent / "linearized_eval_results_gpt-5.5"
+    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "linearized_eval_results_gpt-5.5-high"
+    output_dir: Path = Path(__file__).resolve().parent / "linearized_eval_results_gpt-5.5-high"
     limit: Optional[int] = None
     offset: int = 0
     start_chunk_index: Optional[int] = None

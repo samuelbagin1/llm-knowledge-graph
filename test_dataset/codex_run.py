@@ -591,12 +591,9 @@ def main() -> int:
         "CODEX_BIN",
         "/Users/samuelbagin/.vscode/extensions/openai.chatgpt-26.506.31421-darwin-arm64/bin/macos-aarch64/codex",
     )
-    model: str | None = "gpt-5.5"
+    model: str | None = "gpt-5.4-mini"
     reasoning_effort: str | None = None
-    chunk_ids: list[int] | None = [1023, 1046, 1069, 1092, 1184, 1207, 1230, 1253, 1276, 1322,
-    1345, 1391, 1460, 1483, 1529, 1552, 1598, 1600, 31, 124,
-    155, 186, 217, 248, 320, 443, 484, 566, 648, 689,
-    771, 812, 853, 894, 976, 1017, 1058, 1099,]
+    chunk_ids: list[int] | None = None
     limit: int | None = None
     offset: int = 0
     start_chunk_index: int | None = None

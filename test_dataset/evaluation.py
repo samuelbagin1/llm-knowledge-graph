@@ -1517,9 +1517,9 @@ def write_reports(
 
 
 def main() -> None:
-    dataset_path: Path = Path(__file__).resolve().parent / "kg_test_dataset.json"
-    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "testing"
-    output_dir: Path = Path(__file__).resolve().parent / "testing"
+    dataset_path: Path = Path(__file__).resolve().parent / "kg_dataset.json"
+    predictions_path: Optional[Path] = Path(__file__).resolve().parent
+    output_dir: Path = Path(__file__).resolve().parent / "testingggg"
     limit: Optional[int] = None
     offset: int = 0
     start_chunk_index: Optional[int] = None

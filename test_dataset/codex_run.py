@@ -12,7 +12,7 @@ from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DATASET_PATH = Path(__file__).resolve().parent / "kg_test_dataset.json"
+DATASET_PATH = Path(__file__).resolve().parent / "kg_dataset.json"
 CHUNKS_PATH = PROJECT_ROOT / "chunks.json"
 DEFAULT_OUTPUT_PATH = Path(__file__).resolve().parent / "predictions.json"
 AGENT_NAME = "kg-sde-extractor"
@@ -145,6 +145,7 @@ SCHEMA_RELATIONSHIP_TYPES = [
     "JE_OSLOBODENE_OD_DANE",
     "JE_PREDMETOM_DANE",
     "NIE_JE_PREDMETOM_DANE",
+    "JE_PODLA",
 ]
 
 
@@ -584,7 +585,7 @@ def build_prediction(
 
 
 def main() -> int:
-    # dataset_path: Path = DATASET_PATH  # used only by the disabled kg_test_dataset.json path
+    dataset_path: Path = DATASET_PATH
     output_path: Path = DEFAULT_OUTPUT_PATH
     codex_bin: str = os.getenv(
         "CODEX_BIN",
@@ -592,17 +593,7 @@ def main() -> int:
     )
     model: str | None = "gpt-5.5"
     reasoning_effort: str | None = None
-    chunk_ids: list[int] | None = [12, 45, 78, 103, 126, 149, 172, 195, 218, 241,
-264, 287, 310, 333, 356, 379, 402, 425, 448, 471,
-494, 517, 540, 563, 586, 609, 632, 655, 678, 701,
-724, 747, 770, 793, 816, 839, 862, 885, 908, 931,
-954, 977, 1000, 1023, 1046, 1069, 1092, 1115, 1138, 1161,
-1184, 1207, 1230, 1253, 1276, 1299, 1322, 1345, 1368, 1391,
-1414, 1437, 1460, 1483, 1506, 1529, 1552, 1575, 1598, 1600,
-0, 31, 62, 93, 124, 155, 186, 217, 248, 279,
-320, 361, 1140, 443, 484, 525, 566, 607, 648, 689,
-730, 771, 812, 853, 894, 935, 976, 1017, 1058, 1099
-]
+    chunk_ids: list[int] | None = None
     limit: int | None = None
     offset: int = 0
     start_chunk_index: int | None = None
@@ -612,13 +603,13 @@ def main() -> int:
     schema = build_project_schema()
     agent_config = load_agent_config()
 
-    # === ACTIVE: drive the loop from chunks.json (canonical source of text + path) ===
-    dataset = load_chunks_as_items(CHUNKS_PATH)
-    chunks_index = None  # not needed; chunks.json items already carry `path`
+    # === ACTIVE: drive the loop from kg_dataset.json (text + path live in each item) ===
+    dataset = load_dataset(dataset_path)
+    chunks_index = None  # not needed; kg_dataset.json items already carry `path`
 
-    # === DISABLED: kg_test_dataset.json path (kept for evaluation runs later) ===
-    # dataset = load_dataset(dataset_path)
-    # chunks_index = load_chunks_index(CHUNKS_PATH)
+    # === DISABLED: chunks.json path (kept for re-running extraction over raw chunks) ===
+    # dataset = load_chunks_as_items(CHUNKS_PATH)
+    # chunks_index = None
 
     selected_items = dataset[offset:]
     if chunk_ids is not None:

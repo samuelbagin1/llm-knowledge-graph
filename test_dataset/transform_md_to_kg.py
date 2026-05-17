@@ -13,6 +13,7 @@ RELATIONSHIP_WITH_ADD_RE = re.compile(
     r'^(?P<type>[A-Za-z_][A-Za-z0-9_]*)\s*:\s*"(?P<add>.*)"$'
 )
 SIMPLE_PISMENO_RE = re.compile(r"^Pismeno\s+([A-Za-z])\)?$", re.IGNORECASE)
+PATH_ITEM_RE = re.compile(r"'([^']*)'")
 
 
 def as_int_if_possible(value):
@@ -39,7 +40,17 @@ def make_node(node_id, node_type):
     }
 
 
+def parse_path_value(raw):
+    raw = raw.strip()
+    if raw.startswith("[") and raw.endswith("]"):
+        raw = raw[1:-1]
+    return PATH_ITEM_RE.findall(raw)
+
+
 def parse_relationship_line(line, line_number, strict=False):
+    stripped = line.lstrip()
+    if stripped.startswith("- "):
+        line = stripped[2:]
     match = RELATIONSHIP_RE.match(line)
     if not match:
         if strict:
@@ -124,7 +135,8 @@ def build_graph_document(raw_document, document_id):
 
     return {
         "chunk": raw_document["chunk"],
-        "page": raw_document["page"],
+        "path": raw_document["path"],
+        "path_as_text": raw_document["path_as_text"],
         "text": raw_document["text"].strip(),
         "nodes": nodes,
         "relationships": relationships,
@@ -142,14 +154,15 @@ def parse_markdown(markdown, document_id=DOCUMENT_ID, strict=False):
 
     for line_number, line in enumerate(markdown.splitlines(), start=1):
         stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
+        if not stripped or stripped.startswith("#") or stripped == "---":
             continue
 
         if stripped.startswith("chunk:"):
             finish_current()
             current = {
                 "chunk": as_int_if_possible(stripped.split(":", 1)[1]),
-                "page": None,
+                "path": [],
+                "path_as_text": "",
                 "text": "",
                 "relationships": [],
                 "nodes": [],
@@ -160,8 +173,13 @@ def parse_markdown(markdown, document_id=DOCUMENT_ID, strict=False):
         if current is None:
             continue
 
-        if stripped.startswith("page:"):
-            current["page"] = as_int_if_possible(stripped.split(":", 1)[1])
+        if stripped.startswith("path_as_text:"):
+            current["path_as_text"] = stripped.split(":", 1)[1].strip()
+            section = None
+            continue
+
+        if stripped.startswith("path:"):
+            current["path"] = parse_path_value(stripped.split(":", 1)[1])
             section = None
             continue
 
@@ -170,7 +188,7 @@ def parse_markdown(markdown, document_id=DOCUMENT_ID, strict=False):
             section = "text"
             continue
 
-        if stripped == "relationships:":
+        if stripped in ("relationships:", "relations:"):
             section = "relationships"
             continue
 
@@ -228,7 +246,7 @@ def write_json(graph_documents, output_path, indent=2, append=True):
 
 
 def build_arg_parser():
-    default_input = Path(__file__).with_name("batch5.md")
+    default_input = Path(__file__).parent / "new_dataset" / "batchNew.md"
     default_output = Path(__file__).with_name("kg_dataset.json")
 
     parser = argparse.ArgumentParser(

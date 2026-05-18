@@ -6,7 +6,6 @@ Each chunk is emitted at the deepest available level of its path; parent
 A § with no odseky becomes a single chunk built from its `text` field.
 """
 
-import json
 import re
 import sys
 from pathlib import Path
@@ -22,6 +21,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from chunker.detect_subsections import detect_subsections
+from to_json import chunker_to_json
 
 
 _LAW_ID = r"\d+/\d{4}"
@@ -57,21 +57,6 @@ def _make_doc(text: str, path: list[str], headline: str | None) -> Document:
     return Document(page_content=text, metadata=metadata)
 
 
-def write_json(chunks: list[Document], path: str | Path) -> None:
-    """Serialize a list of `Document`s to `path` as UTF-8 JSON (no ASCII escapes,
-    so Slovak diacritics stay readable). `id` is emitted first for readability."""
-    Path(path).write_text(
-        json.dumps(
-            [{"id": d.metadata["id"], "text": d.page_content,
-              **{k: v for k, v in d.metadata.items() if k != "id"}}
-             for d in chunks],
-            ensure_ascii=False,
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
-
-
 class Chunker:
     """Flattens the nested paragraph tree into a list of `Document`s."""
 
@@ -100,19 +85,23 @@ class Chunker:
     
 
 
-    def split_document(self, pdf_path: str | Path) -> dict:
+    def split_document(self, pdf_path: str | Path, write_json: bool = False) -> dict:
         """Load a Slovak law PDF and return {"chunks": [...], "tree_graph": GraphDocument, "last_page": int | None}.
 
         `tree_graph` is a GraphDocument with a Document root node linked to
         Paragraf/Odsek/Pismeno/Bod nodes via IN_DOCUMENT / IN_SECTION edges.
         `last_page` is the `page_start` of the final § paragraph (the page on
         which the closing block of the law begins). `None` if no paragraphs.
+
+        When `write_json=True`, both the detected sections tree and the
+        linearized chunks are persisted under the default output directory
+        (see `to_json.DEFAULT_OUTPUT_DIR`).
         """
         text, page_offsets = self.load_pdf_text(pdf_path)
-        paragraphs = detect_subsections(text, page_offsets)
+        paragraphs = detect_subsections(text, page_offsets, write_json=write_json)
 
         tree_graph = self.get_tree_graph(paragraphs, pdf_path)
-        chunks = self.linearize(paragraphs)
+        chunks = self.linearize(paragraphs, write_json=write_json)
 
         last_page = paragraphs[-1].get("page_start") if paragraphs else None
         return {"chunks": chunks, "tree_graph": tree_graph, "last_page": last_page}
@@ -201,7 +190,7 @@ class Chunker:
 
 
 
-    def linearize(self, paragraphs: list[dict]) -> list[Document]:
+    def linearize(self, paragraphs: list[dict], write_json: bool = False) -> list[Document]:
         chunks: list[Document] = []
         for para in paragraphs:
             if "marker" not in para:
@@ -213,7 +202,8 @@ class Chunker:
         for i, doc in enumerate(chunks):
             doc.metadata["id"] = i
 
-        write_json(chunks, "./chunks.json")
+        if write_json:
+            chunker_to_json(chunks)
         return chunks
 
 
@@ -266,7 +256,7 @@ class Chunker:
 
 if __name__ == "__main__":
     PDF_PATH = Path(__file__).resolve().parent.parent / "assets" / "ZZ_2004_222_20260101.pdf"
-    result = Chunker().split_document(PDF_PATH)
+    result = Chunker().split_document(PDF_PATH, write_json=True)
     chunks = result["chunks"]
     print(f"Total chunks: {len(chunks)}")
     print(f"Last page: {result['last_page']}")

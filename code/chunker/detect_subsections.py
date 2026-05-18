@@ -17,7 +17,6 @@ the same shape — cross-references like `písm. a)` and footnote markers like
 `predpisu.4c)` or `osobitného predpisu.33)` never appear at column 0.
 """
 
-import json
 import re
 import sys
 from pathlib import Path
@@ -30,6 +29,7 @@ from chunker.detect_paragraphs import (
     detect_paragraphs,
     page_for_offset,
 )
+from to_json import sections_to_json
 
 
 PDF_PATH = Path(__file__).resolve().parent.parent / "assets" / "ZZ_2004_222_20260101.pdf"
@@ -145,16 +145,7 @@ def _trim_last_paragraph_tail(paragraphs: list[dict]) -> None:
     last["text"] = head.rstrip()
 
 
-def write_json(paragraphs: list[dict], path: str | Path) -> None:
-    """Serialize the parsed tree to `path` as UTF-8 JSON (no ASCII escapes,
-    so Slovak diacritics stay readable)."""
-    Path(path).write_text(
-        json.dumps(paragraphs, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-
-
-def detect_subsections(text: str, page_offsets=None) -> list[dict]:
+def detect_subsections(text: str, page_offsets=None, write_json: bool = False) -> list[dict]:
     """Return paragraphs (as from `detect_paragraphs`) with nested children.
 
     Output schema (in addition to the detect_paragraphs fields):
@@ -188,8 +179,9 @@ def detect_subsections(text: str, page_offsets=None) -> list[dict]:
 
     if page_offsets is not None:
         _attach_pages(paragraphs, page_offsets)
-        
-    write_json(paragraphs, "./document_decompose.json")
+
+    if write_json:
+        sections_to_json(paragraphs)
     return paragraphs
 
 
@@ -197,7 +189,7 @@ if __name__ == "__main__":
     from chunker.chunker import Chunker  # lazy: avoids module-level circular import
 
     text, page_offsets = Chunker().load_pdf_text(PDF_PATH)
-    paragraphs = detect_subsections(text, page_offsets)
+    paragraphs = detect_subsections(text, page_offsets, write_json=True)
     
 
     # for p in paragraphs:

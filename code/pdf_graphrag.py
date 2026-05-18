@@ -1596,6 +1596,8 @@ Pred vystupom over:
         self,
         documents: List[Document] | Document,
         max_concurrent: int = 5,
+        write_json: bool = False,
+        name: str = "",
     ) -> List[Schema]:
         """
         Asynchronously process documents to extract schemas.
@@ -1624,12 +1626,24 @@ Pred vystupom over:
         pause_event.set()
         pause_lock = asyncio.Lock()
 
+        # Shared accumulator for incremental persistence — every successful
+        # chunk re-dumps the growing list to the same `<name>_odd_<ts>.json`
+        # so a crash mid-stage still leaves the latest successes on disk.
+        write_lock = asyncio.Lock()
+        odd_timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S') if write_json else None
+        completed: List[Schema] = []
+
         async def limited(i: int, doc: Document) -> Optional[Schema]:
             for attempt in range(3):
                 await pause_event.wait()
                 async with semaphore:
                     try:
-                        return await self.open_domain_detection(i, doc)
+                        result = await self.open_domain_detection(i, doc)
+                        if write_json and result is not None:
+                            async with write_lock:
+                                completed.append(result)
+                                odd_to_json(list(completed), name=name, timestamp=odd_timestamp)
+                        return result
                     except Exception as e:
                         if attempt < 2:
                             async with pause_lock:
@@ -1947,6 +1961,8 @@ Pred vystupom over:
         schema: Schema,
         document_id: str,
         max_concurrent: int = 5,
+        write_json: bool = False,
+        name: str = "",
     ) -> List[GraphDocument]:
         """
         Asynchronously process documents to extract graph documents.
@@ -1980,6 +1996,13 @@ Pred vystupom over:
         pause_event.set()
         pause_lock = asyncio.Lock()
 
+        # Same incremental-write pattern as ODD: append-then-rewrite under a
+        # lock; the timestamp is fixed for the stage so every dump lands in
+        # the same `<name>_sde_<ts>.json` file as it grows.
+        write_lock = asyncio.Lock()
+        sde_timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S') if write_json else None
+        completed: list[GraphDocument] = []
+
         def is_failed(result) -> bool:
             return result is None or isinstance(result, BaseException) or not getattr(result, "nodes", None)
 
@@ -1988,7 +2011,12 @@ Pred vystupom over:
                 await pause_event.wait()
                 async with semaphore:
                     try:
-                        return await self.schema_driven_extraction(i, doc, schema, document_id)
+                        result = await self.schema_driven_extraction(i, doc, schema, document_id)
+                        if write_json and not is_failed(result):
+                            async with write_lock:
+                                completed.append(cast(GraphDocument, result))
+                                sde_to_json(list(completed), name=name, timestamp=sde_timestamp)
+                        return result
                     except Exception as e:
                         if attempt < 2:
                             async with pause_lock:
@@ -2039,30 +2067,12 @@ Pred vystupom over:
                 print("SDE: all retried chunks recovered")
 
         return successful
-
-
-
-
-    # --------- PROCESS STRATEGY ----------
-    # 1. tables
-    # 2. open domain schema detection
-    # 3. schema refinement
-    # 4. schema guided extraction
-    # 5. vector store from graph
-
-
-
-    def process(self, pdf_path: str, max_pages: Optional[int] = None):
-        name_of_chain = "chain1"
-        
-        # Load PDF documents
-        documents = self.load_pdf(pdf_path)
-        if max_pages:
-            documents = documents[:max_pages]
-
-        document_id = Path(pdf_path).stem
-
-        # map 1-based human page number -> PyPDFLoader text (matches detection page convention)
+    
+    
+    
+    
+    def tables_and_formulas(self, pdf_path: str, document_id: str, documents: list[Document]):
+         # map 1-based human page number -> PyPDFLoader text (matches detection page convention)
         page_text_map = {
             doc.metadata.get("page", -1) + 1: doc.page_content
             for doc in documents
@@ -2107,14 +2117,7 @@ Pred vystupom over:
                 if len(pages) > 2:
                     table_pages_to_exclude.update(pages[1:-1])
 
-        # remove interior table pages from documents before ODD/SDE
-        # PyPDFLoader uses 0-based page numbers, detections use 1-based
-        if table_pages_to_exclude:
-            documents = [
-                doc for doc in documents
-                if (doc.metadata.get("page", -1) + 1) not in table_pages_to_exclude
-            ]
-            print(f"Excluded {len(table_pages_to_exclude)} interior table pages from text processing: {sorted(table_pages_to_exclude)}")
+        
             
             
         # ----- FORMULAS ----
@@ -2130,8 +2133,55 @@ Pred vystupom over:
         formula_graph_doc = self.convert_formulas_to_graph(formula_nodes, document_id)
         print(f"Processed {len(formulas)} formula(s) into {0 if formula_graph_doc is None else len(formula_nodes)} node(s).")
 
+        return table_graph_docs, formula_graph_doc, table_pages_to_exclude
 
-        # document_classification = self.classification()
+
+
+    # --------- PROCESS STRATEGY ----------
+    # 1. tables
+    # 2. open domain schema detection
+    # 3. schema refinement
+    # 4. schema guided extraction
+    # 5. vector store from graph
+
+
+
+    def process(self, pdf_path: str, name_of_chain: str = "chain", write_json: bool = False):
+        
+        # Load PDF documents
+        documents = self.load_pdf(pdf_path)
+
+        document_id = Path(pdf_path).stem
+
+       
+        table_graph_docs, formula_graph_doc, table_pages_to_exclude = self.tables_and_formulas(pdf_path, document_id, documents)
+        
+        if table_graph_docs is not None:
+            self.graph.add_graph_documents(
+                graph_documents=table_graph_docs,
+                include_source=False,
+                baseEntityLabel=False
+            )
+
+        # add formula-extracted graph document
+        if formula_graph_doc is not None:
+            self.graph.add_graph_documents(
+                graph_documents=[formula_graph_doc],
+                include_source=False,
+                baseEntityLabel=False
+            )
+            
+        
+        
+        # remove interior table pages from documents before ODD/SDE
+        # PyPDFLoader uses 0-based page numbers, detections use 1-based
+        if table_pages_to_exclude:
+            documents = [
+                doc for doc in documents
+                if (doc.metadata.get("page", -1) + 1) not in table_pages_to_exclude
+            ]
+            print(f"Excluded {len(table_pages_to_exclude)} interior table pages from text processing: {sorted(table_pages_to_exclude)}")
+
 
 
         # ---- ODD ----
@@ -2143,12 +2193,17 @@ Pred vystupom over:
             raise ValueError(f"[process] no chunks produced for ODD from {pdf_path}")
 
         extracted_schema_list = asyncio.run(
-            self.async_open_domain_detection(chunked_documents)
+            self.async_open_domain_detection(
+                chunked_documents,
+                write_json=write_json,
+                name=name_of_chain,
+            )
         )
         if not extracted_schema_list:
             raise RuntimeError("[process] ODD produced no schemas (all chunks failed)")
         print(f"\n\nAll chunks processed into schema. ({len(extracted_schema_list)} schemas)\n\n")
-        odd_to_json(extracted_schema_list, name=name_of_chain)  # save before next stage
+        # ODD JSON is now written incrementally inside async_open_domain_detection
+        # when write_json=True, so no end-of-stage dump is needed here.
 
 
         # ---- Refinement ----
@@ -2166,14 +2221,22 @@ Pred vystupom over:
         )
         # schema_refinement raises on its own retry exhaustion — propagates to abort
         print(f"\n\nSchema refined.\n\n")
-        refinement_to_json(refined_schema, name=name_of_chain)  # save before next stage
+        if write_json:
+            refinement_to_json(refined_schema, name=name_of_chain)  # save before next stage
 
 
         # ---- SDE ----
-        chunker_result = Chunker().split_document(pdf_path)
+        chunker_result = Chunker().split_document(pdf_path, write_json=write_json)
         structured_chunks: list[Document] = chunker_result["chunks"]
         tree_graph = chunker_result["tree_graph"]
         last_page = chunker_result["last_page"]
+        
+        # add structural tree (Document -> Paragraf -> Odsek -> Pismeno -> Bod)
+        self.graph.add_graph_documents(
+            graph_documents=tree_graph,
+            include_source=False,
+            baseEntityLabel=False
+        )
 
         # Pages after `last_page` (1-indexed) hold post-paragraph content (annexes,
         # appendices) that the structural chunker doesn't cover. PyPDFLoader returns
@@ -2202,26 +2265,20 @@ Pred vystupom over:
                 chunked_documents,
                 schema=refined_schema_obj,
                 document_id=document_id,
+                write_json=write_json,
+                name=name_of_chain,
             )
         )
         if not graph_docs:
             raise RuntimeError("[process] SDE produced no graph documents (all chunks failed)")
         print(f"\n\nAll chunks processed into graph documents. ({len(graph_docs)})\n\n")
-        sde_to_json(graph_docs, name=name_of_chain)
+        # SDE JSON is now written incrementally inside async_schema_driven_extraction
+        # when write_json=True, so no end-of-stage dump is needed here.
         
 
         # add document chunk into graph documents
         graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path, document_id))
 
-        # add structural tree (Document -> Paragraf -> Odsek -> Pismeno -> Bod)
-        graph_docs.append(tree_graph)
-
-        # add table-extracted graph documents
-        graph_docs.extend(table_graph_docs)
-
-        # add formula-extracted graph document
-        if formula_graph_doc is not None:
-            graph_docs.append(formula_graph_doc)
 
 
         # Add graph documents to Neo4j

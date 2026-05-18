@@ -1,9 +1,18 @@
 import json
 import os
 from datetime import datetime
+from pathlib import Path
 from classes import Schema
 from typing import List, Optional, Any
+from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
+
+
+DEFAULT_OUTPUT_DIR = "./file_output"
+
+
+def _timestamp() -> str:
+    return datetime.now().strftime('%Y%m%d%H%M%S')
 
 
 def _safe_dump(payload: Any, path: str) -> Optional[str]:
@@ -44,9 +53,10 @@ def _relationship_to_dict(rel: Relationship) -> dict:
 
 def odd_to_json(
     documents: List[Schema],
-    output_dir: str = "./extracted_data",
+    output_dir: str = DEFAULT_OUTPUT_DIR,
     name: str = "",
     chunks: Optional[list] = None,
+    timestamp: Optional[str] = None,
 ) -> Optional[str]:
     os.makedirs(output_dir, exist_ok=True)
 
@@ -89,14 +99,15 @@ def odd_to_json(
     }
     output.append({"nested": merged})
 
-    filename = f"{name}_odd_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    ts = timestamp or _timestamp()
+    filename = f"{name}_odd_{ts}.json"
     path = os.path.join(output_dir, filename)
     return _safe_dump(output, path)
 
 
 def refinement_to_json(
     data: Any,
-    output_dir: str = "./extracted_data",
+    output_dir: str = DEFAULT_OUTPUT_DIR,
     name: str = "",
 ) -> Optional[str]:
     os.makedirs(output_dir, exist_ok=True)
@@ -120,8 +131,9 @@ def refinement_to_json(
 
 def sde_to_json(
     data: List[GraphDocument],
-    output_dir: str = "./extracted_data",
+    output_dir: str = DEFAULT_OUTPUT_DIR,
     name: str = "",
+    timestamp: Optional[str] = None,
 ) -> Optional[str]:
     os.makedirs(output_dir, exist_ok=True)
 
@@ -161,14 +173,15 @@ def sde_to_json(
     if skipped:
         print(f"[sde_to_json] skipped {skipped} malformed/None entries")
 
-    filename = f"{name}_sde_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    ts = timestamp or _timestamp()
+    filename = f"{name}_sde_{ts}.json"
     path = os.path.join(output_dir, filename)
     return _safe_dump(output, path)
 
 
 def table_to_json(
     data: List[GraphDocument],
-    output_dir: str = "./extracted_data",
+    output_dir: str = DEFAULT_OUTPUT_DIR,
     name: str = "",
 ) -> Optional[str]:
     """Serialize per-table-group GraphDocuments produced by transform_html_to_graph_document."""
@@ -197,14 +210,14 @@ def table_to_json(
     if skipped:
         print(f"[table_to_json] skipped {skipped} malformed/None entries")
 
-    filename = f"{name}_tables_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    filename = f"{name}_tables_{_timestamp()}.json"
     path = os.path.join(output_dir, filename)
     return _safe_dump(output, path)
 
 
 def formula_to_json(
     data: Optional[GraphDocument],
-    output_dir: str = "./extracted_data",
+    output_dir: str = DEFAULT_OUTPUT_DIR,
     name: str = "",
 ) -> Optional[str]:
     """Serialize the single formulas GraphDocument produced by convert_formulas_to_graph."""
@@ -224,6 +237,43 @@ def formula_to_json(
             print(f"[formula_to_json] malformed GraphDocument, writing empty payload: {e}")
             output = {"document_id": None, "nodes": [], "relationships": []}
 
-    filename = f"{name}_formulas_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+    filename = f"{name}_formulas_{_timestamp()}.json"
     path = os.path.join(output_dir, filename)
     return _safe_dump(output, path)
+
+
+def chunker_to_json(
+    chunks: List[Document],
+    output_dir: str = DEFAULT_OUTPUT_DIR,
+    timestamp: Optional[str] = None,
+) -> Optional[str]:
+    """Serialize Chunker output (list of Documents) as `chunks_<timestamp>.json`.
+
+    Mirrors the shape previously emitted by `chunker.write_json`: each entry is
+    `{id, text, ...metadata}` with `id` first for readability. Slovak diacritics
+    are preserved (ensure_ascii=False).
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    ts = timestamp or _timestamp()
+    payload = [
+        {
+            "id": d.metadata.get("id"),
+            "text": d.page_content,
+            **{k: v for k, v in d.metadata.items() if k != "id"},
+        }
+        for d in (chunks or [])
+    ]
+    path = os.path.join(output_dir, f"chunks_{ts}.json")
+    return _safe_dump(payload, path)
+
+
+def sections_to_json(
+    paragraphs: List[dict],
+    output_dir: str = DEFAULT_OUTPUT_DIR,
+    timestamp: Optional[str] = None,
+) -> Optional[str]:
+    """Serialize `detect_subsections` output as `sections_<timestamp>.json`."""
+    os.makedirs(output_dir, exist_ok=True)
+    ts = timestamp or _timestamp()
+    path = os.path.join(output_dir, f"sections_{ts}.json")
+    return _safe_dump(paragraphs or [], path)

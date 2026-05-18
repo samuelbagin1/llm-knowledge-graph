@@ -28,14 +28,14 @@ from openai import (
 from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter, SpacyTextSplitter
 import spacy
 
-from classification import classify
+from deprecated.classification import classify
 from classes import Schema, ClassifiedDocument, Type, SubSentence, ReasoningStep
 from chunker.chunker import Chunker
 from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
 from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference,system_prompt_for_generating_query, response_schema_for_generating_query, system_prompt_ark_select_relation, system_prompt_ark_reasoning
-from examples import examples_for_extraction
+from deprecated.examples import examples_for_extraction
 from pydantic import BaseModel, Field, SecretStr
 import numpy as np
 from to_json import odd_to_json, refinement_to_json, sde_to_json

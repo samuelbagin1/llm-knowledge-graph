@@ -265,7 +265,6 @@ class PDFGraphRAG:
         self.openai_client = ChatOpenAI(
             model="gpt-5.4-mini",
             temperature=0.05,
-            reasoning_effort="medium",
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=180
@@ -277,6 +276,15 @@ class PDFGraphRAG:
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=120
+        )
+        
+        self.openai_thinking = ChatOpenAI(
+            model="gpt-5.5",     # -mini
+            temperature=0,
+            reasoning_effort="xhigh",
+            api_key=SecretStr(openai_api_key) if openai_api_key else None,
+            max_retries=3,
+            timeout=300
         )
 
         # Google Gemini for everything else
@@ -1586,7 +1594,7 @@ Pred vystupom over:
     
     async def async_open_domain_detection(
         self,
-        documents: List[Document],
+        documents: List[Document] | Document,
         max_concurrent: int = 5,
     ) -> List[Schema]:
         """
@@ -1603,6 +1611,9 @@ Pred vystupom over:
         Returns:
             List of Schema (only successfully processed chunks).
         """
+        if isinstance(documents, Document):
+            documents = [documents]
+        
         if not documents:
             print("[async_open_domain_detection] empty document list; returning []")
             return []
@@ -1695,8 +1706,8 @@ Pred vystupom over:
             existing_schema.nodes == [] and existing_schema.relationships == []
         ):
             existing_schema = Schema(
-                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum", "Pismeno"],
-                    relationships = ["ODKAZUJE_NA", "DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI", "JE_PODLA", "JE_OSLOBODENE_OD_DANE", "JE_PREDMETOM_DANE", "NIE_JE_PREDMETOM_DANE"]
+                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum", "Pismeno", "Urad", "Banka"],
+                    relationships = ["DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI", "JE_PODLA", "JE_OSLOBODENE_OD_DANE", "JE_PREDMETOM_DANE", "NIE_JE_PREDMETOM_DANE", "ODKAZUJE", "VZTAHUJE_SA_NA", "OBSAHUJE"]
                 )
         
         
@@ -1749,15 +1760,21 @@ Pred vystupom over:
         [{", ".join(odd_schema.relationships)}]
         """
 
-        
-        
-        structured_model = self.gemini_client.with_structured_output(
-            schema=SchemaRefinementResponse.model_json_schema(), method="json_schema"
+
+        structured_model = self.openai_thinking.with_structured_output(
+            SchemaRefinementResponse.model_json_schema(),
+            method="json_schema",
+            strict=True,
         )
+        
+        
+        # structured_model = self.gemini_client.with_structured_output(
+        #     schema=SchemaRefinementResponse.model_json_schema(), method="json_schema"
+        # )
 
         messages = [
-            ("system", system_prompt_for_schema_refinement),
-            ("human", user_prompt),
+            SystemMessage(content=system_prompt_for_schema_refinement),
+            HumanMessage(content=user_prompt),
         ]
 
         data: Optional[Dict[str, Any]] = None
@@ -1926,7 +1943,7 @@ Pred vystupom over:
     
     async def async_schema_driven_extraction(
         self,
-        documents: List[Document],
+        documents: List[Document] | Document,
         schema: Schema,
         document_id: str,
         max_concurrent: int = 5,
@@ -1946,6 +1963,9 @@ Pred vystupom over:
         Returns:
             List of GraphDocuments (only successfully processed chunks).
         """
+
+        if isinstance(documents, Document):
+            documents = [documents]
 
         if not documents:
             print("[async_schema_driven_extraction] empty document list; returning []")

@@ -592,7 +592,7 @@ def main() -> int:
         "/Users/samuelbagin/.vscode/extensions/openai.chatgpt-26.506.31421-darwin-arm64/bin/macos-aarch64/codex",
     )
     model: str | None = "gpt-5.4-mini"
-    reasoning_effort: str | None = None
+    reasoning_effort: str | None = "high"
     chunk_ids: list[int] | None = None
     limit: int | None = None
     offset: int = 0

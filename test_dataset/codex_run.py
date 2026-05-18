@@ -281,6 +281,131 @@ def extraction_rules(agent_config: AgentConfig) -> str:
     return instructions
 
 
+FEW_SHOT_EXAMPLES = """# EXAMPLES
+
+## Example 1 — minimal: Paragraf hierarchy + UPRAVUJE for top-level regulated subject
+
+TEXT: "Tento zákon upravuje daň z pridanej hodnoty (ďalej len „daň"). "
+Context: Paragraf § 1
+
+Expected JSON:
+{
+  "nodes": [
+    {"id": "Tento Zakon", "type": "PravnyPredpis", "properties": {}},
+    {"id": "Paragraf § 1", "type": "Paragraf", "properties": {}},
+    {"id": "Dan Z Pridanej Hodnoty", "type": "Dan", "properties": {}}
+  ],
+  "relationships": [
+    {"source": {"id": "Tento Zakon", "type": "PravnyPredpis", "properties": {}},
+     "target": {"id": "Paragraf § 1", "type": "Paragraf", "properties": {}},
+     "type": "OBSAHUJE", "properties": {"section": "<section_id>"}},
+    {"source": {"id": "Tento Zakon", "type": "PravnyPredpis", "properties": {}},
+     "target": {"id": "Dan Z Pridanej Hodnoty", "type": "Dan", "properties": {}},
+     "type": "UPRAVUJE", "properties": {"section": "<section_id>"}}
+  ]
+}
+
+DO NOT emit `Dan Z Pridanej Hodnoty -[JE_PODLA]-> Paragraf § 1` — that is a hallucination.
+The regulator-to-concept direction is `Paragraf/Odsek -[UPRAVUJE]-> Concept`, never the reverse.
+
+## Example 2 — Konanie (action) regulated by Odsek, with Podmienka and MA_DATUM/MA_LEHOTU
+
+TEXT: "(1) Podľa doterajších predpisov sa až do uplynutia posudzujú všetky lehoty, ktoré začali plynúť pred účinnosťou tohto zákona."
+Context: Paragraf § 85 Odsek 1
+
+Expected JSON:
+{
+  "nodes": [
+    {"id": "Paragraf § 85", "type": "Paragraf", "properties": {}},
+    {"id": "Paragraf § 85 Odsek 1", "type": "Odsek", "properties": {}},
+    {"id": "Doterajsie Predpisy", "type": "PravnyPredpis", "properties": {}},
+    {"id": "Tento Zakon", "type": "PravnyPredpis", "properties": {}},
+    {"id": "Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona", "type": "Konanie", "properties": {}},
+    {"id": "Vsetky Lehoty Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona", "type": "Lehota", "properties": {}},
+    {"id": "Do Uplynutia Tychto Lehot", "type": "Lehota", "properties": {}},
+    {"id": "Podmienka Zacali Plynut Pred Ucinnostou Tohto Zakona", "type": "Podmienka", "properties": {}},
+    {"id": "Ucinnost Tohto Zakona", "type": "Datum", "properties": {}}
+  ],
+  "relationships": [
+    {"source":{"id":"Paragraf § 85","type":"Paragraf","properties":{}},"target":{"id":"Paragraf § 85 Odsek 1","type":"Odsek","properties":{}},"type":"OBSAHUJE","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Paragraf § 85 Odsek 1","type":"Odsek","properties":{}},"target":{"id":"Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Konanie","properties":{}},"type":"UPRAVUJE","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Paragraf § 85 Odsek 1","type":"Odsek","properties":{}},"target":{"id":"Doterajsie Predpisy","type":"PravnyPredpis","properties":{}},"type":"ODKAZUJE_NA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Konanie","properties":{}},"target":{"id":"Vsetky Lehoty Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Lehota","properties":{}},"type":"VZTAHUJE_SA_NA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Konanie","properties":{}},"target":{"id":"Doterajsie Predpisy","type":"PravnyPredpis","properties":{}},"type":"JE_PODLA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Posudzovanie Vsetkych Lehot Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Konanie","properties":{}},"target":{"id":"Do Uplynutia Tychto Lehot","type":"Lehota","properties":{}},"type":"MA_LEHOTU","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Vsetky Lehoty Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Lehota","properties":{}},"target":{"id":"Podmienka Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Podmienka","properties":{}},"type":"MA_PODMIENKU","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Podmienka Zacali Plynut Pred Ucinnostou Tohto Zakona","type":"Podmienka","properties":{}},"target":{"id":"Ucinnost Tohto Zakona","type":"Datum","properties":{}},"type":"MA_DATUM","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Ucinnost Tohto Zakona","type":"Datum","properties":{}},"target":{"id":"Tento Zakon","type":"PravnyPredpis","properties":{}},"type":"VZTAHUJE_SA_NA","properties":{"section":"<section_id>"}}
+  ]
+}
+
+Note the compound node ids: the entire legal qualifier ("Vsetky Lehoty Ktore Zacali Plynut Pred Ucinnostou Tohto Zakona") is ONE node — do not split into "Vsetky Lehoty" + edges to "Ucinnost Tohto Zakona".
+Note `Podmienka` is its own typed node with the full condition wording, not a property of the Lehota.
+
+## Example 3 — DEFINUJE, NEVZTAHUJE_SA_NA, ODKAZUJE_NA cross-section, JE_PODLA for named-after concepts
+
+TEXT: "(2) Za faktúru sa považuje aj každý doklad alebo oznámenie, ktoré mení pôvodnú faktúru a osobitne a jednoznačne sa na ňu vzťahuje. Faktúrou podľa prvej vety nie je opravný doklad podľa § 25a."
+Context: Paragraf § 71 Odsek 2
+
+Expected JSON:
+{
+  "nodes": [
+    {"id": "Paragraf § 71", "type": "Paragraf", "properties": {}},
+    {"id": "Paragraf § 71 Odsek 2", "type": "Odsek", "properties": {}},
+    {"id": "Paragraf § 25a", "type": "Paragraf", "properties": {}},
+    {"id": "Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety", "type": "Dokument", "properties": {}},
+    {"id": "Povodna Faktura", "type": "Dokument", "properties": {}},
+    {"id": "Doklad Meniaci Povodnu Fakturu", "type": "Dokument", "properties": {}},
+    {"id": "Oznamenie Meniace Povodnu Fakturu", "type": "Oznamenie", "properties": {}},
+    {"id": "Opravny Doklad Podla Paragrafu § 25a", "type": "Dokument", "properties": {}},
+    {"id": "Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu", "type": "Podmienka", "properties": {}}
+  ],
+  "relationships": [
+    {"source":{"id":"Paragraf § 71","type":"Paragraf","properties":{}},"target":{"id":"Paragraf § 71 Odsek 2","type":"Odsek","properties":{}},"type":"OBSAHUJE","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Paragraf § 71 Odsek 2","type":"Odsek","properties":{}},"target":{"id":"Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety","type":"Dokument","properties":{}},"type":"DEFINUJE","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Paragraf § 71 Odsek 2","type":"Odsek","properties":{}},"target":{"id":"Paragraf § 25a","type":"Paragraf","properties":{}},"type":"ODKAZUJE_NA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Doklad Meniaci Povodnu Fakturu","type":"Dokument","properties":{}},"target":{"id":"Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety","type":"Dokument","properties":{}},"type":"JE_TYPOM","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Oznamenie Meniace Povodnu Fakturu","type":"Oznamenie","properties":{}},"target":{"id":"Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety","type":"Dokument","properties":{}},"type":"JE_TYPOM","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Doklad Meniaci Povodnu Fakturu","type":"Dokument","properties":{}},"target":{"id":"Povodna Faktura","type":"Dokument","properties":{}},"type":"MENI","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Oznamenie Meniace Povodnu Fakturu","type":"Oznamenie","properties":{}},"target":{"id":"Povodna Faktura","type":"Dokument","properties":{}},"type":"MENI","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Doklad Meniaci Povodnu Fakturu","type":"Dokument","properties":{}},"target":{"id":"Povodna Faktura","type":"Dokument","properties":{}},"type":"VZTAHUJE_SA_NA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Oznamenie Meniace Povodnu Fakturu","type":"Oznamenie","properties":{}},"target":{"id":"Povodna Faktura","type":"Dokument","properties":{}},"type":"VZTAHUJE_SA_NA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Doklad Meniaci Povodnu Fakturu","type":"Dokument","properties":{}},"target":{"id":"Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu","type":"Podmienka","properties":{}},"type":"MA_PODMIENKU","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Oznamenie Meniace Povodnu Fakturu","type":"Oznamenie","properties":{}},"target":{"id":"Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu","type":"Podmienka","properties":{}},"type":"MA_PODMIENKU","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Podmienka Osobitne A Jednoznacne Sa Vztahuje Na Povodnu Fakturu","type":"Podmienka","properties":{}},"target":{"id":"Povodna Faktura","type":"Dokument","properties":{}},"type":"VZTAHUJE_SA_NA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Opravny Doklad Podla Paragrafu § 25a","type":"Dokument","properties":{}},"target":{"id":"Paragraf § 25a","type":"Paragraf","properties":{}},"type":"JE_PODLA","properties":{"section":"<section_id>"}},
+    {"source":{"id":"Faktura Podla Paragrafu § 71 Odsek 2 Prvej Vety","type":"Dokument","properties":{}},"target":{"id":"Opravny Doklad Podla Paragrafu § 25a","type":"Dokument","properties":{}},"type":"NEVZTAHUJE_SA_NA","properties":{"section":"<section_id>"}}
+  ]
+}
+
+Notice:
+- `JE_PODLA` is emitted only because the concept's *name* embeds the reference ("Opravny Doklad **Podla Paragrafu § 25a**"). The cross-section reference itself is `Paragraf § 71 Odsek 2 -[ODKAZUJE_NA]-> Paragraf § 25a`.
+- The negation "nie je" becomes `NEVZTAHUJE_SA_NA` between the two concepts — NOT a missing edge.
+- One `Podmienka` node carries the full condition wording; multiple subjects share it.
+
+# DO / DO NOT cheat-sheet derived from the examples
+
+DO:
+- Always emit `Paragraf § X Odsek Y -[UPRAVUJE]-> [main legal action/object the odsek regulates]`.
+- Always emit `Paragraf -[OBSAHUJE]-> Odsek`, `Odsek -[OBSAHUJE]-> Pismeno`, etc. — every level in the hierarchy.
+- Create one `Podmienka` node per condition, with the full legal wording as its id (Title Case, diacritics removed). Then link `Subject -[MA_PODMIENKU]-> Podmienka` and `Podmienka -[VZTAHUJE_SA_NA]-> [each entity the condition references]`.
+- Create one `Povinnost`/`Pravo` node per obligation/right, with the full wording. Then `Subject -[MA_POVINNOST|MA_PRAVO|MA_NAROK_NA]-> Povinnost/Pravo` and `Povinnost/Pravo -[VZTAHUJE_SA_NA]-> [object]`.
+- Preserve compound legal qualifiers as a single node id (e.g. `Tovar Odoslany Alebo Prepraveny Z Tuzemska Do Ineho Clenskeho Statu`). Do not split into `Tovar` + topology edges.
+- For "§ X až § Y" enumerate each: emit one `ODKAZUJE_NA` per concrete paragraph (§ X, § X+1, …, § Y). Do not invent a range node.
+- Use `MA_NAROK_NA` (not `MA_PRAVO`) when the text says "má nárok na".
+- Use `DODAVA` (not `POSKYTUJE`) for both tovar and služba supply.
+- Use `MA_IDENTIFIKATOR` (not `MA_STATUS`) for ID numbers (IČO, DIČ, IČ DPH).
+
+DO NOT:
+- Do NOT emit `Concept -[JE_PODLA]-> Paragraf` unless the concept's id literally ends with "Podla Paragrafu § …".
+- Do NOT emit `Concept -[VYPLYVA_Z]-> Paragraf` for cross-section references — use `Paragraf -[ODKAZUJE_NA]-> Paragraf`.
+- Do NOT add `MA`, `MA_ADRESU`, `MA_HODNOTU` edges unless the text explicitly names a value/address for that subject.
+- Do NOT collapse conditions onto the subject (`Subject -[MA_STATUS]-> X`). Use a `Podmienka` intermediate.
+- Do NOT use `POSKYTUJE` for service supply (use `DODAVA`).
+- Do NOT use `VZNIKA` for place-of-origin ("z tuzemska") — that is `VZTAHUJE_SA_NA` or part of a compound node id.
+"""
+
+
 def build_prompt(
     item: dict[str, Any],
     schema: Schema,
@@ -328,6 +453,8 @@ If text contains:
 Entities: {", ".join(schema.nodes)}
 
 Relationships: {", ".join(schema.relationships)}
+
+{FEW_SHOT_EXAMPLES}
 
 # TEXT
 {text}
@@ -591,8 +718,8 @@ def main() -> int:
         "CODEX_BIN",
         "/Users/samuelbagin/.vscode/extensions/openai.chatgpt-26.506.31421-darwin-arm64/bin/macos-aarch64/codex",
     )
-    model: str | None = "gpt-5.4-mini"
-    reasoning_effort: str | None = "high"
+    model: str | None = "gpt-5.5"
+    reasoning_effort: str | None = "low"
     chunk_ids: list[int] | None = None
     limit: int | None = None
     offset: int = 0

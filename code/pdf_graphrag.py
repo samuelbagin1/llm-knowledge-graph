@@ -28,14 +28,12 @@ from openai import (
 from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter, SpacyTextSplitter
 import spacy
 
-from deprecated.classification import classify
 from classes import Schema, ClassifiedDocument, Type, SubSentence, ReasoningStep
 from chunker.chunker import Chunker
 from langchain_core.documents import Document
 from langchain_neo4j.graphs.graph_document import GraphDocument, Node, Relationship
 import asyncio
 from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference,system_prompt_for_generating_query, response_schema_for_generating_query, system_prompt_ark_select_relation, system_prompt_ark_reasoning
-from deprecated.examples import examples_for_extraction
 from pydantic import BaseModel, Field, SecretStr
 import numpy as np
 from to_json import odd_to_json, refinement_to_json, sde_to_json
@@ -49,6 +47,124 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 # Default node type when type is missing or empty
 DEFAULT_NODE_TYPE = "Entity"
+
+
+# Pre-baked domain schema used when the ODD + refinement pipeline is skipped.
+# Shape matches response_schema_for_schema_refinement so _convert_to_schema accepts it.
+SCHEMA_NODE_TYPES = [
+    "Subjekt",
+    "Osoba",
+    "Organizacia",
+    "Adresa",
+    "Lokacia",
+    "Stat",
+    "Banka",
+    "Paragraf",
+    "Odsek",
+    "Pismeno",
+    "Bod",
+    "Priloha",
+    "PravnyPredpis",
+    "Dokument",
+    "Konanie",
+    "Rozhodnutie",
+    "Ziadost",
+    "Oznamenie",
+    "Dan",
+    "DanovePriznanie",
+    "ZdanovacieObdobie",
+    "SadzbaDane",
+    "NadmernyOdpocet",
+    "Sankcia",
+    "Povinnost",
+    "Pravo",
+    "Podmienka",
+    "Lehota",
+    "Obdobie",
+    "Datum",
+    "Dovod",
+    "Status",
+    "Tovar",
+    "Sluzba",
+    "Majetok",
+    "Nehnutelnost",
+    "Vozidlo",
+    "Ucet",
+    "BankovyUcet",
+    "Platba",
+    "Suma",
+    "Mnozstvo",
+    "Obrat",
+    "Mena",
+    "Kurz",
+    "Zmluva",
+    "Pohladavka",
+    "Zavazok",
+    "Zastupenie",
+    "Registracia",
+    "Zaznam",
+]
+
+
+SCHEMA_RELATIONSHIP_TYPES = [
+    "VZTAHUJE_SA_NA",
+    "NEVZTAHUJE_SA_NA",
+    "UPRAVUJE",
+    "DEFINUJE",
+    "URCUJE",
+    "ODKAZUJE_NA",
+    "VYPLYVA_Z",
+    "JE_TYPOM",
+    "JE_SUCASTOU",
+    "OBSAHUJE",
+    "PATRI_DO",
+    "NACHADZA_SA_V",
+    "MA",
+    "MA_ADRESU",
+    "MA_IDENTIFIKATOR",
+    "MA_STATUS",
+    "MA_DATUM",
+    "MA_OBDOBIE",
+    "MA_LEHOTU",
+    "MA_SUMU",
+    "MA_HODNOTU",
+    "MA_PODMIENKU",
+    "MA_PRAVO",
+    "MA_POVINNOST",
+    "MA_NAROK_NA",
+    "NEMA_NAROK_NA",
+    "SPLNA_PODMIENKY",
+    "NESPLNA_PODMIENKY",
+    "KONA_V_MENE",
+    "JE_ZASTUPENA",
+    "ZODPOVEDA_ZA",
+    "PODAVA",
+    "PREDKLADA",
+    "DORUCUJE",
+    "OZNAMUJE",
+    "PRIJIMA",
+    "VYDAVA",
+    "ROZHODUJE_O",
+    "REGISTRUJE",
+    "UCHOVAVA",
+    "DODAVA",
+    "POSKYTUJE",
+    "PLATI",
+    "PODLIEHA",
+    "OSLOBODZUJE_OD",
+    "VZNIKA",
+    "ZANIKA",
+    "NADOBUDA",
+    "PRECHADZA_NA",
+    "MENI",
+    "NAHRADZA",
+    "RUSI",
+    "SUVISI_S",
+    "JE_OSLOBODENE_OD_DANE",
+    "JE_PREDMETOM_DANE",
+    "NIE_JE_PREDMETOM_DANE",
+    "JE_PODLA",
+]
 
 
 _HTML_HEADER = (
@@ -839,7 +955,7 @@ class PDFGraphRAG:
 
 
 
-    def detect_tables(self, pdf_path: str, output_dir: str = "./code/assets/detected_tables_figures", conf_threshold: float = 0.3):
+    def detect_tables(self, pdf_path: str, output_dir: str = "./file_output/tables_and_formulas", conf_threshold: float = 0.3):
         print("detecting tables")
         TARGET_CLASSES = {"table", "picture", "figure", "isolate_formula", "formula_caption"}
         os.makedirs(output_dir, exist_ok=True)
@@ -917,7 +1033,7 @@ class PDFGraphRAG:
 
 
 
-    def transform_table_to_html(self, table_image_paths: list[str], headline: Optional[str] = None, output_dir: str = "./code/assets/detected_tables_figures"):
+    def transform_table_to_html(self, table_image_paths: list[str], headline: Optional[str] = None, output_dir: str = "./file_output"):
 
         class TableHTMLResponse(BaseModel):
             """HTML table extracted from image(s)."""
@@ -1379,7 +1495,7 @@ Pred vystupom over:
 
     # OCR to LaTeX and then to GraphDocument
 
-    def get_formulas(self, assets_dir: str = "./code/assets/detected_tables_figures") -> list[dict]:
+    def get_formulas(self, assets_dir: str = "./file_output") -> list[dict]:
         """
         Load all detected formula PNGs from the assets directory.
 
@@ -1519,10 +1635,7 @@ Pred vystupom over:
         print("PDF loaded successfully.")
         return loader.load()
     
-    
-    
-    def classification(self, documents: List[Document]) -> ClassifiedDocument:
-        return classify(documents)
+
 
 
 
@@ -1894,26 +2007,45 @@ Pred vystupom over:
         )
 
         user_prompt = f"""
-        Extrahuj uzly a vztahy z dolu uvedeneho textu PODLA PRAVIDIEL V SYSTEM PROMPTE.
+        Extract entities and relationships from the Slovak legal text strictly according to the provided schema.
 
-        ### LOKALNY PRAVNY KONTEXT
-        {local_context_rule}
+        # CONTEXT
+        {"You are currently in Paragraf: " + path_segments[0] if path_segments else ""}
+        {"Section context (current section): " + path_str if path_str else ""}
 
-        ### POVOLENA SCHEMA (NIE rozsiruj, NIE premenovaj)
-        Entities (node labels): {", ".join(schema.nodes)}
+        # RULES
+        - use ONLY exact schema types
+        - no renaming or invented types
+        - prefer most specific valid type
+        - remove all diacritics
+        - use only Slovak language
+        - Node IDs must be in Title Case
+        - Relationship labels must be in SCREAMING_SNAKE_CASE
+        - decompose entities and relations into atomic legal units whenever valid
+        - if decomposition reduces legal meaning → keep compound legal concept
+        - skip unsupported information
+
+
+        # LEGAL CONTEXT
+        If text contains:
+        - `odsek` without explicit paragraf:
+        inherit active paragraf context
+
+        # SCHEMA
+        Entities: {", ".join(schema.nodes)}
 
         Relationships: {", ".join(schema.relationships)}
 
-        ### ROZPOCET HRAN
-        Cielovy pocet hran: {edge_budget_hint}.
-        Ak by si vytvoril viac, skrt tie bez doslovnej textovej opory.
-
-        ### POVINNE
-        Kazda hrana MA pole 'evidence' s doslovnym 5-15 slovnym fragmentom z textu.
-        Bez doslovneho fragmentu hranu NEVYTVOR.
-
-        ### TEXT
+        # TEXT
         {text}
+
+        # CHECK
+        - valid schema types only
+        - most specific types used
+        - full legal hierarchy in IDs
+        - odsek inheritance resolved
+        - odsek ranges atomically decomposed
+        - detailed legal entities included
         """
 
         # Create and run the agent
@@ -2134,6 +2266,10 @@ Pred vystupom over:
         print(f"Processed {len(formulas)} formula(s) into {0 if formula_graph_doc is None else len(formula_nodes)} node(s).")
 
         return table_graph_docs, formula_graph_doc, table_pages_to_exclude
+    
+    
+    
+    
 
 
 
@@ -2184,45 +2320,50 @@ Pred vystupom over:
 
 
 
-        # ---- ODD ----
-        # Stage failures abort the document. Per-chunk failures are tolerated
-        # inside async_open_domain_detection (chunks dropped, others continue).
-        splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
-        chunked_documents = splitter.split_documents(documents)
-        if not chunked_documents:
-            raise ValueError(f"[process] no chunks produced for ODD from {pdf_path}")
+        # # ---- ODD ----
+        # # Stage failures abort the document. Per-chunk failures are tolerated
+        # # inside async_open_domain_detection (chunks dropped, others continue).
+        # splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
+        # chunked_documents = splitter.split_documents(documents)
+        # if not chunked_documents:
+        #     raise ValueError(f"[process] no chunks produced for ODD from {pdf_path}")
 
-        extracted_schema_list = asyncio.run(
-            self.async_open_domain_detection(
-                chunked_documents,
-                write_json=write_json,
-                name=name_of_chain,
-            )
-        )
-        if not extracted_schema_list:
-            raise RuntimeError("[process] ODD produced no schemas (all chunks failed)")
-        print(f"\n\nAll chunks processed into schema. ({len(extracted_schema_list)} schemas)\n\n")
-        # ODD JSON is now written incrementally inside async_open_domain_detection
-        # when write_json=True, so no end-of-stage dump is needed here.
+        # extracted_schema_list = asyncio.run(
+        #     self.async_open_domain_detection(
+        #         chunked_documents,
+        #         write_json=write_json,
+        #         name=name_of_chain,
+        #     )
+        # )
+        # if not extracted_schema_list:
+        #     raise RuntimeError("[process] ODD produced no schemas (all chunks failed)")
+        # print(f"\n\nAll chunks processed into schema. ({len(extracted_schema_list)} schemas)\n\n")
+        # # ODD JSON is now written incrementally inside async_open_domain_detection
+        # # when write_json=True, so no end-of-stage dump is needed here.
 
 
-        # ---- Refinement ----
-        extracted_schema = Schema(
-            nodes=list(set(node for schema in extracted_schema_list for node in schema.nodes)),
-            relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
-        )
-        if not extracted_schema.nodes:
-            raise RuntimeError("[process] ODD union produced empty node set; aborting before refinement")
+        # # ---- Refinement ----
+        # extracted_schema = Schema(
+        #     nodes=list(set(node for schema in extracted_schema_list for node in schema.nodes)),
+        #     relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
+        # )
+        # if not extracted_schema.nodes:
+        #     raise RuntimeError("[process] ODD union produced empty node set; aborting before refinement")
 
-        # get_graph_schema is internally guarded — returns empty Schema on Neo4j read failure
-        refined_schema = self.schema_refinement(
-            odd_schema=extracted_schema,
-            existing_schema=self.get_graph_schema(),
-        )
-        # schema_refinement raises on its own retry exhaustion — propagates to abort
-        print(f"\n\nSchema refined.\n\n")
-        if write_json:
-            refinement_to_json(refined_schema, name=name_of_chain)  # save before next stage
+        # # get_graph_schema is internally guarded — returns empty Schema on Neo4j read failure
+        # refined_schema = self.schema_refinement(
+        #     odd_schema=extracted_schema,
+        #     existing_schema=self.get_graph_schema(),
+        # )
+        # # schema_refinement raises on its own retry exhaustion — propagates to abort
+        # print(f"\n\nSchema refined.\n\n")
+        # if write_json:
+        #     refinement_to_json(refined_schema, name=name_of_chain)  # save before next stage
+        
+        refined_schema = {
+            "node_types": SCHEMA_NODE_TYPES,
+            "relationship_types": SCHEMA_RELATIONSHIP_TYPES,
+        }
 
 
         # ---- SDE ----
@@ -2233,7 +2374,7 @@ Pred vystupom over:
         
         # add structural tree (Document -> Paragraf -> Odsek -> Pismeno -> Bod)
         self.graph.add_graph_documents(
-            graph_documents=tree_graph,
+            graph_documents=[tree_graph],
             include_source=False,
             baseEntityLabel=False
         )

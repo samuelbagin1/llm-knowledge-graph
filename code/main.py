@@ -18,9 +18,9 @@ graphrag = PDFGraphRAG(
     neo4j_password='fseijkfbsj48@',
     openai_api_key=os.getenv("OPENAI_API_KEY"),
     google_api_key=os.getenv("GOOGLE_API_KEY"),
-    database="colota"
+    database="zz-2004-222"
 )
 
 
 
-graphrag.process(pdf_path, "zz2004222")
+graphrag.process(pdf_path, "zz2004222", True)

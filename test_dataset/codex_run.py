@@ -718,8 +718,8 @@ def main() -> int:
         "CODEX_BIN",
         "/Users/samuelbagin/.vscode/extensions/openai.chatgpt-26.506.31421-darwin-arm64/bin/macos-aarch64/codex",
     )
-    model: str | None = "gpt-5.5"
-    reasoning_effort: str | None = "low"
+    model: str | None = "gpt-5.4-mini"
+    reasoning_effort: str | None = "high"
     chunk_ids: list[int] | None = None
     limit: int | None = None
     offset: int = 0

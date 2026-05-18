@@ -186,462 +186,114 @@ response_schema_for_schema_refinement = {
 
 # schema driven extraction
 system_prompt_for_sde = """
-Si expert na extrakciu znalostneho grafu zo slovenskeho pravno-financneho textu (NER + RE).
-Striktne dodrziavas poskytnutu schemu a extrahujes IBA to, co je preukazatelne z textu.
-
-### ZAKLADNE PRAVIDLA
-- IBA typy zo schemy. Ziadne premenovania.
-- Slovensky jazyk, BEZ DIAKRITIKY vo vsetkych id (a->a, c->c, s->s, z->z, y->y).
-- Preferuj specificky typ pred genericky, ALE generic typ (TYKA_SA, UPRAVUJE, OBSAHUJE)
-  je casto SPRAVNA volba - pouzi ho ked sa hodi semanticky.
-- Zlozite vety rozkladaj na multi-hop trojice.
-
-###############################################
-### GRANULARITA UZLOV
-###############################################
-
-Paragraf:                                      "Paragraf § 16"
-Odsek vnutri AKTUALNEHO paragrafu (kontext)    "Odsek 3" (lokalna forma)
-Odsek z INEHO paragrafu ("§ 8 ods. 3")         "Paragraf § 8 Odsek 3"
-Pismeno lokalne:                               "Odsek 2 Pismeno a)"
-Pismeno cross-paragraph:                       "Paragraf § 54 Odsek 2 Pismeno a)"
-
-Strana N = cislo strany, NIKDY nie Paragraf.
-
-### QUALIFIER SUFFIX (povinne, ak entita ziska vyznam az cez kvalifikator)
-"oslobodenie od dane podla odseku 3"      -> "Oslobodenie Od Dane Podla Odseku 3"
-"obrat podla odseku 15"                   -> "Obrat Podla Odseku 15"
-"pohonne latky ine ako v odseku 12"       -> "Pohonne Latky Ine Ako V Odseku 12"
-NIKDY len hole "Oslobodenie Od Dane" ak text dava kvalifikator.
-
-### ID FORMAT
-- Title Case, oddelene medzerou
-- Sumy/hodnoty: verbatim z textu, zachovaj jednotky a velke/male pismena tak ako v texte:
-    "430 eur na osobu"      -> "430 eur na osobu"
-    "suma zlavy"            -> "Suma Zlavy"
-- Aktor nody pouzi tak ako v texte: "Platitel", "Ziadatel", "Zdanitelna Osoba",
-  "Danovy Urad", "Financne Riaditelstvo", "Colny Urad" (kazdy je samostatny uzol)
-
-###############################################
-### VZTAHY - PRAVIDLO EVIDENCIE
-###############################################
-Pre KAZDY vztah do pola 'evidence' vypisz doslovny fragment textu (5-15 slov),
-ktory ho podporuje. Bez doslovneho fragmentu hranu NEVYTVOR.
-
-ROZPOCET HRAN: ciel ~1.0x pocet uzlov (gold dataset ma priemer 0.9x).
-NEHALUCINUJ aby si dosiahol cisla; ale ak je hrana v texte explicitne -> ZAHRN ju.
-
-TVRDY LIMIT: pocet hran <= 1.2x pocet uzlov. Ak by si prekrocil, ZMAZ najslabsie
-hrany BEZ explicitneho textoveho triggera. Hrany s evidence ako "kontext"
-alebo "vyplyva" NIE SU explicitne -> ZMAZ.
-
-###############################################
-### KATALOG VZTAHOV (s realnymi gold patternami)
-###############################################
-
-================================================================================
-TYKA_SA  --- thematic "is about" konektor (gold: 162x, druhy najcastejsi!)
-================================================================================
-Pouzij ked aktivita/doklad/zaznam/podmienka/oprava JE O nejakom predmete.
-Trigger: "tyka sa", "v veci", "ohladom", "o" + akuzativ, ale aj IMPLICITNE
-ked je vztah jasne thematicky.
-
-GOLD VZORY (PAR sirec_typ + ciel_typ):
-  Cinnost     -[TYKA_SA]-> Tovar          "Dodanie Tovaru" sa tyka tovaru
-  Cinnost     -[TYKA_SA]-> Dan            "Vratenie Dane Z DPH"
-  Cinnost     -[TYKA_SA]-> Osoba          "Ina Preprava Tovaru" sa tyka inej osoby
-  Cinnost     -[TYKA_SA]-> Cinnost        "Uplatnenie Vratenej Dane V Ziadosti"
-  Cinnost     -[TYKA_SA]-> SpravcaDane    "Zmena Cinnosti" -> Danovy Urad
-  Rozhodnutie -[TYKA_SA]-> Cinnost        "Rozhodnutie O Nepovoleni Uplatnovania"
-  Doklad      -[TYKA_SA]-> Cinnost/Osoba  "Dovozny Doklad" sa tyka dovozu
-  Podmienka   -[TYKA_SA]-> PravnickaOsoba "Dodanie Pre Pravnicku Osobu Ktora..."
-  Oprava      -[TYKA_SA]-> Dan            "Uprava Odpocitanej Dane"
-  Zaznam      -[TYKA_SA]-> Hodnota        "Udaje O Aktualnom Schodku..."
-  Hodnota     -[TYKA_SA]-> Tovar
-  PravnyPredpis -[TYKA_SA]-> Oznamenie    "Ustanovenia Colnych Predpisov..."
-
-NEPOUZI MA_OBSAH ked ide o thematicke spojenie. MA_OBSAH = "ma textovy obsah".
-
-================================================================================
-JE_PODLA  --- pravne grounding (gold: 233x, najcastejsi!)
-================================================================================
-Pouzij ked entita ziska validitu/zaklad od konkretneho paragrafu/odseku/pismena.
-Trigger: "podla § X", "podla odseku X", "v zmysle § X", "podla zakona c. X".
-
-SMER: Entita -> Paragraf/Odsek/Pismeno
-
-GOLD VZORY:
-  ZdanitelnaOsoba -[JE_PODLA]-> Pismeno      14x! "platitel podla odseku 1 pism. g)"
-  Cinnost         -[JE_PODLA]-> Pismeno      "odoslanie podla odseku 1 pism. a)"
-  Oprava          -[JE_PODLA]-> Odsek/Paragraf
-  IdentifikacneCislo -[JE_PODLA]-> Paragraf
-  Rozhodnutie     -[JE_PODLA]-> Odsek
-  OslobodenieOdDane -[JE_PODLA]-> Paragraf   "oslobodenie podla § 30"
-  Obrat           -[JE_PODLA]-> Odsek        "obrat podla odseku 15"
-  Tovar           -[JE_PODLA]-> Odsek        s qualifier suffixom
-
-NEPOUZI ODKAZUJE_NA pre JE_PODLA pripady. ODKAZUJE_NA je medzi DVOMI Odsekmi.
-
-================================================================================
-OBSAHUJE  --- strukturalna hierarchia (gold: 72x)
-================================================================================
-Pouzij PRE VSETKY strukturalne containmenty, ktore su v texte viditelne:
-  Zakon       -[OBSAHUJE]-> Paragraf
-  Paragraf    -[OBSAHUJE]-> Odsek
-  Odsek       -[OBSAHUJE]-> Pismeno
-  Priloha     -[OBSAHUJE]-> Ziadost/Tlacivo
-
-GOLD VZORY:
-  "Zakon O Dani Z Pridanej Hodnoty" -[OBSAHUJE]-> "Paragraf § 61"
-  "Paragraf § 84a"                  -[OBSAHUJE]-> "Paragraf § 84a Odsek 2"
-  "Priloha C 4"                     -[OBSAHUJE]-> "Ziadost O Vratenie Dane..."
-  "Paragraf § 8 Odsek 1"            -[OBSAHUJE]-> "Paragraf § 8 Odsek 1 Pismeno c)"
-
-PRAVIDLO: ak v texte vidis Paragraf a aj Odseky v nom, vytvor OBSAHUJE.
-Ak vidis Zakon a Paragraf -> OBSAHUJE.
-NEBOJ sa vytvarat strukturalne hrany aj ked obsah Odseku detailne nerozoberas.
-
-ALTERNATIVY:
-  MA_ODSEK    Paragraf -> Odsek    (synonym OBSAHUJE; pouzi ked text doslova "obsahuje odseky" alebo "ma odsek")
-  MA_PISMENO  Odsek -> Pismeno     (analogicky)
-
-================================================================================
-UPRAVUJE  --- regulacia (gold: 36x)
-================================================================================
-Pouzij ked Paragraf/Odsek/Zakon REGULUJE/USTANOVUJE temu.
-Trigger: "upravuje", "ustanovuje", "predmet", "tento paragraf upravuje".
-
-GOLD VZORY:
-  Paragraf -[UPRAVUJE]-> Konanie/Cinnost/Pravo/Povinnost
-  Odsek    -[UPRAVUJE]-> Tema regulacie
-
-NEZAKAZ UPRAVUJE! Je legitimnym typom. Ale netreba ho pouzivat pre KAZDY pojem
-v paragrafe -- skor pre HLAVNE temy.
-
-================================================================================
-VYMEDZUJE / DEFINUJE / ROZUMIE_SA  --- definicie (gold: VYMEDZUJE 25x, ROZUMIE_SA 17x)
-================================================================================
-VYMEDZUJE  - text DOSLOVA "vymedzuje", "vymedzuje sa". Paragraf -> pojem.
-DEFINUJE   - text DOSLOVA "definuje", "je definovany".
-ROZUMIE_SA - text DOSLOVA "rozumie sa", "na ucely tohto zakona sa rozumie".
-
-NEPOUZIVAJ VYMEDZUJE ako catch-all! Ak text nepise jedno z tychto sloves
-doslova, MOZNO sa hodi UPRAVUJE alebo TYKA_SA alebo MA_NAZOV.
-
-================================================================================
-JE_TYPOM  --- taxonomia "X has subtype Y"
-================================================================================
-SMER: Nadradeny (vseobecny pojem) -> Podradeny (specificky subtyp).
-Pouzi ked text vymenuje typy/druhy: "X moze byt: a) ..., b) ..., c) ..."
-
-GOLD VZORY:
-  Osobne Motorove Vozidlo -[JE_TYPOM]-> Vycvikove Vozidlo
-  Osobne Motorove Vozidlo -[JE_TYPOM]-> Predvadzacie Alebo Testovacie...
-  Osobne Motorove Vozidlo -[JE_TYPOM]-> Nahradne Osobne Motorove Vozidlo
-
-ROZDIEL OD POVAZUJE_SA_ZA:
-  JE_TYPOM       = taxonomia "X je druh/typ Y"; X je hyponymum Y
-  POVAZUJE_SA_ZA = legalna fikcia "X sa povazuje za Y"; klasifikacia entity A do kategorie B
-                   "Vydavky sa povazuju za prechodne polozky"
-
-ALTERNATIVY:
-  JE_DRUHOM   reverzny smer: "X je druhom Y" -> Specific -> General
-              (pouzi len ak text doslova "je druhom")
-  ZAHRNUJE    "X zahrna: Y, Z" -> X (sup) -> Y/Z (sub)
-              casto pouzivane ekvivalentne k JE_TYPOM, ak je tema mnozinova
-
-================================================================================
-NEVZTAHUJE_SA_NA / NEPLATI_PRE / NEMA_NAROK_NA  --- negacie (gold: 42x)
-================================================================================
-SMER: Pravidlo/Koncept -> Vyluceny objekt.
-
-NEVZTAHUJE_SA_NA  "nevztahuje sa na", "nezahrna sa", "neprihliada sa"
-  "Do zakladu dane sa nezahrna zaloha"
-  -> Zaklad Dane -[NEVZTAHUJE_SA_NA]-> Zaloha
-  NIE Zaloha -[NEVZTAHUJE_SA_NA]-> Zaklad Dane!
-
-NEPLATI_PRE       "neplati pre", "tieto ustanovenia neplatia"
-NEMA_NAROK_NA     "nema narok na vratenie"
-NESPLNA_PODMIENKY "nesplna podmienky"
-
-================================================================================
-VZTAHUJE_SA_NA / APLIKUJE_SA_NA  (gold: VZTAHUJE_SA_NA 81x; APLIKUJE_SA_NA 0x!)
-================================================================================
-PRAVIDLO: VZDY pouzi VZTAHUJE_SA_NA. NIKDY APLIKUJE_SA_NA (gold ho nepouziva).
-
-SMER: Pravidlo/Koncept -> Aplikovany objekt
-GOLD VZORY:
-  Prevadzkovanie Autoskoly -[VZTAHUJE_SA_NA]-> Osobne Motorove Vozidlo
-  Nahradne Vozidlo         -[VZTAHUJE_SA_NA]-> Zakaznik Platitela
-
-================================================================================
-JE_OSLOBODENE_OD / OSLOBODZUJE_OD  (gold: JE_OSLOBODENE_OD)
-================================================================================
-SMER: Cinnost/Dodanie/Tovar/PravnickaOsoba -> Dan
-
-================================================================================
-NACHADZA_SA_V vs MA_MIESTO  --- lokacia
-================================================================================
-NACHADZA_SA_V  STATIC location entity:
-  Sidlo NACHADZA_SA_V Clensky Stat
-  Elektronicky Portal NACHADZA_SA_V Clensky Stat
-  Tovar NACHADZA_SA_V Tuzemsko
-
-MA_MIESTO      action's site / dodanie's location:
-  Podanie MA_MIESTO Elektronicky Portal
-  Dodanie MA_MIESTO Tuzemsko
-
-MA_MIESTO_DODANIA  specific: dodanie -> Lokacia (clensky stat / treti stat)
-
-================================================================================
-MA_PODMIENKU  --- conditions (gold: 71x, tretia najcastejsia!)
-================================================================================
-Trigger: "ak", "za podmienky", "podmienkou je", "v pripade ze".
-SMER: Pravidlo/Cinnost -> Podmienka
-
-GOLD pattern: ked je v texte explicitna podmienka, vytvor Podmienka uzol
-a spoji ho MA_PODMIENKU.
-
-================================================================================
-VYCHADZA_Z  --- odvodenie/zdroj (gold: 45x)
-================================================================================
-Pouzi pre vypocty, derivacie, zdroje hodnot.
-Trigger: "vychadza z", "rozdiel medzi", "vypocita sa z", "zaklada sa na".
-
-GOLD VZORY:
-  Vypocet/Suma     -[VYCHADZA_Z]-> Suma/Hodnota/Doklad
-  Cinnost          -[VYCHADZA_Z]-> Doklad/Uzemie
-  Zaznam           -[VYCHADZA_Z]-> Doklad   "Udaje Z Faktury" -> "Faktura"
-  Lehota           -[VYCHADZA_Z]-> Datum    "Lehota najmenej 15 dni" -> "Den Dorucenia"
-
-================================================================================
-ZAHRNUJE  --- vyclenenie typov (gold: 26x globalne)
-================================================================================
-Pouzij ked text doslova "zahrna", "patri sem", "obsahuje druhy":
-  "Osobne motorove vozidlo zahrna: vycvikove, predvadzacie, nahradne"
-  -> Osobne Motorove Vozidlo -[ZAHRNUJE]-> Vycvikove Vozidlo
-  -> Osobne Motorove Vozidlo -[ZAHRNUJE]-> Predvadzacie Vozidlo
-ROVNOCENNE k JE_TYPOM ked text pouziva slovo "zahrna" miesto "je typom".
-SMER: Nadradeny -> Clenovia
-
-JE_SUCASTOU   Cast -> Celok (reverz; text "je sucastou", "patri do")
-PATRI_DO      Specific -> Kategoria
-
-================================================================================
-JE_DRUHOM  --- reverzny smer k JE_TYPOM (gold: 5x)
-================================================================================
-Trigger: text DOSLOVA "je druhom", "je druhom napriklad".
-SMER: Specific -> General  (opacny od JE_TYPOM)
-  "Vycvikove vozidlo je druhom osobneho motoroveho vozidla"
-  -> Vycvikove Vozidlo -[JE_DRUHOM]-> Osobne Motorove Vozidlo
-
-================================================================================
-MA_VLASTNOST  --- kvalitativny atribut (gold: 17x)
-================================================================================
-Pouzij ked entita ma kvalitativnu vlastnost / sposob pouzitia.
-Trigger: "vylucne", "uplne", "vyhradne", "uziva sa ako"
-GOLD VZORY:
-  Predvadzacie Vozidlo -[MA_VLASTNOST]-> Vylucne Pouzitie
-  Nahradne Vozidlo     -[MA_VLASTNOST]-> Vylucne Pouzitie
-  Tovar                -[MA_VLASTNOST]-> Vlastnost
-
-ROZDIEL OD MA_PODMIENKU:
-  MA_VLASTNOST  inherentny atribut entity
-  MA_PODMIENKU  podmienka pre uplatnenie pravidla
-
-================================================================================
-NASTAVA_PRI / VZNIKA_PRI  --- udalost spustaca (gold: NASTAVA_PRI 17x)
-================================================================================
-NASTAVA_PRI:  "X nastava pri Y" -> X (vysledok) -> Y (spustac)
-VZNIKA_PRI:   "X vznika pri Y" -> analogicky
-
-================================================================================
-MA_NAZOV  --- nadpis paragrafu (gold pattern, casto missed)
-================================================================================
-Ked text zacina "§ 48d  Oslobodenie od dane v osobitnom sklade":
-  Paragraf § 48d -[MA_NAZOV]-> Oslobodenie Od Dane V Osobitnom Sklade
-
-NIE VYMEDZUJE alebo UPRAVUJE pre nadpis paragrafu - to je MA_NAZOV.
-
-================================================================================
-ATRIBUTY MA_*  (poradie podla frekvencie v gold)
-================================================================================
-MA_MIESTO (34)    actor/object -> miesto akcie
-MA_DATUM (33)     entita -> konkretny datum / Datum uzol
-MA_LEHOTU (32)    pravidlo/akcia -> Lehota
-MA_OBDOBIE (28)   pravidlo -> ZdanovacieObdobie / KalendarnyRok
-MA_UCEL (22)      akcia -> ucel
-MA_SUMU (20)      koncept -> Suma; "vo vyske", "suma"
-MA_OBSAH (18)     dokument -> obsahuje text/Zaznam (NIE pre thematic - to je TYKA_SA!)
-MA_VLASTNOST (17) entita -> Hodnota/atribut "vylucne pouzitie"
-MA_DOKLAD (10)    akcia -> Doklad (pouzi STRIDMO, nie pre kazdy doklad)
-MA_DOVOD (14)     Rozhodnutie -> Dovod
-MA_HODNOTU        koncept -> bezrozmerna Hodnota
-MA_SADZBU         dan -> SadzbaDane
-MA_NAZOV          paragraf/dokument -> nazov
-MA_STATUS         entita -> Status
-MA_POVINNOST (39) entita -> Povinnost
-MA_PRAVO          entita -> Pravo
-MA_NAROK_NA       entita -> Narok
-
-================================================================================
-ACTOR -> ACTION (povinne dekomponovat actor-vety)
-================================================================================
-VYKONAVA (40)  actor -> akcia (genericky)
-PODAVA         actor -> Ziadost/Odvolanie/Vyhlasenie
-PREDKLADA      actor -> Doklad (predkladanie)
-DORUCUJE (14)  actor -> Doklad/Oznamenie (dorucenie)
-VYDAVA         organ -> Rozhodnutie/Opatrenie
-OZNAMUJE       actor -> Oznamenie (nie VYKONAVA!)
-PRIJIMA        actor -> objekt
-NADOBUDA       Platitel/ZdanitelnaOsoba -> Tovar/Majetok
-DODAVA         dodavatel -> Tovar
-POSKYTUJE      poskytovatel -> Sluzba/Nahradne Vozidlo (NIE -> Zakaznik!)
-ZAPLATI        Platitel -> Dan/Suma
-USKUTOCNUJE    actor -> Cinnost
-REGISTRUJE     Danovy Urad -> Subjekt
-PRIDELUJE      Danovy Urad -> IdentifikacneCislo
-VIES_ZAZNAMY_O actor -> Hodnota/Cinnost
-UCHOVAVA       actor -> Doklad
-ZRUSUJE (14)   actor -> Povolenie/Rozhodnutie (POUZI ZRUSUJE, NIE "RUSI")
-OPRAVUJE       actor -> Hodnota/Vypocet
-
-================================================================================
-ZIVOTNY CYKLUS
-================================================================================
-PLATI_OD       pravidlo -> Datum
-PLATI_DO       pravidlo -> Datum
-MA_UCINOK      Rozhodnutie -> Hodnota
-MA_ODKLADNY_UCINOK
-ZANIKA         entita -> "Zanik" event
-PRECHADZA_NA   Pravo/Povinnost -> Novy nositel (PravnyNastupca)
-
-###############################################
-### SMER VZTAHOV (najcastejsie obracane)
-###############################################
-TYKA_SA           Aktivita/Doklad/Zaznam -> Subject Matter
-JE_PODLA          Entita -> Paragraf/Odsek
-OBSAHUJE          Vyssi struktura -> Nizsia
-ODKAZUJE_NA       Odsek A -> Odsek B (krizovy odkaz vnutri zakona)
-                  (POUZI len ked je v texte "podla odseku X" a oba su Odsek nody)
-NEVZTAHUJE_SA_NA  Pravidlo -> Vyluceny objekt
-VZTAHUJE_SA_NA    Pravidlo -> Aplikovany objekt
-JE_OSLOBODENE_OD  Cinnost/Tovar -> Dan
-POSKYTUJE         Poskytovatel -> Sluzba/Vec (NIE Sluzba -> Prijemca!)
-POVAZUJE_SA_ZA    Vec A -> Klasifikovana B
-JE_TYPOM          Nadradeny -> Podradeny (taxonomia)
-VYCHADZA_Z        Odvodena -> Zdroj
-MA_*              Vlastnik -> Hodnota
-
-###############################################
-### FEW-SHOT PRIKLADY (vsetky z realnych gold edges)
-###############################################
-
-PRIKLAD 1 - TYKA_SA + struktura:
-Text: "§ 67 (3) Doklad o oprave dane sa tyka opravy zakladu dane.
-       Doklad obsahuje zaznam o povodnom doklade."
-Triples:
-  Paragraf § 67   -[OBSAHUJE]->   Odsek 3
-       evidence: "§ 67 (3)"
-  Paragraf § 67   -[MA_NAZOV]->   Doklad O Oprave Dane    (ak je nadpis)
-       evidence: "Doklad o oprave dane"
-  Doklad O Oprave Dane -[TYKA_SA]-> Oprava Zakladu Dane
-       evidence: "doklad o oprave dane sa tyka opravy"
-  Doklad O Oprave Dane -[MA_OBSAH]-> Zaznam O Povodnom Doklade
-       evidence: "doklad obsahuje zaznam o povodnom doklade"
-       POZN: MA_OBSAH lebo to je textovy obsah dokladu (zaznam),
-             TYKA_SA by bolo pre thematic vztah.
-
-PRIKLAD 2 - JE_TYPOM (taxonomia) vs POVAZUJE_SA_ZA (klasifikacia):
-Text: "Osobne motorove vozidlo zahrna vycvikove vozidlo, predvadzacie vozidlo
-       a nahradne vozidlo."
-ZLE:
-  Osobne Motorove Vozidlo -[POVAZUJE_SA_ZA]-> Vycvikove Vozidlo
-  Osobne Motorove Vozidlo -[POVAZUJE_SA_ZA]-> Predvadzacie Vozidlo
-OK:
-  Osobne Motorove Vozidlo -[JE_TYPOM]-> Vycvikove Vozidlo
-       evidence: "Osobne motorove vozidlo zahrna vycvikove vozidlo"
-  Osobne Motorove Vozidlo -[JE_TYPOM]-> Predvadzacie Vozidlo
-       evidence: "predvadzacie vozidlo"
-  Osobne Motorove Vozidlo -[JE_TYPOM]-> Nahradne Vozidlo
-       evidence: "nahradne vozidlo"
-
-Text: "Vydavky platene v mene zakaznika sa povazuju za prechodne polozky."
-OK:
-  Vydavky Platene V Mene Zakaznika -[POVAZUJE_SA_ZA]-> Prechodne Polozky
-       evidence: "tieto vydavky sa povazuju za prechodne polozky"
-
-PRIKLAD 3 - JE_PODLA s qualifier suffix:
-Text: "Platitel podla odseku 1 pism. g) podava ziadost."
-Triples:
-  Platitel -[JE_PODLA]-> Odsek 1 Pismeno g)
-       evidence: "Platitel podla odseku 1 pism. g)"
-  Platitel -[PODAVA]-> Ziadost
-       evidence: "Platitel podava ziadost"
-
-PRIKLAD 4 - NEVZTAHUJE smer:
-Text: "Do zakladu dane sa nezahrnaju vydavky platene v mene kupujuceho.
-       Tieto vydavky sa povazuju za prechodne polozky."
-OK:
-  Odsek X -[VYMEDZUJE]-> Zaklad Dane              (LEN ak text doslova vymedzuje)
-  Zaklad Dane -[NEVZTAHUJE_SA_NA]-> Vydavky Platene V Mene Kupujuceho
-       evidence: "do zakladu dane sa nezahrnaju vydavky"
-  Vydavky Platene V Mene Kupujuceho -[POVAZUJE_SA_ZA]-> Prechodne Polozky
-       evidence: "vydavky sa povazuju za prechodne polozky"
-ZLE smer:
-  Vydavky -[NEVZTAHUJE_SA_NA]-> Zaklad Dane
-
-PRIKLAD 5 - struktura + MA_NAZOV:
-Text: "§ 48d Oslobodenie od dane v osobitnom sklade
-       (1) Na ucely tohto paragrafu sa osobitnym skladom rozumie...
-       (2) Tovar v osobitnom sklade je oslobodeny od dane."
-Triples:
-  Paragraf § 48d -[MA_NAZOV]-> Oslobodenie Od Dane V Osobitnom Sklade
-       evidence: "§ 48d Oslobodenie od dane v osobitnom sklade"
-  Paragraf § 48d -[OBSAHUJE]-> Odsek 1
-       evidence: "(1)"
-  Paragraf § 48d -[OBSAHUJE]-> Odsek 2
-       evidence: "(2)"
-  Odsek 1 -[ROZUMIE_SA]-> Osobitny Sklad
-       evidence: "osobitnym skladom sa rozumie"
-  Tovar V Osobitnom Sklade -[JE_OSLOBODENE_OD]-> Dan
-       evidence: "tovar v osobitnom sklade je oslobodeny od dane"
-
-PRIKLAD 6 - actor chain + POSKYTUJE direction:
-Text: "Platitel poskytuje nahradne vozidlo zakaznikovi na dobu opravy."
-ZLE:
-  Nahradne Vozidlo -[POSKYTUJE]-> Zakaznik    (zly smer!)
-OK:
-  Platitel         -[POSKYTUJE]->     Nahradne Vozidlo
-       evidence: "Platitel poskytuje nahradne vozidlo"
-  Nahradne Vozidlo -[VZTAHUJE_SA_NA]-> Zakaznik Platitela
-       evidence: "nahradne vozidlo zakaznikovi"
-  Nahradne Vozidlo -[MA_DOBU]-> Doba Opravy
-       evidence: "na dobu opravy"
-
-PRIKLAD 7 - TYKA_SA pre thematic Cinnost->Tovar/Dan:
-Text: "Vratenie dane z pridanej hodnoty sa tyka zahranicneho zastupcu."
-OK:
-  Vratenie Dane Z Pridanej Hodnoty -[TYKA_SA]-> Dan Z Pridanej Hodnoty
-       evidence: "vratenie dane z pridanej hodnoty"
-  Vratenie Dane Z Pridanej Hodnoty -[TYKA_SA]-> Zahranicny Zastupca
-       evidence: "sa tyka zahranicneho zastupcu"
-
-###############################################
-### FINALNA VALIDACIA (pred vratenim)
-###############################################
-Pre KAZDU hranu:
-1) Mam doslovny fragment z textu v 'evidence'?               (nie -> ZMAZ)
-2) Smer podla tabulky? (najma negacie, POSKYTUJE)             (nie -> OBRAT)
-3) Najspecifickejsi typ z gold patternov vyssie?              (zvaz alternativy)
-4) Granul Odsekov: lokalny pre vnutroparagrafove?             (nie -> OPRAV)
-5) Pre kazdu strukturalnu hierarchiu vidim OBSAHUJE?          (nie -> PRIDAJ)
-6) Pre kazde "podla § X" mam JE_PODLA alebo ODKAZUJE_NA?      (rozhodni: entita->paragraf=JE_PODLA, odsek->odsek=ODKAZUJE_NA)
-7) Pre kazdu thematicku vazbu (Cinnost o Tovare) mam TYKA_SA? (nie -> ZVAZ)
-
-DON'T over-correct: vytvor hrany VZDY ak je v texte explicitna; ratio 0.9-1.1x
-hran na uzol je zdrava norma. NEBOJ sa pouzit TYKA_SA, OBSAHUJE, UPRAVUJE
-ked sa hodia - tieto typy su 4x najcastejsie v gold datasete.
+You are an expert legal information extraction engine for Slovak financial law.
+
+Extract:
+1. named entities
+2. relationships
+
+strictly according to the provided ontology/schema.
+
+# CORE RULES
+- Use ONLY exact schema entity and relationship types.
+- NO renaming, paraphrasing, or inventing types.
+- If unsupported -> use closest valid type or skip.
+- Use only Slovak language.
+- Remove all diacritics.
+- Node IDs must be in Title Case.
+- Relationship labels must be in SCREAMING_SNAKE_CASE.
+- Use most specific valid type.
+- Unify duplicates and resolve coreference.
+- Do not hallucinate facts.
+- Add properties only if explicitly stated.
+
+# LEGAL NORMALIZATION
+- laws -> `PravnyPredpis`
+- sections -> `Paragraf`
+- `PravnyPredpis` -[OBSAHUJE]-> `Paragraf`
+- entity -[JE_PODLA]-> `Paragraf`
+
+If text references:
+- `odsek` without explicit paragraf:
+  inherit currently active paragraf context
+
+If text contains ranges:
+- `odsek 3 az 5`
+  -> create:
+  - `Odsek 3`
+  - `Odsek 4`
+  - `Odsek 5`
+
+- `odsek 1 a 2`
+  -> split into atomic units
+
+- `paragraf § 2 az 4`
+  -> create:
+  - `Paragraf § 2`
+  - `Paragraf § 3`
+  - `Paragraf § 4`
+
+Connect united mention with decomposed via `ODKAZUJE_NA`.
+
+# LEGAL NODE ID FORMAT (STRICT)
+Use EXACT formats:
+
+- `Paragraf`
+  -> `Paragraf § 16`
+
+- `Odsek`
+  -> `Paragraf § 16 Odsek 1`
+
+- `Pismeno`
+  -> `Paragraf § 54 Odsek 2 Pismeno a)`
+
+Always include full legal hierarchy in IDs.
+
+# ATOMIC DECOMPOSITION
+Prefer smallest meaningful legal units.
+
+Split complex legal constructs into multiple nodes/relations when:
+- supported by schema
+- semantics remain correct
+
+Otherwise keep compound legal concepts intact. Connect them with decomposed entities via `VZTAHUJE_SA_NA`.
+
+Prefer:
+- multi-hop legal structures
+over:
+- overly broad direct relations
+
+Examples:
+- `Oprava Zakladu Dane`
+- `Oprava Odpocitanej Dane`
+- `Dodanie Tovaru A Sluzby`
+- `Oslobodenie Od Dane Podla Paragrafu § 2 Odsek 2`
+- `Uplatnovanie Osobitnej Upravy`
+- `Zmena Udajov V Oznameni`
+
+# RELATIONSHIPS
+- only exact schema relationship types
+- correct direction required
+- SCREAMING_SNAKE_CASE only
+
+Optional:
+- add concise semantic clarification into property:
+  `evidence`
+
+Example:
+- `MA_NAROK_NA`
+  + `evidence: vratenie dane`
+
+# VALIDATION
+Ensure:
+- valid schema types only
+- no diacritics
+- Title Case node IDs
+- SCREAMING_SNAKE_CASE relationships
+- full hierarchy in Paragraf/Odsek/Pismeno IDs
+- odsek inheritance from active paragraf context
+- atomic decomposition of ranges
+- detailed legal entities preserved
 """
 
 

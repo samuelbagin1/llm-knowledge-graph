@@ -578,7 +578,7 @@ Pri opätovnom vyhodnotení nákladov a prínosov sa však ukázalo, že pri ná
 
 
 \subsection{Kvalitatívne výsledky}
-Na otestovanie spoločnej extrakcie entít a vzťahov bol vytvorený v spolupráci s odborníkmi testovací dataset. Obsahuje 100 grafových dokumentov zo zákonu 222/2004 o dani z pridanej hodnoty, ktorý je veľmi bohatý na prepojenia odkazov paragrafov a je veľmi obtiažný na porozumenie. Dataset je rozdelený 3:7, kde 30 grafových dokumentov slúži na validáciu a 70 na testovanie. Na vyhodnotenie využiteľnosti je v datasete 20 otázok s podporujúcimi paragrafmi, ktoré sú zdrojom k správnej odpovedi.
+Na otestovanie spoločnej extrakcie entít a vzťahov bol vytvorený v spolupráci s odborníkmi testovací dataset. Obsahuje 100 grafových dokumentov zo zákonu 222/2004 o dani z pridanej hodnoty, ktorý je veľmi bohatý na prepojenia odkazov paragrafov a je veľmi obtiažný na porozumenie. Dataset je rozdelený 3:7, kde 30 grafových dokumentov slúži na validáciu a 70 na testovanie. Na vyhodnotenie využiteľnosti je v datasete 21 otázok s podporujúcimi paragrafmi, ktoré sú zdrojom k správnej odpovedi.
 
 
 \subsubsection{Extrakcia}
@@ -710,16 +710,13 @@ Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z 21, hoci pok
 GraphRAG dosiahol vysokú úspešnosť odpovedí (20 z 21), čo ukazuje, že znalostný graf poskytol modelu dostatočne presné faktické ukotvenie pre väčšinu právnych otázok. Slabším miestom bolo pokrytie podporujúcich ustanovení, kde systém našiel 74{,}6\,\% ľudsky anotovaných sekcií a najčastejšie mu chýbali doplnkové odseky, ustanovenia k evidencii, súhrnným výkazom alebo prílohám.
 
 
-\subsection{Voľba modelov}
-
-GPT modely boli zvolené kvôli ich širokému trénovaniu na rozličných textoch — vo výskumoch dosahoval najvyššie F1 skóre pre extrakciu entít a vzťahov model GPT 4o, pričom novšie generácie zlepšujú pochopenie textu aj v slovenčine. Pre extrakciu som zvolil cenovo dostupný GPT 5.4 mini s nízkou latenciou, kde spracovanie 150-stranového dokumentu vyjde na 8–15\,€; síce nedosahuje najvyššie skóre, ale dokáže extrahovať podstatné informácie. Testované boli aj Gemini 2.5/3 Flash, ktoré mali prijateľnú cenu, no vyššiu latenciu pri obrázkoch, a Claude Sonnet, ktorý dosahoval veľmi dobré pochopenie textu, no za štvornásobne vyššiu cenu, čo je neekonomické.
-
-Použitie silnejších modelov ako GPT-5.5, GPT-5.5-Pro, Opus 4.7 alebo Gemini 3 Pro by pravdepodobne zlepšilo kvalitu extrakcie, ich nevýhodou je však cena, ktorá sa pri rozsiahlejšom datasete rýchlo kumuluje. Alternatívou sú otvorené modely ako Llama či Mistral, kde po počiatočnej investícii do hardvéru (rádovo tisíce eur) nevznikajú náklady za každé ďalšie spracovanie, čo môže byť pri dlhodobom a opakovanom spracovaní väčšieho množstva dát opodstatnené.
-
-
 
 \subsection{Vylepšenia}
 
-llm velmi drahe
+Hlavnou prekážkou pri ďalšom rozvoji systému je cena spracovania. Pri komerčných API sa náklady na každý dokument sčítavajú a pri rozsiahlejšom datasete rastú veľmi rýchlo. Tento ekonomický strop ovplyvnil aj voľbu modelu počas vývoja a v podstate určuje, ktorým smerom sa dá projekt ďalej posúvať.
 
-Fine tuning modelov, vyuzitie validacneho kroku, vacsi testovaci dataset, alternativa vyuzitie llm na generovanie datasetu a trenovanie CNN, GCN, ....
+Pre extrakciu som zvolil GPT 5.4 mini, ktorý má rozumnú cenu, nízku latenciu a spracovanie 150-stranového dokumentu vyjde na 8 až 15\,€. Najvyššie F1 skóre pri extrakcii entít a vzťahov síce vo výskumoch dosahuje GPT 4o, novšie generácie však zlepšujú pochopenie textu aj v slovenčine. Testoval som aj Gemini 2.5 a 3 Flash s porovnateľnou cenou, no vyššou latenciou pri spracovaní obrázkov, a Claude Sonnet, ktorý textu rozumel veľmi dobre, no za štvornásobne vyššiu cenu, čo sa pri tomto rozsahu dát nedalo nákladovo využiť.
+
+Silnejšie modely ako GPT-5.5-Pro, Opus 4.7 alebo Gemini 3 Pro by kvalitu extrakcie pravdepodobne zlepšili, ich cena však pri väčšom objeme dát narastá rovnako rýchlo. Pri rozsiahlejšom spracovaní preto má zmysel uvažovať o lokálnych modeloch ako Llama alebo Mistral. Po počiatočnej investícii do hardvéru, ktorá sa pohybuje rádovo v tisícoch eur, už nevznikajú náklady za každý ďalší dokument, takže pri dlhodobom použití sa takáto investícia môže vrátiť.
+
+Priestor na zlepšenie však nie je len vo voľbe modelu. Kvalitu extrakcie by zvýšil validačný krok, ktorý by kontroloval konzistentnosť entít a vzťahov, ďalej väčší testovací dataset s ručne anotovanými dokumentmi a fine-tuning modelu na konkrétnej právnej doméne. Zaujímavou alternatívou je použiť LLM iba na vygenerovanie trénovacích dát a následne natrénovať menší špecializovaný model, napríklad BERT. Takýto model by potom dokázal extrakciu vykonávať lokálne a podstatne lacnejšie, čím by sa obišlo aj prvotne spomenuté cenové obmedzenie.

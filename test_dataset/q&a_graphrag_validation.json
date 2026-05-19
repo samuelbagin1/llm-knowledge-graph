@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "question": "Zdaniteľná osoba prekročila v roku 2025 obrat 50 000 eur, podala žiadosť o registráciu, ale ešte pred 1. januárom 2026 dodaním služby prekročila v prebiehajúcom roku 62 500 eur. Od ktorého momentu sa stáva platiteľom a čo musí oznámiť?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -139,6 +140,7 @@
     "timestamp": "2026-05-19T15:58:48.373921"
   },
   {
+    "id": 2,
     "question": "Ak sa osoba stala platiteľom od 1. januára preto, že v predchádzajúcom roku prekročila obrat výlučne z finančných alebo poisťovacích služieb, ale ešte pred koncom tohto roka po prekročení obratu dodala aj bežnú zdaniteľnú službu, odkedy jej vzniká povinnosť podávať daňové priznanie?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -253,6 +255,7 @@
     "timestamp": "2026-05-19T16:01:01.840855"
   },
   {
+    "id": 3,
     "question": "Český malý podnik má pre Slovensko pridelené individuálne identifikačné číslo s príponou EX a dodáva službu slovenskému platiteľovi. Má sa slovenský odberateľ samozdaniť podľa pravidiel reverse charge?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -409,6 +412,7 @@
     "timestamp": "2026-05-19T16:03:16.665921"
   },
   {
+    "id": 4,
     "question": "Slovenská zdaniteľná osoba, ktorá nie je platiteľom, nadobudla z EÚ tovar za 13 500 eur a ešte pred ďalším nákupom má prijať poradenskú službu od osoby z iného členského štátu s miestom dodania podľa § 15 ods. 1 v tuzemsku. Musí sa registrovať podľa § 7 alebo § 7a?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -538,6 +542,7 @@
     "timestamp": "2026-05-19T16:05:49.121106"
   },
   {
+    "id": 5,
     "question": "Fyzická osoba príležitostne predá z tuzemska do iného členského štátu auto s najazdenými 5 500 km. Aké tri daňové dôsledky z toho plynú pre predávajúceho a nadobúdateľa?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -718,6 +723,7 @@
     "timestamp": "2026-05-19T16:08:31.474722"
   },
   {
+    "id": 6,
     "question": "Platiteľ presunie tovar do iného členského štátu v režime call-off stock, pôvodný odberateľ je v lehote 12 mesiacov nahradený inou zdaniteľnou osobou a zmena je uvedená v záznamoch aj súhrnnom výkaze. Vzniká už pri nahradení premiestnenie tovaru podľa § 8 ods. 4?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -883,6 +889,7 @@
     "timestamp": "2026-05-19T16:10:19.912685"
   },
   {
+    "id": 7,
     "question": "V reťazovom obchode ide tovar priamo od prvého dodávateľa ku konečnému odberateľovi z jedného členského štátu do druhého. Prostredná osoba oznámi dodávateľovi IČ DPH štátu, z ktorého sa tovar odosiela. Ku ktorému dodaniu sa priradí preprava a ako sa to líši od trojstranného obchodu?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1036,6 +1043,7 @@
     "timestamp": "2026-05-19T16:12:04.387829"
   },
   {
+    "id": 8,
     "question": "Prečo sa jednoúčelový poukaz zdaňuje inak ako viacúčelový poukaz a ako sa určí základ dane pri viacúčelovom poukaze, ak dodávateľ nepozná sumu zaplatenú za poukaz?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1162,6 +1170,7 @@
     "timestamp": "2026-05-19T16:13:30.505381"
   },
   {
+    "id": 9,
     "question": "Slovenský dodávateľ usadený iba v SR predáva tovar na diaľku a dodáva elektronické služby nezdaniteľným osobám v iných členských štátoch. V predchádzajúcom ani prebiehajúcom roku nepresiahol hodnotu 10 000 eur. Kde je miesto dodania a čo sa zmení transakciou, ktorou limit prekročí?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1175,13 +1184,145 @@
         "§ 16a ods. 1 až 3"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:42.243672"
+    "found_sections": [
+      {
+        "id": "Paragraf § 16a Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Pri splnení podmienok pod písmenami a) až c) určuje miesto dodania pri distance sales ako miesto začatia odoslania/prepravy a pri elektronických službách B2C ako miesto dodávateľa.",
+        "text": "Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde\nsa odoslanie alebo preprava tovaru začína, a miestom dodania pri dodaní telekomunikačných\nslužieb, služieb rozhlasového vysielania a televízneho vysielania a elektronických služieb, ktoré sú\ndodané osobe inej "
+      },
+      {
+        "id": "Paragraf § 16a Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Zodpovedá skutkovému stavu, že slovenský dodávateľ je usadený iba v SR/jednom členskom štáte.",
+        "text": "dodávateľ tovaru alebo služby má len v jednom členskom štáte sídlo, miesto podnikania alebo\nprevádzkareň alebo bydlisko alebo miesto, kde sa obvykle zdržiava,\n"
+      },
+      {
+        "id": "Paragraf § 16a Odsek 1 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Pokrýva dodanie tovaru alebo elektronickej služby do iného členského štátu než štát usadenia dodávateľa.",
+        "text": "tovar sa odosiela alebo prepravuje do iného členského štátu, ako je členský štát podľa písmena\na), alebo služba sa dodáva osobe, ktorá má sídlo, bydlisko alebo miesto, kde sa obvykle\nzdržiava, v inom členskom štáte, ako je členský štát podľa písmena a) a \n"
+      },
+      {
+        "id": "Paragraf § 16a Odsek 1 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Stanovuje rozhodujúci limit 10 000 eur za dotknuté cezhraničné dodania v prebiehajúcom aj predchádzajúcom kalendárnom roku.",
+        "text": "celková hodnota dodaní uvedených v písmene b) bez dane nepresiahne v prebiehajúcom\nkalendárnom roku 10 000 eur a súčasne v predchádzajúcom kalendárnom roku celková\nhodnota dodaní uvedených v písmene b) bez dane nepresiahla 10 000 eur.\n"
+      },
+      {
+        "id": "Paragraf § 16a Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Pri transakcii, ktorou sa limit prekročí, priamo stanovuje zmenu miesta dodania už týmto dodaním na pravidlá § 14 ods. 2 a § 16 ods. 14.",
+        "text": "Ak sa počas kalendárneho roka presiahne limit podľa odseku 1 písm. c), dodaním tovaru\nalebo služby, ktorým sa prekročí tento limit, miesto dodania tovaru sa mení na miesto dodania\ntovaru podľa § 14 ods. 2 a miesto dodania služby sa mení na miesto dodania služby podľa § 16\nods. 14.\n"
+      },
+      {
+        "id": "Paragraf § 16a Odsek 3",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Aj pri neprekročení limitu umožňuje dodávateľovi zvoliť režim miesta dodania podľa štátu zákazníka/spotreby a viaže ho najmenej na dva roky.",
+        "text": "Dodávateľ tovaru alebo služby, ktorý spĺňa podmienky podľa odseku 1, sa môže rozhodnúť\npre miesto dodania tovaru podľa § 14 ods. 2 a miesto dodania služieb podľa § 16 ods. 14 a je\npovinný tieto miesta uplatňovať najmenej po dobu dvoch kalendárnych rokov.\n"
+      },
+      {
+        "id": "Paragraf § 14 Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Definuje predaj tovaru na diaľku na území EÚ ako dodanie tovaru odoslaného/prepraveného dodávateľom z iného členského štátu, než kde sa preprava skončí.",
+        "text": "predajom tovaru na diaľku na území Európskej únie dodanie tovaru, ktorý je odoslaný alebo\nprepravený dodávateľom alebo na jeho účet, a to aj keď dodávateľ zasahuje nepriamo do\nodoslania alebo prepravy tovaru,6aaa) z iného členského štátu, ako je členský štát, v ktorom sa\nskončí odoslanie alebo prepr"
+      },
+      {
+        "id": "Paragraf § 14 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 14",
+        "role": "cross_reference",
+        "relevance": "Je pravidlom, na ktoré § 16a ods. 2 odkazuje po prekročení limitu: miesto dodania tovaru je miesto skončenia prepravy k zákazníkovi, ak § 16a ods. 1 neustanovuje inak.",
+        "text": "Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde\nsa tovar nachádza v čase, keď sa odoslanie alebo preprava tovaru k zákazníkovi skončí, ak § 16a\nods. 1 neustanovuje inak.\n"
+      },
+      {
+        "id": "Paragraf § 16 Odsek 14",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 16",
+        "role": "cross_reference",
+        "relevance": "Je pravidlom, na ktoré § 16a ods. 2 odkazuje po prekročení limitu: miesto dodania elektronických služieb B2C je štát, kde má príjemca sídlo/bydlisko/obvyklý pobyt, ak § 16a ods. 1 neustanovuje inak.",
+        "text": "Miestom dodania telekomunikačných služieb, služieb rozhlasového vysielania a televízneho\nvysielania a elektronických služieb dodaných osobe inej ako zdaniteľnej osobe je miesto, kde má\ntáto osoba sídlo, bydlisko alebo miesto, kde sa obvykle zdržiava, ak § 16a ods. 1 neustanovuje\ninak.\n"
+      },
+      {
+        "id": "Paragraf § 16 Odsek 17",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 16",
+        "role": "defines",
+        "relevance": "Uvádza, že nasledujúce písmená sú príklady elektronických služieb podľa odseku 14.",
+        "text": "Elektronickými službami podľa odseku 14 sú najmä\n"
+      },
+      {
+        "id": "Paragraf § 16 Odsek 17 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Príklad elektronickej služby relevantný pre zaradenie služieb pod § 16 ods. 14 a § 16a.",
+        "text": "poskytovanie webových stránok, hosťovanie na webových stránkach, diaľkové udržiavanie\nprogramov a vybavenia,\n"
+      },
+      {
+        "id": "Paragraf § 16 Odsek 17 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Príklad elektronickej služby – dodanie softvéru a aktualizácií – relevantný pre režim miesta dodania.",
+        "text": "dodanie programového vybavenia (softvéru) a jeho aktualizácia,\n"
+      },
+      {
+        "id": "Paragraf § 16 Odsek 17 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Príklad elektronickej služby – digitálny obsah a databázy – relevantný pre režim miesta dodania.",
+        "text": "dodanie obrázkov, textu a informácií a sprístupnenie databáz,\n"
+      },
+      {
+        "id": "Paragraf § 16 Odsek 17 Pismeno d)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Príklad elektronickej služby – hudba, filmy, hry a vysielanie udalostí – relevantný pre režim miesta dodania.",
+        "text": "dodanie hudby, filmov a hier vrátane výherných a hazardných hier a politického, kultúrneho,\numeleckého, športového, vedeckého a zábavného vysielania a vysielania udalostí,\n"
+      },
+      {
+        "id": "Paragraf § 16 Odsek 18",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Negatívne vymedzuje, že samotná komunikácia e-mailom medzi dodávateľom a zákazníkom nie je elektronickou službou podľa § 16 ods. 14.",
+        "text": "Za elektronickú službu podľa odseku 14 sa nepovažuje komunikácia prostredníctvom\nelektronickej pošty medzi dodávateľom služby a jeho zákazníkom.\n"
+      }
+    ],
+    "found_entities": [
+      "Predaj Tovaru Na Dialku Na Uzemi Europskej Unie",
+      "Predaj Tovaru Na Dialku",
+      "Elektronicke Sluzby",
+      "Nezdanitelna Osoba",
+      "Miesto Dodania Tovaru Pri Predaji Tovaru Na Dalku Na Uzemi Europskej Unie",
+      "Miesto Dodania Pri Dodani Telekomunikacnych Sluzieb Sluzieb Rozhlasoveho Vysielania A Televizneho Vysielania A Elektronickych Sluzieb",
+      "10 000 eur",
+      "Miesto Dodania Sluzby Osobe Innej Ako Zdanitelnej Osobe"
+    ],
+    "answer": "Ak sú splnené podmienky § 16a ods. 1, miesto dodania pri predaji tovaru na diaľku je miesto, kde sa odoslanie alebo preprava začína, teda SR, a pri elektronických službách je miestom dodania miesto, kde má dodávateľ sídlo alebo miesto podnikania, teda SR.  \nAk sa počas roka limit 10 000 eur presiahne, už dodaním tovaru alebo služby, ktorým sa limit prekročí, sa miesto dodania mení: pri tovare na miesto, kde sa preprava skončí podľa § 14 ods. 2, a pri elektronických službách na miesto, kde má nezdaniteľná osoba sídlo, bydlisko alebo obvyklý pobyt podľa § 16 ods. 14.",
+    "retrieval_reasoning": "Koncepty: predaj tovaru na diaľku v EÚ, elektronické služby B2C/nezdaniteľným osobám, dodávateľ usadený iba v jednom členskom štáte, limit 10 000 eur v prebiehajúcom a predchádzajúcom roku, miesto dodania pred a po prekročení, voľba miesta dodania a negatívne vymedzenie elektronických služieb. Hľadal som entity podľa výrazov 'predaj tovaru na diaľku', 'elektron', 'nezdaniteľ', '10 000', 'miesto dodania'; prešiel som 1–2 hop vzťahy od nájdených entít vrátane VZTAHUJE_SA_NA, ODKAZUJE_NA, IN_CHUNK a negatívnych/exkluzívnych typov; rozšíril som súrodencov v § 14 a § 16 a textovo dohľadal 'nepresiahne', 'presiahne', 'nepovažuje' a odkazy na § 14 ods. 2 a § 16 ods. 14. Po prečítaní textov som vyradil približne 18 kandidátov ako off-topic alebo len incidentálne prepojené, najmä ustanovenia o platformách (§ 8 ods. 7), všeobecné B2C služby (§ 15 ods. 2), vzniku daňovej povinnosti/fakturácii a osobitných úpravách § 68 a nasl.; ponechané sú ustanovenia priamo určujúce miesto dodania, podmienky limitu, následok prekročenia, voliteľnú výnimku a definíciu/negatívne vymedzenie elektronických služieb.",
+    "elapsed_sec": 128.08,
+    "timestamp": "2026-05-19T16:47:31.934639"
   },
   {
+    "id": 10,
     "question": "Platiteľ predáva inému platiteľovi sedem rokov starú administratívnu budovu. Môže sa rozhodnúť, že dodanie nebude oslobodené od dane, a kto potom platí daň?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1194,13 +1335,100 @@
         "§ 69 ods. 12 písm. c)"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:44.605601"
+    "found_sections": [
+      {
+        "id": "Paragraf § 38 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 38",
+        "role": "supports",
+        "relevance": "Ustanovuje základné oslobodenie dodania stavby alebo časti stavby po piatich rokoch, čo je kľúčové pri sedem rokov starej administratívnej budove.",
+        "text": "Oslobodené od dane je dodanie stavby alebo časti stavby vrátane stavebného pozemku,19) na\nktorom stavba stojí, ak je dodanie uskutočnené po piatich rokoch odo dňa\n"
+      },
+      {
+        "id": "Paragraf § 38 Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 38",
+        "role": "conditions",
+        "relevance": "Spresňuje, od ktorého momentu sa počíta päťročná lehota pri bežnej stavbe — od kolaudácie prvého užívania alebo od začatia prvého užívania, podľa toho, čo nastane skôr.",
+        "text": "kolaudácie stavby, ktorou sa povolilo prvé užívanie stavby na určený účel, alebo po piatich\nrokoch odo dňa začatia prvého užívania tejto stavby, a to podľa toho, čo nastane skôr,\n"
+      },
+      {
+        "id": "Paragraf § 38 Odsek 1 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 38",
+        "role": "conditions",
+        "relevance": "Uvádza situáciu, keď sa päťročná lehota viaže na kolaudáciu zmeny účelu užívania po stavebných prácach s nákladmi aspoň 40 %, čo môže kvalifikovať vek stavby po významnej úprave.",
+        "text": "kolaudácie, ktorou sa povolila zmena účelu užívania stavby, ku ktorej došlo v dôsledku\nvykonaných stavebných prác, ak náklady na tieto stavebné práce sú vo výške najmenej 40 %\nz hodnoty stavby pred začatím stavebných prác; hodnotou stavby pred začatím stavebných prác\nsa na účely tohto odseku rozumie"
+      },
+      {
+        "id": "Paragraf § 38 Odsek 1 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 38",
+        "role": "conditions",
+        "relevance": "Uvádza ďalšiu situáciu, keď sa päťročná lehota môže viazať na kolaudáciu po stavebných prácach spôsobujúcich podstatnú zmenu užívania, teda môže obmedziť jednoduchý záver podľa veku budovy.",
+        "text": "kolaudácie, ktorou sa povolilo užívanie stavby po vykonaní stavebných prác, v dôsledku ktorých\ndošlo k podstatnej zmene podmienok doterajšieho užívania stavby; podstatnou zmenou\npodmienok doterajšieho užívania stavby sa rozumie vynaloženie nákladov na stavebné práce vo\nvýške najmenej 40 % z hodnoty "
+      },
+      {
+        "id": "Paragraf § 38 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 38",
+        "role": "conditions",
+        "relevance": "Dopĺňa, že ak sa so stavbou dodáva aj stavebný pozemok, na pozemok sa použije režim dodania stavby podľa odseku 1 alebo 7.",
+        "text": "Oslobodené od dane je dodanie pozemku okrem dodania stavebného pozemku. Pokiaľ sa\nstavebný pozemok dodáva so stavbou alebo časťou stavby, vzťahuje sa na jeho dodanie odsek 1\nalebo odsek 7.\n"
+      },
+      {
+        "id": "Paragraf § 38 Odsek 8",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 38",
+        "role": "excludes",
+        "relevance": "Výslovne dáva platiteľovi možnosť rozhodnúť sa, že dodanie stavby spĺňajúcej oslobodenie nebude oslobodené; zároveň uvádza výnimky pre stavby určené na bývanie, ktoré pri administratívnej budove spravidla nedopadajú.",
+        "text": "Platiteľ, ktorý dodáva stavbu alebo časť stavby, ktorá spĺňa podmienky na oslobodenie od\ndane podľa odseku 1 alebo odseku 7, sa môže rozhodnúť, že dodanie stavby alebo časti stavby\nnebude oslobodené od dane; to neplatí pri dodaní stavby určenej na bývanie, dodaní jednotlivého\nbytu, dodaní nájomného "
+      },
+      {
+        "id": "Paragraf § 69 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 69",
+        "role": "conditions",
+        "relevance": "Stanovuje všeobecné pravidlo, že daň platí dodávajúci platiteľ, ale len ak zákon neustanovuje inak; to otvára priestor pre osobitné pravidlo v ods. 12.",
+        "text": "Platiteľ, ktorý dodáva tovar alebo službu v tuzemsku, je povinný platiť daň, ak tento zákon\nneustanovuje inak.\n"
+      },
+      {
+        "id": "Paragraf § 69 Odsek 12",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 69",
+        "role": "supports",
+        "relevance": "Zavádza prenesenie povinnosti platiť daň na platiteľa-príjemcu plnenia od iného platiteľa za vymenované plnenia, čo zodpovedá predaju medzi dvoma platiteľmi.",
+        "text": "Platiteľ, ktorý má pridelené identifikačné číslo pre daň podľa § 4, § 4b, § 4c alebo § 5 a ktorý\nje príjemcom plnenia od iného platiteľa, ktorý má pridelené identifikačné číslo pre daň podľa § 4,\n§ 4b, § 4c alebo § 5, je povinný platiť daň vzťahujúcu sa na\n"
+      },
+      {
+        "id": "Paragraf § 69 Odsek 12 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 69",
+        "role": "supports",
+        "relevance": "Konkrétne zahŕňa dodanie nehnuteľnosti v tuzemsku, ktoré sa dodávateľ rozhodol zdaniť podľa § 38 ods. 8, takže daň platí kupujúci platiteľ ako príjemca plnenia.",
+        "text": "dodanie nehnuteľnosti alebo jej časti v tuzemsku, ktorú sa dodávateľ rozhodol zdaniť podľa § 38\nods. 8,\n"
+      }
+    ],
+    "found_entities": [
+      "Nehnutelne Veci",
+      "Nehnutelnost",
+      "Nehnutelnost Alebo Jej Cast",
+      "Stavba",
+      "Cast Stavby",
+      "Dodanie Stavby Alebo Casti Stavby Vratane Stavebneho Pozemku",
+      "Dodanie Stavby Alebo Jej Casti",
+      "Dodanie Nehnutelnosti Alebo Jej Casti V Tuzemsku",
+      "Oslobodenie Od Dane",
+      "Platitel",
+      "Platitel Dane"
+    ],
+    "answer": "Áno. Keďže ide o sedem rokov starú administratívnu budovu, jej dodanie po piatich rokoch spĺňa podmienky oslobodenia podľa § 38 ods. 1, ale platiteľ sa podľa § 38 ods. 8 môže rozhodnúť, že dodanie nebude oslobodené od dane. Ak ide o dodanie nehnuteľnosti v tuzemsku inému platiteľovi a dodávateľ sa rozhodol zdaniť ho podľa § 38 ods. 8, daň platí príjemca plnenia podľa § 69 ods. 12 písm. c).",
+    "retrieval_reasoning": "Otázku som rozložil na pojmy: dodanie administratívnej budovy/stavby, nehnuteľnosť, oslobodenie po piatich rokoch, voľba nezdaňovať/zdaniť oslobodené dodanie, platiteľ ako dodávateľ a príjemca, a osoba povinná platiť daň/reverse charge. Vyhľadané boli entity pre nehnuteľnosť, stavbu/budovu, oslobodenie, platiteľa a dodanie nehnuteľnosti; následne boli prejdené 1–2-hop väzby, súrodenci v § 38 a § 69 a textové hľadania fráz „stavby alebo časti stavby“, „rozhodnúť, že dodanie“, „po piatich rokoch“ a ustanovenia o osobe povinnej platiť daň. Po prečítaní textov boli vyradené ustanovenia o nájme nehnuteľnosti (§ 38 ods. 3–5), jednotlivých bytoch/apartmánoch (§ 38 ods. 7, 9) okrem ich použitia ako výslovnej výnimky v ods. 8, znížených sadzbách (§ 27), investičnom zlate (§ 67) a ručení (§ 69 ods. 13), pretože priamo neriešia predaj sedemročnej administratívnej budovy medzi platiteľmi.",
+    "elapsed_sec": 99.43,
+    "timestamp": "2026-05-19T16:49:11.368308"
   },
   {
+    "id": 11,
     "question": "Platiteľ prenajíma zdaniteľnej osobe parkovacie miesto a zároveň byt v bytovom dome. Ktorý nájom je oslobodený, pri ktorom je možné zvoliť zdanenie a kde zákon zdanenie neumožňuje zvoliť?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1210,13 +1438,49 @@
         "§ 38 ods. 3 až 6"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:47.048237"
+    "found_sections": [
+      {
+        "id": "Paragraf § 38 Odsek 3",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 38",
+        "role": "supports",
+        "relevance": "Ustanovuje základné pravidlo, že nájom nehnuteľnosti alebo jej časti je oslobodený od dane, pričom nasledujú výnimky.",
+        "text": "Oslobodený od dane je nájom nehnuteľnosti alebo jej časti s výnimkou\n"
+      },
+      {
+        "id": "Paragraf § 38 Odsek 3 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Výslovne vyraďuje nájom priestorov a miest na parkovanie vozidiel z oslobodenia; parkovacie miesto teda nie je oslobodený nájom podľa ods. 3.",
+        "text": "nájmu priestorov a miest na parkovanie vozidiel,\n"
+      },
+      {
+        "id": "Paragraf § 38 Odsek 5",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 38",
+        "role": "conditions",
+        "relevance": "Dáva platiteľovi pri prenájme nehnuteľnosti zdaniteľnej osobe možnosť rozhodnúť, že nájom nebude oslobodený, ale výslovne z tejto voľby vylučuje nájom bytu a ďalších obytných nehnuteľností alebo ich častí.",
+        "text": "Platiteľ, ktorý prenajíma nehnuteľnosť alebo jej časť zdaniteľnej osobe, sa môže rozhodnúť, že\nnájom nebude oslobodený od dane okrem nájmu bytu, rodinného domu, nájomného bytu, ktorým\nje nebytový priestor určený rozhodnutím stavebného úradu na funkciu bývania alebo\nubytovania,6aj) a nájmu apartmánu "
+      }
+    ],
+    "found_entities": [
+      "Najom Nehnutelnosti Alebo Jej Casti",
+      "Priestory A Miesta Na Parkovanie Vozidiel",
+      "Najom Bytu",
+      "Platitel",
+      "Zdanitelna Osoba",
+      "Nehnutelnost",
+      "Cast Nehnutelnosti",
+      "Bytovy Dom"
+    ],
+    "answer": "Nájom parkovacieho miesta nie je oslobodený od dane, keďže § 38 ods. 3 písm. b) ho z oslobodenia vylučuje. Nájom bytu je nájom nehnuteľnosti oslobodený podľa § 38 ods. 3. Hoci pri nájme nehnuteľnosti zdaniteľnej osobe si platiteľ môže zvoliť zdanenie, § 38 ods. 5 to pri nájme bytu výslovne neumožňuje.",
+    "retrieval_reasoning": "Rozložené koncepty: nájom/prenájom nehnuteľnosti, parkovacie miesto, byt v bytovom dome, platiteľ prenajímajúci zdaniteľnej osobe, oslobodenie od dane a možnosť/negácia voľby zdanenia. Vyhľadával som entity podľa variantov nájom/prenájom/nehnuteľ/parkovac/byt/oslobod/zdanenie/platiteľ/zdaniteľná osoba, následne 1–2 hop prepojenia na štrukturálne ustanovenia, súrodencov v § 38 a odkazy ODKAZUJE_NA. Po prečítaní textov boli ponechané ustanovenia § 38 ods. 3, § 38 ods. 3 písm. b) a § 38 ods. 5; vypustené boli najmä § 38 ods. 4, 6, 8, 9 a § 16 ods. 1, lebo riešia ubytovacie služby, podnájom, dodanie stavby/apartmán alebo miesto dodania, nie priamo nájom parkovacieho miesta a bytu v otázke.",
+    "elapsed_sec": 89.92,
+    "timestamp": "2026-05-19T16:50:41.293109"
   },
   {
+    "id": 12,
     "question": "Tuzemský platiteľ predá tovar kupujúcemu bez sídla, prevádzkarne alebo bydliska v tuzemsku a kupujúci ho sám vyvezie do tretieho štátu. Kedy je dodanie oslobodené a ktorý deň je dňom dodania pre DPH?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1229,13 +1493,93 @@
         "§ 47 ods. 2 a 3"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:49.290351"
+    "found_sections": [
+      {
+        "id": "Paragraf § 47 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 47",
+        "role": "conditions",
+        "relevance": "Priamo rieši scenár, keď tovar do tretieho štátu odosiela alebo prepravuje kupujúci alebo na jeho účet, a stanovuje podmienku, že kupujúci nemá v tuzemsku sídlo, miesto podnikania, prevádzkareň ani bydlisko; zároveň obsahuje výnimku z oslobodenia.",
+        "text": "Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený kupujúcim alebo\nna jeho účet do miesta určenia na území tretieho štátu, ak kupujúci nemá v tuzemsku sídlo,\nmiesto podnikania, prevádzkareň ani bydlisko, s výnimkou dodania tovaru, ktorý prepravil\nkupujúci na účely vybavenia, zá"
+      },
+      {
+        "id": "Paragraf § 47 Odsek 3",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 47",
+        "role": "conditions",
+        "relevance": "Dopĺňa dôkaznú podmienku oslobodenia podľa § 47 ods. 1 a 2: platiteľ musí preukázať odoslanie alebo prepravu do tretieho štátu.",
+        "text": "Odoslanie alebo prepravu tovaru do miesta určenia na území tretieho štátu podľa odsekov 1\na 2 je platiteľ povinný preukázať dokladom o odoslaní alebo o preprave tovaru a \n"
+      },
+      {
+        "id": "Paragraf § 47 Odsek 3 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Uvádza základný dôkaz vývozu: colné vyhlásenie s potvrdeným výstupom tovaru z územia EÚ.",
+        "text": "colným vyhlásením, v ktorom je colným orgánom potvrdený výstup tovaru z územia Európskej\núnie, alebo\n\n"
+      },
+      {
+        "id": "Paragraf § 47 Odsek 3 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Pripúšťa preukázanie vývozu aj inými dôkazmi podľa osobitného predpisu pre osobitné prípady uvedené v bodoch.",
+        "text": "inými dôkazmi podľa osobitného predpisu,21b) ak ide o \n"
+      },
+      {
+        "id": "Paragraf § 47 Odsek 3 Pismeno b) Bod 1",
+        "label": "Bod",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Špecifikuje prípad, keď sa vývoz preukazuje inými dôkazmi: pri podaní ústneho colného vyhlásenia o vývoze tovaru.",
+        "text": "podanie ústneho colného vyhlásenia o vývoze tovaru alebo\n"
+      },
+      {
+        "id": "Paragraf § 47 Odsek 3 Pismeno b) Bod 2",
+        "label": "Bod",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Špecifikuje ďalší prípad, keď sa vývoz preukazuje inými dôkazmi: pri vykonaní úkonu považovaného za colné vyhlásenie o vývoze tovaru.",
+        "text": "vykonanie úkonu považovaného za colné vyhlásenie o vývoze tovaru.\n"
+      },
+      {
+        "id": "Paragraf § 19 Odsek 9",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 19",
+        "role": "defines",
+        "relevance": "Pri vývoze tovaru z tuzemska do tretieho štátu podľa § 47 ods. 1 a 2 určuje osobitný deň dodania: deň výstupu tovaru z územia EÚ potvrdený colným orgánom.",
+        "text": "Ak je tovar odoslaný alebo prepravený z tuzemska do miesta určenia na území tretieho štátu\n(§ 47 ods. 1 a 2), za deň dodania tovaru sa považuje deň výstupu tovaru z územia Európskej únie,\nktorý je potvrdený colným orgánom v colnom vyhlásení alebo v zjednodušenom colnom vyhlásení.\n"
+      },
+      {
+        "id": "Paragraf § 19 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 19",
+        "role": "defines",
+        "relevance": "Všeobecne definuje vznik daňovej povinnosti a deň dodania tovaru; pre export do tretieho štátu je však relevantná osobitná úprava v § 19 ods. 9.",
+        "text": "Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnute"
+      }
+    ],
+    "found_entities": [
+      "Vyvoz Tovaru Do Tretich Statov",
+      "Treti Stat",
+      "Dodanie Tovaru",
+      "Danova Povinnost",
+      "Danova Povinnost Pri Dodani Tovaru",
+      "Platitel",
+      "Tovar",
+      "Miesto Urcenia Na Uzemi Tretieho Statu",
+      "Doklad O Odoslani Alebo O Preprave Tovaru",
+      "Colne Vyaslenie O Vyvoze Tovaru",
+      "Podanie Ustneho Colneho Vyhlasenia O Vyvoze Tovaru",
+      "Vykonanie Ukonu Povazovaneho Za Colne Vyhlasenie O Vyvoze Tovaru"
+    ],
+    "answer": "Dodanie je oslobodené od DPH podľa § 47 ods. 2, ak tovar odoslal alebo prepravil kupujúci alebo na jeho účet do tretieho štátu a kupujúci nemá v tuzemsku sídlo, miesto podnikania, prevádzkareň ani bydlisko; neplatí to pri výnimke pre vybavenie alebo zásobenie dopravných prostriedkov na súkromné použitie. Platiteľ musí vývoz preukázať dokladom o odoslaní alebo preprave a colným vyhlásením s potvrdeným výstupom z EÚ, prípadne inými dôkazmi pri ústnom alebo konkludentnom colnom vyhlásení (§ 47 ods. 3). Dňom dodania pre DPH je deň výstupu tovaru z územia EÚ potvrdený colným orgánom v colnom alebo zjednodušenom colnom vyhlásení (§ 19 ods. 9).",
+    "retrieval_reasoning": "Koncepty: vývoz/dodanie tovaru do tretieho štátu, oslobodenie od dane, kupujúci bez sídla/prevádzkarne/bydliska v tuzemsku, výnimky z oslobodenia, preukázanie vývozu, deň dodania/daňová povinnosť. Hľadané boli entity pre „vývoz/vyvoz“, „oslobod“, „tretí štát“, „dodanie tovaru“, „daňová povinnosť/deň dodania“, následne 1–2 hop prepojenia na štrukturálne uzly, súrodenci v § 47 a § 19 a textové fulltextové vyhľadania. Po prečítaní textov boli vyradené nesúvisiace ustanovenia o dovoze, intrakomunitárnych dodaniach, službách, zásobovaní plavidiel/lietadiel a humanitárnych daroch; ponechané sú len ustanovenia, ktoré priamo riešia oslobodenie pri vývoze kupujúcim, dôkazné podmienky, výnimku a deň dodania.",
+    "elapsed_sec": 108.32,
+    "timestamp": "2026-05-19T16:52:29.619615"
   },
   {
+    "id": 13,
     "question": "Platiteľ dodal tovar do iného členského štátu a prepravu zabezpečil odberateľ. Do konca šiesteho mesiaca po mesiaci dodania nemá doklad o preprave ani potvrdenie o prevzatí. Môže ponechať oslobodenie podľa § 43?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1250,13 +1594,152 @@
         "§ 80 ods. 1 a 9"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:52.034776"
+    "found_sections": [
+      {
+        "id": "Paragraf § 43 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "supports",
+        "relevance": "Zakladá základné oslobodenie pri dodaní tovaru odoslaného alebo prepraveného z tuzemska do iného členského štátu, vrátane prepravy nadobúdateľom alebo na jeho účet.",
+        "text": "Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený z tuzemska do\niného členského štátu predávajúcim alebo nadobúdateľom alebo treťou osobou na účet\npredávajúceho alebo na účet nadobúdateľa, ak\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Uvádza jednu z hmotnoprávnych podmienok oslobodenia pri dodaní do iného členského štátu — status nadobúdateľa.",
+        "text": "nadobúdateľom je zdaniteľná osoba, ktorá koná v postavení zdaniteľnej osoby v inom členskom\nštáte, alebo právnická osoba, ktorá nie je zdaniteľnou osobou, a \n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 1 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Dopĺňa podmienku oslobodenia, že nadobúdateľ musí byť identifikovaný pre daň v inom členskom štáte a oznámiť IČ DPH dodávateľovi.",
+        "text": "nadobúdateľ podľa písmena a) je identifikovaný pre daň v inom členskom štáte a oznámil svoje\nidentifikačné číslo pre daň pridelené v inom členskom štáte dodávateľovi.\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Stanovuje dôkaznú povinnosť platiteľa pre oslobodenie podľa odsekov 1 až 4; bez splnenia dôkaznej povinnosti nemožno oslobodenie bezpečne ponechať.",
+        "text": "Platiteľ je povinný preukázať, že sú splnené podmienky oslobodenia od dane podľa odsekov 1\naž 4\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Jedným z dokladov na preukázanie oslobodenia je kópia faktúry, čo tvorí časť dôkaznej dokumentácie podľa § 43 ods. 5.",
+        "text": "kópiou faktúry,\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Pri preprave zabezpečenej dodávateľom alebo odberateľom upravuje doklad o odoslaní/preprave a potvrdenie prevzatia; práve na tieto doklady odkazuje § 43 ods. 8.",
+        "text": "dokladom o odoslaní tovaru, ak prepravu tovaru zabezpečí dodávateľ alebo odberateľ poštovým\npodnikom, alebo kópiou dokladu o preprave tovaru, v ktorom je potvrdené odberateľom alebo\nosobou ním poverenou prevzatie tovaru v inom členskom štáte, ak prepravu tovaru zabezpečí\ndodávateľ alebo odberateľ os"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Alternatívne stanovuje potvrdenie o prijatí tovaru odberateľom alebo poverenou osobou, ktoré je druhým typom dokladu výslovne vyžadovaným v lehote podľa § 43 ods. 8.",
+        "text": "potvrdením o prijatí tovaru odberateľom alebo osobou ním poverenou, ak prepravu tovaru\nvykoná dodávateľ alebo odberateľ; toto potvrdenie musí obsahovať\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno c) Bod 1",
+        "label": "Bod",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Špecifikuje obsahové náležitosti potvrdenia o prijatí tovaru, konkrétne identifikáciu odberateľa.",
+        "text": "meno a priezvisko odberateľa alebo názov odberateľa a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo adresu miesta, kde sa obvykle zdržiava,\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno c) Bod 2",
+        "label": "Bod",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Špecifikuje, že potvrdenie o prijatí tovaru musí obsahovať množstvo a druh tovaru.",
+        "text": "množstvo a druh tovaru,\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno c) Bod 3",
+        "label": "Bod",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Je kľúčový pri preprave vykonanej odberateľom, lebo vyžaduje adresu miesta a dátum skončenia prepravy.",
+        "text": "adresu miesta a dátum prevzatia tovaru v inom členskom štáte, ak prepravu tovaru vykoná\ndodávateľ, alebo adresu miesta a dátum skončenia prepravy, ak prepravu tovaru vykoná\nodberateľ,\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno c) Bod 4",
+        "label": "Bod",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Dopĺňa ďalšiu povinnú náležitosť potvrdenia o prijatí tovaru pri cestnej preprave — identifikáciu a podpis vodiča.",
+        "text": "meno a priezvisko vodiča pozemného motorového vozidla uvedené paličkovým písmom a jeho\npodpis,\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno c) Bod 5",
+        "label": "Bod",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Dopĺňa ďalšiu povinnú náležitosť potvrdenia o prijatí tovaru — evidenčné číslo vozidla použitého na prepravu.",
+        "text": "evidenčné číslo pozemného motorového vozidla, ktorým sa uskutočnila preprava tovaru, a \n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 5 Pismeno d)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 43",
+        "role": "conditions",
+        "relevance": "Uvádza ďalšie podporné doklady na preukázanie dodania, hoci pri situácii podľa ods. 8 sú rozhodujúce doklady podľa písm. b) alebo c).",
+        "text": "inými dokladmi, najmä zmluvou o dodaní tovaru, dodacím listom, dokladom o prijatí platby za\ntovar, dokladom o platbe za prepravu tovaru.\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 8",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "excludes",
+        "relevance": "Priamo odpovedá na otázku: ak prepravu vykoná alebo zabezpečí odberateľ a platiteľ nemá doklady podľa ods. 5 písm. b) alebo c) do konca šiesteho mesiaca, musí dodanie uviesť bez oslobodenia od dane.",
+        "text": "Ak prepravu tovaru z tuzemska do iného členského štátu vykoná odberateľ alebo ju zabezpečí\nodberateľ inou osobou, platiteľ je povinný mať doklady podľa odseku 5 písm. b) alebo c) do konca\nšiesteho kalendárneho mesiaca nasledujúceho po skončení kalendárneho mesiaca, v ktorom sa\nuskutočnilo dodanie to"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 9",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "excludes",
+        "relevance": "Obsahuje ďalšiu výluku uznania oslobodenia podľa odsekov 1 a 4 pri nepodaní alebo chybách v súhrnnom výkaze, relevantnú ako negatívna podmienka oslobodenia podľa § 43.",
+        "text": "Oslobodenie od dane podľa odsekov 1 a 4 sa neuzná, ak dodávateľ nepodal súhrnný výkaz za\npríslušné obdobie alebo údaje v podanom súhrnnom výkaze sú nesprávne, nepravdivé alebo\nneúplné; to neplatí, ak dodávateľ dostatočne odôvodní nepodanie súhrnného výkazu, nesprávnosť\núdajov alebo neúplnosť údajov "
+      },
+      {
+        "id": "Paragraf § 43 Odsek 10",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "excludes",
+        "relevance": "Výslovne vylučuje uplatnenie oslobodenia podľa § 43 ods. 1, 3, 4 alebo 6, ak dodávajúca osoba nie je platiteľom; v otázke je dodávateľ platiteľ, takže táto výluka sa na daný skutkový stav neuplatní, ale je relevantnou negatívnou klauzulou § 43.",
+        "text": "Oslobodenie od dane podľa odseku 1, 3, 4 alebo odseku 6 sa neuplatní, ak zdaniteľná\nosoba, ktorá dodáva tovar, nie je platiteľ."
+      }
+    ],
+    "found_entities": [
+      "Kopia Dokladu O Preprave Tovaru",
+      "Doklad O Prevzati Tovaru",
+      "Doklad O Odoslani Tovaru",
+      "Iny Doklad",
+      "Doklad O Platbe Za Prepravu Tovaru",
+      "Preprava Tovaru",
+      "Odberatel"
+    ],
+    "answer": "Nie. Podľa § 43 ods. 8, ak prepravu vykoná alebo zabezpečí odberateľ, platiteľ musí mať doklady podľa § 43 ods. 5 písm. b) alebo c) do konca šiesteho kalendárneho mesiaca po mesiaci dodania. Ak ich v tejto lehote nemá, uvedie dodanie tovaru bez oslobodenia od dane v daňovom priznaní za obdobie, v ktorom lehota uplynula.",
+    "retrieval_reasoning": "Otázku som rozložil na pojmy: oslobodenie podľa § 43, dodanie/preprava tovaru do iného členského štátu, preprava zabezpečená odberateľom, doklady o preprave/prevzatí, lehota do konca šiesteho mesiaca a negatívny následok straty/neponechania oslobodenia. Vyhľadal som entity podľa 'osloboden', '§ 43', 'doklad', 'preprav', 'prevzat', 'odberateľ', následne som traversoval entity 1–2 hopmi na štrukturálne ustanovenia, rozbalil súrodencov v Paragraf § 43 a preveril ODKAZUJE_NA; po prečítaní textov som ponechal len ustanovenia § 43 priamo riešiace podmienky, preukázanie a výluky oslobodenia. Z kandidátov som vyradil približne 20+ ustanovení mimo témy (napr. § 25a, § 47, § 48b, § 69c, § 72, § 80 a všeobecné výsledky k odberateľovi), lebo ich text nerieši otázku ponechania oslobodenia pri chýbajúcich dokladoch podľa § 43.",
+    "elapsed_sec": 100.34,
+    "timestamp": "2026-05-19T16:54:09.962509"
   },
   {
+    "id": 14,
     "question": "Zahraničný dovozca, ktorý nie je slovenským platiteľom, dovezie tovar do SR a tovar má byť následne dodaný do iného členského štátu. Ako môže uplatniť oslobodenie pri dovoze bez registrácie podľa § 5?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1270,13 +1753,146 @@
         "§ 69a ods. 10"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:54.104557"
+    "found_sections": [
+      {
+        "id": "Paragraf § 48 Odsek 3",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 48",
+        "role": "conditions",
+        "relevance": "Základná podmienka oslobodenia pri dovoze tovaru, ktorého preprava skončí v inom členskom štáte, vrátane odkazu na oslobodenie následného dodania podľa § 43 a informácie poskytované colnému orgánu.",
+        "text": "Dovoz tovaru, ktorý je odoslaný alebo prepravený z tretieho štátu a ktorého odoslanie alebo\npreprava sa skončí v inom členskom štáte, je oslobodený od dane za podmienky, ak u dovozcu\n(§ 69 ods. 8) je dodanie tohto tovaru z tuzemska do iného členského štátu oslobodené od dane\npodľa § 43 ods. 1 až 4. "
+      },
+      {
+        "id": "Paragraf § 48 Odsek 3 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Určuje, že pri uplatnení oslobodenia sa colnému orgánu poskytne buď slovenské IČ DPH dovozcu, alebo osobitné IČ DPH daňového zástupcu podľa § 69a.",
+        "text": "svoje identifikačné číslo pre daň pridelené v tuzemsku alebo osobitné identifikačné číslo pre daň\ndaňového zástupcu, ktorý zastupuje dovozcu vo veci uplatnenia oslobodenia od dane podľa\n§ 69a,\n"
+      },
+      {
+        "id": "Paragraf § 48 Odsek 3 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Vyžaduje identifikačné číslo pre daň zákazníka v inom členskom štáte alebo vlastné IČ DPH v štáte skončenia prepravy.",
+        "text": "identifikačné číslo pre daň zákazníka pridelené v inom členskom štáte alebo svoje identifikačné\nčíslo pre daň pridelené v členskom štáte, v ktorom sa odoslanie alebo preprava tovaru skončí,\n"
+      },
+      {
+        "id": "Paragraf § 48 Odsek 3 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Vyžaduje dôkaz, že dovezený tovar má byť odoslaný alebo prepravený zo SR do iného členského štátu.",
+        "text": "dôkaz, že dovážaný tovar má byť odoslaný alebo prepravený z tuzemska do iného členského\nštátu, najmä zmluvu o preprave tovaru alebo prepravný doklad.\n"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Priamo umožňuje zahraničnému dovozcovi, ktorý nie je slovenským platiteľom, uplatniť oslobodenie podľa § 48 ods. 3 cez daňového zástupcu.",
+        "text": "Dovozca, ktorý je zahraničnou osobou a nie je platiteľom podľa tohto zákona, sa vo veci\nuplatnenia oslobodenia od dane podľa § 48 ods. 3 môže dať zastúpiť daňovým zástupcom.\nDaňovým zástupcom môže byť len platiteľ so sídlom alebo bydliskom v tuzemsku. Daňový\nzástupca musí mať na zastupovanie dovozcu"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 2 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Špecifikuje obsah plnomocenstva: zastupovanie v mene a na účet dovozcu pri oslobodení podľa § 48 ods. 3 a následnom dodaní do iného členského štátu.",
+        "text": "vyhlásenie splnomocniteľa, že ide o daňové zastúpenie v mene a na účet dovozcu vo veci\nuplatnenia oslobodenia od dane podľa § 48 ods. 3 a následného dodania tovaru do iného\nčlenského štátu,\n"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 2 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Vyžaduje vyhlásenie, že splnomocniteľ je zahraničná osoba a nie je platiteľom podľa slovenského zákona.",
+        "text": "vyhlásenie, že splnomocniteľ je zahraničnou osobou a nie je platiteľom podľa tohto zákona,\n"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 2 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Plnomocenstvo musí splnomocniť daňového zástupcu aj na podanie daňového priznania a súhrnného výkazu.",
+        "text": "splnomocnenie daňového zástupcu na podanie daňového priznania a súhrnného výkazu.\n"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 3",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Upravuje pridelenie osobitného IČ DPH daňovému zástupcovi Daňovým úradom Bratislava, ktoré sa použije pri dovoze podľa § 48 ods. 3 písm. a).",
+        "text": "Daňový úrad Bratislava pridelí na žiadosť platiteľa daňovému zástupcovi osobitné\nidentifikačné číslo pre daň, pod ktorým daňový zástupca koná v mene zastúpeného dovozcu,\nnajneskôr do siedmich dní odo dňa doručenia žiadosti; proti tomuto rozhodnutiu nemožno podať\nodvolanie. Daňový zástupca pod týmto "
+      },
+      {
+        "id": "Paragraf § 69a Odsek 4",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Ukladá daňovému zástupcovi evidenciu dovozu a následného dodania do iného členského štátu za každého zastúpeného dovozcu.",
+        "text": "Daňový zástupca je povinný viesť záznamy o dovoze tovaru a jeho následnom dodaní do\niného členského štátu osobitne za každého zastúpeného dovozcu. Záznamy musia obsahovať\npriezvisko a meno alebo názov zastúpeného dovozcu a adresu jeho sídla, miesta podnikania,\nprevádzkarne, bydliska alebo miesta, kd"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 5",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Určuje následnú povinnosť daňového zástupcu podať za zastúpených dovozcov daňové priznanie a zoznam deklarovaných dodaní.",
+        "text": "Daňový zástupca je povinný podať za zastúpených dovozcov daňové priznanie Daňovému\núradu Bratislava za obdobie kalendárneho mesiaca, a to do 25 dní po skončení kalendárneho\nmesiaca. K daňovému priznaniu je daňový zástupca povinný priložiť zoznam zastúpených dovozcov\ns uvedením sumy všetkých základov"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 6",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Určuje povinnosť daňového zástupcu podať za zastúpených dovozcov súhrnný výkaz do 25 dní po skončení mesiaca.",
+        "text": "Daňový zástupca je povinný podať za zastúpených dovozcov súhrnný výkaz podľa § 80\nDaňovému úradu Bratislava za obdobie kalendárneho mesiaca, a to do 25 dní po skončení\nkalendárneho mesiaca.\n"
+      },
+      {
+        "id": "Paragraf § 69a Odsek 10",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Výslovne vylučuje povinnosť zahraničného dovozcu podať žiadosť o registráciu podľa § 5, ak si zvolí daňového zástupcu.",
+        "text": "Ak si dovozca, ktorý je zahraničnou osobou, zvolí daňového zástupcu, nie je povinný podať\nžiadosť o registráciu pre daň podľa § 5."
+      },
+      {
+        "id": "Paragraf § 5 Odsek 2 Pismeno d)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Výslovne stanovuje, že zahraničná osoba sa nestáva platiteľom, ak dodáva do iného členského štátu tovar dovezený z tretieho štátu a je zastúpená daňovým zástupcom podľa § 69a.",
+        "text": "tovar do iného členského štátu, ktorý bol dovezený z tretieho štátu, a zahraničná osoba bola\nzastúpená daňovým zástupcom podľa § 69a,\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "cross_reference",
+        "relevance": "Je kľúčový odkaz zo § 48 ods. 3: následné dodanie zo SR do iného členského štátu musí byť oslobodené podľa § 43 ods. 1 až 4.",
+        "text": "Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený z tuzemska do\niného členského štátu predávajúcim alebo nadobúdateľom alebo treťou osobou na účet\npredávajúceho alebo na účet nadobúdateľa, ak\n"
+      }
+    ],
+    "found_entities": [
+      "Dovozca",
+      "Zahranicna Osoba",
+      "Danovy Zastupca",
+      "Dovoz Tovaru",
+      "Dovoz Tovaru Do Tuzemska",
+      "Tovar Do Ineho Clenskeho Statu",
+      "Registracia Pre Dan",
+      "Ziadost O Registraciu Pre Dan",
+      "Dan Pri Dovoze Tovaru"
+    ],
+    "answer": "Zahraničný dovozca, ktorý nie je platiteľom podľa zákona, môže podľa § 69a ods. 1 uplatniť oslobodenie pri dovoze podľa § 48 ods. 3 prostredníctvom daňového zástupcu. Daňovým zástupcom môže byť len slovenský platiteľ, ktorý má písomné plnomocenstvo s úradne overeným podpisom a osobitné IČ DPH pridelené Daňovým úradom Bratislava. Pri dovoze sa colnému orgánu poskytne najmä osobitné IČ DPH daňového zástupcu, IČ DPH zákazníka v inom členskom štáte a dôkaz, že tovar bude odoslaný alebo prepravený do iného členského štátu (§ 48 ods. 3 písm. a) až c)). Ak si dovozca zvolí daňového zástupcu, nie je povinný podať žiadosť o registráciu podľa § 5 (§ 69a ods. 10).",
+    "retrieval_reasoning": "Koncepty: dovoz tovaru z tretieho štátu, následné dodanie do iného členského štátu, oslobodenie pri dovoze (§ 48 ods. 3), zahraničná osoba/dovozca nie je platiteľom, daňový zástupca podľa § 69a, výnimka z registrácie podľa § 5. Vyhľadal som entity pre dovoz/oslobodenie/registráciu/zahraničnú osobu/zástupcu/iný členský štát, traversoval 1–2 hop väzby na štrukturálne uzly, rozšíril súrodencov v § 48, § 69a, § 5 a § 43 a sledoval odkazy na § 43 a § 69 ods. 8. Po prečítaní textov som vyradil väčšinu vedľajších ustanovení o iných typoch oslobodenia dovozu (napr. ozbrojené sily, NBS, COVID) a ponechal iba ustanovenia, ktoré priamo riešia importné oslobodenie s následným dodaním do EÚ, daňové zastúpenie a neregistráciu podľa § 5.",
+    "elapsed_sec": 134.18,
+    "timestamp": "2026-05-19T16:56:24.144248"
   },
   {
+    "id": 15,
     "question": "Dodávateľ má nezaplatenú pohľadávku 1 200 eur vrátane DPH viac ako 150 dní po splatnosti, no nepodal žalobu ani nezačal exekúciu. Môže znížiť základ dane podľa § 25a iba preto, že uplynulo 150 dní?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1290,13 +1906,97 @@
         "§ 25a ods. 7 až 13"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:56.189280"
+    "found_sections": [
+      {
+        "id": "Paragraf § 25a Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Stanovuje základnú podmienku: zníženie základu dane je možné len ak odberateľ nezaplatil a pohľadávka sa stala nevymožiteľnou podľa odseku 2.",
+        "text": "Základ dane pri dodaní tovaru alebo služby môže platiteľ, ktorý je z tohto dodania povinný\nplatiť daň podľa § 69 ods. 1, znížiť, ak mu po vzniku daňovej povinnosti odberateľ úplne alebo\nčiastočne nezaplatil za dodanie tovaru alebo služby a jeho pohľadávka z tohto dodania sa stala\nnevymožiteľnou podľ"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Uvádza, že odsek 2 definuje, kedy sa pohľadávka považuje za nevymožiteľnú.",
+        "text": "Na účely tohto zákona sa pohľadávka z dodania tovaru alebo služby stáva nevymožiteľnou\npohľadávkou, ak\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 2 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Zavádza 150-dňovú podmienku, ale text pokračuje tým, že musí byť splnený aj niektorý z nadväzujúcich bodov podľa výšky pohľadávky.",
+        "text": "uplynulo 150 dní od splatnosti pohľadávky za dodanie tovaru alebo služby, v rozsahu, v akom\nnebola zaplatená, a táto pohľadávka\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 2 Pismeno a) Bod 1",
+        "label": "Bod",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Pre pohľadávku 1 200 eur sa neuplatní zjednodušená podmienka pre pohľadávky nie viac ako 1 000 eur.",
+        "text": "nie je viac ako 1 000 eur vrátane dane a platiteľ preukáže, že vykonal akýkoľvek úkon, ktorý\nsmeruje k získaniu úhrady pohľadávky,\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 2 Pismeno a) Bod 2",
+        "label": "Bod",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Pri pohľadávke viac ako 1 000 eur vrátane dane vyžaduje preukázanie domáhania sa zaplatenia žalobou na súde; skutok uvádza, že žaloba podaná nebola.",
+        "text": "je viac ako 1 000 eur vrátane dane a platiteľ preukáže, že sa domáha zaplatenia pohľadávky\nžalobou na súde okrem rozhodcovského súdu, alebo\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 2 Pismeno a) Bod 3",
+        "label": "Bod",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Alternatívne pri pohľadávke viac ako 1 000 eur vrátane dane vyžaduje preukázanie vymáhania v exekučnom konaní; skutok uvádza, že exekúcia nezačala.",
+        "text": "je viac ako 1 000 eur vrátane dane a platiteľ preukáže, že je vymáhaná v exekučnom konaní\npodľa osobitného predpisu,6aca)\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 3",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Určuje, že oprava sa uvedie najskôr za obdobie, v ktorom sa pohľadávka stala nevymožiteľnou podľa odseku 2, takže samotné uplynutie 150 dní bez splnenia príslušného bodu nestačí.",
+        "text": "Platiteľ môže vykonať opravu základu dane podľa odseku 1 najviac vo výške, ktorá zodpovedá\nneprijatej protihodnote za dodanie tovaru alebo služby. Rozdiel medzi pôvodným základom dane\na opraveným základom dane a rozdiel medzi pôvodnou daňou a opravenou daňou sa uvedie\nnajskôr v daňovom priznaní za z"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 4",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Obsahuje výslovné zákazy vykonania opravy základu dane aj pri inak nevymožiteľnej pohľadávke.",
+        "text": "Platiteľ nemôže vykonať opravu základu dane pri nevymožiteľnej pohľadávke podľa odseku 2,\nak\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 4 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Dopĺňa negatívnu podmienku: oprava nie je možná, ak dodávateľ najneskôr pri dodaní vedel alebo mal a mohol vedieť, že odberateľ nezaplatí.",
+        "text": "najneskôr ku dňu dodania tovaru alebo služby vedel alebo vedieť mal a mohol, že odberateľ\n(dlžník) úplne alebo čiastočne nezaplatí za dodanie tovaru alebo služby, a to s prihliadnutím na\nokolnosti konkrétneho obchodného vzťahu.\n"
+      }
+    ],
+    "found_entities": [
+      "Nevymozitelna Pohladavka",
+      "Oprava Zakladu Dane Pri Nevymozitelnej Pohladavke",
+      "Zaloba Na Sude",
+      "Exekucne Konanie",
+      "Splatnost Pohladavky",
+      "Pohladavka Z Dodania",
+      "Nezaplatenie Za Dodanie Tovaru Alebo Sluzby",
+      "Ukon Smerujuci K Ziskaniu Uhrady Pohladavky"
+    ],
+    "answer": "Nie. Podľa § 25a ods. 1 možno znížiť základ dane len vtedy, ak sa pohľadávka stala nevymožiteľnou podľa ods. 2. Pri pohľadávke viac ako 1 000 eur vrátane dane samotné uplynutie 150 dní nestačí; platiteľ musí preukázať, že sa domáha zaplatenia žalobou na súde alebo že je pohľadávka vymáhaná v exekučnom konaní (§ 25a ods. 2 písm. a) body 2 a 3).",
+    "retrieval_reasoning": "Koncepty: oprava/zníženie základu dane podľa § 25a, nevymožiteľná pohľadávka, 150 dní po splatnosti, suma 1 200 eur vrátane dane, žaloba na súde, exekučné konanie, negatívne podmienky zákazu opravy. Vyhľadané entity cez varianty „pohľadáv“, „oprava základ“, „150/splatnosti/lehota“, „žalob/exek“, „nevymo/nezaplaten“, následne 1–2 hop prepojenia a súrodenci v § 25a. Po prečítaní textu boli ponechané ustanovenia § 25a, ktoré priamo upravujú vznik nevymožiteľnej pohľadávky a podmienky opravy; odložené boli konkurzné, oddlžovacie, dedičské, reštrukturalizačné a technické ustanovenia o dokladoch/záznamoch, keďže skutok sa týka iba 150 dní, sumy nad 1 000 eur a absencie žaloby/exekúcie.",
+    "elapsed_sec": 88.99,
+    "timestamp": "2026-05-19T16:57:53.134009"
   },
   {
+    "id": 16,
     "question": "Odberateľ si odpočítal DPH z prijatej faktúry, ale záväzok ani čiastočne nezaplatil. Dodávateľ mu zatiaľ neposlal opravný doklad. Vzniká odberateľovi povinnosť opraviť odpočítanú daň?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1307,13 +2007,141 @@
         "§ 53b ods. 1 až 8"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:13:58.268869"
+    "found_sections": [
+      {
+        "id": "Paragraf § 53b Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Uvádza základnú vetu, že platiteľ má povinnosť opraviť odpočítanú daň, ak nastane niektorá z alternatív uvedených v písm. a) alebo b).",
+        "text": "Platiteľ je povinný opraviť odpočítanú daň, ak\n"
+      },
+      {
+        "id": "Paragraf § 53b Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Kľúčové ustanovenie pre situáciu nezaplatenia: povinnosť vzniká v rozsahu nezaplatenej protihodnoty v zdaňovacom období, v ktorom nastal 101. deň odo dňa splatnosti záväzku; text neviaže túto alternatívu na prijatie opravného dokladu.",
+        "text": "úplne alebo čiastočne nezaplatil za dodanie tovaru alebo služby, z ktorého je osobou povinnou\nplatiť daň dodávateľ podľa § 69 ods. 1, v rozsahu, v akom za dodanie tohto tovaru alebo služby\nnezaplatil, a to v tom zdaňovacom období, v ktorom nastal 101. deň odo dňa splatnosti\nzáväzku, alebo\n"
+      },
+      {
+        "id": "Paragraf § 53b Odsek 1 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Upravuje alternatívnu situáciu, keď platiteľ nebol povinný postupovať podľa písm. a); tu sa povinnosť viaže aj na to, že platiteľ dostal opravný doklad podľa § 25a ods. 7 písm. a).",
+        "text": "nebol povinný opraviť odpočítanú daň podľa písmena a) a po skončení zdaňovacieho obdobia,\nv ktorom uplatnil odpočítanie dane, nastane skutočnosť podľa § 25a ods. 2 písm. b), c) alebo\npísm. f) a platiteľ dostal opravný doklad podľa § 25a ods. 7 písm. a), a to v tom zdaňovacom\nobdobí, v ktorom dostal "
+      },
+      {
+        "id": "Paragraf § 53b Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Dopĺňa prípad, keď odberateľ uplatňuje odpočítanie až po zdaňovacom období, v ktorom nastal 101. deň od splatnosti; vtedy musí opravu vykonať súčasne s odpočítaním.",
+        "text": "Ak platiteľ uplatňuje právo na odpočítanie dane z tovaru alebo služby, za ktoré úplne alebo\nčiastočne nezaplatil, až po skončení zdaňovacieho obdobia, v ktorom nastal 101. deň odo dňa\nsplatnosti záväzku, je povinný súčasne vykonať opravu odpočítanej dane v rozsahu, v akom za\ndodanie tohto tovaru ale"
+      },
+      {
+        "id": "Paragraf § 53b Odsek 3",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Určuje, ako sa má oprava podľa § 53b ods. 1 alebo 2 vypočítať, najmä zohľadnením pomerného odpočítania a vykonaných úprav.",
+        "text": "Pri oprave odpočítanej dane podľa odseku 1 alebo odseku 2 platiteľ zohľadní pomerné\nodpočítanie dane a vykonané úpravy odpočítanej dane.\n"
+      },
+      {
+        "id": "Paragraf § 53b Odsek 7",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Stanovuje evidenčnú povinnosť uviesť opravu odpočítanej dane podľa § 53b ods. 1 alebo 2 v záznamoch.",
+        "text": "Platiteľ je povinný uviesť opravu odpočítanej dane podľa odseku 1 alebo odseku 2 a opravu\nopravenej odpočítanej dane podľa odseku 4 v záznamoch podľa § 70 ods. 2 písm. j).\n"
+      },
+      {
+        "id": "Paragraf § 53b Odsek 8",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Rieši fikciu doručenia opravného dokladu len vtedy, ak bol odoslaný; je relevantné k tvrdeniu, že dodávateľ opravný doklad zatiaľ neposlal.",
+        "text": "Ak platiteľ nedostal opravný doklad podľa § 25a ods. 7 písm. a) do konca kalendárneho\nmesiaca nasledujúceho po kalendárnom mesiaci, v ktorom mu bol odoslaný, má sa za to, že tento\ndoklad dostal v posledný deň tohto nasledujúceho kalendárneho mesiaca."
+      },
+      {
+        "id": "Paragraf § 25a Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "cross_reference",
+        "relevance": "Vysvetľuje kontext dodávateľovej opravy základu dane pri nezaplatení a nevymožiteľnej pohľadávke, na ktorý § 53b písm. b) odkazuje cez § 25a.",
+        "text": "Základ dane pri dodaní tovaru alebo služby môže platiteľ, ktorý je z tohto dodania povinný\nplatiť daň podľa § 69 ods. 1, znížiť, ak mu po vzniku daňovej povinnosti odberateľ úplne alebo\nčiastočne nezaplatil za dodanie tovaru alebo služby a jeho pohľadávka z tohto dodania sa stala\nnevymožiteľnou podľ"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Zavádza definíciu, kedy sa pohľadávka považuje za nevymožiteľnú; relevantné pre prípady podľa § 53b ods. 1 písm. b).",
+        "text": "Na účely tohto zákona sa pohľadávka z dodania tovaru alebo služby stáva nevymožiteľnou\npohľadávkou, ak\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 7",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Určuje, kedy má dodávateľ povinnosť vyhotoviť opravný doklad; relevantné k tomu, či absencia opravného dokladu má význam pre odberateľovu opravu.",
+        "text": "Platiteľ je povinný vyhotoviť opravný doklad, ak odberateľ bol v čase dodania tovaru alebo\nslužby zdaniteľnou osobou a \n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 7 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Spresňuje, že opravný doklad podľa § 25a ods. 7 písm. a) sa viaže na situáciu, keď dodávateľ opravil základ dane podľa odseku 3.",
+        "text": "opravil základ dane podľa odseku 3 alebo\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 11",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Stanovuje lehotu, dokedy má dodávateľ vyhotoviť a odoslať opravný doklad, ak vykonal opravu základu dane alebo prijal platbu po takej oprave.",
+        "text": "Platiteľ je povinný vyhotoviť a odoslať opravný doklad najneskôr do uplynutia lehoty na\npodanie daňového priznania za zdaňovacie obdobie,\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 11 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Dopĺňa lehotu pri opravnom doklade za zdaňovacie obdobie, za ktoré dodávateľ vykonal opravu základu dane podľa § 25a ods. 3.",
+        "text": "za ktoré vykonal opravu základu dane podľa odseku 3,\n"
+      },
+      {
+        "id": "Paragraf § 25a Odsek 8",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Výslovne vylučuje vyhotovenie opravného dokladu pri určitých druhoch nevymožiteľnej pohľadávky, čo je relevantná výnimka k otázke absencie opravného dokladu.",
+        "text": "Ak sa pohľadávka stala nevymožiteľnou podľa odseku 2 písm. d) alebo písm. e), opravný\ndoklad podľa odseku 7 sa nevyhotovuje.\n"
+      }
+    ],
+    "found_entities": [
+      "Oprava Odpocitanej Dane",
+      "Oprava Odpoctanej Dane",
+      "Opravny Doklad",
+      "Nezaplatenie Za Dodanie Tovaru Alebo Sluzby",
+      "Zavazok",
+      "101. Den Od Splatnosti Zavazku",
+      "Den Splatnosti Zavazku",
+      "Nevymozitelna Pohladavka",
+      "Pohladavka Z Dodania Tovaru Alebo Sluzby",
+      "Oprava Zakladu Dane Pri Nevymozitelnej Pohladavke",
+      "Pravo Na Odpocitanie Dane",
+      "Odpocitana Dan"
+    ],
+    "answer": "Áno, ak nastal 101. deň odo dňa splatnosti záväzku, odberateľ je povinný opraviť odpočítanú daň podľa § 53b ods. 1 písm. a), a to v rozsahu, v akom nezaplatil. Táto povinnosť podľa písm. a) nie je viazaná na doručenie opravného dokladu od dodávateľa. Opravný doklad je relevantný pri situácii podľa § 53b ods. 1 písm. b), ak odberateľ nebol povinný opraviť daň podľa písm. a).",
+    "retrieval_reasoning": "Otázku som rozložil na pojmy: odpočítanie dane/oprava odpočítanej dane, úplné alebo čiastočné nezaplatenie protihodnoty/záväzku, 101. deň od splatnosti záväzku, opravný doklad, nevymožiteľná pohľadávka a negatívny stav „dodávateľ zatiaľ neposlal opravný doklad“. Vyhľadával som entity podľa variantov odpocit/odpočít, oprav/opravný doklad, zavaz/nezaplat, pohladav/nevymoz a následne som prešiel 1–2-hop väzby na štrukturálne uzly vrátane súvisiacich § 53b a § 25a; doplnil som textové vyhľadávania na „opraviť odpočítanú daň“, „nezaplatil“, „opravný doklad“, „nevymožiteľn“ a „záväzku“. Po prečítaní textov som vyradil ustanovenia o dovoze, sadzbe dane, ručení za nezaplatenú daň, colných/daňových skladoch, prechodných ustanoveniach a čisto obsahových náležitostiach dokladov, ktoré priamo neodpovedali na otázku.",
+    "elapsed_sec": 130.07,
+    "timestamp": "2026-05-19T17:00:03.212993"
   },
   {
+    "id": 17,
     "question": "Platiteľ registrovaný podľa § 4 s obratom pod 100 000 eur uplatňuje osobitnú úpravu na základe prijatia platby. Vystaví faktúru bez slovnej informácie, že daň sa uplatňuje na základe prijatia platby. Kedy vznikne daňová povinnosť?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1327,13 +2155,131 @@
         "§ 19"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:14:00.735632"
+    "found_sections": [
+      {
+        "id": "Paragraf § 68d Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Ustanovuje, že platiteľ registrovaný podľa § 4 sa môže rozhodnúť pre osobitnú úpravu len pri splnení podmienok v písmenách a) a b).",
+        "text": "Platiteľ registrovaný podľa § 4 sa môže rozhodnúť pre uplatňovanie osobitnej úpravy podľa\nodsekov 3 až 13, ak\n"
+      },
+      {
+        "id": "Paragraf § 68d Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Potvrdzuje podmienku obratu pod 100 000 eur, ktorú skutkový stav výslovne uvádza.",
+        "text": "za predchádzajúci kalendárny rok nedosiahol obrat 100 000 eur a odôvodnene predpokladá, že\nv prebiehajúcom kalendárnom roku nedosiahne obrat 100 000 eur a \n"
+      },
+      {
+        "id": "Paragraf § 68d Odsek 1 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Dopĺňa druhú podmienku oprávnenia na uplatňovanie osobitnej úpravy — nejde o konkurz ani likvidáciu.",
+        "text": "na platiteľa nebol vyhlásený konkurz alebo platiteľ nevstúpil do likvidácie.\n"
+      },
+      {
+        "id": "Paragraf § 68d Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Identifikuje platiteľa podľa odseku 2, na ktorého sa následne vzťahuje povinnosť uviesť slovnú informáciu podľa § 68d ods. 4.",
+        "text": "Platiteľ, ktorý spĺňa podmienky podľa odseku 1 a ktorý sa rozhodol uplatňovať osobitnú\núpravu podľa odsekov 3 až 13, uplatňuje túto úpravu od prvého dňa zdaňovacieho obdobia.\nDátum začatia uplatňovania osobitnej úpravy platiteľ písomne oznámi daňovému úradu najneskôr\ndo konca kalendárneho mesiaca, v"
+      },
+      {
+        "id": "Paragraf § 68d Odsek 3",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Vymedzuje vecný rozsah osobitnej úpravy a zároveň vylučuje dodania podľa § 43 a § 47.",
+        "text": "Osobitná úprava sa vzťahuje na odplatné dodania tovarov a služieb v tuzemsku, pri ktorých\nje platiteľ povinný platiť daň podľa § 69 ods. 1, okrem dodania tovarov a služieb podľa § 43 a 47.\n"
+      },
+      {
+        "id": "Paragraf § 68d Odsek 4",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Kľúčové ustanovenie: štandardne by daňová povinnosť pri tejto úprave vznikla prijatím platby, ale ak na faktúre chýba slovná informácia, vznikne podľa § 19 a faktúru nemožno spätne opraviť doplnením textu.",
+        "text": "Daňová povinnosť pri uplatňovaní osobitnej úpravy vzniká dňom prijatia platby za tovar\nalebo službu, ktoré sú alebo majú byť dodané, a to z prijatej platby; ak platiteľ postúpi\npohľadávku, daňová povinnosť vzniká dňom postúpenia pohľadávky a základom dane je cena bez\ndane požadovaná za dodaný tovar "
+      },
+      {
+        "id": "Paragraf § 19 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 19",
+        "role": "cross_reference",
+        "relevance": "Ak sa pre chýbajúcu slovnú informáciu použije § 19 a ide o dodanie tovaru, základné pravidlo je vznik daňovej povinnosti dňom dodania tovaru.",
+        "text": "Daňová povinnosť vzniká dňom dodania tovaru. Dňom dodania tovaru je deň, keď kupujúci\nnadobudne právo nakladať s tovarom ako vlastník. Pri prevode alebo prechode nehnuteľnosti je\ndňom dodania deň odovzdania nehnuteľnosti do užívania, ak je tento deň skorší ako deň zápisu\nvlastníckeho práva k nehnute"
+      },
+      {
+        "id": "Paragraf § 19 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 19",
+        "role": "cross_reference",
+        "relevance": "Ak sa pre chýbajúcu slovnú informáciu použije § 19 a ide o dodanie služby, daňová povinnosť vzniká dňom dodania služby.",
+        "text": "Daňová povinnosť vzniká dňom dodania služby.\n"
+      },
+      {
+        "id": "Paragraf § 19 Odsek 4",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 19",
+        "role": "cross_reference",
+        "relevance": "Dopĺňa pravidlo podľa § 19 pre situáciu, keď je platba prijatá pred dodaním — vtedy vzniká daňová povinnosť z prijatej platby dňom prijatia platby aj podľa všeobecnej úpravy.",
+        "text": "Ak je platba prijatá pred dodaním tovaru alebo služby, vzniká daňová povinnosť z prijatej\nplatby dňom prijatia platby.\n"
+      },
+      {
+        "id": "Paragraf § 74 Odsek 3",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 74",
+        "role": "conditions",
+        "relevance": "§ 68d ods. 4 robí výnimku pre faktúry podľa § 74 ods. 3 písm. a) a b), preto je potrebné určiť, že ide o zjednodušené faktúry.",
+        "text": "Platiteľ a zdaniteľná osoba, ktorá nie je platiteľom, môžu vyhotoviť zjednodušenú faktúru,\nktorá neobsahuje všetky údaje podľa odseku 1. Zjednodušenou faktúrou je\n"
+      },
+      {
+        "id": "Paragraf § 74 Odsek 3 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Jedna z výnimiek uvedených v § 68d ods. 4: doklad do 100 eur vrátane dane ako zjednodušená faktúra.",
+        "text": "doklad za tovar alebo službu, ak cena vrátane dane nie je viac ako 100 eur; doklad nemusí\n\nobsahovať údaje podľa odseku 1 písm. b) a jednotkovú cenu podľa odseku 1 písm. g),\n"
+      },
+      {
+        "id": "Paragraf § 74 Odsek 3 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Druhá výnimka uvedená v § 68d ods. 4: vybrané e-kasa alebo tankovacie doklady do 400 eur vrátane dane.",
+        "text": "doklad vyhotovený pokladnicou e-kasa klient podľa osobitného predpisu,29a) ak cena tovaru\nalebo služby vrátane dane nie je viac ako 400 eur, a doklad vyhotovený tankovacím automatom\npre bezobslužné čerpanie pohonných látok, ak cena tovaru vrátane dane uhradená\nelektronickým platobným prostriedkom ni"
+      },
+      {
+        "id": "Paragraf § 68d Odsek 14 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Potvrdzuje, že neuvedenie slovnej informácie na faktúre je samostatne sankcionované porušenie; zároveň podporuje záver, že chýbajúci text nie je len formálna bezvýznamná chyba.",
+        "text": "platiteľ podľa odseku 2 na faktúre neuvedie slovnú informáciu podľa odseku 4.\n"
+      }
+    ],
+    "found_entities": [
+      "Den Prijatia Platby",
+      "Slovna Informacia Dan Sa Uplatnuje Na Zaklade Prijatia Platby",
+      "Datum Prijatia Platby",
+      "Osobitna Uprava",
+      "Faktura",
+      "Povinnost Opravit Povodnu Fakturu Doplnenim Slovnej Informacie",
+      "Danova Povinnost",
+      "Danova Povinnost Pri Uplatnovani Osobitnej Upravy",
+      "Obrat 100 000 Eur",
+      "Platitel Registrovany Podla § 4"
+    ],
+    "answer": "Ak platiteľ na faktúre neuvedie slovnú informáciu „daň sa uplatňuje na základe prijatia platby“, daňová povinnosť nevzniká podľa osobitnej úpravy, ale podľa § 19. To znamená dňom dodania tovaru alebo dňom dodania služby; ak bola platba prijatá pred dodaním, vzniká daňová povinnosť dňom prijatia platby z prijatej platby. Pôvodnú faktúru nemožno opraviť doplnením tejto slovnej informácie.",
+    "retrieval_reasoning": "Otázku som rozložil na koncepty: platiteľ registrovaný podľa § 4, obrat pod 100 000 eur, osobitná úprava podľa prijatia platby, faktúra bez slovnej informácie, vznik daňovej povinnosti podľa § 68d vs. § 19, a výnimky pri zjednodušenej faktúre. Vyhľadal som entity podľa výrazov „prijatia platby“, „osobitn“, „faktúr“, „daňová povinnosť“, „obrat“, „platiteľ“, následne som prešiel 1–2 hop väzby k štrukturálnym uzlom, textovo vyhľadal formulácie „na základe prijatia platby“, „slovnú informáciu“, „100 000 eur“, rozšíril som súrodencov § 68d, § 19 a § 74 a preveril odkazy na § 19 a § 74 ods. 3. Po prečítaní textov som vyradil väčšinu vzdialených alebo odvetvových kandidátov (napr. cestovný ruch, trojstranný obchod, prenesenie daňovej povinnosti, OSS/obrat v Únii, opravy základu dane), lebo priamo neriešili opísanú faktúru bez informácie; ponechal som ustanovenia, ktoré určujú podmienky režimu, následok opomenutia textu na faktúre a všeobecné pravidlá vzniku daňovej povinnosti podľa § 19.",
+    "elapsed_sec": 110.74,
+    "timestamp": "2026-05-19T17:01:53.962221"
   },
   {
+    "id": 18,
     "question": "Platiteľ kúpi budovu a používa ju sčasti na podnikanie a sčasti na súkromné účely. Ktoré ustanovenia bránia tomu, aby si odpočítal celú daň hneď na začiatku, a ako dlho sa sleduje zmena použitia?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1352,13 +2298,134 @@
         "Príloha č. 1"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:14:02.752500"
+    "found_sections": [
+      {
+        "id": "Paragraf § 49 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 49",
+        "role": "supports",
+        "relevance": "Určuje okamih vzniku práva na odpočítanie dane, teda východiskovo kedy by platiteľ mohol odpočítanie uplatniť.",
+        "text": "Právo odpočítať daň z tovaru alebo zo služby vzniká platiteľovi v deň, keď pri tomto tovare\nalebo službe vznikla daňová povinnosť.\n"
+      },
+      {
+        "id": "Paragraf § 49 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 49",
+        "role": "conditions",
+        "relevance": "Viaže odpočítanie na tovary a služby použité platiteľom na jeho dodávky ako platiteľ, čo je základná podmienka brániaca odpočtu mimo podnikateľského použitia.",
+        "text": "Platiteľ môže odpočítať od dane, ktorú je povinný platiť, daň z tovarov a služieb, ktoré použije\nna dodávky tovarov a služieb ako platiteľ s výnimkou podľa odsekov 3 a 7. Platiteľ môže odpočítať\ndaň, ak je daň\n"
+      },
+      {
+        "id": "Paragraf § 49a Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Toto je kľúčové ustanovenie: pri investičnom majetku podľa § 54 ods. 2 písm. b) a c) použitom aj na iný účel ako podnikanie povoľuje odpočet len v rozsahu podnikateľského použitia, nie celý hneď na začiatku.",
+        "text": "Daň uplatnenú na investičný majetok uvedený v § 54 ods. 2 písm. b) a c), ktorý je zahrnutý\nv majetku platiteľa a ktorý platiteľ použije na účely podnikania, ako aj na iný účel ako na\npodnikanie, odpočíta platiteľ len v rozsahu použitia tohto investičného majetku na podnikanie.\nUstanovenie § 49 ods. "
+      },
+      {
+        "id": "Paragraf § 49a Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Upravuje, ako má platiteľ určiť pomer pri nehnuteľnom investičnom majetku — najmä podľa plochy, doby používania alebo iného objektívneho kritéria.",
+        "text": "Pomer použitia investičného majetku podľa § 54 ods. 2 písm. b) a c) na podnikanie a na iný\núčel ako na podnikanie platiteľ určí podľa plochy nehnuteľnosti používanej na podnikanie a na iný\núčel ako na podnikanie, doby používania investičného majetku podľa § 54 ods. 2 písm. b) a c) na\npodnikanie a na"
+      },
+      {
+        "id": "Paragraf § 54 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 54",
+        "role": "defines",
+        "relevance": "Zavádza pojem investičného majetku, na ktorý odkazujú § 49a, § 54a a § 52a.",
+        "text": "Investičným majetkom na účely tohto zákona je dlhodobý majetok platiteľa, ktorým sú\n"
+      },
+      {
+        "id": "Paragraf § 54 Odsek 2 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 54",
+        "role": "defines",
+        "relevance": "Výslovne zaraďuje stavby, byty a nebytové priestory medzi investičný majetok; kúpená budova preto spadá pod režim § 49a a § 54a.",
+        "text": "stavby,26a) stavebné pozemky, byty a nebytové priestory,\n"
+      },
+      {
+        "id": "Paragraf § 54 Odsek 2 Pismeno c)",
+        "label": "Pismeno",
+        "parent_id": "Paragraf § 54",
+        "role": "defines",
+        "relevance": "Zahŕňa aj nadstavby, prístavby, vstavby a stavebné úpravy stavieb, bytov a nebytových priestorov, takže dopĺňa rozsah nehnuteľného investičného majetku sledovaného rovnakým režimom.",
+        "text": "nadstavby stavieb, prístavby stavieb, vstavby26b) a stavebné úpravy stavieb, bytov a nebytových\npriestorov, ktoré si vyžadovali rozhodnutie o stavebnom zámere,27)\n"
+      },
+      {
+        "id": "Paragraf § 54a Odsek 1",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Spúšťa režim úpravy, ak sa po prvotnom použití zmení rozsah použitia nehnuteľného investičného majetku na podnikanie a na iný účel.",
+        "text": "Ak v období nasledujúcom po zdaňovacom období, v ktorom došlo k prvotnému použitiu\ninvestičného majetku uvedeného v § 54 ods. 2 písm. b) a c), platiteľ zmení rozsah použitia tohto\ninvestičného majetku na účely podnikania, ako aj na iný účel ako na podnikanie,\n"
+      },
+      {
+        "id": "Paragraf § 54a Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Ak si platiteľ pôvodne odpočítal viac, než zodpovedá neskoršiemu rozsahu použitia, musí odpočítanú daň upraviť nadol.",
+        "text": "je povinný upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná vo vyššej výške, v akej mohla byť odpočítaná\nv kalendárnom roku, v ktorom došlo k zmene rozsahu použitia tohto investičného majetku na\núčely podnikania, ako aj na iný účel"
+      },
+      {
+        "id": "Paragraf § 54a Odsek 1 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Ak si platiteľ pôvodne odpočítal menej, než zodpovedá neskoršiemu rozsahu podnikateľského použitia, má právo odpočítanú daň upraviť nahor.",
+        "text": "má právo upraviť odpočítanú daň, ak v dôsledku tejto zmeny bola daň pri prvotnom použití\ntohto investičného majetku odpočítaná v nižšej výške, v akej mohla byť odpočítaná\nv kalendárnom roku, v ktorom došlo k zmene rozsahu použitia tohto investičného majetku na\núčely podnikania, ako aj na iný účel ak"
+      },
+      {
+        "id": "Paragraf § 54a Odsek 3",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Stanovuje každoročné posudzovanie zmeny rozsahu použitia počas obdobia úpravy a určuje, že úprava sa vykoná v poslednom zdaňovacom období príslušného kalendárneho roka.",
+        "text": "Zmena rozsahu použitia investičného majetku podľa § 54 ods. 2 písm. b) alebo písm. c) sa\nposudzuje samostatne za každý kalendárny rok počas obdobia na úpravu odpočítanej dane\nv porovnaní s daňou, ktorú platiteľ odpočítal pri prvotnom použití tohto investičného majetku.\nÚpravu odpočítanej dane platit"
+      },
+      {
+        "id": "Paragraf § 52a Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Uvádza, že obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo § 54d sa určuje v nasledujúcich písmenách.",
+        "text": "Obdobie na úpravu odpočítanej dane podľa § 54, § 54a alebo podľa § 54d je\n"
+      },
+      {
+        "id": "Paragraf § 52a Odsek 2 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Pre investičný majetok podľa § 54 ods. 2 písm. b) a c), teda aj stavby/budovy, stanovuje sledovanie zmien počas 20 kalendárnych rokov vrátane roka prvotného použitia.",
+        "text": "20 kalendárnych rokov vrátane roka, v ktorom došlo k prvotnému použitiu investičného\nmajetku, ak ide o investičný majetok podľa § 54 ods. 2 písm. b) a c).\n"
+      }
+    ],
+    "found_entities": [
+      "Pravo Odpocitat Dan Z Tovaru Alebo Zo Sluzby",
+      "Investicny Majetok",
+      "Dan Uplatnena Na Investicny Majetok",
+      "Majetok Platitela",
+      "Pouzitie Na Ucely Podnikania",
+      "Iny Ucel Ako Na Podnikanie",
+      "Rozsah Pouzitia Tohto Investicneho Majetku Na Podnikanie",
+      "Stavby",
+      "Byty",
+      "Nebytove Priestory",
+      "Zmena Rozsahu Pouzitia Investicneho Majetku",
+      "Uprava Odpoctanej Dane",
+      "Kalendarny Rok"
+    ],
+    "answer": "Budova je investičným majetkom podľa § 54 ods. 2 písm. b), a preto pri jej použití sčasti na podnikanie a sčasti na súkromné účely bráni odpočítaniu celej dane § 49a ods. 1: daň možno odpočítať len v rozsahu použitia na podnikanie. Tento pomer sa určí podľa § 49a ods. 2 napríklad podľa plochy, doby používania alebo iného objektívneho kritéria. Zmena rozsahu použitia sa sleduje a posudzuje podľa § 54a ods. 1 a 3 počas obdobia na úpravu odpočítanej dane, ktoré je podľa § 52a ods. 2 písm. b) 20 kalendárnych rokov vrátane roka prvotného použitia.",
+    "retrieval_reasoning": "Otázku som rozložil na pojmy: odpočítanie dane, budova/nehnuteľnosť, investičný majetok, použitie na podnikanie vs. súkromný/iný účel, zmena rozsahu použitia a obdobie sledovania. Vyhľadal som entity podľa odpoč*, nehnute*/budov*, investič*/majet*, súkrom*/podnik*, zmena/použit* a lehota/obdobie/rok; potom som prešiel 1–2 hop väzby na štrukturálne uzly, rozbalil súrodencov v § 49, § 49a, § 54, § 54a a § 52a a preveril aj súvisiace odkazy (§ 8, § 9). Po prečítaní textov som ponechal ustanovenia priamo upravujúce: základné právo na odpočítanie, limit pri nehnuteľnom investičnom majetku používanom aj na iný účel, kritériá pomeru, definíciu budovy ako investičného majetku, následnú úpravu pri zmene rozsahu a 20-ročné obdobie sledovania. Ako vedľajšie alebo neaplikovateľné som vyradil najmä § 49 ods. 5 pre investičný majetok podľa § 54 ods. 2 písm. a) a d), § 54 všeobecnú zmenu účelu, nájomné špecifiká a ustanovenia o dodaní/predaji, keďže otázka sa týka kúpy budovy podľa § 54 ods. 2 písm. b) používanej sčasti na podnikanie a sčasti súkromne.",
+    "elapsed_sec": 146.92,
+    "timestamp": "2026-05-19T17:04:20.886565"
   },
   {
+    "id": 19,
     "question": "Kedy musí tuzemský poskytovateľ platobných služieb viesť a sprístupniť záznamy o cezhraničných platbách príjemcovi a ako dlho ich musí uchovávať?",
     "supporting_sections": {
       "podporujuce_strany": [
@@ -1369,50 +2436,167 @@
         "§ 70a ods. 1 až 12"
       ]
     },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:14:04.849328"
-  },
-  {
-    "question": "Môže platiteľ použiť zjednodušenú faktúru z eKasy pri predaji tovaru na diaľku s miestom dodania v tuzemsku alebo pri dodaní tovaru oslobodeného podľa § 43, ak suma nepresiahne 400 eur?",
-    "supporting_sections": {
-      "podporujuce_strany": [
-        113,
-        114,
-        115,
-        116
-      ],
-      "podporujuce_ustanovenia": [
-        "§ 72 ods. 1",
-        "§ 74 ods. 3 a 4"
-      ]
-    },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:14:07.064594"
-  },
-  {
-    "question": "V jednej prevádzke sa fakturuje ubytovanie, jedlo, nealkoholický nápoj a pivo s obsahom alkoholu nad 0,5 %. Aké sadzby DPH vyplývajú z kombinácie § 27 a prílohy č. 7a?",
-    "supporting_sections": {
-      "podporujuce_strany": [
-        35,
-        36,
-        166
-      ],
-      "podporujuce_ustanovenia": [
-        "§ 27 ods. 1 až 3",
-        "Príloha č. 7a bod 1",
-        "Príloha č. 7a bod 2"
-      ]
-    },
-    "found_sections": [],
-    "found_entities": [],
-    "answer": "",
-    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-    "timestamp": "2026-05-19T16:14:10.202337"
+    "found_sections": [
+      {
+        "id": "Paragraf § 70a Odsek 1 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Definuje základný pojem „poskytovateľ platobných služieb“, od ktorého sa odvíja povinná osoba.",
+        "text": "poskytovateľom platobných služieb je poskytovateľ platobných služieb podľa osobitného\npredpisu,28h)\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 1 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Definuje, kedy je poskytovateľ platobných služieb „tuzemský“.",
+        "text": "tuzemským poskytovateľom platobných služieb je poskytovateľ platobných služieb podľa\npísmena a), ktorého domovským členským štátom alebo hostiteľským členským štátom je\ntuzemsko,\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 1 Pismeno f)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Definuje príjemcu platby, o ktorom sa majú viesť záznamy.",
+        "text": "príjemcom platby je príjemca,28m)\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 1 Pismeno i)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "defines",
+        "relevance": "Definuje cezhraničnú platbu, ktorá je predmetom záznamovej povinnosti.",
+        "text": "cezhraničnou platbou je platba, ak sa poskytovateľ platby nachádza v členskom štáte určenom\npodľa odseku 6 a príjemca platby sa nachádza v inom členskom štáte alebo v treťom štáte\nurčenom podľa odseku 7.\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 2",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Určuje hlavný okamih vzniku povinnosti viesť záznamy: za kalendárny štvrťrok, v ktorom poskytovateľ poskytol služby zodpovedajúce viac ako 25 cezhraničným platbám rovnakému príjemcovi.",
+        "text": "Tuzemský poskytovateľ platobných služieb je povinný, na účel vykonávania kontroly dodania\ntovaru alebo dodania služby s miestom dodania na území Európskej únie, viesť záznamy podľa\nodseku 8 o príjemcovi platby cezhraničnej platby a o cezhraničnej platbe v súvislosti s platobnou\nslužbou, ktorú poskyt"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 3",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Uvádza, že povinnosť z odseku 2 sa vzťahuje len na tuzemského poskytovateľa platobných služieb v pozíciách rozvedených v písmenách a) a b).",
+        "text": "Povinnosť podľa odseku 2 sa vzťahuje na tuzemského poskytovateľa platobných služieb\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 3 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Stanovuje, že povinnosť sa vzťahuje na tuzemského poskytovateľa platobných služieb príjemcu platby.",
+        "text": "príjemcu platby,\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 3 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Rozširuje povinnosť na poskytovateľa platby v prípade, že žiadny poskytovateľ platobných služieb príjemcu platby nie je v EÚ.",
+        "text": "poskytovateľa platby, ak sa ani jeden z poskytovateľov platobných služieb príjemcu platby\nnenachádza na území Európskej únie.\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 4",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Spresňuje výpočet počtu cezhraničných platieb pri tuzemskom poskytovateľovi platobných služieb poskytovateľa platby podľa ods. 3 písm. b).",
+        "text": "Pre určenie počtu cezhraničných platieb podľa odseku 2 je tuzemský poskytovateľ platobných\nslužieb poskytovateľa platby podľa odseku 3 písm. b) povinný zahrnúť všetky platobné služby\nposkytnuté poskytovateľovi platby, ktoré zodpovedajú cezhraničným platbám rovnakému\npríjemcovi platby.\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 5",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Úvod k povinnostiam tuzemského poskytovateľa podľa odseku 3, ktoré sú konkretizované v písmenách a) a b).",
+        "text": "Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 5 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Určuje formu vedenia záznamov a dobu uchovávania: elektronicky tri kalendárne roky od konca roka vykonania platby.",
+        "text": "viesť záznamy podľa odseku 8 v elektronickom formáte počas obdobia troch kalendárnych rokov\nod konca kalendárneho roka, v ktorom bola platba vykonaná,\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 5 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Určuje riadnu lehotu a spôsob sprístupnenia záznamov finančnému riaditeľstvu: elektronicky najneskôr do konca mesiaca po príslušnom štvrťroku.",
+        "text": "sprístupniť finančnému riaditeľstvu elektronickými prostriedkami záznamy podľa odseku 8\nprostredníctvom elektronického formulára najneskôr do konca kalendárneho mesiaca\nnasledujúceho po kalendárnom štvrťroku, ktorého sa tieto záznamy týkajú podľa osobitného\npredpisu.28p)\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 8",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "cross_reference",
+        "relevance": "Odkazuje na obsah záznamov podľa odseku 2, ktoré musí povinný tuzemský poskytovateľ viesť a sprístupniť.",
+        "text": "Záznamy podľa odseku 2, ktoré je povinný viesť tuzemský poskytovateľ platobných služieb\npodľa odseku 3, musia obsahovať\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 8 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Konkretizuje, že záznamy musia obsahovať identifikačné údaje príjemcu platby.",
+        "text": "meno a priezvisko príjemcu platby alebo obchodné meno alebo názov príjemcu platby, uvedené\nv záznamoch poskytovateľa platobných služieb,\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 8 Pismeno g)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "supports",
+        "relevance": "Konkretizuje, že záznamy musia obsahovať údaje o všetkých cezhraničných platbách podľa odseku 2.",
+        "text": "údaje o všetkých cezhraničných platbách podľa odseku 2,\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 11",
+        "label": "Odsek",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Upravuje dodatočné sprístupnenie na výzvu daňového úradu v určenej lehote, ak nastanú problémy s riadnym sprístupnením.",
+        "text": "Tuzemský poskytovateľ platobných služieb podľa odseku 3 je povinný spôsobom podľa\nodseku 5 písm. b) a v lehote určenej vo výzve daňového úradu sprístupniť finančnému riaditeľstvu\nzáznamy podľa odseku 8 za príslušný kalendárny štvrťrok, ak\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 11 Pismeno a)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Jedna z podmienok dodatočného sprístupnenia: záznamy neboli sprístupnené včas alebo správnym spôsobom.",
+        "text": "tieto záznamy nesprístupnil v lehote alebo spôsobom podľa odseku 5 písm. b) alebo\n"
+      },
+      {
+        "id": "Paragraf § 70a Odsek 11 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Druhá podmienka dodatočného sprístupnenia: sprístupnené záznamy boli neúplné alebo nesprávne.",
+        "text": "sprístupnené záznamy sú neúplné alebo nesprávne.\n"
+      }
+    ],
+    "found_entities": [
+      "Poskytovatel Platobnych Sluzieb",
+      "Tuzemsky Poskytovatel Platobnych Sluzieb",
+      "Prijemca Platby",
+      "Poskytovatel Platobnych Sluzieb Prijemcu Platby",
+      "Cezhranicna Platba",
+      "Cezhranicne Platby",
+      "Viac Ako 25 Cezhranicnych Platieb",
+      "Zaznamy O Prijemcovi Platby Cezhranicnej Platby A O Cezhranicnej Platbe",
+      "Udaje O Vsetkych Cezhranicnych Platbach",
+      "Spristupnenie Zaznamov"
+    ],
+    "answer": "Tuzemský poskytovateľ platobných služieb musí viesť záznamy, ak v kalendárnom štvrťroku poskytol platobné služby zodpovedajúce viac ako 25 cezhraničným platbám rovnakému príjemcovi platby. Povinnosť sa vzťahuje na poskytovateľa platobných služieb príjemcu platby, prípadne na poskytovateľa platby, ak sa žiadny poskytovateľ platobných služieb príjemcu nenachádza v EÚ. Záznamy musí sprístupniť finančnému riaditeľstvu elektronicky najneskôr do konca kalendárneho mesiaca nasledujúceho po príslušnom štvrťroku. Uchovávať ich musí v elektronickom formáte počas troch kalendárnych rokov od konca kalendárneho roka, v ktorom bola platba vykonaná.",
+    "retrieval_reasoning": "Otázku som rozložil na koncepty: tuzemský poskytovateľ platobných služieb, príjemca platby, cezhraničná platba, vedenie záznamov, sprístupnenie záznamov, lehota/uchovávanie. Vyhľadával som entity podľa výrazov „platob“, „cezhrani“, „záznam/zaznam“, „príjemc/prijemc“, „uchov/sprístup/spristup“ a „platba/platieb“, potom som pre relevantné entity prešiel 1–2-hop väzby na štrukturálne uzly a rozšíril súrodencov v § 70a. Následne som načítal texty kandidátov najmä z § 70a ods. 1 až 11 a ponechal iba ustanovenia, ktoré priamo definujú pojmy, určujú prah viac ako 25 cezhraničných platieb, rozsah povinnej osoby, lehotu sprístupnenia, obsah záznamov alebo dobu uchovávania. Kontroloval som aj negatívne/exkluzívne relácie typu NEVZTAHUJE_SA_NA, NIE_JE_PREDMETOM_DANE, OSLOBODZUJE_OD, NEMA_POVINNOST atď. pre § 70a; relevantná výslovná výnimka/exempcia sa vo vyhľadaných výsledkoch nenašla. Po prečítaní textov som odfiltroval všeobecné alebo nesúvisiace zásahy na poskytovateľov platobných služieb mimo § 70a, napr. bankové účty podľa § 6 či platby v iných kontextoch.",
+    "elapsed_sec": 123.91,
+    "timestamp": "2026-05-19T17:06:24.818876"
   }
 ]

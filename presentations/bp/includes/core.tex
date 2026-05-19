@@ -1,7 +1,5 @@
-v uvode obsiahnut problematiku
 
-
-\section{Súčasný stav}
+\section{Súčasný stav}\label{sec:sucasny-stav}
 
 \subsection{Znalostné grafy}
 
@@ -224,7 +222,7 @@ Tretia, prakticky najpodstatnejšia medzera spočíva v tom, že existujúce rie
 
 
 
-\section{Návrh riešenia}
+\section{Návrh riešenia}\label{sec:navrh}
 
 Cieľom riešenia je transformovať PDF dokument slovenského právneho predpisu z neštruktúrovaného textu na štruktúrovaný znalostný graf (KG), ktorý je schopný zodpovedať na vecné otázky o obsahu zákona a zachovať odkaz na pôvodný text. Vstupom je PDF zbierky zákonov, výstupom je Neo4j graf s vlastnosťami doplnený o tri vektorové indexy nad uzlami, chunkami a vzťahmi.
 
@@ -425,7 +423,7 @@ Pri agregácii cez stovky chunkov a desiatky paragrafov vzniká hustá sieť ent
 \end{figure}
 
 
-\section{Implementácia}
+\section{Implementácia}\label{sec:implementacia}
 
 \subsection{Technologický stack}
 
@@ -473,7 +471,7 @@ DocLayout-YOLO je špecializovaná neurónová sieť založená na architektúre
 
 
 
-\subsection{Kľúčové implementačné rozhodnutia}
+\subsection{Dôležité implementačné rozhodnutia}
 
 \subsubsection{Mechanizmus semaforu}
 
@@ -533,7 +531,7 @@ Kvalita spracovania zadania modelu závisí nielen od schopností zvoleného mod
 
 
 
-\section{Experimenty a vyhodnotenie}
+\section{Experimenty a vyhodnotenie}\label{sec:experimenty}
 
 Prvotná fáza testovania systému na extrakciu pomenovaných entít a vzťahov bola vykonávaná nad datasetom PDF kníh, kde hlavným zdrojom bola beletria. Extrakcia prebiehala v otvorenej doméne bez vopred danej schémy, aby sa overilo, do akej miery LLM dokáže samostatne identifikovať relevantné typy uzlov a vzťahov priamo z textu. Najvýraznejším problémom bola duplicitnosť, kedy pre ten istý typ vzťahu alebo uzla vznikalo 2 až 6 sémanticky totožných variantov s drobne odlišnými názvami.
 

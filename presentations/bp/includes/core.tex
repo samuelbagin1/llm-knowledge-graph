@@ -483,34 +483,6 @@ Kvalita spracovania zadania modelu závisí nielen od schopností zvoleného mod
     \item Špecifiká pre slovenčinu - modelom je vynútené, ako daný typ vzťahu alebo entity majú spracovať. Entity alebo uzly v grafe sú označované ako Title Case, typy entít PascalCase a vzťahy UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE). Dané triedy musia byť spracované bez diakritiky. Keby nie sú normalizované na nediakritické slová mohlo by sa stať že by daný extrahovaný typ by bol s diakritikou, v neskoršom spracovaní ďalšieho chunku bez diakritiky, a vznikli by duplicitné údaje.
 \end{itemize}
 
-\
-
-\noindent Príklad systémovej inštrukcie na úpravu schémy pre model Gemini 2.5 Pro:
-{\scriptsize
-\begin{verbatim}
-# ROLA
-Si expertný ontológ a dátový inžinier špecializujúci sa na znalostné grafy.
-Tvojou úlohou je vyčistiť, normalizovať a deduplikovať schému entít a vzťahov.
-
-# CIELE
-1. **Deduplikácia a sémantické zjednotenie**: Zlúč synonymá a sémanticky blízke typy do jedného kanonického typu.
-2. **Normalizácia formátu**: 
-    - Uzly: PascalCase (napr. DanovePriznanie).
-    - Vzťahy: UPPER_SNAKE_CASE (napr. MA_POVINNOST).
-    - **STRIKTNÉ PRAVIDLO**: Odstráň všetku diakritiku (á->a, č->c, atď.) zo všetkých názvov.
-3. **Ontologická integrita (KRITICKÉ)**:
-    - NIKDY nezlučuj entity z rôznych kategorií: Aktér (Osoba) vs. Proces/Dokument (Ziadost),
-      Miesto (Kraj) vs. Politický útvar (Stat).
-    - NIKDY nezlučuj protichodné vzťahy (VSTUPUJE_DO vs. VYSTUPUJE_Z).
-4. **Generalizácia**: Príliš špecifické uzly nahraď všeobecnejšími (napr. "Sluha" -> "Osoba"), ak
-    to neznižuje zrozumiteľnosť právneho/biznisového kontextu.
-
-# PRAVIDLÁ PRE ZÁKLADNÚ ONTOLÓGIU
-- Ak je poskytnutá Základná ontológia, má prednosť v pomenovaní.
-- Ak surový typ (Open Domain) zodpovedá typu v základnej ontológii, mapuj ho naň.
-- Ak je surový typ unikátny a dôležitý, pridaj ho ako nový typ.
-\end{verbatim}
-}
 
 
 \section{Experimenty a vyhodnotenie}
@@ -564,39 +536,37 @@ Na otestovanie spoločnej extrakcie entít a vzťahov bol vytvorený v spoluprá
 
 
 \subsubsection{Extrakcia}
-Evaluácia extrakcie porovnáva graf vygenerovaný modelom s ručne anotovaným referenčným grafom. Najprv sa normalizujú identifikátory uzlov, typy uzlov a názvy vzťahov: odstráni sa diakritika, zjednotia sa medzery, veľkosť písmen a bežné varianty právnych odkazov. Duplicitné uzly a hrany sa pred výpočtom odstránia. Zhoda uzlov sa určuje buď presne, alebo približne pomocou textovej podobnosti. Pri nejasných prípadoch sa použije LLM hodnotiteľ, ktorý posúdi, či dve entity alebo vzťahy vyjadrujú ten istý význam. Nehodnotí sa však opora trojice v zdrojovom texte, iba zhoda s referenčným grafom.
+Evaluácia extrakcie porovnáva graf vygenerovaný modelom s ručne anotovaným referenčným grafom. Pred porovnaním sa identifikátory uzlov, typy uzlov a názvy vzťahov normalizujú: odstráni sa diakritika, zjednotia sa medzery, veľkosť písmen a bežné varianty právnych odkazov, a nakoniec sa odstránia duplicitné uzly a hrany. Tolerancia voči formulačným variáciám pri zachovaní striktných pravidiel sémantickej zhody nadväzuje na metodiku, ktorú pre evaluáciu LLM-generovaných grafov navrhli Ghanem a Cruz~\cite{ghanem2025kgeval}.
 
-\
+Zhoda uzlov sa určuje v troch postupných vrstvách. Prvá vrstva požaduje úplnú zhodu znormalizovaného identifikátora aj typu uzla a udelí skóre 1{,}0. Druhá, uvoľnená vrstva pripúšťa rovnaký typ uzla pri textovej podobnosti identifikátorov nad hodnotou 0{,}75, počítanej metrikou \texttt{token\_set\_ratio} z knižnice RapidFuzz. Tretia vrstva zapojí jazykového sudcu, teda samostatné volanie LLM, ktoré dostane referenčnú aj predikovanú entitu a vráti štruktúrovanú odpoveď s poliami \texttt{same\_entity}, \texttt{type\_acceptable}, \texttt{confidence} a \texttt{reason}. Sudca sa volá až po prekročení prahu textovej podobnosti 0{,}55, čím sa nákladné volania obmedzia na nejednoznačné prípady. Kandidáti zo všetkých troch vrstiev sa následne zoradia podľa skóre a priradia greedy postupom s ohraničením jeden-na-jedného. Využitie LLM ako sémanticky citlivého sudcu pri párovaní entít je v zhode s prístupom zavedeným v ontologicky orientovaných benchmarkoch Text2KGBench~\cite{mihindukulasooriya2023text2kgbench} a KG-LLM-Bench~\cite{markowitz2025kgllmbench}.
 
-Textovú podobnosť sa počíta pomocou RapidFuzz \texttt{token\_set\_ratio} na znormalizovaných ID režazcoch uzlov. Uzly sa priraďujú v troch vrstvách. Prvá je striktná zhoda, kde musí sedieť rovnaké normalizované ID aj typ, a udelí sa skór 1.0. Druhá je relaxová zhoda, kde musí byť rovnaký typ uzlov a podobnosť ID uzlov nad 0.75. Tretia vrstva zavolá LLM sudcu, ktorý dostane gold aj predikciu a vráti odpoveď s \texttt{same\_entity}, \texttt{type\_acceptable}, \texttt{confidence} a \texttt{reason}. Sudca sa zovolá až keď podobnosť presiahne 0.55. Kandidáti zo všetkých troch vrstiev sa nakoniec zoradia podľa skóre a zhora nadol priradí uzly tak, aby jeden zlatý uzol dostal najviac jednu predikciu.
+Hrany sa hodnotia analogicky, no podmienene: najprv treba určiť, ktoré referenčné uzly sa namapovali na ktoré predikované. Ak sa po tomto premostení zhoduje zdroj $e_h$, cieľ $e_t$ aj typ vzťahu, ide o striktnú zhodu hrany. Pokiaľ sa zhodujú iba endpointy, smer a sémantiku relácie posúdi sudca. Pri úplne odlišných endpointoch sa počíta vážená podobnosť (30~\% $e_h$, 30~\% $e_t$, 25~\% typ vzťahu, po 7{,}5~\% typy oboch uzlov), a ak prekročí prah, sudca rozhodne o celom triplete naraz. Tento hierarchický postup zodpovedá viacúrovňovému hodnoteniu, aké pre relačnú extrakciu používajú nedávne benchmarky~\cite{brokman2025zsre, castedo2026blinkg}.
 
-Hrany fungujú podobne, avšak najprv musíme vedieť, ktoré zlaté uzly sa namapovali na ktoré predikované. Ak sedia zdroj $e_h$, cieľ $e_t$ a vzťah, porovnáva sa striktne. Ak sedia entity ale vzťah nie, posudzuje to sudca, ktorý rieši smer a sémantiku relácie. Ak sa enity vzťahu vôbec nezhodujú, počíta sa podobnosť, ako vážený priemer (30\% $e_h$, 30\% $e_t$, 25\% relácia, po 7.5\% na typy uzlov), a ak skóre prekročí prah, sudca rozhodne o celom vzťahu naraz.
-
-
-
-\
-
-Z napárovaných množín sa následne počítajú klasické ukazovatele zhody pre uzly aj vzťahy akými sú $TP$, $FP$ a $FN$. Hodnota $TP$ označuje správne nájdené prvky, $FP$ prvky navyše vo výstupe modelu a $FN$ prvky, ktoré sú v referenčnom grafe, ale model ich nenašiel. Z nich sa počíta presnosť, úplnosť a F1 skóre:
+Z napárovaných množín sa pre uzly aj vzťahy počítajú štandardné ukazovatele zhody: $TP$ označuje správne nájdené prvky, $FP$ prvky navyše vo výstupe modelu a $FN$ prvky referenčného grafu, ktoré model nenašiel. Z nich sa odvodzujú presnosť $P$, úplnosť $R$ a ich harmonický priemer $F1$:
 
 \[
-P = \frac{TP}{TP + FP}, \qquad R = \frac{TP}{TP + FN}
+P = \frac{TP}{TP + FP}, \qquad R = \frac{TP}{TP + FN}, \qquad F1 = \frac{2 \cdot P \cdot R}{P + R}
 \]
 
-\[
-F1 = \frac{2 \cdot P \cdot R}{P + R}
-\]
-
-Presnosť $P$ teda hovorí, aká časť vygenerovaných prvkov bola správna. Úplnosť $R$ hovorí, aká časť referenčných prvkov bola nájdená. F1 skóre je ich harmonický priemer, preto trestá aj veľa chýbajúcich prvkov, aj veľa prvkov navyše. Okrem toho sa počíta miera halucinácie $H$ a miera vynechania $O$:
+F1 skóre symetricky penalizuje aj chýbajúce, aj nadbytočné prvky, čo z neho robí etablovanú metriku pre extrakciu znalostných grafov~\cite{ghanem2025kgeval, brokman2025zsre}. Súbežne sa počíta miera halucinácie $H$ a miera vynechania $O$, ktoré priamo kvantifikujú dva najčastejšie módy zlyhania LLM-generátorov~\cite{ghanem2025kgeval}:
 
 \[
 H = \frac{FP}{TP + FP}, \qquad O = \frac{FN}{TP + FN}
 \]
 
-Uvoľnená verzia hodnotenia zahŕňa zhody zo všetkých troch vrstiev priraďovania vrátane rozhodnutí jazykového sudcu, striktná verzia uvažuje len čistý prienik znormalizovaných identifikátorov, bez sémantickej úľavy a bez zásahu sudcu. Rozdiel medzi týmito dvoma číslami slúži ako indikátor toho, do akej miery extraktor vytvára obsahovo zhodné, no formulačne odlišné zápisy. Popri nich sa počíta aj normalizovaná editovacia vzdialenosť $GED$. Tá agreguje chýbajúce a nadbytočné uzly aj hrany spolu s typovými chybami na napárovaných dvojiciach, a výsledok aplikuje na veľkosť oboch porovnávaných grafov.
+Každý z týchto ukazovateľov sa vyhodnocuje v dvoch variantoch. Uvoľnená verzia zahŕňa zhody zo všetkých troch párovacích vrstiev vrátane rozhodnutí sudcu, kým striktná verzia akceptuje len čistý prienik znormalizovaných identifikátorov. Rozdiel medzi týmito hodnotami slúži ako indikátor toho, do akej miery extraktor produkuje obsahovo zhodné, no formulačne odlišné zápisy. Doplnkovo sa počíta aj normalizovaná editovacia vzdialenosť $GED$ (Graph Edit Distance), ktorá v jedinom čísle agreguje chýbajúce a nadbytočné uzly aj hrany spolu s typovými chybami a normalizuje výsledok veľkosťou oboch porovnávaných grafov. Na rozdiel od F1 tak zachytáva vzájomnú konzistenciu uzlov a vzťahov, ktorú samostatné F1 skóre pre uzly a vzťahy rozkladajú~\cite{ghanem2025kgeval}.
 
-Druhá samostatná vrstva hodnotenia sa zameriava na schémovú kvalitu predikcie. Kontroluje, či predikované typy uzlov a vzťahov spadajú do vopred definovanej ontológie. Výstupom je podiel neplatných typov, takzvaných visiacich hrán, ktorých koncový bod nie je prítomný v zozname uzlov. Ďalšími sú podiel neznámych typov a podiel chybných identifikátorov, čo sú prázdne reťazce, zástupné hodnoty typu „unknown"\, alebo „none". Tieto údaje odhaľujú, či model rešpektuje ontologické obmedzenia, nielen či zachytil sémantický obsah.
+\[
+GED = \frac{FP_V + FN_V + FP_E + FN_E + \Delta_T}{|V_g| + |V_p| + |E_g| + |E_p|}
+\]
 
-Záverečná agregácia spája dva komplementárne pohľady. Mikro priemer pracuje s celkovými súčtami počtov správnych a chybných predikcií naprieč všetkými segmentmi, čím prirodzene dáva väčšiu váhu rozsiahlejším úsekom. Makro priemer priemeruje vybrané ukazovatele rovnomerne pre každý segment bez ohľadu na jeho veľkosť, konkrétne ide o striktné F1 pre uzly aj vzťahy, mieru zhody s ontológiou, podiel halucinácií a opomenutí, a normalizovanú editovaciu vzdialenosť. Rozdiel medzi mikro a makro hodnotami naznačuje, či model zlyháva skôr na rozsiahlych, alebo naopak na drobnejších úsekoch.
+V čitateli predstavujú $FP_V$ a $FN_V$ nadbytočné a chýbajúce uzly, $FP_E$ a $FN_E$ analogické počty pre hrany, a $\Delta_T$ označuje počet uzlov so zhodným identifikátorom, no nezhodným typom (substitučná chyba na napárovanej dvojici). Menovateľ predstavuje súčet počtu uzlov a hrán referenčného grafu $G_g = (V_g, E_g)$ a predikovaného grafu $G_p = (V_p, E_p)$, čím sa hodnota $GED$ udržiava v intervale $[0, 1]$. Ide o aproximáciu skutočnej grafovej editovacej vzdialenosti, ktorej presný výpočet je NP-ťažký~\cite{ghanem2025kgeval}.
+
+\
+
+Samostatnú vrstvu hodnotenia tvorí kontrola schémovej kvality predikcie, motivovaná ontologicky orientovanými benchmarkami extrakcie~\cite{mihindukulasooriya2023text2kgbench}. Tá sleduje, či predikované typy uzlov a vzťahov spadajú do vopred definovanej ontológie, a vracia podiel neplatných typov, visiacich hrán s chýbajúcim koncovým bodom, neznámych typov a chybných identifikátorov, ktorými sú prázdne reťazce alebo zástupné hodnoty typu „unknown"\, či „none". Tieto údaje umožňujú rozlíšiť, či sa model dopúšťa sémantických chýb, alebo či dokonca porušuje formálne obmedzenia schémy.
+
+Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priemer pracuje s celkovými súčtami $TP$, $FP$ a $FN$ naprieč všetkými segmentmi, čím prirodzene priraďuje väčšiu váhu rozsiahlejším úsekom. Makro priemer naopak priemeruje striktné F1, zhodu s ontológiou, $H$, $O$ aj $GED$ rovnomerne pre každý segment bez ohľadu na jeho veľkosť. Rozdiel medzi mikro a makro hodnotami signalizuje, či model zlyháva primárne na rozsiahlych, alebo naopak na drobných segmentoch.
 \
 
 \begin{table}[H]

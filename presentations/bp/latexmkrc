@@ -11,7 +11,7 @@ sub run_makeglossaries {
     $opt = '-q'
   };
 
-  my $ret = system "makeglossaries $opt $base_name";  
+  my $ret = system "makeglossaries $opt $base_name";
   popd;
-  return ret;
+  return $ret;
 }

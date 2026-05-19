@@ -35,6 +35,11 @@ DATABASE_NAME = "zz-2004-222"
 QA_INPUT_PATH = Path(__file__).parent / "q&a.json"
 QA_OUTPUT_PATH = Path(__file__).parent / "q&a_graphrag_validation.json"
 
+# Resume control: skip every question whose `id` is below this value.
+# Items with id < START_FROM_ID are preserved from the existing output file
+# (if present) so prior runs are not lost. Set to 1 for a full fresh run.
+START_FROM_ID = 20
+
 # Structural nodes are excluded from `found_entities` (they go in found_sections).
 STRUCTURAL_LABELS = {"Paragraf", "Odsek", "Pismeno", "Bod", "Priloha"}
 
@@ -390,13 +395,33 @@ def main() -> None:
         schema_overview = get_schema_overview(driver)
         print(f"Schema loaded from database {DATABASE_NAME}.\n")
 
-        questions = json.loads(QA_INPUT_PATH.read_text(encoding="utf-8"))
+        all_questions = json.loads(QA_INPUT_PATH.read_text(encoding="utf-8"))
+
+        # Resume: preserve previously-completed records (id < START_FROM_ID)
+        # from the existing output file, and only run the remaining questions.
         results: List[Dict[str, Any]] = []
-        QA_OUTPUT_PATH.write_text("[]", encoding="utf-8")  # fresh start each run
+        if START_FROM_ID > 1 and QA_OUTPUT_PATH.exists():
+            try:
+                prior = json.loads(QA_OUTPUT_PATH.read_text(encoding="utf-8"))
+                results = [r for r in prior if r.get("id", 0) < START_FROM_ID]
+                print(
+                    f"Resuming from id={START_FROM_ID}; "
+                    f"kept {len(results)} prior record(s) from {QA_OUTPUT_PATH.name}."
+                )
+            except Exception as exc:
+                print(f"Could not read prior output ({exc}); starting fresh.")
+                results = []
+        QA_OUTPUT_PATH.write_text(
+            json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+
+        questions = [q for q in all_questions if q.get("id", 0) >= START_FROM_ID]
+        total = len(questions)
 
         for idx, item in enumerate(questions, start=1):
+            qid = item.get("id")
             question = item["otazka"]
-            print(f"\n[{idx}/{len(questions)}] {question[:120]}...")
+            print(f"\n[{idx}/{total}] id={qid}  {question[:120]}...")
             t0 = time.time()
 
             try:
@@ -430,6 +455,7 @@ def main() -> None:
                 answer = generate_answer(llm, question, context_text, found_entities)
 
                 result = {
+                    "id": qid,
                     "question": question,
                     "supporting_sections": {
                         "podporujuce_strany": item.get("podporujuce_strany", []),
@@ -445,6 +471,7 @@ def main() -> None:
 
             except Exception as exc:
                 result = {
+                    "id": qid,
                     "question": question,
                     "supporting_sections": {
                         "podporujuce_strany": item.get("podporujuce_strany", []),

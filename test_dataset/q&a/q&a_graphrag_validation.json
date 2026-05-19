@@ -2598,5 +2598,199 @@
     "retrieval_reasoning": "Otázku som rozložil na koncepty: tuzemský poskytovateľ platobných služieb, príjemca platby, cezhraničná platba, vedenie záznamov, sprístupnenie záznamov, lehota/uchovávanie. Vyhľadával som entity podľa výrazov „platob“, „cezhrani“, „záznam/zaznam“, „príjemc/prijemc“, „uchov/sprístup/spristup“ a „platba/platieb“, potom som pre relevantné entity prešiel 1–2-hop väzby na štrukturálne uzly a rozšíril súrodencov v § 70a. Následne som načítal texty kandidátov najmä z § 70a ods. 1 až 11 a ponechal iba ustanovenia, ktoré priamo definujú pojmy, určujú prah viac ako 25 cezhraničných platieb, rozsah povinnej osoby, lehotu sprístupnenia, obsah záznamov alebo dobu uchovávania. Kontroloval som aj negatívne/exkluzívne relácie typu NEVZTAHUJE_SA_NA, NIE_JE_PREDMETOM_DANE, OSLOBODZUJE_OD, NEMA_POVINNOST atď. pre § 70a; relevantná výslovná výnimka/exempcia sa vo vyhľadaných výsledkoch nenašla. Po prečítaní textov som odfiltroval všeobecné alebo nesúvisiace zásahy na poskytovateľov platobných služieb mimo § 70a, napr. bankové účty podľa § 6 či platby v iných kontextoch.",
     "elapsed_sec": 123.91,
     "timestamp": "2026-05-19T17:06:24.818876"
+  },
+  {
+    "id": 20,
+    "question": "Môže platiteľ použiť zjednodušenú faktúru z eKasy pri predaji tovaru na diaľku s miestom dodania v tuzemsku alebo pri dodaní tovaru oslobodeného podľa § 43, ak suma nepresiahne 400 eur?",
+    "supporting_sections": {
+      "podporujuce_strany": [
+        113,
+        114,
+        115,
+        116
+      ],
+      "podporujuce_ustanovenia": [
+        "§ 72 ods. 1",
+        "§ 74 ods. 3 a 4"
+      ]
+    },
+    "found_sections": [
+      {
+        "id": "Paragraf § 74 Odsek 3",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 74",
+        "role": "supports",
+        "relevance": "Všeobecne umožňuje platiteľovi vyhotoviť zjednodušenú faktúru, ktorá neobsahuje všetky údaje podľa odseku 1.",
+        "text": "Platiteľ a zdaniteľná osoba, ktorá nie je platiteľom, môžu vyhotoviť zjednodušenú faktúru,\nktorá neobsahuje všetky údaje podľa odseku 1. Zjednodušenou faktúrou je\n"
+      },
+      {
+        "id": "Paragraf § 74 Odsek 3 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "conditions",
+        "relevance": "Stanovuje konkrétne, že doklad z pokladnice e-kasa klient je zjednodušenou faktúrou len pri cene vrátane dane najviac 400 eur.",
+        "text": "doklad vyhotovený pokladnicou e-kasa klient podľa osobitného predpisu,29a) ak cena tovaru\nalebo služby vrátane dane nie je viac ako 400 eur, a doklad vyhotovený tankovacím automatom\npre bezobslužné čerpanie pohonných látok, ak cena tovaru vrátane dane uhradená\nelektronickým platobným prostriedkom ni"
+      },
+      {
+        "id": "Paragraf § 74 Odsek 4",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 74",
+        "role": "excludes",
+        "relevance": "Výslovne zakazuje vyhotoviť zjednodušenú faktúru podľa § 74 ods. 3 písm. a) a b) pri plneniach podľa § 72 ods. 1 písm. b), d) a e), čím prelamuje samotný limit 400 eur.",
+        "text": "Zjednodušená faktúra podľa odseku 3 písm. a) a b) sa nesmie vyhotoviť pri dodaní tovaru\nalebo služby podľa § 72 ods. 1 písm. b), d) a e).\n"
+      },
+      {
+        "id": "Paragraf § 72 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 72",
+        "role": "cross_reference",
+        "relevance": "Uvádza rámec ustanovenia, na ktoré odkazuje zákaz v § 74 ods. 4: prípady, keď je platiteľ povinný vyhotoviť faktúru podľa zákona.",
+        "text": "Platiteľ je povinný vyhotoviť faktúru podľa tohto zákona pri\n"
+      },
+      {
+        "id": "Paragraf § 72 Odsek 1 Pismeno d)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Je priamo jedným z prípadov, na ktoré odkazuje zákaz zjednodušenej faktúry: predaj tovaru na diaľku na území EÚ s miestom dodania v tuzemsku, okrem režimu podľa § 68b.",
+        "text": "predaji tovaru na diaľku na území Európskej únie s miestom dodania v tuzemsku okrem\npredaja tovaru na diaľku, pri ktorom dodávateľ uplatňuje osobitnú úpravu podľa § 68b,\n"
+      },
+      {
+        "id": "Paragraf § 72 Odsek 1 Pismeno e)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Je druhým priamo pýtaným prípadom, na ktorý odkazuje zákaz zjednodušenej faktúry: dodanie tovaru oslobodeného od dane podľa § 43.",
+        "text": "dodaní tovaru oslobodeného od dane podľa § 43,\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "defines",
+        "relevance": "Dokladá obsah oslobodenia podľa § 43 pri dodaní tovaru odoslaného alebo prepraveného z tuzemska do iného členského štátu za stanovených podmienok.",
+        "text": "Oslobodené od dane je dodanie tovaru, ktorý je odoslaný alebo prepravený z tuzemska do\niného členského štátu predávajúcim alebo nadobúdateľom alebo treťou osobou na účet\npredávajúceho alebo na účet nadobúdateľa, ak\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "defines",
+        "relevance": "Ďalší prípad dodania tovaru oslobodeného podľa § 43, relevantný pre rozsah odkazu v § 72 ods. 1 písm. e).",
+        "text": "Oslobodené od dane je dodanie nového dopravného prostriedku, ktorý je odoslaný alebo\nprepravený z tuzemska do iného členského štátu kupujúcemu predávajúcim alebo kupujúcim\nalebo na ich účet.\n"
+      },
+      {
+        "id": "Paragraf § 43 Odsek 3",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 43",
+        "role": "defines",
+        "relevance": "Ďalší prípad oslobodeného dodania tovaru podľa § 43, ktorý spadá pod zákaz zjednodušenej faktúry cez § 72 ods. 1 písm. e) a § 74 ods. 4.",
+        "text": "Oslobodené od dane je dodanie tovaru, ktorý je predmetom spotrebnej dane, odoslaného\nalebo prepraveného z tuzemska do iného členského štátu kupujúcemu predávajúcim alebo\nkupujúcim alebo na ich účet, ak kupujúci je zdaniteľnou osobou podľa práva iného členského\n\nštátu, ktorá nie je identifikovaná pre"
+      },
+      {
+        "id": "Paragraf § 14 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 14",
+        "role": "defines",
+        "relevance": "Upresňuje miesto dodania pri predaji tovaru na diaľku na území EÚ, čo je podmienka uvedená v § 72 ods. 1 písm. d).",
+        "text": "Miestom dodania tovaru pri predaji tovaru na diaľku na území Európskej únie je miesto, kde\nsa tovar nachádza v čase, keď sa odoslanie alebo preprava tovaru k zákazníkovi skončí, ak § 16a\nods. 1 neustanovuje inak.\n"
+      }
+    ],
+    "found_entities": [
+      "Faktura",
+      "Zjednodusena Faktura",
+      "Doklad Vyhotoveny Pokladnicou E-Kasa Klient",
+      "400 Eur",
+      "Cena Tovaru Alebo Sluzby Vratane Dane",
+      "Predaj Tovaru Na Dialku",
+      "Tuzemsko",
+      "Dodanie Tovaru Alebo Sluzby"
+    ],
+    "answer": "Nie. Hoci doklad z eKasy do 400 eur môže byť podľa § 74 ods. 3 písm. b) zjednodušenou faktúrou, § 74 ods. 4 výslovne zakazuje vyhotoviť zjednodušenú faktúru pri dodaní podľa § 72 ods. 1 písm. d) a e). To zahŕňa predaj tovaru na diaľku s miestom dodania v tuzemsku podľa § 72 ods. 1 písm. d) aj dodanie tovaru oslobodeného podľa § 43 podľa § 72 ods. 1 písm. e).",
+    "retrieval_reasoning": "Rozložil som otázku na pojmy: zjednodušená faktúra, doklad z pokladnice e-kasa klient, limit 400 eur, predaj tovaru na diaľku s miestom dodania v tuzemsku, dodanie tovaru oslobodeného podľa § 43 a negatívne/vylučujúce pravidlá. Vyhľadával som entity aj textovo cez varianty faktúr/eKasa/400/predaj tovaru na diaľku/§ 43, rozšíril som kandidátov cez § 74, § 72, § 43, § 68b a odkazy. Po prečítaní textu som ponechal ustanovenia, ktoré priamo určujú možnosť alebo zákaz zjednodušenej faktúry; kandidáty o kontrolnom výkaze, vrátení dane, inom oslobodení alebo všeobecných osobitných úpravách som vypustil ako nepriamo súvisiace. Kľúčové je, že § 74 ods. 3 písm. b) síce pripúšťa eKasa doklad do 400 eur ako zjednodušenú faktúru, ale § 74 ods. 4 výslovne zakazuje zjednodušenú faktúru podľa ods. 3 písm. a) a b) pri plneniach podľa § 72 ods. 1 písm. d) a e), teda práve pri predaji tovaru na diaľku s miestom dodania v tuzemsku a pri dodaní tovaru oslobodeného podľa § 43.",
+    "elapsed_sec": 137.53,
+    "timestamp": "2026-05-19T17:38:14.799034"
+  },
+  {
+    "id": 21,
+    "question": "V jednej prevádzke sa fakturuje ubytovanie, jedlo, nealkoholický nápoj a pivo s obsahom alkoholu nad 0,5 %. Aké sadzby DPH vyplývajú z kombinácie § 27 a prílohy č. 7a?",
+    "supporting_sections": {
+      "podporujuce_strany": [
+        35,
+        36,
+        166
+      ],
+      "podporujuce_ustanovenia": [
+        "§ 27 ods. 1 až 3",
+        "Príloha č. 7a bod 1",
+        "Príloha č. 7a bod 2"
+      ]
+    },
+    "found_sections": [
+      {
+        "id": "Paragraf § 27 Odsek 1",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 27",
+        "role": "supports",
+        "relevance": "Ustanovuje základnú sadzbu 23 %, ktorá sa použije na plnenie, ktoré nespadá do znížených sadzieb, teda aj na alkoholický nápoj vylúčený z prílohy č. 7a bodu 1.",
+        "text": "Základná sadzba dane na tovary a služby je 23 % zo základu dane.\n\n"
+      },
+      {
+        "id": "Paragraf § 27 Odsek 2",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 27",
+        "role": "supports",
+        "relevance": "Zavádza zníženú sadzbu 19 %, ktorú následné písmeno b) viaže na služby v prílohe č. 7a bode 1.",
+        "text": "Znížená sadzba dane 19 % zo základu dane sa uplatňuje na\n"
+      },
+      {
+        "id": "Paragraf § 27 Odsek 2 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "cross_reference",
+        "relevance": "Prepája 19 % sadzbu s prílohou č. 7a bodom 1, kde sú uvedené reštauračné/stravovacie služby spočívajúce v poskytovaní nápojov s výnimkou alkoholických nápojov nad 0,5 %.",
+        "text": "služby uvedené v prílohe č. 7a bode 1.\n"
+      },
+      {
+        "id": "Paragraf § 27 Odsek 3",
+        "label": "Odsek",
+        "parent_id": "Paragraf § 27",
+        "role": "supports",
+        "relevance": "Zavádza zníženú sadzbu 5 %, ktorú následné písmeno b) viaže na služby v prílohe č. 7a bode 2.",
+        "text": "Znížená sadzba dane 5 % zo základu dane sa uplatňuje na:\n"
+      },
+      {
+        "id": "Paragraf § 27 Odsek 3 Pismeno b)",
+        "label": "Pismeno",
+        "parent_id": "",
+        "role": "cross_reference",
+        "relevance": "Prepája 5 % sadzbu s prílohou č. 7a bodom 2, kde sú uvedené ubytovacie služby a reštauračné/stravovacie služby pozostávajúce z poskytovania jedla.",
+        "text": "služby uvedené v prílohe č. 7a bode 2,\n"
+      },
+      {
+        "id": "chunk_1667_ZZ_2004_222_20260101",
+        "label": "Chunk",
+        "parent_id": "",
+        "role": "excludes",
+        "relevance": "Obsahuje text prílohy č. 7a: bod 1 zahŕňa nápoje určené na ľudskú konzumáciu, ale výslovne vylučuje alkoholické nápoje nad 0,5 %; bod 2 zahŕňa ubytovacie služby a jedlo, čím určuje, čo patrí pod 19 % a 5 %.",
+        "text": "Strana 166 Zbierka zákonov Slovenskej republiky 222/2004 Z. z.\nPríloha č. 7a\nk zákonu č. 222/2004 Z. z.\nDynamicResources\\6e3bf279-9846-46da-975f-431c66fedc07_5.pdf\n \n \n \nZOZNAM SLUŽIEB SO ZNÍŽENOU SADZBOU DANE \n \nBod Kódy  \nštatistickej \nklasifikácie \nproduktov podľa \nčinností (CPA)1) \nOpis služby \n"
+      }
+    ],
+    "found_entities": [
+      "Sadzba Dane",
+      "Zakladna Sadzba Dane",
+      "Znizena Sadzba Dane 19 Percent Zo Zakladu Dane",
+      "Znizena Sadzba Dane 5 Percent Zo Zakladu Dane",
+      "Ubytovacia Sluzba",
+      "Ubytovacie Sluzby",
+      "Restauracne A Stravovacie Sluzby",
+      "Slujby Spojene S Podavanim Jedal A Napojov",
+      "Napoje",
+      "Pivo"
+    ],
+    "answer": "Ubytovacie služby patria do prílohy č. 7a bodu 2, preto sa na ne uplatní 5 % DPH podľa § 27 ods. 3 písm. b). Jedlo v rámci reštauračných a stravovacích služieb patrí tiež do bodu 2, teda 5 % DPH. Nealkoholický nápoj patrí do bodu 1 prílohy č. 7a, preto sa uplatní 19 % DPH podľa § 27 ods. 2 písm. b). Pivo s obsahom alkoholu nad 0,5 % je z bodu 1 výslovne vylúčené, preto podľa poskytnutého kontextu podlieha základnej sadzbe 23 % podľa § 27 ods. 1.",
+    "retrieval_reasoning": "Koncepty: sadzba dane podľa § 27; príloha č. 7a; ubytovacie služby; reštauračné/stravovacie služby a jedlo; nápoje; výnimka pre alkoholické nápoje nad 0,5 % vrátane piva. Vyhľadané boli entity pre sadzby, prílohu 7a, ubytovanie, reštauračné/stravovacie služby, nápoje, alkohol a pivo; prešli sa priame aj 1–2-hop väzby na štrukturálne uzly, súrodenci v § 27 a textové výskyty v prílohových chunk uzloch. Po prečítaní textov boli vypustené ustanovenia o mieste dodania (§ 16), oslobodení pri dovoze alkoholu/piva (§ 48a), kódoch pre osobitné režimy (§ 55b), kontrolnom výkaze (§ 78a) a historickej prechodnej 10 % sadzbe (§ 85km), lebo neriešia sadzbu pre fakturované plnenia podľa § 27 a prílohy č. 7a. Overené jadro: § 27 ods. 1, ods. 2 písm. b), ods. 3 písm. b) a text prílohy č. 7a. Z toho vyplýva: ubytovanie 5 %, jedlo ako reštauračná/stravovacia služba poskytovania pripraveného alebo nepripraveného jedla 5 %, nealkoholický nápoj v rámci reštauračnej/stravovacej služby 19 %, pivo s obsahom alkoholu nad 0,5 % je z nápojovej položky v prílohe č. 7a bode 1 výslovne vylúčené a pri absencii inej zníženej položky spadá pod základnú sadzbu 23 %.",
+    "elapsed_sec": 97.28,
+    "timestamp": "2026-05-19T17:39:52.086682"
   }
 ]

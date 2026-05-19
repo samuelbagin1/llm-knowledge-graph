@@ -683,22 +683,24 @@ Vyššie rozumové úsilie (high) sa premieta do konzistentného, no relatívne 
 
 Na overenie praktickej využiteľnosti znalostného grafu som porovnával tri spôsoby odpovedania na otázky k právnemu textu: klasický chat s LLM, vektorový RAG a GraphRAG. Cieľom nebolo iba zistiť, či model dokáže vytvoriť jazykovo presvedčivú odpoveď. Pri práci so zákonom je dôležitejšie, či odpoveď vychádza z konkrétneho ustanovenia a či systém vie nájsť časti zákona, o ktoré sa má oprieť.
 
-Testovacia množina obsahuje 20 otázok pripravených daňovým audítorom. Všetky otázky sa vzťahujú výhradne na zákon č. 222/2004 Z. z. o dani z pridanej hodnoty. Ku každej otázke je priradená správna objektívna odpoveď a zároveň zoznam paragrafov zákona, ktoré by mal vyhľadávací prístup nájsť ako relevantný kontext. Takto sa dá oddeliť samotná kvalita odpovede od kvality vyhľadávania. Model môže odpovedať správne náhodou alebo na základe všeobecných znalostí, ale pri RAG prístupe je podstatné aj to, či sa dostal k správnym ustanoveniam zákona.
+Testovacia množina obsahuje 21 otázok pripravených daňovým audítorom. Všetky otázky sa vzťahujú výhradne na zákon č. 222/2004 Z. z. o dani z pridanej hodnoty. Ku každej otázke je priradená správna objektívna odpoveď a zároveň zoznam paragrafov zákona, ktoré by mal vyhľadávací prístup nájsť ako relevantný kontext. Takto sa dá oddeliť samotná kvalita odpovede od kvality vyhľadávania. Model môže odpovedať správne náhodou alebo na základe všeobecných znalostí, ale pri RAG prístupe je podstatné aj to, či sa dostal k správnym ustanoveniam zákona.
 
 \begin{table}[h]
 \centering
-\caption[Úspešnosť prístupov pri nájdení podporujúcich faktov]{Úspešnosť jednotlivých prístupov pri nájdení podporujúcich faktov na testovacej množine 20 otázok.}
+\caption[Úspešnosť prístupov pri nájdení podporujúcich faktov]{Úspešnosť jednotlivých prístupov pri nájdení podporujúcich faktov na testovacej množine 21 otázok.}
 \label{tab:retrieval-success}
 \begin{tabular}{lcc}
 \toprule
-\textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť} \\
+\textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť sekcií} \\
 \midrule
-Klasický chat s LLM & --/20 & --\,\% \\
-Vektorový RAG & --/20 & --\,\% \\
-GraphRAG & --/20 & --\,\% \\
+Klasický chat s LLM & --/21 & --\,\% \\
+Vektorový RAG & --/21 & --\,\% \\
+GraphRAG & 20/21 & 74{,}6\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+GraphRAG dosiahol vysokú úspešnosť odpovedí (20 z 21), čo ukazuje, že znalostný graf poskytol modelu dostatočne presné faktické ukotvenie pre väčšinu právnych otázok. Slabším miestom bolo pokrytie podporujúcich ustanovení, kde systém našiel 74{,}6\,\% ľudsky anotovaných sekcií a najčastejšie mu chýbali doplnkové odseky, ustanovenia k evidencii, súhrnným výkazom alebo prílohám.
 
 
 \subsection{Voľba modelov}

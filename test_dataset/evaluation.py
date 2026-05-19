@@ -91,10 +91,10 @@ class EvalConfig:
     use_llm_judge: bool = True
     judge_model: str = "gpt-4o-mini"
     extraction_model: str = "gpt-4o-mini"
-    relaxed_threshold: float = 0.92
+    relaxed_threshold: float = 0.75
     judge_candidate_threshold: float = 0.55
-    legal_reference_judge_threshold: float = 0.35
-    relationship_judge_candidate_threshold: float = 0.45
+    legal_reference_judge_threshold: float = 0.55
+    relationship_judge_candidate_threshold: float = 0.55
     max_judge_entity_pairs: int = 80
     max_judge_relation_pairs: int = 80
     audit_limit: int = 20
@@ -1518,8 +1518,8 @@ def write_reports(
 
 def main() -> None:
     dataset_path: Path = Path(__file__).resolve().parent / "kg_test_dataset_linearized.json"
-    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "linearized_eval_results_few-shot_gpt-5.5"
-    output_dir: Path = Path(__file__).resolve().parent / "linearized_eval_results_few-shot_gpt-5.5"
+    predictions_path: Optional[Path] = Path(__file__).resolve().parent / "linearized_eval_results_few-shot_gpt-5.4-mini-low"
+    output_dir: Path = Path(__file__).resolve().parent / "linearized_eval_results_few-shot_gpt-5.4-mini-low"
     limit: Optional[int] = None
     offset: int = 0
     start_chunk_index: Optional[int] = None
@@ -1529,8 +1529,8 @@ def main() -> None:
     extraction_model: str = os.getenv("KG_EVAL_EXTRACTION_MODEL", "gpt-4o-mini")
     relaxed_threshold: float = 0.75
     judge_candidate_threshold: float = 0.55
-    legal_reference_judge_threshold: float = 0.35
-    relationship_judge_candidate_threshold: float = 0.35
+    legal_reference_judge_threshold: float = 0.55
+    relationship_judge_candidate_threshold: float = 0.55
     use_langsmith: bool = False
     langsmith_dataset: str = "kg_extraction_eval_v2"
 

@@ -308,7 +308,7 @@ Prompt nariaďuje zopár kvalitatívnych pravidiel. Pravidlo najšpecifickejšie
 
 Aby striktné dodržanie schémy $S^*$ neviedlo k strate kontextu, system prompt zavádza špeciálnu konvenciu. Ak je typ vzťahu v $S^*$ príliš všeobecný (napr. MA\_NAROK\_NA), model uloží konkrétne spresnenie do vlastnosti vzťahu pod kľúčom \texttt{evidence} (napr. evidence: vrátenie dane). Týmto sa rieši napätie medzi striktnou schémou a expresivitou textu. Typ vzťahu zostáva normalizovaný a vyhľadateľný v grafe, ale doslovný význam sa zachováva ako stopa pre neskoršie vyhľadávanie. Aby uzol nestratil význam slova normalizáciou ID, tak vo vlastnostiach je mu priradené meno aj s použitím diakritiky.
 
-Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešpondujú upravenej schéme $S^*$. Týmto krokom získame GraphDocument $G_i = (V_i,\, E_i,\, src_i)$. Následne ľahká kontrola a opracovanie, znormalizuje id uzlov do title case a pre vzťahy do UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE), a vynechá trojice ktorým chýba zdroj alebo cieľ. Extrahované uzly z chunku sú spojené s uzlom Chunk (alebo Paragraf, Odsek, Písmeno) pomocou vzťahu IN\_CHUNK alebo IN\_SECTION. Neskôr vďaka týmto vzťahom pri získavaní dát, môžeme získať originálny text, ktorý podporuje dané trojice.
+Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešpondujú upravenej schéme $S^*$. Týmto krokom získame GraphDocument $G_i = (V_i,\, E_i,\, src_i)$. Následne ľahká kontrola a opracovanie, znormalizuje id uzlov do title case a pre vzťahy do UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE), a vynechá trojice ktorým chýba zdroj alebo cieľ. Extrahované uzly z chunku sú spojené s uzlom Chunk (alebo Paragraf, Odsek, Písmeno) pomocou vzťahu IN\_CHUNK. Neskôr vďaka týmto vzťahom pri získavaní dát, môžeme získať originálny text, ktorý podporuje dané trojice.
 
 
 \subsection{Vkladanie do databázy}
@@ -538,7 +538,7 @@ Slabé stránky sa prejavujú v troch špecifických situáciách. Po prvé, ak 
 
 Pri extrakcii pomenovaných entít a vzťahov z textu právnych predpisov modely vykazujú zmiešané výsledky. Medzi silné stránky patrí pomerne presné priradenie sémanticky najbližšieho typu vzťahu zo schémy, spoľahlivé zachytávanie medzivetných vzťahov a schopnosť rozvinúť kontext vzťahu vo vlastnostiach, čo je dôležité, pretože samotný typ vzťahu často nezachytí celý zmysel vety. Modely tiež dokážu spracovať dlhé pomenované entity ako jeden celok (Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze), aj keď v iných prípadoch zachytia do jednej entity nadmerne rozsiahle frázy (Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu alebo dokonca celé súvetia ako Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 Percenta).
 
-Slabé stránky sa prejavujú vo viacerých rovinách, avšak celkový počet výskytov anomálií je nízky. Po prvé, modely nedôsledne dodržiavajú výstupný formát pre identifikátory uzlov, kde namiesto požadovaného Title Case často vkladajú medzi slová podčiarkovník (Financne\_Riaditelstvo). Po druhé, vzniká nekoherentnosť pri pomenovaní tých istých entít naprieč chunkami, najmä pri odkazoch na zákony (Zakon 222/2004 Z. Z., 222/2004 Z. z., Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.), pričom konkrétna forma závisí od toho, ako je daná entita zmienená v zdrojovom texte. Po tretie, pri niektorých vzťahoch je smer hrany otočený oproti sémantike vety. Občas sa vo výstupe objavujú aj české slová, gramatické chyby a vynechané písmená (In Y Rovnocenny Doklad Vypisu Z Registra Trestov, Danie), pričom napriek explicitnej inštrukcii negenerovať diakritiku v identifikátoroch ju model stále vracia, čo je následne riešené v postprocesingu.
+Slabé stránky sa prejavujú vo viacerých rovinách, avšak celkový počet výskytov anomálií je nízky. Po prvé, modely nedôsledne dodržiavajú výstupný formát pre identifikátory uzlov, kde namiesto požadovaného Title Case často vkladajú medzi slová podčiarkovník (Financne\_Riaditelstvo). Po druhé, vzniká nekoherentnosť pri pomenovaní tých istých entít naprieč chunkami, pričom konkrétna forma závisí od toho, ako je daná entita zmienená v zdrojovom texte. Po tretie, pri niektorých vzťahoch je smer hrany otočený oproti sémantike vety. Občas sa vo výstupe objavujú aj české slová, gramatické chyby a vynechané písmená (In Y Rovnocenny Doklad Vypisu Z Registra Trestov, Danie), pričom napriek explicitnej inštrukcii negenerovať diakritiku v identifikátoroch ju model stále vracia, čo je následne riešené v postprocesingu.
 
 Posledným pozorovaným problémom je, že pri niektorých chunkoch model úplne vynechá výstup vzťahov, v najhorších prípadoch aj entít, prípadne spracovanie celkom odmietne. Z tohto dôvodu je zavedený mechanizmus semaforu s troma opakovaniami, pričom prázdne vrátené dokumenty bez uzlov postupujú do druhého kola spracovania.
 
@@ -557,55 +557,111 @@ Ako alternatívny prístup bola vyskúšaná aj priebežná pamäť počas behu 
 
 Pri opätovnom vyhodnotení nákladov a prínosov sa však ukázalo, že pri následnom vyhľadávaní nad znalostným grafom si jazykové modely dokážu s týmito duplicitami poradiť aj bez predošlej tvrdej validácie, ak ostane konzistentná aspoň schéma typov uzlov. Otázka, či sa investícia do striktného validačného kroku pri ukladaní oplatí, sa tým posúva do roviny kompromisu medzi čistotou grafu a vysokými nákladmi na jeho budovanie.
 
+
+
 \subsection{Kvalitatívne výsledky}
+Na otestovanie spoločnej extrakcie entít a vzťahov bol vytvorený v spolupráci s odborníkmi testovací dataset. Obsahuje 100 grafových dokumentov zo zákonu 222/2004 o dani z pridanej hodnoty, ktorý je veľmi bohatý na prepojenia odkazov paragrafov a je veľmi obtiažný na porozumenie. Dataset je rozdelený 3:7, kde 30 grafových dokumentov slúži na validáciu a 70 na testovanie. Na vyhodnotenie využiteľnosti je v datasete 20 otázok s podporujúcimi paragrafmi, ktoré sú zdrojom k správnej odpovedi.
+
 
 \subsubsection{Extrakcia}
-Evaluácia extrakcie porovnáva graf vygenerovaný modelom s ručne pripraveným referenčným grafom. Najprv sa normalizujú identifikátory uzlov, typy uzlov a názvy vzťahov: odstráni sa diakritika, zjednotia sa medzery, veľkosť písmen a bežné varianty právnych odkazov. Duplicitné uzly a hrany sa pred výpočtom odstránia. Zhoda uzlov sa určuje buď presne, alebo približne pomocou textovej podobnosti. Pri nejasných prípadoch sa použije LLM hodnotiteľ, ktorý posúdi, či dve entity alebo vzťahy vyjadrujú ten istý význam. Nehodnotí sa však opora trojice v zdrojovom texte, iba zhoda s referenčným grafom.
+Evaluácia extrakcie porovnáva graf vygenerovaný modelom s ručne anotovaným referenčným grafom. Najprv sa normalizujú identifikátory uzlov, typy uzlov a názvy vzťahov: odstráni sa diakritika, zjednotia sa medzery, veľkosť písmen a bežné varianty právnych odkazov. Duplicitné uzly a hrany sa pred výpočtom odstránia. Zhoda uzlov sa určuje buď presne, alebo približne pomocou textovej podobnosti. Pri nejasných prípadoch sa použije LLM hodnotiteľ, ktorý posúdi, či dve entity alebo vzťahy vyjadrujú ten istý význam. Nehodnotí sa však opora trojice v zdrojovom texte, iba zhoda s referenčným grafom.
 
-Pre uzly aj vzťahy sa počítajú hodnoty $TP$, $FP$ a $FN$. Hodnota $TP$ označuje správne nájdené prvky, $FP$ prvky navyše vo výstupe modelu a $FN$ prvky, ktoré sú v referenčnom grafe, ale model ich nenašiel. Z nich sa počíta presnosť, úplnosť a F1 skóre:
+\
+
+Textovú podobnosť sa počíta pomocou RapidFuzz \texttt{token\_set\_ratio} na znormalizovaných ID režazcoch uzlov. Uzly sa priraďujú v troch vrstvách. Prvá je striktná zhoda, kde musí sedieť rovnaké normalizované ID aj typ, a udelí sa skór 1.0. Druhá je relaxová zhoda, kde musí byť rovnaký typ uzlov a podobnosť ID uzlov nad 0.75. Tretia vrstva zavolá LLM sudcu, ktorý dostane gold aj predikciu a vráti odpoveď s \texttt{same\_entity}, \texttt{type\_acceptable}, \texttt{confidence} a \texttt{reason}. Sudca sa zovolá až keď podobnosť presiahne 0.55. Kandidáti zo všetkých troch vrstiev sa nakoniec zoradia podľa skóre a zhora nadol priradí uzly tak, aby jeden zlatý uzol dostal najviac jednu predikciu.
+
+Hrany fungujú podobne, avšak najprv musíme vedieť, ktoré zlaté uzly sa namapovali na ktoré predikované. Ak sedia zdroj $e_h$, cieľ $e_t$ a vzťah, porovnáva sa striktne. Ak sedia entity ale vzťah nie, posudzuje to sudca, ktorý rieši smer a sémantiku relácie. Ak sa enity vzťahu vôbec nezhodujú, počíta sa podobnosť, ako vážený priemer (30\% $e_h$, 30\% $e_t$, 25\% relácia, po 7.5\% na typy uzlov), a ak skóre prekročí prah, sudca rozhodne o celom vzťahu naraz.
+
+
+
+\
+
+Z napárovaných množín sa následne počítajú klasické ukazovatele zhody pre uzly aj vzťahy akými sú $TP$, $FP$ a $FN$. Hodnota $TP$ označuje správne nájdené prvky, $FP$ prvky navyše vo výstupe modelu a $FN$ prvky, ktoré sú v referenčnom grafe, ale model ich nenašiel. Z nich sa počíta presnosť, úplnosť a F1 skóre:
 
 \[
 P = \frac{TP}{TP + FP}, \qquad R = \frac{TP}{TP + FN}
 \]
 
 \[
-F_{1} = \frac{2 \cdot P \cdot R}{P + R}
+F1 = \frac{2 \cdot P \cdot R}{P + R}
 \]
 
-Presnosť $P$ teda hovorí, aká časť vygenerovaných prvkov bola správna. Úplnosť $R$ hovorí, aká časť referenčných prvkov bola nájdená. F1 skóre je ich harmonický priemer, preto trestá aj veľa chýbajúcich prvkov, aj veľa prvkov navyše. Okrem toho sa počíta miera halucinácie a miera vynechania:
+Presnosť $P$ teda hovorí, aká časť vygenerovaných prvkov bola správna. Úplnosť $R$ hovorí, aká časť referenčných prvkov bola nájdená. F1 skóre je ich harmonický priemer, preto trestá aj veľa chýbajúcich prvkov, aj veľa prvkov navyše. Okrem toho sa počíta miera halucinácie $H$ a miera vynechania $O$:
 
 \[
 H = \frac{FP}{TP + FP}, \qquad O = \frac{FN}{TP + FN}
 \]
 
-\begin{table}[h]
+Uvoľnená verzia hodnotenia zahŕňa zhody zo všetkých troch vrstiev priraďovania vrátane rozhodnutí jazykového sudcu, striktná verzia uvažuje len čistý prienik znormalizovaných identifikátorov, bez sémantickej úľavy a bez zásahu sudcu. Rozdiel medzi týmito dvoma číslami slúži ako indikátor toho, do akej miery extraktor vytvára obsahovo zhodné, no formulačne odlišné zápisy. Popri nich sa počíta aj normalizovaná editovacia vzdialenosť $GED$. Tá agreguje chýbajúce a nadbytočné uzly aj hrany spolu s typovými chybami na napárovaných dvojiciach, a výsledok aplikuje na veľkosť oboch porovnávaných grafov.
+
+Druhá samostatná vrstva hodnotenia sa zameriava na schémovú kvalitu predikcie. Kontroluje, či predikované typy uzlov a vzťahov spadajú do vopred definovanej ontológie. Výstupom je podiel neplatných typov, takzvaných visiacich hrán, ktorých koncový bod nie je prítomný v zozname uzlov. Ďalšími sú podiel neznámych typov a podiel chybných identifikátorov, čo sú prázdne reťazce, zástupné hodnoty typu „unknown"\, alebo „none". Tieto údaje odhaľujú, či model rešpektuje ontologické obmedzenia, nielen či zachytil sémantický obsah.
+
+Záverečná agregácia spája dva komplementárne pohľady. Mikro priemer pracuje s celkovými súčtami počtov správnych a chybných predikcií naprieč všetkými segmentmi, čím prirodzene dáva väčšiu váhu rozsiahlejším úsekom. Makro priemer priemeruje vybrané ukazovatele rovnomerne pre každý segment bez ohľadu na jeho veľkosť, konkrétne ide o striktné F1 pre uzly aj vzťahy, mieru zhody s ontológiou, podiel halucinácií a opomenutí, a normalizovanú editovaciu vzdialenosť. Rozdiel medzi mikro a makro hodnotami naznačuje, či model zlyháva skôr na rozsiahlych, alebo naopak na drobnejších úsekoch.
+\
+
+\begin{table}[H]
 \shorthandoff{-}
 \centering
-\renewcommand{\arraystretch}{1.18}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{3.5pt}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{llrr|rrr|rrr|rr}
+\begin{tabular}{cllrr|rrr|rr|rr|rr|r}
 \hline
-\textbf{Model} & \textbf{Typ} & \textbf{Gold} & \textbf{Pred.} &
+\textbf{Mód} & \textbf{Model} & \textbf{Typ} & \textbf{Gold} & \textbf{Pred.} &
 \textbf{TP} & \textbf{FP} & \textbf{FN} &
-\textbf{P} & \textbf{R} & \textbf{F1} & \textbf{H} & \textbf{O} \\
+\textbf{P} & \textbf{R} & \textbf{F1$_\mu$} & \textbf{F1$_M$} &
+\textbf{H} & \textbf{O} & \textbf{GED} \\
 \hline
-\multirow{2}{*}{\shortstack[c]{gpt-5.4-mini\\{\scriptsize effort: medium}}}
-& Uzly &
-2695 & 2231 & 1391 & 840 & 1304 & 0{,}623 & 0{,}516 & 0{,}565 & 0{,}377 & 0{,}484 \\
-\cline{2-12}
-& Vzťahy &
-2431 & 3070 & 393 & 2677 & 2038 & 0{,}128 & 0{,}162 & 0{,}143 & 0{,}872 & 0{,}838 \\
+\multirow{8}{*}{\rotatebox{90}{\textbf{zero-shot}}}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.4 mini\\{\scriptsize effort: low}}}
+  & Uzly   & 1226 & 671  & 577  & 94  & 649  & 0{,}860 & 0{,}471 & 0{,}608 & 0{,}468 & 0{,}140 & 0{,}529 & \multirow{2}{*}{0{,}602} \\
+& & Vzťahy & 1479 & 572  & 194  & 378 & 1285 & 0{,}339 & 0{,}131 & 0{,}189 & 0{,}157 & 0{,}661 & 0{,}869 & \\
+\cline{2-14}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.4 mini\\{\scriptsize effort: high}}}
+  & Uzly   & 1226 & 802  & 701  & 101 & 525  & 0{,}874 & 0{,}572 & 0{,}691 & 0{,}522 & 0{,}126 & 0{,}428 & \multirow{2}{*}{0{,}508} \\
+& & Vzťahy & 1479 & 932  & 377  & 555 & 1102 & 0{,}405 & 0{,}255 & 0{,}313 & 0{,}233 & 0{,}595 & 0{,}745 & \\
+\cline{2-14}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.5\\{\scriptsize effort: low}}}
+  & Uzly   & 1226 & 1109 & 951  & 158 & 275  & 0{,}858 & 0{,}776 & 0{,}815 & 0{,}678 & 0{,}142 & 0{,}224 & \multirow{2}{*}{0{,}393} \\
+& & Vzťahy & 1479 & 1365 & 597  & 768 & 882  & 0{,}437 & 0{,}404 & 0{,}420 & 0{,}310 & 0{,}563 & 0{,}596 & \\
+\cline{2-14}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.5\\{\scriptsize effort: high}}}
+  & Uzly   & 1226 & 1080 & 950  & 130 & 276  & 0{,}880 & 0{,}775 & 0{,}824 & 0{,}688 & 0{,}120 & 0{,}225 & \multirow{2}{*}{0{,}359} \\
+& & Vzťahy & 1479 & 1208 & 608  & 600 & 871  & 0{,}503 & 0{,}411 & 0{,}453 & 0{,}325 & 0{,}497 & 0{,}589 & \\
+\hline
+\multirow{8}{*}{\rotatebox{90}{\textbf{few-shot}}}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.4 mini\\{\scriptsize effort: low}}}
+  & Uzly   & 1226 & 871  & 730  & 141 & 496  & 0{,}838 & 0{,}595 & 0{,}696 & 0{,}526 & 0{,}162 & 0{,}405 & \multirow{2}{*}{0{,}514} \\
+& & Vzťahy & 1479 & 918  & 322  & 596 & 1157 & 0{,}351 & 0{,}218 & 0{,}269 & 0{,}229 & 0{,}649 & 0{,}782 & \\
+\cline{2-14}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.4 mini\\{\scriptsize effort: high}}}
+  & Uzly   & 1226 & 935  & 796  & 139 & 430  & 0{,}851 & 0{,}649 & 0{,}737 & 0{,}566 & 0{,}149 & 0{,}351 & \multirow{2}{*}{0{,}438} \\
+& & Vzťahy & 1479 & 1163 & 512  & 651 & 967  & 0{,}440 & 0{,}346 & 0{,}388 & 0{,}279 & 0{,}560 & 0{,}654 & \\
+\cline{2-14}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.5\\{\scriptsize effort: low}}}
+  & Uzly   & 1226 & 1209 & 972  & 237 & 254  & 0{,}804 & 0{,}793 & 0{,}798 & 0{,}614 & 0{,}196 & 0{,}207 & \multirow{2}{*}{0{,}384} \\
+& & Vzťahy & 1479 & 1513 & 658  & 855 & 821  & 0{,}435 & 0{,}445 & 0{,}440 & 0{,}316 & 0{,}565 & 0{,}555 & \\
+\cline{2-14}
+& \multirow{2}{*}{\shortstack[l]{GPT 5.5\\{\scriptsize effort: high}}}
+  & Uzly   & 1226 & 1226 & 1006 & 220 & 220  & 0{,}821 & 0{,}821 & 0{,}821 & 0{,}620 & 0{,}179 & 0{,}179 & \multirow{2}{*}{0{,}359} \\
+& & Vzťahy & 1479 & 1516 & 689  & 827 & 790  & 0{,}454 & 0{,}466 & 0{,}460 & 0{,}314 & 0{,}546 & 0{,}534 & \\
 \hline
 \end{tabular}%
 }
-\caption{Súhrnné výsledky evaluácie extrakcie pre modely na 100 chunkoch.}
+\caption{Súhrnné výsledky evaluácie extrakcie informácií pre jednotlivé modely a režimy promptovania na testovacej množine. Stĺpec F1$_\mu$ udáva mikro-priemerované F1 skóre (z celkových TP/FP/FN, uvoľnené párovanie vrátane jazykového sudcu), F1$_M$ makro-priemerované striktné F1 skóre (priemer cez segmenty pri čistom prieniku znormalizovaných identifikátorov). Stĺpce H a O označujú podiel halucinácií a opomenutí, GED je makro-priemer normalizovanej grafovej editovacej vzdialenosti.}
 \label{tab:extraction-evaluation}
 \shorthandon{-}
 \end{table}
 
+\
 
+Z výsledkov z tabuľku \ref{tab:extraction-evaluation} vyplývajú tri konzistentné pozorovania naprieč všetkými modelmi a režimami promptovania. Po prvé, kvalita extrakcie uzlov je rádovo vyššia než kvalita extrakcie vzťahov. Najlepší pozorovaný mikro F1 pre uzly dosiahol model GPT 5.5 s vysokým rozumovým úsilím v zero-shot režime (0{,}824), kým mikro F1 pre vzťahy zostal na hodnote 0{,}453 pri rovnakej konfigurácii. Tento rozdiel pretrváva aj pri ostatných modeloch. Najslabšia konfigurácia (GPT 5.4 mini, low, zero-shot) zachytila uzly na úrovni 0{,}608 a vzťahy len 0{,}189. Vyplýva z toho, že problém nespočíva v identifikácii samotných entít, ale v ich správnom prepojení. Model musí pre každý vzťah súčasne určiť oba endpointy a sémantiku hrany, a chyba v ktoromkoľvek z týchto rozhodnutí spôsobí nesprávny zápis.
 
-Výsledky ukazujú, že model zachytáva entity podstatne spoľahlivejšie než vzťahy. Pri uzloch dosiahol mikro F1 skóre 0{,}565, zatiaľ čo pri vzťahoch iba 0{,}143. Problém teda nie je hlavne v dodržaní schémy, keďže zhoda s ontológiou je pri uzloch 0{,}998 a pri vzťahoch 0{,}999, ale v správnom výbere a prepojení hrán medzi entitami.
+Po druhé, prechod od zero-shot k few-shot promptovaniu prináša najväčší prínos práve slabším modelom. Pri konfigurácii GPT 5.4 mini s nízkym úsilím vzrástlo mikro F1 pre uzly z 0{,}608 na 0{,}696 a pre vzťahy z 0{,}189 na 0{,}269, čo predstavuje relatívne zlepšenie o viac než 40~\% na strane vzťahov. Pri silnejšom modeli GPT 5.5 s vysokým rozumovým úsilím je rozdiel medzi režimami menší (mikro F1 vzťahov sa zlepšilo z 0{,}453 na 0{,}460, pre uzly dokonca mierne kleslo z 0{,}824 na 0{,}821). Ukážkové vstupy v prompte teda fungujú primárne ako kompenzácia obmedzeného sledovania inštrukcií, a strácajú vplyv akonáhle model dostatočne rozumie zadanej schéme aj bez nich.
+
+Po tretie, normalizovaná grafová editovacia vzdialenosť poskytuje sumárny pohľad konzistentný s F1 ukazovateľmi, no s odlišnou citlivosťou. Najnižšiu hodnotu GED (a teda najmenej úpravných operácií potrebných na transformáciu predikcie na referenčný graf) dosiahli zhodne GPT 5.5 s vysokým úsilím v zero-shot režime a GPT 5.5 s vysokým úsilím v few-shot režime (0{,}359). Najhoršiu hodnotu vykazuje GPT 5.4 mini medium v zero-shot režime (0{,}602). Zatiaľ čo F1 hodnotí uzly a hrany oddelene, GED zachytáva ich vzájomnú konzistenciu a tým aj prípady, keď model síce uhádne väčšinu entít, ale poprepája ich chybne. Korelácia s F1 pre vzťahy je výrazne silnejšia než s F1 pre uzly, čo potvrdzuje, že kvalitu výsledného grafu limituje predovšetkým schopnosť modelu správne identifikovať hrany.
+
+Vyššie rozumové úsilie (high) sa premieta do konzistentného, no relatívne menšieho zlepšenia v porovnaní s prechodom medzi modelmi alebo režimami. Zhoda s definovanou ontológiou sa pohybuje nad hodnotou 0{,}92 pre všetky konfigurácie, čo znamená, že modely v drvivej väčšine prípadov používajú typy uzlov a vzťahov zo zadanej schémy. Slabé miesto teda nespočíva v dodržiavaní formálnych obmedzení, ale v sémantickej presnosti pri identifikácii vzťahov medzi entitami.
 
 \subsubsection{Porovnanie RAG s GraphRAG}
 
@@ -636,6 +692,8 @@ GPT modely boli zvolené, kvôli ich širokému trénovaniu na rozličných text
 Použitie silnejších modelov, ako sú GPT-5.5, GPT-5.5-Pro, Opus 4.7 alebo Gemini 3 Pro, by pravdepodobne zlepšilo kvalitu extrakcie aj následného spracovania znalostí. Takéto modely však majú zásadnú nevýhodu v podobe ceny. Pri menšom počte dokumentov nemusí byť tento problém výrazný, no pri rozsiahlejšom datasete sa náklady na volania API začnú veľmi rýchlo kumulovať. Preto pri spracovaní veľkého množstva dokumentov dáva väčší zmysel uvažovať nad lokálnym riešením.
 
 V tomto prípade by bolo možné použiť otvorené alebo lokálne spustiteľné modely, napríklad Llama alebo Mistral. Ich výhodou je, že po počiatočnej investícii do hardvéru nevznikajú náklady za každé ďalšie spracovanie dokumentu. Takéto riešenie si síce vyžaduje výkonnejší počítač, pričom cena vhodnej zostavy sa môže pohybovať rádovo v tisícoch eur, pri dlhodobom a opakovanom spracovaní väčšieho množstva dát však môže byť táto investícia opodstatnená.
+
+\
 
 Testované boli aj modely Gemini od Google a Claude Sonnet od Anthropic. Pri Gemini 2.5 Flash alebo 3 Flash bola cena prijateľná avšak pri spracovaní obrázkov bola oneskorenejšia latencia v porovnaní s GPT 5.4 mini. Pri extrakcii Claude Sonnet dosahoval veľmi dobré pochopenie textu, aj veľmi dobre chápal úlohu, ale cena spracovania bola štvor-násobne vyššia, čo je veľmi neekonomické.
 

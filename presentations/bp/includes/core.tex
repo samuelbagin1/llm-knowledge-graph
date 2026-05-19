@@ -681,9 +681,13 @@ Vyššie rozumové úsilie (high) sa premieta do konzistentného, no relatívne 
 
 \subsubsection{Porovnanie RAG s GraphRAG}
 
-Na overenie praktickej využiteľnosti znalostného grafu som porovnával tri spôsoby odpovedania na otázky k právnemu textu: klasický chat s LLM, vektorový RAG a GraphRAG. Cieľom nebolo iba zistiť, či model dokáže vytvoriť jazykovo presvedčivú odpoveď. Pri práci so zákonom je dôležitejšie, či odpoveď vychádza z konkrétneho ustanovenia a či systém vie nájsť časti zákona, o ktoré sa má oprieť.
+Na overenie praktickej využiteľnosti znalostného grafu som porovnával tri spôsoby odpovedania na otázky k právnemu textu: klasický chat s LLM, vektorový RAG a GraphRAG. Pri práci so zákonom je dôležité, či odpoveď vychádza z konkrétneho ustanovenia a či systém vie nájsť časti zákona, o ktoré sa má oprieť.
 
-Testovacia množina obsahuje 21 otázok pripravených daňovým audítorom. Všetky otázky sa vzťahujú výhradne na zákon č. 222/2004 Z. z. o dani z pridanej hodnoty. Ku každej otázke je priradená správna objektívna odpoveď a zároveň zoznam paragrafov zákona, ktoré by mal vyhľadávací prístup nájsť ako relevantný kontext. Takto sa dá oddeliť samotná kvalita odpovede od kvality vyhľadávania. Model môže odpovedať správne náhodou alebo na základe všeobecných znalostí, ale pri RAG prístupe je podstatné aj to, či sa dostal k správnym ustanoveniam zákona.
+Testovacia množina obsahuje 21 otázok pripravených daňovým auditorom. Všetky otázky sa vzťahujú výhradne na zákon č. 222/2004 Z. z. o dani z pridanej hodnoty. Ku každej otázke je priradená správna objektívna odpoveď a zároveň zoznam paragrafov zákona, ktoré by mal vyhľadávací prístup nájsť ako relevantný kontext. Takto sa dá oddeliť samotná kvalita odpovede od kvality vyhľadávania. Model môže odpovedať správne náhodou alebo na základe všeobecných znalostí z predtrénovania, ale pri RAG prístupe je podstatné aj to, či sa dostal k správnym ustanoveniam zákona.
+
+
+
+Vo vektorovom prístupe sa otázka a chunky zákona (využitá chunkovacia stratégia z \ref{sec:chunkovacia-strategia}) prevedú na embeddingy modelom \texttt{text-embedding-3-large} od OpenAI. Vo vektorovej databáze Qdrant sa vytiahne $k$ najbližších chunkov podľa kosínusovej podobnosti. Tieto úryvky aj so štítkom paragrafu a odseku idú do modelu GPT 5.5, ktorý z nich vytvorí odpoveď. Vyhľadávanie v GraphRAG je riešené agentom, ktorý dostane nástroj na spúšťanie Cypher dotazov na grafovú databázu a prehľadáva do šírky. Otázku si rozdelí na tri až šesť pojmov, ku každému nájde entity v grafe a z nich potom prechádza jeden až dva skoky k paragrafom, odsekom a písmenám, pričom sleduje aj negatívne vzťahy typu \texttt{OSLOBODZUJE\_OD} či \texttt{NIE\_JE\_PREDMETOM\_DANE}. Nachádza k tomu súrodencov v rámci toho istého paragrafu a krížové odkazy \texttt{ODKAZUJE\_NA}, takže výber paragrafov stojí na štruktúre grafu.
 
 \begin{table}[h]
 \centering
@@ -694,26 +698,23 @@ Testovacia množina obsahuje 21 otázok pripravených daňovým audítorom. Vše
 \textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť sekcií} \\
 \midrule
 Klasický chat s LLM & --/21 & --\,\% \\
-Vektorový RAG & --/21 & --\,\% \\
+\multirow{2}{*}{Vektorový RAG} & \emph{k=5:}\, 3/21 & 50{,}0\,\% \\
+ & \emph{k=10:}\, 6/21 & 62{,}1\,\% \\
 GraphRAG & 20/21 & 74{,}6\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z 21, hoci pokryl polovicu ľudsky anotovaných podporujúcich sekcií. Najlepšie fungoval pri otázkach, kde stačilo nájsť priamo pomenované ustanovenie a odpoveď nevyžadovala kombináciu viacerých doplnkových pravidiel. Pri $k=10$ sa pokrytie sekcií zlepšilo z 50{,}0\,\% na 62{,}1\,\% a počet správnych odpovedí vzrástol na 6 z 21, čo ukazuje, že širší kontext pomohol najmä pri dohľadaní chýbajúcich paragrafov. Nedostatkom však zostalo, že model často neobsiahol všetky právne dôsledky z ľudskej odpovede, napríklad doplnkové oznamovacie povinnosti, výnimky, pravidlá po lehote alebo následné opravy. Zvýšenie parametra $k$ teda zlepšilo vyhľadávanie relevantných sekcií, ale samo osebe nestačilo na spoľahlivé právne odpovedanie pri otázkach vyžadujúcich syntézu viacerých ustanovení.
 
 GraphRAG dosiahol vysokú úspešnosť odpovedí (20 z 21), čo ukazuje, že znalostný graf poskytol modelu dostatočne presné faktické ukotvenie pre väčšinu právnych otázok. Slabším miestom bolo pokrytie podporujúcich ustanovení, kde systém našiel 74{,}6\,\% ľudsky anotovaných sekcií a najčastejšie mu chýbali doplnkové odseky, ustanovenia k evidencii, súhrnným výkazom alebo prílohám.
 
 
 \subsection{Voľba modelov}
 
-GPT modely boli zvolené, kvôli ich širokému trénovaniu na rozličných textoch. Najviac využívaným modelom vo výskumoch, ktorý dosahoval najvyššie F1 skóre pre extrakciu pomenovaných entít alebo vzťahov, je model GPT 4o. Od jeho vydania vyšli aj novšie generácie modelov, ktoré dosahujú vyššie pochopenie textu a sú dostatočne trénované aj na slovenskom jazyku. Pre extrakciu som zvolil cenovo dostupný model GPT 5.4 mini, ktorý má aj najnižšiu latenciu a pri spracovaní jedného 150 stranového dokumentu cena môže byť v rozmedzí 8-15€. Model síce nedosahuje vysoké skóre ale dokáže extrahovať podstatné informácie.
+GPT modely boli zvolené kvôli ich širokému trénovaniu na rozličných textoch — vo výskumoch dosahoval najvyššie F1 skóre pre extrakciu entít a vzťahov model GPT 4o, pričom novšie generácie zlepšujú pochopenie textu aj v slovenčine. Pre extrakciu som zvolil cenovo dostupný GPT 5.4 mini s nízkou latenciou, kde spracovanie 150-stranového dokumentu vyjde na 8–15\,€; síce nedosahuje najvyššie skóre, ale dokáže extrahovať podstatné informácie. Testované boli aj Gemini 2.5/3 Flash, ktoré mali prijateľnú cenu, no vyššiu latenciu pri obrázkoch, a Claude Sonnet, ktorý dosahoval veľmi dobré pochopenie textu, no za štvornásobne vyššiu cenu, čo je neekonomické.
 
-Použitie silnejších modelov, ako sú GPT-5.5, GPT-5.5-Pro, Opus 4.7 alebo Gemini 3 Pro, by pravdepodobne zlepšilo kvalitu extrakcie aj následného spracovania znalostí. Takéto modely však majú zásadnú nevýhodu v podobe ceny. Pri menšom počte dokumentov nemusí byť tento problém výrazný, no pri rozsiahlejšom datasete sa náklady na volania API začnú veľmi rýchlo kumulovať. Preto pri spracovaní veľkého množstva dokumentov dáva väčší zmysel uvažovať nad lokálnym riešením.
-
-V tomto prípade by bolo možné použiť otvorené alebo lokálne spustiteľné modely, napríklad Llama alebo Mistral. Ich výhodou je, že po počiatočnej investícii do hardvéru nevznikajú náklady za každé ďalšie spracovanie dokumentu. Takéto riešenie si síce vyžaduje výkonnejší počítač, pričom cena vhodnej zostavy sa môže pohybovať rádovo v tisícoch eur, pri dlhodobom a opakovanom spracovaní väčšieho množstva dát však môže byť táto investícia opodstatnená.
-
-\
-
-Testované boli aj modely Gemini od Google a Claude Sonnet od Anthropic. Pri Gemini 2.5 Flash alebo 3 Flash bola cena prijateľná avšak pri spracovaní obrázkov bola oneskorenejšia latencia v porovnaní s GPT 5.4 mini. Pri extrakcii Claude Sonnet dosahoval veľmi dobré pochopenie textu, aj veľmi dobre chápal úlohu, ale cena spracovania bola štvor-násobne vyššia, čo je veľmi neekonomické.
+Použitie silnejších modelov ako GPT-5.5, GPT-5.5-Pro, Opus 4.7 alebo Gemini 3 Pro by pravdepodobne zlepšilo kvalitu extrakcie, ich nevýhodou je však cena, ktorá sa pri rozsiahlejšom datasete rýchlo kumuluje. Alternatívou sú otvorené modely ako Llama či Mistral, kde po počiatočnej investícii do hardvéru (rádovo tisíce eur) nevznikajú náklady za každé ďalšie spracovanie, čo môže byť pri dlhodobom a opakovanom spracovaní väčšieho množstva dát opodstatnené.
 
 
 

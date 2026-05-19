@@ -1,0 +1,257 @@
+{
+  "sources": {
+    "human_annotations": "test_dataset/q&a/q&a.json",
+    "graphrag_validation": "test_dataset/q&a/q&a_graphrag_validation.json"
+  },
+  "methodology": {
+    "answer_score": "1 = odpoved je vecne spravna voci clovekom anotovanej odpovedi; 0 = odpoved je nespravna alebo chyba klucova cast odpovede.",
+    "section_success": "Recall voci clovekom anotovanym podporujucim ustanoveniam. Rozsahy typu 'ods. 1 az 6' su rozratane na jednotlive odseky. Extra najdene ustanovenia sa nepenalizuju.",
+    "matching_note": "Najdene podsekcie, pismena alebo body sa povazuju za pokrytie prislusneho odseku, ak vecne pokryvaju clovekom anotovane ustanovenie."
+  },
+  "overall": {
+    "questions_total": 21,
+    "answers_correct": 20,
+    "answer_accuracy_percent": 95.2,
+    "sections_matched_total": 103,
+    "sections_expected_total": 138,
+    "section_success_micro_percent": 74.6,
+    "section_success_macro_percent": 79.7
+  },
+  "rows": [
+    {
+      "id": 1,
+      "answer_score": 1,
+      "sections_matched": 5,
+      "sections_expected": 5,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved aj podporujuce ustanovenia sedia."
+    },
+    {
+      "id": 2,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.7,
+      "missing_sections": [
+        "§ 4 ods. 3"
+      ],
+      "note": "Odpoved je vecne spravna; retrieval nenasiel § 4 ods. 3."
+    },
+    {
+      "id": 3,
+      "answer_score": 1,
+      "sections_matched": 4,
+      "sections_expected": 4,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved aj podporujuce ustanovenia sedia."
+    },
+    {
+      "id": 4,
+      "answer_score": 1,
+      "sections_matched": 4,
+      "sections_expected": 5,
+      "section_success_percent": 80.0,
+      "missing_sections": [
+        "§ 70 ods. 4"
+      ],
+      "note": "Odpoved spravne urcuje registraciu podla § 7a; retrieval nenasiel § 70 ods. 4."
+    },
+    {
+      "id": 5,
+      "answer_score": 0,
+      "sections_matched": 8,
+      "sections_expected": 8,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Retrieval nasiel spravne ustanovenia, ale odpoved nespravne/neuplne vyhodnotila dosledky pre nadobudatela."
+    },
+    {
+      "id": 6,
+      "answer_score": 1,
+      "sections_matched": 6,
+      "sections_expected": 11,
+      "section_success_percent": 54.5,
+      "missing_sections": [
+        "§ 8a ods. 4",
+        "§ 11a",
+        "§ 70 ods. 2 písm. g)",
+        "§ 80 ods. 1 písm. e)",
+        "§ 80 ods. 1 písm. g)"
+      ],
+      "note": "Odpoved je spravna; retrieval nepokryl viacero evidencnych a suhrnnovykazovych ustanoveni."
+    },
+    {
+      "id": 7,
+      "answer_score": 1,
+      "sections_matched": 7,
+      "sections_expected": 7,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved je vecne spravna; fakturacny detail trojstranneho obchodu je uvedeny menej explicitne."
+    },
+    {
+      "id": 8,
+      "answer_score": 1,
+      "sections_matched": 7,
+      "sections_expected": 7,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved aj podporujuce ustanovenia sedia."
+    },
+    {
+      "id": 9,
+      "answer_score": 1,
+      "sections_matched": 5,
+      "sections_expected": 5,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved spravne urcuje miesto dodania pred a po prekroceni limitu."
+    },
+    {
+      "id": 10,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 4,
+      "section_success_percent": 75.0,
+      "missing_sections": [
+        "§ 38 ods. 7"
+      ],
+      "note": "Odpoved je spravna pre administrativnu budovu; retrieval nenasiel § 38 ods. 7."
+    },
+    {
+      "id": 11,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 4,
+      "section_success_percent": 50.0,
+      "missing_sections": [
+        "§ 38 ods. 4",
+        "§ 38 ods. 6"
+      ],
+      "note": "Odpoved je spravna; retrieval nepokryl cele rozpatie § 38 ods. 3 az 6."
+    },
+    {
+      "id": 12,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 3,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved aj podporujuce ustanovenia sedia."
+    },
+    {
+      "id": 13,
+      "answer_score": 1,
+      "sections_matched": 5,
+      "sections_expected": 7,
+      "section_success_percent": 71.4,
+      "missing_sections": [
+        "§ 80 ods. 1",
+        "§ 80 ods. 9"
+      ],
+      "note": "Odpoved spravne riesi chybajuce doklady; retrieval nepokryl ustanovenia o suhrnnom vykaze."
+    },
+    {
+      "id": 14,
+      "answer_score": 1,
+      "sections_matched": 8,
+      "sections_expected": 8,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved aj podporujuce ustanovenia sedia."
+    },
+    {
+      "id": 15,
+      "answer_score": 1,
+      "sections_matched": 4,
+      "sections_expected": 12,
+      "section_success_percent": 33.3,
+      "missing_sections": [
+        "§ 25a ods. 5",
+        "§ 25a ods. 7",
+        "§ 25a ods. 8",
+        "§ 25a ods. 9",
+        "§ 25a ods. 10",
+        "§ 25a ods. 11",
+        "§ 25a ods. 12",
+        "§ 25a ods. 13"
+      ],
+      "note": "Hlavny zaver je spravny; retrieval nepokryl viacere doplnkove obmedzenia a dokladove povinnosti z § 25a."
+    },
+    {
+      "id": 16,
+      "answer_score": 1,
+      "sections_matched": 5,
+      "sections_expected": 8,
+      "section_success_percent": 62.5,
+      "missing_sections": [
+        "§ 53b ods. 4",
+        "§ 53b ods. 5",
+        "§ 53b ods. 6"
+      ],
+      "note": "Hlavna odpoved je spravna; chybaju ustanovenia o oprave opravenej odpoctanej dane pri neskorsej uhrade."
+    },
+    {
+      "id": 17,
+      "answer_score": 1,
+      "sections_matched": 6,
+      "sections_expected": 11,
+      "section_success_percent": 54.5,
+      "missing_sections": [
+        "§ 68d ods. 5",
+        "§ 68d ods. 10",
+        "§ 68d ods. 11",
+        "§ 68d ods. 12",
+        "§ 68d ods. 13"
+      ],
+      "note": "Odpoved spravne urcuje vznik danovej povinnosti podla § 19; retrieval nepokryl cast § 68d ods. 10 az 14."
+    },
+    {
+      "id": 18,
+      "answer_score": 1,
+      "sections_matched": 4,
+      "sections_expected": 6,
+      "section_success_percent": 66.7,
+      "missing_sections": [
+        "§ 54 ods. 6",
+        "Príloha č. 1"
+      ],
+      "note": "Odpoved spravne vysvetluje pomerne odpoctenie a 20-rocne sledovanie; retrieval nenasiel vzorec/pravidlo upravy v prilohe."
+    },
+    {
+      "id": 19,
+      "answer_score": 1,
+      "sections_matched": 7,
+      "sections_expected": 12,
+      "section_success_percent": 58.3,
+      "missing_sections": [
+        "§ 70a ods. 6",
+        "§ 70a ods. 7",
+        "§ 70a ods. 9",
+        "§ 70a ods. 10",
+        "§ 70a ods. 12"
+      ],
+      "note": "Odpoved je spravna pre prah, lehotu spristupnenia a dobu uchovavania; retrieval nepokryl cele rozpatie § 70a ods. 1 az 12."
+    },
+    {
+      "id": 20,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 3,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved aj podporujuce ustanovenia sedia."
+    },
+    {
+      "id": 21,
+      "answer_score": 1,
+      "sections_matched": 5,
+      "sections_expected": 5,
+      "section_success_percent": 100.0,
+      "missing_sections": [],
+      "note": "Odpoved aj podporujuce ustanovenia sedia."
+    }
+  ]
+}

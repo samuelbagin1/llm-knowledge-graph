@@ -1,0 +1,190 @@
+{
+  "sources": {
+    "human_annotations": "test_dataset/q&a/q&a.json",
+    "vectorrag_validation": "test_dataset/q&a/q&a_vectorrag_validation_k10.json"
+  },
+  "methodology": {
+    "answer_score": "1 = LLM odpoved je vecne spravna a obsahuje vsetky klucove informacie z clovekom anotovanej odpovede; 0 = odpoved je nespravna alebo jej chyba klucova informacia.",
+    "section_success": "Percentualne pokrytie clovekom anotovanych podporujucich ustanoveni medzi top-k retrieved chunks. Extra najdene ustanovenia sa nepenalizuju.",
+    "matching_note": "Hodnotenie je pocitane po polozkach v poli podporujuce_ustanovenia, rovnako ako pri summary_vectorrag_k5.json. Podsekcia, pismeno alebo cast rozsahu sa povazuje za match, ak vecne pokryva anotovanu polozku."
+  },
+  "overall": {
+    "questions_total": 21,
+    "answers_correct": 6,
+    "answer_accuracy_percent": 28.6,
+    "sections_matched_total": 36,
+    "sections_expected_total": 58,
+    "section_success_micro_percent": 62.1,
+    "section_success_macro_percent": 66.4
+  },
+  "rows": [
+    {
+      "id": 1,
+      "answer_score": 0,
+      "sections_matched": 3,
+      "sections_expected": 4,
+      "section_success_percent": 75.0,
+      "note": "Spravne urcuje vznik platitelstva a oznamenie danovemu uradu, ale chyba platnost IC DPH odo dna vzniku platitelstva."
+    },
+    {
+      "id": 2,
+      "answer_score": 1,
+      "sections_matched": 0,
+      "sections_expected": 3,
+      "section_success_percent": 0.0,
+      "note": "Odpoved vecne sedi; retrieval netrafil clovekom anotovane ustanovenia § 4 ods. 3, § 4 ods. 15 ani § 78 ods. 2."
+    },
+    {
+      "id": 3,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Smer odpovede je spravny, ale chyba vysvetlenie reverse charge podla § 69 a suvisiace dosledky registracie alebo priznania."
+    },
+    {
+      "id": 4,
+      "answer_score": 0,
+      "sections_matched": 3,
+      "sections_expected": 4,
+      "section_success_percent": 75.0,
+      "note": "Spravne uvadza limit pri § 7 a registraciu podla § 7a, ale chyba opacne pravidlo, ze pri registracii podla § 7a sa nepodava ziadost podla § 7."
+    },
+    {
+      "id": 5,
+      "answer_score": 0,
+      "sections_matched": 4,
+      "sections_expected": 5,
+      "section_success_percent": 80.0,
+      "note": "Chyba jasne urcenie noveho dopravneho prostriedku, oslobodenie dodania do ineho clenskeho statu a povinnosti nadobudatela."
+    },
+    {
+      "id": 6,
+      "answer_score": 0,
+      "sections_matched": 3,
+      "sections_expected": 4,
+      "section_success_percent": 75.0,
+      "note": "Spravne uvadza, ze samotne nahradenie nevytvara premiestnenie, ale chyba prevod prava nakladat s tovarom a pravidlo po uplynuti 12 mesiacov."
+    },
+    {
+      "id": 7,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.7,
+      "note": "Priradenie prepravy je spravne, ale vysvetlenie trojstranneho obchodu je neuplne, najma k plateniu dane druhym odberatelom a fakturacii."
+    },
+    {
+      "id": 8,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 2,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi a podporujuce ustanovenia su pokryte."
+    },
+    {
+      "id": 9,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Chyba konkretne urcenie miesta skoncenia prepravy alebo miesta zakaznika po prekroceni limitu a chyba dobrovolna volba na dva roky."
+    },
+    {
+      "id": 10,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "note": "Spravne riesi moznost zdanenia administrativnej budovy, ale chyba urcenie osoby povinnej platit dan."
+    },
+    {
+      "id": 11,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 1,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi."
+    },
+    {
+      "id": 12,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "note": "Chyba preukazanie odoslania, prepravy a vystupu z EU a chyba den dodania ako den vystupu potvrdeny colnym organom."
+    },
+    {
+      "id": 13,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 2,
+      "section_success_percent": 100.0,
+      "note": "Jadro k chybajucim dokladom je spravne, ale odpoved neobsahuje pravidlo, ze oslobodenie sa neuzna pri nepodanom alebo nespravnom suhrnnom vykaze bez dostatocneho odovodnenia."
+    },
+    {
+      "id": 14,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.7,
+      "note": "Odpoved vecne sedi pre uplatnenie oslobodenia cez danoveho zastupcu; retrieval nepokryl § 69a ods. 1 az 6."
+    },
+    {
+      "id": 15,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "note": "Hlavny zaver je spravny, ale chybaju obmedzenia podla § 25a ods. 7 az 13."
+    },
+    {
+      "id": 16,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 1,
+      "section_success_percent": 100.0,
+      "note": "Jadro je spravne, ale chyba pravo opravy opravenej odpoctanej dane po neskorsej uhrade."
+    },
+    {
+      "id": 17,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.7,
+      "note": "Spravne urcuje vznik danovej povinnosti podla § 19, ale chyba zakaz dodatocnej opravy faktury doplnenim slovnej informacie."
+    },
+    {
+      "id": 18,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 5,
+      "section_success_percent": 40.0,
+      "note": "Chyba 20-rocne obdobie sledovania, vzorec z prilohy a limit zmeny 0,10."
+    },
+    {
+      "id": 19,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 1,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi."
+    },
+    {
+      "id": 20,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 2,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi a podporujuce ustanovenia su pokryte."
+    },
+    {
+      "id": 21,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Neuvadza konkretne sadzby 5 %, 5 %, 19 % a 23 %."
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "sources": {
+    "human_annotations": "test_dataset/q&a/q&a.json",
+    "vectorrag_validation": "test_dataset/q&a/q&a_vectorrag_validation_k5.json"
+  },
+  "methodology": {
+    "answer_score": "1 = LLM odpoved je vecne spravna a obsahuje vsetky klucove informacie z clovekom anotovanej odpovede; 0 = odpoved je nespravna alebo jej chyba klucova informacia.",
+    "section_success": "Percentualne pokrytie clovekom anotovanych podporujucich ustanoveni medzi top-k retrieved chunks. Extra najdene ustanovenia sa nepenalizuju.",
+    "matching_note": "Hodnotenie je pocitane po polozkach v poli podporujuce_ustanovenia. Podsekcia alebo pismeno sa povazuje za match, ak vecne pokryva anotovanu polozku."
+  },
+  "overall": {
+    "questions_total": 21,
+    "answers_correct": 3,
+    "answer_accuracy_percent": 14.3,
+    "sections_matched_total": 29,
+    "sections_expected_total": 58,
+    "section_success_micro_percent": 50.0,
+    "section_success_macro_percent": 56.7
+  },
+  "rows": [
+    {
+      "id": 1,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 4,
+      "section_success_percent": 25.0,
+      "note": "Chyba bezodkladne oznamenie danovemu uradu a platnost IC DPH odo dna platitelstva."
+    },
+    {
+      "id": 2,
+      "answer_score": 0,
+      "sections_matched": 0,
+      "sections_expected": 3,
+      "section_success_percent": 0.0,
+      "note": "Odpoved nevyhodnocuje specialny rezim danoveho priznania pri obrate z financnych alebo poistovacich sluzieb."
+    },
+    {
+      "id": 3,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Smer odpovede nie je nespravny, ale chyba vynimka z reverse charge podla § 69 a suvisiace dosledky."
+    },
+    {
+      "id": 4,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 4,
+      "section_success_percent": 50.0,
+      "note": "Cast k § 7 je spravna, ale odpoved neuviedla povinnu registraciu podla § 7a pri prijati sluzby."
+    },
+    {
+      "id": 5,
+      "answer_score": 0,
+      "sections_matched": 3,
+      "sections_expected": 5,
+      "section_success_percent": 60.0,
+      "note": "Chyba jasne urcenie noveho dopravneho prostriedku, oslobodenie dodania a povinnosti nadobudatela."
+    },
+    {
+      "id": 6,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 4,
+      "section_success_percent": 50.0,
+      "note": "Spravne uvadza, ze samotne nahradenie nevytvara premiestnenie, ale chyba prevod prava nakladat s tovarom a pravidlo 12 mesiacov."
+    },
+    {
+      "id": 7,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.7,
+      "note": "Priradenie prepravy je spravne, ale rozdiel od trojstranneho obchodu je neuplny."
+    },
+    {
+      "id": 8,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 2,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi."
+    },
+    {
+      "id": 9,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Chyba konkretne miesto skoncenia prepravy alebo miesto zakaznika a dobrovolna volba na dva kalendarne roky."
+    },
+    {
+      "id": 10,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "note": "Chyba urcenie osoby povinnej platit dan pri zdanenej nehnutelnosti."
+    },
+    {
+      "id": 11,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 1,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi."
+    },
+    {
+      "id": 12,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "note": "Chyba preukazanie vyvozu a den dodania ako den vystupu tovaru z uzemia EU potvrdeny colnym organom."
+    },
+    {
+      "id": 13,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "note": "Jadro k chybajucim dokladom je spravne, ale chyba pravidlo o suhrnnom vykaze."
+    },
+    {
+      "id": 14,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Danovy zastupca je uvedeny, ale chybaju potrebne IC DPH udaje a podmienky podla § 69a."
+    },
+    {
+      "id": 15,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "note": "Hlavny zaver je spravny, ale chybaju obmedzenia podla § 25a ods. 7 az 13."
+    },
+    {
+      "id": 16,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 1,
+      "section_success_percent": 100.0,
+      "note": "Jadro je spravne, ale chyba pravo opravy opravenej odpoctanej dane po neskorsej uhrade."
+    },
+    {
+      "id": 17,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.7,
+      "note": "Spravne urcuje vznik danovej povinnosti podla § 19, ale chyba zakaz dodatocnej opravy faktury doplnenim slovnej informacie."
+    },
+    {
+      "id": 18,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 5,
+      "section_success_percent": 40.0,
+      "note": "Chyba 20-rocne obdobie sledovania, vzorec z prilohy a limit zmeny 0,10."
+    },
+    {
+      "id": 19,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 1,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi."
+    },
+    {
+      "id": 20,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 2,
+      "section_success_percent": 100.0,
+      "note": "Odpoved je spravna pri predaji tovaru na dialku, ale chyba spravny zaver pre dodanie oslobodene podla § 43."
+    },
+    {
+      "id": 21,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Neuvadza konkretne sadzby 5 %, 5 %, 19 % a 23 %."
+    }
+  ]
+}

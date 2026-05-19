@@ -1992,19 +1992,6 @@ Pred vystupom over:
                 path_str += " Pismeno " + path_segments[2]
                 path_label = "Pismeno"
                 
-        edge_budget_hint = "≈ 1.1× pocet uzlov, max 1.5×"
-
-        local_context_rule = (
-            f"Aktualny kontext: {path_str}.\n"
-            f"        Pre vnutroparagrafove odkazy v tomto texte (\"podla odseku N\", \"v odseku N\", \"odsek N\")\n"
-            f"        pouzi LOKALNU formu: \"Odsek N\" (BEZ Paragraf prefixu).\n"
-            f"        Pre cross-paragraph odkazy (\"§ X ods. Y\", \"podla § X\") pouzi plne ID\n"
-            f"        \"Paragraf § X Odsek Y\"."
-        ) if path_str else (
-            "Aktualny kontext: neznamy.\n"
-            "        Pre vsetky odkazy na Odsek pouzi plne ID \"Paragraf § X Odsek Y\"\n"
-            "        ak je k dispozicii; inak \"Odsek N\"."
-        )
 
         user_prompt = f"""
         Extract entities and relationships from the Slovak legal text strictly according to the provided schema.
@@ -2073,7 +2060,7 @@ Pred vystupom over:
         print(data)
 
         # Convert to graph document with validation and formatting
-        graph_document = self._convert_to_graph_document(data, i, document, document_id, path_str, path_label)
+        graph_document = self._convert_to_graph_document(data=data, i=i, document=document, document_id=document_id, section_id=path_str, section_label=path_label)
 
         # Apply strict mode filtering if enabled
         # if strict_mode and (allowed_entities or allowed_relationships):
@@ -2320,50 +2307,45 @@ Pred vystupom over:
 
 
 
-        # # ---- ODD ----
-        # # Stage failures abort the document. Per-chunk failures are tolerated
-        # # inside async_open_domain_detection (chunks dropped, others continue).
-        # splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
-        # chunked_documents = splitter.split_documents(documents)
-        # if not chunked_documents:
-        #     raise ValueError(f"[process] no chunks produced for ODD from {pdf_path}")
+        # ---- ODD ----
+        # Stage failures abort the document. Per-chunk failures are tolerated
+        # inside async_open_domain_detection (chunks dropped, others continue).
+        splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=200)
+        chunked_documents = splitter.split_documents(documents)
+        if not chunked_documents:
+            raise ValueError(f"[process] no chunks produced for ODD from {pdf_path}")
 
-        # extracted_schema_list = asyncio.run(
-        #     self.async_open_domain_detection(
-        #         chunked_documents,
-        #         write_json=write_json,
-        #         name=name_of_chain,
-        #     )
-        # )
-        # if not extracted_schema_list:
-        #     raise RuntimeError("[process] ODD produced no schemas (all chunks failed)")
-        # print(f"\n\nAll chunks processed into schema. ({len(extracted_schema_list)} schemas)\n\n")
-        # # ODD JSON is now written incrementally inside async_open_domain_detection
-        # # when write_json=True, so no end-of-stage dump is needed here.
+        extracted_schema_list = asyncio.run(
+            self.async_open_domain_detection(
+                chunked_documents,
+                write_json=write_json,
+                name=name_of_chain,
+            )
+        )
+        if not extracted_schema_list:
+            raise RuntimeError("[process] ODD produced no schemas (all chunks failed)")
+        print(f"\n\nAll chunks processed into schema. ({len(extracted_schema_list)} schemas)\n\n")
+        # ODD JSON is now written incrementally inside async_open_domain_detection
+        # when write_json=True, so no end-of-stage dump is needed here.
 
 
-        # # ---- Refinement ----
-        # extracted_schema = Schema(
-        #     nodes=list(set(node for schema in extracted_schema_list for node in schema.nodes)),
-        #     relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
-        # )
-        # if not extracted_schema.nodes:
-        #     raise RuntimeError("[process] ODD union produced empty node set; aborting before refinement")
+        # ---- Refinement ----
+        extracted_schema = Schema(
+            nodes=list(set(node for schema in extracted_schema_list for node in schema.nodes)),
+            relationships=list(set(rel for schema in extracted_schema_list for rel in schema.relationships))
+        )
+        if not extracted_schema.nodes:
+            raise RuntimeError("[process] ODD union produced empty node set; aborting before refinement")
 
-        # # get_graph_schema is internally guarded — returns empty Schema on Neo4j read failure
-        # refined_schema = self.schema_refinement(
-        #     odd_schema=extracted_schema,
-        #     existing_schema=self.get_graph_schema(),
-        # )
-        # # schema_refinement raises on its own retry exhaustion — propagates to abort
-        # print(f"\n\nSchema refined.\n\n")
-        # if write_json:
-        #     refinement_to_json(refined_schema, name=name_of_chain)  # save before next stage
-        
-        refined_schema = {
-            "node_types": SCHEMA_NODE_TYPES,
-            "relationship_types": SCHEMA_RELATIONSHIP_TYPES,
-        }
+        # get_graph_schema is internally guarded — returns empty Schema on Neo4j read failure
+        refined_schema = self.schema_refinement(
+            odd_schema=extracted_schema,
+            existing_schema=self.get_graph_schema(),
+        )
+        # schema_refinement raises on its own retry exhaustion — propagates to abort
+        print(f"\n\nSchema refined.\n\n")
+        if write_json:
+            refinement_to_json(refined_schema, name=name_of_chain)  # save before next stage
 
 
         # ---- SDE ----

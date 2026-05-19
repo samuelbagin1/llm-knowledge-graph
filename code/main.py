@@ -23,4 +23,12 @@ graphrag = PDFGraphRAG(
 
 
 
-graphrag.process(pdf_path, "zz2004222", True)
+# graphrag.process(pdf_path, "zz2004222", True)
+
+docs = graphrag.load_pdf(pdf_path=pdf_path)
+
+doc_id = graphrag.get_document_id(pdf_path)
+
+table_graph_docs, formula_graph_docs, last_page = graphrag.tables_and_formulas(pdf_path=pdf_path, document_id=doc_id, documents=docs, write_json=True)
+
+graphrag.merge_new(table_graph_docs)

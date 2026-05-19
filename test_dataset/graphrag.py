@@ -29,7 +29,7 @@ from langchain.agents.structured_output import ProviderStrategy
 
 load_dotenv()
 
-MODEL_NAME = "gpt-5.4-mini"
+MODEL_NAME = "gpt-5.5"
 DATABASE_NAME = "zz-2004-222"
 
 QA_INPUT_PATH = Path(__file__).parent / "q&a.json"
@@ -109,28 +109,78 @@ def get_schema_overview(driver) -> str:
 
 RETRIEVAL_SYSTEM_PROMPT = """You are a Neo4j Cypher expert querying a knowledge graph of the Slovak VAT Act (zákon č. 222/2004 Z. z.).
 
-The graph contains:
-  * Structural nodes: Paragraf, Odsek, Pismeno, Bod, Priloha — the hierarchy of the law text.
-    They are linked by OBSAHUJE (contains) and/or JE_SUCASTOU (is part of).
-  * Domain entities: Subjekt, Osoba, Dan, Sluzba, Tovar, Lehota, Obrat, Suma, etc.
-    These are linked to structural nodes via relations like UPRAVUJE, DEFINUJE, VZTAHUJE_SA_NA, MA_PODMIENKU, MA_LEHOTU, MA_SUMU, etc.
+Schema:
+  * Structural nodes — Paragraf, Odsek, Pismeno, Bod — form the hierarchy of the law.
+    Linked top-down by OBSAHUJE: (Paragraf)-[:OBSAHUJE]->(Odsek)-[:OBSAHUJE]->(Pismeno)-[:OBSAHUJE]->(Bod).
+    Properties on every structural node:
+      - `id`   e.g. "Paragraf § 4 Odsek 1 Pismeno f)"
+      - `path` e.g. ["§ 4", "1", "f)"]
+      - `text` the verbatim Slovak law text — THIS is what you read to verify relevance.
+  * Domain entities — Subjekt, Osoba, Dan, Sluzba, Tovar, Lehota, Obrat, Suma, Podmienka, Povinnost, Pravo, Registracia, Oznamenie, Ziadost, Nehnutelnost, Vozidlo, etc.
+  * Positive verb relations: UPRAVUJE, DEFINUJE, VZTAHUJE_SA_NA, MA_PODMIENKU, MA_LEHOTU, MA_SUMU,
+        JE_PREDMETOM_DANE, PODLIEHA, MA_POVINNOST, MA_PRAVO, MA_NAROK_NA, SPLNA_PODMIENKY, OBSAHUJE.
+  * NEGATIVE / EXCLUSIONARY relations — equally important for completeness:
+        NEVZTAHUJE_SA_NA, NESPLNA_PODMIENKY, NEMA_NAROK_NA, NIE_JE_PREDMETOM_DANE, OSLOBODZUJE_OD,
+        ZANIKA, RUSI. These mark clauses that EXCLUDE or EXEMPT — you MUST also retrieve them
+        when they are relevant to the question.
+  * Cross-references: ODKAZUJE_NA links one section to another it cites.
 
-Your job: given a question, find the Paragraf/Odsek/Pismeno nodes that contain the answer, and the domain entities involved.
+Your job: given a question, run MANY Cypher queries to gather a thorough set of Paragraf/Odsek/Pismeno
+nodes (with their `text`), positive AND negative provisions, plus all involved domain entities.
+Be exhaustive, not minimal. Then read the `text` of each candidate and KEEP ONLY those whose text
+actually supports, contradicts, qualifies, or excludes some aspect of the question.
 
-Strategy (entity-anchored):
-  1. Identify domain concepts in the question (e.g. obrat, registrácia, platiteľ, oslobodenie, call-off stock, poukaz).
-  2. Find matching entity nodes by text match on their `id` / `name` / `text` properties.
-       Use case-insensitive CONTAINS: WHERE toLower(n.id) CONTAINS toLower('obrat')
-  3. Traverse from those entities back to structural nodes (Paragraf/Odsek/Pismeno).
-       MATCH (e)-[r]-(s) WHERE s:Paragraf OR s:Odsek OR s:Pismeno RETURN ...
-  4. Pull the structural node IDs and any neighboring entities.
-  5. Always LIMIT results (25-50). Iterate: explore first, then refine.
+Search strategy — perform these steps in order, multiple tool calls each:
 
-Rules:
-  * Use the search_database tool — never claim a node exists without running a query.
-  * Quote labels with hyphens/digits in backticks if needed.
-  * Stop when you have 1–6 distinct Paragraf/Odsek/Pismeno IDs that plausibly cover the question.
-  * Return their IDs verbatim from the database — do not invent IDs.
+  STEP 1. Decompose the question into 3–6 distinct domain concepts (e.g. "obrat", "registrácia",
+          "platiteľ", "lehota oznámenia", "oslobodenie", "call-off stock", "reverse charge").
+
+  STEP 2. For EACH concept, find candidate entity nodes (case-insensitive):
+            MATCH (n) WHERE toLower(n.id) CONTAINS toLower('obrat')
+            RETURN n.id, labels(n)[0] AS label LIMIT 25
+          Also try synonyms / morphological variants: registr, oslobod, platit, lehot, sumy.
+
+  STEP 3. From each entity, traverse to structural nodes BOTH directions, ALL relevant rel types
+          including negations:
+            MATCH (e {id: 'Obrat'})-[r]-(s)
+            WHERE (s:Paragraf OR s:Odsek OR s:Pismeno OR s:Bod)
+              AND type(r) IN ['UPRAVUJE','DEFINUJE','VZTAHUJE_SA_NA','MA_PODMIENKU','MA_LEHOTU',
+                              'MA_SUMU','JE_PREDMETOM_DANE','PODLIEHA','OSLOBODZUJE_OD',
+                              'NEVZTAHUJE_SA_NA','NESPLNA_PODMIENKY','NIE_JE_PREDMETOM_DANE',
+                              'NEMA_NAROK_NA','ODKAZUJE_NA','SUVISI_S']
+            RETURN DISTINCT s.id, labels(s)[0] AS label, type(r) AS rel LIMIT 50
+
+  STEP 4. GO DEEPER — 2-hop entity chains often reveal related provisions:
+            MATCH (e1 {id:'Obrat'})-[*1..2]-(s)
+            WHERE (s:Paragraf OR s:Odsek OR s:Pismeno) RETURN DISTINCT s.id, labels(s)[0] LIMIT 50
+          Also expand to SIBLINGS within the same Paragraf:
+            MATCH (par:Paragraf {id:'Paragraf § 4'})-[:OBSAHUJE*1..3]->(sib)
+            RETURN sib.id, labels(sib)[0] LIMIT 50
+          And follow ODKAZUJE_NA cross-references between sections.
+
+  STEP 5. Fetch text + parent for every candidate:
+            UNWIND $ids AS sid
+            MATCH (s {id: sid})
+            OPTIONAL MATCH (par:Paragraf)-[:OBSAHUJE*1..3]->(s)
+            RETURN s.id AS id, labels(s)[0] AS label, s.text AS text, par.id AS parent_id
+          (You can pass a list via parameters or repeat single-id MATCHes.)
+
+  STEP 6. VERIFY by reading the `text`. For each candidate ask yourself:
+            - Does this text say something the question asks about?
+            - Does it state a condition, threshold, exception, or exclusion relevant to the question?
+            - Or is it just incidentally connected via a shared entity but off-topic?
+          KEEP sections whose text directly bears on the question (supporting OR excluding).
+          DROP sections whose text is unrelated even if they share an entity link.
+
+Quality bar:
+  * Aim for 5–15 verified sections covering ALL aspects (conditions, thresholds, deadlines,
+    exclusions, exceptions, cross-references) — not just the most obvious one.
+  * If the question implies a negative scenario ("nie je", "neuplatňuje sa", "oslobodenie"),
+    you MUST search for and include the relevant exclusion/exemption clauses.
+  * Every returned section must have its real `text` populated. No empty texts unless the
+    DB truly has none.
+  * Every section id and every text snippet must come from a real search_database call.
+    Never invent ids, never paraphrase the text.
 """
 
 
@@ -138,10 +188,28 @@ RETRIEVAL_RESPONSE_SCHEMA = {
     "title": "RetrievalResult",
     "type": "object",
     "properties": {
-        "section_ids": {
+        "supporting_sections": {
             "type": "array",
-            "items": {"type": "string"},
-            "description": "IDs of Paragraf/Odsek/Pismeno/Bod nodes that support the answer (verbatim from DB).",
+            "description": "Verified Paragraf/Odsek/Pismeno/Bod nodes — each one's text was read and confirmed to bear on the question (supporting, conditioning, or excluding).",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string", "description": "Node id verbatim from DB."},
+                    "label": {"type": "string", "description": "Paragraf, Odsek, Pismeno, or Bod."},
+                    "text": {"type": "string", "description": "Verbatim law text from n.text."},
+                    "parent_id": {"type": "string", "description": "Containing Paragraf id, or '' if none."},
+                    "role": {
+                        "type": "string",
+                        "enum": ["supports", "conditions", "excludes", "defines", "cross_reference"],
+                        "description": "How this section relates to the question.",
+                    },
+                    "relevance": {
+                        "type": "string",
+                        "description": "One short sentence on why this section is in the result — what aspect of the question its text covers.",
+                    },
+                },
+                "required": ["id", "label", "text", "role", "relevance"],
+            },
         },
         "entity_ids": {
             "type": "array",
@@ -150,10 +218,10 @@ RETRIEVAL_RESPONSE_SCHEMA = {
         },
         "reasoning": {
             "type": "string",
-            "description": "Short note on the Cypher path taken.",
+            "description": "Concise log: decomposed concepts, Cypher paths explored, how many candidates were dropped after reading text.",
         },
     },
-    "required": ["section_ids", "entity_ids", "reasoning"],
+    "required": ["supporting_sections", "entity_ids", "reasoning"],
 }
 
 
@@ -194,7 +262,14 @@ def retrieve_supporting_sections(
 Graph schema overview:
 {schema_overview}
 
-Find the Paragraf/Odsek/Pismeno nodes that support an answer to this question, and the domain entities involved. Begin by querying for relevant entities."""
+Run an EXHAUSTIVE search:
+  1. Decompose the question into all distinct concepts (incl. negations: "nie je", "neuplatňuje", "oslobodenie", "výnimka").
+  2. For each concept, find entities, traverse 1–2 hops, AND look at sibling Pismeno within the same Paragraf and ODKAZUJE_NA cross-references.
+  3. Pull text for every candidate; READ each text and KEEP only those whose text actually addresses some aspect of the question — supporting, conditioning, or excluding.
+  4. If the question involves exemptions/exclusions, include the explicit NEVZTAHUJE_SA_NA / NIE_JE_PREDMETOM_DANE / OSLOBODZUJE_OD / NEMA_NAROK_NA / NESPLNA_PODMIENKY clauses.
+  5. Aim for 5–15 verified sections, each with `role` and a one-sentence `relevance` justification.
+
+Begin now."""
 
     agent = create_agent(
         model=llm,
@@ -207,67 +282,32 @@ Find the Paragraf/Odsek/Pismeno nodes that support an answer to this question, a
 
 
 # --------------------------------------------------------------------------- #
-# Section text aggregation
+# Section text aggregation (consumes data the retrieval agent gathered)
 # --------------------------------------------------------------------------- #
 
-def fetch_sections_with_context(driver, section_ids: List[str]) -> List[Dict[str, Any]]:
-    """For each section ID, fetch its label, text, and its ancestors/descendants
-    in the Paragraf -> Odsek -> Pismeno hierarchy.
-
-    Returns a list of dicts: {id, labels, text, paragraf, odsek, pismeno, children}
-    """
-    if not section_ids:
-        return []
-
-    cypher = """
-    UNWIND $ids AS sid
-    MATCH (n {id: sid})
-    OPTIONAL MATCH (par:Paragraf)-[:OBSAHUJE*0..3]->(n)
-    OPTIONAL MATCH (n)-[:OBSAHUJE*0..3]->(child)
-        WHERE child:Odsek OR child:Pismeno OR child:Bod
-    WITH n, collect(DISTINCT par) AS parents, collect(DISTINCT child) AS children
-    RETURN n.id AS id,
-           labels(n) AS labels,
-           coalesce(n.text, n.nazov, n.title, '') AS text,
-           [p IN parents | {id: p.id, text: coalesce(p.text, p.nazov, '')}] AS parents,
-           [c IN children | {id: c.id, labels: labels(c), text: coalesce(c.text, c.nazov, '')}] AS children
-    """
-    with driver.session(database=DATABASE_NAME) as session:
-        return [dict(r) for r in session.run(cypher, ids=section_ids)]
-
-
 def aggregate_section_text(sections: List[Dict[str, Any]]) -> str:
-    """Build the context string handed to the answer agent.
+    """Format the agent's `supporting_sections` into a context string for the answer agent.
 
-    Strategy:
-      * Sort by section ID so output reads like the law (§ 4 before § 7, etc.).
-      * Header shows ancestor Paragraf → matched node label + id for citation.
-      * Skip child text that's already contained in the matched node's text
-        (Pismeno content is often quoted inside its parent Odsek).
-      * Drop empty blocks.
+    Each section dict from the retrieval agent contains: id, label, text, parent_id, role, relevance.
+    The header surfaces `role` so the answer agent knows whether the clause supports or excludes.
     """
     blocks: List[str] = []
-    for sec in sorted(sections, key=lambda s: s["id"]):
-        label = sec["labels"][0] if sec["labels"] else "Node"
-        parent_id = sec["parents"][0]["id"] if sec.get("parents") else ""
+    for sec in sorted(sections, key=lambda s: s.get("id", "")):
+        sid = sec.get("id", "")
+        label = sec.get("label", "Node")
+        parent_id = sec.get("parent_id", "") or ""
+        text = (sec.get("text") or "").strip()
+        role = sec.get("role", "")
+        if not sid or not text:
+            continue
+
+        role_tag = f" [{role}]" if role else ""
         header = (
-            f"### {parent_id} → {sec['id']} ({label})"
-            if parent_id and parent_id != sec["id"]
-            else f"### {sec['id']} ({label})"
+            f"### {parent_id} → {sid} ({label}){role_tag}"
+            if parent_id and parent_id != sid
+            else f"### {sid} ({label}){role_tag}"
         )
-
-        body = (sec["text"] or "").strip()
-        children: List[str] = []
-        for c in sec.get("children", []):
-            ctext = c.get("text")
-            if isinstance(ctext, str):
-                ctext = ctext.strip()
-                if ctext and ctext not in body:
-                    children.append(ctext)
-
-        block = "\n".join(filter(None, [header, body, *children])).strip()
-        if block != header:
-            blocks.append(block)
+        blocks.append(f"{header}\n{text}")
 
     return "\n\n".join(blocks)
 
@@ -363,10 +403,9 @@ def main() -> None:
                 retrieval = retrieve_supporting_sections(
                     driver, llm, question, schema_overview
                 )
-                section_ids = retrieval.get("section_ids", []) or []
+                sections = retrieval.get("supporting_sections", []) or []
                 entity_ids_raw = retrieval.get("entity_ids", []) or []
 
-                sections = fetch_sections_with_context(driver, section_ids)
                 context_text = aggregate_section_text(sections)
 
                 # Filter found_entities to non-structural only.
@@ -375,12 +414,15 @@ def main() -> None:
                     if not any(lbl in eid for lbl in STRUCTURAL_LABELS)
                 ]
 
-                # found_sections enriched with labels + text snippets for human review.
+                # found_sections: surface what the agent collected, snippets only.
                 found_sections = [
                     {
-                        "id": s["id"],
-                        "labels": s["labels"],
-                        "text": (s["text"] or "")[:300],
+                        "id": s.get("id", ""),
+                        "label": s.get("label", ""),
+                        "parent_id": s.get("parent_id", ""),
+                        "role": s.get("role", ""),
+                        "relevance": s.get("relevance", ""),
+                        "text": (s.get("text") or "")[:300],
                     }
                     for s in sections
                 ]

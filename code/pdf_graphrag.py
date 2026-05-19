@@ -36,7 +36,7 @@ import asyncio
 from prompts import response_schema_for_sde, system_prompt_for_sde, response_schema_for_odd, system_prompt_for_odd, system_prompt_for_schema_refinement, response_schema_for_schema_refinement, system_prompt_for_segmentation, response_schema_for_segmentation, system_prompt_for_relation_retrieval, response_schema_for_relation_retrieval, system_prompt_for_inference,system_prompt_for_generating_query, response_schema_for_generating_query, system_prompt_ark_select_relation, system_prompt_ark_reasoning
 from pydantic import BaseModel, Field, SecretStr
 import numpy as np
-from to_json import odd_to_json, refinement_to_json, sde_to_json
+from to_json import odd_to_json, refinement_to_json, sde_to_json, table_to_json, formula_to_json
 from pdf2image import convert_from_path
 from doclayout_yolo import YOLOv10
 from huggingface_hub import hf_hub_download
@@ -204,13 +204,17 @@ def is_read_only_cypher(query: str) -> bool:
 
 
 def format_property_key(s: str) -> str:
-    """Convert property key to camelCase format.
+    """Convert property key to camelCase, treating symbols as word separators.
 
-    Example: "first name" -> "firstName"
+    Neo4j naming rules forbid symbols (other than underscore) in property keys;
+    keys that include them require backtick escaping in every Cypher query.
+    Splitting on non-word characters yields a clean camelCase identifier.
+
+    Example: "first name" -> "firstName", "price ($)" -> "price", "VAT %" -> "vat"
     """
-    words = s.split()
+    words = [w for w in re.split(r"[^\w]+", s, flags=re.UNICODE) if w]
     if not words:
-        return s
+        return ""
     first_word = words[0].lower()
     capitalized_words = [word.capitalize() for word in words[1:]]
     return "".join([first_word] + capitalized_words)
@@ -246,19 +250,46 @@ def format_relationship_type(rel_type: str) -> str:
 
 
 def sanitize_property_keys(raw_properties: dict) -> dict:
-    """Format property keys; replace any that come out empty with col_<index>.
+    r"""Format property keys to be Neo4j-safe identifiers.
 
-    Neo4j rejects empty or whitespace-only property names with a TokenNameError.
-    LLM-extracted tables can produce empty keys when the source <th> is blank
-    (common in merged-header tables), so we substitute a positional placeholder.
+    Cypher naming rules: names must start with an alphabetic character, may not
+    contain symbols other than underscore, and are case-sensitive. Violations
+    don't fail ingest but force every downstream query to wrap the key in
+    backticks (`n.\`2024\``), which is fragile and easy to forget.
+
+    Rules applied:
+    - Empty / whitespace-only keys -> col_<positional-index>
+    - Keys starting with a digit -> prefixed with col_ (e.g. "2024" -> "col_2024")
+    - Diacritics stripped so keys are pure ASCII
     """
     sanitized: dict = {}
     for i, (k, v) in enumerate(raw_properties.items()):
         formatted = format_property_key(k) if isinstance(k, str) else str(k)
-        if not formatted or not formatted.strip():
+        formatted = strip_diacritics(formatted).strip()
+        if not formatted:
             formatted = f"col_{i}"
+        elif formatted[0].isdigit():
+            formatted = f"col_{formatted}"
         sanitized[formatted] = v
     return sanitized
+
+
+def drop_empty_values(properties: dict) -> dict:
+    """Strip properties whose values would land as empty in Neo4j.
+
+    Empty = None, blank/whitespace string, empty list, empty dict. Booleans and
+    numeric zeros are kept (they are meaningful values, not absence-of-value).
+    """
+    cleaned: dict = {}
+    for k, v in properties.items():
+        if v is None:
+            continue
+        if isinstance(v, str) and not v.strip():
+            continue
+        if isinstance(v, (list, dict, tuple, set)) and len(v) == 0:
+            continue
+        cleaned[k] = v
+    return cleaned
 
 
 def graph_document_to_json(graph_doc: "GraphDocument") -> dict:
@@ -507,6 +538,79 @@ class PDFGraphRAG:
         ]
 
         return Schema(nodes=nodes, relationships=rels)
+    
+    
+    def add_graph_to_database(self, graph_documents: list[GraphDocument] | GraphDocument):
+        if isinstance(graph_documents, GraphDocument):
+            graph_documents = [graph_documents]
+
+        self.graph.add_graph_documents(
+                graph_documents=graph_documents,
+                include_source=False,
+                baseEntityLabel=False
+            )
+
+
+    def merge_new(self, graph_documents: list[GraphDocument] | GraphDocument) -> None:
+        """Write graph documents to Neo4j with properties applied on both CREATE and MATCH.
+
+        LangChain's Neo4jGraph.add_graph_documents calls apoc.merge.node with an
+        empty onMatchProps dict, so any node that already exists in the database
+        keeps its old properties and silently drops the new ones. This method
+        passes row.properties as both the onCreate and onMatch dicts, making
+        re-runs idempotent (the graph converges to the latest extraction) and
+        recovering nodes that were previously created without properties.
+
+        Same fix is applied to apoc.merge.relationship for relationship props.
+        """
+        if isinstance(graph_documents, GraphDocument):
+            graph_documents = [graph_documents]
+
+        node_query = (
+            "UNWIND $data AS row "
+            "CALL apoc.merge.node([row.type], {id: row.id}, "
+            "row.properties, row.properties) YIELD node "
+            "RETURN distinct 'done' AS result"
+        )
+        rel_query = (
+            "UNWIND $data AS row "
+            "CALL apoc.merge.node([row.source_label], {id: row.source}, {}, {}) "
+            "YIELD node AS source "
+            "CALL apoc.merge.node([row.target_label], {id: row.target}, {}, {}) "
+            "YIELD node AS target "
+            "CALL apoc.merge.relationship(source, row.type, {}, "
+            "row.properties, target, row.properties) YIELD rel "
+            "RETURN distinct 'done' AS result"
+        )
+
+        def _clean(s: str) -> str:
+            return s.replace("`", "") if isinstance(s, str) else s
+
+        for doc in graph_documents:
+            nodes_data = [
+                {
+                    "id": n.id,
+                    "type": _clean(n.type),
+                    "properties": n.properties or {},
+                }
+                for n in doc.nodes
+            ]
+            if nodes_data:
+                self.graph.query(node_query, {"data": nodes_data})
+
+            rels_data = [
+                {
+                    "source": r.source.id,
+                    "source_label": _clean(r.source.type),
+                    "target": r.target.id,
+                    "target_label": _clean(r.target.type),
+                    "type": _clean(r.type),
+                    "properties": r.properties or {},
+                }
+                for r in doc.relationships
+            ]
+            if rels_data:
+                self.graph.query(rel_query, {"data": rels_data})
                 
                 
                 
@@ -638,6 +742,7 @@ class PDFGraphRAG:
             # Format property keys to camelCase; rename empty keys to col_<i>
             raw_properties = node_data.get("properties", {})
             formatted_properties = sanitize_property_keys(raw_properties) if raw_properties else {}
+            formatted_properties = drop_empty_values(formatted_properties)
 
             # Normalize node ID (ASCII-fold + title case for consistency)
             normalized_id = strip_diacritics(str(node_id).strip())
@@ -677,10 +782,10 @@ class PDFGraphRAG:
                 # Format relationship properties
                 raw_rel_props = rel_data.get("properties", {})
                 section_property = section_id if section_id else chunk_id
-                formatted_rel_props = {
+                formatted_rel_props = drop_empty_values({
                     **sanitize_property_keys(raw_rel_props),
                     "section": section_property
-                }
+                })
 
                 relationship = Relationship(
                     source=source_node,
@@ -745,6 +850,8 @@ class PDFGraphRAG:
             else:
                 formatted_properties = sanitize_property_keys(raw_properties) if raw_properties else {}
 
+            formatted_properties = drop_empty_values(formatted_properties)
+
             # Normalize node ID (ASCII-fold + title case for consistency)
             normalized_id = strip_diacritics(str(node_id).strip())
             if normalized_id and not normalized_id[0].isdigit():
@@ -784,10 +891,10 @@ class PDFGraphRAG:
             if source_node and target_node:
                 # Format relationship properties
                 raw_rel_props = rel_data.get("properties", {})
-                formatted_rel_props = {
+                formatted_rel_props = drop_empty_values({
                     **sanitize_property_keys(raw_rel_props),
                     "document_id": document_id
-                }
+                })
 
                 relationship = Relationship(
                     source=source_node,
@@ -796,8 +903,8 @@ class PDFGraphRAG:
                     properties=formatted_rel_props
                 )
                 relationships.append(relationship)
-                
-                
+
+
         document_node = Node(id=document_id, type="Document", properties={})
         nodes.append(document_node)
 
@@ -1218,7 +1325,7 @@ class PDFGraphRAG:
             """A node extracted from a table."""
             id: str = Field(description="Unique identifier for the node")
             label: str = Field(description="Type/label of the node (e.g. Section, Chapter, Item)")
-            properties: dict = Field(description="Properties of the node, including 'name' and optionally 'description'")
+            properties: dict = Field(description="Properties of the node, including 'name' and key-values (column_head: column value) from row")
 
         class TableGraphRelationship(BaseModel):
             """A relationship between two nodes extracted from a table."""
@@ -1350,7 +1457,7 @@ Pred vystupom over:
         # Create and run the agent
         agent = create_agent(
             model=self.openai_client,
-            response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
+            response_format=ProviderStrategy(schema=TableGraphResponse.model_json_schema()),  # type: ignore[arg-type]
             system_prompt=system_prompt
         )
         
@@ -1495,7 +1602,7 @@ Pred vystupom over:
 
     # OCR to LaTeX and then to GraphDocument
 
-    def get_formulas(self, assets_dir: str = "./file_output") -> list[dict]:
+    def get_formulas(self, assets_dir: str = "./file_output/tables_and_formulas") -> list[dict]:
         """
         Load all detected formula PNGs from the assets directory.
 
@@ -2190,7 +2297,7 @@ Pred vystupom over:
     
     
     
-    def tables_and_formulas(self, pdf_path: str, document_id: str, documents: list[Document]):
+    def tables_and_formulas(self, pdf_path: str, document_id: str, documents: list[Document], write_json: bool = False):
          # map 1-based human page number -> PyPDFLoader text (matches detection page convention)
         page_text_map = {
             doc.metadata.get("page", -1) + 1: doc.page_content
@@ -2252,12 +2359,16 @@ Pred vystupom over:
         formula_graph_doc = self.convert_formulas_to_graph(formula_nodes, document_id)
         print(f"Processed {len(formulas)} formula(s) into {0 if formula_graph_doc is None else len(formula_nodes)} node(s).")
 
+        if write_json:
+            table_to_json(table_graph_docs)
+            formula_to_json(formula_graph_doc)
+
         return table_graph_docs, formula_graph_doc, table_pages_to_exclude
     
     
     
-    
-
+    def get_document_id(self, pdf_path: str):
+        return Path(pdf_path).stem
 
 
     # --------- PROCESS STRATEGY ----------
@@ -2277,7 +2388,7 @@ Pred vystupom over:
         document_id = Path(pdf_path).stem
 
        
-        table_graph_docs, formula_graph_doc, table_pages_to_exclude = self.tables_and_formulas(pdf_path, document_id, documents)
+        table_graph_docs, formula_graph_doc, table_pages_to_exclude = self.tables_and_formulas(pdf_path, document_id, documents, write_json=write_json)
         
         if table_graph_docs is not None:
             self.graph.add_graph_documents(

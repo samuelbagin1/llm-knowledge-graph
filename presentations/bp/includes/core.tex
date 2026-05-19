@@ -7,7 +7,14 @@ v uvode obsiahnut problematiku
 
 Znalostné grafy (Knowledge Graphs, KG) predstavujú moderný spôsob reprezentácie a prepájania údajov, ktorý umožňuje strojom chápať vzťahy medzi entitami podobne, ako to robia ľudia. 
 
-Znalostný graf je grafová reprezentácia dát určená na zhromažďovanie a odovzdávanie vedomostí o reálnom svete. Skladá sa z dvoch základných prvkov. Uzly, ktoré predstavujú objekty záujmu (entity) a hrany, ktoré definujú vzťahy medzi týmito entitami~\cite{hogan2021kg}.
+Znalostný graf je grafová reprezentácia dát určená na zhromažďovanie a odovzdávanie vedomostí o reálnom svete. Skladá sa z dvoch základných prvkov. Uzly, ktoré predstavujú objekty záujmu (entity) a hrany, ktoré definujú vzťahy medzi týmito entitami~\cite{hogan2021kg}. Vizuálnu ukážku takejto reprezentácie možno vidieť na obrázku~\ref{fig:kg-ukazka}, kde sú entity zobrazené ako uzly rôznych typov (rozlíšené farbou) a hrany predstavujú vzťahy medzi nimi.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/graf-ukazka.png}
+    \caption[Ukážka znalostného grafu]{Ukážka znalostného grafu vizualizovaného v prostredí Neo4j Browser. Každý uzol reprezentuje entitu konkrétneho typu (napríklad Paragraf, Osoba, Dokument), zatiaľ čo hrany medzi uzlami zachytávajú typované vzťahy. Farba uzla zodpovedá jeho typu, čo umožňuje rýchlu vizuálnu orientáciu v štruktúre grafu.}
+    \label{fig:kg-ukazka}
+\end{figure}
 
 \
 
@@ -247,7 +254,7 @@ Spracovanie je súvislá trojkroková postupnosť: predspracovanie (detekcia roz
         \draw[arr] (ext) -- (db);
     \end{tikzpicture}
     }
-    \caption{Graf popisujúci spracovanie.}
+    \caption[Tok spracovania PDF dokumentu]{Graf popisujúci spracovanie.}
     \label{fig:process}
 \end{figure}
 
@@ -262,10 +269,24 @@ V tomto kroku sa každá strana dokumentu konvertuje na obrázok s rozlíšením
 \subsubsection{Extrakcia tabuliek}
 Každá skupina tabuliek je spracovaná v dvoch krokoch. Prvý krok, OCR schopný GPT 5.4 mini model, prijme postupne po 2 orezaných obrázkoch skupiny spoločne so system promptom, ktorý nariaďuje, aby bol výstup tabuľka v podobe HTML. Tento prompt zakazuje sumarizáciu tabuľky a nariaďuje, aby model zachoval doslovný text bunky.
 
-Druhý krok, výsledný HTML výstup je poskytnutý ďalšiemu LLM volaniu, kde tentokrát má model za úlohu transformovať tabuľku do hierarchickej podoby vrcholov a vzťahov: tabuľka je označená ako koreňový vrchol, a list ako každý riadok tabuľky (uchováva informácie z jednotlivých stĺpcov riadka vo vlastnostiach, kde kľúč je hlavička stĺpca a hodnota je bunka v riadku a stĺpci). Je to cesta, ako zachovať význam tabuľky v znalostnom grafe. Vnútorné strany viac-stranovej tabuľky sú vyradené zo zoznamu strán PDF dokumentu, pre neskoršiu extrakciu, aby sa predišlo duplicitám rovnakej informácie.
+Druhý krok, výsledný HTML výstup je poskytnutý ďalšiemu LLM volaniu, kde tentokrát má model za úlohu transformovať tabuľku do hierarchickej podoby vrcholov a vzťahov: tabuľka je označená ako koreňový vrchol, a list ako každý riadok tabuľky (uchováva informácie z jednotlivých stĺpcov riadka vo vlastnostiach, kde kľúč je hlavička stĺpca a hodnota je bunka v riadku a stĺpci). Je to cesta, ako zachovať význam tabuľky v znalostnom grafe. Vnútorné strany viac-stranovej tabuľky sú vyradené zo zoznamu strán PDF dokumentu, pre neskoršiu extrakciu, aby sa predišlo duplicitám rovnakej informácie. Ukážka výsledku tejto transformácie je zobrazená na obrázku~\ref{fig:tabulky-graf}, kde každá tabuľka v dokumente tvorí samostatný koreňový uzol typu \emph{Tabuľka} s naviazanými listovými uzlami reprezentujúcimi jednotlivé riadky.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{img/tabulky.png}
+    \caption[Výsledok extrakcie tabuliek do grafu]{Výsledok extrakcie tabuliek do znalostného grafu. Centrálne modré uzly predstavujú koreňové uzly typu \emph{Tabuľka}, žlté listové uzly sú jednotlivé riadky tabuľky obsahujúce vlastnosti stĺpcov. V pravom paneli sú zobrazené detaily vybraného uzla vrátane uchovaného HTML obsahu a väzby na zdrojový dokument.}
+    \label{fig:tabulky-graf}
+\end{figure}
 
 \subsubsection{Extrakcia vzorcov}
-Detektor rozloženia okrem tabuliek označí aj izolovaný vzorec a popis vzorca. Každá detekcia vzorca je orezaná z obrázku strany a uložená ako PNG. Tieto obrázky sú následne posielané modelu GPT 5.4 mini, ktorý je system promptom inštruovaný, aby vrátil doslovný LaTeX prepis vzorca bez ďalšieho komentára. Úloha je úzko vymedzená na OCR matematického zápisu a nevyžaduje široké uvažovanie. Výsledné LaTeX reťazce sú pripojené ku grafovým dokumentom ako vlastnosti príslušných uzlov, aby sa zachovali ako strojovo spracovateľný obsah.
+Detektor rozloženia okrem tabuliek označí aj izolovaný vzorec a popis vzorca. Každá detekcia vzorca je orezaná z obrázku strany a uložená ako PNG. Tieto obrázky sú následne posielané modelu GPT 5.4 mini, ktorý je system promptom inštruovaný, aby vrátil doslovný LaTeX prepis vzorca bez ďalšieho komentára. Úloha je úzko vymedzená na OCR matematického zápisu a nevyžaduje široké uvažovanie. Výsledné LaTeX reťazce sú pripojené ku grafovým dokumentom ako vlastnosti príslušných uzlov, aby sa zachovali ako strojovo spracovateľný obsah. Príklad výsledného uzla pre vzorec spolu s naviazaným zdrojovým dokumentom je zobrazený na obrázku~\ref{fig:vzorec-uzol}, kde je v paneli vlastností vidieť uložený doslovný LaTeX prepis, číslo zdrojovej strany a istotu detekcie.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{img/vzorec.png}
+    \caption[Uzol typu Vzorec a jeho vlastnosti]{Uzol typu \emph{Vzorec} extrahovaný zo zákona o dani z pridanej hodnoty a jeho väzba \texttt{IN\_DOCUMENT} na nadradený uzol dokumentu. Vo vlastnostiach uzla sa zachováva LaTeX prepis matematického zápisu, istota detekcie modelom DocLayout-YOLO a metaúdaje o zdroji (číslo strany, identifikátor dokumentu).}
+    \label{fig:vzorec-uzol}
+\end{figure}
 
 \subsection{Trojkroková extrakcia}
 Po dokončení predspracovania, zvyšné strany dokumentu sú rozsekané na chunky textov a spracované cez trojkrokovú extrakciu inšpirovanú výskumami {ODKE+, AutoSchemaKG, EDC}~\cite{odkeplus2025,autoschemakg2025,edc2024}. Táto extrakcia sa skladá z troch postupných krokov: detekcia v otvorenej doméne (open-domain detection, ODD) - objav typov, úprava schémy (schema refinement, SR) - normalizácia, a v poslednom rade je to schémou riadená extrakcia (schema-driven extraction, SDE) - vynútená extrakcia inštancií. Tento tok je zobrazený na obrázku č. \ref{fig:extraction}.
@@ -285,7 +306,7 @@ Po dokončení predspracovania, zvyšné strany dokumentu sú rozsekané na chun
     \draw[arr] (onto) -- (extr);
     \end{tikzpicture}
   }
-\caption{Extrakcia inšpirovaná {ODKE+}~\cite{odkeplus2025}}
+\caption[Trojkroková extrakcia inšpirovaná ODKE+]{Extrakcia inšpirovaná {ODKE+}~\cite{odkeplus2025}}
 \label{fig:extraction}
 \end{figure}
 
@@ -307,6 +328,15 @@ Posledný krok je extrakcia pomocou natvrdo nanútenej upravenej $S^*$ schémy (
 Prompt nariaďuje zopár kvalitatívnych pravidiel. Pravidlo najšpecifickejšieho typu, ak schéma obsahuje aj všeobecnejšie aj špecifickejšie pasujúce typy, použije sa špecifickejší. Pravidlo closest-or-skip, ak v schéme nie je presne pasujúci typ, model použije najbližší existujúci, alebo entitu úplne preskočí (radšej nič ako halucinovaný typ). Vlastnosti len ak sú explicitné, model nesmie vymýšľať vlastnosti uzlov ani vzťahov, môže uložiť iba to, čo je v texte priamo uvedené. A v neposlednom rade, id uzla musí byť označené v neurčitku, rieši sa tým koherentnosť ale aj jednoduchšie zjednocovanie v databáze. Taktiež modelu je ukázaný vzor jedným maximálne dvoma príkladmi, ako by mal výstup vyzerať.
 
 Aby striktné dodržanie schémy $S^*$ neviedlo k strate kontextu, system prompt zavádza špeciálnu konvenciu. Ak je typ vzťahu v $S^*$ príliš všeobecný (napr. MA\_NAROK\_NA), model uloží konkrétne spresnenie do vlastnosti vzťahu pod kľúčom \texttt{evidence} (napr. evidence: vrátenie dane). Týmto sa rieši napätie medzi striktnou schémou a expresivitou textu. Typ vzťahu zostáva normalizovaný a vyhľadateľný v grafe, ale doslovný význam sa zachováva ako stopa pre neskoršie vyhľadávanie. Aby uzol nestratil význam slova normalizáciou ID, tak vo vlastnostiach je mu priradené meno aj s použitím diakritiky.
+
+Konkrétny príklad výsledku schémou riadenej extrakcie medzi dvoma entitami je zobrazený na obrázku~\ref{fig:vztah-medzi-entitami}. Medzi entitami \emph{Platiteľ} a \emph{Rozhodnutie} sú zachytené dva rozdielne typy vzťahov (\texttt{OZNAMUJE} a \texttt{MA\_POVINNOST}) vychádzajúce z toho istého ustanovenia zákona. Vlastnosť \texttt{section} na hrane zároveň udržuje stopu na konkrétny paragraf, odsek a písmeno, z ktorého bol vzťah extrahovaný.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/vztah-medzi-entitami.png}
+    \caption[Vzťahy medzi dvoma extrahovanými entitami]{Ukážka extrahovaných vzťahov medzi dvoma entitami z rovnakého ustanovenia zákona. Medzi uzlami \emph{Platiteľ} a \emph{Rozhodnutie O~\dots} existujú dve typovo odlišné hrany, pričom v paneli detailov je vidieť vlastnosť \texttt{section} odkazujúcu na zdrojový paragraf, odsek a písmeno.}
+    \label{fig:vztah-medzi-entitami}
+\end{figure}
 
 Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešpondujú upravenej schéme $S^*$. Týmto krokom získame GraphDocument $G_i = (V_i,\, E_i,\, src_i)$. Následne ľahká kontrola a opracovanie, znormalizuje id uzlov do title case a pre vzťahy do UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE), a vynechá trojice ktorým chýba zdroj alebo cieľ. Extrahované uzly z chunku sú spojené s uzlom Chunk (alebo Paragraf, Odsek, Písmeno) pomocou vzťahu IN\_CHUNK. Neskôr vďaka týmto vzťahom pri získavaní dát, môžeme získať originálny text, ktorý podporuje dané trojice.
 
@@ -366,7 +396,7 @@ Extrahované grafové dokumenty (GraphDocument) sú vo finálnom kroku vložené
     \draw[arr] (column) -- node[edge label, above]{IN\_TABLE} (table);
   \end{tikzpicture}%
   }
-  \captionof{figure}{Štruktúra znalostného grafu: dokument, obsahové uzly, hierarchia sekcií, entita a listy tabuľky.}
+  \captionof{figure}[Štruktúra znalostného grafu]{Štruktúra znalostného grafu: dokument, obsahové uzly, hierarchia sekcií, entita a listy tabuľky.}
   \label{fig:graph_structure}
   \end{center}
 \end{minipage}%
@@ -375,6 +405,24 @@ Extrahované grafové dokumenty (GraphDocument) sú vo finálnom kroku vložené
 
 
 Po vložení uzlov a hrán sa nad grafom vybudujú tri samostatné vektorové indexy pomocou Neo4jVector: nad textom uzlov Chunk (pre vyhľadanie pôvodného textového kontextu k otázke), nad ID a vlastnosťami entít (pre nájdenie uzemnenej entity v otázke), nad typmi a kontextom vzťahov (pre výber relevantného typu hrany pri iteratívnej traverzácii). Embeddingy sú generované modelom OpenAI text-embedding-3-large. Rozdelenie na tri oddelené indexy umožňuje cielené zrýchlenejšie hybridné vyhľadávanie.
+
+Praktický prejav opísanej hierarchie možno vidieť na obrázku~\ref{fig:paragraf-jeden-skok}, ktorý zobrazuje jeden konkrétny uzol typu \emph{Paragraf} (§~32) so všetkými susednými uzlami dostupnými na jeden skok. Okolo paragrafu sú zoskupené odseky, písmená a chunky, ako aj entity extrahované zo súvisiaceho textu a väzba na dokument. Tento pohľad názorne demonštruje, ako uložená štruktúra umožňuje GraphRAG-u prejsť od paragrafu jediným prechodom hrán ku všetkým podporujúcim faktom.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.65\textwidth]{img/paragraf-uzol-na-jeden-skok.png}
+    \caption[Susedstvo paragrafu na jeden skok]{Výsledok Cypher dotazu nad uzlom \emph{Paragraf §~32} zo zákona o DPH (222/2004 Z.~z.) zobrazujúci všetkých susedov dostupných na jeden skok. Pravý panel sumarizuje rozloženie typov uzlov (Chunk, Odsek, Písmeno, Paragraf, Podmienka, Pravnypredpis, Sluzba, Tovar) a typov hrán (\texttt{IN\_DOCUMENT}, \texttt{IN\_SECTION}, \texttt{OBSAHUJE}, \texttt{ODKAZUJE\_NA}, \texttt{JE\_OSLOBODENE\_OD\_DANE}, \texttt{VZTAHUJE\_SA\_NA}).}
+    \label{fig:paragraf-jeden-skok}
+\end{figure}
+
+Pri agregácii cez stovky chunkov a desiatky paragrafov vzniká hustá sieť entít a vzťahov pokrývajúca celý dokument. Výsledný znalostný graf po vložení testovacieho zákona o DPH je vizualizovaný na obrázku~\ref{fig:kg-vysledok}, kde je vidieť celkové rozloženie typov uzlov, dominantné zhluky (chunky, písmená, paragrafy) a okrajové menej zastúpené typy.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.65\textwidth]{img/graf-ukazka1.png}
+    \caption[Celkový pohľad na výsledný znalostný graf]{Celkový pohľad na výsledný znalostný graf vybudovaný zo zákona o DPH obmedzený na 1000 uzlov.}
+    \label{fig:kg-vysledok}
+\end{figure}
 
 
 \section{Implementácia}
@@ -618,7 +666,7 @@ Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priem
 \hline
 \end{tabular}%
 }
-\caption{Súhrnné výsledky evaluácie extrakcie informácií pre jednotlivé modely a režimy promptovania na testovacej množine. Stĺpec F1$_\mu$ udáva mikro-priemerované F1 skóre (z celkových TP/FP/FN, uvoľnené párovanie vrátane jazykového sudcu), F1$_M$ makro-priemerované striktné F1 skóre (priemer cez segmenty pri čistom prieniku znormalizovaných identifikátorov). Stĺpce H a O označujú podiel halucinácií a opomenutí, GED je makro-priemer normalizovanej grafovej editovacej vzdialenosti.}
+\caption[Súhrnné výsledky evaluácie extrakcie]{Súhrnné výsledky evaluácie extrakcie informácií pre jednotlivé modely a režimy promptovania na testovacej množine. Stĺpec F1$_\mu$ udáva mikro-priemerované F1 skóre (z celkových TP/FP/FN, uvoľnené párovanie vrátane jazykového sudcu), F1$_M$ makro-priemerované striktné F1 skóre (priemer cez segmenty pri čistom prieniku znormalizovaných identifikátorov). Stĺpce H a O označujú podiel halucinácií a opomenutí, GED je makro-priemer normalizovanej grafovej editovacej vzdialenosti.}
 \label{tab:extraction-evaluation}
 \shorthandon{-}
 \end{table}
@@ -641,7 +689,7 @@ Testovacia množina obsahuje 20 otázok pripravených daňovým audítorom. Vše
 
 \begin{table}[h]
 \centering
-\caption{Úspešnosť jednotlivých prístupov pri nájdení podporujúcich faktov na testovacej množine 20 otázok.}
+\caption[Úspešnosť prístupov pri nájdení podporujúcich faktov]{Úspešnosť jednotlivých prístupov pri nájdení podporujúcich faktov na testovacej množine 20 otázok.}
 \label{tab:retrieval-success}
 \begin{tabular}{lcc}
 \toprule

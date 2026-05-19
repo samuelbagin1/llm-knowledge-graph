@@ -183,6 +183,7 @@ def table_to_json(
     data: List[GraphDocument],
     output_dir: str = DEFAULT_OUTPUT_DIR,
     name: str = "",
+    timestamp: Optional[str] = None,
 ) -> Optional[str]:
     """Serialize per-table-group GraphDocuments produced by transform_html_to_graph_document."""
     os.makedirs(output_dir, exist_ok=True)
@@ -210,7 +211,9 @@ def table_to_json(
     if skipped:
         print(f"[table_to_json] skipped {skipped} malformed/None entries")
 
-    filename = f"{name}_tables_{_timestamp()}.json"
+    ts = timestamp or _timestamp()
+    prefix = f"{name}_" if name else ""
+    filename = f"{prefix}tables_graph_doc_{ts}.json"
     path = os.path.join(output_dir, filename)
     return _safe_dump(output, path)
 
@@ -219,6 +222,7 @@ def formula_to_json(
     data: Optional[GraphDocument],
     output_dir: str = DEFAULT_OUTPUT_DIR,
     name: str = "",
+    timestamp: Optional[str] = None,
 ) -> Optional[str]:
     """Serialize the single formulas GraphDocument produced by convert_formulas_to_graph."""
     os.makedirs(output_dir, exist_ok=True)
@@ -237,7 +241,9 @@ def formula_to_json(
             print(f"[formula_to_json] malformed GraphDocument, writing empty payload: {e}")
             output = {"document_id": None, "nodes": [], "relationships": []}
 
-    filename = f"{name}_formulas_{_timestamp()}.json"
+    ts = timestamp or _timestamp()
+    prefix = f"{name}_" if name else ""
+    filename = f"{prefix}formula_graph_doc_{ts}.json"
     path = os.path.join(output_dir, filename)
     return _safe_dump(output, path)
 

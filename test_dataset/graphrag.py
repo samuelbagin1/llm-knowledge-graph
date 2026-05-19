@@ -2,12 +2,10 @@
 Q&A GraphRAG evaluation against the Slovak VAT-law knowledge graph.
 
 Pipeline per question:
-    1. Retrieval: a local Codex custom agent (.codex/agents/kg-graphrag-retriever.toml)
-       is invoked via `codex exec`. It uses its sandboxed shell to call
-       test_dataset/cypher_query.py with successive Cypher queries, reads each
-       result, and returns one JSON object with supporting_sections + entity_ids.
+    1. Retrieval agent (gpt-5-mini, tool: search_database) writes Cypher,
+       finds supporting Paragraf/Odsek/Pismeno nodes via entity anchoring.
     2. aggregate_section_text() flattens the hierarchy into a context string.
-    3. Answer agent (ChatOpenAI) reads the aggregated text + entities and
+    3. Answer agent (gpt-5-mini) reads the aggregated text + entities and
        produces a natural-language answer.
     4. Result is appended incrementally to q&a_graphrag_validation.json.
 
@@ -16,10 +14,7 @@ Neo4j database: zz-2004-222 (credentials in .env).
 
 import os
 import json
-import subprocess
-import tempfile
 import time
-import tomllib
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
@@ -27,6 +22,9 @@ from typing import Any, Dict, List
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
 from langchain_openai import ChatOpenAI
+from langchain.tools import tool
+from langchain.agents import create_agent
+from langchain.agents.structured_output import ProviderStrategy
 
 
 load_dotenv()
@@ -34,25 +32,8 @@ load_dotenv()
 MODEL_NAME = "gpt-5.5"
 DATABASE_NAME = "zz-2004-222"
 
-# Codex retrieval agent — see .codex/agents/kg-graphrag-retriever.toml
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-CODEX_AGENT_NAME = "kg-graphrag-retriever"
-CODEX_AGENT_PATH = PROJECT_ROOT / ".codex" / "agents" / f"{CODEX_AGENT_NAME}.toml"
-CODEX_BIN = os.getenv(
-    "CODEX_BIN",
-    "/Users/samuelbagin/.vscode/extensions/openai.chatgpt-26.506.31421-darwin-arm64/bin/macos-aarch64/codex",
-)
-CODEX_MODEL = "gpt-5.5"
-CODEX_REASONING_EFFORT = "high"
-CODEX_TIMEOUT_SECONDS = 900
-
 QA_INPUT_PATH = Path(__file__).parent / "q&a.json"
 QA_OUTPUT_PATH = Path(__file__).parent / "q&a_graphrag_validation.json"
-
-# Resume control: skip every question whose `id` is below this value.
-# Items with id < START_FROM_ID are preserved from the existing output file
-# (if present) so prior runs are not lost. Set to 1 for a full fresh run.
-START_FROM_ID = 20
 
 # Structural nodes are excluded from `found_entities` (they go in found_sections).
 STRUCTURAL_LABELS = {"Paragraf", "Odsek", "Pismeno", "Bod", "Priloha"}
@@ -123,131 +104,181 @@ def get_schema_overview(driver) -> str:
 
 
 # --------------------------------------------------------------------------- #
-# Retrieval agent: question -> Codex (shell -> cypher_query.py) -> sections
+# Retrieval agent: question -> Cypher -> supporting structural nodes
 # --------------------------------------------------------------------------- #
 
+RETRIEVAL_SYSTEM_PROMPT = """You are a Neo4j Cypher expert querying a knowledge graph of the Slovak VAT Act (zákon č. 222/2004 Z. z.).
 
-def _load_codex_agent_instructions(path: Path = CODEX_AGENT_PATH) -> str:
-    with path.open("rb") as handle:
-        data = tomllib.load(handle)
-    return str(data.get("developer_instructions") or "")
+Schema:
+  * Structural nodes — Paragraf, Odsek, Pismeno, Bod — form the hierarchy of the law.
+    Linked top-down by OBSAHUJE: (Paragraf)-[:OBSAHUJE]->(Odsek)-[:OBSAHUJE]->(Pismeno)-[:OBSAHUJE]->(Bod).
+    Properties on every structural node:
+      - `id`   e.g. "Paragraf § 4 Odsek 1 Pismeno f)"
+      - `path` e.g. ["§ 4", "1", "f)"]
+      - `text` the verbatim Slovak law text — THIS is what you read to verify relevance.
+  * Domain entities — Subjekt, Osoba, Dan, Sluzba, Tovar, Lehota, Obrat, Suma, Podmienka, Povinnost, Pravo, Registracia, Oznamenie, Ziadost, Nehnutelnost, Vozidlo, etc.
+  * Positive verb relations: UPRAVUJE, DEFINUJE, VZTAHUJE_SA_NA, MA_PODMIENKU, MA_LEHOTU, MA_SUMU,
+        JE_PREDMETOM_DANE, PODLIEHA, MA_POVINNOST, MA_PRAVO, MA_NAROK_NA, SPLNA_PODMIENKY, OBSAHUJE.
+  * NEGATIVE / EXCLUSIONARY relations — equally important for completeness:
+        NEVZTAHUJE_SA_NA, NESPLNA_PODMIENKY, NEMA_NAROK_NA, NIE_JE_PREDMETOM_DANE, OSLOBODZUJE_OD,
+        ZANIKA, RUSI. These mark clauses that EXCLUDE or EXEMPT — you MUST also retrieve them
+        when they are relevant to the question.
+  * Cross-references: ODKAZUJE_NA links one section to another it cites.
 
+Your job: given a question, run MANY Cypher queries to gather a thorough set of Paragraf/Odsek/Pismeno
+nodes (with their `text`), positive AND negative provisions, plus all involved domain entities.
+Be exhaustive, not minimal. Then read the `text` of each candidate and KEEP ONLY those whose text
+actually supports, contradicts, qualifies, or excludes some aspect of the question.
 
-def _iter_json_candidates(text: str) -> List[str]:
-    """Pull JSON object candidates out of raw codex output (handles ``` fences)."""
-    candidates: List[str] = []
-    fence = "```"
-    start = 0
-    while True:
-        fence_start = text.find(fence, start)
-        if fence_start == -1:
-            break
-        content_start = text.find("\n", fence_start + len(fence))
-        if content_start == -1:
-            break
-        fence_end = text.find(fence, content_start + 1)
-        if fence_end == -1:
-            break
-        candidates.append(text[content_start + 1 : fence_end].strip())
-        start = fence_end + len(fence)
+Search strategy — perform these steps in order, multiple tool calls each:
 
-    first = text.find("{")
-    last = text.rfind("}")
-    if first != -1 and last != -1 and first < last:
-        candidates.append(text[first : last + 1])
-    return candidates
+  STEP 1. Decompose the question into 3–6 distinct domain concepts (e.g. "obrat", "registrácia",
+          "platiteľ", "lehota oznámenia", "oslobodenie", "call-off stock", "reverse charge").
 
+  STEP 2. For EACH concept, find candidate entity nodes (case-insensitive):
+            MATCH (n) WHERE toLower(n.id) CONTAINS toLower('obrat')
+            RETURN n.id, labels(n)[0] AS label LIMIT 25
+          Also try synonyms / morphological variants: registr, oslobod, platit, lehot, sumy.
 
-def _parse_codex_json(output: str) -> Dict[str, Any]:
-    stripped = output.strip()
-    if not stripped:
-        raise ValueError("codex returned empty output")
-    try:
-        result = json.loads(stripped)
-        if isinstance(result, dict):
-            return result
-    except json.JSONDecodeError:
-        pass
-    for candidate in _iter_json_candidates(stripped):
-        try:
-            result = json.loads(candidate)
-            if isinstance(result, dict):
-                return result
-        except json.JSONDecodeError:
-            continue
-    raise ValueError(f"could not parse JSON object from codex output: {stripped[:500]}")
+  STEP 3. From each entity, traverse to structural nodes BOTH directions, ALL relevant rel types
+          including negations:
+            MATCH (e {id: 'Obrat'})-[r]-(s)
+            WHERE (s:Paragraf OR s:Odsek OR s:Pismeno OR s:Bod)
+              AND type(r) IN ['UPRAVUJE','DEFINUJE','VZTAHUJE_SA_NA','MA_PODMIENKU','MA_LEHOTU',
+                              'MA_SUMU','JE_PREDMETOM_DANE','PODLIEHA','OSLOBODZUJE_OD',
+                              'NEVZTAHUJE_SA_NA','NESPLNA_PODMIENKY','NIE_JE_PREDMETOM_DANE',
+                              'NEMA_NAROK_NA','ODKAZUJE_NA','SUVISI_S']
+            RETURN DISTINCT s.id, labels(s)[0] AS label, type(r) AS rel LIMIT 50
 
+  STEP 4. GO DEEPER — 2-hop entity chains often reveal related provisions:
+            MATCH (e1 {id:'Obrat'})-[*1..2]-(s)
+            WHERE (s:Paragraf OR s:Odsek OR s:Pismeno) RETURN DISTINCT s.id, labels(s)[0] LIMIT 50
+          Also expand to SIBLINGS within the same Paragraf:
+            MATCH (par:Paragraf {id:'Paragraf § 4'})-[:OBSAHUJE*1..3]->(sib)
+            RETURN sib.id, labels(sib)[0] LIMIT 50
+          And follow ODKAZUJE_NA cross-references between sections.
 
-def _build_codex_prompt(question: str, schema_overview: str, agent_instructions: str) -> str:
-    return f"""You are executing the local Codex custom agent definition from {CODEX_AGENT_PATH}.
+  STEP 5. Fetch text + parent for every candidate:
+            UNWIND $ids AS sid
+            MATCH (s {id: sid})
+            OPTIONAL MATCH (par:Paragraf)-[:OBSAHUJE*1..3]->(s)
+            RETURN s.id AS id, labels(s)[0] AS label, s.text AS text, par.id AS parent_id
+          (You can pass a list via parameters or repeat single-id MATCHes.)
 
-Agent name: {CODEX_AGENT_NAME}
+  STEP 6. VERIFY by reading the `text`. For each candidate ask yourself:
+            - Does this text say something the question asks about?
+            - Does it state a condition, threshold, exception, or exclusion relevant to the question?
+            - Or is it just incidentally connected via a shared entity but off-topic?
+          KEEP sections whose text directly bears on the question (supporting OR excluding).
+          DROP sections whose text is unrelated even if they share an entity link.
 
-# SYSTEM INSTRUCTIONS
-{agent_instructions}
-
-# GRAPH SCHEMA OVERVIEW (live, from db.labels()/db.relationshipTypes())
-{schema_overview}
-
-# QUESTION (Slovak)
-{question}
-
-Run an EXHAUSTIVE search via the shell tool — call
-`python test_dataset/cypher_query.py "<cypher>"` repeatedly. Decompose the
-question, traverse positive AND negative relations, fetch text, then verify
-by reading each candidate's text before keeping it.
-
-Return ONLY one JSON object matching the schema in the system instructions.
-No prose, no fences.
+Quality bar:
+  * Aim for 5–15 verified sections covering ALL aspects (conditions, thresholds, deadlines,
+    exclusions, exceptions, cross-references) — not just the most obvious one.
+  * If the question implies a negative scenario ("nie je", "neuplatňuje sa", "oslobodenie"),
+    you MUST search for and include the relevant exclusion/exemption clauses.
+  * Every returned section must have its real `text` populated. No empty texts unless the
+    DB truly has none.
+  * Every section id and every text snippet must come from a real search_database call.
+    Never invent ids, never paraphrase the text.
 """
 
 
+RETRIEVAL_RESPONSE_SCHEMA = {
+    "title": "RetrievalResult",
+    "type": "object",
+    "properties": {
+        "supporting_sections": {
+            "type": "array",
+            "description": "Verified Paragraf/Odsek/Pismeno/Bod nodes — each one's text was read and confirmed to bear on the question (supporting, conditioning, or excluding).",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string", "description": "Node id verbatim from DB."},
+                    "label": {"type": "string", "description": "Paragraf, Odsek, Pismeno, or Bod."},
+                    "text": {"type": "string", "description": "Verbatim law text from n.text."},
+                    "parent_id": {"type": "string", "description": "Containing Paragraf id, or '' if none."},
+                    "role": {
+                        "type": "string",
+                        "enum": ["supports", "conditions", "excludes", "defines", "cross_reference"],
+                        "description": "How this section relates to the question.",
+                    },
+                    "relevance": {
+                        "type": "string",
+                        "description": "One short sentence on why this section is in the result — what aspect of the question its text covers.",
+                    },
+                },
+                "required": ["id", "label", "text", "role", "relevance"],
+            },
+        },
+        "entity_ids": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "IDs of non-structural domain entities encountered (Dan, Subjekt, Lehota, ...).",
+        },
+        "reasoning": {
+            "type": "string",
+            "description": "Concise log: decomposed concepts, Cypher paths explored, how many candidates were dropped after reading text.",
+        },
+    },
+    "required": ["supporting_sections", "entity_ids", "reasoning"],
+}
+
+
+def build_search_tool(driver):
+    """Return a LangChain tool that runs Cypher against the configured database."""
+
+    @tool
+    def search_database(cypher_query: str) -> str:
+        """Execute a read-only Cypher query against the VAT-law Neo4j database.
+
+        Args:
+            cypher_query: Any valid read-only Cypher. Always include a LIMIT.
+
+        Returns:
+            JSON string of result records, or an error message.
+        """
+        try:
+            with driver.session(database=DATABASE_NAME) as session:
+                records = [dict(r) for r in session.run(cypher_query)]
+            serialized = [
+                {k: _serialize_value(v) for k, v in rec.items()} for rec in records
+            ]
+            return json.dumps(serialized, ensure_ascii=False, default=str)[:8000]
+        except Exception as exc:
+            return f"Query error: {exc}"
+
+    return search_database
+
+
 def retrieve_supporting_sections(
-    question: str, schema_overview: str, agent_instructions: str
+    driver, llm: ChatOpenAI, question: str, schema_overview: str
 ) -> Dict[str, Any]:
-    """Drive the Codex retrieval agent and parse its final JSON output."""
-    prompt = _build_codex_prompt(question, schema_overview, agent_instructions)
+    """Run the retrieval agent. Returns dict with section_ids, entity_ids, reasoning."""
+    search_tool = build_search_tool(driver)
 
-    with tempfile.NamedTemporaryFile(
-        mode="w+", encoding="utf-8", suffix=".json", delete=True
-    ) as output_file:
-        command = [
-            CODEX_BIN,
-            "exec",
-            "--cd",
-            str(PROJECT_ROOT),
-            "--sandbox",
-            "workspace-write",
-            "--output-last-message",
-            output_file.name,
-            "--model",
-            CODEX_MODEL,
-            "--config",
-            f'model_reasoning_effort="{CODEX_REASONING_EFFORT}"',
-            prompt,
-        ]
-        completed = subprocess.run(
-            command,
-            capture_output=True,
-            text=True,
-            timeout=CODEX_TIMEOUT_SECONDS,
-            check=False,
-        )
-        if completed.returncode != 0:
-            stderr = completed.stderr.strip()
-            stdout = completed.stdout.strip()
-            raise RuntimeError(
-                f"codex exited with {completed.returncode}: {stderr or stdout}"
-            )
+    user_prompt = f"""Question (Slovak): {question}
 
-        output_file.seek(0)
-        final_message = output_file.read().strip()
-        payload = _parse_codex_json(final_message or completed.stdout)
+Graph schema overview:
+{schema_overview}
 
-    payload.setdefault("supporting_sections", [])
-    payload.setdefault("entity_ids", [])
-    payload.setdefault("reasoning", "")
-    return payload
+Run an EXHAUSTIVE search:
+  1. Decompose the question into all distinct concepts (incl. negations: "nie je", "neuplatňuje", "oslobodenie", "výnimka").
+  2. For each concept, find entities, traverse 1–2 hops, AND look at sibling Pismeno within the same Paragraf and ODKAZUJE_NA cross-references.
+  3. Pull text for every candidate; READ each text and KEEP only those whose text actually addresses some aspect of the question — supporting, conditioning, or excluding.
+  4. If the question involves exemptions/exclusions, include the explicit NEVZTAHUJE_SA_NA / NIE_JE_PREDMETOM_DANE / OSLOBODZUJE_OD / NEMA_NAROK_NA / NESPLNA_PODMIENKY clauses.
+  5. Aim for 5–15 verified sections, each with `role` and a one-sentence `relevance` justification.
+
+Begin now."""
+
+    agent = create_agent(
+        model=llm,
+        tools=[search_tool],
+        system_prompt=RETRIEVAL_SYSTEM_PROMPT,
+        response_format=ProviderStrategy(schema=RETRIEVAL_RESPONSE_SCHEMA),  # type: ignore[arg-type]
+    )
+    response = agent.invoke({"messages": [{"role": "user", "content": user_prompt}]})
+    return response["structured_response"]
 
 
 # --------------------------------------------------------------------------- #
@@ -357,42 +388,20 @@ def main() -> None:
 
     try:
         schema_overview = get_schema_overview(driver)
-        agent_instructions = _load_codex_agent_instructions()
-        print(f"Schema loaded from database {DATABASE_NAME}.")
-        print(f"Codex agent loaded from {CODEX_AGENT_PATH.name}.\n")
+        print(f"Schema loaded from database {DATABASE_NAME}.\n")
 
-        all_questions = json.loads(QA_INPUT_PATH.read_text(encoding="utf-8"))
-
-        # Resume: preserve previously-completed records (id < START_FROM_ID)
-        # from the existing output file, and only run the remaining questions.
+        questions = json.loads(QA_INPUT_PATH.read_text(encoding="utf-8"))
         results: List[Dict[str, Any]] = []
-        if START_FROM_ID > 1 and QA_OUTPUT_PATH.exists():
-            try:
-                prior = json.loads(QA_OUTPUT_PATH.read_text(encoding="utf-8"))
-                results = [r for r in prior if r.get("id", 0) < START_FROM_ID]
-                print(
-                    f"Resuming from id={START_FROM_ID}; "
-                    f"kept {len(results)} prior record(s) from {QA_OUTPUT_PATH.name}."
-                )
-            except Exception as exc:
-                print(f"Could not read prior output ({exc}); starting fresh.")
-                results = []
-        QA_OUTPUT_PATH.write_text(
-            json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
-
-        questions = [q for q in all_questions if q.get("id", 0) >= START_FROM_ID]
-        total = len(questions)
+        QA_OUTPUT_PATH.write_text("[]", encoding="utf-8")  # fresh start each run
 
         for idx, item in enumerate(questions, start=1):
-            qid = item.get("id")
             question = item["otazka"]
-            print(f"\n[{idx}/{total}] id={qid}  {question[:120]}...")
+            print(f"\n[{idx}/{len(questions)}] {question[:120]}...")
             t0 = time.time()
 
             try:
                 retrieval = retrieve_supporting_sections(
-                    question, schema_overview, agent_instructions
+                    driver, llm, question, schema_overview
                 )
                 sections = retrieval.get("supporting_sections", []) or []
                 entity_ids_raw = retrieval.get("entity_ids", []) or []
@@ -421,7 +430,6 @@ def main() -> None:
                 answer = generate_answer(llm, question, context_text, found_entities)
 
                 result = {
-                    "id": qid,
                     "question": question,
                     "supporting_sections": {
                         "podporujuce_strany": item.get("podporujuce_strany", []),
@@ -437,7 +445,6 @@ def main() -> None:
 
             except Exception as exc:
                 result = {
-                    "id": qid,
                     "question": question,
                     "supporting_sections": {
                         "podporujuce_strany": item.get("podporujuce_strany", []),

@@ -256,7 +256,19 @@ Spracovanie je súvislá trojkroková postupnosť: predspracovanie (detekcia roz
     \label{fig:process}
 \end{figure}
 
+Detailnejší pohľad na samotnú postupnosť volaní medzi komponentmi je zobrazený na sekvenčnom diagrame (obr.~\ref{fig:sequence}). % chktex 36
+Vstupom celého toku je metóda \texttt{process(input\_path)} volaná z klientskeho kódu, ktorá orchestruje sedem účastníkov: hlavný komponent \texttt{PDFGraphRAG}, načítavač \texttt{PDFGraphLoader}, samostatný extraktor tabuliek a vzorcov \texttt{TablesFormulas}, textový deliteľ \texttt{TextSplitter}, jazykový model \texttt{LLM}, chunkovací komponent \texttt{Chunker} a grafovú databázu Neo4j.
 
+Diagram zachytáva tri logické fázy. V predspracovaní loader vráti text dokumentu, ktorý sa paralelne pošle do \texttt{TablesFormulas} na extrakciu tabuliek a vzorcov; výsledné dokumenty sa zlúčia a uložia ako prvý balík uzlov. Blok \texttt{alt} pred chunkovaním overuje, či dokument už nie je v databáze, čím sa zabráni opakovanému spracovaniu pri vývoji a ladení. Druhá fáza je asynchrónny cyklus nad chunkami, ktorý vykonáva objav typov entít a vzťahov v otvorenej doméne (ODD), priebežne zjednocuje schému a po skončení cyklu pošle zjednotenú ontológiu do tretej fázy. Posledný cyklus, opäť asynchrónny a per-chunk, realizuje schémou riadenú extrakciu (SDE) a každý výsledný podgraf inkrementálne pridáva do Neo4j. Tok uzatvára volanie \texttt{create\_vector\_index}, ktoré nad uloženými uzlami, chunkami a vzťahmi vybuduje tri vektorové indexy potrebné pre neskoršie hybridné vyhľadávanie.
+
+Asynchrónnosť oboch cyklov je v diagrame zámerná, lebo extrakčné volania na LLM tvoria najdrahšiu časť celej pipeline z hľadiska času aj nákladov, a ich paralelizácia výrazne skracuje celkové trvanie spracovania. Naopak, samotný zápis do Neo4j prebieha sekvenčne, aby sa pri konkurenčnom \texttt{MERGE} nad rovnakým normalizovaným ID nevytvárali duplicitné uzly.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{img/sequence-process_drawio.png}
+    \caption[Sekvenčný diagram spracovania PDF dokumentu]{Sekvenčný diagram spracovania PDF dokumentu s asynchrónnymi cyklami pre ODD a SDE.}
+    \label{fig:sequence}
+\end{figure}
 
 \subsection{Predspracovanie}
 Čisté spracovanie PDF dokumentu nie je dostačujúce pre legislatívne dokumenty obsahujúce tabuľky, ktoré sú nositeľmi dôležitých, opisných a rozvíjajúcich vlastností. Dokonca sa táto tabuľka rozkladá na viacero strán. Pri čítaní tabuľky, ako reťazca by sa tieto informácie roztrúsili a zničil by sa kontext celej tabuľky. Vzorce sa taktiež vyskytúju naprieč dokumentom a v PDF dokumente su uchované ako obrázky - nástroj na čítanie textu z dokumentu by tento obrázok nerozpoznal a nenašiel.
@@ -719,4 +731,4 @@ Pre extrakciu som zvolil GPT 5.4 mini, ktorý má rozumnú cenu, nízku latenciu
 
 Silnejšie modely ako GPT-5.5-Pro, Opus 4.7 alebo Gemini 3 Pro by kvalitu extrakcie pravdepodobne zlepšili, ich cena však pri väčšom objeme dát narastá rovnako rýchlo. Pri rozsiahlejšom spracovaní preto má zmysel uvažovať o lokálnych modeloch ako Llama alebo Mistral. Po počiatočnej investícii do hardvéru, ktorá sa pohybuje rádovo v tisícoch eur, už nevznikajú náklady za každý ďalší dokument, takže pri dlhodobom použití sa takáto investícia môže vrátiť.
 
-Priestor na zlepšenie však nie je len vo voľbe modelu. Kvalitu extrakcie by zvýšil validačný krok, ktorý by kontroloval konzistentnosť entít a vzťahov, ďalej väčší testovací dataset s ručne anotovanými dokumentmi a fine-tuning modelu na konkrétnej právnej doméne. Zaujímavou alternatívou je použiť LLM iba na vygenerovanie trénovacích dát a následne natrénovať menší špecializovaný model, napríklad BERT. Takýto model by potom dokázal extrakciu vykonávať lokálne a podstatne lacnejšie, čím by sa obišlo aj prvotne spomenuté cenové obmedzenie.
+Priestor na zlepšenie však nie je len vo voľbe modelu. Kvalitu extrakcie by zvýšil validačný krok, ktorý by kontroloval konzistentnosť entít a vzťahov, ďalej väčší testovací dataset s ručne anotovanými dokumentmi a fine-tuning modelu na konkrétnej právnej doméne.

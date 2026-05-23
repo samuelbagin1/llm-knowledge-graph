@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" agent="Mozilla/5.0" version="29.0.3">
+  <diagram name="Process" id="processSeqDiagram">
+    <mxGraphModel dx="2041" dy="1178" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="frame" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=140;height=30;" value="&lt;b&gt;sd&lt;/b&gt; process" vertex="1">
+          <mxGeometry x="30" y="40" width="1340" height="1600" as="geometry" />
+        </mxCell>
+
+        <!-- ============== LIFELINES (named:ClassName per UML 2.5) ============== -->
+        <mxCell id="ll_client" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="client:Klient" vertex="1">
+          <mxGeometry x="60" y="90" width="120" height="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_pgr" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="pgr:PDFGraphRAG" vertex="1">
+          <mxGeometry x="220" y="90" width="140" height="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_loader" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="loader:PyPDFLoader" vertex="1">
+          <mxGeometry x="400" y="90" width="130" height="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_tf" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="tf:TablesFormulas" vertex="1">
+          <mxGeometry x="570" y="90" width="130" height="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_splitter" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="splitter:TextSplitter" vertex="1">
+          <mxGeometry x="740" y="90" width="120" height="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_llm" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="llm:LLM" vertex="1">
+          <mxGeometry x="900" y="90" width="100" height="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_chunker" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="chunker:Chunker" vertex="1">
+          <mxGeometry x="1040" y="90" width="120" height="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_neo4j" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="graph:Neo4j" vertex="1">
+          <mxGeometry x="1200" y="90" width="140" height="1540" as="geometry" />
+        </mxCell>
+
+        <!-- Execution specification on pgr (whole process) -->
+        <mxCell id="act_pgr" parent="ll_pgr" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="65" y="110" width="10" height="1380" as="geometry" />
+        </mxCell>
+
+        <!-- ============== 1. process() - synchronous call (filled arrow) ============== -->
+        <mxCell id="e1" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="210" as="sourcePoint" />
+            <mxPoint x="290" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1l" connectable="0" parent="e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1: process(pdf_path)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 2. load_pdf - synchronous call ============== -->
+        <mxCell id="e2" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="260" as="sourcePoint" />
+            <mxPoint x="460" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2l" connectable="0" parent="e2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.1: load_pdf(pdf_path)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_loader" parent="ll_loader" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="60" y="160" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- reply: dashed line, open arrow -->
+        <mxCell id="e3" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="300" as="sourcePoint" />
+            <mxPoint x="295" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3l" connectable="0" parent="e3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="documents" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 3. tables_and_formulas - synchronous call ============== -->
+        <mxCell id="e4" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="350" as="sourcePoint" />
+            <mxPoint x="630" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4l" connectable="0" parent="e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.2: tables_and_formulas(pdf_path, documents)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_tf" parent="ll_tf" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="60" y="250" width="10" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e5" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="400" as="sourcePoint" />
+            <mxPoint x="295" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5l" connectable="0" parent="e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="table_graph_docs, formula_graph_doc" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 4. opt - add_graph_documents (tables/formulas) ============== -->
+        <mxCell id="frag1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=80;height=24;fontSize=10;" value="&lt;b&gt;opt&lt;/b&gt;" vertex="1">
+          <mxGeometry x="210" y="430" width="1080" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="frag1lbl" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" value="[tabuľky alebo vzorce existujú]" vertex="1">
+          <mxGeometry x="290" y="432" width="260" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e6" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="475" as="sourcePoint" />
+            <mxPoint x="1260" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6l" connectable="0" parent="e6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.3: add_graph_documents(table_graph_docs + formula_graph_doc)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_neo4j_1" parent="ll_neo4j" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="65" y="375" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e7" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1260" y="510" as="sourcePoint" />
+            <mxPoint x="295" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 5. split_documents (ODD chunking) ============== -->
+        <mxCell id="e8" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="560" as="sourcePoint" />
+            <mxPoint x="800" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8l" connectable="0" parent="e8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.4: split_documents(documents, chunk_size=1200)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_split_1" parent="ll_splitter" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="55" y="460" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e9" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="600" as="sourcePoint" />
+            <mxPoint x="295" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9l" connectable="0" parent="e9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="chunked_documents" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 6. ODD loop - async parallel ============== -->
+        <mxCell id="frag_loop_odd" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=80;height=24;fontSize=10;" value="&lt;b&gt;loop&lt;/b&gt;" vertex="1">
+          <mxGeometry x="210" y="630" width="800" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="frag_loop_odd_lbl" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" value="[pre každý chunk - async ODD]" vertex="1">
+          <mxGeometry x="290" y="632" width="260" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- async call = stick arrow (open, solid line) per UML 2.5 -->
+        <mxCell id="e10" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;endSize=12;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="675" as="sourcePoint" />
+            <mxPoint x="950" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10l" connectable="0" parent="e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.5: async_open_domain_detection(chunk)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_llm_1" parent="ll_llm" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="50" y="575" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e11" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="715" as="sourcePoint" />
+            <mxPoint x="295" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11l" connectable="0" parent="e11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="schema" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 7. schema_refinement - synchronous self-call wrapper via LLM ============== -->
+        <mxCell id="e14" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="775" as="sourcePoint" />
+            <mxPoint x="950" y="775" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14l" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.6: schema_refinement(odd_schema, existing_schema)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_llm_2" parent="ll_llm" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="50" y="675" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e15" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="815" as="sourcePoint" />
+            <mxPoint x="295" y="815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15l" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="refined_schema" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 8. Chunker.split_document ============== -->
+        <mxCell id="e16" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="870" as="sourcePoint" />
+            <mxPoint x="1100" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16l" connectable="0" parent="e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.7: split_document(pdf_path)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_chunker" parent="ll_chunker" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="55" y="770" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e17" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1100" y="910" as="sourcePoint" />
+            <mxPoint x="295" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17l" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="structured_chunks, tree_graph" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 9. add tree_graph ============== -->
+        <mxCell id="e18" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="955" as="sourcePoint" />
+            <mxPoint x="1260" y="955" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18l" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.8: add_graph_documents([tree_graph])" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_neo4j_3" parent="ll_neo4j" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="65" y="855" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e19" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1260" y="990" as="sourcePoint" />
+            <mxPoint x="295" y="990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 10. trailing chunks ============== -->
+        <mxCell id="e20" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="1030" as="sourcePoint" />
+            <mxPoint x="800" y="1030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20l" connectable="0" parent="e20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.9: split_documents(documents[last_page:], chunk_size=1500)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_split_2" parent="ll_splitter" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="55" y="930" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e21" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="1070" as="sourcePoint" />
+            <mxPoint x="295" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21l" connectable="0" parent="e21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="trailing_chunks" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 11. SDE loop - async ============== -->
+        <mxCell id="frag_loop_sde" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=80;height=24;fontSize=10;" value="&lt;b&gt;loop&lt;/b&gt;" vertex="1">
+          <mxGeometry x="210" y="1100" width="800" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="frag_loop_sde_lbl" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" value="[pre každý chunk - async SDE]" vertex="1">
+          <mxGeometry x="290" y="1102" width="260" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e22" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;endSize=12;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="1145" as="sourcePoint" />
+            <mxPoint x="950" y="1145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22l" connectable="0" parent="e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.10: async_schema_driven_extraction(chunk, refined_schema)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_llm_3" parent="ll_llm" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="50" y="1045" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e23" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="1185" as="sourcePoint" />
+            <mxPoint x="295" y="1185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23l" connectable="0" parent="e23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="GraphDocument" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 12. self-message: _add_document_chunk ============== -->
+        <!-- Self-call: arrow from pgr back to pgr, slightly lower -->
+        <mxCell id="e_self" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" source="" target="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="1235" as="sourcePoint" />
+            <mxPoint x="380" y="1235" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="1235" />
+              <mxPoint x="380" y="1260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_self_l" connectable="0" parent="e_self" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.11: _add_document_chunk()" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- back arrow for self-call -->
+        <mxCell id="e_self_back" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="1262" as="sourcePoint" />
+            <mxPoint x="295" y="1262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 13. add SDE graph_docs ============== -->
+        <mxCell id="e24" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="1300" as="sourcePoint" />
+            <mxPoint x="1260" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24l" connectable="0" parent="e24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.12: add_graph_documents(graph_docs)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_neo4j_4" parent="ll_neo4j" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="65" y="1200" width="10" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e25" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1260" y="1335" as="sourcePoint" />
+            <mxPoint x="295" y="1335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 14. vector stores ============== -->
+        <mxCell id="e28" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="1380" as="sourcePoint" />
+            <mxPoint x="1260" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28l" connectable="0" parent="e28" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.13: create vector stores(nodes, chunks, relationships)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="act_neo4j_5" parent="ll_neo4j" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry x="65" y="1280" width="10" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e30" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1260" y="1420" as="sourcePoint" />
+            <mxPoint x="295" y="1420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30l" connectable="0" parent="e30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="vector_stores" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============== 15. reply to client ============== -->
+        <mxCell id="e_final" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="285" y="1490" as="sourcePoint" />
+            <mxPoint x="120" y="1490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

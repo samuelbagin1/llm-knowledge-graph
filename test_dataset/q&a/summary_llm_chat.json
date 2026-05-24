@@ -1,0 +1,438 @@
+{
+  "source_file": "test_dataset/q&a/q&a_llm_chat_validation.json",
+  "evaluation_date": "2026-05-24",
+  "language": "sk",
+  "questions_total": 21,
+  "methodology": {
+    "answer_correctness": "LLM odpoved bola hodnotena binarne voci ludskemu referencnemu zneniu: 1 = vecne spravna, 0 = nespravna.",
+    "section_coverage": "Pokrytie sekcii je ratane voci polu podporujuce_ustanovenia. Jedna polozka pola je jedna hodnotena oporna sekcia/paragraf. Pri rozsahoch typu 'ods. 1 az 6' alebo 'ods. 2 a 3' sa ciastocna citacia rovnakeho ustanovenia povazuje za pokrytie danej polozky, ak vecne podporuje odpoved.",
+    "llm_sections_source": "Pri ID 1-4 bolo pouzite pole llm_sections. Pri ID 5-21 pole llm_sections chyba, preto boli oporne sekcie vycitane z citacii uvedenych priamo v llm_answer."
+  },
+  "answer_accuracy": {
+    "correct": 21,
+    "incorrect": 0,
+    "accuracy": 1.0,
+    "accuracy_percent": 100.0
+  },
+  "section_coverage": {
+    "human_section_items_total": 58,
+    "llm_matched_human_section_items": 47,
+    "missing_human_section_items": 11,
+    "coverage": 0.8103,
+    "coverage_percent": 81.03,
+    "strict_llm_sections_field_only": {
+      "questions_with_llm_sections_field": 4,
+      "matched_human_section_items": 8,
+      "human_section_items_total_all_questions": 58,
+      "coverage_against_all_questions": 0.1379,
+      "coverage_percent_against_all_questions": 13.79,
+      "human_section_items_total_questions_1_to_4": 14,
+      "coverage_questions_1_to_4": 0.5714,
+      "coverage_percent_questions_1_to_4": 57.14,
+      "note": "Striktne pole llm_sections je vyplnene iba pri prvych styroch otazkach."
+    }
+  },
+  "per_question": [
+    {
+      "id": 1,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 2,
+        "human_count": 4,
+        "coverage_percent": 50.0,
+        "matched_human_sections": [
+          "§ 4 ods. 1 písm. a) a b)",
+          "§ 4 ods. 5"
+        ],
+        "missing_human_sections": [
+          "§ 4 ods. 2",
+          "§ 4 ods. 4"
+        ],
+        "extra_llm_sections": []
+      },
+      "note": "Odpoved je vecne spravna, ale nepokryva vsetky podporne odseky k registracnemu postupu."
+    },
+    {
+      "id": 2,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 1,
+        "human_count": 3,
+        "coverage_percent": 33.33,
+        "matched_human_sections": [
+          "§ 78 ods. 2 písm. a) druhý bod"
+        ],
+        "missing_human_sections": [
+          "§ 4 ods. 3",
+          "§ 4 ods. 15"
+        ],
+        "extra_llm_sections": [
+          "§ 4 ods. 1 písm. a)",
+          "§ 77 ods. 1"
+        ]
+      },
+      "note": "Vecny zaver je spravny, pokrytie opory je slabe."
+    },
+    {
+      "id": 3,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 2,
+        "human_count": 3,
+        "coverage_percent": 66.67,
+        "matched_human_sections": [
+          "§ 68f ods. 2 a 3",
+          "§ 69 ods. 3"
+        ],
+        "missing_human_sections": [
+          "§ 69 ods. 2"
+        ],
+        "extra_llm_sections": []
+      },
+      "note": "LLM explicitne cituje hlavne § 68f ods. 2; § 68f ods. 3 nie je plne vyjadreny, ale polozka bola ratana ako pokryta ciastocne."
+    },
+    {
+      "id": 4,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 3,
+        "human_count": 4,
+        "coverage_percent": 75.0,
+        "matched_human_sections": [
+          "§ 7 ods. 1 a 4",
+          "§ 7a ods. 1",
+          "§ 69 ods. 3"
+        ],
+        "missing_human_sections": [
+          "§ 70 ods. 4"
+        ],
+        "extra_llm_sections": [
+          "§ 11 ods. 4 písm. b)",
+          "§ 11 ods. 6"
+        ]
+      },
+      "note": "Odpoved spravne urcuje registraciu podla § 7a, ale nepokryva vztah k ziadosti podla § 70 ods. 4."
+    },
+    {
+      "id": 5,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 5,
+        "human_count": 5,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 3 ods. 5",
+          "§ 11 ods. 3 a 12",
+          "§ 43 ods. 2",
+          "§ 52",
+          "§ 78 ods. 4 až 6"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": [
+          "§ 72 ods. 5",
+          "§ 76 ods. 4"
+        ]
+      },
+      "note": "Odpoved je spravna, no detail o 7-dnovej lehote priznania nadobudatela je vyjadreny len neplne."
+    },
+    {
+      "id": 6,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 3,
+        "human_count": 4,
+        "coverage_percent": 75.0,
+        "matched_human_sections": [
+          "§ 8a ods. 1 až 6",
+          "§ 70 ods. 2 písm. g)",
+          "§ 80 ods. 1 písm. e) až g)"
+        ],
+        "missing_human_sections": [
+          "§ 11a"
+        ],
+        "extra_llm_sections": [
+          "§ 8 ods. 4"
+        ]
+      },
+      "note": "Vecny zaver o nevzniku premiestnenia pri nahradeni je spravny."
+    },
+    {
+      "id": 7,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 2,
+        "human_count": 3,
+        "coverage_percent": 66.67,
+        "matched_human_sections": [
+          "§ 13a ods. 1 až 3",
+          "§ 45 ods. 1 až 3"
+        ],
+        "missing_human_sections": [
+          "§ 17 ods. 4"
+        ],
+        "extra_llm_sections": []
+      },
+      "note": "Odpoved spravne rozlisuje retazovy a trojstranny obchod, ale neuviedla § 17 ods. 4."
+    },
+    {
+      "id": 8,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 2,
+        "human_count": 2,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 9a ods. 1 až 6",
+          "§ 22 ods. 10"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 9,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 3,
+        "human_count": 3,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 14 ods. 2",
+          "§ 16 ods. 14",
+          "§ 16a ods. 1 až 3"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Vecne spravne; dobrovolna volba podla § 16a ods. 3 nie je v odpovedi rozvedena, ale oporna polozka je citovana cez rozsah."
+    },
+    {
+      "id": 10,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 2,
+        "human_count": 2,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 38 ods. 1, 7 a 8",
+          "§ 69 ods. 12 písm. c)"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte, hoci § 38 ods. 7 nie je osobitne rozpisany."
+    },
+    {
+      "id": 11,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 1,
+        "human_count": 1,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 38 ods. 3 až 6"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 12,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 2,
+        "human_count": 2,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 19 ods. 9",
+          "§ 47 ods. 2 a 3"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 13,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 1,
+        "human_count": 2,
+        "coverage_percent": 50.0,
+        "matched_human_sections": [
+          "§ 43 ods. 1, 5, 8 až 10"
+        ],
+        "missing_human_sections": [
+          "§ 80 ods. 1 a 9"
+        ],
+        "extra_llm_sections": []
+      },
+      "note": "Odpoved je spravna k strate oslobodenia, ale nepokryva suhrnny vykaz podla § 80."
+    },
+    {
+      "id": 14,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 3,
+        "human_count": 3,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 48 ods. 3",
+          "§ 69a ods. 1 až 6",
+          "§ 69a ods. 10"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 15,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 1,
+        "human_count": 2,
+        "coverage_percent": 50.0,
+        "matched_human_sections": [
+          "§ 25a ods. 1 až 5"
+        ],
+        "missing_human_sections": [
+          "§ 25a ods. 7 až 13"
+        ],
+        "extra_llm_sections": []
+      },
+      "note": "Vecny zaver je spravny, ale LLM nepokryva vylucenia a dalsie podmienky z ods. 7 az 13."
+    },
+    {
+      "id": 16,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 1,
+        "human_count": 1,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 53b ods. 1 až 8"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 17,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 3,
+        "human_count": 3,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 68d ods. 1 až 5",
+          "§ 68d ods. 10 až 14",
+          "§ 19"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 18,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 4,
+        "human_count": 5,
+        "coverage_percent": 80.0,
+        "matched_human_sections": [
+          "§ 49a",
+          "§ 52a ods. 2",
+          "§ 54 ods. 2 a 6",
+          "§ 54a"
+        ],
+        "missing_human_sections": [
+          "Príloha č. 1"
+        ],
+        "extra_llm_sections": [
+          "§ 49 ods. 2"
+        ]
+      },
+      "note": "Odpoved spravne uvadza pomerne odpocitanie a 20-rocne obdobie, ale neuviedla vzorec z prilohy c. 1."
+    },
+    {
+      "id": 19,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 1,
+        "human_count": 1,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 70a ods. 1 až 12"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 20,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 2,
+        "human_count": 2,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 72 ods. 1",
+          "§ 74 ods. 3 a 4"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    },
+    {
+      "id": 21,
+      "answer_correct": 1,
+      "coverage": {
+        "matched_count": 3,
+        "human_count": 3,
+        "coverage_percent": 100.0,
+        "matched_human_sections": [
+          "§ 27 ods. 1 až 3",
+          "Príloha č. 7a bod 1",
+          "Príloha č. 7a bod 2"
+        ],
+        "missing_human_sections": [],
+        "extra_llm_sections": []
+      },
+      "note": "Pokryte."
+    }
+  ],
+  "weakest_section_coverage": [
+    {
+      "id": 2,
+      "coverage_percent": 33.33
+    },
+    {
+      "id": 1,
+      "coverage_percent": 50.0
+    },
+    {
+      "id": 13,
+      "coverage_percent": 50.0
+    },
+    {
+      "id": 15,
+      "coverage_percent": 50.0
+    },
+    {
+      "id": 3,
+      "coverage_percent": 66.67
+    },
+    {
+      "id": 7,
+      "coverage_percent": 66.67
+    }
+  ],
+  "summary": "LLM odpovede su vo vsetkych 21 pripadoch vecne spravne. Pokrytie clovekom oznacenych podpornych ustanoveni je 47 z 58, teda 81.03 %. Najcastejsi problem nie je nespravna odpoved, ale nekompletne citovanie opornych ustanoveni alebo vynechanie casti rozsahu."
+}

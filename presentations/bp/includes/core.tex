@@ -210,7 +210,7 @@ Hoci sa oblasť spracovania právnych textov pomocou NLP a LLM v posledných rok
 \subsubsection{Slovenský jazyk ako málo zastúpená doména}
 Existujúce datasety a modely pokrývajú predovšetkým angličtinu, čínštinu, nemčinu, francúzštinu a v menšej miere ďalšie rozšírené jazyky. Multilingválne korpusy ako MultiLegalPile pokrývajú 24 jazykov naprieč 17 jurisdikciami, no viaceré jazyky vrátane menších európskych zostávajú výrazne nedostatočne pokryté. Slovenčina v tomto zozname prakticky absentuje, čo znemožňuje priame využitie predtrénovaných právnych modelov typu LEGAL-BERT alebo Lawformer. Autori prehľadu zároveň explicitne upozorňujú, že rozšírenie multilingválnych schopností do menej zastúpených jazykov je jednou z otvorených výskumných výziev, pretože jednotlivé právne systémy majú vlastné termíny a štandardy dokumentov, ktoré sa medzi jazykmi výrazne líšia. Slovenský právny jazyk navyše obsahuje špecifickú morfológiu, diakritiku a terminológiu (napr. označenia ako paragraf, odsek, písmeno), ktoré nemožno spoľahlivo preniesť z anglického modelu~\cite{nlpLegal2025}.
 
-Na extrakciu pomenovaných entít by sme mohli využiť nástroje ako SpaCy alebo modely typu SlovakBERT, kde by sa modely pretrénovali na právnu doménu. Kým pri extrakcii pomenovaných entít môže postačovať menšie množstvo anotovaných príkladov, napríklad dataset WikiGoldSK~\cite{wikigoldsk2023}, extrakcia vzťahov medzi entitami je náročnejšia a vyžaduje rozsiahlejšie a konzistentne anotované dáta. V právnej doméne je takáto anotácia obzvlášť časovo náročná, pretože si vyžaduje jazykové aj odborné porozumenie dokumentom.
+Na extrakciu pomenovaných entít by sme mohli využiť nástroje ako SpaCy alebo modely typu SlovakBERT, kde by sa modely pretrénovali na právnu doménu. Kým pri extrakcii pomenovaných entít môže postačovať na trénovanie napríklad dataset WikiGoldSK~\cite{wikigoldsk2023}, extrakcia vzťahov medzi entitami je náročnejšia a vyžaduje rozsiahlejšie a konzistentne anotované dáta. V právnej doméne je takáto anotácia obzvlášť časovo náročná, pretože si vyžaduje jazykové aj odborné porozumenie dokumentom.
 
 
 \subsubsection{Právna doména ako špecializovaný kontext}
@@ -283,8 +283,17 @@ Druhý krok, výsledný HTML výstup je poskytnutý ďalšiemu LLM volaniu, kde 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{img/tabulky.png}
-    \caption[Výsledok extrakcie tabuliek do grafu]{Výsledok extrakcie tabuliek do znalostného grafu. Centrálne modré uzly predstavujú koreňové uzly typu \emph{Tabuľka}, žlté listové uzly sú jednotlivé riadky tabuľky obsahujúce vlastnosti stĺpcov. V pravom paneli sú zobrazené detaily vybraného uzla vrátane uchovaného HTML obsahu a väzby na zdrojový dokument.}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/tabulky.png}
+        \caption{Koreňové uzly tabuliek a ich riadky}\label{fig:tabulky-graf-a}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/riadok-v-tabulke.png}
+        \caption{Detail uzla riadka tabuľky}\label{fig:tabulky-graf-b}
+    \end{subfigure}
+    \caption[Výsledok extrakcie tabuliek do grafu]{Výsledok extrakcie tabuliek do znalostného grafu. Vľavo (\subref{fig:tabulky-graf-a}) centrálne modré uzly predstavujú koreňové uzly typu \emph{Tabuľka}, žlté listové uzly sú jednotlivé riadky tabuľky obsahujúce vlastnosti stĺpcov. Vpravo (\subref{fig:tabulky-graf-b}) je zobrazený detail vybraného uzla riadka vrátane uchovaného HTML obsahu a väzby na zdrojový dokument.}
     \label{fig:tabulky-graf}
 \end{figure}
 
@@ -485,37 +494,27 @@ DocLayout-YOLO je špecializovaná neurónová sieť založená na architektúre
 
 \subsection{Dôležité implementačné rozhodnutia}
 
+Táto časť sumarizuje rozhodnutia, ktoré mali najväčší vplyv na stabilitu, škálovateľnosť a praktickú použiteľnosť implementovaného riešenia. Zameriava sa najmä na spôsob koordinácie paralelných volaní modelov, spracovanie štruktúrovaných výstupov a voľbu technológií, ktoré umožnili spoľahlivo transformovať právny text do znalostného grafu.
+
 \subsubsection{Mechanizmus semaforu}
 
-Pri spracovávaní dokumentov pomocou LLM modelu, ktoré sú rozdelené na desiatky či stovky chunkov, nastávajú 2 problémy. Prvým problémom je, keď posielame veľa požiadaviek paralelne, tak preťažíme API a vyčerpáme limit tokenov za minútu (TPM). Druhým je, keď jedna požiadavka zlyhá kvôli týmto limitom, zvyšné požiadavky s istotou zlyhajú taktiež. Tieto problémy riešim pomocou koordinačného mechanizmu.
+Pri spracovaní dokumentu je každý chunk spracovaný ako samostatná asynchrónna úloha. Keďže dokument môže obsahovať desiatky až stovky chunkov, paralelné volania LLM modelu môžu rýchlo naraziť na limity API, najmä na počet tokenov za minútu. Zlyhanie jednej požiadavky pri rate limite navyše často znamená, že v krátkom čase zlyhajú aj ďalšie požiadavky. Preto je spracovanie riadené koordinačným mechanizmom so semaforom, globálnym prepínačom a zámkom.
 
-Inicializácia začína vytvorením 3 kontrolných prvkov. Prvým je semafor, ktorý riadi konkurenčný limit, koľko úloh naraz môže byť obsluhovaných. V tomto implementovaní je to 5 konkurenčných úloh. Zabraňuje to systému aby neodoslal stovky požiadaviek naraz. Druhým prvkom je globálny prepínač pause switch, ktorý začína v zapnutej pozícii. Pokiaľ tento prepínač je v zapnutej pozícii, systém môže voľne posielať API požiadavky. Akonáhle prepínač sa dostane do pozície vypnutej, každá pracovná úloha v systéme sa zastaví na rovnakom synchronizačnom bode a čaká. Posledným prvkom je zámok, ktorý povoľuje v prípade chyby alebo zlyhania pracovať iba na jednej úlohe.
+Semafor obmedzuje počet súčasne bežiacich požiadaviek, v implementácii na päť paralelných úloh. Každá úloha pred volaním modelu najprv overí globálny prepínač. Ak je prepínač aktívny, úloha čaká na voľné miesto v semafore a po jeho získaní vykoná extrakciu alebo detekciu pomocou LLM modelu. Každá úloha má najviac tri pokusy.
 
-Po nastavení týchto riadiacich prvkov, je každému chunku pridelená asynchrónna úloha. Každá úloha sa riadi rovnakou rutinou a má povolené až tri pokusy na dokončenie svojho procesu. Na začiatku každého pokusu úloha najprv overí stav globálneho prepínača. Ak je prepínač vypnutý, úloha čaká, kým sa znova nezapne. 
+Ak volanie zlyhá a úloha má ešte dostupný ďalší pokus, pokúsi sa získať zámok. Zámok zabezpečuje, že cooldown spustí iba prvá úloha, ktorá zlyhanie zachytí. Táto úloha vypne globálny prepínač, čím pozastaví ostatné úlohy na spoločnom synchronizačnom bode, počká 60 sekúnd na obnovenie rate limitu a následne prepínač opäť zapne. Ostatné úlohy tak nevykonávajú vlastné nezávislé čakanie, ale riadia sa jedným spoločným signálom.
 
-Keď je prepínač aktívny, úloha sa pokúsi získať miesto v semafore. Akonáhle miesto získa, spustí samotnú extrakciu alebo detekciu volaním LLM modelu. Ak požiadavka prebehne úspešne, úloha skončí a vráti svoj výsledok. Ak volanie zlyhá vyhodením výnimky a úloha má ešte k dispozícii ďalšie pokusy, nastáva situácia, kedy sa úloha pokúsi získať zámok. Ten zaručuje, že iba úplne prvá úloha, ktorá zlyhanie zaregistruje, sa stáva zodpovednou za jeho riešenie. Táto úloha následne vypne globálny prepínač, čím okamžite pozastaví všetky ostatné úlohy v systéme. Následne sa systém uspí na 60 sekúnd, čo je dostatočne dlhý čas na to, aby sa rate limit modelu obnovil, a následne sa prepínač opäť zapne.
-
-Ak pracovná úloha nakoniec vyčerpá všetky tri pokusy bez úspechu, vzdá sa a propaguje výnimku ďalej, namiesto toho aby blokovala zvyšok systému. Medzitým boli všetky úlohy spustené v rovnakom okamihu, skrz mechanizmus task creation a počas celého procesu bežia paralelne v rámci jedného event loopu. Hlavná rutina čaká pomocou agregačnej operácie gather, kým každá jednotlivá úloha neskončí.
-
-Precíznosť tohto návrhu spočíva v spôsobe, akým zaobchádza so zlyhaním ako so zdieľaným signálom. Jediné zlyhanie je interpretované ako dôkaz toho, že celý spracovateľský systém je obmedzený, a preto je cooldown aplikovaný globálne a nie individuálne. Zámok tu zohráva zásadnú rolu, pretože bez neho by mohli desiatky úloh detekovať to isté zlyhanie v rovnakom okamihu a spustiť svoj 60 sekundový interval nezávisle.
+Ak úloha vyčerpá všetky tri pokusy, výnimka sa propaguje ďalej. Hlavná rutina spúšťa všetky úlohy naraz v rámci jedného event loopu a pomocou operácie \texttt{gather} čaká na ich dokončenie. Výhodou návrhu je, že zlyhanie jednej požiadavky sa interpretuje ako signál pre celý systém, nie ako izolovaný problém jednej úlohy.
 
 \
 
 \subsubsection{Štruktúrovaný výstup}
 
-V kontexte spracovania prirodzeného jazyka prostredníctvom LLM predstavuje štruktúrovaný výstup (structured output) zásadnú techniku, ktorá zaručuje, že odpoveď volania modelu bude zodpovedať definovanej schéme. Vďaka tomu sa eliminuje chybovosť, ktorú zapríčiňuje parsovanie výstupných dát z modelu, zaručí plynulosť spracovania a zdieľania dát vo workflowe. Dáta môžeme jednoducho deserializovať do Python objektov (dictionary, dataclass alebo Pydantic modelu). V prostredí knižnice LangChain existujú dva odlišné spôsoby, ktoré majú svoje špecifické vlastnosti, výhody a obmedzenia v závislosti od použitého modelu.
+Štruktúrovaný výstup zabezpečuje, že odpoveď LLM modelu zodpovedá vopred definovanej schéme. Výstup tak nie je potrebné dodatočne parsovať z voľného textu a možno ho priamo deserializovať do Python objektov, napríklad do slovníka, dátovej triedy alebo Pydantic modelu. V LangChain sa na tento účel používajú najmä dva prístupy.
 
-\
+Prvým je stratégia poskytovateľa (\texttt{ProviderStrategy}), ktorá sa používa pri modeloch s natívnou podporou štruktúrovaného výstupu. Schéma sa odovzdáva priamo pri vytváraní agenta cez parameter \texttt{response\_format}. Validáciu potom zabezpečuje samotný poskytovateľ modelu, čo umožňuje kombinovať štruktúrovaný výstup s agentovou vrstvou, nástrojmi a pamäťou bez ďalšieho manuálneho spracovania odpovede~\cite{langchainStructuredOutput}.
 
-Prvý prístup, ktorý sa v kóde uplatňuje predovšetkým na modely od spoločnosti OpenAI, je stratégia poskytovateľa (ProviderStrategy). Tento prístup využívajú modely, ktoré natívne podporujú štruktúrovaný výstup (OpenAI, Anthropic, xAI, Gemini)\cite{langchainStructuredOutput}. Je to principiálny prístup pri komunikácii s modelom cez agentovú vrstvu. Schéma očakávaného výstupu sa pri tomto prístupe odovzdáva ako parameter formátu odpovede (response\_format) priamo pri vytváraní agenta.
-
-Hlavnou výhodou tejto stratégie je deterministická záruka, že vrátený objekt bude validný voči zadanej schéme. Ďalším významným prínosom je integrácia s agentovým ekosystémom, čo umožňuje rozšírenie o nástroje, kontextovú pamäť a iteratívne uvažovanie bez nutnosti meniť spôsob, akým sa štruktúrovaný výstup spracováva.
-
-\ 
-
-Druhý prístup, použitý v projekte pri komunikácii s modelmi, je metóda priameho štruktúrovaného výstupu (with\_structured\_output). V kóde sa tento princíp kombinuje s metódou založenou na prevode schémy do formátu JSON Schema. Tento prístup pracuje na úrovni samotného modelu bez agentovej vrstvy. Metóda vracia nový Runnable, ktorý pri každom volaní vloží schému do natívneho parametra API (response\_format pre OpenAI a pre Gemini response\_mime\_type alebo response\_json\_schema) a automaticky parsuje odpoveď\cite{langchainGoogleResponseSchema,openaiStructuredOutput}. Ak je schéma Pydantic trieda, tak požiadavka vráti inštanciu tejto triedy, a pri JSON Schema zas vráti dict.
-
-Výhodou tohto prístupu je jeho jednoduchosť volania a priamy návrat výsledku bez potreby extrahovania z vnoreného kontextového výstupu.
+Druhým prístupom je metóda \texttt{with\_structured\_output}, ktorú používam v projekte pri priamom volaní modelov bez agentovej vrstvy. Metóda vytvorí nový \texttt{Runnable}, ktorý pri volaní vloží schému do natívneho parametra API, napríklad \texttt{response\_format} pri OpenAI alebo \texttt{response\_mime\_type}/\texttt{response\_json\_schema} pri Gemini, a automaticky spracuje odpoveď~\cite{langchainGoogleResponseSchema,openaiStructuredOutput}. Pri Pydantic schéme vracia inštanciu danej triedy, pri JSON Schema obyčajný slovník.
 
 \subsubsection{Chunkovacia stratégia}
 \label{sec:chunkovacia-strategia}
@@ -526,7 +525,13 @@ Následne sa text rozdelí podľa paragrafov. Funkcia na detekovanie paragrafov 
 
 Funkcia na detekovanie subsekcií (odseky, písmená, body) potom nad paragrafmi vytvára vnorenú štruktúru \texttt{paragraf -> odsek -> písmeno -> bod}. Jednotlivé úrovne rozpoznáva podľa značiek na začiatku riadkov, (\texttt{(1)}, \texttt{a)} alebo \texttt{1.}). Tým sa znižuje riziko, že sa ako nová časť nesprávne vyhodnotí obyčajný odkaz v texte, napríklad odkaz na písmeno alebo poznámku pod čiarou.
 
-Samotné chunkovanie následne túto stromovú štruktúru linearizuje. Chunk sa vytvára na najhlbšej dostupnej úrovni, teda podľa možnosti až po písmeno alebo bod, ale vždy spolu s nadradeným textom paragrafu a odseku. Vďaka tomu je každý chunk čitateľný aj samostatne a model pri extrakcii nedostane izolovanú vetu bez právneho kontextu. Ak paragraf nemá odseky, vytvorí sa jeden chunk z textu paragrafu. Príliš dlhé chunky sa ešte dodatočne rozdelia na časti s veľkosťou približne 3000 znakov a prekryvom 300 znakov.
+Samotné chunkovanie následne túto stromovú štruktúru linearizuje. Chunk sa vytvára na najhlbšej dostupnej úrovni, teda podľa možnosti až po písmeno alebo bod, ale vždy spolu s nadradeným textom paragrafu a odseku. Vďaka tomu je každý chunk čitateľný aj samostatne a model pri extrakcii nedostane izolovanú vetu bez právneho kontextu. Ak paragraf nemá odseky, vytvorí sa jeden chunk z textu paragrafu. Príliš dlhé chunky sa ešte dodatočne rozdelia na časti s veľkosťou približne 3000 znakov a prekryvom 300 znakov. Ukážka výsledku rozdelenia paragrafu na chunky podľa popísanej stratégie je zobrazená na obrázku~\ref{fig:rozdelenie-na-chunky}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/rozdelenie-na-chunky.png}
+    \caption[Rozdelenie paragrafu zákona na chunky]{Ukážka rozdelenia paragrafu slovenského zákona na chunky podľa hierarchickej štruktúry \texttt{paragraf -> odsek -> písmeno -> bod}. Každý chunk obsahuje text najhlbšej úrovne spolu s nadradeným kontextom paragrafu a odseku, aby bol čitateľný samostatne a zachoval si právny zmysel.}\label{fig:rozdelenie-na-chunky}
+\end{figure}
 
 
 \subsection{Prompt engineering pre slovenčinu}
@@ -556,24 +561,22 @@ V práci s legislatívnym textom sa ukázalo aj ďalšie obmedzenie LLM, tentokr
 
 
 \subsection{Kvalita spracovania}
+Táto časť hodnotí, do akej miery navrhnuté spracovanie dokáže zachovať štruktúru a význam pôvodného dokumentu. Zameriava sa najmä na kvalitu extrakcie tabuliek, vzorcov, textových blokov a ich následné využitie pri tvorbe znalostného grafu. Cieľom nie je iba overiť, či systém technicky prebehne, ale či jeho výstupy zostávajú použiteľné pre ďalšie automatizované spracovanie.
 
 \subsubsection{Tabuľky a vzorce}
 Empirické pozorovania ukázali, že vizuálne jazykové modely majú výrazné problémy spracovať dlhé tabuľky naraz. Pri zaslaní celej viacstranovej tabuľky v jednej požiadavke model často vynecháva riadky v strednej časti alebo prehodí poradie buniek. Z tohto dôvodu je v predspracovaní zvolená stratégia spracovania po dvoch obrázkoch tabuliek v jednom volaní. Toto okno predstavuje empiricky najlepší kompromis medzi uzším kontextom (model vidí dosť na to, aby zachytil prepojenia medzi nadväzujúcimi stranami tabuľky) a presnosťou (model nestratí jednotlivé bunky). Z testovaných modelov má GPT-5.4-mini nižšiu latenciu ako Gemini 2.5 Flash pri porovnateľnej kvalite výstupu, takže je v tejto fáze uprednostnený.
 
 V rámci silných stránok modely spoľahlivo zvládajú dva netriviálne aspekty tabuliek. Po prvé, korektne rozpoznávajú a priraďujú prázdne bunky (colspan a rowspan sa vyjadruje ako prázdna bunka). Výsledné HTML zachováva pôvodnú štruktúru aj pri tabuľkách so zlúčenými hlavičkami a viacúrovňovým členením. Po druhé, OCR samotných buniek je v praxi bezchybné, preklepové chyby v doslovnom prepise textu sa v testovaných tabuľkách prakticky nevyskytli. Taktiež pri OCR vzorcoch je chybovosť rozlíšenia matematických vyjadrení veľmi nízka.
 
-Slabé stránky sa prejavujú v troch špecifických situáciách. Po prvé, ak detektor rozloženia zoskupí do jedného logického celku dve a viac samostatných tabuliek (typicky pri tabuľkách umiestnených pod sebou na rovnakej strane alebo hneď na ďalšej strane), model úspešne rozdelí výstup na dva oddelené HTML bloky iba približne v 60\% prípadov. V ostatných prípadoch buď tabuľky zlúči do jedného HTML bloku, alebo druhú tabuľku úplne ignoruje. Po druhé, v menšine spracovaní s viacerými tabuľkami model síce úspešne zachytí obsah druhej tabuľky, ale jej hlavičku vynechá, naznačuje to stratu kotviacej informácie pri prechode medzi obrázkami. Po tretie, model výrazne zlyháva pri tabuľkách otočených o 90$^\circ$ (typické pre široké tabuľky umiestnené na šírku strany v právnych predpisoch), kde sa orientačne stráca a generované HTML má prehádzané poradie stĺpcov a riadkov.
+Slabé stránky sa prejavujú najmä pri zložitejších tabuľkách. Ak detektor rozloženia spojí viac samostatných tabuliek do jedného bloku, model ich vie rozdeliť na samostatné HTML tabuľky len približne v 60~\% prípadov, inak ich zlúči alebo časť obsahu vynechá. Pri viacstranových tabuľkách sa občas stratí hlavička pokračujúcej tabuľky, preto sa tieto prípady dodatočne rozdelujú podľa identifikovaného nadpisu na strane, typicky zapísaného veľkými písmenami. Najproblematickejšie sú tabuľky otočené o 90$^\circ$, pri ktorých model často pomieša poradie riadkov a stĺpcov.
 
 \subsubsection{NER a RE}
 
-Pri extrakcii pomenovaných entít a vzťahov z textu právnych predpisov modely vykazujú zmiešané výsledky. Medzi silné stránky patrí pomerne presné priradenie sémanticky najbližšieho typu vzťahu zo schémy, spoľahlivé zachytávanie medzivetných vzťahov a schopnosť rozvinúť kontext vzťahu vo vlastnostiach, čo je dôležité, pretože samotný typ vzťahu často nezachytí celý zmysel vety. Modely tiež dokážu spracovať dlhé pomenované entity ako jeden celok (Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze), aj keď v iných prípadoch zachytia do jednej entity nadmerne rozsiahle frázy (Vratenie Dane Neziskovym Organizaciam Poskytujucim Vseobecne Prospesne Sluzby A Slovenskemu Cervenemu Krizu alebo dokonca celé súvetia ako Obdobie Od 1 Januara 2011 Do Posledneho Dna Kalendarneho Roka V Ktorom Europska Komisia Eurostat Uverejni Udaje O Tom Ze Aktualny Schodok Verejnej Spravy Slovenskej Republiky Je Menej Ako 3 Percenta).
+Pri extrakcii pomenovaných entít a vzťahov z právnych textov modely dosahujú zmiešané výsledky. Dobre zvládajú výber sémanticky najbližšieho typu vzťahu zo schémy, zachytávanie medzivetných väzieb a dopĺňanie kontextu do vlastností vzťahu, čo je dôležité najmä vtedy, keď samotný typ hrany nevyjadruje celý význam vety. Modely vedia zachytiť aj dlhé pomenované entity ako jeden celok, napríklad \emph{Povinnost Vykazat Opravu Odpocitanej Dane V Kontrolnom Vykaze}, no občas do entity zahrnú príliš širokú frázu alebo celé súvetie.
 
-Slabé stránky sa prejavujú vo viacerých rovinách, avšak celkový počet výskytov anomálií je nízky. Po prvé, modely nedôsledne dodržiavajú výstupný formát pre identifikátory uzlov, kde namiesto požadovaného Title Case často vkladajú medzi slová podčiarkovník (Financne\_Riaditelstvo). Po druhé, vzniká nekoherentnosť pri pomenovaní tých istých entít naprieč chunkami, pričom konkrétna forma závisí od toho, ako je daná entita zmienená v zdrojovom texte. Po tretie, pri niektorých vzťahoch je smer hrany otočený oproti sémantike vety. Občas sa vo výstupe objavujú aj české slová, gramatické chyby a vynechané písmená (In Y Rovnocenny Doklad Vypisu Z Registra Trestov, Danie), pričom napriek explicitnej inštrukcii negenerovať diakritiku v identifikátoroch ju model stále vracia, čo je následne riešené v postprocesingu.
+Slabé stránky sa prejavujú najmä v konzistentnosti výstupu. Modely nie vždy dodržia požadovaný formát identifikátorov uzlov, napríklad namiesto Title Case použijú podčiarkovníky (\texttt{Financne\_Riaditelstvo}), a rovnakú entitu môžu v rôznych chunkoch pomenovať odlišne podľa toho, ako je uvedená v texte. Pri časti vzťahov sa objavuje aj opačný smer hrany. Menej často sa vyskytujú české slová, gramatické chyby, vynechané písmená alebo diakritika v identifikátoroch, hoci je v inštrukcii zakázaná.
 
-Posledným pozorovaným problémom je, že pri niektorých chunkoch model úplne vynechá výstup vzťahov, v najhorších prípadoch aj entít, prípadne spracovanie celkom odmietne. Z tohto dôvodu je zavedený mechanizmus semaforu s troma opakovaniami, pričom prázdne vrátené dokumenty bez uzlov postupujú do druhého kola spracovania.
-
-
-Silnejší model dokáže spracovať tieto problémy, avšak za cenu výrazne vyšších nákladov.
+Samostatným problémom sú prázdne alebo čiastočné výstupy. Pri niektorých chunkoch model nevráti vzťahy, v horšom prípade ani entity, prípadne spracovanie odmietne. Z tohto dôvodu je použitý semafor s troma opakovaniami a dokumenty bez uzlov prechádzajú druhým kolom spracovania. Silnejší model tieto problémy zmierňuje, ale za cenu výrazne vyšších nákladov.
 
 \subsubsection{Pridanie validačného a koreferenčného kroku}
 
@@ -681,9 +684,78 @@ Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priem
 \shorthandon{-}
 \end{table}
 
+\begin{figure}[H]
+\shorthandoff{-}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    width=\textwidth,
+    height=8cm,
+    ymin=0,
+    ymax=0.9,
+    ylabel={F1$_\mu$},
+    symbolic x coords={
+        ZS 5.4 low,
+        ZS 5.4 high,
+        ZS 5.5 low,
+        ZS 5.5 high,
+        FS 5.4 low,
+        FS 5.4 high,
+        FS 5.5 low,
+        FS 5.5 high
+    },
+    xtick=data,
+    xticklabels={
+        \shortstack{ZS\\5.4 mini\\low},
+        \shortstack{ZS\\5.4 mini\\high},
+        \shortstack{ZS\\5.5\\low},
+        \shortstack{ZS\\5.5\\high},
+        \shortstack{FS\\5.4 mini\\low},
+        \shortstack{FS\\5.4 mini\\high},
+        \shortstack{FS\\5.5\\low},
+        \shortstack{FS\\5.5\\high}
+    },
+    x tick label style={font=\scriptsize, align=center},
+    ytick={0,0.2,0.4,0.6,0.8},
+    yticklabel={\pgfmathprintnumber[fixed,precision=1,zerofill,use comma]{\tick}},
+    bar width=6pt,
+    enlarge x limits=0.07,
+    legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
+    grid=major,
+    major grid style={draw=gray!25},
+]
+\addplot+[fill=blue!55, draw=blue!70!black] coordinates {
+    (ZS 5.4 low,0.608)
+    (ZS 5.4 high,0.691)
+    (ZS 5.5 low,0.815)
+    (ZS 5.5 high,0.824)
+    (FS 5.4 low,0.696)
+    (FS 5.4 high,0.737)
+    (FS 5.5 low,0.798)
+    (FS 5.5 high,0.821)
+};
+\addplot+[fill=orange!70, draw=orange!80!black] coordinates {
+    (ZS 5.4 low,0.189)
+    (ZS 5.4 high,0.313)
+    (ZS 5.5 low,0.420)
+    (ZS 5.5 high,0.453)
+    (FS 5.4 low,0.269)
+    (FS 5.4 high,0.388)
+    (FS 5.5 low,0.440)
+    (FS 5.5 high,0.460)
+};
+\legend{Uzly,Vzťahy}
+\end{axis}
+\end{tikzpicture}
+\caption[Porovnanie F1 skóre extrakcie]{Porovnanie mikro-priemerovaného F1 skóre extrakcie uzlov a vzťahov pre jednotlivé modely, úrovne úsilia a režimy promptovania. Skratky ZS a FS označujú zero-shot a few-shot režim.}
+\label{fig:extraction-f1-grouped}
+\shorthandon{-}
+\end{figure}
+
 \
 
-Z výsledkov z tabuľku \ref{tab:extraction-evaluation} vyplývajú tri konzistentné pozorovania naprieč všetkými modelmi a režimami promptovania. Po prvé, kvalita extrakcie uzlov je rádovo vyššia než kvalita extrakcie vzťahov. Najlepší pozorovaný mikro F1 pre uzly dosiahol model GPT 5.5 s vysokým rozumovým úsilím v zero-shot režime (0{,}824), kým mikro F1 pre vzťahy zostal na hodnote 0{,}453 pri rovnakej konfigurácii. Tento rozdiel pretrváva aj pri ostatných modeloch. Najslabšia konfigurácia (GPT 5.4 mini, low, zero-shot) zachytila uzly na úrovni 0{,}608 a vzťahy len 0{,}189. Vyplýva z toho, že problém nespočíva v identifikácii samotných entít, ale v ich správnom prepojení. Model musí pre každý vzťah súčasne určiť oba endpointy a sémantiku hrany, a chyba v ktoromkoľvek z týchto rozhodnutí spôsobí nesprávny zápis.
+Z výsledkov z tabuľky \ref{tab:extraction-evaluation} vyplývajú tri konzistentné pozorovania naprieč všetkými modelmi a režimami promptovania. Po prvé, kvalita extrakcie uzlov je rádovo vyššia než kvalita extrakcie vzťahov. Najlepší pozorovaný mikro F1 pre uzly dosiahol model GPT 5.5 s vysokým rozumovým úsilím v zero-shot režime (0{,}824), kým mikro F1 pre vzťahy zostal na hodnote 0{,}453 pri rovnakej konfigurácii. Tento rozdiel pretrváva aj pri ostatných modeloch. Najslabšia konfigurácia (GPT 5.4 mini, low, zero-shot) zachytila uzly na úrovni 0{,}608 a vzťahy len 0{,}189. Vyplýva z toho, že problém nespočíva v identifikácii samotných entít, ale v ich správnom prepojení. Model musí pre každý vzťah súčasne určiť oba endpointy a sémantiku hrany, a chyba v ktoromkoľvek z týchto rozhodnutí spôsobí nesprávny zápis.
 
 Po druhé, prechod od zero-shot k few-shot promptovaniu prináša najväčší prínos práve slabším modelom. Pri konfigurácii GPT 5.4 mini s nízkym úsilím vzrástlo mikro F1 pre uzly z 0{,}608 na 0{,}696 a pre vzťahy z 0{,}189 na 0{,}269, čo predstavuje relatívne zlepšenie o viac než 40~\% na strane vzťahov. Pri silnejšom modeli GPT 5.5 s vysokým rozumovým úsilím je rozdiel medzi režimami menší (mikro F1 vzťahov sa zlepšilo z 0{,}453 na 0{,}460, pre uzly dokonca mierne kleslo z 0{,}824 na 0{,}821). Ukážkové vstupy v prompte teda fungujú primárne ako kompenzácia obmedzeného sledovania inštrukcií, a strácajú vplyv akonáhle model dostatočne rozumie zadanej schéme aj bez nich.
 
@@ -709,13 +781,15 @@ Vo vektorovom prístupe sa otázka a chunky zákona (využitá chunkovacia strat
 \toprule
 \textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť sekcií} \\
 \midrule
-Klasický chat s LLM & --/21 & --\,\% \\
+Klasický chat s LLM & 21/21 & 81{,}0\,\% \\
 \multirow{2}{*}{Vektorový RAG} & \emph{k=5:}\, 3/21 & 50{,}0\,\% \\
  & \emph{k=10:}\, 6/21 & 62{,}1\,\% \\
 GraphRAG & 20/21 & 74{,}6\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Klasický chat s LLM vynikal v samotnom formulovaní vecne správnych odpovedí, keď pri všetkých 21 otázkach správne zachytil právny záver. Slabším miestom bolo neúplné pokrytie podporných ustanovení: hoci odpoveď bola správna, model často necitoval všetky relevantné paragrafy alebo vynechal časť rozsahu. Každá otázka bola hodnotená v samostatnom novom chate s opätovne vloženým dokumentom, keďže celý dokument nebolo možné spoľahlivo držať v jednom kontextovom okne pre všetky otázky naraz.
 
 Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z 21, hoci pokryl polovicu ľudsky anotovaných podporujúcich sekcií. Najlepšie fungoval pri otázkach, kde stačilo nájsť priamo pomenované ustanovenie a odpoveď nevyžadovala kombináciu viacerých doplnkových pravidiel. Pri $k=10$ sa pokrytie sekcií zlepšilo z 50{,}0\,\% na 62{,}1\,\% a počet správnych odpovedí vzrástol na 6 z 21, čo ukazuje, že širší kontext pomohol najmä pri dohľadaní chýbajúcich paragrafov. Nedostatkom však zostalo, že model často neobsiahol všetky právne dôsledky z ľudskej odpovede, napríklad doplnkové oznamovacie povinnosti, výnimky, pravidlá po lehote alebo následné opravy. Zvýšenie parametra $k$ teda zlepšilo vyhľadávanie relevantných sekcií, ale samo osebe nestačilo na spoľahlivé právne odpovedanie pri otázkach vyžadujúcich syntézu viacerých ustanovení.
 

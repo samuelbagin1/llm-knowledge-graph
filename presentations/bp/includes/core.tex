@@ -57,7 +57,7 @@ Jednotlivé symboly majú nasledujúci význam:
 \end{itemize}
 Funkcia $e$ určuje štruktúru grafu, zatiaľ čo funkcie $l$ a $p$ nesú typy a atribúty uzlov a hrán.
 
-Tento typ vyniká, pretože ponúka vyššiu flexibilitu pri modelovaní komplexných vzťahov. Jeho hlavnou výhodou je, že umožňuje priamo anotovať hranu bez nutnosti vytvárania pomocných uzlov, ak chceme k vzťahu medzi entitami priradiť rozšírujúcu vlastnosť (napríklad v medicíne k hrane NEZIADUCI\_UCINOK môžme priradiť dodatočnú vlastnosť, aké konkrétne nežiaduce účinky spôsobil liek). Naopak v jednoduchých modeloch by sme museli vytvoriť samostatný uzol pre danú hranu/vlastnosť~\cite{hogan2021kg}.
+Tento typ vyniká, pretože ponúka vyššiu flexibilitu pri modelovaní komplexných vzťahov. Jeho hlavnou výhodou je, že umožňuje priamo anotovať hranu bez nutnosti vytvárania pomocných uzlov, ak chceme k vzťahu medzi entitami priradiť rozšírujúcu vlastnosť (napríklad v medicíne k hrane NEZIADUCI\_UCINOK môžeme priradiť dodatočnú vlastnosť, aké konkrétne nežiaduce účinky spôsobil liek). Naopak v jednoduchých modeloch by sme museli vytvoriť samostatný uzol pre danú hranu/vlastnosť~\cite{hogan2021kg}.
 
 \
 
@@ -66,7 +66,7 @@ V~tejto práci sa vzťah medzi entitami v KG modeluje ako množina trojíc (\emp
 
 \subsubsection{Porovnanie s vektorovou a relačnou databázou}
 
-V porovnaní s relačnými databázami sa dá jednoduchšie pristupovať k viac skokovým údajom alebo cestám, kde sa vyhýbajú relačným joinom. V relačnej databáze by sme každý typ uchovávali v jednotlivých tabuľkách, zatiaľ čo v grafovej databáze je to oddelené typom entity alebo vzťahu. Taktiež relačné databázy sa nevedia dynamicky prispôsobiť novým typom a preto si vyžadujú vopred definovanú schému. Remodelovanie takejto databázy je veľmi nákladné a časovo náročné. K dátam v grafovej databáze môžme ľahko pristupovať pomocou dopytovacieho jazyka Cypher, ktorý je súčasťou rodiny grafových dopytovacích jazykov spolu s SPARQL. Tieto jazyky podporujú okrem štandardných relačných operátorov aj operátory, ktoré rekurzívne vyhľadávajú cestu medzi entitami ľubovoľnej dĺžky, čo je v tradičnom SQL náročne vyjadriteľné~\cite{hogan2021kg}.
+V porovnaní s relačnými databázami sa dá jednoduchšie pristupovať k viac skokovým údajom alebo cestám, kde sa vyhýbajú relačným joinom. V relačnej databáze by sme každý typ uchovávali v jednotlivých tabuľkách, zatiaľ čo v grafovej databáze je to oddelené typom entity alebo vzťahu. Taktiež relačné databázy sa nevedia dynamicky prispôsobiť novým typom a preto si vyžadujú vopred definovanú schému. Remodelovanie takejto databázy je veľmi nákladné a časovo náročné. K dátam v grafovej databáze môžeme ľahko pristupovať pomocou dopytovacieho jazyka Cypher, ktorý je súčasťou rodiny grafových dopytovacích jazykov spolu s SPARQL. Tieto jazyky podporujú okrem štandardných relačných operátorov aj operátory, ktoré rekurzívne vyhľadávajú cestu medzi entitami ľubovoľnej dĺžky, čo je v tradičnom SQL náročne vyjadriteľné~\cite{hogan2021kg}.
 
 Alternatívou by mohla byť vektorová databáza, kde sa údaje ukladajú ako vektory v multidimenzionálnom priestore. Dáta sa dajú následne vyhľadávať pomocou sémantickej podobnosti a vrátia $k$ najbližších susedov. Ich slabinou je strata explicitného relačného kontextu, ak otázka vyžaduje následovať reťaz $A \to B \to C$, čisto sémanticky podobné údaje môžu relevantnú väzbu minúť, pretože kľúčové údaje sú roztrúsené v dokumente~\cite{mlmastery2026vecvsgraph}. Naopak znalostné grafy robia vzťahy explicitnými a umožňujú uvažovanie nad cestami, kde kľúčové uzly majú vzdialenosť $n$ hrán (skokov). V moderných systémoch s využitím LLM sa technológie grafov a vektorov navzájom dopĺňajú~\cite{llmEmpKGcons2025}.
 
@@ -152,7 +152,7 @@ Hlavnými charakteristikami tohto prístupu sú:
 Využitie LLM pre extrakciu prebieha v dvoch hlavných paradigmách. Prvou je metóda založená na schéme, ktoré sa spoliehajú na explicitnú schému znalosti, ktorá poskytuje štrukturálne vedenie a sémantické obmedzenia. LLM tu slúžia ako asistenti, ktorí dopĺňajú inštancie do vopred definovaných ontológií. Existujú aj adaptívne schémy, ktoré sa dynamicky vyvíjajú počas procesu extrakcie bez nutnosti opätovného trénovania modelu. Druhou metódou je metóda bez schémy. Cieľom je získavať znalosti priamo bez závislosti na vopred definovaných schémach. Tieto metódy uprednostňujú flexibilitu a otvorené objavovanie~\cite{llmEmpKGcons2025}.
 
 \subsubsection{Promptovacie techniky pri extrakcii znalostí}
-Kľúčové techniky pre LLM modely na funkciu extrakcie:
+Kľúčové techniky pre modely LLM na funkciu extrakcie:
 \begin{itemize}
   \item In-context learning (ICL) - je schopnosť modelov riešiť extrakčné úlohy bez explicitného trénovania, len na základe abstraktného popisu (Zero-Shot learning) alebo niekoľkých príkladov (Few-Shot learning) v rámci vstupu~\cite{IEtoSuppScien2025}.
   \item Chain-of-Thought (CoT) prompting - inštruovanie LLM, aby pri extrakcii postupoval krok za krokom, čo zlepšuje logickú súvislosť a organizáciu znalostí~\cite{IEtoSuppScien2025}.
@@ -244,7 +244,7 @@ Generickým prístupom by bolo naivné prevedenie PDF na text a extrakcia trojí
   \item zachovanie pôvodu - každá entita je viazaná na chunk (Paragraf, Odsek, Písmeno, Bod) a chunk na dokument, takže ku každému tvrdeniu v grafe existuje stopa do pôvodného textu
 \end{itemize}
 
-Spracovanie je súvislá trojkroková postupnosť: predspracovanie (detekcia rozloženia strán, samostatná extrakcia tabuliek a vzorcov), extrakcia (ODD\,$\to$\,SR\,$\to$\,SDE), a vloženie do databázy (MERGING uzlov a hrán cez normalizované ID a vybudovanie vektorových indexov). Tento tok dát je znázornený na obrázku č.\ref{fig:process}.
+Spracovanie je súvislá trojkroková postupnosť: predspracovanie (detekcia rozloženia strán, samostatná extrakcia tabuliek a vzorcov), extrakcia (ODD\,$\to$\,SR\,$\to$\,SDE), a vloženie do databázy (MERGING uzlov a hrán cez normalizované ID a vybudovanie vektorových indexov). Tento tok dát je znázornený na obrázku č.~\ref{fig:process}.
 
 \begin{figure}[h]
     \centering
@@ -286,7 +286,7 @@ Predspracovanie oddeľuje textové časti dokumentu od tabuliek a vzorcov. Text 
 V tomto kroku sa každá strana dokumentu konvertuje na obrázok s rozlíšením 200 DPI. Aplikuje sa DocLayout-YOLO model, ktorý prejde a zdetekuje rozloženie každej strany. Tento detektor je nakonfigurovaný, aby rozoznal päť cieľových tried: tabuľka, obrázok, diagram, izolovaný vzorec a popis vzorca. Detekcie s istotou pod 0,3 sú zahodené. Pre každú nájdenú detekciu, nadväzujúci box je vystrihnutý z obrázku stránky a uložený ako bezstratový PNG súbor. Všetky susedné obrázky na základe strany (ak rozdiel strán je menší ako 2) sú zoskupené, aby tabuľky, ktoré sa rozkladajú na viacero strán, boli pri sebe ako jeden logický celok.
 
 \subsubsection{Extrakcia tabuliek}
-Každá skupina tabuliek je spracovaná v dvoch krokoch. Prvý krok, OCR schopný GPT 5.4 mini model, prijme postupne po 2 orezaných obrázkoch skupiny spoločne so system promptom, ktorý nariaďuje, aby bol výstup tabuľka v podobe HTML. Tento prompt zakazuje sumarizáciu tabuľky a nariaďuje, aby model zachoval doslovný text bunky.
+Každá skupina tabuliek je spracovaná v dvoch krokoch. Prvý krok, OCR schopný model GPT 5.4 mini, prijme postupne po 2 orezaných obrázkoch skupiny spoločne so system promptom, ktorý nariaďuje, aby bol výstup tabuľka v podobe HTML. Tento prompt zakazuje sumarizáciu tabuľky a nariaďuje, aby model zachoval doslovný text bunky.
 
 Druhý krok, výsledný HTML výstup je poskytnutý ďalšiemu LLM volaniu, kde tentokrát má model za úlohu transformovať tabuľku do hierarchickej podoby vrcholov a vzťahov: tabuľka je označená ako koreňový vrchol, a list ako každý riadok tabuľky (uchováva informácie z jednotlivých stĺpcov riadka vo vlastnostiach, kde kľúč je hlavička stĺpca a hodnota je bunka v riadku a stĺpci). Je to cesta, ako zachovať význam tabuľky v znalostnom grafe. Vnútorné strany viac-stranovej tabuľky sú vyradené zo zoznamu strán PDF dokumentu, pre neskoršiu extrakciu, aby sa predišlo duplicitám rovnakej informácie. Ukážka výsledku tejto transformácie je zobrazená na obrázku~\ref{fig:tabulky-graf}, kde každá tabuľka v dokumente tvorí samostatný koreňový uzol typu \emph{Tabuľka} s naviazanými listovými uzlami reprezentujúcimi jednotlivé riadky.
 
@@ -341,7 +341,7 @@ Po dokončení predspracovania, zvyšné strany dokumentu sú rozsekané na chun
 \subsubsection{Detekcia v otvorenej doméne (ODD)}
 Cieľom tohto prvého kroku je nájsť, aké typy entít a vzťahov sa v dokumente vyskytujú. Text je rozdelený pomocou nástroja RecursiveCharacterTextSplitter, s veľkosťou chunku 1200 charakterov a prekryvom 200 charakterov. Relatívne väčšie okno textu je zvolené schválne. V tejto etape model GPT-5.4-mini je inštruovaný, aby vyhľadal typy a nie konkrétne inštancie. Širšie kontextové okno napomáha, aby model videl viac ako len jednu vetu v čase, čo je veľmi dôležité v legislatívnych dokumentoch, kde napríklad slovo \emph{„základ dane“} je uvedené niekoľko viet predtým ako je použité. 
 
-Každý chunk $c_i$ je paralelne posielaný LLM agentovi, ktorého system prompt inštruuje, aby našiel a vrátil všeobecné, ale rozlíšiteľné typy entít a typy vzťahov. Agentovi je explicitne napísané, aby sa zameriaval na typy ako sú zákony, paragrafy, práva a povinnosti. Pomenovanie typov sa riadi normalizačnými pravidlami opísanými v časti o prompt engineeringu. Výstup tohto kroku je zjednotený zoznam schém chunkov: $S_{ODD} = \bigcup_{i=1}^{|C|} S_i$. Schému môžme zobraziť ako $S_i = (T^{(i)}_V, \, T^{(i)}_E)$, kde $T^{(i)}_V$ sú typy entít (vrcholov v znalostnom grafe) a $T^{(i)}_E$ sú typy vzťahov (hrán v znalostnom grafe) medzi entitami.
+Každý chunk $c_i$ je paralelne posielaný LLM agentovi, ktorého system prompt inštruuje, aby našiel a vrátil všeobecné, ale rozlíšiteľné typy entít a typy vzťahov. Agentovi je explicitne napísané, aby sa zameriaval na typy ako sú zákony, paragrafy, práva a povinnosti. Pomenovanie typov sa riadi normalizačnými pravidlami opísanými v časti o prompt engineeringu. Výstup tohto kroku je zjednotený zoznam schém chunkov: $S_{ODD} = \bigcup_{i=1}^{|C|} S_i$. Schému môžeme zobraziť ako $S_i = (T^{(i)}_V, \, T^{(i)}_E)$, kde $T^{(i)}_V$ sú typy entít (vrcholov v znalostnom grafe) a $T^{(i)}_E$ sú typy vzťahov (hrán v znalostnom grafe) medzi entitami.
 
 \subsubsection{Úprava a spresnenie schémy (SR)}
 Zjednotené schémy z predošlého kroku detekcie (ODD) $S_{ODD}$, sú poslané na úpravu schémy modelu, spolu s existujúcou schémou znalostného grafu: $S^* = \Phi(S_{ODD},\, S_O)$. Schéma $S_{O}$ je zvolená podľa podmienky, či existuje už nejaká definovaná schéma v znalostnom grafe, a ak nie zadefinuje sa ako pevne daná schéma, ktorá je konštantná naprieč finančným právom. Pri prvotnom vytváraní KG je tak model usmernený, aby vytvoril dostatočne hustú právnu typológiu pre následnú extrakciu.
@@ -351,7 +351,7 @@ Tento krok má lingvistickú úlohu: zo surových typov vytvoriť koherentnú sc
 User a system prompt explicitne nariaďujú modelu reťazové uvažovanie (Chain of Thought), aby porovnal surové dáta so základnou ontológiou a skontroloval zlučovanie nesúvisiacich kategórií. Explicitné rozdelenie zlepšuje kvalitu deduplikácie najmä pre vzťahy, model najprv „premyslí"\, mapovanie a až potom ho serializuje. Z týchto dôvodov je volaný väčší model GPT 5.5, ktorý podporuje hlbšie uvažovanie/odvodzovanie. Taktiež sa uchováva merge log, ktorý mapuje všetky typy do akého typu entity alebo vzťahu boli zjednotené. Pomáha to pri debuggovaní alebo auditovaní.
 
 \subsubsection{Schémou riadená extrakcia (SDE)}
-Posledný krok je extrakcia pomocou natvrdo nanútenej upravenej $S^*$ schémy (jednotný krok NER a RE), z predošlého kroku. Text je v tomto kroku rozdelený pomocou chunkovacej stratégie, kde sa linearizujú jednotlivé paragrafy, odseky a písmena (krok nadväzuje na chunkovaciu stratégiu opísanú v časti~\ref{sec:chunkovacia-strategia}). Tento krok je podnietený odlišnou úlohou ako pri ODD. V tomto kroku GPT-5.4-mini model musí extrahovať konkrétne inštancie entít a vzťahov medzi nimi. Zjednotený a ustálený kontext znižuje pravdepodobnosť, že sa dva nesúvisiace fakty zmiešajú do jedného vzťahu. Chunky sú posielané paralelne s limitovanou súbežnosťou a pause-and-retry mechanizmom, v prípade vyčerpania užívateľových tokenov za minútu.
+Posledný krok je extrakcia pomocou natvrdo nanútenej upravenej $S^*$ schémy (jednotný krok NER a RE), z predošlého kroku. Text je v tomto kroku rozdelený pomocou chunkovacej stratégie, kde sa linearizujú jednotlivé paragrafy, odseky a písmena (krok nadväzuje na chunkovaciu stratégiu opísanú v časti~\ref{sec:chunkovacia-strategia}). Tento krok je podnietený odlišnou úlohou ako pri ODD. V tomto kroku model GPT 5.4 mini musí extrahovať konkrétne inštancie entít a vzťahov medzi nimi. Zjednotený a ustálený kontext znižuje pravdepodobnosť, že sa dva nesúvisiace fakty zmiešajú do jedného vzťahu. Chunky sú posielané paralelne s limitovanou súbežnosťou a pause-and-retry mechanizmom, v prípade vyčerpania užívateľových tokenov za minútu.
 
 Prompt nariaďuje niekoľko kvalitatívnych pravidiel. Pravidlo najšpecifickejšieho typu, ak schéma obsahuje aj všeobecnejšie aj špecifickejšie pasujúce typy, použije sa špecifickejší. Pravidlo closest-or-skip, ak v schéme nie je presne pasujúci typ, model použije najbližší existujúci, alebo entitu úplne preskočí (radšej nič ako halucinovaný typ). Vlastnosti len ak sú explicitné, model nesmie vymýšľať vlastnosti uzlov ani vzťahov, môže uložiť iba to, čo je v texte priamo uvedené. Taktiež modelu je ukázaný vzor jedným maximálne dvoma príkladmi, ako by mal výstup vyzerať.
 
@@ -479,10 +479,10 @@ Neo4j je grafová databáza postavená na modeli grafov s vlastnosťami. Entity 
 
 \
 
-\noindent\textbf{LLM modely}
+\noindent\textbf{Modely LLM}
 
 \
-Projekt využíva viac poskytovateľov LLM modelov súčasne. Modely sú volené podľa ich schopností, či ide o rýchlosť, cenu, kvalitu spracovania, reasoning alebo ich určenie. Sú to konkrétne modely GPT 5.4 mini a GPT 5.5 od OpenAI. Modely sú ukázané v metrike cena vstup/výstup, tokenov za minútu a požiadaviek za minútu.
+Projekt využíva viac poskytovateľov modelov LLM súčasne. Modely sú volené podľa ich schopností, či ide o rýchlosť, cenu, kvalitu spracovania, reasoning alebo ich určenie. Sú to konkrétne modely GPT 5.4 mini a GPT 5.5 od OpenAI. Modely sú ukázané v metrike cena vstup/výstup, tokenov za minútu a požiadaviek za minútu.
 
 \begin{itemize}
     \item GPT 5.4 mini: 0.75\$/4.50\$, 200 000 TPM a 500 RPM
@@ -508,9 +508,9 @@ Táto časť sumarizuje rozhodnutia, ktoré mali najväčší vplyv na stabilitu
 
 \subsubsection{Mechanizmus semaforu}
 
-Pri spracovaní dokumentu je každý chunk spracovaný ako samostatná asynchrónna úloha. Keďže dokument môže obsahovať desiatky až stovky chunkov, paralelné volania LLM modelu môžu rýchlo naraziť na limity API, najmä na počet tokenov za minútu. Zlyhanie jednej požiadavky pri rate limite navyše často znamená, že v krátkom čase zlyhajú aj ďalšie požiadavky. Preto je spracovanie riadené koordinačným mechanizmom so semaforom, globálnym prepínačom a zámkom.
+Pri spracovaní dokumentu je každý chunk spracovaný ako samostatná asynchrónna úloha. Keďže dokument môže obsahovať desiatky až stovky chunkov, paralelné volania modelu môžu rýchlo naraziť na limity API, najmä na počet tokenov za minútu. Zlyhanie jednej požiadavky pri rate limite navyše často znamená, že v krátkom čase zlyhajú aj ďalšie požiadavky. Preto je spracovanie riadené koordinačným mechanizmom so semaforom, globálnym prepínačom a zámkom.
 
-Semafor obmedzuje počet súčasne bežiacich požiadaviek, v implementácii na päť paralelných úloh. Každá úloha pred volaním modelu najprv overí globálny prepínač. Ak je prepínač aktívny, úloha čaká na voľné miesto v semafore a po jeho získaní vykoná extrakciu alebo detekciu pomocou LLM modelu. Každá úloha má najviac tri pokusy.
+Semafor obmedzuje počet súčasne bežiacich požiadaviek, v implementácii na päť paralelných úloh. Každá úloha pred volaním modelu najprv overí globálny prepínač. Ak je prepínač aktívny, úloha čaká na voľné miesto v semafore a po jeho získaní vykoná extrakciu alebo detekciu pomocou jazykového modelu. Každá úloha má najviac tri pokusy.
 
 Ak volanie zlyhá a úloha má ešte dostupný ďalší pokus, pokúsi sa získať zámok. Zámok zabezpečuje, že cooldown spustí iba prvá úloha, ktorá zlyhanie zachytí. Táto úloha vypne globálny prepínač, čím pozastaví ostatné úlohy na spoločnom synchronizačnom bode, počká 60 sekúnd na obnovenie rate limitu a následne prepínač opäť zapne. Ostatné úlohy tak nevykonávajú vlastné nezávislé čakanie, ale riadia sa jedným spoločným signálom.
 
@@ -520,7 +520,7 @@ Ak úloha vyčerpá všetky tri pokusy, výnimka sa propaguje ďalej. Hlavná ru
 
 \subsubsection{Štruktúrovaný výstup}
 
-Štruktúrovaný výstup zabezpečuje, že odpoveď LLM modelu zodpovedá vopred definovanej schéme. Výstup tak nie je potrebné dodatočne parsovať z voľného textu a možno ho priamo deserializovať do Python objektov, napríklad do slovníka, dátovej triedy alebo Pydantic modelu. V LangChain sa na tento účel používajú najmä dva prístupy.
+Štruktúrovaný výstup zabezpečuje, že odpoveď jazykového modelu zodpovedá vopred definovanej schéme. Výstup tak nie je potrebné dodatočne parsovať z voľného textu a možno ho priamo deserializovať do Python objektov, napríklad do slovníka, dátovej triedy alebo Pydantic modelu. V LangChain sa na tento účel používajú najmä dva prístupy.
 
 Prvým je stratégia poskytovateľa (\texttt{ProviderStrategy}), ktorá sa používa pri modeloch s natívnou podporou štruktúrovaného výstupu. Schéma sa odovzdáva priamo pri vytváraní agenta cez parameter \texttt{response\_format}. Validáciu potom zabezpečuje samotný poskytovateľ modelu, čo umožňuje kombinovať štruktúrovaný výstup s agentovou vrstvou, nástrojmi a pamäťou bez ďalšieho manuálneho spracovania odpovede~\cite{langchainStructuredOutput}.
 
@@ -605,7 +605,7 @@ Pri opätovnom vyhodnotení nákladov a prínosov sa však ukázalo, že pri ná
 
 
 \subsection{Kvalitatívne výsledky}
-Na otestovanie spoločnej extrakcie entít a vzťahov bol vytvorený v spolupráci s odborníkmi testovací dataset. Obsahuje 100 grafových dokumentov zo zákonu 222/2004 o dani z pridanej hodnoty, ktorý je veľmi bohatý na prepojenia odkazov paragrafov a je veľmi obtiažný na porozumenie. Dataset je rozdelený 3:7, kde 30 grafových dokumentov slúži na validáciu a 70 na testovanie. Na vyhodnotenie využiteľnosti je v datasete 21 otázok s podporujúcimi paragrafmi, ktoré sú zdrojom k správnej odpovedi.
+Na otestovanie spoločnej extrakcie entít a vzťahov bol vytvorený v spolupráci s odborníkmi testovací dataset. Obsahuje 100 grafových dokumentov zo zákona 222/2004 o dani z pridanej hodnoty, ktorý je veľmi bohatý na prepojenia odkazov paragrafov a je veľmi obtiažný na porozumenie. Dataset je rozdelený 3:7, kde 30 grafových dokumentov slúži na validáciu a 70 na testovanie. Na vyhodnotenie využiteľnosti je v datasete 21 otázok s podporujúcimi paragrafmi, ktoré sú zdrojom k správnej odpovedi.
 
 
 \subsubsection{Extrakcia}

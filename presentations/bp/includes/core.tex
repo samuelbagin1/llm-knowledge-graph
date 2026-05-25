@@ -40,9 +40,22 @@ Grafové databázy rozlišujeme na niekoľko typov, ktoré majú svoje špecific
   \item Málo používaný avšak veľmi zaujímavý je hypergraf, ktorý umožňuje hranám spájať viac ako dve entity súčasne (komplexné hrany)~\cite{hogan2021kg}.
 \end{itemize}
 
-\
-
-V projekte je využívanou databázou na ukladanie dát grafová databáza s vlastnosťami (Property graphs), akou je napríklad Neo4j. Formálna definícia grafovej databázy s vlastnosťami podľa Hogan et al., ktorá uchováva dáta v grafe v podobe usporiadanej n-tice $G = (V, E, L, P, U, e, l, p)$. Platí: $V$ je množina identifikátorov vrcholov (uzlov), $E$ je množina identifikátorov hrán, $L$ je množina typov, ktoré môžu niesť uzly aj hrany, $P$ je množina mien vlastností,  $U$ je množina hodnôt vlastností, $e : E \to V \times V$ každú hranu priradí dvojici vrcholov (jej začiatočnému a koncovému uzlu), $l : V \cup E \to 2^{L}$ priraďuje každému uzlu alebo hrane množinu typov, $p : V \cup E \to 2^{P \times U}$ priraďuje každému uzlu alebo hrane množinu dvojíc \emph{(vlastnosť, hodnota)}. Intuitívne: vrcholy a hrany sú len identifikátory z univerzálnej množiny databázy, funkcia $e$ špecifikuje štruktúru grafu (kto je s kým spojený), funkcie $l$ a $p$ nesú „sémantiku“, typy uzlov/hrán a ich atribúty.\cite{hogan2021kg}
+V projekte je na ukladanie dát použitá grafová databáza s vlastnosťami (Property Graph), akou je napríklad Neo4j. Podľa Hogan et al.~\cite{hogan2021kg} možno takýto graf formálne zapísať ako usporiadanú n-ticu:
+\[
+G = (V, E, L, P, U, e, l, p).
+\]
+Jednotlivé symboly majú nasledujúci význam:
+\begin{itemize}
+  \item $V$ je množina identifikátorov vrcholov (uzlov),
+  \item $E$ je množina identifikátorov hrán,
+  \item $L$ je množina typov, ktoré môžu niesť uzly aj hrany,
+  \item $P$ je množina mien vlastností,
+  \item $U$ je množina hodnôt vlastností,
+  \item $e : E \to V \times V$ priraďuje každú hranu dvojici vrcholov,
+  \item $l : V \cup E \to 2^{L}$ priraďuje uzlom a hranám množinu typov,
+  \item $p : V \cup E \to 2^{P \times U}$ priraďuje uzlom a hranám množinu dvojíc \emph{(vlastnosť, hodnota)}.
+\end{itemize}
+Funkcia $e$ určuje štruktúru grafu, zatiaľ čo funkcie $l$ a $p$ nesú typy a atribúty uzlov a hrán.
 
 Tento typ vyniká, pretože ponúka vyššiu flexibilitu pri modelovaní komplexných vzťahov. Jeho hlavnou výhodou je, že umožňuje priamo anotovať hranu bez nutnosti vytvárania pomocných uzlov, ak chceme k vzťahu medzi entitami priradiť rozšírujúcu vlastnosť (napríklad v medicíne k hrane NEZIADUCI\_UCINOK môžme priradiť dodatočnú vlastnosť, aké konkrétne nežiaduce účinky spôsobil liek). Naopak v jednoduchých modeloch by sme museli vytvoriť samostatný uzol pre danú hranu/vlastnosť~\cite{hogan2021kg}.
 
@@ -764,7 +777,7 @@ Vyššie rozumové úsilie (high) sa premieta do konzistentného, no relatívne 
 
 \subsubsection{Porovnanie RAG s GraphRAG}
 
-Na overenie praktickej využiteľnosti znalostného grafu som porovnával tri spôsoby odpovedania na otázky k právnemu textu: klasický chat s LLM, vektorový RAG a GraphRAG. Pri práci so zákonom je dôležité, či odpoveď vychádza z konkrétneho ustanovenia a či systém vie nájsť časti zákona, o ktoré sa má oprieť.
+Na overenie praktickej využiteľnosti znalostného grafu som porovnával tri experimentálne nastavenia odpovedania na otázky k právnemu textu: klasický chat s LLM, vektorový RAG a GraphRAG. Pri práci so zákonom je dôležité, či odpoveď vychádza z konkrétneho ustanovenia a či systém vie nájsť časti zákona, o ktoré sa má oprieť.
 
 Testovacia množina obsahuje 21 otázok pripravených daňovým auditorom. Všetky otázky sa vzťahujú výhradne na zákon č. 222/2004 Z. z. o dani z pridanej hodnoty. Ku každej otázke je priradená správna objektívna odpoveď a zároveň zoznam paragrafov zákona, ktoré by mal vyhľadávací prístup nájsť ako relevantný kontext. Takto sa dá oddeliť samotná kvalita odpovede od kvality vyhľadávania. Model môže odpovedať správne náhodou alebo na základe všeobecných znalostí z predtrénovania, ale pri RAG prístupe je podstatné aj to, či sa dostal k správnym ustanoveniam zákona.
 
@@ -793,6 +806,8 @@ Klasický chat s LLM vynikal v samotnom formulovaní vecne správnych odpovedí,
 Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z 21, hoci pokryl polovicu ľudsky anotovaných podporujúcich sekcií. Najlepšie fungoval pri otázkach, kde stačilo nájsť priamo pomenované ustanovenie a odpoveď nevyžadovala kombináciu viacerých doplnkových pravidiel. Pri $k=10$ sa pokrytie sekcií zlepšilo z 50{,}0\,\% na 62{,}1\,\% a počet správnych odpovedí vzrástol na 6 z 21, čo ukazuje, že širší kontext pomohol najmä pri dohľadaní chýbajúcich paragrafov. Nedostatkom však zostalo, že model často neobsiahol všetky právne dôsledky z ľudskej odpovede, napríklad doplnkové oznamovacie povinnosti, výnimky, pravidlá po lehote alebo následné opravy. Zvýšenie parametra $k$ teda zlepšilo vyhľadávanie relevantných sekcií, ale samo osebe nestačilo na spoľahlivé právne odpovedanie pri otázkach vyžadujúcich syntézu viacerých ustanovení.
 
 GraphRAG dosiahol vysokú úspešnosť odpovedí (20 z 21), čo ukazuje, že znalostný graf poskytol modelu dostatočne presné faktické ukotvenie pre väčšinu právnych otázok. Slabším miestom bolo pokrytie podporujúcich ustanovení, kde systém našiel 74{,}6\,\% ľudsky anotovaných sekcií a najčastejšie mu chýbali doplnkové odseky, ustanovenia k evidencii, súhrnným výkazom alebo prílohám.
+
+Tieto výsledky preto nemožno interpretovať ako priame porovnanie troch rovnocenných vyhľadávacích mechanizmov. Klasický chat mal pri každej otázke vložený celý dokument, takže nebol odkázaný na samostatný retrieval krok. Vektorový RAG a GraphRAG naopak najprv vyberali podporný kontext a až následne generovali odpoveď. Výsledky teda ukazujú najmä rozdiel medzi odpovedaním s úplným kontextom a odpovedaním s automaticky vyhľadaným kontextom. V tomto scenári GraphRAG výrazne prekonal vektorový RAG, hoci nedosiahol úplné pokrytie podporujúcich ustanovení.
 
 
 

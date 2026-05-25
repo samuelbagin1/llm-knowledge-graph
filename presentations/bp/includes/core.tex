@@ -325,7 +325,7 @@ Po dokončení predspracovania, zvyšné strany dokumentu sú rozsekané na chun
     \draw[arr] (onto) -- (extr);
     \end{tikzpicture}
   }
-\caption[Trojkroková extrakcia inšpirovaná ODKE+]{Extrakcia inšpirovaná {ODKE+}~\cite{odkeplus2025}}
+\caption[Trojkroková extrakcia informácií]{Trojkroková extrakcia informácií}
 \label{fig:extraction}
 \end{figure}
 
@@ -363,11 +363,12 @@ Pre každý chunk $c_i$, model vracia uzly a vzťahy, ktoré korešpondujú upra
 \subsection{Vkladanie do databázy}
 Extrahované grafové dokumenty (GraphDocument) sú vo finálnom kroku vložené do Neo4j grafovej databázy. Uzly sú vytvorené pomocou MERGE nad ich normalizovaným ID (konkrétna inštancia entity napr. Colna Dan), takže ich opakované zmienenia medzi chunkami sú zjednotené do jednotnej inštancie. Vzťahy sú taktiež vytvárané pomocou MERGE logiky, aby sa predišlo duplicitným hranám. Na rozdiel od pridaných extrahovaných uzlov a Chunk uzlov, je v štruktúre databázy pridaný uzol typu Document, ktorý nesie ID názvu dokumentu. V právnych dokumentoch sú to ID ako ZZ\_2003\_595\_20260101, kde ZZ je zbierka zákona, 2003 rok, 595 číslo zákona a 20260101 dátum poslednej zmeny dokumentu. Všetky chunky z tohto dokumentu sú pospájané pomocou vzťahu IN\_DOCUMENT. Výslednú štruktúru a hierarchiu databázy môžeme vidieť na obrázku \ref{fig:graph_structure}. Výhodou tejto architektúry je zachovanie vzťahu pôvodu odkiaľ je daná entita prevzatá.
 
-\begin{minipage}[h]{\textwidth}
-  \begin{center}
-  \resizebox{\textwidth}{!}{%
+\begin{center}
+\begin{minipage}[h]{0.95\textwidth}
+  \centering
+  \resizebox{\linewidth}{!}{%
   \begin{tikzpicture}[
-    node distance=17mm and 20mm,
+    node distance=15mm and 20mm,
     doc/.style={circle, draw, fill=gray!20, minimum size=14mm, align=center},
     content/.style={circle, draw, fill=gray!45, minimum size=14mm, align=center},
     section/.style={circle, draw, fill=gray!60, minimum size=14mm, align=center},
@@ -379,8 +380,8 @@ Extrahované grafové dokumenty (GraphDocument) sú vo finálnom kroku vložené
     \node[doc] (doc) {Document};
 
     \node[content, below left=26mm and 42mm of doc] (chunk) {Chunk};
-    \node[content, below left=26mm and 14mm of doc] (formula) {Formula};
-    \node[content, below right=26mm and 14mm of doc] (table) {Table};
+    \node[content, below left=26mm and 14mm of doc] (formula) {Vzorec};
+    \node[content, below right=26mm and 14mm of doc] (table) {Tabulka};
     \node[content, below right=26mm and 42mm of doc] (paragraf) {Paragraf};
 
     \node[section, right=of paragraf] (odsek) {Odsek};
@@ -393,8 +394,6 @@ Extrahované grafové dokumenty (GraphDocument) sú vo finálnom kroku vložené
     \node[ent, below=of bod] (entityBod) {Entita};
 
     \node[leaf, below left=of table] (row) {Riadok};
-    \node[leaf, below=of table] (cell) {Bunka};
-    \node[leaf, below right=of table] (column) {Stĺpec};
 
     \draw[arr] (chunk) -- node[edge label, above]{IN\_DOCUMENT} (doc);
     \draw[arr] (formula) -- node[edge label, above]{IN\_DOCUMENT} (doc);
@@ -410,15 +409,17 @@ Extrahované grafové dokumenty (GraphDocument) sú vo finálnom kroku vložené
     \draw[arr] (entityPismeno) -- node[edge label, right, sloped=false]{IN\_CHUNK} (pismeno);
     \draw[arr] (entityBod) -- node[edge label, right, sloped=false]{IN\_CHUNK} (bod);
 
+    \draw[arr] (entity.south) to[out=-35, in=-145] node[edge label, below, sloped=false]{RELATES\_TO} (entityOdsek.south);
+    \draw[arr] (entityOdsek) -- node[edge label, below]{RELATES\_TO} (entityPismeno);
+    \draw[arr] (entityPismeno) -- node[edge label, below]{RELATES\_TO} (entityBod);
+
     \draw[arr] (row) -- node[edge label, above]{IN\_TABLE} (table);
-    \draw[arr] (cell) -- node[edge label, right, sloped=false]{IN\_TABLE} (table);
-    \draw[arr] (column) -- node[edge label, above]{IN\_TABLE} (table);
   \end{tikzpicture}%
   }
   \captionof{figure}[Štruktúra znalostného grafu]{Štruktúra znalostného grafu: dokument, obsahové uzly, hierarchia sekcií, entita a listy tabuľky.}
   \label{fig:graph_structure}
-  \end{center}
-\end{minipage}%
+\end{minipage}
+\end{center}
 
 \
 

@@ -1,14 +1,14 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is '.build/thesis.blg'
-[32] biber-darwin:340> INFO - === Sun May 24, 2026, 22:41:01
+[31] biber-darwin:340> INFO - === Mon May 25, 2026, 13:31:12
 [39] Biber.pm:420> INFO - Reading '.build/thesis.bcf'
 [79] Biber.pm:994> INFO - Found 44 citekeys in bib section 0
-[87] Biber.pm:4463> INFO - Processing section 0
-[92] Biber.pm:4654> INFO - Looking for bibtex file 'includes/bibliography.bib' for section 0
-[94] bibtex.pm:1713> INFO - LaTeX decoding ...
-[116] bibtex.pm:1519> INFO - Found BibTeX data source 'includes/bibliography.bib'
-[316] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[316] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[316] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'sk-SK'
+[86] Biber.pm:4463> INFO - Processing section 0
+[91] Biber.pm:4654> INFO - Looking for bibtex file 'includes/bibliography.bib' for section 0
+[93] bibtex.pm:1713> INFO - LaTeX decoding ...
+[115] bibtex.pm:1519> INFO - Found BibTeX data source 'includes/bibliography.bib'
+[315] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[315] UCollate.pm:68> INFO - Overriding locale 'sk-SK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[315] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'sk-SK'
 [332] bbl.pm:676> INFO - Writing '.build/thesis.bbl' with encoding 'UTF-8'
 [345] bbl.pm:779> INFO - Output to .build/thesis.bbl

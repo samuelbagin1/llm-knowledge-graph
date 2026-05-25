@@ -1,6 +1,10 @@
 FILE = thesis
 BUILD_DIR = .build
 
+# Ensure MacTeX binaries are on PATH even when invoked from a venv or IDE
+# that doesn't read /etc/paths.d/TeX (e.g. non-login shells, Python venvs).
+export PATH := /Library/TeX/texbin:$(PATH)
+
 LATEXMK_OPTIONS = -pdf -synctex=1 -output-directory=$(BUILD_DIR) -interaction=nonstopmode -silent
 LINE_WIDTH = error_line=240 half_error_line=160 max_print_line=240
 

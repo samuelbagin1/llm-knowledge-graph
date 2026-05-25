@@ -3,9 +3,7 @@
 
 \subsection{Znalostné grafy}
 
-Znalostné grafy (Knowledge Graphs, KG) predstavujú moderný spôsob reprezentácie a prepájania údajov, ktorý umožňuje strojom chápať vzťahy medzi entitami podobne, ako to robia ľudia. 
-
-Znalostný graf je grafová reprezentácia dát určená na zhromažďovanie a odovzdávanie vedomostí o reálnom svete. Skladá sa z dvoch základných prvkov. Uzly, ktoré predstavujú objekty záujmu (entity) a hrany, ktoré definujú vzťahy medzi týmito entitami~\cite{hogan2021kg}. Vizuálnu ukážku takejto reprezentácie možno vidieť na obrázku~\ref{fig:kg-ukazka}, kde sú entity zobrazené ako uzly rôznych typov (rozlíšené farbou) a hrany predstavujú vzťahy medzi nimi.
+Znalostný graf (Knowledge Graph, KG) je grafová reprezentácia údajov, v ktorej uzly predstavujú objekty záujmu (entity) a hrany zachytávajú vzťahy medzi nimi~\cite{hogan2021kg}. Takáto štruktúra umožňuje prepájať fakty o reálnom svete do strojovo spracovateľnej podoby. Vizuálnu ukážku možno vidieť na obrázku~\ref{fig:kg-ukazka}, kde sú entity zobrazené ako uzly rôznych typov a hrany predstavujú ich vzájomné vzťahy.
 
 \begin{figure}[h]
     \centering
@@ -13,8 +11,6 @@ Znalostný graf je grafová reprezentácia dát určená na zhromažďovanie a o
     \caption[Ukážka znalostného grafu]{Ukážka znalostného grafu vizualizovaného v prostredí Neo4j Browser. Každý uzol reprezentuje entitu konkrétneho typu (napríklad Paragraf, Osoba, Dokument), zatiaľ čo hrany medzi uzlami zachytávajú typované vzťahy. Farba uzla zodpovedá jeho typu, čo umožňuje rýchlu vizuálnu orientáciu v štruktúre grafu.}
     \label{fig:kg-ukazka}
 \end{figure}
-
-\
 
 Vynikajú v integrácii rôznorodých dát, kde znalostné grafy sú ideálne na spájanie informácií z mnohých dynamických a rozsiahlych zdrojov. Na rozdiel od tradičných databáz, grafy sú flexibilnejšie, kde schéma a dáta sa môžu voľnejšie rozvíjať. Podporujú navigačné operátory, ktoré dokážu rekurzívne vyhľadávať entity prepojené cestami ľubovoľnej dĺžky. Pomocou ontológií a pravidiel umožňujú strojom nielen ukladať fakty, ale o nich aj logicky uvažovať a odvodzovať znalosti. Najznámejšími verejne dostupnými znalostnými grafmi sú DBpedia, Freebase, Wikidata, YAGO~\cite{hogan2021kg}.
 
@@ -216,8 +212,8 @@ Na extrakciu pomenovaných entít by sme mohli využiť nástroje ako SpaCy aleb
 \subsubsection{Právna doména ako špecializovaný kontext}
 Aj v rámci samotného právneho NLP sa väčšina výskumu sústreďuje na úlohy ako klasifikácia, sumarizácia alebo predikcia rozhodnutí súdu, zatiaľ čo konštrukcia znalostných grafov z právnych textov ostáva málo preskúmaná. Využitie ontológií a znalostných grafov v právnej doméne je relatívne zriedkavé, hoci má značný potenciál posilniť usudzovanie nad zložitými právnymi textami. Ich nasadenie však komplikuje pojem právnej domény, kedy sa význam právnych pojmov vyvíja v čase. Pre oblasť slovenského finančného práva — ktoré sa vyznačuje hustou sieťou krížových odkazov medzi predpismi, paragrafmi a odsekmi, neexistuje verejne dostupná schéma ani anotovaný dataset, ktorý by takéto vzťahy explicitne zachytával. To znamená, že schéma uzlov a vzťahov (napr. PravnyPredpis, Paragraf, OBSAHUJE, ODKAZUJE\_NA) musí byť navrhnutá osobitne, s rešpektom k formálnej štruktúre slovenskej legislatívy a k danému typu dokumentu~\cite{nlpLegal2025}.
 
-\subsubsection{Hybridné spracovanie textu a tabuliek}
-Tretia, prakticky najpodstatnejšia medzera spočíva v tom, že existujúce riešenia pre konštrukciu znalostných grafov pracujú takmer výlučne s plynulým textom. Slovenské zákony z oblasti finančného práva (napr. zákony upravujúce kolektívne investovanie, dane či účtovníctvo) však obsahujú významnú časť normatívneho obsahu v podobe tabuliek — sadzieb, limitov, kategórií majetku alebo výpočtových koeficientov. Predspracovanie právnych textov je samo o sebe náročnou úlohou, pretože dokumenty majú zložité vnorené štruktúry, klauzuly v klauzulách a krížové odkazy na iné prípady, predpisy alebo ustanovenia, čo sťažuje ich segmentáciu na koherentné jednotky pre analýzu. Tabuľky túto komplexnosť ešte zvyšujú, pretože strácajú zmysel pri transformácií do čistého textu a vyžadujú vlastný spôsob extrakcie entít a vzťahov, ktorý zachová riadkovo-stĺpcovú sémantiku a zároveň ju prepojí s textovým kontextom paragrafu, v ktorom sa tabuľka nachádza. Táto medzera vytvára priestor pre návrh hybridného prístupu, ktorý dokáže kombinovať extrakciu informácií z textových aj tabuľkových častí dokumentu, a integroval by výsledky do jedného konzistentného grafu.
+\subsubsection{Hybridné spracovanie textu, tabuliek a vzorcov}
+Tretia medzera spočíva v tom, že existujúce riešenia pre konštrukciu znalostných grafov pracujú prevažne s plynulým textom. Slovenské zákony z oblasti finančného práva však obsahujú významnú časť normatívneho obsahu v tabuľkách, napríklad sadzby, limity, kategórie majetku alebo výpočtové koeficienty. Pri prevode do čistého textu sa tabuľková štruktúra stráca a jednotlivé bunky môžu prísť o význam daný riadkom, stĺpcom alebo nadpisom tabuľky. Podobný problém vzniká pri vzorcoch, ktoré sa v PDF dokumentoch často nachádzajú ako grafické prvky a bežná textová extrakcia ich nezachytí.
 
 
 
@@ -226,7 +222,7 @@ Tretia, prakticky najpodstatnejšia medzera spočíva v tom, že existujúce rie
 
 Cieľom riešenia je transformovať PDF dokument slovenského právneho predpisu z neštruktúrovaného textu na štruktúrovaný znalostný graf (KG), ktorý je schopný zodpovedať na vecné otázky o obsahu zákona a zachovať odkaz na pôvodný text. Vstupom je PDF zbierky zákonov, výstupom je Neo4j graf s vlastnosťami doplnený o tri vektorové indexy nad uzlami, chunkami a vzťahmi.
 
-Generickým prístupom by bolo naivné prevedenie PDF na text a extrakcia trojíc jedným LLM volaním. Na slovenských právnych dokumentoch zlyháva z troch dôvodov: tabuľky a vzorce sa pri čistej textovej konverzii rozsypú alebo úplne stratia, slovenská diakritika spôsobuje rozpad rovnakej entity na viacero uzlov (problematika LLM spracovania), a bez vopred známej schémy LLM produkuje nekonzistentné typy entít a vzťahov naprieč chunkami. Návrh riešenia preto stojí na štyroch princípoch: 
+Generickým prístupom by bolo naivné prevedenie PDF na text a extrakcia trojíc jedným LLM volaním. Na slovenských právnych dokumentoch však takýto postup zlyháva najmä pri tabuľkách, vzorcoch, diakritike a nekonzistentnom pomenovaní typov entít a vzťahov naprieč chunkami. Návrh riešenia preto stojí na štyroch princípoch: 
 
 \begin{itemize}
   \item hybridné spracovanie - text, tabuľky aj vzorce sa extrahujú samostatnými trasami
@@ -271,7 +267,7 @@ Asynchrónnosť oboch cyklov je v diagrame zámerná, lebo extrakčné volania n
 \end{figure}
 
 \subsection{Predspracovanie}
-Čisté spracovanie PDF dokumentu nie je dostačujúce pre legislatívne dokumenty obsahujúce tabuľky, ktoré sú nositeľmi dôležitých, opisných a rozvíjajúcich vlastností. Dokonca sa táto tabuľka rozkladá na viacero strán. Pri čítaní tabuľky, ako reťazca by sa tieto informácie roztrúsili a zničil by sa kontext celej tabuľky. Vzorce sa taktiež vyskytúju naprieč dokumentom a v PDF dokumente su uchované ako obrázky - nástroj na čítanie textu z dokumentu by tento obrázok nerozpoznal a nenašiel.
+Predspracovanie oddeľuje textové časti dokumentu od tabuliek a vzorcov. Text sa spracúva štandardnou extrakciou z PDF, zatiaľ čo tabuľky a vzorce sa najprv vyhľadajú v rozložení stránky a následne sa spracujú samostatnými vetvami. Cieľom je zachovať štruktúru tabuliek, prepis matematických zápisov a väzbu každého extrahovaného prvku na pôvodnú stranu dokumentu.
 
 \subsubsection{Detekcia rozloženia}
 V tomto kroku sa každá strana dokumentu konvertuje na obrázok s rozlíšením 200 DPI. Aplikuje sa DocLayout-YOLO model, ktorý prejde a zdetekuje rozloženie každej strany. Tento detektor je nakonfigurovaný, aby rozoznal päť cieľových tried: tabuľka, obrázok, diagram, izolovaný vzorec a popis vzorca. Detekcie s istotou pod 0,3 sú zahodené. Pre každú nájdenú detekciu, nadväzujúci box je vystrihnutý z obrázku stránky a uložený ako bezstratový PNG súbor. Všetky susedné obrázky na základe strany (ak rozdiel strán je menší ako 2) sú zoskupené, aby tabuľky, ktoré sa rozkladajú na viacero strán, boli pri sebe ako jeden logický celok.
@@ -332,21 +328,21 @@ Po dokončení predspracovania, zvyšné strany dokumentu sú rozsekané na chun
 \subsubsection{Detekcia v otvorenej doméne (ODD)}
 Cieľom tohto prvého kroku je nájsť, aké typy entít a vzťahov sa v dokumente vyskytujú. Text je rozdelený pomocou nástroja RecursiveCharacterTextSplitter, s veľkosťou chunku 1200 charakterov a prekryvom 200 charakterov. Relatívne väčšie okno textu je zvolené schválne. V tejto etape model GPT-5.4-mini je inštruovaný, aby vyhľadal typy a nie konkrétne inštancie. Širšie kontextové okno napomáha, aby model videl viac ako len jednu vetu v čase, čo je veľmi dôležité v legislatívnych dokumentoch, kde napríklad slovo \emph{„základ dane“} je uvedené niekoľko viet predtým ako je použité. 
 
-Každý chunk $c_i$ je paralelne posielaný LLM agentovi, ktorého system prompt inštruuje, aby našiel a vrátil všeobecné, ale rozlíšiteľné typy entít a typy vzťahov. Agentovi je explicitne napísané, aby sa zameriaval na typy ako sú zákony, paragrafy, práva a povinnosti. Všetky diakritické znaky sú normalizované do ASCII, aby znalostný graf používal jednotnú slovenskú výslovnosť bez diakritiky. Výstup tohto kroku je zjednotený zoznam schém chunkov: $S_{ODD} = \bigcup_{i=1}^{|C|} S_i$. Schému môžme zobraziť ako $S_i = (T^{(i)}_V, \, T^{(i)}_E)$, kde $T^{(i)}_V$ sú typy entít (vrcholov v znalostnom grafe) a $T^{(i)}_E$ sú typy vzťahov (hrán v znalostnom grafe) medzi entitami.
+Každý chunk $c_i$ je paralelne posielaný LLM agentovi, ktorého system prompt inštruuje, aby našiel a vrátil všeobecné, ale rozlíšiteľné typy entít a typy vzťahov. Agentovi je explicitne napísané, aby sa zameriaval na typy ako sú zákony, paragrafy, práva a povinnosti. Pomenovanie typov sa riadi normalizačnými pravidlami opísanými v časti o prompt engineeringu. Výstup tohto kroku je zjednotený zoznam schém chunkov: $S_{ODD} = \bigcup_{i=1}^{|C|} S_i$. Schému môžme zobraziť ako $S_i = (T^{(i)}_V, \, T^{(i)}_E)$, kde $T^{(i)}_V$ sú typy entít (vrcholov v znalostnom grafe) a $T^{(i)}_E$ sú typy vzťahov (hrán v znalostnom grafe) medzi entitami.
 
 \subsubsection{Úprava a spresnenie schémy (SR)}
 Zjednotené schémy z predošlého kroku detekcie (ODD) $S_{ODD}$, sú poslané na úpravu schémy modelu, spolu s existujúcou schémou znalostného grafu: $S^* = \Phi(S_{ODD},\, S_O)$. Schéma $S_{O}$ je zvolená podľa podmienky, či existuje už nejaká definovaná schéma v znalostnom grafe, a ak nie zadefinuje sa ako pevne daná schéma, ktorá je konštantná naprieč finančným právom. Pri prvotnom vytváraní KG je tak model usmernený, aby vytvoril dostatočne hustú právnu typológiu pre následnú extrakciu.
 
-Tento krok úpravy má čistú lingvistickú úlohu: rieši duplikáty spôsobené diakritikou alebo vynechaním písmena (Dan a Daň alebo ClenskyStat a ClenskStat) a v neposlednom rade zjednocuje sémanticky podobné typy a synonymá (Doklad, DanovyDoklad a HodnovernyDoklad zjednotí do Doklad). Taktiež sa tým rieši koherentnosť, aby nebolo viacero typov toho istého významu. Zároveň nedovoľuje, aby sa spojili sémanticky odlišné typy ako Dokument a Osoba. A v neposlednom rade je to generalizácia, kde príliš špecifické typy sa nahradia všeobecnejším typom, ak to neznižuje právnu zrozumiteľnosť.
+Tento krok má lingvistickú úlohu: zo surových typov vytvoriť koherentnú schému bez duplicitných alebo príliš špecifických pomenovaní. Zároveň musí zachovať rozdiel medzi sémanticky odlišnými kategóriami, aby sa napríklad typy Dokument a Osoba nezlúčili do jednej triedy.
 
-User a system prompt explicitne nariaďujú modelu reťazové uvažovanie (Chain of Thought), aby zreteľne identifikoval duplicity spôsobené preklepmi alebo diakritikou, porovnal surové dáta so základnou ontológiou a skontroloval zlučovanie nesúvisiacich kategórií. Explicitné rozdelenie zlepšuje kvalitu deduplikácie najmä pre vzťahy, model najprv „premyslí"\, mapovanie a až potom ho serializuje. Z týchto dôvodov je volaný väčší model GPT 5.5, ktorý podporuje hlbšie uvažovanie/odvodzovanie. Taktiež sa uchováva merge log, ktorý mapuje všetky typy do akého typu entity alebo vzťahu boli zjednotené. Pomáha to pri debuggovaní alebo auditovaní.
+User a system prompt explicitne nariaďujú modelu reťazové uvažovanie (Chain of Thought), aby porovnal surové dáta so základnou ontológiou a skontroloval zlučovanie nesúvisiacich kategórií. Explicitné rozdelenie zlepšuje kvalitu deduplikácie najmä pre vzťahy, model najprv „premyslí"\, mapovanie a až potom ho serializuje. Z týchto dôvodov je volaný väčší model GPT 5.5, ktorý podporuje hlbšie uvažovanie/odvodzovanie. Taktiež sa uchováva merge log, ktorý mapuje všetky typy do akého typu entity alebo vzťahu boli zjednotené. Pomáha to pri debuggovaní alebo auditovaní.
 
 \subsubsection{Schémou riadená extrakcia (SDE)}
 Posledný krok je extrakcia pomocou natvrdo nanútenej upravenej $S^*$ schémy (jednotný krok NER a RE), z predošlého kroku. Text je v tomto kroku rozdelený pomocou chunkovacej stratégie, kde sa linearizujú jednotlivé paragrafy, odseky a písmena (krok nadväzuje na chunkovaciu stratégiu opísanú v časti~\ref{sec:chunkovacia-strategia}). Tento krok je podnietený odlišnou úlohou ako pri ODD. V tomto kroku GPT-5.4-mini model musí extrahovať konkrétne inštancie entít a vzťahov medzi nimi. Zjednotený a ustálený kontext znižuje pravdepodobnosť, že sa dva nesúvisiace fakty zmiešajú do jedného vzťahu. Chunky sú posielané paralelne s limitovanou súbežnosťou a pause-and-retry mechanizmom, v prípade vyčerpania užívateľových tokenov za minútu.
 
-Prompt nariaďuje niekoľko kvalitatívnych pravidiel. Pravidlo najšpecifickejšieho typu, ak schéma obsahuje aj všeobecnejšie aj špecifickejšie pasujúce typy, použije sa špecifickejší. Pravidlo closest-or-skip, ak v schéme nie je presne pasujúci typ, model použije najbližší existujúci, alebo entitu úplne preskočí (radšej nič ako halucinovaný typ). Vlastnosti len ak sú explicitné, model nesmie vymýšľať vlastnosti uzlov ani vzťahov, môže uložiť iba to, čo je v texte priamo uvedené. A v neposlednom rade, id uzla musí byť označené v neurčitku, rieši sa tým koherentnosť ale aj jednoduchšie zjednocovanie v databáze. Taktiež modelu je ukázaný vzor jedným maximálne dvoma príkladmi, ako by mal výstup vyzerať.
+Prompt nariaďuje niekoľko kvalitatívnych pravidiel. Pravidlo najšpecifickejšieho typu, ak schéma obsahuje aj všeobecnejšie aj špecifickejšie pasujúce typy, použije sa špecifickejší. Pravidlo closest-or-skip, ak v schéme nie je presne pasujúci typ, model použije najbližší existujúci, alebo entitu úplne preskočí (radšej nič ako halucinovaný typ). Vlastnosti len ak sú explicitné, model nesmie vymýšľať vlastnosti uzlov ani vzťahov, môže uložiť iba to, čo je v texte priamo uvedené. Taktiež modelu je ukázaný vzor jedným maximálne dvoma príkladmi, ako by mal výstup vyzerať.
 
-Aby striktné dodržanie schémy $S^*$ neviedlo k strate kontextu, system prompt zavádza špeciálnu konvenciu. Ak je typ vzťahu v $S^*$ príliš všeobecný (napr. MA\_NAROK\_NA), model uloží konkrétne spresnenie do vlastnosti vzťahu pod kľúčom \texttt{evidence} (napr. evidence: vrátenie dane). Týmto sa rieši napätie medzi striktnou schémou a expresivitou textu. Typ vzťahu zostáva normalizovaný a vyhľadateľný v grafe, ale doslovný význam sa zachováva ako stopa pre neskoršie vyhľadávanie. Aby uzol nestratil význam slova normalizáciou ID, tak vo vlastnostiach je mu priradené meno aj s použitím diakritiky.
+Aby striktné dodržanie schémy $S^*$ neviedlo k strate kontextu, system prompt zavádza špeciálnu konvenciu. Ak je typ vzťahu v $S^*$ príliš všeobecný (napr. MA\_NAROK\_NA), model uloží konkrétne spresnenie do vlastnosti vzťahu pod kľúčom \texttt{evidence} (napr. evidence: vrátenie dane). Týmto sa rieši napätie medzi striktnou schémou a expresivitou textu. Typ vzťahu zostáva vyhľadateľný v grafe, ale doslovný význam sa zachováva ako stopa pre neskoršie vyhľadávanie.
 
 Konkrétny príklad výsledku schémou riadenej extrakcie medzi dvoma entitami je zobrazený na obrázku~\ref{fig:vztah-medzi-entitami}. Medzi entitami \emph{Platiteľ} a \emph{Rozhodnutie} sú zachytené dva rozdielne typy vzťahov (\texttt{OZNAMUJE} a \texttt{MA\_POVINNOST}) vychádzajúce z toho istého ustanovenia zákona. Vlastnosť \texttt{section} na hrane zároveň udržuje stopu na konkrétny paragraf, odsek a písmeno, z ktorého bol vzťah extrahovaný.
 
@@ -536,16 +532,18 @@ Samotné chunkovanie následne túto stromovú štruktúru linearizuje. Chunk sa
 
 
 \subsection{Prompt engineering pre slovenčinu}
-Dôraz na ASCII v názvoch typov (ako constraint pre property graph labels), chain~-~of~-~thought pokyny, few-shot príklady, riešenie skloňovania.
-
 Kvalita spracovania zadania modelu závisí nielen od schopností zvoleného modelu, ale aj od formy, v akej je modelu zadaná inštrukcia. Prompty sa musia zamerať na tieto triedy:
 
 \begin{itemize}
     \item Štruktúra promptu - modely reagujú výrazne presnejšie, ak je vstup členený do sekcií. Prompt je písaný v Markdown formáte, kde nadpisy a podnadpisy sú označené pomocou \# alebo \#\#. Typické sekcie promptu bývajú: ÚLOHA, KONTEXT, VSTUP, POKYNY a PRÍKLADY.
     \item Konkrétnosť inštrukcie - inštrukcie musia byť presné a jazykovo presne definované. Ak model nemá explicitne napísané čo a ako má spraviť, výstup úlohy nemusí zodpovedať našim požiadavkám.
     \item Pravidlá a príklady - model musí mať presne ohraničené čo môže. Ak model explicitne neohraničíme pravidlami, model nemusí dodržiavať inštrukcie. Pár príkladov ako má úlohu vykonať dopomôže kvalite spracovania (few-shot learning). Avšak uvedenie príliš veľa príkladov má na svedomí over-fitting, kedy model sa len zameriava na typy tohto príkladu.
-    \item Špecifiká pre slovenčinu - modelom je vynútené, ako daný typ vzťahu alebo entity majú spracovať. Entity alebo uzly v grafe sú označované ako Title Case, typy entít PascalCase a vzťahy UPPER\_SNAKE\_CASE (SCREAMING\_SNAKE\_CASE). Dané triedy musia byť spracované bez diakritiky. Keby nie sú normalizované na nediakritické slová mohlo by sa stať že by daný extrahovaný typ by bol s diakritikou, v neskoršom spracovaní ďalšieho chunku bez diakritiky, a vznikli by duplicitné údaje.
+    \item Špecifiká pre slovenčinu - modelom je vynútené, ako majú spracovať typy vzťahov, typy entít a identifikátory uzlov. Tieto pravidlá sú dôležité najmä pre diakritiku, skloňovanie a konzistentné pomenovanie rovnakých právnych pojmov naprieč chunkami.
 \end{itemize}
+
+Samostatnou súčasťou promptov je normalizácia identifikátorov. Typy entít sa zapisujú vo formáte PascalCase, identifikátory uzlov vo formáte Title Case a typy vzťahov vo formáte UPPER\_SNAKE\_CASE. Názvy používané ako technické identifikátory sa zapisujú bez diakritiky, aby sa predišlo vytváraniu duplicitných uzlov alebo typov, napríklad pri variantoch Dan a Daň. Pôvodný tvar s diakritikou sa môže zachovať vo vlastnostiach uzla, aby sa nestratil čitateľný význam entity.
+
+Normalizačné pravidlá sa používajú aj pri úprave schémy. Model má zjednocovať typy, ktoré vznikli preklepom, rozdielnou diakritikou alebo synonymickým pomenovaním, napríklad Doklad, DanovyDoklad a HodnovernyDoklad. Zároveň nesmie spájať sémanticky odlišné kategórie, napríklad Dokument a Osoba. Cieľom nie je iba odstrániť duplicity, ale udržať schému dostatočne konzistentnú pre ďalšiu extrakciu a ukladanie do grafovej databázy.
 
 
 

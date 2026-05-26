@@ -73,7 +73,7 @@ Alternatívou by mohla byť vektorová databáza, kde sa údaje ukladajú ako ve
 
 \subsection{Klasické metódy extrakcie}
 
-Extrahovanie informácií (Information Extraction, IE) alebo taktiež extrahovanie znalostí (Knowledge Extraction, KE) je úloha transformovania neštruktúrovaného textu prirodzeného jazyka na štruktúrovaný, strojovo čítateľnú reprezentáciu akými sú trojice entita vzťah. Klasické IE princípy rozdelia úlohu do podúloh, detekcia entít a~ich prepojovanie, riešenie koreferencie a~extrahovanie vzťahov, ktoré sú spracované cielenou schémou. Prvotné systémy, ako TextRunner a~KnowItAll, sa spoliehali na špeciálne navrhnuté pravidlá alebo na pevne stanovené lingvistické vzory na extrakciu faktov z~textu~\cite{autKGconstruction2023}. Tento prístup bol veľmi nákladný na expertnú prácu a~zle sa prispôsoboval novým typom dokumentov~\cite{autKGconstruction2023}. Tieto limitácie motivovali posun k~štatistickým a~k~neurónovým prístupom, kde vzory na extrahovanie informácií nie sú manuálne písané ale učené z~označených príkladov~\cite{moncecchiRE2010}. Súčasným trendom je vykonávať rozpoznávanie pomenovaných entít a~extrakciu vzťahov súčasne v~jednom kroku, čím sa znižuje riziko prenosu chýb medzi jednotlivými fázami spracovania~\cite{hogan2021kg}.
+Extrahovanie informácií (Information Extraction, IE) alebo taktiež extrahovanie znalostí (Knowledge Extraction, KE) je úloha transformovania neštruktúrovaného textu prirodzeného jazyka na štruktúrovaný, strojovo čítateľnú reprezentáciu akými sú trojice entita-vzťah-entita. Klasické IE princípy rozdelia úlohu do podúloh, detekcia entít a~ich prepojovanie, riešenie koreferencie a~extrahovanie vzťahov, ktoré sú spracované cielenou schémou. Prvotné systémy, ako TextRunner a~KnowItAll, sa spoliehali na špeciálne navrhnuté pravidlá alebo na pevne stanovené lingvistické vzory na extrakciu faktov z~textu~\cite{autKGconstruction2023}. Tento prístup bol veľmi nákladný na expertnú prácu a~zle sa prispôsoboval novým typom dokumentov~\cite{autKGconstruction2023}. Tieto limitácie motivovali posun k~štatistickým a~k~neurónovým prístupom, kde vzory na extrahovanie informácií nie sú manuálne písané ale učené z~označených príkladov~\cite{moncecchiRE2010}. Súčasným trendom je spájať vzájomne závislé úlohy, napríklad rozpoznávanie pomenovaných entít a extrakciu vzťahov, do spoločných modelov. Tým sa môže zlepšiť využitie informácií medzi úlohami a obmedziť prenos chýb typický pre pipeline prístupy~\cite{hogan2021kg}.
 
 
 \subsubsection{Rozpoznávanie pomenovaných entít}
@@ -92,20 +92,20 @@ Technológie NER prešli vývojom od jednoduchých pravidiel až po zložité ne
   \item Hlboké učenie (neurónové siete): Moderné metódy využívajú hlboké neurónové siete, ktoré dokážu automaticky spracovať zložité súvislosti v~texte bez nutnosti manuálneho navrhovania vzorov~\cite{autKGconstruction2023}.
   \begin{itemize}
     \item CNN (konvolučné neurónové siete) sa zameriavajú na lokálne vlastnosti v~okolí slova na zachytávanie entít~\cite{autKGconstruction2023}.
-    \item RNN (rekurentné neurónové siete) sú navrhnuté tak, aby lepšie spracovali kontextové vlastnosti v~dlhých vetách. Avšak RNN môžu trpieť kontextovou zaujatosťou v~neskorších prichádzajúcich slovách. Preto mnohé modely využívajú obojsmerné varianty (Bi-LSTM-CRF, GRU), ktoré čítajú text zľava aj sprava~\cite{autKGconstruction2023}.
+    \item RNN (rekurentné neurónové siete) sú navrhnuté tak, aby lepšie spracovali kontextové vlastnosti v~dlhých vetách. Avšak RNN môžu trpieť kontextovou zaujatosťou v~neskorších prichádzajúcich slovách. Preto mnohé modely využívajú obojsmerné varianty (Bi-LSTM-CRF a GRU-based modely), ktoré čítajú text zľava aj sprava~\cite{autKGconstruction2023}.
   \end{itemize}
 \end{enumerate}
 
 
 \subsubsection{Extrakcia vzťahov}
 
-Extrakcia vzťahov (Relation Extraction, RE) je proces ako aj NER, ktorého cieľom je identifikovať a~klasifikovať sémantické prepojenia medzi entitami, ktoré boli v~texte nájdené. Zatiaľ čo NER nájde v~texte jednotlivé inštancie entít, RE tieto entity spája do vzťahu, ktorý vysvetľuje ako spolu entity súvisia.
+Extrakcia vzťahov (Relation Extraction, RE) je proces exktrakcie informácie, ktorého cieľom je identifikovať a~klasifikovať sémantické prepojenia medzi entitami, ktoré boli v~texte nájdené. Zatiaľ čo NER nájde v~texte jednotlivé inštancie entít, RE tieto entity spája do vzťahu, ktorý vysvetľuje ako spolu entity súvisia.
 
-RE premieňa neštruktúrovaný text na štruktúrované znalosti, vo forme trojíc $(e_h, r, e_t)$. Model zistí či medzi dvoma entitami nejaký vzťah existuje, a~ak existuje priradí im konkrétny typ vzťahu z~preddefinovanej schémy. Taktiež môže sa využívať otvorená extrakcia, kde model nie je obmedzený a~snaží sa extrahovať akýkoľvek vzťah priamo z~gramatickej štruktúry vety~\cite{autKGconstruction2023}.
+RE premieňa neštruktúrovaný text na štruktúrované znalosti, vo forme trojíc $(e_h, r, e_t)$. Model zistí či medzi dvoma entitami nejaký vzťah existuje, a~ak existuje priradí im konkrétny typ vzťahu z~preddefinovanej schémy. Taktiež môže sa využívať otvorená extrakcia, kde model nie je obmedzený preddefinovanou množinou typov vzťahov a extrahuje vzťahy napríklad zo syntaktickej alebo závislostnej štruktúry vety~\cite{autKGconstruction2023,hogan2021kg}.
 
 Tieto prístupy sa používajú najmä na schématickú (preddefinovanú) extrakciu, ale niektoré neurónové metódy sa dajú využiť aj pri otvorenej extrakcii:
 \begin{enumerate}
-  \item Strojové učenie ako napríklad kernelové metódy, merajú podobnosť medzi vetami pomocou matematických funkcií. Namiesto jednoduchých zoznamov slov analyzujú celé syntaktické stromy vety, aby pochopili, ako sú slová gramaticky prepojené. Tieto metódy sa najčastejšie používajú pri schématickej extrakcii, kde je vopred daná konečná množina typov vzťahov.~\cite{moncecchiRE2010,autKGconstruction2023}
+  \item Strojové učenie ako napríklad kernelové metódy, merajú podobnosť medzi vetami pomocou matematických funkcií. Namiesto jednoduchých zoznamov slov analyzujú štruktúrované reprezentácie viet, napríklad syntaktické stromy alebo závislostné cesty medzi entitami. Tieto metódy sa najčastejšie používajú pri schématickej extrakcii, kde je vopred daná konečná množina typov vzťahov.~\cite{moncecchiRE2010,autKGconstruction2023}
   \item Hlboké učenie:
   \begin{itemize}
     \item CNN sa zameriavajú na lokálny kontext v~blízkosti entít~\cite{autKGconstruction2023}.
@@ -121,14 +121,14 @@ Okrem voľby architektúry sa modely líšia aj tým, v~akom režime sa učia a~
 
 \begin{itemize}
   \item Distant supervised relation extraction využíva existujúcu znalostnú databázu na automatické označovanie tréningových viet. Ak KG obsahuje trojicu $(e_h, r, e_t)$, všetky vety s~párom entít $(e_h, e_t)$ dostanú typ $r$. Takto vzniknuté veľké množstvo automaticky označených dát umožňuje škálovateľný tréning klasických aj hlbokých modelov, no zároveň zanáša šum, pretože nie každá veta s~daným párom entít daný vzťah skutočne vyjadruje. Moderné prístupy preto pridávajú špeciálne mechanizmy (PCNN, selective attention nad množinou viet, reinforcement learning či adversariálne učenie), ktoré sa snažia nespoľahlivé príklady filtrovať~\cite{autKGconstruction2023}.
-  \item Spoločná extrakcia entít a~vzťahov (Joint NER and RE) sa spája do jedného modelu, čím odstraňuje šírenie chýb typické pre prístupy, kde chyby v~NER kroku znehodnotia aj následnú extrakciu vzťahov. Medzi dva hlavné prístupy patria zdieľanie vrstiev medzi úlohami (BiLSTM, BiGCN alebo GraphRel) a~špeciálne anotovacie schémy (CasRel)~\cite{autKGconstruction2023}.
+  \item Spoločná extrakcia entít a~vzťahov (Joint NER and RE) sa spája do jedného modelu, čím zmierňuje šírenie chýb typické pre pipeline prístupy, kde chyby v~NER kroku znehodnotia aj následnú extrakciu vzťahov. Medzi dva hlavné prístupy patria zdieľanie vrstiev medzi úlohami (BiLSTM, BiGCN alebo GraphRel) a~špeciálne anotovacie schémy (CasRel)~\cite{autKGconstruction2023}.
   \item Few-shot a~zero-shot extrakcia vzťahov rieši prípady, keď je málo alebo žiadne anotované dáta. Pri štandardnej konfigurácii dostane model $K$ príkladov pre $N$ typov vzťahov a~má klasifikovať nové vety. Hlavné prístupy sú: metric learning~-~porovnávanie reprezentácií, meta learning~-~model sa učí „ako sa učiť"\, z~malého množstva príkladov, doménová adaptácia - prenos znalostí medzi doménami~\cite{autKGconstruction2023}.
   \item Extrakcia vzťahov na úrovni dokumentu rieši problém vzťahov vyjadrených naprieč viacerými vetami. Jednotlivé prístupy stavajú heterogénne grafy nad celým dokumentom, kde uzly reprezentujú spomenutia, vety a~entity, a~spracúvajú ich GCN (EoG, LSR, GAIN)~\cite{autKGconstruction2023}.
 \end{itemize}
 
 \
 
-Extrakcia vzťahov je nevyhnutná z~niekoľkých kľúčových dôvodov. Pre budovanie znalostných grafov automatizuje extrémne náročnú manuálnu prácu pri vytváraní veľkých databáz vedomostí. Umožnuje vyhľadávačom odpovedať na priame otázky namiesto toho, aby len zobrazili zoznam stránok. Špecializované odbory ako medicína kde RE pomáha vedcom identifikovať interakcie medzi liekmi alebo proteínmi v~tisíckach odborných článkov, čo urýchľuje výskum chorôb, alebo právo kde sa používa na analýzu súdnych rozhodnutí, vyhľadávanie argumentov v~spisoch alebo automatické spracovanie zmlúv.~\cite{autKGconstruction2023,nlpLegal2025,moncecchiRE2010}
+Extrakcia vzťahov je nevyhnutná z~niekoľkých kľúčových dôvodov. Pre budovanie znalostných grafov automatizuje extrémne náročnú manuálnu prácu pri vytváraní veľkých databáz vedomostí. Umožnuje vyhľadávačom odpovedať na priame otázky namiesto toho, aby len zobrazili zoznam stránok. Špecializované odbory ako medicína kde RE pomáha vedcom identifikovať interakcie medzi liekmi alebo proteínmi v~tisíckach odborných článkov, čo urýchľuje výskum chorôb.~\cite{autKGconstruction2023,moncecchiRE2010}
 
 
 
@@ -669,8 +669,8 @@ Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priem
 & & Vzťahy & 1479 & 1365 & 597  & 768 & 882  & 0{,}437 & 0{,}404 & 0{,}420 & 0{,}310 & 0{,}563 & 0{,}596 & \\
 \cline{2-14}
 & \multirow{2}{*}{\shortstack[l]{GPT 5.5\\{\scriptsize effort: high}}}
-  & Uzly   & 1226 & 1080 & 950  & 130 & 276  & 0{,}880 & 0{,}775 & 0{,}824 & 0{,}688 & 0{,}120 & 0{,}225 & \multirow{2}{*}{0{,}359} \\
-& & Vzťahy & 1479 & 1208 & 608  & 600 & 871  & 0{,}503 & 0{,}411 & 0{,}453 & 0{,}325 & 0{,}497 & 0{,}589 & \\
+  & Uzly   & 1226 & 1080 & 950  & 130 & 276  & \textbf{0{,}880} & 0{,}775 & \textbf{0{,}824} & \textbf{0{,}688} & \textbf{0{,}120} & 0{,}225 & \multirow{2}{*}{\textbf{0{,}359}} \\
+& & Vzťahy & 1479 & 1208 & 608  & 600 & 871  & \textbf{0{,}503} & 0{,}411 & 0{,}453 & \textbf{0{,}325} & \textbf{0{,}497} & 0{,}589 & \\
 \hline
 \multirow{8}{*}{\rotatebox{90}{\textbf{few-shot}}}
 & \multirow{2}{*}{\shortstack[l]{GPT 5.4 mini\\{\scriptsize effort: low}}}
@@ -686,8 +686,8 @@ Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priem
 & & Vzťahy & 1479 & 1513 & 658  & 855 & 821  & 0{,}435 & 0{,}445 & 0{,}440 & 0{,}316 & 0{,}565 & 0{,}555 & \\
 \cline{2-14}
 & \multirow{2}{*}{\shortstack[l]{GPT 5.5\\{\scriptsize effort: high}}}
-  & Uzly   & 1226 & 1226 & 1006 & 220 & 220  & 0{,}821 & 0{,}821 & 0{,}821 & 0{,}620 & 0{,}179 & 0{,}179 & \multirow{2}{*}{0{,}359} \\
-& & Vzťahy & 1479 & 1516 & 689  & 827 & 790  & 0{,}454 & 0{,}466 & 0{,}460 & 0{,}314 & 0{,}546 & 0{,}534 & \\
+  & Uzly   & 1226 & 1226 & 1006 & 220 & 220  & 0{,}821 & \textbf{0{,}821} & 0{,}821 & 0{,}620 & 0{,}179 & \textbf{0{,}179} & \multirow{2}{*}{\textbf{0{,}359}} \\
+& & Vzťahy & 1479 & 1516 & 689  & 827 & 790  & 0{,}454 & \textbf{0{,}466} & \textbf{0{,}460} & 0{,}314 & 0{,}546 & \textbf{0{,}534} & \\
 \hline
 \end{tabular}%
 }
@@ -782,33 +782,83 @@ Na overenie praktickej využiteľnosti znalostného grafu som porovnával tri ex
 Testovacia množina obsahuje 21 otázok pripravených daňovým auditorom. Všetky otázky sa vzťahujú výhradne na zákon č. 222/2004 Z. z. o~dani z~pridanej hodnoty. Ku každej otázke je priradená správna objektívna odpoveď a~zároveň zoznam paragrafov zákona, ktoré by mal vyhľadávací prístup nájsť ako relevantný kontext. Takto sa dá oddeliť samotná kvalita odpovede od kvality vyhľadávania. Model môže odpovedať správne náhodou alebo na základe všeobecných znalostí z~predtrénovania, ale pri RAG prístupe je podstatné aj to, či sa dostal k~správnym ustanoveniam zákona.
 
 
+Ako prvý porovnávací prístup bol použitý klasický chat s~LLM vo webovej aplikácii ChatGPT, kde boli položené otázky priamo modelu GPT 5.5 bez dodaného korpusu dokumentov. Tento variant slúži ako referencia pre odpovede vytvorené iba zo všeobecných znalostí modelu. Vo vektorovom prístupe sa otázka a~chunky zákona (využitá chunkovacia stratégia z~\ref{sec:chunkovacia-strategia}) prevedú na embeddingy modelom \texttt{text-embedding-3-large} od OpenAI. Vo vektorovej databáze Qdrant sa vytiahne $k$ najbližších chunkov podľa kosínusovej podobnosti. Tieto úryvky aj so štítkom paragrafu a~odseku idú do modelu GPT 5.5, ktorý z~nich vytvorí odpoveď. Vyhľadávanie v~GraphRAG je riešené agentom, ktorý dostane nástroj na spúšťanie Cypher dotazov na grafovú databázu a~prehľadáva do šírky. Otázku si rozdelí na tri až šesť pojmov, ku každému nájde entity v~grafe a~z~nich potom prechádza jeden až dva skoky k~paragrafom, odsekom a~písmenám, pričom sleduje aj negatívne vzťahy typu \texttt{OSLOBODZUJE\_OD} či \texttt{NIE\_JE\_PREDMETOM\_DANE}. Nachádza k~tomu súrodencov v~rámci toho istého paragrafu a~krížové odkazy \texttt{ODKAZUJE\_NA}, takže výber paragrafov stojí na štruktúre grafu. Agent využíva graf vytvorený modelom GPT 5.4 mini a na prehľadávanie, a vytvorenie odpovede model GPT 5.5.
 
-Vo vektorovom prístupe sa otázka a~chunky zákona (využitá chunkovacia stratégia z~\ref{sec:chunkovacia-strategia}) prevedú na embeddingy modelom \texttt{text-embedding-3-large} od OpenAI. Vo vektorovej databáze Qdrant sa vytiahne $k$ najbližších chunkov podľa kosínusovej podobnosti. Tieto úryvky aj so štítkom paragrafu a~odseku idú do modelu GPT 5.5, ktorý z~nich vytvorí odpoveď. Vyhľadávanie v~GraphRAG je riešené agentom, ktorý dostane nástroj na spúšťanie Cypher dotazov na grafovú databázu a~prehľadáva do šírky. Otázku si rozdelí na tri až šesť pojmov, ku každému nájde entity v~grafe a~z~nich potom prechádza jeden až dva skoky k~paragrafom, odsekom a~písmenám, pričom sleduje aj negatívne vzťahy typu \texttt{OSLOBODZUJE\_OD} či \texttt{NIE\_JE\_PREDMETOM\_DANE}. Nachádza k~tomu súrodencov v~rámci toho istého paragrafu a~krížové odkazy \texttt{ODKAZUJE\_NA}, takže výber paragrafov stojí na štruktúre grafu.
+\begingroup
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{longtable}{p{0.08\textwidth}p{0.84\textwidth}}
+\caption[Otázky testovacej množiny]{Otázky testovacej množiny použité pri porovnaní prístupov.}
+\label{tab:rag-test-questions}\\
+\hline
+\textbf{ID} & \textbf{Otázka} \\
+\hline
+\endfirsthead
+\caption[]{Otázky testovacej množiny}\\
+\hline
+\textbf{ID} & \textbf{Otázka} \\
+\hline
+\endhead
+\hline
+\multicolumn{2}{r}{}\\
+\endfoot
+\hline
+\endlastfoot
+1 & Zdaniteľná osoba prekročila v roku 2025 obrat 50 000 eur, podala žiadosť o registráciu, ale ešte pred 1. januárom 2026 dodaním služby prekročila v prebiehajúcom roku 62 500 eur. Od ktorého momentu sa stáva platiteľom a čo musí oznámiť? \\
+2 & Ak sa osoba stala platiteľom od 1. januára preto, že v predchádzajúcom roku prekročila obrat výlučne z finančných alebo poisťovacích služieb, ale ešte pred koncom tohto roka po prekročení obratu dodala aj bežnú zdaniteľnú službu, odkedy jej vzniká povinnosť podávať daňové priznanie? \\
+3 & Český malý podnik má pre Slovensko pridelené individuálne identifikačné číslo s príponou EX a dodáva službu slovenskému platiteľovi. Má sa slovenský odberateľ samozdaniť podľa pravidiel reverse charge? \\
+4 & Slovenská zdaniteľná osoba, ktorá nie je platiteľom, nadobudla z EÚ tovar za 13 500 eur a ešte pred ďalším nákupom má prijať poradenskú službu od osoby z iného členského štátu s miestom dodania podľa § 15 ods. 1 v tuzemsku. Musí sa registrovať podľa § 7 alebo § 7a? \\
+5 & Fyzická osoba príležitostne predá z tuzemska do iného členského štátu auto s najazdenými 5 500 km. Aké tri daňové dôsledky z toho plynú pre predávajúceho a nadobúdateľa? \\
+6 & Platiteľ presunie tovar do iného členského štátu v režime call-off stock, pôvodný odberateľ je v lehote 12 mesiacov nahradený inou zdaniteľnou osobou a zmena je uvedená v záznamoch aj súhrnnom výkaze. Vzniká už pri nahradení premiestnenie tovaru podľa § 8 ods. 4? \\
+7 & V reťazovom obchode ide tovar priamo od prvého dodávateľa ku konečnému odberateľovi z jedného členského štátu do druhého. Prostredná osoba oznámi dodávateľovi IČ DPH štátu, z ktorého sa tovar odosiela. Ku ktorému dodaniu sa priradí preprava a ako sa to líši od trojstranného obchodu? \\
+8 & Prečo sa jednoúčelový poukaz zdaňuje inak ako viacúčelový poukaz a ako sa určí základ dane pri viacúčelovom poukaze, ak dodávateľ nepozná sumu zaplatenú za poukaz? \\
+9 & Slovenský dodávateľ usadený iba v SR predáva tovar na diaľku a dodáva elektronické služby nezdaniteľným osobám v iných členských štátoch. V predchádzajúcom ani prebiehajúcom roku nepresiahol hodnotu 10 000 eur. Kde je miesto dodania a čo sa zmení transakciou, ktorou limit prekročí? \\
+10 & Platiteľ predáva inému platiteľovi sedem rokov starú administratívnu budovu. Môže sa rozhodnúť, že dodanie nebude oslobodené od dane, a kto potom platí daň? \\
+11 & Platiteľ prenajíma zdaniteľnej osobe parkovacie miesto a zároveň byt v bytovom dome. Ktorý nájom je oslobodený, pri ktorom je možné zvoliť zdanenie a kde zákon zdanenie neumožňuje zvoliť? \\
+12 & Tuzemský platiteľ predá tovar kupujúcemu bez sídla, prevádzkarne alebo bydliska v tuzemsku a kupujúci ho sám vyvezie do tretieho štátu. Kedy je dodanie oslobodené a ktorý deň je dňom dodania pre DPH? \\
+13 & Platiteľ dodal tovar do iného členského štátu a prepravu zabezpečil odberateľ. Do konca šiesteho mesiaca po mesiaci dodania nemá doklad o preprave ani potvrdenie o prevzatí. Môže ponechať oslobodenie podľa § 43? \\
+14 & Zahraničný dovozca, ktorý nie je slovenským platiteľom, dovezie tovar do SR a tovar má byť následne dodaný do iného členského štátu. Ako môže uplatniť oslobodenie pri dovoze bez registrácie podľa § 5? \\
+15 & Dodávateľ má nezaplatenú pohľadávku 1 200 eur vrátane DPH viac ako 150 dní po splatnosti, no nepodal žalobu ani nezačal exekúciu. Môže znížiť základ dane podľa § 25a iba preto, že uplynulo 150 dní? \\
+16 & Odberateľ si odpočítal DPH z prijatej faktúry, ale záväzok ani čiastočne nezaplatil. Dodávateľ mu zatiaľ neposlal opravný doklad. Vzniká odberateľovi povinnosť opraviť odpočítanú daň? \\
+17 & Platiteľ registrovaný podľa § 4 s obratom pod 100 000 eur uplatňuje osobitnú úpravu na základe prijatia platby. Vystaví faktúru bez slovnej informácie, že daň sa uplatňuje na základe prijatia platby. Kedy vznikne daňová povinnosť? \\
+18 & Platiteľ kúpi budovu a používa ju sčasti na podnikanie a sčasti na súkromné účely. Ktoré ustanovenia bránia tomu, aby si odpočítal celú daň hneď na začiatku, a ako dlho sa sleduje zmena použitia? \\
+19 & Kedy musí tuzemský poskytovateľ platobných služieb viesť a sprístupniť záznamy o cezhraničných platbách príjemcovi a ako dlho ich musí uchovávať? \\
+20 & Môže platiteľ použiť zjednodušenú faktúru z eKasy pri predaji tovaru na diaľku s miestom dodania v tuzemsku alebo pri dodaní tovaru oslobodeného podľa § 43, ak suma nepresiahne 400 eur? \\
+21 & V jednej prevádzke sa fakturuje ubytovanie, jedlo, nealkoholický nápoj a pivo s obsahom alkoholu nad 0,5 \%. Aké sadzby DPH vyplývajú z kombinácie § 27 a prílohy č. 7a? \\
+\end{longtable}
+\endgroup
+
+Úspešnosť referencovania bola počítaná ako úplnosť voči ručne anotovanému zoznamu podporujúcich ustanovení. Pre každú otázku sa porovnal počet nájdených relevantných ustanovení s~počtom očakávaných ustanovení, pričom zložené odkazy a~rozsahy sa rozložili na atomické časti, napríklad na konkrétne odseky, písmená alebo body:
+\[
+R = \frac{\sum_{i=1}^{21} |N_i \cap O_i|}{\sum_{i=1}^{21} |O_i|},
+\]
+kde $N_i$ je množina nájdených ustanovení a~$O_i$ množina očakávaných ustanovení pre $i$-tu otázku. Nadbytočné nájdené ustanovenia sa nepenalizovali, pretože cieľom tejto metriky bolo merať pokrytie potrebnej právnej opory, nie presnosť výberu kontextu.
 
 \begin{table}[h]
 \centering
-\caption[Úspešnosť prístupov pri nájdení podporujúcich faktov]{Úspešnosť jednotlivých prístupov pri nájdení podporujúcich faktov na testovacej množine 21 otázok.}
+\caption[Úspešnosť prístupov pri nájdení podporujúcich faktov]{Úspešnosť jednotlivých prístupov pri nájdení podporujúcich faktov na testovacej množine 21 otázok. Všetky prístupy využívajú model GPT 5.5.}
 \label{tab:retrieval-success}
 \begin{tabular}{lcc}
 \toprule
-\textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť sekcií} \\
+\textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť referencovania} \\
 \midrule
-Klasický chat s~LLM & 21/21 & 81{,}0\,\% \\
-\multirow{2}{*}{Vektorový RAG} & \emph{k=5:}\, 3/21 & 50{,}0\,\% \\
+Klasický chat s~LLM & 9/21 & 43{,}1\,\% \\
+\multirow{3}{*}{Vektorový RAG} & \emph{k=5:}\, 3/21 & 50{,}0\,\% \\
  & \emph{k=10:}\, 6/21 & 62{,}1\,\% \\
+ & \emph{k=25:}\, 17/21 & 72{,}4\,\% \\
 GraphRAG & 20/21 & 74{,}6\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Klasický chat s~LLM vynikal v~samotnom formulovaní vecne správnych odpovedí, keď pri všetkých 21 otázkach správne zachytil právny záver. Slabším miestom bolo neúplné pokrytie podporných ustanovení: hoci odpoveď bola správna, model často necitoval všetky relevantné paragrafy alebo vynechal časť rozsahu. Každá otázka bola hodnotená v~samostatnom novom chate s~opätovne vloženým dokumentom, keďže celý dokument nebolo možné spoľahlivo držať v~jednom kontextovom okne pre všetky otázky naraz.
+Odpovede v~tomto teste vytvoril ChatGPT tak, že dostal iba otázku a~explicitnú požiadavku, aby spolu s~odpoveďou uviedol aj podporné paragrafy a~odseky. Najlepšie si poradil pri jednoduchších právnych záveroch, ktoré vedel formulovať zrozumiteľne, ale bez dokumentu dosiahol správnosť iba 9 z~21 odpovedí a~pokrytie podporných ustanovení 43{,}1\,\%. Najviac zaostával pri presnom viazaní odpovede na zákonné ustanovenia: často uviedol príbuzný paragraf, nesprávny odsek alebo vynechal časť rozsahu. Ak by mal k~dispozícii celé PDF so zákonom, pri tomto type otázok by pravdepodobne odpovedal výrazne presnejšie, prakticky až na úrovni úplného pokrytia, no samotný dokument by zabral približne 220~tisíc z~258~tisíc tokenov kontextového okna. Také riešenie je použiteľné len dovtedy, kým sa zdrojové texty zmestia do kontextu. Pri otázkach z~viacerých zákonov by už kontextové okno taký objem dokumentov neunieslo.
 
-Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z~21, hoci pokryl polovicu ľudsky anotovaných podporujúcich sekcií. Najlepšie fungoval pri otázkach, kde stačilo nájsť priamo pomenované ustanovenie a~odpoveď nevyžadovala kombináciu viacerých doplnkových pravidiel. Pri $k=10$ sa pokrytie sekcií zlepšilo z~50{,}0\,\% na 62{,}1\,\% a~počet správnych odpovedí vzrástol na 6 z~21, čo ukazuje, že širší kontext pomohol najmä pri dohľadaní chýbajúcich paragrafov. Nedostatkom však zostalo, že model často neobsiahol všetky právne dôsledky z~ľudskej odpovede, napríklad doplnkové oznamovacie povinnosti, výnimky, pravidlá po lehote alebo následné opravy. Zvýšenie parametra $k$ teda zlepšilo vyhľadávanie relevantných sekcií, ale samo osebe nestačilo na spoľahlivé právne odpovedanie pri otázkach vyžadujúcich syntézu viacerých ustanovení.
+Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z~21, hoci pokryl polovicu ľudsky anotovaných podporujúcich sekcií. Najlepšie fungoval pri otázkach, kde stačilo nájsť priamo pomenované ustanovenie a~odpoveď nevyžadovala kombináciu viacerých doplnkových paragrafov. Pri $k=10$ sa pokrytie sekcií zlepšilo z~50{,}0\,\% na 62{,}1\,\% a~počet správnych odpovedí vzrástol na 6 z~21, čo ukazuje, že širší kontext pomohol najmä pri dohľadaní chýbajúcich paragrafov. Pri $k=25$ nastal výraznejší skok v~kvalite odpovedí na 17 z~21 správnych odpovedí a~pokrytie ľudsky označených sekcií podľa rozsahov paragrafov a~odsekov dosiahlo 72{,}4\,\%, pričom model vynikal najmä tam, kde širší kontext doplnil chýbajúce nadväzujúce ustanovenia. Zaostával však pri otázkach vyžadujúcich presné použitie príloh alebo explicitné vyvodenie právneho záveru z~nájdených ustanovení, napríklad pri novom dopravnom prostriedku, mieste dodania po prekročení limitu, 20-ročnom sledovaní úpravy odpočtu a~sadzbách DPH z~prílohy č.~7a.
 
 GraphRAG dosiahol vysokú úspešnosť odpovedí (20 z~21), čo ukazuje, že znalostný graf poskytol modelu dostatočne presné faktické ukotvenie pre väčšinu právnych otázok. Slabším miestom bolo pokrytie podporujúcich ustanovení, kde systém našiel 74{,}6\,\% ľudsky anotovaných sekcií a~najčastejšie mu chýbali doplnkové odseky, ustanovenia k~evidencii, súhrnným výkazom alebo prílohám.
 
-Tieto výsledky preto nemožno interpretovať ako priame porovnanie troch rovnocenných vyhľadávacích mechanizmov. Klasický chat mal pri každej otázke vložený celý dokument, takže nebol odkázaný na samostatný retrieval krok. Vektorový RAG a~GraphRAG naopak najprv vyberali podporný kontext a~až následne generovali odpoveď. Výsledky teda ukazujú najmä rozdiel medzi odpovedaním s~úplným kontextom a~odpovedaním s~automaticky vyhľadaným kontextom. V~tomto scenári GraphRAG výrazne prekonal vektorový RAG, hoci nedosiahol úplné pokrytie podporujúcich ustanovení.
-
+GraphRAG našiel v 21 otázkach spolu 258 referencií, teda priemerne 12,3 na otázku. VectorRAG pri $k=25$ vrátil vždy 25 chunkov, spolu 525 výsledkov. To je takmer dvojnásobok, pričom medzi nimi bolo aj veľa nadbytočných ustanovení mimo priamej potreby odpovede. Pri viacerých zákonoch by takýto prístup nebol udržateľný, lebo by rástla cena a objem kontextu.
 
 
 \subsection{Vylepšenia}

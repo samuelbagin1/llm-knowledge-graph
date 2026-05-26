@@ -41,7 +41,7 @@ EMBED_DIM = 3072
 EMBED_BATCH = 96
 
 # Switch this to 5 or 10 to run the two experiments.
-K_NEIGHBORS = 10
+K_NEIGHBORS = 25
 
 BASE_DIR = Path(__file__).parent
 REPO_ROOT = BASE_DIR.parent

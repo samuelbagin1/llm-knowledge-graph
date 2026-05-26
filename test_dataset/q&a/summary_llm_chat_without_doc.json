@@ -1,0 +1,328 @@
+{
+  "source_file": "test_dataset/q&a/q&a_llm_chat_without_doc_validation.json",
+  "evaluation_date": "2026-05-26",
+  "language": "sk",
+  "questions_total": 21,
+  "methodology": {
+    "answer_score": "1 = LLM odpoved je vecne spravna voci ludskemu referencnemu zneniu; 0 = odpoved je nespravna alebo jej chyba klucova informacia.",
+    "section_success": "Pokrytie sekcii je ratane voci polu podporujuce_ustanovenia. Jedna polozka pola je jedna hodnotena oporna sekcia/paragraf.",
+    "matching_note": "Pouzite je benevolentne porovnanie: zhoda nemusi byt doslovna; ak LLM spomenula rovnaky paragraf, odsek alebo konkretny odsek patriaci do clovekom uvedeneho rozsahu, polozka sa povazuje za pokrytu. Ine pismeno alebo iny odsek mimo rozsahu sa nepovazuje za pokrytie."
+  },
+  "overall": {
+    "questions_total": 21,
+    "answers_correct": 9,
+    "answers_incorrect": 12,
+    "answer_accuracy": 0.4286,
+    "answer_accuracy_percent": 42.86,
+    "sections_matched_total": 25,
+    "sections_expected_total": 58,
+    "section_success_micro": 0.431,
+    "section_success_micro_percent": 43.1,
+    "section_success_macro_percent": 44.92
+  },
+  "rows": [
+    {
+      "id": 1,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 4,
+      "section_success_percent": 25.0,
+      "matched_human_sections": [
+        "§ 4 ods. 1 písm. a) a b)"
+      ],
+      "missing_human_sections": [
+        "§ 4 ods. 2",
+        "§ 4 ods. 4",
+        "§ 4 ods. 5"
+      ],
+      "note": "Vecne spravne, ale LLM cituje ine odseky (§ 4 ods. 6 a 7) a nepokryva vacsinu clovekom oznacenych ustanoveni."
+    },
+    {
+      "id": 2,
+      "answer_score": 0,
+      "sections_matched": 0,
+      "sections_expected": 3,
+      "section_success_percent": 0.0,
+      "matched_human_sections": [],
+      "missing_human_sections": [
+        "§ 4 ods. 3",
+        "§ 4 ods. 15",
+        "§ 78 ods. 2 písm. a) druhý bod"
+      ],
+      "note": "Nespravne urceny zaciatok povinnosti podavat danove priznanie; LLM uvadza ine ustanovenia."
+    },
+    {
+      "id": 3,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.33,
+      "matched_human_sections": [
+        "§ 69 ods. 3"
+      ],
+      "missing_human_sections": [
+        "§ 68f ods. 2 a 3",
+        "§ 69 ods. 2"
+      ],
+      "note": "LLM nespravne tvrdi, ze slovensky odberatel sa ma samozdanit; pokryta je len cast reverse charge opory."
+    },
+    {
+      "id": 4,
+      "answer_score": 0,
+      "sections_matched": 3,
+      "sections_expected": 4,
+      "section_success_percent": 75.0,
+      "matched_human_sections": [
+        "§ 7 ods. 1 a 4",
+        "§ 7a ods. 1",
+        "§ 69 ods. 3"
+      ],
+      "missing_human_sections": [
+        "§ 70 ods. 4"
+      ],
+      "note": "LLM nespravne tvrdi prekrocenie limitu podla § 7 pri hodnote 13 500 eur; oporu vsak ciastocne pokryva."
+    },
+    {
+      "id": 5,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 5,
+      "section_success_percent": 40.0,
+      "matched_human_sections": [
+        "§ 11 ods. 3 a 12",
+        "§ 43 ods. 2"
+      ],
+      "missing_human_sections": [
+        "§ 3 ods. 5",
+        "§ 52",
+        "§ 78 ods. 4 až 6"
+      ],
+      "note": "Odpoved je neplna: chyba postavenie predavajuceho ako zdanitelnej osoby, specificke odpocty a priznanie nadobudatela do siedmich dni."
+    },
+    {
+      "id": 6,
+      "answer_score": 1,
+      "sections_matched": 0,
+      "sections_expected": 4,
+      "section_success_percent": 0.0,
+      "matched_human_sections": [],
+      "missing_human_sections": [
+        "§ 8a ods. 1 až 6",
+        "§ 11a",
+        "§ 70 ods. 2 písm. g)",
+        "§ 80 ods. 1 písm. e) až g)"
+      ],
+      "note": "Vecny zaver o call-off stock je spravny, ale LLM necituje clovekom oznacene oporne ustanovenia."
+    },
+    {
+      "id": 7,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.33,
+      "matched_human_sections": [
+        "§ 45 ods. 1 až 3"
+      ],
+      "missing_human_sections": [
+        "§ 13a ods. 1 až 3",
+        "§ 17 ods. 4"
+      ],
+      "note": "Vecne spravne priradenie prepravy a jadro rozdielu od trojstranneho obchodu, ale opora k retazovemu obchodu chyba."
+    },
+    {
+      "id": 8,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 2,
+      "section_success_percent": 100.0,
+      "matched_human_sections": [
+        "§ 9a ods. 1 až 6",
+        "§ 22 ods. 10"
+      ],
+      "missing_human_sections": [],
+      "note": "Vecne spravne a sekcie pokryte."
+    },
+    {
+      "id": 9,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.67,
+      "matched_human_sections": [
+        "§ 14 ods. 2",
+        "§ 16 ods. 14"
+      ],
+      "missing_human_sections": [
+        "§ 16a ods. 1 až 3"
+      ],
+      "note": "Odpoved je neplna: chyba dobrovolna volba miesta dodania najmenej na dva kalendarne roky."
+    },
+    {
+      "id": 10,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "matched_human_sections": [
+        "§ 38 ods. 1, 7 a 8"
+      ],
+      "missing_human_sections": [
+        "§ 69 ods. 12 písm. c)"
+      ],
+      "note": "Vecny zaver je spravny, ale LLM uvadza nespravne pismeno pri § 69 ods. 12."
+    },
+    {
+      "id": 11,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 1,
+      "section_success_percent": 100.0,
+      "matched_human_sections": [
+        "§ 38 ods. 3 až 6"
+      ],
+      "missing_human_sections": [],
+      "note": "Vecne spravne a sekcie pokryte."
+    },
+    {
+      "id": 12,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "matched_human_sections": [
+        "§ 47 ods. 2 a 3"
+      ],
+      "missing_human_sections": [
+        "§ 19 ods. 9"
+      ],
+      "note": "Nespravny den dodania; ma ist o den vystupu tovaru z uzemia EU potvrdeny colnym organom."
+    },
+    {
+      "id": 13,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "matched_human_sections": [
+        "§ 43 ods. 1, 5, 8 až 10"
+      ],
+      "missing_human_sections": [
+        "§ 80 ods. 1 a 9"
+      ],
+      "note": "Zaver, ze oslobodenie nemoze ponechat, je spravny, ale nasledok a pravidlo o suhrnnom vykaze su neplne."
+    },
+    {
+      "id": 14,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.33,
+      "matched_human_sections": [
+        "§ 48 ods. 3"
+      ],
+      "missing_human_sections": [
+        "§ 69a ods. 1 až 6",
+        "§ 69a ods. 10"
+      ],
+      "note": "Chyba mechanizmus danoveho zastupcu a konkretne IC DPH udaje potrebne pre oslobodenie pri dovoze."
+    },
+    {
+      "id": 15,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "matched_human_sections": [
+        "§ 25a ods. 1 až 5"
+      ],
+      "missing_human_sections": [
+        "§ 25a ods. 7 až 13"
+      ],
+      "note": "Vecne spravne k tomu, ze 150 dni samo nestaci; LLM vsak nepokryva obmedzenia z dalsich odsekov."
+    },
+    {
+      "id": 16,
+      "answer_score": 0,
+      "sections_matched": 0,
+      "sections_expected": 1,
+      "section_success_percent": 0.0,
+      "matched_human_sections": [],
+      "missing_human_sections": [
+        "§ 53b ods. 1 až 8"
+      ],
+      "note": "LLM nespravne tvrdi, ze samotne nezaplatenie nezaklada automaticku opravu odpoctu."
+    },
+    {
+      "id": 17,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.67,
+      "matched_human_sections": [
+        "§ 68d ods. 1 až 5",
+        "§ 19"
+      ],
+      "missing_human_sections": [
+        "§ 68d ods. 10 až 14"
+      ],
+      "note": "Vecne spravne k vzniku danovej povinnosti podla § 19; chyba cast o zakaze dodatocnej opravy faktury."
+    },
+    {
+      "id": 18,
+      "answer_score": 0,
+      "sections_matched": 1,
+      "sections_expected": 5,
+      "section_success_percent": 20.0,
+      "matched_human_sections": [
+        "§ 54 ods. 2 a 6"
+      ],
+      "missing_human_sections": [
+        "§ 49a",
+        "§ 52a ods. 2",
+        "§ 54a",
+        "Príloha č. 1"
+      ],
+      "note": "Odpoved je neplna a cituje najma § 49 ods. 5 namiesto § 49a; chyba aj hranica zmeny 0,10 a priloha so vzorcom."
+    },
+    {
+      "id": 19,
+      "answer_score": 0,
+      "sections_matched": 0,
+      "sections_expected": 1,
+      "section_success_percent": 0.0,
+      "matched_human_sections": [],
+      "missing_human_sections": [
+        "§ 70a ods. 1 až 12"
+      ],
+      "note": "Vecne chyba lehota spristupnenia do konca mesiaca po stvrtroku a LLM cituje ine ustanovenia."
+    },
+    {
+      "id": 20,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 2,
+      "section_success_percent": 50.0,
+      "matched_human_sections": [
+        "§ 74 ods. 3 a 4"
+      ],
+      "missing_human_sections": [
+        "§ 72 ods. 1"
+      ],
+      "note": "Vecne spravne, ale pokryta je len fakturacna cast opory."
+    },
+    {
+      "id": 21,
+      "answer_score": 0,
+      "sections_matched": 3,
+      "sections_expected": 3,
+      "section_success_percent": 100.0,
+      "matched_human_sections": [
+        "§ 27 ods. 1 až 3",
+        "Príloha č. 7a bod 1",
+        "Príloha č. 7a bod 2"
+      ],
+      "missing_human_sections": [],
+      "note": "Sekcie su pokryte, ale odpoved je vecne nespravna pri sadzbe na jedlo; ma byt 5 %, nie 19 %."
+    }
+  ]
+}

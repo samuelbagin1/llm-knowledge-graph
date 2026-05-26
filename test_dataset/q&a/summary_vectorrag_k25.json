@@ -1,0 +1,190 @@
+{
+  "sources": {
+    "human_annotations": "test_dataset/q&a/q&a.json",
+    "vectorrag_validation": "test_dataset/q&a/q&a_vectorrag_validation_k25.json"
+  },
+  "methodology": {
+    "answer_score": "1 = LLM odpoved je vecne spravna voci clovekom anotovanej odpovedi; 0 = odpoved je nespravna alebo jej chyba klucova informacia.",
+    "section_success": "Percentualne pokrytie clovekom anotovanych podporujucich ustanoveni medzi top-25 retrieved chunks. Extra najdene ustanovenia sa nepenalizuju.",
+    "matching_note": "Hodnotenie pokrytia je pocitane po atomickych castiach ustanoveni. Zlozene odkazy a rozsahy sa rozkladaju na samostatne casti, napriklad \"\u00a7 4 ods. 1 pism. a) a b)\" na pismena a) a b)."
+  },
+  "overall": {
+    "questions_total": 21,
+    "answers_correct": 17,
+    "answer_accuracy_percent": 80.95,
+    "sections_matched_total": 80,
+    "sections_expected_total": 138,
+    "section_success_micro_percent": 57.97,
+    "section_success_macro_percent": 60.73
+  },
+  "rows": [
+    {
+      "id": 1,
+      "answer_score": 1,
+      "sections_matched": 4,
+      "sections_expected": 5,
+      "section_success_percent": 80.0,
+      "note": "Odpoved spravne urcuje vznik platitelstva dodanim, ktorym sa prekroci 62 500 eur, aj bezodkladne oznamenie danovemu uradu. V retrievali chyba \u00a7 4 ods. 4."
+    },
+    {
+      "id": 2,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 3,
+      "section_success_percent": 33.3,
+      "note": "Odpoved spravne urcuje povinnost podavat danove priznanie od prveho zdanovacieho obdobia po 1. januari. Retrieval pokryl najma \u00a7 78 ods. 2 pism. a), chyba \u00a7 4 ods. 3 a \u00a7 4 ods. 15."
+    },
+    {
+      "id": 3,
+      "answer_score": 1,
+      "sections_matched": 1,
+      "sections_expected": 4,
+      "section_success_percent": 25.0,
+      "note": "Odpoved je vecne spravna: pri malom podniku s EX identifikaciou sa reverse charge neuplatni. Retrieval je slaby pre \u00a7 69 ods. 2 a 3."
+    },
+    {
+      "id": 4,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 5,
+      "section_success_percent": 60.0,
+      "note": "Odpoved spravne rozlisuje, ze limit podla \u00a7 7 este nebol dosiahnuty a pred prijatim sluzby je potrebna registracia podla \u00a7 7a. V retrievali chyba najma \u00a7 69 ods. 3."
+    },
+    {
+      "id": 5,
+      "answer_score": 0,
+      "sections_matched": 7,
+      "sections_expected": 8,
+      "section_success_percent": 87.5,
+      "note": "LLM neurcilo auto s 5 500 km ako novy dopravny prostriedok a nedopovedalo dosledky pre nadobudatela. Retrieval bol pritom takmer kompletny."
+    },
+    {
+      "id": 6,
+      "answer_score": 1,
+      "sections_matched": 6,
+      "sections_expected": 11,
+      "section_success_percent": 54.5,
+      "note": "Odpoved spravne uvadza, ze samotne nahradenie osoby v rezime call-off stock nevytvara premiestnenie podla \u00a7 8 ods. 4. Chybaju niektore casti \u00a7 8a a \u00a7 80."
+    },
+    {
+      "id": 7,
+      "answer_score": 1,
+      "sections_matched": 6,
+      "sections_expected": 7,
+      "section_success_percent": 85.7,
+      "note": "Odpoved spravne priraduje prepravu k dodaniu prostrednej osoby a primerane odlisuje trojstranny obchod. V retrievali chyba \u00a7 13a ods. 3."
+    },
+    {
+      "id": 8,
+      "answer_score": 1,
+      "sections_matched": 7,
+      "sections_expected": 7,
+      "section_success_percent": 100.0,
+      "note": "Odpoved vecne zodpoveda clovekom anotovanej odpovedi a retrieval pokryl vsetky atomicke casti ocakavanych ustanoveni."
+    },
+    {
+      "id": 9,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 5,
+      "section_success_percent": 40.0,
+      "note": "LLM neuviedlo konkretne, ze po prekroceni limitu je miestom dodania pri tovare miesto skoncenia prepravy a pri elektronickych sluzbach miesto zakaznika."
+    },
+    {
+      "id": 10,
+      "answer_score": 1,
+      "sections_matched": 4,
+      "sections_expected": 4,
+      "section_success_percent": 100.0,
+      "note": "Odpoved spravne uvadza moznost zdanenia administrativnej budovy po piatich rokoch a prenos danovej povinnosti na kupujuceho platitela."
+    },
+    {
+      "id": 11,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 4,
+      "section_success_percent": 75.0,
+      "note": "Odpoved spravne rozlisuje oslobodeny najom bytu, neoslobodeny najom parkovacieho miesta a zakaz volby zdanenia pri byte. V retrievali chyba \u00a7 38 ods. 4."
+    },
+    {
+      "id": 12,
+      "answer_score": 1,
+      "sections_matched": 2,
+      "sections_expected": 3,
+      "section_success_percent": 66.7,
+      "note": "Odpoved spravne uvadza podmienky oslobodenia pri vyvoze kupujucim a den dodania ako den vystupu tovaru z EU. V retrievali chyba \u00a7 47 ods. 3."
+    },
+    {
+      "id": 13,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 7,
+      "section_success_percent": 42.9,
+      "note": "Odpoved spravne uvadza, ze bez dokladov do konca siesteho mesiaca nemoze ponechat oslobodenie. Retrieval nepokryl \u00a7 43 ods. 9 az 10 a \u00a7 80 ods. 9."
+    },
+    {
+      "id": 14,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 8,
+      "section_success_percent": 37.5,
+      "note": "Odpoved spravne vysvetluje pouzitie danoveho zastupcu a oslobodenie pri dovoze bez registracie podla \u00a7 5. Retrieval slabsie pokryl \u00a7 69a ods. 2 az 6."
+    },
+    {
+      "id": 15,
+      "answer_score": 1,
+      "sections_matched": 6,
+      "sections_expected": 12,
+      "section_success_percent": 50.0,
+      "note": "Odpoved spravne uvadza, ze pri pohladavke nad 1 000 eur samotnych 150 dni nestaci bez zaloby alebo exekucie."
+    },
+    {
+      "id": 16,
+      "answer_score": 1,
+      "sections_matched": 6,
+      "sections_expected": 8,
+      "section_success_percent": 75.0,
+      "note": "Odpoved spravne uvadza povinnost odberatela opravit odpocitanu dan po 101. dni aj bez dorucenia opravneho dokladu. V retrievali chybaju \u00a7 53b ods. 3 a 6."
+    },
+    {
+      "id": 17,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 11,
+      "section_success_percent": 27.3,
+      "note": "Odpoved spravne urcuje, ze pri chybajucej slovnej informacii vznikne danova povinnost podla vseobecneho \u00a7 19. Retrieval je velmi nekompletny pre \u00a7 68d."
+    },
+    {
+      "id": 18,
+      "answer_score": 0,
+      "sections_matched": 2,
+      "sections_expected": 6,
+      "section_success_percent": 33.3,
+      "note": "LLM spravne uviedlo pomerne odpocitanie pri pouziti aj na sukromne ucely, ale chyba klucove 20-rocne obdobie sledovania zmeny pouzitia."
+    },
+    {
+      "id": 19,
+      "answer_score": 1,
+      "sections_matched": 5,
+      "sections_expected": 12,
+      "section_success_percent": 41.7,
+      "note": "Odpoved spravne uvadza hranicu viac ako 25 cezhranicnych platieb, termin spristupnenia aj trojrocnu dobu uchovania. Retrieval pokryl len klucove odseky \u00a7 70a."
+    },
+    {
+      "id": 20,
+      "answer_score": 1,
+      "sections_matched": 3,
+      "sections_expected": 3,
+      "section_success_percent": 100.0,
+      "note": "Odpoved spravne uvadza, ze zjednodusena faktura z eKasy sa nepouzije pri predaji tovaru na dialku s miestom dodania v tuzemsku ani pri dodani oslobodenom podla \u00a7 43."
+    },
+    {
+      "id": 21,
+      "answer_score": 0,
+      "sections_matched": 3,
+      "sections_expected": 5,
+      "section_success_percent": 60.0,
+      "note": "LLM nevedelo urcit konkretne sadzby z prilohy c. 7a: ubytovanie 5 %, jedlo 5 %, nealkoholicky napoj 19 % a pivo nad 0,5 % zakladna sadzba 23 %."
+    }
+  ]
+}

@@ -73,7 +73,7 @@ Alternatívou by mohla byť vektorová databáza, kde sa údaje ukladajú ako ve
 
 \subsection{Klasické metódy extrakcie}
 
-Extrahovanie informácií (Information Extraction, IE) alebo taktiež extrahovanie znalostí (Knowledge Extraction, KE) je úloha transformovania neštruktúrovaného textu prirodzeného jazyka na štruktúrovaný, strojovo čítateľnú reprezentáciu akými sú trojice entita-vzťah-entita. Klasické IE princípy rozdelia úlohu do podúloh, detekcia entít a~ich prepojovanie, riešenie koreferencie a~extrahovanie vzťahov, ktoré sú spracované cielenou schémou. Prvotné systémy, ako TextRunner a~KnowItAll, sa spoliehali na špeciálne navrhnuté pravidlá alebo na pevne stanovené lingvistické vzory na extrakciu faktov z~textu~\cite{autKGconstruction2023}. Tento prístup bol veľmi nákladný na expertnú prácu a~zle sa prispôsoboval novým typom dokumentov~\cite{autKGconstruction2023}. Tieto limitácie motivovali posun k~štatistickým a~k~neurónovým prístupom, kde vzory na extrahovanie informácií nie sú manuálne písané ale učené z~označených príkladov~\cite{moncecchiRE2010}. Súčasným trendom je spájať vzájomne závislé úlohy, napríklad rozpoznávanie pomenovaných entít a extrakciu vzťahov, do spoločných modelov. Tým sa môže zlepšiť využitie informácií medzi úlohami a obmedziť prenos chýb typický pre pipeline prístupy~\cite{hogan2021kg}.
+Extrahovanie informácií (Information Extraction, IE) alebo taktiež extrahovanie znalostí (Knowledge Extraction, KE) je úloha transformovania neštruktúrovaného textu prirodzeného jazyka na štruktúrovaný, strojovo čítateľnú reprezentáciu akými sú trojice entita-vzťah-entita. Klasické IE princípy rozdelia úlohu do podúloh, detekcia entít a~ich prepojovanie, riešenie koreferencie a~extrahovanie vzťahov, ktoré sú spracované cielenou schémou. Prvotné systémy, ako TextRunner a~KnowItAll, sa spoliehali na špeciálne navrhnuté pravidlá alebo na pevne stanovené lingvistické vzory na extrakciu faktov z~textu~\cite{autKGconstruction2023}. Tento prístup bol veľmi nákladný na expertnú prácu a~zle sa prispôsoboval novým typom dokumentov~\cite{autKGconstruction2023}. Tieto limitácie motivovali posun k~štatistickým a~k~neurónovým prístupom, kde vzory na extrahovanie informácií nie sú manuálne písané ale učené z~označených príkladov~\cite{moncecchiRE2010}. Súčasným trendom je spájať vzájomne závislé úlohy, napríklad rozpoznávanie pomenovaných entít a extrakciu vzťahov, do spoločných modelov. Tým sa môže zlepšiť využitie informácií medzi úlohami a obmedziť prenos chýb typický pre kaskádové prístupy~\cite{hogan2021kg}.
 
 
 \subsubsection{Rozpoznávanie pomenovaných entít}
@@ -121,7 +121,7 @@ Okrem voľby architektúry sa modely líšia aj tým, v~akom režime sa učia a~
 
 \begin{itemize}
   \item Distant supervised relation extraction využíva existujúcu znalostnú databázu na automatické označovanie tréningových viet. Ak KG obsahuje trojicu $(e_h, r, e_t)$, všetky vety s~párom entít $(e_h, e_t)$ dostanú typ $r$. Takto vzniknuté veľké množstvo automaticky označených dát umožňuje škálovateľný tréning klasických aj hlbokých modelov, no zároveň zanáša šum, pretože nie každá veta s~daným párom entít daný vzťah skutočne vyjadruje. Moderné prístupy preto pridávajú špeciálne mechanizmy (PCNN, selective attention nad množinou viet, reinforcement learning či adversariálne učenie), ktoré sa snažia nespoľahlivé príklady filtrovať~\cite{autKGconstruction2023}.
-  \item Spoločná extrakcia entít a~vzťahov (Joint NER and RE) sa spája do jedného modelu, čím zmierňuje šírenie chýb typické pre pipeline prístupy, kde chyby v~NER kroku znehodnotia aj následnú extrakciu vzťahov. Medzi dva hlavné prístupy patria zdieľanie vrstiev medzi úlohami (BiLSTM, BiGCN alebo GraphRel) a~špeciálne anotovacie schémy (CasRel)~\cite{autKGconstruction2023}.
+  \item Spoločná extrakcia entít a~vzťahov (Joint NER and RE) sa spája do jedného modelu, čím zmierňuje šírenie chýb typické pre kaskádové prístupy, kde chyby v~NER kroku znehodnotia aj následnú extrakciu vzťahov. Medzi dva hlavné prístupy patria zdieľanie vrstiev medzi úlohami (BiLSTM, BiGCN alebo GraphRel) a~špeciálne anotovacie schémy (CasRel)~\cite{autKGconstruction2023}.
   \item Few-shot a~zero-shot extrakcia vzťahov rieši prípady, keď je málo alebo žiadne anotované dáta. Pri štandardnej konfigurácii dostane model $K$ príkladov pre $N$ typov vzťahov a~má klasifikovať nové vety. Hlavné prístupy sú: metric learning~-~porovnávanie reprezentácií, meta learning~-~model sa učí „ako sa učiť"\, z~malého množstva príkladov, doménová adaptácia - prenos znalostí medzi doménami~\cite{autKGconstruction2023}.
   \item Extrakcia vzťahov na úrovni dokumentu rieši problém vzťahov vyjadrených naprieč viacerými vetami. Jednotlivé prístupy stavajú heterogénne grafy nad celým dokumentom, kde uzly reprezentujú spomenutia, vety a~entity, a~spracúvajú ich GCN (EoG, LSR, GAIN)~\cite{autKGconstruction2023}.
 \end{itemize}
@@ -179,7 +179,7 @@ V~súčasnom výskume extrakcie informácií a~konštrukcie znalostných grafov 
 
 \
 
-V~oblasti komplexných vedeckých a~multimodálnych dát vyniká toolkit DeepKE, ktorý podporuje extrakciu na úrovni dokumentov, multimodálne scenáre akými sú text a~obraz, a~učenie s~nízkym množstvom dát. DeepKE integruje rôzne architektúry ako CNN, GCN alebo transformery a~pre multimodálne úlohy implementuje model IFAformer, ktorý prepája textové a~vizuálne vlastnosti~\cite{deepke2023}.
+V~oblasti komplexných vedeckých a~multimodálnych dát vyniká nástrojová sada DeepKE, ktorá podporuje extrakciu na úrovni dokumentov, multimodálne scenáre akými sú text a~obraz, a~učenie s~nízkym množstvom dát. DeepKE integruje rôzne architektúry ako CNN, GCN alebo transformery a~pre multimodálne úlohy implementuje model IFAformer, ktorý prepája textové a~vizuálne vlastnosti~\cite{deepke2023}.
 
 Pre globálnu optimálnu extrakciu grafu z~jednej vety je určený framework OneIE, ktorý využíva spoločný neurónový model a~beam dekodér na zachytenie vzájomných závislostí medzi entitami a~udalosťami. Na druhej strane, model KG-BERT sa zameriava na dopĺňanie znalostných grafov tým, že s~entitami a~vzťahmi narába ako s~textovými sekvenciami. To mu umožňuje využiť lingvistický kontext z~predtrénovaných váh BERT modelu na predikciu chýbajúcich faktov~\cite{kgbert2019, oneie2020}
 
@@ -191,7 +191,7 @@ Ak je cieľom extrakcia s~existujúcou schémou (napríklad Wikidata), framework
 
 \
 
-Pre náročné produkčné prostredie spoločnosť Apple vyvinula systém ODKE+ (Open Domain Knowledge Extraction), ktorý sa špecializuje na udržiavanie čerstvosti znalostných grafov. Využíva modulárnu pipeline s~modulmi akými sú Grounder na elimináciu halucinácií a~Corroborator na obodovanie a~normalizáciu faktov, vďaka čomu dosahuje precíznosť až 98,8\%~\cite{odkeplus2025}. 
+Pre náročné produkčné prostredie spoločnosť Apple vyvinula systém ODKE+ (Open Domain Knowledge Extraction), ktorý sa špecializuje na udržiavanie čerstvosti znalostných grafov. Využíva modulárnu postupnosť spracovania s~modulmi akými sú Grounder na elimináciu halucinácií a~Corroborator na obodovanie a~normalizáciu faktov, vďaka čomu dosahuje precíznosť až 98,8\%~\cite{odkeplus2025}.
 
 Pre špecifickú doménu e-commerce bol vytvorený multi-agentový framework AutoPKG. Automaticky indukuje typy produktov a~extrahuje atribúty z~multimodálneho obsahu ako text a~obrázky. Kľúčovým prvkom je agent KGD (Knowledge Graph Decision), ktorý slúži ako jediné rozhranie pre zápis a~robí rozhodnutia o~zlúčení alebo nahradení uzlov na udržanie globálnej konzistencie~\cite{autopkg2026}. 
 
@@ -265,18 +265,13 @@ Spracovanie je súvislá trojkroková postupnosť: predspracovanie (detekcia roz
     \label{fig:process}
 \end{figure}
 
-Detailnejší pohľad na samotnú postupnosť volaní medzi komponentmi je zobrazený na sekvenčnom diagrame (obr.~\ref{fig:sequence}). % chktex 36
-Vstupom celého toku je metóda \texttt{process(input\_path)} volaná z~klientskeho kódu, ktorá orchestruje sedem účastníkov: hlavný komponent \texttt{PDFGraphRAG}, načítavač \texttt{PDFGraphLoader}, samostatný extraktor tabuliek a~vzorcov \texttt{TablesFormulas}, textový deliteľ \texttt{TextSplitter}, jazykový model \texttt{LLM}, chunkovací komponent \texttt{Chunker} a~grafovú databázu Neo4j.
-
-Diagram zachytáva tri logické fázy. V~predspracovaní loader vráti text dokumentu, ktorý sa paralelne pošle do \texttt{TablesFormulas} na extrakciu tabuliek a~vzorcov; výsledné dokumenty sa zlúčia a~uložia ako prvý balík uzlov. Blok \texttt{alt} pred chunkovaním overuje, či dokument už nie je v~databáze, čím sa zabráni opakovanému spracovaniu pri vývoji a~ladení. Druhá fáza je asynchrónny cyklus nad chunkami, ktorý vykonáva objav typov entít a~vzťahov v~otvorenej doméne (ODD), priebežne zjednocuje schému a~po skončení cyklu pošle zjednotenú ontológiu do tretej fázy. Posledný cyklus, opäť asynchrónny a~per-chunk, realizuje schémou riadenú extrakciu (SDE) a~každý výsledný podgraf inkrementálne pridáva do Neo4j. Tok uzatvára volanie \texttt{create\_vector\_index}, ktoré nad uloženými uzlami, chunkami a~vzťahmi vybuduje tri vektorové indexy potrebné pre neskoršie hybridné vyhľadávanie.
-
-Asynchrónnosť oboch cyklov je v~diagrame zámerná, lebo extrakčné volania na LLM tvoria najdrahšiu časť celej pipeline z~hľadiska času aj nákladov, a~ich paralelizácia výrazne skracuje celkové trvanie spracovania. Naopak, samotný zápis do Neo4j prebieha sekvenčne, aby sa pri konkurenčnom \texttt{MERGE} nad rovnakým normalizovaným ID nevytvárali duplicitné uzly.
+Celý návrh spracovania dokumentu je zobrazený v~sekvenčnom diagrame na obrázku~\ref{fig:sequence}. Diagram zachytáva predspracovanie, asynchrónnu extrakciu v~krokoch ODD a~SDE, vloženie výsledného grafu do Neo4j a~vytvorenie vektorových indexov.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{img/sequence-process_drawio.png}
-    \caption[Sekvenčný diagram spracovania PDF dokumentu]{Sekvenčný diagram spracovania PDF dokumentu s~asynchrónnymi cyklami pre ODD a~SDE.}
-    \label{fig:sequence}
+  \centering
+  \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{img/sequence-process_drawio.png}}
+  \caption[Sekvenčný diagram spracovania PDF dokumentu]{Sekvenčný diagram spracovania PDF dokumentu s~asynchrónnymi cyklami pre ODD a~SDE.}
+  \label{fig:sequence}
 \end{figure}
 
 \subsection{Predspracovanie}
@@ -348,10 +343,10 @@ Zjednotené schémy z~predošlého kroku detekcie (ODD) $S_{ODD}$, sú poslané 
 
 Tento krok má lingvistickú úlohu: zo surových typov vytvoriť koherentnú schému bez duplicitných alebo príliš špecifických pomenovaní. Zároveň musí zachovať rozdiel medzi sémanticky odlišnými kategóriami, aby sa napríklad typy Dokument a~Osoba nezlúčili do jednej triedy.
 
-User a~system prompt explicitne nariaďujú modelu reťazové uvažovanie (Chain of Thought), aby porovnal surové dáta so základnou ontológiou a~skontroloval zlučovanie nesúvisiacich kategórií. Explicitné rozdelenie zlepšuje kvalitu deduplikácie najmä pre vzťahy, model najprv „premyslí"\, mapovanie a~až potom ho serializuje. Z~týchto dôvodov je volaný väčší model GPT 5.5, ktorý podporuje hlbšie uvažovanie/odvodzovanie. Taktiež sa uchováva merge log, ktorý mapuje všetky typy do akého typu entity alebo vzťahu boli zjednotené. Pomáha to pri debuggovaní alebo auditovaní.
+User a~system prompt explicitne nariaďujú modelu reťazové uvažovanie (Chain of Thought), aby porovnal surové dáta so základnou ontológiou a~skontroloval zlučovanie nesúvisiacich kategórií. Explicitné rozdelenie zlepšuje kvalitu deduplikácie najmä pre vzťahy, model najprv „premyslí"\, mapovanie a~až potom ho serializuje. Z~týchto dôvodov je volaný väčší model GPT 5.5, ktorý podporuje hlbšie uvažovanie/odvodzovanie. Taktiež sa uchováva záznam zlučovania, ktorý mapuje všetky typy do akého typu entity alebo vzťahu boli zjednotené. Pomáha to pri debuggovaní alebo auditovaní.
 
 \subsubsection{Schémou riadená extrakcia (SDE)}
-Posledný krok je extrakcia pomocou natvrdo nanútenej upravenej $S^*$ schémy (jednotný krok NER a~RE), z~predošlého kroku. Text je v~tomto kroku rozdelený pomocou chunkovacej stratégie, kde sa linearizujú jednotlivé paragrafy, odseky a~písmena (krok nadväzuje na chunkovaciu stratégiu opísanú v~časti~\ref{sec:chunkovacia-strategia}). Tento krok je podnietený odlišnou úlohou ako pri ODD. V~tomto kroku model GPT 5.4 mini musí extrahovať konkrétne inštancie entít a~vzťahov medzi nimi. Zjednotený a~ustálený kontext znižuje pravdepodobnosť, že sa dva nesúvisiace fakty zmiešajú do jedného vzťahu. Chunky sú posielané paralelne s~limitovanou súbežnosťou a~pause-and-retry mechanizmom, v~prípade vyčerpania užívateľových tokenov za minútu.
+Posledný krok je extrakcia pomocou natvrdo nanútenej upravenej $S^*$ schémy (jednotný krok NER a~RE), z~predošlého kroku. Text je v~tomto kroku rozdelený pomocou chunkovacej stratégie, kde sa linearizujú jednotlivé paragrafy, odseky a~písmena (krok nadväzuje na chunkovaciu stratégiu opísanú v~časti~\ref{sec:chunkovacia-strategia}). Tento krok je podnietený odlišnou úlohou ako pri ODD. V~tomto kroku model GPT 5.4 mini musí extrahovať konkrétne inštancie entít a~vzťahov medzi nimi. Zjednotený a~ustálený kontext znižuje pravdepodobnosť, že sa dva nesúvisiace fakty zmiešajú do jedného vzťahu. Chunky sú posielané paralelne s~limitovanou súbežnosťou a~mechanizmom pozastavenia a~opakovania, v~prípade vyčerpania užívateľových tokenov za minútu.
 
 Prompt nariaďuje niekoľko kvalitatívnych pravidiel. Pravidlo najšpecifickejšieho typu, ak schéma obsahuje aj všeobecnejšie aj špecifickejšie pasujúce typy, použije sa špecifickejší. Pravidlo closest-or-skip, ak v~schéme nie je presne pasujúci typ, model použije najbližší existujúci, alebo entitu úplne preskočí (radšej nič ako halucinovaný typ). Vlastnosti len ak sú explicitné, model nesmie vymýšľať vlastnosti uzlov ani vzťahov, môže uložiť iba to, čo je v~texte priamo uvedené. Taktiež modelu je ukázaný vzor jedným maximálne dvoma príkladmi, ako by mal výstup vyzerať.
 
@@ -437,7 +432,7 @@ Po vložení uzlov a~hrán sa nad grafom vybudujú tri samostatné vektorové in
 
 Praktický prejav opísanej hierarchie možno vidieť na obrázku~\ref{fig:paragraf-jeden-skok}, ktorý zobrazuje jeden konkrétny uzol typu \emph{Paragraf} (§~32) so všetkými susednými uzlami dostupnými na jeden skok. Okolo paragrafu sú zoskupené odseky, písmená a~chunky, ako aj entity extrahované zo súvisiaceho textu a~väzba na dokument. Tento pohľad názorne demonštruje, ako uložená štruktúra umožňuje GraphRAG-u prejsť od paragrafu jediným prechodom hrán ku všetkým podporujúcim faktom.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{img/paragraf-uzol-na-jeden-skok.png}
     \caption[Susedstvo paragrafu na jeden skok]{Výsledok Cypher dotazu nad uzlom \emph{Paragraf §~32} zo zákona o~DPH (222/2004 Z.~z.) zobrazujúci všetkých susedov dostupných na jeden skok. Pravý panel sumarizuje rozloženie typov uzlov (Chunk, Odsek, Písmeno, Paragraf, Podmienka, Pravnypredpis, Sluzba, Tovar) a~typov hrán (\texttt{IN\_DOCUMENT}, \texttt{IN\_SECTION}, \texttt{OBSAHUJE}, \texttt{ODKAZUJE\_NA}, \texttt{JE\_OSLOBODENE\_OD\_DANE}, \texttt{VZTAHUJE\_SA\_NA}).}
@@ -446,7 +441,7 @@ Praktický prejav opísanej hierarchie možno vidieť na obrázku~\ref{fig:parag
 
 Pri agregácii cez stovky chunkov a~desiatky paragrafov vzniká hustá sieť entít a~vzťahov pokrývajúca celý dokument. Výsledný znalostný graf po vložení testovacieho zákona o~DPH je vizualizovaný na obrázku~\ref{fig:kg-vysledok}, kde je vidieť celkové rozloženie typov uzlov, dominantné zhluky (chunky, písmená, paragrafy) a~okrajové menej zastúpené typy.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.65\textwidth]{img/graf-ukazka1.png}
     \caption[Celkový pohľad na výsledný znalostný graf]{Celkový pohľad na výsledný znalostný graf vybudovaný zo zákona o~DPH obmedzený na 1000 uzlov.}
@@ -468,27 +463,27 @@ Python slúži ako orchestračný jazyk celého systému. Je zvolený pre svoju 
 \noindent\textbf{LangChain}
 
 \
-LangChain je knižnica navrhnutá na budovanie systémov okolo LLM. Poskytuje abstrakcie nad rôznymi poskytovateľmi jazykových modelov, čo znamená, že výmena jedného modelu za druhý si nevyžaduje prepísanie aplikačnej logiky. V~projekte sa využíva najmä jeho schopnosť reťaziť operácie, spravovať kontextové okná, pracovať s~nástrojmi a~budovať agentické workflowy. 
+LangChain je knižnica navrhnutá na budovanie systémov okolo LLM. Poskytuje abstrakcie nad rôznymi poskytovateľmi jazykových modelov, čo znamená, že výmena jedného modelu za druhý si nevyžaduje prepísanie aplikačnej logiky. V~projekte sa využíva najmä jeho schopnosť reťaziť operácie, spravovať kontextové okná, pracovať s~nástrojmi a~budovať agentické pracovné postupy.
 
 \
 
 \noindent\textbf{Neo4j}
 
 \
-Neo4j je grafová databáza postavená na modeli grafov s~vlastnosťami. Entity v~grafe reprezentujú uzly s~vlastnosťami, menovkami a~vzťahy sú typové hrany. Tento typ služby som zvolil kvôli dobrému softvérovému riešeniu, kde sa dá spravovať databáza, vizualizovať dáta a~narábať s~nimi pomocou Cypher queries. Taktiež je tu veľmi dobré riešenie prepájania grafov s~vektorovým úložiskom, kde rôzne uzly môžu byť vektorizované a~prepojené pomocou ich unikátneho ID.
+Neo4j je grafová databáza postavená na modeli grafov s~vlastnosťami. Entity v~grafe reprezentujú uzly s~vlastnosťami, menovkami a~vzťahy sú typové hrany. Tento typ služby som zvolil kvôli dobrému softvérovému riešeniu, kde sa dá spravovať databáza, vizualizovať dáta a~narábať s~nimi pomocou Cypher dopytov. Taktiež je tu veľmi dobré riešenie prepájania grafov s~vektorovým úložiskom, kde rôzne uzly môžu byť vektorizované a~prepojené pomocou ich unikátneho ID.
 
 \
 
 \noindent\textbf{Modely LLM}
 
 \
-Projekt využíva viac poskytovateľov modelov LLM súčasne. Modely sú volené podľa ich schopností, či ide o~rýchlosť, cenu, kvalitu spracovania, reasoning alebo ich určenie. Sú to konkrétne modely GPT 5.4 mini a~GPT 5.5 od OpenAI. Modely sú ukázané v~metrike cena vstup/výstup, tokenov za minútu a~požiadaviek za minútu.
+Projekt využíva viac poskytovateľov modelov LLM súčasne. Modely sú volené podľa ich schopností, či ide o~rýchlosť, cenu, kvalitu spracovania, schopnosť uvažovania alebo ich určenie. Sú to konkrétne modely GPT 5.4 mini a~GPT 5.5 od OpenAI. Modely sú ukázané v~metrike cena vstup/výstup za 1 milión tokenov, tokenov za minútu a~požiadaviek za minútu~\cite{openaiPricing,openaiOrganizationLimits}.
 
 \begin{itemize}
     \item GPT 5.4 mini: 0.75\$/4.50\$, 200 000 TPM a~500 RPM
     \item GPT 5.5: 5.00\$/30.00\$, 500 000 TPM a~500 RPM
     
-    Tokens Per Minute (TPM) a~Rates Per Minute (RPM) záleží od používateľa, v~akej úrovni sa nachádza. Uvedené dáta sú pre úroveň 1.
+    Tokens Per Minute (TPM) a~Rates Per Minute (RPM) záleží od používateľa, v~akej úrovni sa nachádza. Uvedené dáta sú pre úroveň 1~\cite{openaiOrganizationLimits}.
 \end{itemize}
 
 Správy a~inštrukcie sa následne posielajú v~dvoch vstupoch. Prvým je systémová správa (SystemMessage, system\_prompt), ktorá definuje rolu, kontext a~pravidlá, ktorými sa model má riadiť. Druhou je ľudská správa (HumanMessage, user role), ktorá obsahuje samotný vstup používateľa.
@@ -508,15 +503,14 @@ Táto časť sumarizuje rozhodnutia, ktoré mali najväčší vplyv na stabilitu
 
 \subsubsection{Mechanizmus semaforu}
 
-Pri spracovaní dokumentu je každý chunk spracovaný ako samostatná asynchrónna úloha. Keďže dokument môže obsahovať desiatky až stovky chunkov, paralelné volania modelu môžu rýchlo naraziť na limity API, najmä na počet tokenov za minútu. Zlyhanie jednej požiadavky pri rate limite navyše často znamená, že v~krátkom čase zlyhajú aj ďalšie požiadavky. Preto je spracovanie riadené koordinačným mechanizmom so semaforom, globálnym prepínačom a~zámkom.
+Pri spracovaní dokumentu je každý chunk spracovaný ako samostatná asynchrónna úloha. Keďže dokument môže obsahovať desiatky až stovky chunkov, paralelné volania modelu môžu rýchlo naraziť na limity API, najmä na počet tokenov za minútu. Zlyhanie jednej požiadavky pri limite požiadaviek navyše často znamená, že v~krátkom čase zlyhajú aj ďalšie požiadavky. Preto je spracovanie riadené koordinačným mechanizmom so semaforom, globálnym prepínačom a~zámkom.
 
 Semafor obmedzuje počet súčasne bežiacich požiadaviek, v~implementácii na päť paralelných úloh. Každá úloha pred volaním modelu najprv overí globálny prepínač. Ak je prepínač aktívny, úloha čaká na voľné miesto v~semafore a~po jeho získaní vykoná extrakciu alebo detekciu pomocou jazykového modelu. Každá úloha má najviac tri pokusy.
 
-Ak volanie zlyhá a~úloha má ešte dostupný ďalší pokus, pokúsi sa získať zámok. Zámok zabezpečuje, že cooldown spustí iba prvá úloha, ktorá zlyhanie zachytí. Táto úloha vypne globálny prepínač, čím pozastaví ostatné úlohy na spoločnom synchronizačnom bode, počká 60 sekúnd na obnovenie rate limitu a~následne prepínač opäť zapne. Ostatné úlohy tak nevykonávajú vlastné nezávislé čakanie, ale riadia sa jedným spoločným signálom.
+Ak volanie zlyhá a~úloha má ešte dostupný ďalší pokus, pokúsi sa získať zámok. Zámok zabezpečuje, že čakaciu pauzu spustí iba prvá úloha, ktorá zlyhanie zachytí. Táto úloha vypne globálny prepínač, čím pozastaví ostatné úlohy na spoločnom synchronizačnom bode, počká 60 sekúnd na obnovenie limitu a~následne prepínač opäť zapne. Ostatné úlohy tak nevykonávajú vlastné nezávislé čakanie, ale riadia sa jedným spoločným signálom.
 
-Ak úloha vyčerpá všetky tri pokusy, výnimka sa propaguje ďalej. Hlavná rutina spúšťa všetky úlohy naraz v~rámci jedného event loopu a~pomocou operácie \texttt{gather} čaká na ich dokončenie. Výhodou návrhu je, že zlyhanie jednej požiadavky sa interpretuje ako signál pre celý systém, nie ako izolovaný problém jednej úlohy.
+Ak úloha vyčerpá všetky tri pokusy, výnimka sa propaguje ďalej. Hlavná rutina spúšťa všetky úlohy naraz v~rámci jednej slučky udalostí a~pomocou operácie \texttt{gather} čaká na ich dokončenie. Výhodou návrhu je, že zlyhanie jednej požiadavky sa interpretuje ako signál pre celý systém, nie ako izolovaný problém jednej úlohy.
 
-\
 
 \subsubsection{Štruktúrovaný výstup}
 
@@ -529,7 +523,7 @@ Druhým prístupom je metóda \texttt{with\_structured\_output}, ktorá sa v~pro
 \subsubsection{Chunkovacia stratégia}
 \label{sec:chunkovacia-strategia}
 
-Chunkovanie je v~riešení prispôsobené štruktúre slovenského zákona, nie iba pevnej dĺžke textu. Najprv sa PDF načíta pomocou PyPDFLoader a~z~textu sa odstránia opakujúce sa hlavičky strán. Pri načítaní sa zároveň ukladá mapovanie znakov na čísla strán, aby bolo možné neskôr určiť, z~ktorej strany konkrétna časť zákona pochádza.
+Chunkovanie je v~riešení prispôsobené štruktúre slovenského zákona (zákony finančného práva, nie dodatky a neskoršie úpravy), nie iba pevnej dĺžke textu. Najprv sa PDF načíta pomocou PyPDFLoader a~z~textu sa odstránia opakujúce sa hlavičky strán. Pri načítaní sa zároveň ukladá mapovanie znakov na čísla strán, aby bolo možné neskôr určiť, z~ktorej strany konkrétna časť zákona pochádza.
 
 Následne sa text rozdelí podľa paragrafov. Funkcia na detekovanie paragrafov vyhľadáva značky typu \texttt{\textbackslash n\textsection{} 16a\textbackslash n} a~ku každému paragrafu sa pokúša priradiť nadpis. Nadpis môže byť uvedený za značkou paragrafu, pred ňou, alebo nemusí byť prítomný vôbec. Okrem toho sa oddelí úvodný text paragrafu od prvého odseku, aby sa pri ďalšom spracovaní nestratil kontext, ktorý patrí celému paragrafu. Pri paragrafových uzloch sa zároveň doplní začiatočná a~koncová strana.
 
@@ -550,7 +544,7 @@ Kvalita spracovania zadania modelu závisí nielen od schopností zvoleného mod
 \begin{itemize}
     \item Štruktúra promptu - modely reagujú výrazne presnejšie, ak je vstup členený do sekcií. Prompt je písaný v~Markdown formáte, kde nadpisy a~podnadpisy sú označené pomocou \# alebo \#\#. Typické sekcie promptu bývajú: ÚLOHA, KONTEXT, VSTUP, POKYNY a~PRÍKLADY.
     \item Konkrétnosť inštrukcie - inštrukcie musia byť presné a~jazykovo presne definované. Ak model nemá explicitne napísané čo a~ako má spraviť, výstup úlohy nemusí zodpovedať našim požiadavkám.
-    \item Pravidlá a~príklady - model musí mať presne ohraničené čo môže. Ak model explicitne neohraničíme pravidlami, model nemusí dodržiavať inštrukcie. Pár príkladov ako má úlohu vykonať dopomôže kvalite spracovania (few-shot learning). Avšak uvedenie príliš veľa príkladov má na svedomí over-fitting, kedy model sa len zameriava na typy tohto príkladu.
+    \item Pravidlá a~príklady - model musí mať presne ohraničené čo môže. Ak model explicitne neohraničíme pravidlami, model nemusí dodržiavať inštrukcie. Pár príkladov ako má úlohu vykonať dopomôže kvalite spracovania (few-shot learning). Avšak uvedenie príliš veľa príkladov má na svedomí over-fitting, kedy sa model len zameriava na typy tohto príkladu.
     \item Špecifiká pre slovenčinu - modelom je vynútené, ako majú spracovať typy vzťahov, typy entít a~identifikátory uzlov. Tieto pravidlá sú dôležité najmä pre diakritiku, skloňovanie a~konzistentné pomenovanie rovnakých právnych pojmov naprieč chunkami.
 \end{itemize}
 
@@ -592,7 +586,9 @@ Samostatným problémom sú prázdne alebo čiastočné výstupy. Pri niektorýc
 
 \subsubsection{Pridanie validačného a~koreferenčného kroku}
 
-Validačný a~koreferenčný krok bol pôvodne zavedený s~cieľom odstrániť duplicity pri pomenovaní tých istých entít, predovšetkým variantné formy odkazov na zákony (Zakon 222/2004 Z. Z., 222/2004 Z. z., Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.). V~praxi sa však validácia neobmedzila len na zlučovanie duplicít, ale aplikovala pomerne prísne filtrovanie aj na ostatné entity a~vzťahy (problém halucinácie LLM). Cena za to nie je zanedbateľná, pretože ďalší krok s~LLM výrazne zvyšuje náklady na každý chunk (minimálne 2x ceny SDE), keďže každý typ entity sa porovnáva s~kontextom chunku (každý typ entity~*~každý grafový dokument). To by sa dalo zlacniť nasadením menšieho lokálneho modelu (Llama, Mistral) bez závislosti na externej API. Podľa CORE-KG pre vyhodnotenie zhody bez LLM na odstránenie duplicít by sme mohli použiť fuzzy string matching z~knižnice RapidFuzz s~prahom 75\,\%. Textovo podobné, ale sémanticky odlišné odkazy by sa nesprávne zlúčili, a~naopak dva odlišne formulované odkazy by sa pod prahom 75\,\% nepospájali~\cite{meher2025corekgllmdrivenknowledgegraph}.
+Validačný a~koreferenčný krok bol pôvodne zavedený s~cieľom odstrániť duplicity pri pomenovaní tých istých entít, predovšetkým variantné formy odkazov na zákony (Zakon 222/2004 Z. Z., 222/2004 Z. z., Zbierka Zakonov Slovenskej Republiky 222/2004 Z. Z.). V~praxi sa však validácia neobmedzila len na zlučovanie duplicít, ale aplikovala pomerne prísne filtrovanie aj na ostatné entity a~vzťahy (problém halucinácie LLM). Cena za to nie je zanedbateľná, pretože ďalší krok s~LLM výrazne zvyšuje náklady na každý chunk (minimálne 2x ceny SDE), keďže každý typ entity sa porovnáva s~kontextom chunku (každý typ entity~*~každý grafový dokument). To by sa dalo zlacniť nasadením menšieho lokálneho modelu (Llama, Mistral) bez závislosti na externej API.
+
+Podľa CORE-KG pre vyhodnotenie zhody bez LLM na odstránenie duplicít by sme mohli použiť fuzzy string matching z~knižnice RapidFuzz s~prahom 75\,\%. Textovo podobné, ale sémanticky odlišné odkazy by sa nesprávne zlúčili, a~naopak dva odlišne formulované odkazy by sa pod prahom 75\,\% nepospájali~\cite{meher2025corekgllmdrivenknowledgegraph}.
 
 Využitie generického embeddingu (napríklad text-embedding-3-large) by mohlo mať závažné dôsledky, kedy by sa rozličné entity zlúčili dokopy. Napríklad entity Faktúra a~Bloček by skórovali pri využití kosínusovej podobnosti približne 86\%. Avšak z~pohľadu právnej domény sú to dynamicky odlišné entity, každá s~iným významom. Pri nesprávnom nastavenom prahu by sa zjednotili a~predísť takémuto problému je možné iba zvýšením na vysoké číslo ako 95\%. Aj pri takomto vysokom čísle by sa mohli zjednotiť entity, ako napríklad Zákon 243/2008 a~Zákon 244/2008, ktoré majú podobnosť približne 97\%. Deduplikáciu s~využitím embeddingov, by sme museli využiť predtrénovaný embedding na slovenské právo, ktoré tieto entity dokáže rozlíšiť.
 
@@ -611,9 +607,9 @@ Na otestovanie spoločnej extrakcie entít a~vzťahov bol vytvorený v~spoluprá
 \subsubsection{Extrakcia}
 Evaluácia extrakcie porovnáva graf vygenerovaný modelom s~ručne anotovaným referenčným grafom. Pred porovnaním sa identifikátory uzlov, typy uzlov a~názvy vzťahov normalizujú: odstráni sa diakritika, zjednotia sa medzery, veľkosť písmen a~bežné varianty právnych odkazov, a~nakoniec sa odstránia duplicitné uzly a~hrany. Tolerancia voči formulačným variáciám pri zachovaní striktných pravidiel sémantickej zhody nadväzuje na metodiku, ktorú pre evaluáciu LLM-generovaných grafov navrhli Ghanem a~Cruz~\cite{ghanem2025kgeval}.
 
-Zhoda uzlov sa určuje v~troch postupných vrstvách. Prvá vrstva požaduje úplnú zhodu znormalizovaného identifikátora aj typu uzla a~udelí skóre 1{,}0. Druhá, uvoľnená vrstva pripúšťa rovnaký typ uzla pri textovej podobnosti identifikátorov nad hodnotou 0{,}75, počítanej metrikou \texttt{token\_set\_ratio} z~knižnice RapidFuzz. Tretia vrstva zapojí jazykového sudcu, teda samostatné volanie LLM, ktoré dostane referenčnú aj predikovanú entitu a~vráti štruktúrovanú odpoveď s~poliami \texttt{same\_entity}, \texttt{type\_acceptable}, \texttt{confidence} a~\texttt{reason}. Sudca sa volá až po prekročení prahu textovej podobnosti 0{,}55, čím sa nákladné volania obmedzia na nejednoznačné prípady. Kandidáti zo všetkých troch vrstiev sa následne zoradia podľa skóre a~priradia greedy postupom s~ohraničením jeden-na-jedného. Využitie LLM ako sémanticky citlivého sudcu pri párovaní entít je v~zhode s~prístupom zavedeným v~ontologicky orientovaných benchmarkoch Text2KGBench~\cite{mihindukulasooriya2023text2kgbench} a~KG-LLM-Bench~\cite{markowitz2025kgllmbench}.
+Zhoda uzlov sa určuje v~troch postupných vrstvách. Prvá vrstva požaduje úplnú zhodu znormalizovaného identifikátora aj typu uzla a~udelí skóre 1{,}0. Druhá, uvoľnená vrstva pripúšťa rovnaký typ uzla pri textovej podobnosti identifikátorov nad hodnotou 0{,}75, počítanej metrikou \texttt{token\_set\_ratio} z~knižnice RapidFuzz. Tretia vrstva zapojí jazykového sudcu, teda samostatné volanie LLM, ktoré dostane referenčnú aj predikovanú entitu a~vráti štruktúrovanú odpoveď s~poliami \texttt{same\_entity}, \texttt{type\_acceptable}, \texttt{confidence} a~\texttt{reason}. Sudca sa volá až po prekročení prahu textovej podobnosti 0{,}55, čím sa nákladné volania obmedzia na nejednoznačné prípady. Kandidáti zo všetkých troch vrstiev sa následne zoradia podľa skóre a~priradia greedy postupom s~ohraničením jeden-na-jedného. Využitie LLM ako sémanticky citlivého sudcu pri párovaní entít je v~zhode s~prístupom zavedeným v~ontologicky orientovaných referenčných testoch Text2KGBench~\cite{mihindukulasooriya2023text2kgbench} a~KG-LLM-Bench~\cite{markowitz2025kgllmbench}.
 
-Hrany sa hodnotia analogicky, no podmienene: najprv treba určiť, ktoré referenčné uzly sa namapovali na ktoré predikované. Ak sa po tomto premostení zhoduje zdroj $e_h$, cieľ $e_t$ aj typ vzťahu, ide o~striktnú zhodu hrany. Pokiaľ sa zhodujú iba endpointy, smer a~sémantiku relácie posúdi sudca. Pri úplne odlišných endpointoch sa počíta vážená podobnosť (30~\% $e_h$, 30~\% $e_t$, 25~\% typ vzťahu, po 7{,}5~\% typy oboch uzlov), a~ak prekročí prah, sudca rozhodne o~celom triplete naraz. Tento hierarchický postup zodpovedá viacúrovňovému hodnoteniu, aké pre relačnú extrakciu používajú nedávne benchmarky~\cite{brokman2025zsre, castedo2026blinkg}.
+Hrany sa hodnotia analogicky, no podmienene: najprv treba určiť, ktoré referenčné uzly sa namapovali na ktoré predikované. Ak sa po tomto premostení zhoduje zdroj $e_h$, cieľ $e_t$ aj typ vzťahu, ide o~striktnú zhodu hrany. Pokiaľ sa zhodujú iba koncové uzly, smer a~sémantiku relácie posúdi sudca. Pri úplne odlišných koncových uzloch sa počíta vážená podobnosť (30~\% $e_h$, 30~\% $e_t$, 25~\% typ vzťahu, po 7{,}5~\% typy oboch uzlov), a~ak prekročí prah, sudca rozhodne o~celej trijici naraz. Tento hierarchický postup zodpovedá viacúrovňovému hodnoteniu, aké pre relačnú extrakciu používajú nedávne referenčné testy~\cite{brokman2025zsre, castedo2026blinkg}.
 
 Z~napárovaných množín sa pre uzly aj vzťahy počítajú štandardné ukazovatele zhody: $TP$ označuje správne nájdené prvky, $FP$ prvky navyše vo výstupe modelu a~$FN$ prvky referenčného grafu, ktoré model nenašiel. Z~nich sa odvodzujú presnosť $P$, úplnosť $R$ a~ich harmonický priemer $F1$:
 
@@ -637,7 +633,7 @@ V~čitateli predstavujú $FP_V$ a~$FN_V$ nadbytočné a~chýbajúce uzly, $FP_E$
 
 \
 
-Samostatnú vrstvu hodnotenia tvorí kontrola schémovej kvality predikcie, motivovaná ontologicky orientovanými benchmarkami extrakcie~\cite{mihindukulasooriya2023text2kgbench}. Tá sleduje, či predikované typy uzlov a~vzťahov spadajú do vopred definovanej ontológie, a~vracia podiel neplatných typov, visiacich hrán s~chýbajúcim koncovým bodom, neznámych typov a~chybných identifikátorov, ktorými sú prázdne reťazce alebo zástupné hodnoty typu „unknown"\, či „none". Tieto údaje umožňujú rozlíšiť, či sa model dopúšťa sémantických chýb, alebo či dokonca porušuje formálne obmedzenia schémy.
+Samostatnú vrstvu hodnotenia tvorí kontrola schémovej kvality predikcie, motivovaná ontologicky orientovanými referenčnými testami extrakcie~\cite{mihindukulasooriya2023text2kgbench}. Tá sleduje, či predikované typy uzlov a~vzťahov spadajú do vopred definovanej ontológie, a~vracia podiel neplatných typov, visiacich hrán s~chýbajúcim koncovým bodom, neznámych typov a~chybných identifikátorov, ktorými sú prázdne reťazce alebo zástupné hodnoty typu „unknown"\, či „none". Tieto údaje umožňujú rozlíšiť, či sa model dopúšťa sémantických chýb, alebo či dokonca porušuje formálne obmedzenia schémy.
 
 Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priemer pracuje s~celkovými súčtami $TP$, $FP$ a~$FN$ naprieč všetkými segmentmi, čím prirodzene priraďuje väčšiu váhu rozsiahlejším úsekom. Makro priemer naopak priemeruje striktné F1, zhodu s~ontológiou, $H$, $O$ aj $GED$ rovnomerne pre každý segment bez ohľadu na jeho veľkosť. Rozdiel medzi mikro a~makro hodnotami signalizuje, či model zlyháva primárne na rozsiahlych, alebo naopak na drobných segmentoch.
 \
@@ -767,7 +763,7 @@ Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priem
 
 \
 
-Z~výsledkov z~tabuľky \ref{tab:extraction-evaluation} vyplývajú tri konzistentné pozorovania naprieč všetkými modelmi a~režimami promptovania. Po prvé, kvalita extrakcie uzlov je rádovo vyššia než kvalita extrakcie vzťahov. Najlepší pozorovaný mikro F1 pre uzly dosiahol model GPT 5.5 s~vysokým rozumovým úsilím v~zero-shot režime (0{,}824), kým mikro F1 pre vzťahy zostal na hodnote 0{,}453 pri rovnakej konfigurácii. Tento rozdiel pretrváva aj pri ostatných modeloch. Najslabšia konfigurácia (GPT 5.4 mini, low, zero-shot) zachytila uzly na úrovni 0{,}608 a~vzťahy len 0{,}189. Vyplýva z~toho, že problém nespočíva v~identifikácii samotných entít, ale v~ich správnom prepojení. Model musí pre každý vzťah súčasne určiť oba endpointy a~sémantiku hrany, a~chyba v~ktoromkoľvek z~týchto rozhodnutí spôsobí nesprávny zápis.
+Z~výsledkov z~tabuľky \ref{tab:extraction-evaluation} vyplývajú tri konzistentné pozorovania naprieč všetkými modelmi a~režimami promptovania. Po prvé, kvalita extrakcie uzlov je rádovo vyššia než kvalita extrakcie vzťahov. Najlepší pozorovaný mikro F1 pre uzly dosiahol model GPT 5.5 s~vysokým rozumovým úsilím v~zero-shot režime (0{,}824), kým mikro F1 pre vzťahy zostal na hodnote 0{,}453 pri rovnakej konfigurácii. Tento rozdiel pretrváva aj pri ostatných modeloch. Najslabšia konfigurácia (GPT 5.4 mini, low, zero-shot) zachytila uzly na úrovni 0{,}608 a~vzťahy len 0{,}189. Vyplýva z~toho, že problém nespočíva v~identifikácii samotných entít, ale v~ich správnom prepojení. Model musí pre každý vzťah súčasne určiť oba koncové uzly a~sémantiku hrany, a~chyba v~ktoromkoľvek z~týchto rozhodnutí spôsobí nesprávny zápis.
 
 Po druhé, prechod od zero-shot k~few-shot promptovaniu prináša najväčší prínos práve slabším modelom. Pri konfigurácii GPT 5.4 mini s~nízkym úsilím vzrástlo mikro F1 pre uzly z~0{,}608 na 0{,}696 a~pre vzťahy z~0{,}189 na 0{,}269, čo predstavuje relatívne zlepšenie o~viac než 40~\% na strane vzťahov. Pri silnejšom modeli GPT 5.5 s~vysokým rozumovým úsilím je rozdiel medzi režimami menší (mikro F1 vzťahov sa zlepšilo z~0{,}453 na 0{,}460, pre uzly dokonca mierne kleslo z~0{,}824 na 0{,}821). Ukážkové vstupy v~prompte teda fungujú primárne ako kompenzácia obmedzeného sledovania inštrukcií, a~strácajú vplyv akonáhle model dostatočne rozumie zadanej schéme aj bez nich.
 
@@ -834,6 +830,8 @@ Ako prvý porovnávací prístup bol použitý klasický chat s~LLM vo webovej a
 R = \frac{\sum_{i=1}^{21} |N_i \cap O_i|}{\sum_{i=1}^{21} |O_i|},
 \]
 kde $N_i$ je množina nájdených ustanovení a~$O_i$ množina očakávaných ustanovení pre $i$-tu otázku. Nadbytočné nájdené ustanovenia sa nepenalizovali, pretože cieľom tejto metriky bolo merať pokrytie potrebnej právnej opory, nie presnosť výberu kontextu.
+
+Správnosť odpovede som hodnotil binárne. Hodnota 1 znamená, že odpoveď vystihla vecný právny záver očakávanej odpovede. Hodnota 0 bola priradená, ak bol záver nesprávny, chýbala podstatná časť odpovede alebo odpoveď odporovala zákonu.
 
 \begin{table}[h]
 \centering

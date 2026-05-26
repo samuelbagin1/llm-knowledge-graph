@@ -22,12 +22,6 @@
         <mxCell id="act_loader" parent="ll_loader" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
           <mxGeometry height="50" width="10" x="60" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="ll_tf" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="tf:TablesFormulas" vertex="1">
-          <mxGeometry height="1540" width="130" x="570" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="act_tf" parent="ll_tf" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
-          <mxGeometry height="60" width="10" x="60" y="250" as="geometry" />
-        </mxCell>
         <mxCell id="ll_splitter" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;" value="splitter:TextSplitter" vertex="1">
           <mxGeometry height="1540" width="120" x="740" y="90" as="geometry" />
         </mxCell>
@@ -103,26 +97,22 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e4" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
+        <mxCell id="act_pgr_nested_tf" parent="ll_pgr" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="70" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="e_self_tf" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
           <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="350" />
+              <mxPoint x="315" y="360" />
+            </Array>
             <mxPoint x="295" y="350" as="sourcePoint" />
-            <mxPoint x="630" y="350" as="targetPoint" />
+            <mxPoint x="300" y="360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e4l" connectable="0" parent="e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;tables_and_formulas(pdf_path, documents)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="e_self_tf_l" connectable="0" parent="e_self_tf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="tables_and_formulas(pdf_path, document_id, documents)" vertex="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e5" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="630" y="400" as="sourcePoint" />
-            <mxPoint x="295" y="400" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e5l" connectable="0" parent="e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="table_graph_docs, formula_graph_doc" vertex="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="130" y="-8" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="frag1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=80;height=24;fontSize=10;" value="&lt;b&gt;opt&lt;/b&gt;" vertex="1">
@@ -309,25 +299,22 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e_self" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;exitX=1;exitY=0.5;entryX=1;entryY=0.5;">
+        <mxCell id="act_pgr_nested_chunk" parent="ll_pgr" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry height="40" width="10" x="70" y="1145" as="geometry" />
+        </mxCell>
+        <mxCell id="e_self" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="380" y="1235" />
-              <mxPoint x="380" y="1260" />
+              <mxPoint x="315" y="1235" />
+              <mxPoint x="315" y="1245" />
             </Array>
             <mxPoint x="295" y="1235" as="sourcePoint" />
-            <mxPoint x="380" y="1235" as="targetPoint" />
+            <mxPoint x="300" y="1245" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="e_self_l" connectable="0" parent="e_self" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="_add_document_chunk()" vertex="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="17" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e_self_back" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;curved=0;rounded=0;dashed=1;endSize=8;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="380" y="1262" as="sourcePoint" />
-            <mxPoint x="295" y="1262" as="targetPoint" />
+            <mxPoint x="80" y="-8" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="e24" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;curved=0;rounded=0;" target="act_neo4j_4">

@@ -841,22 +841,83 @@ Správnosť odpovede som hodnotil binárne. Hodnota 1 znamená, že odpoveď vys
 \toprule
 \textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť referencovania} \\
 \midrule
-Klasický chat s~LLM & 9/21 & 43{,}1\,\% \\
-\multirow{3}{*}{Vektorový RAG} & \emph{k=5:}\, 3/21 & 50{,}0\,\% \\
- & \emph{k=10:}\, 6/21 & 62{,}1\,\% \\
- & \emph{k=25:}\, 17/21 & 72{,}4\,\% \\
+Klasický chat s~LLM & 9/21 & 20{,}3\,\% \\
+\multirow{4}{*}{Vektorový RAG} & \emph{k=5:}\, 3/21 & 32{,}6\,\% \\
+ & \emph{k=10:}\, 6/21 & 43{,}5\,\% \\
+ & \emph{k=25:}\, 17/21 & 56{,}5\,\% \\
+ & \emph{k=50:}\, 20/21 & 71{,}7\,\% \\
 GraphRAG & 20/21 & 74{,}6\,\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Odpovede v~tomto teste vytvoril ChatGPT tak, že dostal iba otázku a~explicitnú požiadavku, aby spolu s~odpoveďou uviedol aj podporné paragrafy a~odseky. Najlepšie si poradil pri jednoduchších právnych záveroch, ktoré vedel formulovať zrozumiteľne, ale bez dokumentu dosiahol správnosť iba 9 z~21 odpovedí a~pokrytie podporných ustanovení 43{,}1\,\%. Najviac zaostával pri presnom viazaní odpovede na zákonné ustanovenia: často uviedol príbuzný paragraf, nesprávny odsek alebo vynechal časť rozsahu. Ak by mal k~dispozícii celé PDF so zákonom, pri tomto type otázok by pravdepodobne odpovedal výrazne presnejšie, prakticky až na úrovni úplného pokrytia, no samotný dokument by zabral približne 220~tisíc z~258~tisíc tokenov kontextového okna. Také riešenie je použiteľné len dovtedy, kým sa zdrojové texty zmestia do kontextu. Pri otázkach z~viacerých zákonov by už kontextové okno taký objem dokumentov neunieslo.
+Odpovede v~tomto teste vytvoril ChatGPT tak, že dostal iba otázku a~explicitnú požiadavku, aby spolu s~odpoveďou uviedol aj podporné paragrafy a~odseky. Najlepšie si poradil pri jednoduchších právnych záveroch, ktoré vedel formulovať zrozumiteľne, ale bez dokumentu dosiahol správnosť iba 9 z~21 odpovedí a~pokrytie podporných ustanovení 20{,}3\,\%. Najviac zaostával pri presnom viazaní odpovede na zákonné ustanovenia: často uviedol príbuzný paragraf, nesprávny odsek alebo vynechal časť rozsahu. Ak by mal k~dispozícii celé PDF so zákonom, pri tomto type otázok by pravdepodobne odpovedal výrazne presnejšie, prakticky až na úrovni úplného pokrytia, no samotný dokument by zabral približne 220~tisíc z~258~tisíc tokenov kontextového okna. Také riešenie je použiteľné len dovtedy, kým sa zdrojové texty zmestia do kontextu. Pri otázkach z~viacerých zákonov by už kontextové okno taký objem dokumentov neunieslo.
 
-Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z~21, hoci pokryl polovicu ľudsky anotovaných podporujúcich sekcií. Najlepšie fungoval pri otázkach, kde stačilo nájsť priamo pomenované ustanovenie a~odpoveď nevyžadovala kombináciu viacerých doplnkových paragrafov. Pri $k=10$ sa pokrytie sekcií zlepšilo z~50{,}0\,\% na 62{,}1\,\% a~počet správnych odpovedí vzrástol na 6 z~21, čo ukazuje, že širší kontext pomohol najmä pri dohľadaní chýbajúcich paragrafov. Pri $k=25$ nastal výraznejší skok v~kvalite odpovedí na 17 z~21 správnych odpovedí a~pokrytie ľudsky označených sekcií podľa rozsahov paragrafov a~odsekov dosiahlo 72{,}4\,\%, pričom model vynikal najmä tam, kde širší kontext doplnil chýbajúce nadväzujúce ustanovenia. Zaostával však pri otázkach vyžadujúcich presné použitie príloh alebo explicitné vyvodenie právneho záveru z~nájdených ustanovení, napríklad pri novom dopravnom prostriedku, mieste dodania po prekročení limitu, 20-ročnom sledovaní úpravy odpočtu a~sadzbách DPH z~prílohy č.~7a.
+Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z~21 a~pokryl 32{,}6\,\% ľudsky anotovaných podporujúcich sekcií. Najlepšie fungoval pri otázkach, kde stačilo nájsť priamo pomenované ustanovenie a~odpoveď nevyžadovala kombináciu viacerých doplnkových paragrafov. Pri $k=10$ sa pokrytie sekcií zlepšilo z~32{,}6\,\% na 43{,}5\,\% a~počet správnych odpovedí vzrástol na 6 z~21, čo ukazuje, že širší kontext pomohol najmä pri dohľadaní chýbajúcich paragrafov. Pri $k=25$ nastal výraznejší skok v~kvalite odpovedí na 17 z~21 správnych odpovedí a~pokrytie ľudsky označených sekcií podľa rozsahov paragrafov a~odsekov dosiahlo 56{,}5\,\%. Pri $k=50$ sa pokrytie zvýšilo na 71{,}7\,\% a~správnosť odpovedí na 20 z~21, ale za cenu dvojnásobného množstva vráteného kontextu oproti $k=25$. Zaostával však pri otázkach vyžadujúcich presné použitie príloh alebo explicitné vyvodenie právneho záveru z~nájdených ustanovení, napríklad pri novom dopravnom prostriedku, mieste dodania po prekročení limitu, 20-ročnom sledovaní úpravy odpočtu a~sadzbách DPH z~prílohy č.~7a.
 
 GraphRAG dosiahol vysokú úspešnosť odpovedí (20 z~21), čo ukazuje, že znalostný graf poskytol modelu dostatočne presné faktické ukotvenie pre väčšinu právnych otázok. Slabším miestom bolo pokrytie podporujúcich ustanovení, kde systém našiel 74{,}6\,\% ľudsky anotovaných sekcií a~najčastejšie mu chýbali doplnkové odseky, ustanovenia k~evidencii, súhrnným výkazom alebo prílohám.
 
-GraphRAG našiel v 21 otázkach spolu 258 referencií, teda priemerne 12,3 na otázku. VectorRAG pri $k=25$ vrátil vždy 25 chunkov, spolu 525 výsledkov. To je takmer dvojnásobok, pričom medzi nimi bolo aj veľa nadbytočných ustanovení mimo priamej potreby odpovede. Pri viacerých zákonoch by takýto prístup nebol udržateľný, lebo by rástla cena a objem kontextu.
+GraphRAG našiel v 21 otázkach spolu 258 referencií, teda priemerne 12,3 na otázku. VectorRAG pri $k=50$ vrátil vždy 50 chunkov na otázku, spolu 1050 výsledkov. To je približne štvornásobok oproti GraphRAG, pričom medzi výsledkami bolo aj veľa nadbytočných ustanovení mimo priamej potreby odpovede. Pri viacerých zákonoch by takýto prístup nebol udržateľný a škálovateľný, lebo by rástla cena a objem kontextu. Graf nižšie ukazuje, že zvýšenie hodnoty $k$ síce zvyšuje počet spárovaných ustanovení, ale ešte rýchlejšie rastie celkový počet nájdených výsledkov.
+
+\begin{figure}[H]
+\shorthandoff{-}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    width=\textwidth,
+    height=7cm,
+    ymin=0,
+    ymax=1100,
+    ylabel={Počet ustanovení alebo výsledkov},
+    symbolic x coords={
+        LLM,
+        VRAG k5,
+        VRAG k10,
+        VRAG k25,
+        VRAG k50,
+        GraphRAG
+    },
+    xtick=data,
+    xticklabels={
+        \shortstack{LLM\\chat},
+        \shortstack{VectorRAG\\$k=5$},
+        \shortstack{VectorRAG\\$k=10$},
+        \shortstack{VectorRAG\\$k=25$},
+        \shortstack{VectorRAG\\$k=50$},
+        GraphRAG
+    },
+    x tick label style={font=\scriptsize, align=center},
+    ytick={0,200,400,600,800,1000},
+    bar width=8pt,
+    enlarge x limits=0.1,
+    legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
+    grid=major,
+    major grid style={draw=gray!25},
+]
+\addplot+[fill=blue!55, draw=blue!70!black] coordinates {
+    (LLM,28)
+    (VRAG k5,45)
+    (VRAG k10,60)
+    (VRAG k25,78)
+    (VRAG k50,99)
+    (GraphRAG,103)
+};
+\addplot+[fill=orange!70, draw=orange!80!black] coordinates {
+    (LLM,91)
+    (VRAG k5,105)
+    (VRAG k10,210)
+    (VRAG k25,525)
+    (VRAG k50,1050)
+    (GraphRAG,258)
+};
+\legend{Spárované ustanovenia,Celkový počet nájdených výsledkov}
+\end{axis}
+\end{tikzpicture}
+\caption[Porovnanie počtu spárovaných a nájdených ustanovení]{Porovnanie počtu ustanovení spárovaných s~ľudskou anotáciou a~celkového počtu nájdených referencií alebo chunkov pre jednotlivé prístupy na testovacej množine 21 otázok, kde je počet hľadaných referencií 138.}
+\label{fig:retrieval-matched-vs-found}
+\shorthandon{-}
+\end{figure}
 
 
 \subsection{Vylepšenia}

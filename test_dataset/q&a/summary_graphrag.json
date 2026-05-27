@@ -5,8 +5,8 @@
   },
   "methodology": {
     "answer_score": "1 = odpoved je vecne spravna voci clovekom anotovanej odpovedi; 0 = odpoved je nespravna alebo chyba klucova cast odpovede.",
-    "section_success": "Recall voci clovekom anotovanym podporujucim ustanoveniam. Rozsahy typu 'ods. 1 az 6' su rozratane na jednotlive odseky. Extra najdene ustanovenia sa nepenalizuju.",
-    "matching_note": "Najdene podsekcie, pismena alebo body sa povazuju za pokrytie prislusneho odseku, ak vecne pokryvaju clovekom anotovane ustanovenie."
+    "section_success": "Recall voci clovekom anotovanym podporujucim ustanoveniam. Rozsahy typu 'ods. 1 az 6' su rozratane na jednotlive atomicke sekcie. Extra najdene ustanovenia sa nepenalizuju.",
+    "matching_note": "Hodnotenie je pocitane po atomickych castiach ustanoveni. Ak gold uvadza odsek bez pismena, retrieval konkretneho pismena alebo bodu v tom istom odseku sa rata ako pokrytie; ak gold uvadza konkretne pismeno alebo bod, musi byt najdena referencia v danom rozsahu."
   },
   "overall": {
     "questions_total": 21,
@@ -15,7 +15,10 @@
     "sections_matched_total": 103,
     "sections_expected_total": 138,
     "section_success_micro_percent": 74.6,
-    "section_success_macro_percent": 79.7
+    "section_success_macro_percent": 79.7,
+    "full_coverage_questions": 10,
+    "found_sections_total": 258,
+    "found_references_total": 258
   },
   "rows": [
     {

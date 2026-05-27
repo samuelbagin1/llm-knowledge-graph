@@ -1,0 +1,308 @@
+{
+  "evaluation": "vectorrag_k50",
+  "source_files": {
+    "llm_answers": "test_dataset/q&a/q&a_vectorrag_validation_k50.json",
+    "human_reference": "test_dataset/q&a/q&a.json"
+  },
+  "question_count": 21,
+  "answer_accuracy": {
+    "correct": 20,
+    "total": 21,
+    "ratio": 0.9524,
+    "percentage": 95.2
+  },
+  "reference_coverage": {
+    "metric": "atomic_supporting_references_at_k50",
+    "covered": 100,
+    "total": 138,
+    "ratio": 0.7246,
+    "percentage": 72.5,
+    "normalization": "Rozsahy v podporujuce_ustanovenia su rozbite na jednotlive odseky/pismena/body priloh; ak gold uvadza odsek bez pismena, retrieval konkretneho pismena v tom istom odseku sa rata ako pokrytie."
+  },
+  "questions": [
+    {
+      "id": 1,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 4,
+        "total": 5,
+        "ratio": 0.8,
+        "percentage": 80.0,
+        "missing_references": [
+          "\u00a7 4 ods. 4"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 1,
+        "total": 3,
+        "ratio": 0.3333,
+        "percentage": 33.3,
+        "missing_references": [
+          "\u00a7 4 ods. 3",
+          "\u00a7 4 ods. 15"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 1,
+        "total": 4,
+        "ratio": 0.25,
+        "percentage": 25.0,
+        "missing_references": [
+          "\u00a7 68f ods. 3",
+          "\u00a7 69 ods. 2",
+          "\u00a7 69 ods. 3"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 4,
+        "total": 5,
+        "ratio": 0.8,
+        "percentage": 80.0,
+        "missing_references": [
+          "\u00a7 7 ods. 4"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 7,
+        "total": 8,
+        "ratio": 0.875,
+        "percentage": 87.5,
+        "missing_references": [
+          "\u00a7 11 ods. 12"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 11,
+        "total": 11,
+        "ratio": 1.0,
+        "percentage": 100.0,
+        "missing_references": []
+      }
+    },
+    {
+      "id": 7,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 7,
+        "total": 7,
+        "ratio": 1.0,
+        "percentage": 100.0,
+        "missing_references": []
+      }
+    },
+    {
+      "id": 8,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 7,
+        "total": 7,
+        "ratio": 1.0,
+        "percentage": 100.0,
+        "missing_references": []
+      }
+    },
+    {
+      "id": 9,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 5,
+        "total": 5,
+        "ratio": 1.0,
+        "percentage": 100.0,
+        "missing_references": []
+      }
+    },
+    {
+      "id": 10,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 4,
+        "total": 4,
+        "ratio": 1.0,
+        "percentage": 100.0,
+        "missing_references": []
+      }
+    },
+    {
+      "id": 11,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 3,
+        "total": 4,
+        "ratio": 0.75,
+        "percentage": 75.0,
+        "missing_references": [
+          "\u00a7 38 ods. 4"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 2,
+        "total": 3,
+        "ratio": 0.6667,
+        "percentage": 66.7,
+        "missing_references": [
+          "\u00a7 47 ods. 3"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 4,
+        "total": 7,
+        "ratio": 0.5714,
+        "percentage": 57.1,
+        "missing_references": [
+          "\u00a7 43 ods. 9",
+          "\u00a7 43 ods. 10",
+          "\u00a7 80 ods. 9"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 3,
+        "total": 8,
+        "ratio": 0.375,
+        "percentage": 37.5,
+        "missing_references": [
+          "\u00a7 69a ods. 2",
+          "\u00a7 69a ods. 3",
+          "\u00a7 69a ods. 4",
+          "\u00a7 69a ods. 5",
+          "\u00a7 69a ods. 6"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 5,
+        "total": 12,
+        "ratio": 0.4167,
+        "percentage": 41.7,
+        "missing_references": [
+          "\u00a7 25a ods. 7",
+          "\u00a7 25a ods. 8",
+          "\u00a7 25a ods. 9",
+          "\u00a7 25a ods. 10",
+          "\u00a7 25a ods. 11",
+          "\u00a7 25a ods. 12",
+          "\u00a7 25a ods. 13"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 8,
+        "total": 8,
+        "ratio": 1.0,
+        "percentage": 100.0,
+        "missing_references": []
+      }
+    },
+    {
+      "id": 17,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 6,
+        "total": 11,
+        "ratio": 0.5455,
+        "percentage": 54.5,
+        "missing_references": [
+          "\u00a7 68d ods. 2",
+          "\u00a7 68d ods. 3",
+          "\u00a7 68d ods. 10",
+          "\u00a7 68d ods. 12",
+          "\u00a7 68d ods. 13"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 5,
+        "total": 6,
+        "ratio": 0.8333,
+        "percentage": 83.3,
+        "missing_references": [
+          "Pr\u00edloha \u010d. 1"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 7,
+        "total": 12,
+        "ratio": 0.5833,
+        "percentage": 58.3,
+        "missing_references": [
+          "\u00a7 70a ods. 6",
+          "\u00a7 70a ods. 7",
+          "\u00a7 70a ods. 9",
+          "\u00a7 70a ods. 10",
+          "\u00a7 70a ods. 12"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "llm_answer_correct": 1,
+      "reference_coverage": {
+        "covered": 3,
+        "total": 3,
+        "ratio": 1.0,
+        "percentage": 100.0,
+        "missing_references": []
+      }
+    },
+    {
+      "id": 21,
+      "llm_answer_correct": 0,
+      "reference_coverage": {
+        "covered": 3,
+        "total": 5,
+        "ratio": 0.6,
+        "percentage": 60.0,
+        "missing_references": [
+          "Pr\u00edloha \u010d. 7a bod 1",
+          "Pr\u00edloha \u010d. 7a bod 2"
+        ]
+      },
+      "answer_error": "LLM neuviedol konkretne sadzby DPH; spravne je 5 % pre ubytovanie a jedlo, 19 % pre nealkoholicky napoj a 23 % pre pivo nad 0,5 % alkoholu."
+    }
+  ]
+}

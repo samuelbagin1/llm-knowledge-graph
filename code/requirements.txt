@@ -1,0 +1,59 @@
+# =========================================================================
+# PDF GraphRAG — Python závislosti
+# =========================================================================
+# Vyžaduje sa Python >= 3.11 (typy `str | None`, `list[Document]`).
+#
+# Systémové (NIE pip):
+#   - Neo4j Desktop 2 + APOC plugin    https://neo4j.com/download/
+#   - Poppler (pre pdf2image):
+#       macOS:   brew install poppler
+#       Ubuntu:  sudo apt install poppler-utils
+#       Windows: https://github.com/oschwartz10612/poppler-windows/releases
+#
+# API kľúče (do .env v koreni projektu):
+#   OPENAI_API_KEY=sk-...
+#   GOOGLE_API_KEY=AIza...
+#
+# Inštalácia:
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Voliteľné (iba ak používaš SpacyTextSplitter):
+#   python -m spacy download xx_ent_wiki_sm
+# =========================================================================
+
+
+# --- LangChain ekosystém ---
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-experimental>=0.3.0
+langchain-neo4j>=0.4.0
+langchain-openai>=0.3.0
+langchain-google-genai>=2.0.0
+langchain-anthropic>=0.3.0
+
+# --- LLM provider SDK ---
+openai>=1.50.0
+anthropic>=0.40.0
+google-generativeai>=0.8.0
+
+# --- PDF spracovanie ---
+pypdf>=4.0.0
+pdf2image>=1.17.0           # potrebuje systémový Poppler
+Pillow>=10.0.0
+
+# --- Detekcia layoutu (tabuľky / vzorce) ---
+doclayout-yolo>=0.0.4       # YOLO model pre DocStructBench
+huggingface-hub>=0.24.0     # sťahovanie YOLO váh
+numpy>=1.26.0
+
+# --- Validácia / typovanie ---
+pydantic>=2.7.0
+
+# --- NLP (voliteľné — iba SpacyTextSplitter) ---
+spacy>=3.7.0
+
+# --- Konfigurácia / utility ---
+python-dotenv>=1.0.0

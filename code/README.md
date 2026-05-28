@@ -11,6 +11,8 @@ Pipeline na extrakciu **znalostného grafu** zo slovenských právnych a finanč
 
 Výsledok je perzistovaný do **Neo4j** ako graf s vektorovými indexami pre RAG dotazovanie.
 
+> Pre spolahlivosť a istotu systému odporúčam mať aspoň 20€ kreditu pre OpenAI API. Spracovanie 150 stranového dokumentu pomocou modelu GPT 5.4 mini s plne automatickou funkciou môže stáť v rozmedzí 11€ až 16€ (PDF ich môže mať minimálne 1600). Pri GPT 5.5 je táto cena len za 100 chunkov. Najdrahšie volanie je Schema Driven Extraction, kde sú extrahované konkrétne inštancie a z tohto dôvodu je výstup najdrahší (entity s id a typom, a to aj pre vzťajy, kde 2x entita plus vzťah).
+
 ---
 
 ## Obsah
@@ -34,7 +36,7 @@ Výsledok je perzistovaný do **Neo4j** ako graf s vektorovými indexami pre RAG
 
 ### 1. Neo4j Desktop 2 + APOC
 
-Pipeline ukladá graf cez `langchain-neo4j` a používa **APOC procedúry** (`apoc.merge.node`, `apoc.merge.relationship`) v metóde [`PDFGraphRAG.merge_new`](pdf_graphrag.py). Bez APOC bude fungovať iba fallback [`add_graph_docs_without_apoc`](pdf_graphrag.py).
+Pipeline ukladá graf cez `langchain-neo4j` a používa **APOC procedúry** (`apoc.merge.node`, `apoc.merge.relationship`) v metóde [`PDFGraphRAG.add_graph_to_database`](pdf_graphrag.py). Bez APOC bude fungovať iba fallback [`add_graph_docs_without_apoc`](pdf_graphrag.py).
 
 **Kroky:**
 
@@ -61,34 +63,50 @@ return PDFGraphRAG(
 
 Vyžaduje sa **Python 3.11+** (kód používa `str | None` syntax a `list[Document]` generics).
 
+#### Vytvorenie virtuálneho prostredia + inštalácia
+
 ```bash
+# 1. Vytvor a aktivuj virtuálne prostredie
 python -m venv .venv
 source .venv/bin/activate                 # macOS/Linux
 # .venv\Scripts\activate                  # Windows
+
+# 2. Aktualizuj pip (odporúčané)
+pip install --upgrade pip
+
+# 3. Nainštaluj všetky závislosti z requirements.txt
 pip install -r requirements.txt
 ```
 
-**Systémové závislosti** (mimo `pip`):
+#### Čo sa nainštaluje
+
+Súbor [requirements.txt](requirements.txt) je rozdelený do nasledovných kategórií:
+
+| Kategória | Balíky | Účel |
+|---|---|---|
+| **LangChain ekosystém** | `langchain`, `langchain-core`, `langchain-community`, `langchain-text-splitters`, `langchain-experimental`, `langchain-neo4j`, `langchain-openai`, `langchain-google-genai` | Orchestrácia pipeline-u, splittery, Neo4j integrácia, LLM wrappery |
+| **LLM provider SDK** | `openai`, `anthropic`, `google-generativeai` | Priame SDK pre GPT-5/4-mini, Claude (voliteľné), Gemini 2.5 |
+| **PDF spracovanie** | `pypdf`, `pdf2image`, `Pillow` | Načítanie PDF + konverzia stránok na obrázky pre YOLO |
+| **Detekcia layoutu** | `doclayout-yolo`, `huggingface-hub`, `numpy` | YOLO model (DocStructBench) pre tabuľky/vzorce + sťahovanie váh z HF |
+| **Validácia / typovanie** | `pydantic` | Schémy pre štruktúrované LLM výstupy (ODD, SDE) |
+| **Konfigurácia** | `python-dotenv` | Načítanie `.env` s API kľúčmi |
+
+#### Systémové závislosti (mimo `pip`)
 
 - **Poppler** — vyžadovaný `pdf2image` pre konverziu PDF stránok na obrázky (detekcia tabuliek/vzorcov)
   - macOS: `brew install poppler`
   - Ubuntu: `sudo apt install poppler-utils`
   - Windows: stiahni z <https://github.com/oschwartz10612/poppler-windows/releases> a pridaj do PATH
 
-- **spaCy model** (voliteľné, iba ak používaš `SpacyTextSplitter`):
-  ```bash
-  python -m spacy download xx_ent_wiki_sm
-  ```
+> **Tip:** Pri prvom spustení sa stiahne YOLO model (~50 MB) z HuggingFace do lokálneho cache (`~/.cache/huggingface/`). Toto je jednorazové.
 
 ### 3. API kľúče
 
-Pipeline volá **OpenAI** (GPT-5/4o, embeddings `text-embedding-3-large`) aj **Google Gemini** (Gemini 2.5 Pro/Flash). Vytvor súbor `.env` v koreni projektu:
+Pipeline volá **OpenAI** (GPT-5/4-mini, embeddings `text-embedding-3-large`) aj **Google Gemini** (Gemini 2.5 Pro/Flash). Vytvor súbor `.env` v koreni projektu:
 
 ```env
 OPENAI_API_KEY=sk-...
 GOOGLE_API_KEY=AIza...
-# Voliteľné (Anthropic Claude — kód ho importuje, ale nevolá default):
-# ANTHROPIC_API_KEY=sk-ant-...
 ```
 
 Kľúče sa nahrávajú cez `python-dotenv` priamo v [main.py](main.py).
@@ -161,7 +179,7 @@ Volá [`Chunker.split_document`](chunker/chunker.py) a vráti:
   "last_page": int | None,       # 1-indexovaná stránka posledného §
 }
 ```
-Funguje **iba pre slovenské finančné zákony** (§ → odsek → písm. → bod). Nezvláda novely a doplnenia.
+Otestovaný a funkčný **iba pre slovenské finančné zákony** (paragraf § 44 → odsek (3) → písm. a) → bod 2.). Nezvláda novely a doplnenia, kvôli výskytu doplňujúcich bodov. V texte sú označené ako 2., 3., 4. a odhaľovanie len za pomoci stringov a \n nie je dostačujúce, lebo aj zmienky dátum a čisiel z textu sú takto odsadené. Nevyhnutný OCR model na transformáciu a identifikáciu textu na štruktúrovaný text z obrázku.
 
 #### `get_text_chunks(documents, chunk_size=1024, chunk_overlap=128) -> list[Document]`
 
@@ -231,7 +249,7 @@ V `main()` (riadky 262–357) je kompletný komentovaný príklad celej pipeline
 Hlavná trieda **`PDFGraphRAG`**, ktorá obsahuje všetky stupne pipeline. Implementuje:
 
 - Pripojenie na Neo4j + 3 vektorové úložiská (uzly, chunky, typy vzťahov)
-- LLM klientov: OpenAI (`gpt-5-mini`, `gpt-4o-mini`, `gpt-5` thinking), Google (`gemini-2.5-pro`, `gemini-2.5-flash`)
+- LLM klientov: OpenAI (`gpt-5.4-mini`, `gpt-4o-mini`, `gpt-5` thinking), Google (`gemini-2.5-pro`, `gemini-2.5-flash`)
 - Pomocné formátovacie funkcie (camelCase, ASCII fold, sanitizácia)
 - YOLO detekciu tabuliek/vzorcov + LLM extrakciu HTML/LaTeX
 - Async retry/pause logiku pre rate limit-y
@@ -324,7 +342,7 @@ Fallback bez APOC — čisté `MERGE (n:{type} {id: $id}) SET n += $properties`.
 }
 ```
 
-Ak `existing_schema` je `None` alebo prázdna, použije sa **predpečená slovenská právna ontológia** (riadok 1943). 3 pokusy s `sleep(60)`, potom `RuntimeError`.
+Ak `existing_schema` je `None` alebo prázdna, použije sa **predpečená slovenská právna ontológia** (riadok 1943). Počiatočná schéma, používateľ môže upraviť podľa svojej potreby. Zapísané sú konštantné a generické typy, ktoré sa vyskytujú najčastejšie. 3 pokusy s `sleep(60)`, potom `RuntimeError`.
 
 > **Vstupom** je vždy `Schema` objekt. **Výstupom** je `dict` — pre konverziu späť do `Schema` použi `_convert_to_schema(data)` alebo (v `main.py`) konštruuj `Schema(nodes=data['node_types'], relationships=data['relationship_types'])`.
 
@@ -394,6 +412,8 @@ Modul ktorý **rozseká slovenský právny PDF** na semanticky úplné textové 
 
 Hierarchia: **§ paragraf → odsek → písm. → bod**.
 
+Overený a otestovaný na zákonoch finančného práva, ktoré následujú danú hierarchiu **§ 44 → (2) → a) → 2.**, kde pri novélach a neskorších doplneniach tento systém nemusí fungovať. Výskyt doplnkoch ako je **2., 3., 4.,..**, identifikovanie len na základe reťazcov a nových riadkov \n nie je možné. Prekáža tomu výskyt dátumov a čísiel, ktoré následujú podobný vzor.
+
 ### Konštanty
 
 - `_PAGE_HEADER_RE` — regex na bežiace hlavičky typu `"Strana 12 Zbierka zákonov SR 222/2004 Z.z."`. Strip-uje ich pred parsovaním aby nešumili medzi paragrafmi.
@@ -429,7 +449,7 @@ Volá:
 
 #### `get_tree_graph(paragraphs, pdf_path) -> GraphDocument`
 
-Walks 4-level strom DFS a emituje uzly s **human-readable ID**:
+Prechádza cez 4 levely stromu DFS (Depth-First Search) a emituje uzly s **human-readable ID**:
 
 | Úroveň | Príklad ID | Vzťah |
 |---|---|---|
@@ -444,7 +464,7 @@ Properties uzla obsahujú `path` (per-úrovňové tokeny) + `text` + extras (`he
 
 #### `linearize(paragraphs, write_json=False) -> list[Document]`
 
-Sprehadní strom DFS-om — každý chunk emituje na **najhlbšej dostupnej úrovni** svojej cesty. Parent `lead`-y sa **forward-konkatenujú** aby chunk znel ako samostatná próza:
+Prejde strom DFS-om — každý chunk emituje na **najhlbšej dostupnej úrovni** svojej cesty. Parent `lead`-y sa **forward-concatuje** aby chunk znel ako samostatná próza:
 
 ```
 "§ 16a [Headline]
@@ -582,11 +602,7 @@ JSON writery pre všetky stupne pipeline. Defaultný output: `./file_output/`.
 
 ## prompts.py
 
-System prompty + JSON schémy pre LLM volania. Všetko v slovenčine (okrem SDE, ktorý je v angličtine — Gemini/GPT lepšie nasleduje anglické inštrukcie nad slovenským textom).
-
-### `system_prompt_for_classification` + `response_schema_for_classification`
-
-Klasifikuje text do dvoch kategórií (`type_legislation`, `type_category`) s confidence skóre 0–100. **Aktuálne nevolané** v hlavnej pipeline.
+System prompty + JSON schémy pre LLM volania. Všetko v slovenčine (okrem SDE, ktorý je v angličtine — Gemini/GPT lepšie nasleduje anglické inštrukcie nad slovenským textom - neviem prečo ale bolo menej halucinácii).
 
 ### `system_prompt_for_odd` + `response_schema_for_odd`
 
@@ -627,7 +643,9 @@ Hlavné pravidlá:
 - **Atomic decomposition** — preferuj multi-hop pred broad direct relations
 - `evidence` field — povinný **verbatim 5–15 word fragment** z textu na podporu vzťahu
 
-Response: `{nodes: [{id, label}], relationships: [{source_node_id, source_node_type, relation, target_node_id, target_node_type, evidence}]}`.
+Response: `{nodes: [{id, label}], relationships: [{source_node_id, source_node_type, relation, target_node_id, target_node_type, evidence}]}`. 
+
+> **Pozn.:** `evidence` nie je zapísané v response schema pre SDE kvôli šetrnosti output API tokenov — treba doplniť v properties `response_schema_for_sde`.
 
 V `pdf_graphrag.py` user-prompt (riadky 2103–2143) dynamicky injekuje `Section context (current section): Paragraf § 16a Odsek 2 Pismeno c)` zo `document.metadata["path"]` — tento kontext umožňuje LLM korektne interpretovať lokálne referencie ako "podľa odseku 1".
 
@@ -662,3 +680,14 @@ code/
 - **Re-run nad rovnakými chunkmi → staré properties?** Použi `merge_new()` namiesto `add_graph_to_database()` — predáva properties aj do `onMatch`.
 - **Rate limit-y?** Async loop má built-in `pause_event` + `sleep(60)`. Pre väčšie PDF zníž `max_concurrent` z 5 na 2–3.
 - **Cache miss na re-rune?** `cache_path` musí byť **presná** cesta. Pomôcka: timestamp je v názve, takže najnovší súbor je vždy lexikograficky najväčší.
+
+---
+
+## Kontakt
+
+V prípade problémov alebo otázok ma neváhajte kontaktovať:
+
+- **Email (FEI):** [xbagins@stuba.sk](mailto:xbagins@stuba.sk)
+- **Email (osobný):** [samuel.bagin1@gmail.com](mailto:samuel.bagin1@gmail.com)
+- **Web:** [samuelbagin.xyz](https://samuelbagin.xyz)
+

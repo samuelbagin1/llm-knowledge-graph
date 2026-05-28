@@ -32,7 +32,6 @@ langchain-experimental>=0.3.0
 langchain-neo4j>=0.4.0
 langchain-openai>=0.3.0
 langchain-google-genai>=2.0.0
-langchain-anthropic>=0.3.0
 
 # --- LLM provider SDK ---
 openai>=1.50.0
@@ -51,9 +50,6 @@ numpy>=1.26.0
 
 # --- Validácia / typovanie ---
 pydantic>=2.7.0
-
-# --- NLP (voliteľné — iba SpacyTextSplitter) ---
-spacy>=3.7.0
 
 # --- Konfigurácia / utility ---
 python-dotenv>=1.0.0

@@ -11,7 +11,6 @@ from langchain_neo4j import Neo4jGraph, Neo4jVector, GraphCypherQAChain
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain_anthropic import ChatAnthropic
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 from langchain.tools import tool
@@ -25,8 +24,7 @@ from openai import (
     InternalServerError,
     RateLimitError,
 )
-from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter, SpacyTextSplitter
-import spacy
+from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter
 
 from classes import Schema, ClassifiedDocument, Type, SubSentence, ReasoningStep
 from chunker.chunker import Chunker
@@ -1972,6 +1970,7 @@ Pred vystupom over:
         # POKYNY PRE Sémantiku
         - **Nezlučuj agresívne**: Ak existuje nuansa (napr. Banka vs. StatnyOrgan), ponechaj ich oddelené, pokiaľ základná ontológia neurčuje inak.
         - **Dôsledná ASCII normalizácia**: Skontroluj, či vo výsledku neostalo žiadne "š, č, ž, ý, á, í, é, ú, ä, ň, ť, ď, ľ, ô".
+        - Snaz sa vytvorit schemu z 50 typov uzlov a 50 typov hran.
 
         # PROCES UVAŽOVANIA (Chain of Thought)
         Pred vygenerovaním JSONu vykonaj internú analýzu:

@@ -297,15 +297,6 @@ Ensure:
 """
 
 
-# "properties": {
-#     "type": "object",
-#     "properties": {
-#         "name": {"type": "string", "description": "Name of the entity"}
-#     },
-#     "required": ["name"],
-#     "additionalProperties": False,
-# },
-
 response_schema_for_sde = {
             "title": "GraphExtractionResult",
             "type": "object",

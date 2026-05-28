@@ -40,7 +40,7 @@ Grafové databázy rozlišujeme na niekoľko typov, ktoré majú svoje špecific
   \item Málo používaný avšak veľmi zaujímavý je hypergraf, ktorý umožňuje hranám spájať viac ako dve entity súčasne (komplexné hrany)~\cite{hogan2021kg}.
 \end{itemize}
 
-V~projekte je na ukladanie dát použitá grafová databáza s~vlastnosťami (Property Graph), akou je napríklad Neo4j. Podľa Hogan et al.~\cite{hogan2021kg} možno takýto graf formálne zapísať ako usporiadanú n-ticu:
+V~projekte je na ukladanie dát použitá grafová databáza s~vlastnosťami (Property Graph), akou je napríklad Neo4j. Podľa Hogan a~kol.~\cite{hogan2021kg} možno takýto graf formálne zapísať ako usporiadanú n-ticu:
 \[
 G = (V, E, L, P, U, e, l, p).
 \]
@@ -61,7 +61,7 @@ Tento typ vyniká, pretože ponúka vyššiu flexibilitu pri modelovaní komplex
 
 \
 
-V~tejto práci sa vzťah medzi entitami v~KG modeluje ako množina trojíc (\emph{triples}) v~tvare $(e_h, r, e_t)$, kde $e_h$ označuje začiatočnú entitu (\emph{head}), $e_t$ koncovú entitu (\emph{tail}) a~$r$~vzťah medzi nimi. Takáto trojica zodpovedá orientovanej hrane $e_h \xrightarrow{r} e_t$ v~orientovanom grafe, ktorý je podľa Hogan et al.~\cite{hogan2021kg} základným modelom pre znalostné grafy a~je súčasne dátovým modelom štandardu RDF konzorcia W3C.
+V~tejto práci sa vzťah medzi entitami v~KG modeluje ako množina trojíc (\emph{triples}) v~tvare $(e_h, r, e_t)$, kde $e_h$ označuje začiatočnú entitu (\emph{head}), $e_t$ koncovú entitu (\emph{tail}) a~$r$~vzťah medzi nimi. Takáto trojica zodpovedá orientovanej hrane $e_h \xrightarrow{r} e_t$ v~orientovanom grafe, ktorý je podľa Hogan a~kol.~\cite{hogan2021kg} základným modelom pre znalostné grafy a~je súčasne dátovým modelom štandardu RDF konzorcia W3C.
 
 
 \subsubsection{Porovnanie s~vektorovou a~relačnou databázou}
@@ -633,7 +633,7 @@ V~čitateli predstavujú $FP_V$ a~$FN_V$ nadbytočné a~chýbajúce uzly, $FP_E$
 
 \
 
-Samostatnú časť hodnotenia predstavuje kontrola schémovej kvality predikcie. Je motivovaná ontologicky orientovanými referenčnými testami extrakcie~\cite{mihindukulasooriya2023text2kgbench}. Táto kontrola overuje, či predikované typy uzlov a~vzťahov patria do vopred definovanej ontológie. Zároveň sleduje podiel neplatných typov, visiacich hrán s~chýbajúcim koncovým bodom, neznámych typov a~chybných identifikátorov. Za chybné identifikátory sa považujú prázdne reťazce alebo zástupné hodnoty typu „unknown"\, či „none". Tieto údaje umožňujú rozlíšiť, či sa model dopúšťa sémantických chýb, alebo porušuje formálne obmedzenia schémy.
+Samostatnú časť hodnotenia predstavuje kontrola schémovej kvality predikcie. Je motivovaná ontologicky orientovanými referenčnými testami extrakcie~\cite{mihindukulasooriya2023text2kgbench}. Táto kontrola overuje, či predikované typy uzlov a~vzťahov patria do vopred definovanej ontológie. Zároveň sleduje podiel neplatných typov, visiacich hrán s~chýbajúcim koncovým bodom (dangling edges), neznámych typov a~chybných identifikátorov. Za chybné identifikátory sa považujú prázdne reťazce alebo zástupné hodnoty typu „unknown"\, či „none". Tieto údaje umožňujú rozlíšiť, či sa model dopúšťa sémantických chýb, alebo porušuje formálne obmedzenia schémy.
 
 Záverečná agregácia napokon spája dva komplementárne pohľady. Mikro priemer pracuje s~celkovými súčtami $TP$, $FP$ a~$FN$ naprieč všetkými segmentmi, čím prirodzene priraďuje väčšiu váhu rozsiahlejším úsekom. Makro priemer naopak priemeruje striktné F1, zhodu s~ontológiou, $H$, $O$ aj $GED$ rovnomerne pre každý segment bez ohľadu na jeho veľkosť. Rozdiel medzi mikro a~makro hodnotami signalizuje, či model zlyháva primárne na rozsiahlych, alebo naopak na drobných segmentoch.
 \
@@ -842,11 +842,11 @@ Správnosť odpovede som hodnotil binárne. Hodnota 1 znamená, že odpoveď vys
 \textbf{Prístup} & \textbf{Počet úspešných otázok} & \textbf{Úspešnosť referencovania} \\
 \midrule
 Klasický chat s~LLM & 9/21 & 20{,}3\,\% \\
-\multirow{4}{*}{Vektorový RAG} & \emph{k=5:}\, 3/21 & 32{,}6\,\% \\
- & \emph{k=10:}\, 6/21 & 43{,}5\,\% \\
+\multirow{4}{*}{Vektorový RAG} & \textbf{\emph{k=5:}\, 3/21} & \textbf{32{,}6\,\%} \\
+ & \textbf{\emph{k=10:}\, 6/21} & \textbf{43{,}5\,\%} \\
  & \emph{k=25:}\, 17/21 & 56{,}5\,\% \\
  & \emph{k=50:}\, 20/21 & 71{,}7\,\% \\
-GraphRAG & 20/21 & 74{,}6\,\% \\
+\textbf{GraphRAG} & \textbf{20/21} & \textbf{74{,}6\,\%} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -857,7 +857,9 @@ Vektorový RAG pri $k=5$ dosiahol nízku úspešnosť odpovedí 3 z~21 a~pokryl 
 
 GraphRAG dosiahol vysokú úspešnosť odpovedí (20 z~21), čo ukazuje, že znalostný graf poskytol modelu dostatočne presné faktické ukotvenie pre väčšinu právnych otázok. Slabším miestom bolo pokrytie podporujúcich ustanovení, kde systém našiel 74{,}6\,\% ľudsky anotovaných sekcií a~najčastejšie mu chýbali doplnkové odseky, ustanovenia k~evidencii, súhrnným výkazom alebo prílohám.
 
-GraphRAG našiel v 21 otázkach spolu 258 referencií, teda priemerne 12,3 na otázku. VectorRAG pri $k=50$ vrátil vždy 50 chunkov na otázku, spolu 1050 výsledkov. To je približne štvornásobok oproti GraphRAG, pričom medzi výsledkami bolo aj veľa nadbytočných ustanovení mimo priamej potreby odpovede. Pri viacerých zákonoch by takýto prístup nebol udržateľný a škálovateľný, lebo by rástla cena a objem kontextu. Graf nižšie ukazuje, že zvýšenie hodnoty $k$ síce zvyšuje počet spárovaných ustanovení, ale ešte rýchlejšie rastie celkový počet nájdených výsledkov.
+GraphRAG našiel v 21 otázkach spolu 258 referencií, teda priemerne 12,3 na otázku. VectorRAG pri $k=50$ vrátil vždy 50 chunkov na otázku, spolu 1050 výsledkov. To je približne štvornásobok oproti GraphRAG, pričom medzi výsledkami bolo aj veľa nadbytočných ustanovení mimo priamej potreby odpovede. Pri viacerých zákonoch by takýto prístup nebol udržateľný a škálovateľný, lebo by rástla cena a objem kontextu. 
+
+Pri nasadení vektorovej databázy v produkčných systémoch je štandardom využitie $k=5$ alebo $k=10$. Ako je zobrazené v tabuľke \ref{tab:retrieval-success}, vrátené hdonoty sú ďaleko nižšie v porovnaní s prístupom GraphRAG. Graf nižšie ukazuje, že zvýšenie hodnoty $k$ síce zvyšuje počet spárovaných ustanovení, ale ešte rýchlejšie rastie celkový počet nájdených výsledkov.
 
 \begin{figure}[H]
 \shorthandoff{-}
@@ -889,9 +891,12 @@ GraphRAG našiel v 21 otázkach spolu 258 referencií, teda priemerne 12,3 na ot
     },
     x tick label style={font=\scriptsize, align=center},
     ytick={0,200,400,600,800,1000},
+    tick align=inside,
+    xtick pos=left,
+    ytick pos=left,
     bar width=8pt,
     enlarge x limits=0.1,
-    legend style={at={(0.5,1.03)}, anchor=south, legend columns=2},
+    legend style={at={(0.5,1.03)}, anchor=south, legend columns=3, draw=none, fill=none},
     grid=major,
     major grid style={draw=gray!25},
 ]
@@ -911,13 +916,18 @@ GraphRAG našiel v 21 otázkach spolu 258 referencií, teda priemerne 12,3 na ot
     (VRAG k50,1050)
     (GraphRAG,258)
 };
-\legend{Spárované ustanovenia,Celkový počet nájdených výsledkov}
+\draw[gray, thick, overlay] (current axis.south west |- {axis cs:LLM,138}) -- (current axis.south east |- {axis cs:LLM,138});
+\addlegendimage{legend image code/.code={\draw[gray, thick] (0mm,0mm) -- (6mm,0mm);}}
+\legend{Spárované ustanovenia,Celkový počet nájdených výsledkov,Cieľ (138 referencií)}
 \end{axis}
 \end{tikzpicture}
 \caption[Porovnanie počtu spárovaných a nájdených ustanovení]{Porovnanie počtu ustanovení spárovaných s~ľudskou anotáciou a~celkového počtu nájdených referencií alebo chunkov pre jednotlivé prístupy na testovacej množine 21 otázok, kde je počet hľadaných referencií 138.}
 \label{fig:retrieval-matched-vs-found}
 \shorthandon{-}
 \end{figure}
+
+
+Práca špecialistov spočíva najmä vo vyhľadávaní právne relevantných ustanovení, ich interpretácii a následnom použití pri tvorbe vecne podložených odpovedí. GraphRAG systém môže tento proces podstatne urýchliť, keďže v testovacej sade dosiahol priemerný čas približne 118 sekúnd na identifikáciu podporných faktov a vygenerovanie odpovede. V porovnaní s manuálnym overovaním, pri ktorom posúdenie jednej otázky špecialistom trvalo približne 10 až 15 minút, ide o výrazné skrátenie pracovného cyklu. Zároveň však treba zdôrazniť, že agent použitý pri testovaní nebol plne optimalizovaný. Ďalšie zlepšenie možno očakávať najmä pri presnejšom algoritmickom riadení vyhľadávania, iteratívnom rozširovaní dotazov, lepšej prioritizácii nájdených ustanovení a hlbšom overovaní väzby medzi právnou oporou a výslednou odpoveďou.
 
 
 \subsection{Vylepšenia}

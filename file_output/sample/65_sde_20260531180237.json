@@ -1,0 +1,361 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4C",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4C Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Danovy Urad Banska Bystrica",
+        "type": "Danovyurad",
+        "properties": {}
+      },
+      {
+        "id": "Financne Riaditelstvo Slovenskej Republiky",
+        "type": "Statnyorgan",
+        "properties": {}
+      },
+      {
+        "id": "Skupina",
+        "type": "Organizacia",
+        "properties": {}
+      },
+      {
+        "id": "Predpokladani_Clenovia_Skupiny",
+        "type": "Organizacia",
+        "properties": {}
+      },
+      {
+        "id": "Spolocny Zastupca",
+        "type": "Osoba",
+        "properties": {}
+      },
+      {
+        "id": "Registacne Konanie Z Uradnej Moci",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Registracia Clenov Skupiny Podla Paragrafu 4B",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Odvolanie",
+        "type": "Pravo",
+        "properties": {}
+      },
+      {
+        "id": "Rozhodnutie O Urceni Spolocneho Zastupcu",
+        "type": "Rozhodnutie",
+        "properties": {}
+      },
+      {
+        "id": "Vyzva",
+        "type": "Oznamenie",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4c Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4C",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4C Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2",
+          "evidence": "(2) Ak z podkladov"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Danovyurad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Predpokladani_Clenovia_Skupiny",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "type": "VYZVE",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2",
+          "evidence": "Daňový úrad Banská Bystrica vyzve predpokladaných členov skupiny"
+        }
+      },
+      {
+        "source": {
+          "id": "Predpokladani_Clenovia_Skupiny",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Spolocny Zastupca",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "type": "VYTVORIA",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2",
+          "evidence": "spomedzi seba určili spoločného zástupcu"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Danovyurad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Spolocny Zastupca",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "type": "URCI",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2",
+          "evidence": "spomedzi nich určí spoločného zástupcu"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Danovyurad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Rozhodnutie O Urceni Spolocneho Zastupcu",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2",
+          "evidence": "a oznámi to predpokladaným členom skupiny"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Urceni Spolocneho Zastupcu",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Odvolanie",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "type": "NEMA_PRAVO",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2",
+          "evidence": "proti tomuto rozhodnutiu nemožno podať odvolanie"
+        }
+      },
+      {
+        "source": {
+          "id": "Registacne Konanie Z Uradnej Moci",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Registracia Clenov Skupiny Podla Paragrafu 4B",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "type": "BARI",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2",
+          "evidence": "bráni registrácii členov skupiny podľa § 4b"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4C",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4C Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Danovyurad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financne Riaditelstvo Slovenskej Republiky",
+          "type": "Statnyorgan",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Predpokladani_Clenovia_Skupiny",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Spolocny Zastupca",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registacne Konanie Z Uradnej Moci",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Clenov Skupiny Podla Paragrafu 4B",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Odvolanie",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Urceni Spolocneho Zastupcu",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Vyzva",
+          "type": "Oznamenie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

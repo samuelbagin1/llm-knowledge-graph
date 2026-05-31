@@ -1,0 +1,410 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4B",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4A",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4B Odsek 5",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Zdanitelnaosoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {}
+      },
+      {
+        "id": "Skupina",
+        "type": "Organizacia",
+        "properties": {}
+      },
+      {
+        "id": "Ziadost O Zmenu Registracie Skupiny",
+        "type": "Ziadost",
+        "properties": {}
+      },
+      {
+        "id": "Zastupca Skupiny",
+        "type": "Osoba",
+        "properties": {}
+      },
+      {
+        "id": "Danovyurad",
+        "type": "Danovyurad",
+        "properties": {}
+      },
+      {
+        "id": "Rozhodnutie O Zmene Registracie Skupiny",
+        "type": "Rozhodnutie",
+        "properties": {}
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Pravo",
+        "properties": {}
+      },
+      {
+        "id": "Prva Den Tretieho Kalendarnaho Mesiaca",
+        "type": "Datum",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4b Odsek 5",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4B",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "(5) Členom skupiny sa môže stať"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "ODKAZUJE_NA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "podmienky podľa § 4a."
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelnaosoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "Ak zdaniteľná osoba spĺňa podmienky podľa § 4a"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "Žiadosť o zmenu registrácie skupiny"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zastupca Skupiny",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "type": "PODAVA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "podáva zástupca skupiny."
+        }
+      },
+      {
+        "source": {
+          "id": "Danovyurad",
+          "type": "Danovyurad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Rozhodnutie O Zmene Registracie Skupiny",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "daňový úrad vydá bezodkladne rozhodnutie"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelnaosoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "SPLNA_PODMIENKY",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "Ak zdaniteľná osoba spĺňa podmienky podľa § 4a"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zmene Registracie Skupiny",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "rozhodnutie o zmene registrácie skupiny"
+        }
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Prva Den Tretieho Kalendarnaho Mesiaca",
+          "type": "Datum",
+          "properties": {}
+        },
+        "type": "MA_NAROK_NA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "účinky zmeny registrácie skupiny nastávajú k prvému dňu"
+        }
+      },
+      {
+        "source": {
+          "id": "Zastupca Skupiny",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "type": "PODAVA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "Žiadosť o zmenu registrácie skupiny ... podáva"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelnaosoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "VYPLYVA_Z",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5",
+          "evidence": "Práva a povinnosti zdaniteľnej osoby"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelnaosoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Organizacia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zastupca Skupiny",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovyurad",
+          "type": "Danovyurad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zmene Registracie Skupiny",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Pravo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prva Den Tretieho Kalendarnaho Mesiaca",
+          "type": "Datum",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

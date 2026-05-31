@@ -1,0 +1,196 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4A",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4A Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Organizacne Spojenymi Zdanitelnymi Osobami",
+        "type": "Zdanitelnaosoba",
+        "properties": {}
+      },
+      {
+        "id": "Osoby",
+        "type": "Osoba",
+        "properties": {}
+      },
+      {
+        "id": "Riadeni Alebo Kontrole",
+        "type": "Podmienka",
+        "properties": {}
+      },
+      {
+        "id": "Zhodna Osoba",
+        "type": "Osoba",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4a Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4A Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4a Odsek 4",
+          "evidence": "(4) Organizačne spojenými zdaniteľnými osobami"
+        }
+      },
+      {
+        "source": {
+          "id": "Organizacne Spojenymi Zdanitelnymi Osobami",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Osoby",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4a Odsek 4",
+          "evidence": "Organizačne spojenými zdaniteľnými osobami sú osoby"
+        }
+      },
+      {
+        "source": {
+          "id": "Organizacne Spojenymi Zdanitelnymi Osobami",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Riadeni Alebo Kontrole",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "Paragraf § 4a Odsek 4",
+          "evidence": "na ktorých riadení alebo kontrole sa"
+        }
+      },
+      {
+        "source": {
+          "id": "Riadeni Alebo Kontrole",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zhodna Osoba",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "Paragraf § 4a Odsek 4",
+          "evidence": "podieľa aspoň jedna zhodná osoba"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4A Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Organizacne Spojenymi Zdanitelnymi Osobami",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoby",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Riadeni Alebo Kontrole",
+          "type": "Podmienka",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zhodna Osoba",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

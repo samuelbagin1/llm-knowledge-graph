@@ -37,7 +37,7 @@ load_dotenv()
 
 
 # ---------- CONFIG ----------
-PDF_PATH = './code/assets/ZZ_2004_222_20260101.pdf'
+PDF_PATH = './PATH/TO/YOUR/PDF'
 DOCUMENT_ID = Path(PDF_PATH).stem
 NAME_OF_CHAIN = 'chain'
 WRITE_JSON = True
@@ -48,10 +48,10 @@ def get_graphrag() -> PDFGraphRAG:
     return PDFGraphRAG(
         neo4j_uri='neo4j://127.0.0.1:7687',
         neo4j_user='neo4j',
-        neo4j_password='fseijkfbsj48@',
+        neo4j_password='your-password',
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
-        database="zz-2004-222",
+        database="name-of-your-database",
     )
 
 
@@ -337,7 +337,7 @@ def main():
     # # one JSON per chunk under output_dir for inspection. Chunks come from the
     # # SAME builder as full SDE so legal-context metadata is preserved.
     # sde_chunks, _tree_graph = build_sde_chunks(PDF_PATH, documents, write_json=WRITE_JSON)
-    # refined_schema_from_disk = load_refinement('./extracted_data/test-10_ref_20260501185709.json')
+    # refined_schema_from_disk = load_refinement('./file_output/chain_ref_20260531174129.json')
     # run_sde_sample(
     #     graphrag,
     #     sde_chunks,

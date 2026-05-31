@@ -758,6 +758,7 @@ class PDFGraphRAG:
             source_id = rel_data.get("source_node_id")
             target_id = rel_data.get("target_node_id")
             rel_type = rel_data.get("relation") or rel_data.get("type")
+            evidence = rel_data.get("evidence")
 
             # Skip relationships with missing mandatory fields
             if not source_id or not target_id or not rel_type:
@@ -781,7 +782,8 @@ class PDFGraphRAG:
                 section_property = section_id if section_id else chunk_id
                 formatted_rel_props = drop_empty_values({
                     **sanitize_property_keys(raw_rel_props),
-                    "section": section_property
+                    "section": section_property,
+                    "evidence": evidence
                 })
 
                 relationship = Relationship(

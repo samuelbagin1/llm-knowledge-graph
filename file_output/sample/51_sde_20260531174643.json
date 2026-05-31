@@ -1,0 +1,138 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4A",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4A Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Organizacnespojenezdanitelneosoby",
+        "type": "Skupina",
+        "properties": {}
+      },
+      {
+        "id": "Osoba",
+        "type": "Osoba",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4a Odsek 4",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4A Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4a Odsek 4"
+        }
+      },
+      {
+        "source": {
+          "id": "Organizacnespojenezdanitelneosoby",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "type": "ROZUMIE_SA",
+        "properties": {
+          "section": "Paragraf § 4a Odsek 4"
+        }
+      },
+      {
+        "source": {
+          "id": "Organizacnespojenezdanitelneosoby",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "Paragraf § 4a Odsek 4"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4A Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Organizacnespojenezdanitelneosoby",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Osoba",
+          "type": "Osoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4a Odsek 4",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

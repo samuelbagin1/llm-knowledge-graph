@@ -1,0 +1,523 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4B",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4A",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4B Odsek 5",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanlivaosoba",
+        "properties": {}
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {}
+      },
+      {
+        "id": "Skupina",
+        "type": "Skupina",
+        "properties": {}
+      },
+      {
+        "id": "Zastupca Skupiny",
+        "type": "Zastupca",
+        "properties": {}
+      },
+      {
+        "id": "Ziadost O Zmenu Registracie Skupiny",
+        "type": "Ziadost",
+        "properties": {}
+      },
+      {
+        "id": "Registracia Skupiny",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Danovy Urad",
+        "type": "Urad",
+        "properties": {}
+      },
+      {
+        "id": "Rozhodnutie O Zmene Registracie Skupiny",
+        "type": "Rozhodnutie",
+        "properties": {}
+      },
+      {
+        "id": "Platnost Identifikacneho Cisla Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {}
+      },
+      {
+        "id": "Prava A Povinnosti Zdanitelnej Osoby",
+        "type": "Povinnost",
+        "properties": {}
+      },
+      {
+        "id": "Zmena Registracie Skupiny",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Pristupenie Dalsieho Clena Do Skupiny",
+        "type": "Cinnost",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4b Odsek 5",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanlivaosoba",
+          "properties": {}
+        },
+        "type": "JE_TYPOM",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zastupca Skupiny",
+          "type": "Zastupca",
+          "properties": {}
+        },
+        "type": "PODAVA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Pristupenie Dalsieho Clena Do Skupiny",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zmene Registracie Skupiny",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {}
+        },
+        "type": "VYDAVA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zmene Registracie Skupiny",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Platnost Identifikacneho Cisla Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "type": "ZANIKA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Prava A Povinnosti Zdanitelnej Osoby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "type": "PRECHADZA_NA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Prava A Povinnosti Zdanitelnej Osoby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanlivaosoba",
+          "properties": {}
+        },
+        "type": "TYKA_SA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "MA_PODMIENKU",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Rozhodnutie O Zmene Registracie Skupiny",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 5"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4A",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanlivaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zastupca Skupiny",
+          "type": "Zastupca",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Zmenu Registracie Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad",
+          "type": "Urad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie O Zmene Registracie Skupiny",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platnost Identifikacneho Cisla Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Prava A Povinnosti Zdanitelnej Osoby",
+          "type": "Povinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zmena Registracie Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pristupenie Dalsieho Clena Do Skupiny",
+          "type": "Cinnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 5",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

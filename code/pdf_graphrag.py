@@ -426,7 +426,6 @@ class PDFGraphRAG:
         self.openai_thinking = ChatOpenAI(
             model="gpt-5.5",     # -mini
             temperature=0,
-            reasoning_effort="xhigh",
             api_key=SecretStr(openai_api_key) if openai_api_key else None,
             max_retries=3,
             timeout=300
@@ -928,14 +927,24 @@ class PDFGraphRAG:
         
         
         
-    def _add_document_chunk(self, count: int, path: str, document_id, properties: dict | None = None) -> GraphDocument:
-        chunk_ids = [f"chunk_{i}_{document_id}" for i in range(count)]
-        
+    def _add_document_chunk(self, graph_documents: list[GraphDocument], document_id, properties: dict | None = None) -> GraphDocument:
         if properties is None:
             properties = {}
 
         document_node = Node(id=document_id, type="Document", properties=properties)
-        chunk_nodes = [Node(id=chunk_id, type="Chunk") for chunk_id in chunk_ids]
+
+        # Only "Chunk" nodes get linked to the Document. These are created in
+        # _convert_to_graph_document for trailing chunks (no structural `path`);
+        # structured chunks instead become Paragraf/Odsek/Pismeno section nodes
+        # already linked to the Document via IN_DOCUMENT in the tree graph. We
+        # reuse the exact Node objects from the produced graph documents so the
+        # IN_CHUNK edges attach to the real, fully-propertied Chunk nodes.
+        chunk_nodes = [
+            node
+            for graph_document in graph_documents
+            for node in graph_document.nodes
+            if node.type == "Chunk"
+        ]
 
         relationships = [
             Relationship(source=chunk_node, target=document_node, type="IN_DOCUMENT")
@@ -1938,7 +1947,7 @@ Pred vystupom over:
             existing_schema.nodes == [] and existing_schema.relationships == []
         ):
             existing_schema = Schema(
-                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum", "Pismeno", "Urad", "Banka"],
+                    nodes = ["FyzickaOsoba", "PravnickaOsoba", "Sud", "Zakon", "Vyhlaska", "Nariadenie", "Zmluva", "Zodpovednost", "Pravo", "Povinnost", "Paragraf", "Lokacia", "Urad", "Odsek", "Vozidlo", "Cislo", "Datum", "Pismeno", "Urad", "Banka", "Tuzemsko"],
                     relationships = ["DEFINUJE", "UPRAVUJE", "DOPLNUJE", "PODMIENUJE", "RUSI", "JE_PODLA", "JE_OSLOBODENE_OD_DANE", "JE_PREDMETOM_DANE", "NIE_JE_PREDMETOM_DANE", "ODKAZUJE", "VZTAHUJE_SA_NA", "OBSAHUJE"]
                 )
         
@@ -1994,10 +2003,12 @@ Pred vystupom over:
         """
 
 
+        # function_calling (not json_schema/strict): MergeLog's Dict[str, List[str]]
+        # fields are open-ended maps, which strict structured-outputs cannot
+        # represent (it demands additionalProperties:false on every object).
         structured_model = self.openai_thinking.with_structured_output(
-            SchemaRefinementResponse.model_json_schema(),
-            method="json_schema",
-            strict=True,
+            schema=SchemaRefinementResponse.model_json_schema(),
+            method="function_calling",
         )
         
         
@@ -2142,26 +2153,26 @@ Pred vystupom over:
         """
 
         # Create and run the agent
-        # agent = create_agent(
-        #     model=self.openai_client,
-        #     response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
-        #     system_prompt=system_prompt_for_sde
-        # )
-        # response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
-        
-        structured_llm = self.openai_client.with_structured_output(
-            response_schema_for_sde,
-            method="json_schema",
-            strict=True,
+        agent = create_agent(
+            model=self.openai_client,
+            response_format=ProviderStrategy(schema=response_schema_for_sde),  # type: ignore[arg-type]
+            system_prompt=system_prompt_for_sde
         )
+        response = await agent.ainvoke({"messages": [{"role": "user", "content": user_prompt}]})
+        
+        # structured_llm = self.openai_client.with_structured_output(
+        #     response_schema_for_sde,
+        #     method="json_schema",
+        #     strict=True,
+        # )
 
-        response = await structured_llm.ainvoke([
-            SystemMessage(content=system_prompt_for_sde),
-            HumanMessage(content=user_prompt),
-        ])
+        # response = await structured_llm.ainvoke([
+        #     SystemMessage(content=system_prompt_for_sde),
+        #     HumanMessage(content=user_prompt),
+        # ])
 
         # structured_response is already a dict when using ProviderStrategy
-        data = response # ["structured_response"]
+        data = response["structured_response"]
         
         print(data)
 
@@ -2366,6 +2377,82 @@ Pred vystupom over:
     
     
     
+    
+    def build_vector_stores(self):
+        # A Neo4j vector index is bound to a single node label, so we can't index
+        # "several labels" or "all labels except X" directly. Instead we re-stamp a
+        # shared label onto each group on every build and index that:
+        #   __Chunk__  -> text-bearing structural nodes, embedded from `text`
+        #   __Entity__ -> every other node (entities + Document), embedded from `id`
+        # The SET/REMOVE pair keeps the two groups mutually exclusive and self-
+        # correcting: it doesn't rely on the legacy __Entity__ label (which new
+        # baseEntityLabel=False writes never receive), it actively reapplies it and
+        # filters the chunk types out of it.
+        chunk_labels = ["Chunk", "Paragraf", "Odsek", "Pismeno", "Bod"]
+        is_chunk = " OR ".join(f"n:`{label}`" for label in chunk_labels)
+
+        self.graph.query(
+            f"MATCH (n) WHERE {is_chunk} SET n:__Chunk__ REMOVE n:__Entity__"
+        )
+        self.graph.query(
+            f"MATCH (n) WHERE NOT ({is_chunk}) SET n:__Entity__ REMOVE n:__Chunk__"
+        )
+
+        # LangChain re-derives node_label from any index that already exists under
+        # the same name (Neo4jVector.retrieve_existing_index), which would silently
+        # pin a store to its old single label and ignore the relabeling above.
+        # Dropping the indexes forces recreation on the new shared label; the
+        # `embedding` properties stay on the nodes, so already-embedded nodes are
+        # skipped and only the newly-covered ones get embedded.
+        self.graph.query(f"DROP INDEX `{self._vector_store_nodes_name}` IF EXISTS")
+        self.graph.query(f"DROP INDEX `{self._vector_store_chunk_name}` IF EXISTS")
+
+        # create vector stores from existing graph
+        self.vector_store_nodes = Neo4jVector.from_existing_graph(
+            embedding=self.embeddings,
+            url=self._neo4j_uri,
+            username=self._neo4j_user,
+            password=self._neo4j_password,
+            index_name=self._vector_store_nodes_name,
+            node_label="__Entity__",
+            text_node_properties=["id"],  # properties to concatenate as text to embed
+            embedding_node_property="embedding",
+        )
+        print("\n\nAdded embedded nodes into Vector database.\n\n")
+
+        self.vector_store_chunks = Neo4jVector.from_existing_graph(
+            embedding=self.embeddings,
+            url=self._neo4j_uri,
+            username=self._neo4j_user,
+            password=self._neo4j_password,
+            index_name=self._vector_store_chunk_name,
+            node_label="__Chunk__",
+            text_node_properties=["text"],
+            embedding_node_property="embedding",
+        )
+        print("\n\nAdded embedded chunks into Vector database.\n\n")
+        
+        
+        rel_types = self.graph.query("CALL db.relationshipTypes()")
+        all_relationships = [Document(page_content=rel['relationshipType']) for rel in rel_types]
+        if self.vector_store_relationships is None:
+        
+            self.vector_store_relationships = Neo4jVector.from_documents(
+                all_relationships,
+                embedding=self.embeddings,
+                url=self._neo4j_uri,
+                username=self._neo4j_user,
+                password=self._neo4j_password,
+                index_name=self._vector_store_relationships_name,
+            )
+            print("\n\nAdded embedded relationships into Vector database.\n\n")
+            
+        else:
+            self.vector_store_relationships.add_documents(all_relationships)
+            print("\n\nAdded embedded relationships into Vector database.\n\n")
+    
+    
+    
     def get_document_id(self, pdf_path: str):
         return Path(pdf_path).stem
 
@@ -2510,7 +2597,7 @@ Pred vystupom over:
         
 
         # add document chunk into graph documents
-        graph_docs.append(self._add_document_chunk(len(chunked_documents), pdf_path, document_id))
+        graph_docs.append(self._add_document_chunk(graph_docs, document_id))
 
 
 
@@ -2530,49 +2617,7 @@ Pred vystupom over:
         print("\n\nAdded Graph Documents into Graph database.\n\n")
         
         
-        # create vector stores from existing graph
-        self.vector_store_nodes = Neo4jVector.from_existing_graph(
-            embedding=self.embeddings,
-            url=self._neo4j_uri,
-            username=self._neo4j_user,
-            password=self._neo4j_password,
-            index_name=self._vector_store_nodes_name,
-            node_label="__Entity__",
-            text_node_properties=["id"],  # properties to concatenate as text to embed
-            embedding_node_property="embedding",
-        )
-        print("\n\nAdded embedded nodes into Vector database.\n\n")
-        
-        self.vector_store_chunks = Neo4jVector.from_existing_graph(
-            embedding=self.embeddings,
-            url=self._neo4j_uri,
-            username=self._neo4j_user,
-            password=self._neo4j_password,
-            index_name=self._vector_store_chunk_name,
-            node_label="Chunk",
-            text_node_properties=["text"],
-            embedding_node_property="embedding",
-        )
-        print("\n\nAdded embedded chunks into Vector database.\n\n")
-        
-        
-        rel_types = self.graph.query("CALL db.relationshipTypes()")
-        all_relationships = [Document(page_content=rel['relationshipType']) for rel in rel_types]
-        if self.vector_store_relationships is None:
-        
-            self.vector_store_relationships = Neo4jVector.from_documents(
-                all_relationships,
-                embedding=self.embeddings,
-                url=self._neo4j_uri,
-                username=self._neo4j_user,
-                password=self._neo4j_password,
-                index_name=self._vector_store_relationships_name,
-            )
-            print("\n\nAdded embedded relationships into Vector database.\n\n")
-            
-        else:
-            self.vector_store_relationships.add_documents(all_relationships)
-            print("\n\nAdded embedded relationships into Vector database.\n\n")
+        self.build_vector_stores()
             
 
         

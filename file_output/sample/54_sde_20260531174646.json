@@ -1,0 +1,227 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4B",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4B Odsek 1",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4B Odsek 1 Pismeno B)",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Registracia Skupiny",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Ziadost O Registraciu Skupiny",
+        "type": "Ziadost",
+        "properties": {}
+      },
+      {
+        "id": "Identifikacne Cislo Pre Dan",
+        "type": "Identifikacnecislo",
+        "properties": {}
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+        "type": "Pismeno",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4B",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4B Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 1 Pismeno b)"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4B Odsek 1 Pismeno B)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 1 Pismeno b)"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Ziadost O Registraciu Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "type": "PODAVA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 1 Pismeno b)"
+        }
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {}
+        },
+        "type": "MA_OBSAH",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 1 Pismeno b)"
+        }
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4b Odsek 1 Pismeno b)"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 1",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B Odsek 1 Pismeno B)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Skupiny",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ziadost O Registraciu Skupiny",
+          "type": "Ziadost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Identifikacne Cislo Pre Dan",
+          "type": "Identifikacnecislo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4b Odsek 1 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

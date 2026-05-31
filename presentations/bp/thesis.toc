@@ -4,48 +4,48 @@
 \contentsline {section}{\numberline {1}Súčasný stav}{13}{section.3}%
 \contentsline {subsection}{\numberline {1.1}Znalostné grafy}{13}{subsection.4}%
 \contentsline {subsubsection}{\numberline {1.1.1}Typy grafových databáz}{15}{subsubsection.6}%
-\contentsline {subsubsection}{\numberline {1.1.2}Porovnanie s~vektorovou a~relačnou databázou}{16}{subsubsection.7}%
-\contentsline {subsection}{\numberline {1.2}Klasické metódy extrakcie}{17}{subsection.8}%
-\contentsline {subsubsection}{\numberline {1.2.1}Rozpoznávanie pomenovaných entít}{17}{subsubsection.9}%
-\contentsline {subsubsection}{\numberline {1.2.2}Extrakcia vzťahov}{18}{subsubsection.12}%
-\contentsline {subsection}{\numberline {1.3}Posun k~využívaniu LLM}{20}{subsection.15}%
-\contentsline {subsubsection}{\numberline {1.3.1}Generatívne a~sémantické vlastnosti LLM}{20}{subsubsection.16}%
-\contentsline {subsubsection}{\numberline {1.3.2}Schémové a~bezschémové prístupy k~extrakcii}{20}{subsubsection.17}%
-\contentsline {subsubsection}{\numberline {1.3.3}Promptovacie techniky pri extrakcii znalostí}{21}{subsubsection.18}%
-\contentsline {subsubsection}{\numberline {1.3.4}Motivácia využívania LLM v~moderných IE systémoch}{21}{subsubsection.19}%
-\contentsline {subsection}{\numberline {1.4}Existujúce prístupy pre tvorbu znalostných grafov z~textu}{22}{subsection.20}%
-\contentsline {subsection}{\numberline {1.5}Medze}{23}{subsection.21}%
-\contentsline {subsubsection}{\numberline {1.5.1}Slovenský jazyk ako málo zastúpená doména}{24}{subsubsection.22}%
-\contentsline {subsubsection}{\numberline {1.5.2}Právna doména ako špecializovaný kontext}{24}{subsubsection.23}%
-\contentsline {subsubsection}{\numberline {1.5.3}Hybridné spracovanie textu, tabuliek a~vzorcov}{25}{subsubsection.24}%
-\contentsline {section}{\numberline {2}Návrh riešenia}{26}{section.25}%
-\contentsline {subsection}{\numberline {2.1}Predspracovanie}{28}{subsection.28}%
-\contentsline {subsubsection}{\numberline {2.1.1}Detekcia rozloženia}{28}{subsubsection.29}%
-\contentsline {subsubsection}{\numberline {2.1.2}Extrakcia tabuliek}{28}{subsubsection.30}%
-\contentsline {subsubsection}{\numberline {2.1.3}Extrakcia vzorcov}{29}{subsubsection.32}%
-\contentsline {subsection}{\numberline {2.2}Trojkroková extrakcia}{30}{subsection.34}%
-\contentsline {subsubsection}{\numberline {2.2.1}Detekcia v~otvorenej doméne (ODD)}{30}{subsubsection.36}%
-\contentsline {subsubsection}{\numberline {2.2.2}Úprava a~spresnenie schémy (SR)}{30}{subsubsection.37}%
-\contentsline {subsubsection}{\numberline {2.2.3}Schémou riadená extrakcia (SDE)}{31}{subsubsection.38}%
-\contentsline {subsection}{\numberline {2.3}Vkladanie do databázy}{32}{subsection.40}%
-\contentsline {section}{\numberline {3}Implementácia}{35}{section.44}%
-\contentsline {subsection}{\numberline {3.1}Technologický stack}{35}{subsection.45}%
-\contentsline {subsection}{\numberline {3.2}Dôležité implementačné rozhodnutia}{36}{subsection.46}%
-\contentsline {subsubsection}{\numberline {3.2.1}Mechanizmus semaforu}{36}{subsubsection.47}%
-\contentsline {subsubsection}{\numberline {3.2.2}Štruktúrovaný výstup}{37}{subsubsection.48}%
-\contentsline {subsubsection}{\numberline {3.2.3}Chunkovacia stratégia}{37}{subsubsection.49}%
-\contentsline {subsection}{\numberline {3.3}Prompt engineering pre slovenčinu}{39}{subsection.51}%
-\contentsline {section}{\numberline {4}Experimenty a~vyhodnotenie}{40}{section.52}%
-\contentsline {subsection}{\numberline {4.1}Kvalita spracovania}{41}{subsection.53}%
-\contentsline {subsubsection}{\numberline {4.1.1}Tabuľky a~vzorce}{41}{subsubsection.54}%
-\contentsline {subsubsection}{\numberline {4.1.2}NER a~RE}{42}{subsubsection.55}%
-\contentsline {subsubsection}{\numberline {4.1.3}Pridanie validačného a~koreferenčného kroku}{42}{subsubsection.56}%
-\contentsline {subsection}{\numberline {4.2}Kvalitatívne výsledky}{43}{subsection.57}%
-\contentsline {subsubsection}{\numberline {4.2.1}Extrakcia}{43}{subsubsection.58}%
-\contentsline {subsubsection}{\numberline {4.2.2}Porovnanie RAG s~GraphRAG}{48}{subsubsection.61}%
-\contentsline {subsection}{\numberline {4.3}Vylepšenia}{53}{subsection.64}%
-\contentsline {section}{Z\'{a}ver}{55}{section*.65}%
-\contentsline {section}{Literatúra}{56}{section*.66}%
+\contentsline {subsubsection}{\numberline {1.1.2}Porovnanie s~vektorovou a~relačnou databázou}{16}{subsubsection.8}%
+\contentsline {subsection}{\numberline {1.2}Klasické metódy extrakcie}{17}{subsection.9}%
+\contentsline {subsubsection}{\numberline {1.2.1}Rozpoznávanie pomenovaných entít}{17}{subsubsection.10}%
+\contentsline {subsubsection}{\numberline {1.2.2}Extrakcia vzťahov}{18}{subsubsection.13}%
+\contentsline {subsection}{\numberline {1.3}Posun k~využívaniu LLM}{20}{subsection.16}%
+\contentsline {subsubsection}{\numberline {1.3.1}Generatívne a~sémantické vlastnosti LLM}{20}{subsubsection.17}%
+\contentsline {subsubsection}{\numberline {1.3.2}Schémové a~bezschémové prístupy k~extrakcii}{20}{subsubsection.18}%
+\contentsline {subsubsection}{\numberline {1.3.3}Promptovacie techniky pri extrakcii znalostí}{21}{subsubsection.19}%
+\contentsline {subsubsection}{\numberline {1.3.4}Motivácia využívania LLM v~moderných IE systémoch}{21}{subsubsection.20}%
+\contentsline {subsection}{\numberline {1.4}Existujúce prístupy pre tvorbu znalostných grafov z~textu}{22}{subsection.21}%
+\contentsline {subsection}{\numberline {1.5}Medze}{23}{subsection.22}%
+\contentsline {subsubsection}{\numberline {1.5.1}Slovenský jazyk ako málo zastúpená doména}{24}{subsubsection.23}%
+\contentsline {subsubsection}{\numberline {1.5.2}Právna doména ako špecializovaný kontext}{24}{subsubsection.24}%
+\contentsline {subsubsection}{\numberline {1.5.3}Hybridné spracovanie textu, tabuliek a~vzorcov}{25}{subsubsection.25}%
+\contentsline {section}{\numberline {2}Návrh riešenia}{26}{section.26}%
+\contentsline {subsection}{\numberline {2.1}Predspracovanie}{28}{subsection.29}%
+\contentsline {subsubsection}{\numberline {2.1.1}Detekcia rozloženia}{28}{subsubsection.30}%
+\contentsline {subsubsection}{\numberline {2.1.2}Extrakcia tabuliek}{28}{subsubsection.31}%
+\contentsline {subsubsection}{\numberline {2.1.3}Extrakcia vzorcov}{29}{subsubsection.33}%
+\contentsline {subsection}{\numberline {2.2}Trojkroková extrakcia}{30}{subsection.35}%
+\contentsline {subsubsection}{\numberline {2.2.1}Detekcia v~otvorenej doméne (ODD)}{30}{subsubsection.37}%
+\contentsline {subsubsection}{\numberline {2.2.2}Úprava a~spresnenie schémy (SR)}{30}{subsubsection.38}%
+\contentsline {subsubsection}{\numberline {2.2.3}Schémou riadená extrakcia (SDE)}{31}{subsubsection.39}%
+\contentsline {subsection}{\numberline {2.3}Vkladanie do databázy}{32}{subsection.41}%
+\contentsline {section}{\numberline {3}Implementácia}{35}{section.45}%
+\contentsline {subsection}{\numberline {3.1}Technologický stack}{35}{subsection.46}%
+\contentsline {subsection}{\numberline {3.2}Dôležité implementačné rozhodnutia}{36}{subsection.47}%
+\contentsline {subsubsection}{\numberline {3.2.1}Mechanizmus semaforu}{36}{subsubsection.48}%
+\contentsline {subsubsection}{\numberline {3.2.2}Štruktúrovaný výstup}{37}{subsubsection.49}%
+\contentsline {subsubsection}{\numberline {3.2.3}Chunkovacia stratégia}{37}{subsubsection.50}%
+\contentsline {subsection}{\numberline {3.3}Prompt engineering pre slovenčinu}{39}{subsection.52}%
+\contentsline {section}{\numberline {4}Experimenty a~vyhodnotenie}{40}{section.53}%
+\contentsline {subsection}{\numberline {4.1}Kvalita spracovania}{41}{subsection.54}%
+\contentsline {subsubsection}{\numberline {4.1.1}Tabuľky a~vzorce}{41}{subsubsection.55}%
+\contentsline {subsubsection}{\numberline {4.1.2}NER a~RE}{42}{subsubsection.56}%
+\contentsline {subsubsection}{\numberline {4.1.3}Pridanie validačného a~koreferenčného kroku}{42}{subsubsection.57}%
+\contentsline {subsection}{\numberline {4.2}Kvalitatívne výsledky}{43}{subsection.58}%
+\contentsline {subsubsection}{\numberline {4.2.1}Extrakcia}{43}{subsubsection.59}%
+\contentsline {subsubsection}{\numberline {4.2.2}Porovnanie RAG s~GraphRAG}{48}{subsubsection.65}%
+\contentsline {subsection}{\numberline {4.3}Vylepšenia}{53}{subsection.69}%
+\contentsline {section}{Z\'{a}ver}{55}{section*.70}%
+\contentsline {section}{Literatúra}{56}{section*.71}%
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
@@ -180,4 +180,4 @@
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
 \babel@toc {slovak}{}\relax 
-\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{60}{section*.67}%
+\contentsline {subsection}{Použitie nástrojov umelej inteligencie}{60}{section*.72}%

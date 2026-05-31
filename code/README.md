@@ -11,7 +11,7 @@ Pipeline na extrakciu **znalostného grafu** zo slovenských právnych a finanč
 
 Výsledok je perzistovaný do **Neo4j** ako graf s vektorovými indexami pre RAG dotazovanie.
 
-> Pre spolahlivosť a istotu systému odporúčam mať aspoň 20€ kreditu pre OpenAI API. Spracovanie 150 stranového dokumentu pomocou modelu GPT 5.4 mini s plne automatickou funkciou môže stáť v rozmedzí 11€ až 16€ (PDF ich môže mať minimálne 1600). Pri GPT 5.5 je táto cena len za 100 chunkov. Najdrahšie volanie je Schema Driven Extraction, kde sú extrahované konkrétne inštancie a z tohto dôvodu je výstup najdrahší (entity s id a typom, a to aj pre vzťajy, kde 2x entita plus vzťah).
+Pri používaní kódu, musí byť vždy zapnutá inštancia databázy v Neo4j, kvôli konštruktoru triedy.
 
 ---
 
@@ -602,7 +602,7 @@ JSON writery pre všetky stupne pipeline. Defaultný output: `./file_output/`.
 
 ## prompts.py
 
-System prompty + JSON schémy pre LLM volania. Všetko v slovenčine (okrem SDE, ktorý je v angličtine — Gemini/GPT lepšie nasleduje anglické inštrukcie nad slovenským textom - neviem prečo ale bolo menej halucinácii).
+System prompty + JSON schémy pre LLM volania. Všetko v slovenčine (okrem SDE, ktorý je v angličtine — Gemini/GPT lepšie nasleduje anglické inštrukcie nad slovenským textom - neviem prečo ale bolo menej halucinácii). Pre zmenu promptov, treba pozmeniť príslušný system prompt a taktiež user prompt v príslušnej funkcii v `pdf_graphrag.py`.
 
 ### `system_prompt_for_odd` + `response_schema_for_odd`
 
@@ -691,3 +691,6 @@ V prípade problémov alebo otázok ma neváhajte kontaktovať:
 - **Email (osobný):** [samuel.bagin1@gmail.com](mailto:samuel.bagin1@gmail.com)
 - **Web:** [samuelbagin.xyz](https://samuelbagin.xyz)
 
+> Pre spolahlivosť a istotu systému odporúčam mať aspoň 20€ kreditu pre OpenAI API. Spracovanie 150 stranového dokumentu pomocou modelu GPT 5.4 mini s plne automatickou funkciou môže stáť v rozmedzí 11€ až 16€ (PDF ich môže mať minimálne 1600). Pri GPT 5.5 je táto cena len za 100 chunkov. Najdrahšie volanie je Schema Driven Extraction, kde sú extrahované konkrétne inštancie a z tohto dôvodu je výstup najdrahší (entity s id a typom, a to aj pre vzťajy, kde 2x entita plus vzťah).
+
+> Odhadovaný čas pribehu celej funckie `process` je zväčša 20 až 25 minút.

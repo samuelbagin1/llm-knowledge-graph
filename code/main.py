@@ -37,8 +37,8 @@ load_dotenv()
 
 
 # ---------- CONFIG ----------
-PDF_PATH = 'PATH/TO/YOUR/PDF'
-DOCUMENT_ID = 'ZZ_222_2004'
+PDF_PATH = './code/assets/ZZ_2004_222_20260101.pdf'
+DOCUMENT_ID = Path(PDF_PATH).stem
 NAME_OF_CHAIN = 'chain'
 WRITE_JSON = True
 
@@ -48,10 +48,10 @@ def get_graphrag() -> PDFGraphRAG:
     return PDFGraphRAG(
         neo4j_uri='neo4j://127.0.0.1:7687',
         neo4j_user='neo4j',
-        neo4j_password='password-of-your-database',
+        neo4j_password='fseijkfbsj48@',
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
-        database="name-of-database",
+        database="zz-2004-222",
     )
 
 
@@ -300,14 +300,15 @@ def main():
 
     # # --- ODD: open-domain detection ---
     # # Discovers candidate node/relationship types from the raw text. Pass
-    # # cache_path=./extracted_data/<name>_odd_<ts>.json to skip the LLM call.
-    # odd_schema = run_odd(graphrag, documents, name=NAME_OF_CHAIN, write_json=WRITE_JSON)
+    # # cache_path=./file_output/<name>_odd_<ts>.json to skip the LLM call.
+    # # cache_path = "./extracted_data/test-10_odd_20260501185523.json"
+    # odd_schema = run_odd(graphrag, documents, name=NAME_OF_CHAIN, write_json=WRITE_JSON, cache_path="./extracted_data/test-10_odd_20260501185523.json")
 
 
     # # --- Schema refinement ---
     # # Canonicalizes ODD output (dedup, casing, ASCII) and merges with the
     # # existing Neo4j schema. cache_path supported for resume.
-    # refined_schema = run_refinement(graphrag, odd_schema, name=NAME_OF_CHAIN, write_json=WRITE_JSON)
+    # refined_schema = run_refinement(graphrag, odd_schema, name=NAME_OF_CHAIN, write_json=WRITE_JSON, cache_path="./file_output/chain_ref_20260531174129.json")
 
 
     # # --- SDE: full schema-driven extraction (all chunks) ---
@@ -345,7 +346,7 @@ def main():
     #     index_range=(0, len(sde_chunks)),
     #     seed=42,
     #     document_id=document_id,
-    #     output_dir='./test_dataset/sample',
+    #     output_dir='./file_output/sample',
     # )
 
 

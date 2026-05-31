@@ -113,7 +113,8 @@ def refinement_to_json(
     os.makedirs(output_dir, exist_ok=True)
 
     safe_data = data if isinstance(data, dict) else {}
-    merge_log = safe_data.get("merge_log") if isinstance(safe_data.get("merge_log"), dict) else {}
+    raw_merge_log = safe_data.get("merge_log")
+    merge_log = raw_merge_log if isinstance(raw_merge_log, dict) else {}
 
     output = {
         "node_types": safe_data.get("node_types", []) or [],

@@ -1,0 +1,357 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4C",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4C Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Financne Riaditelstvo Slovenskej Republiky",
+        "type": "Financneriaditelstvo",
+        "properties": {}
+      },
+      {
+        "id": "Danovy Urad Banska Bystrica",
+        "type": "Urad",
+        "properties": {}
+      },
+      {
+        "id": "Skupina",
+        "type": "Skupina",
+        "properties": {}
+      },
+      {
+        "id": "Clen Skupiny",
+        "type": "Clenskupiny",
+        "properties": {}
+      },
+      {
+        "id": "Spolocny Zastupca",
+        "type": "Zastupca",
+        "properties": {}
+      },
+      {
+        "id": "Registracne Konanie Z Uradnej Moci",
+        "type": "Konanie",
+        "properties": {}
+      },
+      {
+        "id": "Registracia Skupiny Z Uradnej Moci",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Registracia Clenov Skupiny Podla Paragrafu § 4B",
+        "type": "Registracia",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4B",
+        "type": "Paragraf",
+        "properties": {}
+      },
+      {
+        "id": "Ovolanie",
+        "type": "Konanie",
+        "properties": {}
+      },
+      {
+        "id": "Rozhodnutie",
+        "type": "Rozhodnutie",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4c Odsek 2",
+        "type": "Odsek",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4C",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4C Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4C Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4C",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "type": "JE_PODLA",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "type": "VYZVA",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2"
+        }
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Spolocny Zastupca",
+          "type": "Zastupca",
+          "properties": {}
+        },
+        "type": "URCUJE",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Spolocny Zastupca",
+          "type": "Zastupca",
+          "properties": {}
+        },
+        "type": "URCUJE",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2"
+        }
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "type": "OZNAMUJE",
+        "properties": {
+          "section": "Paragraf § 4c Odsek 2"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4C",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4C Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Financne Riaditelstvo Slovenskej Republiky",
+          "type": "Financneriaditelstvo",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Danovy Urad Banska Bystrica",
+          "type": "Urad",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Skupina",
+          "type": "Skupina",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Clen Skupiny",
+          "type": "Clenskupiny",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Spolocny Zastupca",
+          "type": "Zastupca",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracne Konanie Z Uradnej Moci",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Skupiny Z Uradnej Moci",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Registracia Clenov Skupiny Podla Paragrafu § 4B",
+          "type": "Registracia",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4B",
+          "type": "Paragraf",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Ovolanie",
+          "type": "Konanie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Rozhodnutie",
+          "type": "Rozhodnutie",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4c Odsek 2",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

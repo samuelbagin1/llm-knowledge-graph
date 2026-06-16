@@ -48,10 +48,10 @@ def get_graphrag() -> PDFGraphRAG:
     return PDFGraphRAG(
         neo4j_uri='neo4j://127.0.0.1:7687',
         neo4j_user='neo4j',
-        neo4j_password='your-password',
+        neo4j_password='database-or-instance-password',
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
-        database="name-of-your-database",
+        database="databse-name",
     )
 
 
@@ -302,13 +302,26 @@ def main():
     # # Discovers candidate node/relationship types from the raw text. Pass
     # # cache_path=./file_output/<name>_odd_<ts>.json to skip the LLM call.
     # # cache_path = "./extracted_data/test-10_odd_20260501185523.json"
-    # odd_schema = run_odd(graphrag, documents, name=NAME_OF_CHAIN, write_json=WRITE_JSON, cache_path="./extracted_data/test-10_odd_20260501185523.json")
+    # odd_schema = run_odd(
+    #     graphrag, 
+    #     documents[33:35], # odstranit []
+    #     name=NAME_OF_CHAIN, 
+    #     write_json=WRITE_JSON, 
+    #     # cache_path="./file_output/chain_odd_20260531202214.json"
+    # ) 
 
 
     # # --- Schema refinement ---
     # # Canonicalizes ODD output (dedup, casing, ASCII) and merges with the
     # # existing Neo4j schema. cache_path supported for resume.
-    # refined_schema = run_refinement(graphrag, odd_schema, name=NAME_OF_CHAIN, write_json=WRITE_JSON, cache_path="./file_output/chain_ref_20260531174129.json")
+    # # cache_path="./file_output/chain_ref_20260531174129.json"
+    # refined_schema = run_refinement(
+    #     graphrag, 
+    #     odd_schema, 
+    #     name=NAME_OF_CHAIN, 
+    #     write_json=WRITE_JSON, 
+    #     # cache_path="./file_output/chain_ref_20260531202355.json"
+    # )
 
 
     # # --- SDE: full schema-driven extraction (all chunks) ---
@@ -318,17 +331,18 @@ def main():
     # # nodes already exist when SDE relationships reference them.
     # sde_chunks, tree_graph = build_sde_chunks(PDF_PATH, documents, write_json=WRITE_JSON)
     # graphrag.add_graph_to_database(tree_graph)
-    #
+    
     # graph_docs = run_sde(
     #     graphrag,
-    #     sde_chunks,
+    #     sde_chunks[33:35],  # odstranit []
     #     schema=refined_schema,
     #     document_id=document_id,
     #     name=NAME_OF_CHAIN,
     #     write_json=WRITE_JSON,
+    #     # cache_path="./file_output/chain_sde_20260531202403.json"
     # )
     # # Append a Document -> Chunk skeleton so each Chunk node is linked to the source.
-    # graph_docs.append(graphrag._add_document_chunk(len(sde_chunks), PDF_PATH, document_id))
+    # graph_docs.append(graphrag._add_document_chunk(graph_docs, document_id))
     # graphrag.add_graph_to_database(graph_docs)
 
 
@@ -356,6 +370,9 @@ def main():
     # # add_graph_to_database is the plain MERGE path (APOC required).
     # graphrag.add_graph_to_database(graph_docs)
     # graphrag.merge_new(graph_docs)
+    
+    graphrag.graph.refresh_schema()    
+    graphrag.build_vector_stores()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,380 @@
+{
+  "node_types": [
+    "PravnyPredpis",
+    "ColnyPredpis",
+    "OsobitnyPredpis",
+    "Doklad",
+    "Faktura",
+    "OpravnyDoklad",
+    "Datum",
+    "CasoveObdobie",
+    "ZdanovacieObdobie",
+    "KalendarnyRok",
+    "Dan",
+    "ZakladDane",
+    "SadzbaDane",
+    "Suma",
+    "Euro",
+    "Mena",
+    "Kurz",
+    "Paragraf",
+    "Odsek",
+    "Pismeno",
+    "Bod",
+    "ZdanitelnaOsoba",
+    "OsobaPovinnaPlatitDan",
+    "Platitel",
+    "Veritel",
+    "Dlznik",
+    "Odberatel",
+    "Zakaznik",
+    "ClenskyStat",
+    "Tuzemsko",
+    "Tovar",
+    "Sluzba",
+    "DodanieTovaru",
+    "DodanieSluzby",
+    "DovozTovaru",
+    "NadobudnutieTovaru",
+    "Konanie",
+    "RestrukturalizacneKonanie",
+    "Konkurz",
+    "ZastavenieKonania",
+    "Sud",
+    "DanovyUrad",
+    "NarodnaBanka",
+    "Pohladavka",
+    "NevymozitelnaPohladavka",
+    "PostupeniePohladavky",
+    "OpravaZakladuDane",
+    "DanovePriznanie",
+    "Rozhodnutie",
+    "Povinnost",
+    "Lehota",
+    "Platba",
+    "Narok",
+    "Uznesenie",
+    "ObchodnyVestnik",
+    "Udaj",
+    "Zaznam",
+    "Vypocet",
+    "Zaokruhlenie",
+    "SplatkovyKalendar",
+    "Sprava",
+    "Zaloba",
+    "Dedicstvo",
+    "LikvidaciaDedicstva",
+    "Smrt",
+    "Skutocnost",
+    "CiselnaIdentifikacia",
+    "OsobitnaUprava"
+  ],
+  "relationship_types": [
+    "OBSAHUJE",
+    "MA_DATUM",
+    "MA_DATUM_VYHOTOVENIA",
+    "MA_DATUM_PRIJATIA",
+    "OZNAMUJE",
+    "MUSI_OZNAMIT",
+    "ZASTAVUJE",
+    "VYHOTOVUJE",
+    "NEVYHOTOVUJE_SA",
+    "JE_POVINNY_VYHOTOVIT",
+    "JE_POVINNY_ODOSLAT",
+    "MA_POVINNOST",
+    "POZIADUJE",
+    "POZIADUJE_PLATBU_PRI",
+    "PRIJIMA",
+    "PRIJAL_PLATBU",
+    "PODLA",
+    "JE_PODLA",
+    "ODKAZUJE_NA",
+    "TYKA_SA",
+    "VZTAHUJE_SA_NA",
+    "PLATI_PRE",
+    "PLATI_PODLA",
+    "VYKONAVA",
+    "VYKONAVA_OPRAVU",
+    "VZNIKA_PRI",
+    "VZNIKA_V",
+    "STAVA_SA",
+    "ZNIZUJE",
+    "MA_SUMU",
+    "MA_SADZBU",
+    "MA_DAN",
+    "MA_ZAKLAD_DANE",
+    "URCUJE",
+    "URCUJE_REFERENCNY_KURZ",
+    "POUZIVA_KURZ",
+    "PREPOCITAVA_NA",
+    "VYPOCITAVA_SA_PODLA",
+    "ZAOKRUHLUJE_SA",
+    "ZVEREJNUJE",
+    "VYHLASUJE",
+    "PODAVA",
+    "PRIHLASUJE",
+    "NEPRIHLASUJE",
+    "NEUZNAVA_SA",
+    "NEMOZE_DOMAHAT_SA",
+    "NADOBUDA_PRAVOPLATNOST",
+    "UPRAVUJE",
+    "OPRAVUJE",
+    "POSTUPUJE",
+    "MA_CISELNU_IDENTIFIKACIU",
+    "MA_DOVOD_NA_STRANE",
+    "POUZIJE_SA",
+    "POUZIVA_SA_PRI",
+    "JE_VYJADRENA_AKO",
+    "JE_NEVYMOZITELNA",
+    "ZODPOVEDA_VYSE",
+    "ZISTUJE",
+    "UVADZA",
+    "NEZAPLATIL_ZA",
+    "SPATVZATIE_ZALOBY",
+    "MA_LEHOTU"
+  ],
+  "merge_log": {
+    "node_types": {
+      "PravnyPredpis": [
+        "Pravnypredpis",
+        "PravnyPredpis"
+      ],
+      "ColnyPredpis": [
+        "ColnyPredpis"
+      ],
+      "OsobitnyPredpis": [
+        "OsobitnyPredpis"
+      ],
+      "Doklad": [
+        "Doklad"
+      ],
+      "Faktura": [
+        "Faktura"
+      ],
+      "OpravnyDoklad": [
+        "OpravnyDoklad"
+      ],
+      "Datum": [
+        "Datum",
+        "DatumPrijatia",
+        "DatumVyhotovenia"
+      ],
+      "CasoveObdobie": [
+        "Casoveobdobie",
+        "CasoveObdobie"
+      ],
+      "ZdanovacieObdobie": [
+        "Zdanovacieobdobie",
+        "ZdanovacieObdobie",
+        "Zdanovacie obdobie"
+      ],
+      "KalendarnyRok": [
+        "KalendarnyRok"
+      ],
+      "Dan": [
+        "Dan",
+        "DanovaPovinnost"
+      ],
+      "ZakladDane": [
+        "ZakladDane",
+        "ZalozDane",
+        "ZnalizenyZakladDane"
+      ],
+      "SadzbaDane": [
+        "Sadzba",
+        "Sadzbadane",
+        "SadzbaDane"
+      ],
+      "Euro": [
+        "Euro",
+        "Eur"
+      ],
+      "Mena": [
+        "Mena",
+        "CudziaMena"
+      ],
+      "Kurz": [
+        "Kurz",
+        "ReferencnyVymennyKurz"
+      ],
+      "Paragraf": [
+        "Paragraf"
+      ],
+      "Odsek": [
+        "Odsek"
+      ],
+      "Pismeno": [
+        "Pismeno"
+      ],
+      "Bod": [
+        "Bod"
+      ],
+      "ZdanitelnaOsoba": [
+        "ZdanitelnaOsoba",
+        "Zdanitelnaosoba"
+      ],
+      "NarodnaBanka": [
+        "NarodnaBanka",
+        "NarodnaBankaSlovenska",
+        "EuropskaCentralnaBanka"
+      ],
+      "DanovyUrad": [
+        "DanovyUrad",
+        "Urad"
+      ],
+      "DanovePriznanie": [
+        "DanovePriznanie",
+        "DanovePriznanie"
+      ],
+      "NevymozitelnaPohladavka": [
+        "Nevymozitelnost",
+        "NevymoztelnaPohladavka",
+        "NevymozenitelnaPohladavka"
+      ],
+      "Vypocet": [
+        "Prepocet",
+        "Prepocty",
+        "Vypocet"
+      ],
+      "Zaokruhlenie": [
+        "Zaokruhlenie",
+        "ZaokruhlovanieDan"
+      ],
+      "Udaj": [
+        "Udaje",
+        "UdajeZOpravnehoDokladu",
+        "SlovnaInformacia"
+      ],
+      "Konanie": [
+        "Konanie"
+      ],
+      "RestrukturalizacneKonanie": [
+        "RestrukturalizacneKonanie"
+      ],
+      "ZastavenieKonania": [
+        "ZastavenieKonania"
+      ],
+      "LikvidaciaDedicstva": [
+        "LikvidaciaDedicstva"
+      ],
+      "SplatkovyKalendar": [
+        "SplatkovyKalendar"
+      ]
+    },
+    "relationship_types": {
+      "OBSAHUJE": [
+        "OBSAHUJE",
+        "MUSI_OBSAHOVAT",
+        "OBSAHUJE_TEXT",
+        "OBSAHUJE_UDAJ"
+      ],
+      "TYKA_SA": [
+        "TYKA_SA",
+        "TKA_SA",
+        "SA_TYKA"
+      ],
+      "POUZIVA_KURZ": [
+        "POUZIVA_KURZ",
+        "POUZIVA_KURZ"
+      ],
+      "MA_DOVOD_NA_STRANE": [
+        "MA_DOVOD_NA_STRANE",
+        "MA_DOVOD_NA_STRANE"
+      ],
+      "PODAVA": [
+        "PODAVA",
+        "PODA"
+      ],
+      "ZASTAVUJE": [
+        "ZASTAVUJE",
+        "ZASTAVUJE_KONANIE",
+        "ZASTAVI_SA"
+      ],
+      "STAVA_SA": [
+        "STAL_SA",
+        "STANE_SA"
+      ],
+      "VYKONAVA_OPRAVU": [
+        "VYKONAVA_OPRAVU",
+        "VYKONA_OPRAVU"
+      ],
+      "PRIJIMA": [
+        "PRIJIMA",
+        "PRIJAL"
+      ],
+      "PRIJAL_PLATBU": [
+        "PRIJAL_PLATBU",
+        "PRIJAL_PLATBU_V"
+      ],
+      "MA_SUMU": [
+        "MA_SUMU",
+        "V_SUME"
+      ],
+      "MA_ZAKLAD_DANE": [
+        "MA_ZAKLAD",
+        "MA_ZAKLAD_DANE"
+      ],
+      "VYHOTOVUJE": [
+        "VYHOTOVUJE"
+      ],
+      "NEVYHOTOVUJE_SA": [
+        "NEVYHOTOVUJE_SA"
+      ],
+      "JE_POVINNY_VYHOTOVIT": [
+        "JE_POVINNY_VYHOTOVIT"
+      ],
+      "JE_POVINNY_ODOSLAT": [
+        "JE_POVINNY_ODOSLAT"
+      ],
+      "MUSI_OZNAMIT": [
+        "MUSI_OZNAMIT"
+      ],
+      "ODKAZUJE_NA": [
+        "ODKAZUJE_NA"
+      ],
+      "VZTAHUJE_SA_NA": [
+        "VZTAHUJE_SA_NA"
+      ],
+      "VYPOCITAVA_SA_PODLA": [
+        "VYPOCITAVA_SA_PODLA",
+        "VYPOCITANA_PRI"
+      ],
+      "URCUJE_REFERENCNY_KURZ": [
+        "URCUJE_REFERENCNY_KURZ",
+        "VYHLASUJE_KURZ"
+      ],
+      "UVADZA": [
+        "UVADZA",
+        "UVEDIE"
+      ],
+      "OPRAVUJE": [
+        "OPRAVUJE",
+        "OPRAVIL_ZAKLAD_DANE"
+      ],
+      "NADOBUDA_PRAVOPLATNOST": [
+        "NADOBUDA_PRAVOPLATNOST"
+      ],
+      "JE_NEVYMOZITELNA": [
+        "JE_NEVYMOZITELNA"
+      ],
+      "NEMOZE_DOMAHAT_SA": [
+        "NEMOZE_DOMAHAT_SA"
+      ],
+      "MA_CISELNU_IDENTIFIKACIU": [
+        "MA_CISELNU_IDENTIFIKACIU"
+      ],
+      "POUZIJE_SA": [
+        "POUZIJE_SA"
+      ],
+      "POUZIVA_SA_PRI": [
+        "POUZIVA_SA_PRI"
+      ],
+      "ZAOKRUHLUJE_SA": [
+        "ZAOKRUHLUJE_SA"
+      ],
+      "SPATVZATIE_ZALOBY": [
+        "SPATVZATIE_ZALOBY"
+      ]
+    }
+  }
+}

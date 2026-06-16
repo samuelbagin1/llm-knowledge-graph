@@ -1,0 +1,390 @@
+[
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4 Odsek 6",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4 Odsek 6 Pismeno B)",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {}
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {}
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {}
+      },
+      {
+        "id": "Obrat",
+        "type": "Udaj",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4 Odsek 6 Pismeno b)",
+        "type": "Pismeno",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "target": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "type": "MA_POVINNOST",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "evidence": "Platitelom sa moze stat aj zdanitelna osoba"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "evidence": "ma v tuzemsku sidlo, miesto podnikania"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Obrat",
+          "type": "Udaj",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "evidence": "pred b) presiahnutim obratu"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4 Odsek 6",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno B)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obrat",
+          "type": "Udaj",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno b)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "source": "",
+    "nodes": [
+      {
+        "id": "Paragraf § 4 Odsek 6",
+        "type": "Odsek",
+        "properties": {}
+      },
+      {
+        "id": "Pismeno A",
+        "type": "Pismeno",
+        "properties": {}
+      },
+      {
+        "id": "Zdanitelna Osoba",
+        "type": "Zdanitelnaosoba",
+        "properties": {}
+      },
+      {
+        "id": "Tuzemsko",
+        "type": "Tuzemsko",
+        "properties": {}
+      },
+      {
+        "id": "Platitel",
+        "type": "Platitel",
+        "properties": {}
+      },
+      {
+        "id": "Obrat",
+        "type": "Skutocnost",
+        "properties": {}
+      },
+      {
+        "id": "Paragraf § 4 Odsek 6 Pismeno a)",
+        "type": "Pismeno",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "id": "Paragraf § 4 Odsek 6",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "OBSAHUJE",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "evidence": "pred a) presiahnutim obratu"
+        }
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "type": "PODLA",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "evidence": "(6) Platitelom sa moze stat"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "evidence": "ma v tuzemsku sidlo, miesto podnikania"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "type": "VZTAHUJE_SA_NA",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "evidence": "Platitelom sa moze stat aj zdanitelna osoba"
+        }
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Obrat",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "type": "VZNAKA_PRI",
+        "properties": {
+          "section": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "evidence": "pred a) presiahnutim obratu"
+        }
+      },
+      {
+        "source": {
+          "id": "Paragraf § 4 Odsek 6",
+          "type": "Odsek",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Pismeno A",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Zdanitelna Osoba",
+          "type": "Zdanitelnaosoba",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Tuzemsko",
+          "type": "Tuzemsko",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Platitel",
+          "type": "Platitel",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      },
+      {
+        "source": {
+          "id": "Obrat",
+          "type": "Skutocnost",
+          "properties": {}
+        },
+        "target": {
+          "id": "Paragraf § 4 Odsek 6 Pismeno a)",
+          "type": "Pismeno",
+          "properties": {}
+        },
+        "type": "IN_CHUNK",
+        "properties": {}
+      }
+    ]
+  }
+]

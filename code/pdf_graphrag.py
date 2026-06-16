@@ -758,7 +758,7 @@ class PDFGraphRAG:
             source_id = rel_data.get("source_node_id")
             target_id = rel_data.get("target_node_id")
             rel_type = rel_data.get("relation") or rel_data.get("type")
-            evidence = rel_data.get("evidence")
+            evidence = rel_data.get("evidence") if rel_data.get("evidence") else "no-evidence"
 
             # Skip relationships with missing mandatory fields
             if not source_id or not target_id or not rel_type:

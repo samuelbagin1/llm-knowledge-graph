@@ -294,3 +294,13 @@ Evaluation reports are written as `summary.json`, `by_chunk.csv` / `by_chunk.jso
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
+
+## Further reading
+
+Read the [full thesis](presentations/bp/thesis.pdf) or the accompanying paper on the [theory behind GraphRAG](presentations/Bagin/redzur/LLM_Legal_Document_Analysis.pdf).
+
+<p align="center">
+  <img src="presentations/bp/img/graf-ukazka1.png" alt="Example of a knowledge graph" width="31%">
+  <img src="presentations/bp/img/paragraf-uzol-na-jeden-skok.png" alt="Legal paragraph represented as a graph node" width="31%">
+  <img src="presentations/bp/img/riadok-v-tabulke.png" alt="Table row represented in the graph" width="31%">
+</p>
